@@ -1,0 +1,65 @@
+---
+layout: example
+title: OSCAR examples
+---
+
+<div class="gallery_example">
+  {% for post in site.categories.examples %}
+		<div class="item_example">
+        <a  href="https://nbviewer.jupyter.org/github/{{ post.repository }}/blob/master/{{ post.filename }}.ipynb">
+				    <div class="item_example-image"><img src="{{ site.baseurl }}/public/thumbnails/{{ post.thumbnail }}"></div>
+				    <div class="item_example-name">{{ post.title }}</div>
+            <div class="item_example-name">{{ post.author }}</div>
+        </a>
+            <div class="item_example-name">
+              <a href="https://mybinder.org/v2/gh/{{ post.repository }}/master?filepath={{ post.filename }}.ipynb">
+                <img src="https://mybinder.org/badge.svg" alt="Run on binder"/>
+              </a>
+            </div>
+			</div>
+	{% endfor %}
+</div>
+
+<!-- Pager -->
+<!-- 
+<div class="row-fluid">
+  <div class="span12">
+    <div class="pagination">
+      <ul>
+        {% if paginator.previous_page %}
+
+          {% if paginator.previous_page == 1 %}
+            <li><a href="/">Prev</a></li>
+          {% else %}
+            <li><a href="/page{{ paginator.previous_page }}">Prev</a></li>
+          {% endif %}
+
+        {% else %}
+          <li><span class="disabled">Prev</span></li>
+        {% endif %}
+
+        {% if paginator.page == 1 %}
+          <li><span class="active">1</span></li>
+        {% else %}
+          <li><a href="/">1</a></li>
+        {% endif %}
+
+        {% for count in (2..paginator.total_pages) %}
+
+          {% if count == paginator.page %}
+            <li><span class="active">{{ count }}</span></li>
+          {% else %}
+            <li><a href="/page{{ count }}">{{ count }}</a></li>
+          {% endif %}
+        {% endfor %}
+
+        {% if paginator.next_page %}
+          <li><a href="/page{{ paginator.next_page }}">Next</a></li>
+        {% else %}
+          <li><span class="disabled">Next</span></li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</div> -->
+

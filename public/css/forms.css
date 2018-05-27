@@ -1,0 +1,16 @@
+.form-field {
+ padding-bottom: 1em;
+}
+
+.form-field-req {
+    color: red;
+}
+
+.form-field-title {
+  font-weight: bold;
+}
+
+.form-field-description {
+  color: gray;
+  font-size: 85%;
+}

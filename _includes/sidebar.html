@@ -1,0 +1,36 @@
+<div class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      <h1>
+        <a href="{{ site.baseurl }}/">
+          <img src="{{ site.baseurl }}/public/TRR195_logo.png"/>
+        </a>
+      </h1>
+      <p class="lead">{{ site.description }}</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item{% if page.url == '/' %} active{% endif %}" href="{{ site.baseurl }}/">Home</a>
+
+      {% comment %}
+        The code below dynamically generates a sidebar nav of pages with
+        `layout: page` in the front-matter. See readme for usage.
+      {% endcomment %}
+
+      {% assign pages_list = site.pages | sort:"name" %}
+      {% for node in pages_list %}
+        {% if node.title != null %}
+          {% if node.notinsidebar == null %}
+            {% if node.layout == "page" or node.layout == "example" %}
+              <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ site.baseurl }}{{ node.url }}">{{ node.title }}</a>
+            {% endif %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+
+      <br>
+      <!-- <a class="sidebar-nav-item minor" href="https://oscar-system.github.io">Other GAP days</a> -->
+
+    </nav>
+  </div>
+</div>
