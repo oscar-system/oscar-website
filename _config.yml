@@ -5,6 +5,8 @@ highlighter:      rouge
 # Permalinks
 permalink:        pretty
 
+gems: [jekyll-paginate]
+
 # Setup
 title:            'The OSCAR CAS'
 tagline:          ''
