@@ -9,10 +9,46 @@
       <p class="lead">{{ site.description }}</p>
     </div>
 
+    <p/>
     <nav class="sidebar-nav">
+      <p/>
       <a class="sidebar-nav-item{% if page.url == '/' %} active{% endif %}" href="{{ site.baseurl }}/">Home</a>
+      <p/>
+      <a class="sidebar-nav-item{% if page.url == '/about/' %} active{% endif %}" href="{{ site.baseurl }}/about">About the OSCAR project</a>
+      <p/>
+      <a class="sidebar-nav-item{% if page.url == '/news/' %} active{% endif %}" href="{{ site.baseurl }}/news">News</a>
+      <p/>
+      <a class="sidebar-nav-item{% if page.url == '/install/' %} active{% endif %}" href="{{ site.baseurl }}/install">Download and Installation</a>
+      <p/>
+      <a class="sidebar-nav-item{% if page.url == '/example/' %} active{% endif %}" href="{{ site.baseurl }}/example">OSCAR Examples</a>
+      <p/>
+      <a class="sidebar-nav-item{% if page.meeting %} active{% endif %}" href="{{ site.baseurl }}/meetings">OSCAR Meetings</a>
 
-      {% comment %}
+      {% if page.meeting %}
+        {% assign pages_list = site.pages | sort:"name" %}
+        {% for node in pages_list %}
+         {% if node.title != null %}
+              {% if node.is_meeting_index %}
+               <a class="inner-sidebar-nav-item{% if page.meeting_nr == node.meeting_nr %} active{% endif %}" href="{{ site.baseurl }}{{ node.url }}">{{ node.title }}</a>
+                {% if page.meeting_nr != null %}
+                {% for node_inner in pages_list %}
+                  {% if node_inner.title != null %}
+                    {% if node_inner.meeting_nr == node.meeting_nr and node_inner.meeting_nr == page.meeting_nr %}
+                      {% if node_inner.is_meeting_index != true %}
+                        <a class="inner-sidebar-nav-item-two{% if page.url == node_inner.url %} active{% endif %}" href="{{ site.baseurl }}{{ node_inner.url }}">{{ node_inner.title }}</a>
+                        <br/>
+                      {% endif %}
+                    {% endif %}
+                  {% endif %}
+                {% endfor %}
+                {% endif %}
+              {% endif %}
+         {% endif %}
+        {% endfor %}
+      {% endif %}
+      <p/>
+      <p/>
+      <!-- {% comment %}
         The code below dynamically generates a sidebar nav of pages with
         `layout: page` in the front-matter. See readme for usage.
       {% endcomment %}
@@ -23,13 +59,14 @@
           {% if node.notinsidebar == null %}
             {% if node.layout == "page" or node.layout == "example" %}
               <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ site.baseurl }}{{ node.url }}">{{ node.title }}</a>
+              <p/>
             {% endif %}
           {% endif %}
         {% endif %}
-      {% endfor %}
+      {% endfor %} -->
 
       <br>
-      <!-- <a class="sidebar-nav-item minor" href="https://oscar-system.github.io">Other GAP days</a> -->
+      <a class="sidebar-nav-item minor" href="https://sebasguts.github.io">Copyright by Sebastian Gutsche, 2018</a>
 
     </nav>
   </div>

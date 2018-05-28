@@ -90,6 +90,35 @@ html {
 .sidebar-nav-item {
   display: block;
 }
+
+.inner-sidebar-nav-item {
+  display: block;
+  margin-left: 4px;
+}
+.sidebar-nav-item-inner.active {
+  font-weight: bold;
+}
+
+.inner-sidebar-nav-item-two {
+  margin-left: 8px;
+}
+
+a.inner-sidebar-nav-item:hover,
+a.inner-sidebar-nav-item:focus {
+  text-decoration: underline;
+}
+.inner-sidebar-nav-item.active {
+  font-weight: bold;
+}
+
+a.inner-sidebar-nav-item-two:hover,
+a.inner-sidebar-nav-item-two:focus {
+  text-decoration: underline;
+}
+.inner-sidebar-nav-item-two.active {
+  font-weight: bold;
+}
+
 a.sidebar-nav-item:hover,
 a.sidebar-nav-item:focus {
   text-decoration: underline;
