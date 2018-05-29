@@ -6,21 +6,20 @@ meeting_nr: 201805
 is_meeting_index: true
 ---
 
-# {{ site.title }}
+# OSCAR developer meeting
 
-## {{ site.description }}<br> {{ site.location }}
+## May 2018,<br> Siegen University
 
-## <a name="contact"></a> Contact
+## Contact
 
 If you have questions or suggestions, please contact the organizers:
 
 * [Sebastian Gutsche](mailto:gutsche@mathematik.uni-siegen.de)
-* [Frank Lübeck](mailto:Frank.Luebeck@Math.RWTH-Aachen.De)
 
 ## Sponsors
 
 This workshop is supported by [SFB-TRR 195](https://www.computeralgebra.de/sfb/) -- Symbolic Tools in Mathematics and their Application.
 
-## Previous GAP Days
+## Other meetings
 
-Please visit [OSCARDays.github.io](https://OSCARDays.github.io) for a list of all OSCAR days.
+Please visit [the meetings page]({{ site.baseurl }}/meetings) for an overview of the OSCAR meetings.

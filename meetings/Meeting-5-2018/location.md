@@ -5,13 +5,13 @@ meeting: true
 meeting_nr: 201805
 ---
 
-The OSCAR Days January 2018 takes place in Aachen
-[Aachen](http://www.aachen.de/) at the
-[Lehrstuhl D für Mathematik](http://www.math.rwth-aachen.de/).
+The OSCAR Meeting in May 2018 takes place in Siegen
+[Siegen](http://www.siegen.de/) at the
+[Lehrstuhl für reine Mathematik](https://www.uni-siegen.de/fb6/rmi/?lang=de).
 
 <h4>Address</h4>
-Lehrstuhl D für Mathematik <br/>
-RWTH Aachen <br/>
-Pontdriesch 14/16 <br/>
-D-52062 Aachen <br/>
+Department Mathematik <br/>
+Universität Siegen <br/>
+Walter-Flex-Str. 3 <br/>
+D-57072 Siegen <br/>
 Germany <br/>
