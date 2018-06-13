@@ -11,16 +11,13 @@ OSCAR is a new computer algebra system being developed by TU Kaiserslautern,
 RWTH Aachen, Universität Des Saarlandes and other collaborators, under
 the TRR 195 programme, funded by the Deutsche Forshungsgemeinschaft.
 
-OSCAR aims to combine four existing, open source, cornerstone systems:
+OSCAR aims to create a "visionary new" computer algebra system, built on four existing,
+Open Source, cornerstone systems:
 
-  * [GAP](https://www.gap-system.org/)
-  * [Singular](https://www.singular.uni-kl.de/)
-  * [Polymake](https://polymake.org/doku.php)
-  * Antic ([Hecke](https://github.com/thofma/Hecke.jl/), [Nemo](http://nemocas.org))
-
-into a "visionary new" computer algebra system covering computational discrete algebra,
-commutative and non-commutative algebra, algebraic geometry, polyhedral geometry and
-number theory.
+  * [GAP](https://www.gap-system.org/) - computational discrete algebra
+  * [Singular](https://www.singular.uni-kl.de/) - commutative and non-commutative algebra, algebraic geometry
+  * [Polymake](https://polymake.org/doku.php) - polyhedral geometry
+  * Antic ([Hecke](https://github.com/thofma/Hecke.jl/), [Nemo](http://nemocas.org)) - number theory
 
 The aim of the project is to facilitate complex, interdisciplinary computations
 requiring a high level of integration between existing computer algebra tools.
