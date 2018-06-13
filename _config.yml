@@ -8,7 +8,7 @@ permalink:        pretty
 gems: [jekyll-paginate]
 
 # Setup
-title:            'The OSCAR CAS'
+title:            'The OSCAR Computer Algebra System'
 tagline:          ''
 description:      'The homepage of the OSCAR project'
 location:         ''
