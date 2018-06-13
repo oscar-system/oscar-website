@@ -10,7 +10,7 @@ gems: [jekyll-paginate]
 # Setup
 title:            'OSCAR Computer Algebra System'
 tagline:          ''
-description:      'The homepage of the OSCAR project'
+description:      'Homepage of the OSCAR project'
 location:         ''
 url:              http://sebasguts.github.io
 baseurl:          /oscar-website

@@ -27,14 +27,14 @@ For more information about OSCAR, see the About page.
 ## Getting started
 
 If you want to see examples of what OSCAR looks like, click on the examples on the
-OSCAR Examples page. These open prerendered notebooks that showcase selected things
+Examples page. These open prerendered notebooks that showcase selected things
 OSCAR can already do.
 
-If you want to try OSCAR live from your browser, click on the binder links on the OSCAR
+If you want to try OSCAR live from your browser, click on the binder links on the
 Examples page. At present, these will take a few minutes to load, as we currently still
 build some dependencies from source behind the scenes.
 
-If you wish to contribute to OSCAR, see the Download and Installation page for
+If you wish to contribute to OSCAR, see the Installation page for
 instructions on how to build everything on a growing number of supported platforms.
 
 Note that OSCAR has not reached a first public release yet, and should be treated as

@@ -14,15 +14,15 @@
       <p/>
       <a class="sidebar-nav-item{% if page.url == '/' %} active{% endif %}" href="{{ site.baseurl }}/">Home</a>
       <p/>
-      <a class="sidebar-nav-item{% if page.url == '/about/' %} active{% endif %}" href="{{ site.baseurl }}/about">About the OSCAR project</a>
+      <a class="sidebar-nav-item{% if page.url == '/about/' %} active{% endif %}" href="{{ site.baseurl }}/about">About</a>
       <p/>
       <a class="sidebar-nav-item{% if page.url == '/news/' %} active{% endif %}" href="{{ site.baseurl }}/news">News</a>
       <p/>
-      <a class="sidebar-nav-item{% if page.url == '/install/' %} active{% endif %}" href="{{ site.baseurl }}/install">Download and Installation</a>
+      <a class="sidebar-nav-item{% if page.url == '/install/' %} active{% endif %}" href="{{ site.baseurl }}/install">Installation</a>
       <p/>
-      <a class="sidebar-nav-item{% if page.url == '/example/' %} active{% endif %}" href="{{ site.baseurl }}/example">OSCAR Examples</a>
+      <a class="sidebar-nav-item{% if page.url == '/example/' %} active{% endif %}" href="{{ site.baseurl }}/example">Examples</a>
       <p/>
-      <a class="sidebar-nav-item{% if page.meeting %} active{% endif %}" href="{{ site.baseurl }}/meetings">OSCAR Meetings</a>
+      <a class="sidebar-nav-item{% if page.meeting %} active{% endif %}" href="{{ site.baseurl }}/meetings">Meetings</a>
 
       {% if page.meeting %}
         {% assign pages_list = site.pages | sort:"name" %}
@@ -66,7 +66,7 @@
       {% endfor %} -->
 
       <br>
-      <a class="sidebar-nav-item minor" href="https://sebasguts.github.io">Copyright by Sebastian Gutsche, 2018</a>
+      <a class="sidebar-nav-item minor" href="https://sebasguts.github.io">Copyright 2018 Sebastian Gutsche</a>
 
     </nav>
   </div>
