@@ -5,10 +5,10 @@ title: Home
 
 # {{ site.title }}
 
-WELCOME TO THE WEBSITE OF THE OSCAR PROJECT
+## WELCOME TO THE WEBSITE OF THE OSCAR PROJECT
 
 OSCAR is a new computer algebra system being developed jointly by TU Kaiserslautern,
-RWTH Aachen and Universit\"{a}t Des Saarlandes and other collaborators as part of
+RWTH Aachen and Universität Des Saarlandes and other collaborators as part of
 the TRR 195 programme, funded by the Deutsche Forshungsgemeinschaft.
 
 OSCAR aims to combine four existing, open source, cornerstone systems:
