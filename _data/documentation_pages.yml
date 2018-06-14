@@ -1,11 +1,18 @@
-- name: Singular.jl
-  documentation_url:
-  description: The interface to Singular
-               from Julia
-
 - name: AbstractAlgebra.jl
-  documentation_url:
-  description: Julia package containing generic algorithms
-               for algebraic computations, to be used with
-               different implementations of algebraic structures.
+  documentation_url: https://nemocas.github.io/AbstractAlgebra.jl/
+  description: Pure Julia package implementing generic algorithms for basic arithmetic
+               and algebraic structures. It also provides standard interfaces for
+               generics to the other OSCAR Julia packages.
+
+- name: Nemo.jl
+  documentation_url: http://nemocas.github.io/Nemo.jl/latest/
+  description: The interface to the Flint, Arb and Antic C libraries from Julia.
+
+- name: Singular.jl
+  documentation_url: https://wbhart.github.io/Singular.jl/
+  description: The interface to Singular from Julia.
+
+- name: Hecke.jl
+  documentation_url: http://thofma.github.io/Hecke.jl/latest/
+  description: Algebraic number theory in Julia.
 

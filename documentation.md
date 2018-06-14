@@ -3,9 +3,10 @@ layout: page
 title: Documentation
 ---
 
-The OSCAR project is formed of several different software projects. Currently, as
-OSCAR is still under development, there is no single documentation for the project.
-However, you can access the documentation for several parts here:
+The OSCAR project initially encompasses a number of different software projects.
+As the OSCAR system is still under development, there is no single source for user
+documentation. However, you can access the documentation for the several parts that
+already exist, here:
 
 <ul>
 {% for p in site.data.documentation_pages %}
