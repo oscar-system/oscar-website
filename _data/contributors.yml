@@ -24,13 +24,26 @@
   affiliation: TU Kaiserslautern
   website: http://www.mathematik.uni-kl.de/agag/mitglieder/wissenschaftliche-mitarbeiter/dr-william-hart/
 
+- name: Tommy Hofmann
+  affiliation: TU Kaiserslautern
+  website: http://www.mathematik.uni-kl.de/agag/mitglieder/wissenschaftliche-mitarbeiter
+/thofmann/
+
 - name: Max Horn
   affiliation: Justus Liebig University Giessen
   website: http://www.quendi.de/en/math
 
+- name: Fredrik Johansson
+  affiliation: Institut de Mathématiques de Bordeaux
+  website: http://fredrikj.net/
+
 - name: Michael Joswig
   affiliation: TU Berlin
   website: http://page.math.tu-berlin.de/~joswig/
+
+- name: Marek Kaluba
+  affiliation: MPI Tuebingen
+  website: https://ei.is.tuebingen.mpg.de/person/kalmar
 
 - name: Benjamin Lorenz
   affiliation: TU Berlin
@@ -40,30 +53,19 @@
   affiliation: RWTH Aachen University
   website: http://www.math.rwth-aachen.de/~Frank.Luebeck/index.html
 
+- name: Oleksandr Motsak
+  affiliation: IMAGINARY
+  website: https://imaginary.org/users/oleksandr-motsak
+
 - name: Hans Schönemann
   affiliation: TU Kaiserslautern
   website: http://www.mathematik.uni-kl.de/agag/mitglieder/wissenschaftliche-mitarbeiter/dr-hans-schoenemann/
+
+- name: Carlo Sircana
+  affiliation: TU Kaiserslautern
+  website: http://www.mathematik.uni-kl.de/agag/mitglieder/wissenschaftliche-mitarbeiter/carlo-sircana/
 
 - name: Andreas Steenpaß
   affiliation: TU Kaiserslautern
   website: http://www.mathematik.uni-kl.de/agag/mitglieder/wissenschaftliche-mitarbeiter/dr-andreas-steenpass/
 
-- name: Marek Kaluba
-  affiliation: MPI Tuebingen
-  website: https://ei.is.tuebingen.mpg.de/person/kalmar
-
-- name: Fredrik Johansson
-  affiliation: Institut de Mathématiques de Bordeaux
-  website: http://fredrikj.net/
-
-- name: Tommy Hofmann
-  affiliation: TU Kaiserslautern
-  website: http://www.mathematik.uni-kl.de/agag/mitglieder/wissenschaftliche-mitarbeiter/thofmann/
-
-- name: Oleksandr Motsak
-  affiliation: IMAGINARY
-  website: https://imaginary.org/users/oleksandr-motsak
-
-- name: Carlo Sircana
-  affiliation: TU Kaiserslautern
-  website: http://www.mathematik.uni-kl.de/agag/mitglieder/wissenschaftliche-mitarbeiter/carlo-sircana/
