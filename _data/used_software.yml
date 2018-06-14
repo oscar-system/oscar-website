@@ -1,6 +1,9 @@
 - name: GAP
   website: http://www.gap-system.org
 
+- name: Julia
+  website: http://www.julialang.org
+
 - name: Nemo
   website: http://www.nemocas.org
 
