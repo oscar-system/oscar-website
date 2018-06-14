@@ -1,7 +1,24 @@
 ---
 layout: page
-title: Contributors
+title: Credits
 ---
+
+## Software used in the OSCAR project
+
+The following Open Source software is used in the OSCAR project:
+
+<ul>
+{% for p in site.data.used_software %}
+  <li>
+    <a href="{{ p.website }}">
+    <strong>{{ p.name }}</strong>
+    </a>
+  </li>
+{% endfor %}
+</ul>
+
+
+## Contributors
 
 Currently, the following people contributed to the software in the OSCAR project:
 

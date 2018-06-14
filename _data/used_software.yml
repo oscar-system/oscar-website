@@ -1,0 +1,11 @@
+- name: GAP
+  website: http://www.gap-system.org
+
+- name: Nemo
+  website: http://www.nemocas.org
+
+- name: Polymake
+  website: http://www.polymake.org
+
+- name: Singular
+  website: http://www.singular.uni-kl.de
