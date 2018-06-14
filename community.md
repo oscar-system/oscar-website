@@ -29,5 +29,6 @@ If you do not want to create an account on GitHub, plese send the issue to [OSCA
 
 All Software developed for the OSCAR project is available on [GitHub](https://github.com/oscar-system).
 
-If you want to contribute to OSCAR, please fork the repository you want to contribute there and provide a pull request.
+If you want to contribute to OSCAR, please fork the repository you want to contribute to
+and provide a pull request.
 
