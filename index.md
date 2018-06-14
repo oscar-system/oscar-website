@@ -25,7 +25,7 @@ For more information about OSCAR, see the [About]({{ site.baseurl}}/about) page.
 ## Getting started
 
 If you want to see examples of what OSCAR looks like, click on the examples on the
-[Examples page]({{ site.baseurl }}/example). These open prerendered notebooks that showcase selected things
+[Examples page]({{ site.baseurl }}/example). These open pre-rendered notebooks that showcase selected things
 OSCAR can already do.
 
 If you want to try OSCAR live from your browser, click on the [binder](https://mybinder.org) links on the
