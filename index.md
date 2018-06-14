@@ -20,21 +20,21 @@ Open Source, cornerstone systems:
 The aim of the project is to facilitate complex, interdisciplinary computations
 requiring a high level of integration between existing computer algebra tools.
 
-For more information about OSCAR, see the About page.
+For more information about OSCAR, see the [About]({{ site.baseurl}}/about) page.
 
 ## Getting started
 
 If you want to see examples of what OSCAR looks like, click on the examples on the
-Examples page. These open prerendered notebooks that showcase selected things
+[Examples page]({{ site.baseurl }}/example). These open prerendered notebooks that showcase selected things
 OSCAR can already do.
 
-If you want to try OSCAR live from your browser, click on the binder links on the
-Examples page. At present, these will take a few minutes to load, as we currently still
+If you want to try OSCAR live from your browser, click on the [binder](https://mybinder.org) links on the
+[Examples page]({{ site.baseurl }}/example). At present, these will take a few minutes to load, as we currently still
 build some dependencies from source behind the scenes.
 
-If you wish to contribute to OSCAR, see the Installation page for
+If you wish to contribute to OSCAR, see the [Installation page]({{site.baseurl}}/install) for
 instructions on how to build everything on a growing number of supported platforms.
 
 Note that OSCAR has not reached a first public release yet, and should be treated as
-a technology preview. See the News page for announcements about OSCAR development.
+a technology preview. See the [News page]({{site.baseurl}}/news) for announcements about OSCAR development.
 
