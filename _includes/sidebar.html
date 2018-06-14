@@ -22,7 +22,9 @@
       <p/>
       <a class="sidebar-nav-item{% if page.url == '/example/' %} active{% endif %}" href="{{ site.baseurl }}/example">Examples</a>
       <p/>
-      <a class="sidebar-nav-item{% if page.url == '/contributors/' %} active{% endif %}" href="{{ site.baseurl }}/contributors">Contributors</a>
+      <a class="sidebar-nav-item{% if page.url == '/documentation/' %} active{% endif %}" href="{{ site.baseurl }}/documentation">Documentation</a>
+      <p/>
+      <a class="sidebar-nav-item{% if page.url == '/community/' %} active{% endif %}" href="{{ site.baseurl }}/community">Community</a>
       <p/>
       <a class="sidebar-nav-item{% if page.meeting %} active{% endif %}" href="{{ site.baseurl }}/meetings">Meetings</a>
 
@@ -49,6 +51,7 @@
         {% endfor %}
       {% endif %}
       <p/>
+      <a class="sidebar-nav-item{% if page.url == '/contributors/' %} active{% endif %}" href="{{ site.baseurl }}/contributors">Contributors</a>
       <p/>
       <!-- {% comment %}
         The code below dynamically generates a sidebar nav of pages with
@@ -69,8 +72,7 @@
 
       <hr>
       <br>
-      <a class="sidebar-nav-item minor" href="https://sebasguts.github.io">&copy; 2018 Sebastian Gutsche</a>
-
+      <a class="sidebar-nav-item minor" href="https://sebasguts.github.io">&copy; 2018 Sebastian Gutsche</a>  
     </nav>
   </div>
 </div>

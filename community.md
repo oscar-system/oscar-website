@@ -1,11 +1,11 @@
 ---
 layout: page
-title: Contributors
+title: Community
 ---
 
 Currently, the following people contributed to the software in the OSCAR project:
 
-<ul>
+<ol>
 {% for p in site.data.contributors %}
   <li>
     {% if p.website != null %}
@@ -19,4 +19,4 @@ Currently, the following people contributed to the software in the OSCAR project
     {% if p.affiliation != null %} ({{ p.affiliation }}){% endif %}
   </li>
 {% endfor %}
-</ul>
+</ol>

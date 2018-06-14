@@ -1,0 +1,11 @@
+- name: Singular.jl
+  documentation_url:
+  description: The interface to Singular
+               from Julia
+
+- name: AbstractAlgebra.jl
+  documentation_url:
+  description: Julia package containing generic algorithms
+               for algebraic computations, to be used with
+               different implementations of algebraic structures.
+
