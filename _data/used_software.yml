@@ -4,8 +4,48 @@
 - name: Nemo
   website: http://www.nemocas.org
 
+- name: Hecke
+  website: https://github.com/thofma/Hecke.jl/
+
 - name: Polymake
-  website: http://www.polymake.org
+  website: http://www.polymake.org/
 
 - name: Singular
-  website: http://www.singular.uni-kl.de
+  website: http://www.singular.uni-kl.de/
+
+- name: GMP
+  website: http://gmplib.org/
+
+- name: MPIR
+  website: http://mpir.org/
+
+- name: MPFR
+  website: http://mpfr.org/
+
+- name: Arb
+  website: http://arblib.org/
+
+- name: NTL
+  website: http://www.shoup.net/ntl
+
+- name: Flint
+  website: http://www.flintlib.org
+
+- name: Antic
+  website: https://github.com/wbhart/antic
+
+- name: gfanlib
+  website: http://home.imf.au.dk/jensen/software/gfan/gfan.html
+
+- name: Factory
+  website: ftp://www.mathematik.uni-kl.de/pub/Math/Singular/Factory
+
+- name: cdd
+  website: http://www.ifor.math.ethz.ch/~fukuda/cdd_home
+
+- name: julia
+  website: https://julialang.org/
+
+- name: AbstractAlgebra
+  website: https://github.com/Nemocas/AbstractAlgebra.jl
+
