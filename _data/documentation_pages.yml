@@ -1,8 +1,8 @@
 - name: AbstractAlgebra.jl
   documentation_url: https://nemocas.github.io/AbstractAlgebra.jl/
   description: Pure Julia package implementing generic algorithms for basic arithmetic
-               and algebraic structures. It also provides standard interfaces for
-               generics to the other OSCAR Julia packages.
+               and algebraic structures. It also defines standard interfaces for
+               generics, that can be implemented by other packages.
 
 - name: Nemo.jl
   documentation_url: http://nemocas.github.io/Nemo.jl/latest/
