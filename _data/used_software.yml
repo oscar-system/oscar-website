@@ -1,9 +1,6 @@
 - name: GAP
   website: http://www.gap-system.org
 
-- name: Julia
-  website: http://www.julialang.org
-
 - name: Nemo
   website: http://www.nemocas.org
 
@@ -45,9 +42,6 @@
 
 - name: cdd
   website: http://www.ifor.math.ethz.ch/~fukuda/cdd_home
-
-- name: julia
-  website: https://julialang.org/
 
 - name: AbstractAlgebra
   website: https://github.com/Nemocas/AbstractAlgebra.jl
