@@ -1,9 +1,10 @@
 ---
 layout: post
-title: Example content
+title: Oscar website launched
 ---
 
-Yeah, we have a website
+The first version of the Oscar website goes online and the first docker image and
+example notebooks and binders are published.
 
 {% highlight js %}
 // Example can be run directly in your JavaScript console

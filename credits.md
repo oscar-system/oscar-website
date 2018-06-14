@@ -5,7 +5,7 @@ title: Credits
 
 ## Software used in the OSCAR project
 
-The following Open Source software is used in the OSCAR project:
+The following Open Source mathematical software is used in the OSCAR project:
 
 <ul>
 {% for p in site.data.used_software %}
@@ -20,7 +20,8 @@ The following Open Source software is used in the OSCAR project:
 
 ## Contributors
 
-Currently, the following people contributed to the software in the OSCAR project:
+Currently, the following people contributed very significantly to the software in the
+OSCAR project:
 
 <ul>
 {% for p in site.data.contributors %}
