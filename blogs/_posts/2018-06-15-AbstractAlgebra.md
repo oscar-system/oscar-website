@@ -92,7 +92,7 @@ division and powering of multivariate polynomials. In some cases, our generic Ju
 implementation is competitive with certain specialised C implementations for basic
 arithmetic.
 
-   Dense matrices : reduced row echelon forms, linear system solving,
+  * Dense matrices : reduced row echelon forms, linear system solving,
 minimal and characteristic polynomial, Smith normal form, Hermite normal form over a
 Euclidean domain, LU decomposition, nullspace, numerous fast determinant algorithms,
 Popov form and much more.
