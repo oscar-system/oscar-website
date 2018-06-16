@@ -38,7 +38,7 @@ To start bash in a later session, just search for "bash".
 
 First set up a sane build environment:
 
-```bash
+```shell
 sudo apt-get update
 sudo apt-get install build-essential m4 libtool-bin autoconf autogen cmake
 sudo apt-get install libboost-all-dev libxml2-dev libperl-dev ninja-build
@@ -47,7 +47,7 @@ sudo apt-get install libxml-writer-perl libxml-perl libxml-libxslt-perl
 
 Now install Julia:
 
-```bash
+```shell
 wget https://julialang-s3.julialang.org/bin/linux/x64/0.6/julia-0.6.3-linux-x86_64.tar.gz
 tar -xvf julia-0.6.3-linux-x86_64.tar.gz
 mv julia-d55cadc350 julia-0.6
@@ -55,7 +55,7 @@ mv julia-d55cadc350 julia-0.6
 
 Now start Julia:
 
-```bash
+```shell
 julia-0.6/bin/julia
 ```
 
