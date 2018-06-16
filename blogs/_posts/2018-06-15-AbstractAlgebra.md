@@ -1,4 +1,8 @@
-# AbstractAlgebra : A Julia package for algebra
+---
+layout: post
+title: "AbstractAlgebra: A Julia package for algebra"
+author: William Bruce Hart
+---
 
 This is the first in a series of blog posts we will be writing on aspects of the new
 OSCAR Computer Algebra System we are writing.
@@ -133,7 +137,7 @@ further develop its capabilities in the area of Abstract Algebra.
 ## What is planned for the future of AbstractAlgebra?
 
 AbstractAlgebra is already quite stable, and we are using it extensively in other
-components of Oscar that we are working on.
+components of OSCAR that we are working on.
 
 However, there are many other things we'd like to add in the future.
 

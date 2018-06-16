@@ -24,10 +24,18 @@ To contribute a new News post, please follow these steps
 ---
 layout: post
 title: Title of your post
+author: Your name
 ---
 ```
 3. Afterwards, you can write your post in markdown syntax. Please note that the title
    is put in automatically, so you do not have to put it in the post separately.
+
+### How to contribute a Blog post
+
+Please follow exactly the same steps as for adding a new News post,
+except that you need to add the new markdown file in `blogs/_posts` instead
+of `news/_posts`.
+
 
 ### How to contribute an example notebook
 

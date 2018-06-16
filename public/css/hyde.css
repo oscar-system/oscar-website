@@ -94,14 +94,14 @@ html {
 
 .inner-sidebar-nav-item {
   display: block;
-  margin-left: 4px;
+  margin-left: 6px;
 }
 .sidebar-nav-item-inner.active {
   font-weight: bold;
 }
 
 .inner-sidebar-nav-item-two {
-  margin-left: 8px;
+  margin-left: 12px;
 }
 
 a.inner-sidebar-nav-item:hover,
@@ -306,4 +306,8 @@ a.sidebar-nav-item:focus {
 }
 
 .item_example-image {
+}
+
+.menu_bar_paragraph {
+  margin-bottom: 8px;
 }

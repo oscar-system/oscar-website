@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Oscar website launched
+author: Sebastian Gutsche
 ---
 
 The first version of the Oscar website goes online and the first docker image and
