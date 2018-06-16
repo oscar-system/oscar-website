@@ -19,7 +19,7 @@ However, if you want to make use of Singular.jl or Polymake.jl, OSCAR cannot run
 native binary. If you have Windows 10, you can use the Windows Subsystem for Linux
 instead.
 
-### Installing the Windows Subsystem for Linux
+### Installing the Windows Subsystem for Linux (Windows 10)
 
   * Search for "Turn Windows features on or off"
   * On the left panel, select "Turn Windows features on or off"
@@ -34,7 +34,7 @@ You can now follow the instructions for Ubuntu 16.04 below.
 
 To start bash in a later session, just search for "bash".
 
-### Installation for Ubuntu 16.04
+## Installation for Ubuntu 16.04
 
 First set up a sane build environment:
 
