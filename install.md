@@ -38,7 +38,7 @@ To start bash in a later session, just search for "bash".
 
 First set up a sane build environment:
 
-```shell
+{% highlight bash %}
 sudo apt-get update
 sudo apt-get install build-essential m4
 sudo apt-get install libtool-bin autoconf autogen cmake
@@ -46,25 +46,25 @@ sudo apt-get install libboost-all-dev libxml2-dev
 sudo apt-get install libperl-dev ninja-build
 sudo apt-get install libxml-writer-perl libxml-perl
 sudo apt-get install libxml-libxslt-perl
-```
+{% endhighlight %}
 
 Now install Julia:
 
-```shell
+{% highlight bash %}
 wget https://julialang-s3.julialang.org/bin/linux/x64/0.6/julia-0.6.3-linux-x86_64.tar.gz
 tar -xvf julia-0.6.3-linux-x86_64.tar.gz
 mv julia-d55cadc350 julia-0.6
-```
+{% endhighlight %}
 
 Now start Julia:
 
-```shell
+{% highlight bash %}
 julia-0.6/bin/julia
-```
+{% endhighlight %}
 
 Now install the relevant Julia packages:
 
-```julia
+{% highlight julia %}
 Pkg.add("AbstractAlgebra")
 
 Pkg.add("Nemo")
@@ -76,7 +76,7 @@ Pkg.build("Singular")
 
 Pkg.clone("https://github.com/oscar-system/Polymake.jl")
 Pkg.build("Polymake")
-```
+{% endhighlight %}
 
 The whole process will take some time (> 1 hour). But if everything went well, you are
 good to go.
