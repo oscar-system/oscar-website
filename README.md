@@ -98,4 +98,18 @@ Please add a new entry to the `_data/used_software.yml` file, of the following f
 
 Send an email to [Sebastian Gutsche](mailto:gutsche@mathematik.uni-siegen.de) and ask for help.
 
+### How to use syntax highlighting in Markdown files
+
+You can use Jekylls highlighter to get syntax highlighting.
+For Julia, do the following
+```
+{% highlight julia %}
+julia> print(2)
+2
+{% endhighlight %}
+```
+A full list of supported languages can be found [here](https://haisum.github.io/2014/11/07/jekyll-pygments-supported-highlighters/).
+
+ 
+
 
