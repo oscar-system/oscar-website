@@ -7,7 +7,7 @@ title: Credits
 
 ### Mathematical software
 
-The following mathematical Open Source mathematical software is used in the OSCAR project:
+The OSCAR project is based on the following mathematical software:
 
 {% assign entries = site.data.used_software | sort_natural:"name" %}
 <ul class="software_credits_list">
