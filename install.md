@@ -83,3 +83,34 @@ good to go.
 
 Note that the various packages are independent and you do not need to install them all.
 
+## Docker (On Linux/Windows/Mac OS)
+
+The fastest way to get a fully working version of all software packages
+in the OSCAR project is using [Docker](http://www.docker.com). To install
+Docker on your system, follow the instructions on [the Docker website](TODO).
+
+Once you have Docker installed, you can run the OSCAR Docker image via the command
+{% highlight bash %}
+docker run -it oscarsystem/oscardocker:latest
+{% endhighlight %}
+
+Docker will then download the OSCAR Docker image for you (approx. 6GB), and start a new
+shell in a Docker containter. You can then start `julia`.
+
+### Jupyter in the Docker container
+
+The Docker image comes fully equipped with the Julia Jupyter kernel. To start Jupyter from
+inside the container, start the Docker container with
+{% highlight bash %}
+docker run -it --net="host" oscarsystem/oscardocker:latest
+{% endhighlight %}
+In the container's shell, execute
+{% highlight bash %}
+jupyter notebook --no-browser oscar
+{% endhighlight %}
+You can then connect to Jupyter by opening `127.0.0.1:8888` in your systems browser.
+The password is `oscar`.
+
+## Install OSCAR using conda (Linux)
+
+Installation of OSCAR via the `conda` package manager will be available soon.
