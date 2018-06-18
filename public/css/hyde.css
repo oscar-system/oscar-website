@@ -311,3 +311,9 @@ a.sidebar-nav-item:focus {
 .menu_bar_paragraph {
   margin-bottom: 8px;
 }
+
+.software_credits_list {
+  columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+}

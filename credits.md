@@ -10,7 +10,7 @@ title: Credits
 The following mathematical Open Source mathematical software is used in the OSCAR project:
 
 {% assign entries = site.data.used_software | sort_natural:"name" %}
-<ul>
+<ul class="software_credits_list">
 {% for p in entries %}
   <li>
     <a href="{{ p.website }}">
