@@ -1,9 +1,19 @@
 
-## Website for the Oscar project.
+# Website for the Oscar project.
 
 Sebastian Gutsche <gutsche@mathematik.uni-siegen.de>, May 2018
 
-### How to contribute
+- [How to contribute](#how-to-contribute)
+- [How to contribute a News post](#how-to-contribute-a-news-post)
+- [How to contribute a Blog post](#how-to-contribute-a-blog-post)
+- [How to contribute an example notebook](#how-to-contribute-an-example-notebook)
+- [How to add a new documentation URL](#how-to-add-a-new-documentation-url)
+- [How to add a new contributor](#how-to-add-a-new-contributor)
+- [How to add a new software dependency](#how-to-add-a-new-software-dependency)
+- [How to add a new meeting subpage](#how-to-add-a-new-meeting-subpage)
+- [How to use syntax highlighting in Markdown files](#how-to-use-syntax-highlighting-in-markdown-files)
+
+## How to contribute
 
 Fork this repository on GitHub, and provide a Pull Request to it.
 To test your changes locally, run
@@ -12,7 +22,7 @@ jekyll serve
 ```
 in the main directory.
 
-### How to contribute a News post
+## How to contribute a News post
 
 To contribute a new News post, please follow these steps
 
@@ -30,14 +40,14 @@ author: Your name
 3. Afterwards, you can write your post in markdown syntax. Please note that the title
    is put in automatically, so you do not have to put it in the post separately.
 
-### How to contribute a Blog post
+## How to contribute a Blog post
 
 Please follow exactly the same steps as for adding a new News post,
 except that you need to add the new markdown file in `blogs/_posts` instead
 of `news/_posts`.
 
 
-### How to contribute an example notebook
+## How to contribute an example notebook
 
 To contribute a new example notebook, please follow these steps
 
@@ -65,7 +75,7 @@ thumbnail: mythumbnail.png
 ```
 Please adjust all entries accordingly. All further content of the file is ignored.
 
-### How to add a new documentation URL
+## How to add a new documentation URL
 
 Please add a new entry to the `_data/documentation_pages.yml` file, of the following form:
 ```
@@ -75,7 +85,7 @@ Please add a new entry to the `_data/documentation_pages.yml` file, of the follo
                from Julia
 ```
 
-### How to add a new contributor
+## How to add a new contributor
 
 Please add a new entry to the `_data/contributors.yml` file, of the following form:
 ```
@@ -86,7 +96,7 @@ Please add a new entry to the `_data/contributors.yml` file, of the following fo
 ```
 All three entries, `affiliation`, `email`, and `website` are optional. If you provide an `email` and a `website`, the name will link to the website.
 
-### How to add a new software dependency
+## How to add a new software dependency
 
 Please add a new entry to the `_data/used_software.yml` file, of the following form:
 ```
@@ -94,11 +104,11 @@ Please add a new entry to the `_data/used_software.yml` file, of the following f
   website: http://www.gap-system.org
 ```
 
-### How to add a new meeting subpage
+## How to add a new meeting subpage
 
 Send an email to [Sebastian Gutsche](mailto:gutsche@mathematik.uni-siegen.de) and ask for help.
 
-### How to use syntax highlighting in Markdown files
+## How to use syntax highlighting in Markdown files
 
 You can use Jekylls highlighter to get syntax highlighting.
 For Julia, do the following
