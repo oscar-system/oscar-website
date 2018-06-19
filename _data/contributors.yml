@@ -1,3 +1,7 @@
+- name: Mohamed Barakat
+  affiliation: University of Siegen
+  website: https://mohamed-barakat.github.io/
+
 - name: Reimer Behrends
   affiliation: TU Kaiserslautern
   website: http://www.mathematik.uni-kl.de/agag/mitglieder/wissenschaftliche-mitarbeiter/dr-reimer-behrends/
@@ -6,6 +10,10 @@
   affiliation: RWTH Aachen University
   email: thomas.breuer@math.rwth-aachen.de
   website: http://www.math.rwth-aachen.de/~Thomas.Breuer/
+
+- name: Wolfram Decker
+  affiliation: TU Kaiserslautern
+  website: http://www.mathematik.uni-kl.de/en/agag/members/professors/prof-dr-wolfram-decker/
 
 - name: Christian Eder
   affiliation: TU Kaiserslautern
