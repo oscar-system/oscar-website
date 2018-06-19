@@ -40,12 +40,12 @@ First set up a sane build environment:
 
 {% highlight bash %}
 sudo apt-get update
-sudo apt-get install build-essential m4
-sudo apt-get install libtool-bin autoconf autogen cmake
-sudo apt-get install libboost-all-dev libxml2-dev
-sudo apt-get install libperl-dev ninja-build
-sudo apt-get install libxml-writer-perl libxml-perl
-sudo apt-get install libxml-libxslt-perl
+sudo apt-get install build-essential m4 wegt \
+                     libtool-bin autoconf autogen cmake \
+                     libboost-all-dev libxml2-dev \
+                     libperl-dev ninja-build \
+                     libxml-writer-perl libxml-perl \
+                     libxml-libxslt-perl
 {% endhighlight %}
 
 Now install Julia:
