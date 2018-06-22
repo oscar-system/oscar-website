@@ -4,7 +4,9 @@ title: About the OSCAR project
 ---
 
 The OSCAR project will integrate the four computer algebra systems
-GAP, polymake, Singular, and ANTIC developed within the TRR 195 into a
+[GAP](http://www.gap-system.org), [polymake](http://polymake.org),
+[Singular](http://www.singular.uni-kl.de),
+and [ANTIC](http://www.nemocas.org) developed within the TRR 195 into a
 visionary next generation open source computer algebra system
 surpassing the combined mathematical capabilities of the underlying
 systems.
@@ -51,12 +53,13 @@ subsystems for non-commutative algebra, Plural and
 Letterplace. Singular has a kernel written in C++ and provides its own
 interpreted user language. The Singular language will be enhanced with
 regard to efficiency and expressiveness by rewriting its interpreter
-in the modern language Julia, which will also be used to integrate the
+in the modern language [Julia](http://www.julialang.org), which will also be used to integrate the
 four cornerstone systems.
 
 ## The role of Julia
 
-Julia is a an actively developed interactive and expressive programing
+[Julia](http://www.julialang.org) is a an actively developed
+interactive and expressive programing
 languange. Julia offers
 
 * data types that can depend on other types, for example modeling
