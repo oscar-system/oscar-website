@@ -303,6 +303,7 @@ a.sidebar-nav-item:focus {
 
 .item_exmaple-name {
   text-align: center;
+  white-space:nowrap;
 }
 
 .item_example-image {
