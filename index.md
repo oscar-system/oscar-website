@@ -5,9 +5,10 @@ title: Home
 
 # {{ site.title }}
 
-OSCAR is a new computer algebra system being developed by TU Kaiserslautern,
-RWTH Aachen, Universität Des Saarlandes and other collaborators, under
-the TRR 195 programme, funded by the Deutsche Forshungsgemeinschaft.
+OSCAR is a new computer algebra system being developed by TU
+Kaiserslautern, RWTH Aachen, Universität des Saarlandes, TU Berlin,
+the University of Siegen, and other collaborators, under the TRR 195
+programme, funded by the Deutsche Forshungsgemeinschaft.
 
 OSCAR aims to create a "visionary new" computer algebra system, built on four existing,
 Open Source, cornerstone systems:
