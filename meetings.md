@@ -11,6 +11,15 @@ meeting: true
             {% if node.is_meeting_index %}
                 <li>
                     <a href="{{ site.baseurl }}{{ node.url }}">{{ node.title }}</a>
+                    <ul>
+                    {% for node_inner in pages_list %}
+                        {% if node_inner.meeting_nr == node.meeting_nr and node_inner.is_meeting_index != true %}
+                            <li>
+                                <a href="{{ site.baseurl}}{{ node_inner.url }}">{{node_inner.title}}</a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                    </ul>
                 </li>
             {% endif %}
         {% endif %}
