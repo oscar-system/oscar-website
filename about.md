@@ -22,7 +22,9 @@ This project builds on four leading computer algebra systems which
 are, with the exception of the new system ANTIC, widely used
 internationally. While the envisaged computer algebra system will be
 created by tightly integrating the four cornerstones, the individual
-systems will continue to be developed further.
+systems will continue to be developed further. This includes working
+together with the developers of the individual cornerstones
+to develop the cornerstones in a way the best integration can be achieved.
 
 ANTIC is an evolving number theoretic software project focusing on
 computations in and with number fields and generic finitely presented
