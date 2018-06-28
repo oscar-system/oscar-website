@@ -26,14 +26,14 @@ systems will continue to be developed further. This includes working
 together with the developers of the individual cornerstones
 to develop the cornerstones in a way the best integration can be achieved.
 
-ANTIC is an evolving number theoretic software project focusing on
+[ANTIC](http://www.nemocas.org) is an evolving number theoretic software project focusing on
 computations in and with number fields and generic finitely presented
 rings. ANTIC is written in a mixture of C and Julia, building on top
 of the very successful Flint project of William Hart. In order to
 reach the mathematical goals of the OSCAR project, the functionality
 of ANTIC will be considerably extended.
 
-GAP is a system for computational discrete algebra, with particular
+[GAP](http://www.gap-system.org) is a system for computational discrete algebra, with particular
 emphasis on group and representation theory. One of the distinguishing
 features of GAP is that it provides a general purpose high level
 interpreted programming language especially suited to algebraic
@@ -41,14 +41,14 @@ applications. It is easy to extend GAP’s functionality; currently over
 120 GAP packages contributed by third party authors are distributed
 with each release.
 
-The system polymake is a standard tool for dealing with convex
+The system [polymake](http://polymake.org) is a standard tool for dealing with convex
 polytopes, polyhedral fans, tropical hypersurfaces,
 and related objects from combinatorics and
 geometry. It is designed as a hybrid written in C++ and Perl. A
 proprietary rule based mechanism decides which low-level C++
 functions are to be called to satisfy user demands.
 
-Singular is a well-established computer algebra system for polynomial
+[Singular](http://www.singular.uni-kl.de) is a well-established computer algebra system for polynomial
 computations, with particular emphasis on applications in algebraic
 geometry, commutative algebra, and singularity theory, and with two
 subsystems for non-commutative algebra, Plural and
