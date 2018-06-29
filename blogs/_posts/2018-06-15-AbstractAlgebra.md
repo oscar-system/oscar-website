@@ -7,8 +7,8 @@ author: William Bruce Hart
 This is the first in a series of blog posts we will be writing on aspects of the new
 OSCAR Computer Algebra System we are writing.
 
-In this blog we'll be covering a new package we have created as part of the OSCAR
-project, called [AbstractAlgebra.jl](https://github.com/Nemocas/AbstractAlgebra.jl).
+In this blog we'll be covering a new package we have created as part of the [OSCAR
+project]( {{ site.baseurl }}), called [AbstractAlgebra.jl](https://github.com/Nemocas/AbstractAlgebra.jl).
 
 The AbstractAlgebra package is written entirely in [Julia](https://julialang.org/) and
 serves two purposes. The first is to implement generic algorithms in abstract algebra
@@ -17,10 +17,10 @@ make use of these generics.
 
 ## Example notebook
 
-Before we begin, I've produced an example Jupyter notebook, showing off a small
-selection of the AbstractAlgebra features.
+Before we begin, I've produced an [example Jupyter notebook](https://nbviewer.jupyter.org/github/oscar-system/OSCARBinder/blob/master/AbstractAlgebra.ipynb), 
+showing off a small selection of the AbstractAlgebra features.
 
-You can find it on our Examples page.
+You can find it on our [Examples page]({{ site.baseurl}}/example)
 
 You can view it immediately in rendered form by clicking on the AbstractAlgebra
 notebook.
