@@ -10,6 +10,20 @@ is_meeting_index: true
 
 ## May 2018,<br> Siegen University
 
+## Information
+
+For more information, see
+{% assign pages_list = site.pages | sort:"name" %}
+<ul>
+{% for node_inner in pages_list %}
+    {% if node_inner.meeting_nr == page.meeting_nr and node_inner.is_meeting_index != true %}
+        <li>
+            <a href="{{ site.baseurl}}{{ node_inner.url }}">{{node_inner.title}}</a>
+        </li>
+    {% endif %}
+{% endfor %}
+</ul>
+
 ## Contact
 
 If you have questions or suggestions, please contact the organizers:
