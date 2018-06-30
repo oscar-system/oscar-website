@@ -74,6 +74,7 @@ html {
 /* Sidebar links */
 .sidebar a {
   color: #000000;
+  margin-bottom: 3px;
 }
 
 /* About section */
@@ -102,6 +103,32 @@ html {
 
 .inner-sidebar-nav-item-two {
   margin-left: 12px;
+  display: block;
+}
+
+@media (max-width: 48em) {
+  .sidebar-nav-item {
+    display: inline;
+    margin-left: 4px;
+    margin-right: 4px;
+  }
+  
+  .inner-sidebar-nav-item {
+    display: inline;
+    margin-left: 4px;
+    margin-right: 4px;
+  }
+  .sidebar-nav-item-inner.active {
+    font-weight: inline;
+    margin-left: 4px;
+    margin-right: 4px;
+  }
+  
+  .inner-sidebar-nav-item-two {
+    display: inline;
+    margin-left: 4px;
+    margin-right: 4px;
+  }
 }
 
 a.inner-sidebar-nav-item:hover,
@@ -319,3 +346,10 @@ a.sidebar-nav-item:focus {
   -moz-columns: 3;
   list-style-type: none;
 }
+
+/* @media (max-width: 48em) {
+  .sidebar-image {
+    float: center;
+    max-width: 30%;
+  }
+} */

@@ -3,7 +3,7 @@
     <div class="sidebar-about">
       <h1>
         <a href="{{ site.baseurl }}/">
-          <img src="{{ site.baseurl }}/public/TRR195_logo.png"/>
+          <img class="sidebar-image" src="{{ site.baseurl }}/public/TRR195_logo.png"/>
         </a>
       </h1>
       <p class="lead">{{ site.description }}</p>
@@ -11,23 +11,23 @@
     </div>
 
     <nav class="sidebar-nav">
-      <p class="menu_bar_paragraph" />
+      
       <a class="sidebar-nav-item{% if page.url == '/' %} active{% endif %}" href="{{ site.baseurl }}/">Home</a>
-      <p class="menu_bar_paragraph" />
+      
       <a class="sidebar-nav-item{% if page.url == '/about/' %} active{% endif %}" href="{{ site.baseurl }}/about">About</a>
-      <p class="menu_bar_paragraph" />
+      
       <a class="sidebar-nav-item{% if page.url == '/news/' %} active{% endif %}" href="{{ site.baseurl }}/news">News</a>
-      <p class="menu_bar_paragraph" />
+      
       <a class="sidebar-nav-item{% if page.url == '/blog/' %} active{% endif %}" href="{{ site.baseurl }}/blog">Blog</a>
-      <p class="menu_bar_paragraph" />
+      
       <a class="sidebar-nav-item{% if page.url == '/install/' %} active{% endif %}" href="{{ site.baseurl }}/install">Installation</a>
-      <p class="menu_bar_paragraph" />
+      
       <a class="sidebar-nav-item{% if page.url == '/example/' %} active{% endif %}" href="{{ site.baseurl }}/example">Examples</a>
-      <p class="menu_bar_paragraph" />
+      
       <a class="sidebar-nav-item{% if page.url == '/documentation/' %} active{% endif %}" href="{{ site.baseurl }}/documentation">Documentation</a>
-      <p class="menu_bar_paragraph" />
+      
       <a class="sidebar-nav-item{% if page.url == '/community/' %} active{% endif %}" href="{{ site.baseurl }}/community">Community</a>
-      <p class="menu_bar_paragraph" />
+      
       <a class="sidebar-nav-item{% if page.meeting %} active{% endif %}" href="{{ site.baseurl }}/meetings">Meetings</a>
 
       {% if page.meeting %}
@@ -42,7 +42,6 @@
                     {% if node_inner.meeting_nr == node.meeting_nr and node_inner.meeting_nr == page.meeting_nr %}
                       {% if node_inner.is_meeting_index != true %}
                         <a class="inner-sidebar-nav-item-two{% if page.url == node_inner.url %} active{% endif %}" href="{{ site.baseurl }}{{ node_inner.url }}">{{ node_inner.title }}</a>
-                        <br/>
                       {% endif %}
                     {% endif %}
                   {% endif %}
@@ -52,9 +51,9 @@
          {% endif %}
         {% endfor %}
       {% endif %}
-      <p class="menu_bar_paragraph" />
+      
       <a class="sidebar-nav-item{% if page.url == '/credits/' %} active{% endif %}" href="{{ site.baseurl }}/credits">Credits</a>
-      <p class="menu_bar_paragraph" />
+      
       <!-- {% comment %}
         The code below dynamically generates a sidebar nav of pages with
         `layout: page` in the front-matter. See readme for usage.
