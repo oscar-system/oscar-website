@@ -3,6 +3,15 @@ layout: page
 title: Download and Installation
 ---
 
+The OSCAR project initially encompasses a number of different software projects. 
+Below are instructions to install the current parts of the OSCAR project.
+Please be aware that there is no single OSCAR system, nor a single OSCAR binary
+to use yet. For simplicity, we will nevertheless refer to OSCAR during the following
+instructions.
+
+OSCAR is currently under heavy development, so all parts
+change continuously.
+
 If you only intend to use OSCAR we recommend you install Docker on your machine and
 install the OSCAR Docker image, as this is intended to work everywhere.
 
