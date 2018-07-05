@@ -115,7 +115,7 @@ docker run -it --net="host" oscarsystem/oscardocker:latest
 {% endhighlight %}
 In the container's shell, execute
 {% highlight bash %}
-jupyter notebook --no-browser oscar
+jupyter notebook --no-browser
 {% endhighlight %}
 You can then connect to Jupyter by opening `127.0.0.1:8888` in your systems browser.
 The password is `oscar`.
