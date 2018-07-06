@@ -56,3 +56,26 @@ OSCAR project:
   </li>
 {% endfor %}
 </ul>
+
+## Contributors financed by the DFG (2017 - 2020)
+
+Additionally, the following people are financed by the DFG to mainly work on software
+for the oscar project:
+
+<ul>
+{% for p in site.data.contributors %}
+{% if p.paid_by_dfg == true %}
+  <li>
+    {% if p.website != null %}
+        <a href="{{ p.website }}">
+        {% assign link_open = true %}
+    {% elsif p.email != null %}
+        <a href="mailto:{{ p.email }}">
+        {% assign link_open = true %}
+    {% endif %}
+    <strong>{{ p.name }}</strong>{% if link_open %}</a>{% assign link_open = false %}{% endif %}
+    {% if p.affiliation != null %} ({{ p.affiliation }}){% endif %}
+  </li>
+{% endif %}
+{% endfor %}
+</ul>

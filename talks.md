@@ -3,7 +3,7 @@ layout: page
 title: Talks and conferences
 ---
 
-A collection of talks about the OSCAR project:
+A collection of talks about the OSCAR project, given on various conferences:
 
 {% assign entries = site.data.talks %}
 <ul>

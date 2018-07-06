@@ -5,11 +5,13 @@
 - name: Reimer Behrends
   affiliation: TU Kaiserslautern
   website: http://www.mathematik.uni-kl.de/agag/mitglieder/wissenschaftliche-mitarbeiter/dr-reimer-behrends/
+  paid_by_dfg: true
 
 - name: Thomas Breuer
   affiliation: RWTH Aachen University
   email: thomas.breuer@math.rwth-aachen.de
   website: http://www.math.rwth-aachen.de/~Thomas.Breuer/
+  paid_by_dfg: true
 
 - name: Wolfram Decker
   affiliation: TU Kaiserslautern
@@ -27,10 +29,12 @@
   affiliation: University of Siegen
   email: gutsche@mathematik.uni-siegen.de
   website: https://sebasguts.github.io/
+  paid_by_dfg: true
 
 - name: William Hart
   affiliation: TU Kaiserslautern
   website: http://www.mathematik.uni-kl.de/agag/mitglieder/wissenschaftliche-mitarbeiter/dr-william-hart/
+  paid_by_dfg: true
 
 - name: Tommy Hofmann
   affiliation: TU Kaiserslautern
