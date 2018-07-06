@@ -47,6 +47,27 @@ except that you need to add the new markdown file in `blogs/_posts` instead
 of `news/_posts`.
 
 
+## How to contribute a talk
+
+Please add a new entry to the file `_data/talks.yml`, following this template
+```
+- title: First things
+  author: Sebastian Gutsche
+  location: Aachen
+  date: May 28, 1988
+```
+
+To add a link to the PDF to your talk, you can either provide full
+URL to the pdf, via
+```
+  pdf_url: http://my.url.de/my.pdf
+```
+or you can copy the pdf, say `my.pdf` to the `public` subfolder of the website and add
+```
+  pdf: my.pdf
+```
+to the entry in the `talks.yml` file.
+
 ## How to contribute an example notebook
 
 To contribute a new example notebook, please follow these steps
