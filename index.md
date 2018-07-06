@@ -5,37 +5,34 @@ title: Home
 
 # {{ site.title }}
 
-OSCAR is a new computer algebra system being developed by TU
-Kaiserslautern, RWTH Aachen, Universität des Saarlandes, TU Berlin,
-the University of Siegen, and other collaborators, under the TRR 195
-programme, funded by the Deutsche Forschungsgemeinschaft.
+The OSCAR project developes a comprehensive open source computer algebra
+system for computations in algebra, geometry, and number theory. In particular,
+the emphasisis is on supporting complex computations which require a high level
+of integration of tools from different mathematical areas. 
 
-OSCAR aims to create a "visionary new" computer algebra system, built on four existing,
-Open Source, cornerstone systems:
+The project builds on and extends the four corner stone systems
 
   * [GAP](https://www.gap-system.org/) - computational discrete algebra
   * [Singular](https://www.singular.uni-kl.de/) - commutative and non-commutative algebra, algebraic geometry
   * [Polymake](https://polymake.org/doku.php) - polyhedral geometry
   * Antic ([Hecke](https://github.com/thofma/Hecke.jl/), [Nemo](http://nemocas.org)) - number theory
 
-The aim of the project is to facilitate complex, interdisciplinary computations
-requiring a high level of integration between existing computer algebra tools.
+as well as further libraries and packages. Its development, which is still at a very early stage, is supported
+by the Deutsche Forschungsgemeinschaft DFG within the [Collaborative Research Center TRR 195](https://www.computeralgebra.de/sfb/).
 
-For more information about OSCAR, see the [About]({{ site.baseurl}}/about) page.
+See the [About]({{site.baseurl}}/about) page for more information.
 
 ## Getting started
 
-If you want to see examples of what OSCAR looks like, click on the examples on the
-[Examples page]({{ site.baseurl }}/example). These open pre-rendered notebooks that showcase selected things
-OSCAR can already do.
+For examples, see the [Examples page]({{site.baseurl}}/example), where pre-rendered notebooks showcase
+selected things the software developed in the OSCAR project can already do.
 
-If you want to try OSCAR live from your browser, click on the [binder](https://mybinder.org) links on the
-[Examples page]({{ site.baseurl }}/example). At present, these will take a few minutes to load, as we currently still
-build some dependencies from source behind the scenes.
+To try OSCAR live from your browser, click on the [binder](https://mybinder.org) links on the Examples page.
+At present, these will take a few minutes to load, as we 
+currently still build some dependencies from source behind the scenes.
 
-If you wish to contribute to OSCAR, see the [Installation page]({{site.baseurl}}/install) for
+If you wish to contribute to the OSCAR development, see the [Installation page]({{site.baseurl}}/install) for
 instructions on how to build everything on a growing number of supported platforms.
 
-Note that OSCAR has not reached a first public release yet, and should be treated as
+Note that OSCAR has not reached a first public release yet, and its parts should be treated as
 a technology preview. See the [News page]({{site.baseurl}}/news) for announcements about OSCAR development.
-
