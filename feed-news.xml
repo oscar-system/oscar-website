@@ -1,0 +1,21 @@
+---
+layout: none
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <author>
+    <name>The OSCAR Team</name>
+  </author>
+  <title>OSCAR news</title>
+  <id>http://oscar.computeralgebra.de</id>
+  <updated>{{ site.time }}</updated>
+
+{% for post in site.categories.news %}
+  <entry>
+    <title>{{ post.title }}</title>
+    <link href="{{ site.baseurl }}/{{ post.url }}"/>
+    <id>{{ site.baseurl }}/{{ post.url }}</id>
+    <updated>{{ post.date }}</updated>
+  </entry>
+{% endfor %}
+</feed>

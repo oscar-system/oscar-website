@@ -36,3 +36,9 @@ instructions on how to build everything on a growing number of supported platfor
 
 Note that OSCAR has not reached a first public release yet, and its parts should be treated as
 a technology preview. See the [News page]({{site.baseurl}}/news) for announcements about OSCAR development.
+
+## Stay informed
+
+If you want to get notifications about news, new blog posts, or new examples, you can subscribe to
+the [OSCAR blog atom feed]({{ site.baseurl }}/feed-blog.xml), the [OSCAR news atom feed]({{ site.baseurl }}/feed-news.xml),
+or the [OSCAR examples atom feed]({{ site.baseurl }}/feed-examples.xml).
