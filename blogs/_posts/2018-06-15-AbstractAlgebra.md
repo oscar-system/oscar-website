@@ -20,7 +20,7 @@ make use of these generics.
 Before we begin, I've produced an [example Jupyter notebook](https://nbviewer.jupyter.org/github/oscar-system/OSCARBinder/blob/master/AbstractAlgebra.ipynb), 
 showing off a small selection of the AbstractAlgebra features.
 
-You can find it on our [Examples page]({{ site.baseurl}}/example)
+You can find it on our [Examples page]({{ site.baseurl }}example)
 
 You can view it immediately in rendered form by clicking on the AbstractAlgebra
 notebook.

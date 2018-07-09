@@ -16,7 +16,7 @@ A collection of talks about the OSCAR project, given on various conferences:
         <a href="{{ p.pdf_url }}">
     {% elsif p.pdf != null %}
         {% assign has_link = true %}
-        <a href="{{ site.baseurl }}/public/{{ p.pdf }}">
+        <a href="{{ site.baseurl }}public/{{ p.pdf }}">
     {% endif %}
     <emph>{{ p.title }},</emph>
     {% if has_link == true %}
