@@ -13,7 +13,7 @@ tagline:          ''
 description:      'The OSCAR project'
 location:         ''
 url:              http://sebasguts.github.io
-baseurl:          /oscar-website
+baseurl:          /oscar-website/
 
 
 exclude: [ "LICENSE.hyde.md", "README.hyde.md" ]

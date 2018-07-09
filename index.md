@@ -10,6 +10,8 @@ system for computations in algebra, geometry, and number theory. In particular,
 the emphasisis is on supporting complex computations which require a high level
 of integration of tools from different mathematical areas. 
 
+ <img src="{{ site.baseurl }}/public/oscar_main.svg" alt="OSCAR" width="95%" align="center">
+
 The project builds on and extends the four corner stone systems
 
   * [GAP](https://www.gap-system.org/) - computational discrete algebra
