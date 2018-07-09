@@ -5,14 +5,14 @@ title: Home
 
 # {{ site.title }}
 
-The OSCAR project developes a comprehensive open source computer algebra
+The OSCAR project develops a comprehensive open source computer algebra
 system for computations in algebra, geometry, and number theory. In particular,
-the emphasisis is on supporting complex computations which require a high level
+the emphasis is on supporting complex computations which require a high level
 of integration of tools from different mathematical areas. 
 
  <img src="{{ site.baseurl }}public/oscar_main.svg" alt="OSCAR" width="95%" align="center">
 
-The project builds on and extends the four corner stone systems
+The project builds on and extends the four cornerstone systems
 
   * [GAP](https://www.gap-system.org/) - computational discrete algebra
   * [Singular](https://www.singular.uni-kl.de/) - commutative and non-commutative algebra, algebraic geometry
