@@ -311,11 +311,11 @@ a.sidebar-nav-item:focus {
 
 /* Brown */
 .theme-base-grey .sidebar {
-  background-color: #d3d3d6;
+  background-color: #e4e4e7;
 }
 .theme-base-0f .content a,
 .theme-base-0f .related-posts li a:hover {
-  color: #d3d3d6;
+  color: #e4e4e7;
 }
 
 .item_example {
@@ -324,7 +324,7 @@ a.sidebar-nav-item:focus {
   float: left;
   margin-right: 30px;
   margin-bottom: 30px;
-  background-color: #d3d3d6;
+  background-color: #e4e4e7;
   border-radius: 5px;
 }
 
