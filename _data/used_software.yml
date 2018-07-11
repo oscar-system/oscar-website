@@ -41,7 +41,7 @@
   website: ftp://www.mathematik.uni-kl.de/pub/Math/Singular/Factory
 
 - name: cdd
-  website: http://www.ifor.math.ethz.ch/~fukuda/cdd_home
+  website: http://www-oldurls.inf.ethz.ch/personal/fukudak/cdd_home/
 
 - name: AbstractAlgebra
   website: https://github.com/Nemocas/AbstractAlgebra.jl
