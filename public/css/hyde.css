@@ -319,21 +319,31 @@ a.sidebar-nav-item:focus {
 }
 
 .item_example {
-  width: 270px;
+  width: 85%;
   padding: 10px;
   float: left;
-  margin-right: 30px;
-  margin-bottom: 30px;
+  margin-right: 5%;
+  margin-bottom: 5%;
   background-color: #e4e4e7;
   border-radius: 5px;
 }
 
+.item_example_text_wrap {
+  float: left;
+}
+
 .item_exmaple-name {
-  text-align: center;
-  white-space:nowrap;
+  text-align: left;
+  float: left;
+  margin-left:10%;
 }
 
 .item_example-image {
+  height: 40px;
+  width: auto;
+  float: left;
+  margin-right: 2%;
+  margin-top: 4%;
 }
 
 .menu_bar_paragraph {
