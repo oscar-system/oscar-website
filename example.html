@@ -22,11 +22,14 @@ the <a href="{{ site.baseurl }}feed-examples.xml">OSCAR examples atom feed</a>.
             </div>
         </a>
             <div class="item_example-name" style="float: right;">
-                
-              <a href="https://mybinder.org/v2/gh/{{ post.repository }}/master?filepath={{ post.filename }}.ipynb">
-                <img src="https://mybinder.org/badge.svg" alt="Run on binder" style="margin-top:30%;"/>
+              <a href="https://nbviewer.jupyter.org/github/{{ post.repository }}/blob/master/{{ post.filename }}.ipynb">
+                <img src="https://img.shields.io/badge/View-Notebook-brightgreen.svg" alt="view notebook" style="margin-top:15%;"/>
               </a>
+            <a href="https://mybinder.org/v2/gh/{{ post.repository }}/master?filepath={{ post.filename }}.ipynb">
+              <img src="https://mybinder.org/badge.svg" alt="Run on binder" style="margin-top:15%;"/>
+            </a>
             </div>
+
 			</div>
 	{% endfor %}
 </div>
