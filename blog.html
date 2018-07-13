@@ -13,7 +13,7 @@ the <a href="{{ site.baseurl }}feed-blog.xml">OSCAR blog atom feed</a>.
   {% for post in site.categories.blogs %}
   <div class="post">
     <h3 class="post-title">
-      <a href="{{ site.baseurl }}{{ post.url }}">
+      <a href="{{ post.url | absolute_url }}">
         {{ post.title }}
       </a>
     </h3>
