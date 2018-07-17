@@ -1,6 +1,6 @@
 ---
 layout: meeting
-title: Meeting 5/2018
+title: Meeting 05/2018
 meeting: true
 meeting_nr: 201805
 is_meeting_index: true

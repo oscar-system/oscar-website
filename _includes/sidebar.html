@@ -33,8 +33,8 @@
       <a class="sidebar-nav-item{% if page.meeting %} active{% endif %}" href="{{ site.baseurl }}meetings">Meetings</a>
 
       {% if page.meeting %}
-        {% assign pages_list = site.pages | sort:"name" %}
-        {% for node in pages_list %}
+        {% assign pages_list = site.pages | sort:"meeting_nr" %}
+        {% for node in pages_list reversed %}
          {% if node.title != null %}
               {% if node.is_meeting_index %}
                <a class="inner-sidebar-nav-item{% if page.meeting_nr == node.meeting_nr %} active{% endif %}" href="{{ node.url | absolute_url }}">{{ node.title }}</a>
