@@ -54,7 +54,8 @@ sudo apt-get install build-essential m4 wget \
                      libboost-all-dev libxml2-dev \
                      libperl-dev ninja-build \
                      libxml-writer-perl libxml-perl \
-                     libxml-libxslt-perl libperl-dev
+                     libxml-libxslt-perl libperl-dev \
+                     libxml-writer-perl
 {% endhighlight %}
 
 Now install Julia:
@@ -65,10 +66,10 @@ tar -xvf julia-0.6.3-linux-x86_64.tar.gz
 mv julia-d55cadc350 julia-0.6
 {% endhighlight %}
 
-Now start Julia:
+Now start Julia with the right environment setting:
 
 {% highlight bash %}
-julia-0.6/bin/julia
+JULIA_CXX_RTTI=1 julia-0.6/bin/julia
 {% endhighlight %}
 
 Now install the relevant Julia packages:
