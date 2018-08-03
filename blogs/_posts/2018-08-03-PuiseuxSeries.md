@@ -116,8 +116,8 @@ with an actual timing for Oscar (which makes use of Nemo.jl).
 
 n = 11, m = 4 | SageMath | Mathematica | Magma | Oscar
 --------------|----------|-------------|-------|-------
-Puiseux       | ??       |             |       | 
-Laurent       |          |             |       |
+Puiseux       | ??       |             |       | 630s 
+Laurent       |          |             |       | 630s
 
 Initially we intended to give timings only for Puiseux series. However, it's not clear
 if Sage supports Puiseux series directly like the other systems.
@@ -126,7 +126,7 @@ With some additional work, as we are working with eta quotients in this case, on
 work directly with Laurent series in $q$ instead of Puiseux series in $q^{1/24}$. This
 is not always convenient, but it does work for this example. (Note that simply replacing
 $q^{1/24}$ with $q$ throughout will also work, at the expense of possibly radically
-increasing the sparsity.)
+increasing the sparsity and of course a corresponding increase in precision.)
 
 To keep things fair between the systems, we also give timings for the other systems in
 terms of Laurent series as well. However, the main timings I'm interested in for this
