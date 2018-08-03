@@ -114,9 +114,9 @@ number of multiplications to the given precision, that would need to be computed
 The following table gives our estimates for the various systems we tried this with along
 with an actual timing for Oscar (which makes use of Nemo.jl).
 
-n = 11, m = 4 | Sage | Mathematica | Magma | Oscar
---------------|------|-------------|-------|-------
-              | ??   |             |       | 
+n = 11, m = 4 | SageMath | Mathematica | Magma | Oscar
+--------------|----------|-------------|-------|-------
+              | ??       |             |       | 
 
 At this stage I am unable to give a Sage timing, as I was not able to compute with
 Puiseux Series directly in Sage. Sage has Laurent Series, but I prefer to work with
