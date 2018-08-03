@@ -220,6 +220,10 @@ of the power series ring we are working over.
 At this point we are just writing a custom q-series module and it is hard to know how we
 can get an apples for apples comparison.
 
+If we persist long enough, we can get timings comparable with Oscar, but it just didn't
+seem to be in the spirit of the task to implement things this way. Of course, a Sage
+expert might be able to more easily do the computation, without losing performance.
+
 ## Computation of the q-series in Magma
 
 Magma supports Puiseux series. As with Oscar, it requires one to specify the internal
