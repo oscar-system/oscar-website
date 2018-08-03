@@ -300,7 +300,7 @@ our bounds on the degrees are tight, in this blog.
 In terms of the functions $x_{n,m}$ and $y_{n,m}$ described above, the modular equation
 for $n = 5$ and $m = 8$ is
 
-\begin{multline*}8:\;\; x^{17}y - 4x^{16}y^2 + 10x^{15}y^3 + x^{15}y - 20x^{14}y^4 + 6x^{14}y^2 +\\
+$$\begin{multline}x^{17}y - 4x^{16}y^2 + 10x^{15}y^3 + x^{15}y - 20x^{14}y^4 + 6x^{14}y^2 +\\
         35x^{13}y^5 - 35x^{13}y^3 + 2x^{13}y - 52x^{12}y^6 + 61x^{12}y^4 +\\
         13x^{12}y^2 + 68x^{11}y^7 - 59x^{11}y^5 - 39x^{11}y^3 + 3x^{11}y -\\
         80x^{10}y^8 + 42x^{10}y^6 + 2x^{10}y^4 - 12x^{10}y^2 + 85x^9y^9 -\\
@@ -314,7 +314,7 @@ for $n = 5$ and $m = 8$ is
         39x^3y^{11} + 40x^3y^9 - 8x^3y^7 + 12x^3y^5 + 5x^3y^3 - x^3y -\\
         4x^2y^{16} + 6x^2y^{14} + 13x^2y^{12} - 12x^2y^{10} - 10x^2y^8 +\\
         10x^2y^6 - 2x^2y^4 + 6x^2y^2 + xy^{17} + xy^{15} + 2xy^{13} +\\
-        3xy^{11} + 5xy^9 - 7xy^7 - xy^5 - xy^3 + xy - y^4\end{multline*}
+        3xy^{11} + 5xy^9 - 7xy^7 - xy^5 - xy^3 + xy - y^4\end{multline}$$
 
 Verifying this as a q-series identity in Oscar takes 13s whereas it takes around 75s in
 Magma (assuming we precompute the q-series expansions of x and y).
