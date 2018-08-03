@@ -223,7 +223,7 @@ in SageMath, as though it were given to infinite precision.
 The correct thing seems to be to evaluate at $q^n + O(q^{n + 9001 - 1})$. At least, that
 is what I had to do to get something that agrees with Magma and Oscar.
 
-Now we encounter the same problem again. We'd like to evaluate $m(q^44)/m(q)$, but we
+Now we encounter the same problem again. We'd like to evaluate $m(q^{44})/m(q)$, but we
 cannot simply substitute those powers of $q$. We must again figure out what precision
 to use in each case. That becomes more an more nontrivial as the computation proceeds.
 
