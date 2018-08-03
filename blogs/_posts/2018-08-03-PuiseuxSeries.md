@@ -164,7 +164,7 @@ for i = 0:300
 end
 ```
 
-This takes by far the longest time in Oscar, at 605s.
+This by far consumes the largest part of the total runtime in Oscar, at 605s.
 
 ## Computation in Mathematica
 
