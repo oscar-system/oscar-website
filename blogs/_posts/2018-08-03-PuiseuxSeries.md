@@ -106,7 +106,7 @@ This gives us the matrix for $n = 11$ and $m = 4$ which is conjecturally nullity
 First we should write out how the computation can be done in Oscar (note that the $\sqrt{11}$ cancel in the functions we are using and can be omitted).
 
 As we will be working with Puiseux series in $q^{1/24}$ we will need to work with
-$9001\times 24$ terms in order to compute everything out to $O(q^9001)$.
+$9001\times 24$ terms in order to compute everything out to $O(q^{9001})$.
 
 Here is the code required to compute the functions $s$ and $t$.
 
@@ -203,7 +203,7 @@ which you want to compute the expansion of the eta product, minus the leading $q
 This is fine if you actually want to compute $\eta(q)$, but not if you want to compute
 $\eta(q^n)$ for example, as we do.
 
-The solution seems to be to substitute $q^n$ for $q$ in the output of `qexp\_eta.
+The solution seems to be to substitute $q^n$ for $q$ in the output of `qexp_eta`.
 
 In order to mimic what we had done in Oscar, we wrote a function $etaq(q)$ which accepts
 a nome in a power series ring, and substitutes it into the q-series expansion of eta
