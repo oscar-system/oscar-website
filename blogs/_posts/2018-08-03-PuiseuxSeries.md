@@ -118,4 +118,9 @@ n = 11, m = 4 | Sage | Mathematica | Magma | Oscar
 --------------|------|-------------|-------|-------
               | ??   |             |       | 
 
+At this stage I am unable to give a Sage timing, as I was not able to compute with
+Puiseux Series directly in Sage. Sage has Laurent Series, but I prefer to work with
+Puiseux Series directly to avoid errors. I am unsure if Sage actually allows this,
+currently.
+
 
