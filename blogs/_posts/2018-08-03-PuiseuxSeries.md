@@ -80,7 +80,7 @@ modulo a random prime, which allows us to bound the nullity above). The real cha
 is in computing the entries of the matrix itself.
 
 As an example of this challenge, we explicitly describe this matrix for the case $n = 11$
-and $m = 4$. The resulting matrix is 9001x4500 over $\mathbb{Q}$.
+and $m = 4$. The resulting matrix is 9001x4816 over $\mathbb{Q}$.
 
 First we define the functions
 $$s(q) = x(q)/y(q),\;\; t(q) = x(q)^{12}.$$
@@ -97,7 +97,7 @@ $s^it^j$ for $i \in [0, 300]$ and $j \in [0, 15]$.
 The entries in each column of our matrix are the q-series coefficients of one of the
 $s^it^j$.
 
-Thus, there are $300\times 15 = 4500$ columns and $9001$ rows in the matrix, since the
+Thus, there are $301\times 16 = 4816$ columns and $9001$ rows in the matrix, since the
 q-series must be computed out to $O(q^{9001})$.
 
 This gives us the matrix for $n = 11$ and $m = 4$ which conjecturally has nullity 1.
