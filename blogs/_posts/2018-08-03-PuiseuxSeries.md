@@ -70,7 +70,7 @@ This computation boils down to finding the nullspace of a certain matrix over
 $\mathbb{Q}$ and checking that its nullity is 1. If it is, the bounds are sharp.
 
 If the nullity is $1$, then we can prove that the generator of the nullspace gives
-the coefficients of the minimal polynomial $P_{n, m}(x, y) \in \mathbb{Z}[x, y]$ that
+the coefficients of the minimal polynomial $P_{n, m}(X, Y) \in \mathbb{Z}[X, Y]$ that
 appears in our modular equation.
 
 ## The interesting computational challenge
