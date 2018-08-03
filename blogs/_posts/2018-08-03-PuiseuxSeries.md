@@ -225,17 +225,22 @@ is what I had to do to get something that agrees with Magma and Oscar.
 
 Now we encounter the same problem again. We'd like to evaluate $m(q^{44})/m(q)$, but we
 cannot simply substitute those powers of $q$. We must again figure out what precision
-to use in each case. That becomes more an more nontrivial as the computation proceeds.
+to use in each case. I'll leave that as an exercise for the reader (since I don't
+immediately know).
 
-I'm sure some SageMath expert knows how to do computations like this, but I unfortunately
-don't. Therefore, I have not been able to complete the computation in SageMath.
+I'm sure some SageMath expert knows how to do computations easily in such a model, but I
+unfortunately don't. Therefore, I have not been able to complete the computation in
+SageMath.
 
 Moreover, the functions I was able to compute correctly seem to be horrendously slow.
-I guess that substituting $q^n + O(\mbox{blah})$ into a function is not efficient.
+I guess that substituting $q^n + O(\mbox{blah})$ into a function is not efficient. It's
+certainly not efficient to substitute $q^n$, due to the dense representation, so I'm
+really not sure what the correct approach is.
 
-Actual arithmetic on power series in Sage seems to be performant, assuming you have the
-precisions correct. But composing q-series in the way that we do with the Oscar code
-above just doesn't seem to be the correct approach for the SageMath power series model.
+Actual arithmetic on power series in Sage seems to be performant, assuming you can
+finally get the precisions correct. But composing q-series in the way that we do with
+the Oscar code above just doesn't seem to be the correct approach for the SageMath power 
+series model.
 
 ## Computation of the q-series in Magma
 
