@@ -239,8 +239,13 @@ really not sure what the correct approach is.
 
 Note that it is not enough to simply use `subs` then truncate the power series to
 $q^{9001}$ since this would be equivalent to using an absolute cap, whereas we really
-want a relative precision cap. In any case, I consider solutions of this kind to be
-essentially equivalent to writing your own power series module.
+want a relative precision cap.
+
+It also doesn't seem to be correct to simply use powers of $q + O(q^9002)$ everywhere.
+Somehow the results end up not agreeing with Magma and Oscar.
+
+In any case, I consider solutions of this kind to be essentially equivalent to writing
+your own power series module.
 
 Actual arithmetic on power series in Sage seems to be performant, assuming you can
 finally get the precisions correct. But composing q-series in the way that we do with
