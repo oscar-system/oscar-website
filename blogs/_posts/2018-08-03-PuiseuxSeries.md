@@ -15,7 +15,8 @@ came from.
 
 The Dedekind eta function is given by the following infinite q-series product
 $$\eta(q) = q^{1/24}\prod_{n=1}^\infty (1 - q^n),$$
-in the "nome" $q^{1/24}$.
+in the "nome" $q^{1/24}$. Naturally, we can only work with a finite precision
+approximation out to $O(q^N)$ for some precision $N$, on a computer.
 
 Here, $q = exp(2\pi i\tau)$ for $\tau$ in the complex upper half plane $\mathbb{H}$. This
 makes $\eta$ a function of $\tau$ in the upper half plane. In fact, $\eta(\tau)$ is a
