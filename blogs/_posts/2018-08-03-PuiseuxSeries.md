@@ -36,7 +36,8 @@ $$x_{n, m}(\tau) = \frac{\mathfrak{m}_{n,\infty}(mn\tau)}{\mathfrak{m}_{n,\infty
 
 We have been computing the minimum polynomial relation
 $P_{n,m}(x_{n,m}(\tau), y_{n,m}(\tau)) = 0$
-that holds as an identity for all $\tau \in \mathbb{H}$. The bivariate polynomial $P_{n,m}$ has coefficients in $\Z$.
+that holds as an identity for all $\tau \in \mathbb{H}$. The bivariate polynomial
+$P_{n,m}$ has coefficients in $\mathbb{Z}$.
 
 We call such a relation $P_{n,m}(x, y) = 0$ a modular equation of degree $m$ for level
 $n$ functions, though terminology varies wildly here, and these certainly don't relate
