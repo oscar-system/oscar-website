@@ -1,0 +1,102 @@
+---
+layout: post
+title: "Puiseux Series: a challenging computation"
+author: William Bruce Hart
+---
+
+Recently we encountered an interesting computational problem that seems to be difficult
+for existing computer algebra systems, but which we have been able to complete with
+components of the Oscar computer algebra system we are designing.
+
+The problem came up in some research Daniel Schultz and I have been doing, to do with
+computing a new kind of modular equation. The details are not so important for the
+purposes of this blog, but for the experts I'll give a quick overview of where the
+problem came from.
+
+The Dedekind eta function is given by the following infinite q-series product
+$$\eta(q) = q^{1/24}\prod_{n=1}^\infty (1 - q^n),$$
+in the "nome" $q^{1/24}$.
+
+Here, $q = exp(2\pi i\tau)$ for $\tau$ in the complex upper half plane $\mathbb{H}$. This
+makes $\eta$ a function of $\tau$ in the upper half plane. In fact, $\eta(\tau)$ is a
+modular form of weight $1/2$, if you know about such things.
+
+We have been investigating identities for certain functions that are defined in terms of
+the Dedekind eta function, that hold for all $\tau \in \mathbb{H}$.
+
+In particular, we start with a generalisation of the Weber modular function
+$$\mathfrak{f}(\tau) = \sqrt{2}\frac{\eta(2\tau)}{\eta(\tau)}.$$
+
+In particular, we start with
+$$\mathfrak{m}_{n, \infty} = \sqrt{n}\frac{\eta(n\tau)}{\eta(\tau)}.$$
+
+For any $m \in \mathbb{N}$ we define
+$$x_{n, m}(\tau) = \frac{\mathfrak{m}_{n,\infty}(mn\tau)}{\mathfrak{m}_{n,\infty}(\tau)}, \;\; y_{n,m}(tau) = \frac{\mathfrak{m}_{n,\infty}(n\tau)}{\mathfrak{m}_{n,\infty}(m\tau).$$
+
+We have been computing the minimum polynomial relation $P_{n,m}(x_{n,m}, y_{n,m}) = 0$
+that holds as an identity for all $\tau \in \H$. We call such a relation a modular
+equation of degree $m$ for the level $n$ functions, though terminology varies wildly
+here, and these certainly don't relate directly to the modular equations of Schlaefli,
+Weber, Jacobi, Russel, etc.
+
+As an example, the minimum relation for $n = 2$ (the original Weber function) and $m = 3$
+is given by
+$$P_{2, 3}(x, y) = x^5y + xy^5 - 1 = 0,$$
+for all $\tau \in \mathbb{H}$.
+
+## Computing the modular equations
+
+There are various numerical ways to compute such equations, e.g. numerically compute
+the value of the eta function at various random values of $\tau$ in the upper half
+plane and try to find the relation between our functions using LLL.
+
+This is not an efficient approach, and it also requires a lot of work to decide on a
+provable bound on numerical precision.
+
+There are various algebraic approaches, one of which forms the basis of the paper we are
+working on. In particular, we can give what we believe to be sharp bounds on the degrees
+of $x$ and $y$ in our relations $P_{n, m}$.
+
+We can currently only prove our bounds are sharp in some cases, but experimentally they
+seem to always be sharp.
+
+For any given values of $m$ and $n$, we can do a computation to prove they are sharp.
+This computation boils down to finding the nullspace of a certain matrix over
+$\mathbb{Q}$ and checking that it's nullity is 1. If it is, the bounds are sharp.
+
+## The interesting computational challenge
+
+The interesting challenge is not in computing the rank of the matrix (this can be done
+modulo a random prime, which bounds the nullity above), but in computing the matrix
+itself.
+
+As an example of this challenge, we explicitly describe this matrix for the case $n = 11$
+and $m = 4$. The resulting matrix is about 4500x9000 over $\mathbb{Q}$.
+
+First we define the functions
+$$s(q) = x(q)/y(q),\;\; t(q) = x(q)^12.$$
+
+We then compute these out to $q^9001$. Although the q-series of $s(q)$ and $t(q)$ are
+in the nome $q$, they are defined in terms of functions in the nome $q^{1/24}$. This
+means that internally the Puiseux series must be using a precision of
+$24\times 9001 = 216024$.
+
+Next, we compute the q-series of $s^it^j$ for $i \in [0, 300]$ and $j \in [0, 15]$.
+
+The coefficients of the resulting q-series for each of these functions then form the
+rows of a matrix whose nullity is conjecturally 1.
+
+There are $300\times 15 = 4500$ rows and $9001$ columns in the matrix.
+
+## Timings for various computer algebra systems
+
+Although we are not able to compute the given matrix using other systems, we decided to
+do some timings to give an estimate on how long it would actually take.
+
+This means working out the asymptotics of the q-series arithmetic in those systems, and
+multiplying by the total number of multiplications to the given precision, that would
+need to be computed (namely ~216024).
+
+The following table gives our estimates for the various systems we tried this with.
+
+
