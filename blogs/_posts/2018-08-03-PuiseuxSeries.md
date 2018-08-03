@@ -321,7 +321,8 @@ $$\begin{multline}x^{17}y - 4x^{16}y^2 + 10x^{15}y^3 + x^{15}y - 20x^{14}y^4 + 6
         10x^2y^6 - 2x^2y^4 + 6x^2y^2 + xy^{17} + xy^{15} + 2xy^{13} +\\
         3xy^{11} + 5xy^9 - 7xy^7 - xy^5 - xy^3 + xy - y^4 = 0\end{multline}$$
 
-Verifying this as a q-series identity in Oscar takes 13s whereas it takes around 75s in
-Magma (assuming we precompute the q-series expansions of x and y).
+Verifying this as a q-series identity to high precision, in Oscar takes 13s whereas it
+takes around 75s to the same precision in Magma (assuming we precompute the q-series
+expansions of x and y).
 
 
