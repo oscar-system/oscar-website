@@ -31,13 +31,13 @@ In particular, we start with
 $$\mathfrak{m}_{n, \infty} = \sqrt{n}\frac{\eta(n\tau)}{\eta(\tau)}.$$
 
 For any $m \in \mathbb{N}$ we define
-$$x_{n, m}(\tau) = \frac{\mathfrak{m}_{n,\infty}(mn\tau)}{\mathfrak{m}_{n,\infty}(\tau)}, \;\; y_{n,m}(tau) = \frac{\mathfrak{m}_{n,\infty}(n\tau)}{\mathfrak{m}_{n,\infty}(m\tau).$$
+$$x_{n, m}(\tau) = \frac{\mathfrak{m}_{n,\infty}(mn\tau)}{\mathfrak{m}_{n,\infty}(\tau)}, \;\; y_{n,m}(tau) = \frac{\mathfrak{m}_{n,\infty}(n\tau)}{\mathfrak{m}_{n,\infty}(m\tau)}.$$
 
 We have been computing the minimum polynomial relation $P_{n,m}(x_{n,m}, y_{n,m}) = 0$
-that holds as an identity for all $\tau \in \H$. We call such a relation a modular
-equation of degree $m$ for the level $n$ functions, though terminology varies wildly
-here, and these certainly don't relate directly to the modular equations of Schlaefli,
-Weber, Jacobi, Russel, etc.
+that holds as an identity for all $\tau \in \mathbb{H}$. We call such a relation a
+modular equation of degree $m$ for the level $n$ functions, though terminology varies
+wildly here, and these certainly don't relate directly to the modular equations of
+Schlaefli, Weber, Jacobi, Russel, etc.
 
 As an example, the minimum relation for $n = 2$ (the original Weber function) and $m = 3$
 is given by
