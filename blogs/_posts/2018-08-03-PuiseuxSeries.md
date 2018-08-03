@@ -101,7 +101,7 @@ q-series must be computed out to $O(q^{9001})$.
 
 This gives us the matrix for $n = 11$ and $m = 4$ which conjecturally has nullity 1.
 
-## Computing the q-series in Oscar
+## Computation of the q-series in Oscar
 
 First we should write out how the computation can be done in Oscar (note that the $\sqrt{11}$ cancels in the functions we are using and can be omitted).
 
@@ -166,7 +166,7 @@ end
 
 This by far consumes the largest part of the total runtime in Oscar, at 605s.
 
-## Computation in Mathematica
+## Computation of the q-series in Mathematica
 
 The systems we decided to use for this blog are SageMath, Mathematica, Magma and Oscar.
 
