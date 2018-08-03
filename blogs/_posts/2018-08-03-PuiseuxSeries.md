@@ -6,7 +6,7 @@ author: William Bruce Hart
 
 Recently we encountered an interesting computational problem that seems to be difficult
 for existing computer algebra systems, but which we have been able to complete with
-components of the Oscar computer algebra system we are designing.
+components of the Oscar computer algebra system we are implementing.
 
 The problem came up in some research Daniel Schultz and I have been doing, to do with
 computing a new kind of modular equation. The details are not so important for the
@@ -28,8 +28,8 @@ In particular, we start with a generalisation of the Weber modular function
 $$\mathfrak{f}(\tau) = \sqrt{2}\frac{\eta(2\tau)}{\eta(\tau)}.$$
 
 In particular, we start with
-$$\mathfrak{m}_{n, \infty} = \sqrt{n}\frac{\eta(n\tau)}{\eta(\tau)}.$$
-
+$$\mathfrak{m}_{n, \infty} = \sqrt{n}\frac{\eta(n\tau)}{\eta(\tau)},$$
+where $n = 2$ is obviously the classical Weber case.
 For any $m \in \mathbb{N}$ we define
 $$x_{n, m}(\tau) = \frac{\mathfrak{m}_{n,\infty}(mn\tau)}{\mathfrak{m}_{n,\infty}(\tau)}, \;\; y_{n,m}(\tau) = \frac{\mathfrak{m}_{n,\infty}(n\tau)}{\mathfrak{m}_{n,\infty}(m\tau)}.$$
 
@@ -61,9 +61,9 @@ of $x$ and $y$ in our relations $P_{n, m}$.
 We can currently only prove our bounds are sharp in some cases, but experimentally they
 seem to always be sharp.
 
-For any given values of $m$ and $n$, we can do a computation to prove they are sharp.
+For any given values of $m$ and $n$, we can do a computation to check they are sharp.
 This computation boils down to finding the nullspace of a certain matrix over
-$\mathbb{Q}$ and checking that it's nullity is 1. If it is, the bounds are sharp.
+$\mathbb{Q}$ and checking that its nullity is 1. If it is, the bounds are sharp.
 
 If the nullity is $1$, then it is a theorem that the generator of the nullspace gives
 the coefficients of the minimal relation $P_{n, m}$.
@@ -71,8 +71,8 @@ the coefficients of the minimal relation $P_{n, m}$.
 ## The interesting computational challenge
 
 The interesting challenge is not in computing the rank of the matrix (this can be done
-modulo a random prime, which bounds the nullity above), so that we can test the nullity,
-but in computing the entries of the matrix.
+modulo a random prime, which allows us to bound the nullity above). The real challenge
+is in computing the entries of the matrix itself.
 
 As an example of this challenge, we explicitly describe this matrix for the case $n = 11$
 and $m = 4$. The resulting matrix is 4500x9001 over $\mathbb{Q}$.
@@ -82,16 +82,17 @@ $$s(q) = x(q)/y(q),\;\; t(q) = x(q)^{12}.$$
 
 We then compute these out to $O(q^{9001})$. Although the q-series of $s(q)$ and $t(q)$
 are in the nome $q$, they are defined in terms of functions in the nome $q^{1/24}$. This
-means that internally the Puiseux series must initially be using a precision of
+means that naively the Puiseux series will be using an internal precision of
 $24\times 9001 = 216024$.
 
-Next, we compute the q-series of $s^it^j$ for $i \in [0, 300]$ and $j \in [0, 15]$.
+Once we have computed $s(q)$ and $t(q)$ to this precision, we compute the q-series of
+$s^it^j$ for $i \in [0, 300]$ and $j \in [0, 15]$.
 
 The entries in each row of our matrix are the q-series coefficients of one of the
 $s^it^j$.
 
 Thus, there are $300\times 15 = 4500$ rows and $9001$ columns in the matrix, since the
-q-series must be computed out to $O(q^9001)$.
+q-series must be computed out to $O(q^{9001})$.
 
 This gives us the matrix for $n = 11$ and $m = 4$ which is conjecturally nullity 1.
 
