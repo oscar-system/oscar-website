@@ -25,7 +25,7 @@ modular form of weight $1/2$, if you know about such things.
 We have been investigating identities for certain functions that are defined in terms of
 the Dedekind eta function, that hold for all $\tau \in \mathbb{H}$.
 
-In particular, we start with a generalisation of the Weber modular function
+We start with a generalisation of the Weber modular function
 $$\mathfrak{f}(\tau) = \sqrt{2}\frac{\eta(2\tau)}{\eta(\tau)}.$$
 
 In particular, we start with
