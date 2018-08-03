@@ -247,7 +247,7 @@ Somehow the results end up not agreeing with Magma and Oscar.
 In any case, I consider solutions of this kind to be essentially equivalent to writing
 your own power series module.
 
-Actual arithmetic on power series in Sage seems to be performant, assuming you can
+Actual arithmetic on power series in SageMath seems to be performant, assuming you can
 finally get the precisions correct. But composing q-series in the way that we do with
 the Oscar code above just doesn't seem to be the correct approach for the SageMath power 
 series model.
