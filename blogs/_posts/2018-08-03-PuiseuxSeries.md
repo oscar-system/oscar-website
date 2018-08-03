@@ -233,7 +233,7 @@ example, to compute to $O(q^n)$ with Puiseux series in $q^{1/24}$ requires a Mag
 
 The `DedekindEta` function computes the Puiseux expansion of the Dedekind eta function in
 Magma. But it immediately complains that the rationals are not contained in the
-coefficient ring of the argument. So we must work with PuiseuxSeries over the rationals.
+coefficient ring of the argument. So we must work with Puiseux series over the rationals.
 
 After this, it's easy to define the functions we require in Magma.
 
