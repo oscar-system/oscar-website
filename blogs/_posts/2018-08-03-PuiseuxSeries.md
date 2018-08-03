@@ -241,7 +241,7 @@ Note that it is not enough to simply use `subs` then truncate the power series t
 $q^{9001}$ since this would be equivalent to using an absolute cap, whereas we really
 want a relative precision cap.
 
-It also doesn't seem to be correct to simply use powers of $q + O(q^9002)$ everywhere.
+It also doesn't seem to be correct to simply use powers of $q + O(q^{9002})$ everywhere.
 Somehow the results end up not agreeing with Magma and Oscar.
 
 In any case, I consider solutions of this kind to be essentially equivalent to writing
