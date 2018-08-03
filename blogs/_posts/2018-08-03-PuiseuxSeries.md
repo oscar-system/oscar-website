@@ -74,9 +74,9 @@ As an example of this challenge, we explicitly describe this matrix for the case
 and $m = 4$. The resulting matrix is about 4500x9000 over $\mathbb{Q}$.
 
 First we define the functions
-$$s(q) = x(q)/y(q),\;\; t(q) = x(q)^12.$$
+$$s(q) = x(q)/y(q),\;\; t(q) = x(q)^{12}.$$
 
-We then compute these out to $q^9001$. Although the q-series of $s(q)$ and $t(q)$ are
+We then compute these out to $q^{9001}$. Although the q-series of $s(q)$ and $t(q)$ are
 in the nome $q$, they are defined in terms of functions in the nome $q^{1/24}$. This
 means that internally the Puiseux series must be using a precision of
 $24\times 9001 = 216024$.
