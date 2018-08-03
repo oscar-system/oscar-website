@@ -123,7 +123,7 @@ Initially I intended to give timings only for Puiseux series. However, I am not 
 if Sage supports Puiseux series directly like the other systems.
 
 With some additional work, as we are working with eta quotients in this case, one may
-work directly with Laurent series in $q$ instead of Puiseux series in $q^(1/24)$. This
+work directly with Laurent series in $q$ instead of Puiseux series in $q^{1/24}$. This
 is not always convenient, but it does work in our case. (Note that simply replacing
 $q^{1/24}$ with $q$ throughout will also work, at the expense of possibly radically
 increasing the sparsity.)
