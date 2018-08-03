@@ -268,8 +268,9 @@ Quite obviously, in this case, we could simply write out q-series expressions an
 perform substitutions at each step and then truncate to a given precision. However, this
 is error prone and kind of defeats the purpose of what we are trying to do.
 
-We should point out that we believe Magma has much faster nullspace code (very likely
-much faster than our own). So perhaps that would make a more reasonable benchmark.
+We should point out that we believe Magma has very fast nullspace code (very likely
+much faster than our own). So perhaps that would make a more reasonable benchmark for
+our next blog.
 
 ## Why are Oscar q-series fast
 
