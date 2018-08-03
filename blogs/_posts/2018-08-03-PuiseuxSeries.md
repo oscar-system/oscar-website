@@ -26,7 +26,7 @@ We have been investigating identities for certain functions that are defined in 
 the Dedekind eta function, that hold for all $\tau \in \mathbb{H}$.
 
 We start with a generalisation of the Weber modular function
-$$\mathfrak{f}(\tau) = \sqrt{2}\frac{\eta(2\tau)}{\eta(\tau)}.$$
+$$\mathfrak{f}_2(\tau) = \sqrt{2}\frac{\eta(2\tau)}{\eta(\tau)}.$$
 
 In particular, we start with
 $$\mathfrak{m}_{n, \infty} = \sqrt{n}\frac{\eta(n\tau)}{\eta(\tau)},$$
