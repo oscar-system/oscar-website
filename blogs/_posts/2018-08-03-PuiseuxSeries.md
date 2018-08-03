@@ -242,10 +242,10 @@ As in Oscar, this takes negligible time, as nothing is actually computed.
 At the next step we try to compute arrays of powers of $s(q)$ and $t(q)$. This takes
 approximately 85s.
 
-One has to be very careful to precompute $s(q)$ and $t(q)$, however, as this takes 10s
-each time each of those are computed. Without being careful about this, Magma could take
-over an hour to compute all the powers. The Oscar times barely change if we don't
-precompute these q-series.
+One has to be very careful to precompute $s(q)$ and $t(q)$. Otherwise this takes 10s
+each time each of these are computed. Without being careful about this, Magma could take
+over an hour to compute all the powers. In comparison, the Oscar times do not change
+radically if we don't precompute these q-series.
 
 Finally we compute the products of the powers of $s$ and $t$. This takes about 829s.
 
