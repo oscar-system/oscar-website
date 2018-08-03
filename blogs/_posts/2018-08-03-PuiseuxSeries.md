@@ -119,12 +119,12 @@ n = 11, m = 4 | SageMath | Mathematica | Magma | Oscar
 Puiseux       | ??       |             |       | 
 Laurent       |          |             |       |
 
-Initially I intended to give timings only for Puiseux series. However, I am not certain
+Initially we intended to give timings only for Puiseux series. However, it's not clear
 if Sage supports Puiseux series directly like the other systems.
 
 With some additional work, as we are working with eta quotients in this case, one may
 work directly with Laurent series in $q$ instead of Puiseux series in $q^{1/24}$. This
-is not always convenient, but it does work in our case. (Note that simply replacing
+is not always convenient, but it does work for this example. (Note that simply replacing
 $q^{1/24}$ with $q$ throughout will also work, at the expense of possibly radically
 increasing the sparsity.)
 
