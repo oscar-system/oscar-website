@@ -220,7 +220,7 @@ Therefore, $f(q^n)$ will result in a power series whose precision is roughly $n$
 higher that that of $f$. This is because the expression $q^n$ is an exact power series
 in SageMath, as though it were given to infinite precision.
 
-The correct thing seems to be to evaluate at $q^n + O(q^(n + 9001 - 1))$. At least, that
+The correct thing seems to be to evaluate at $q^n + O(q^{n + 9001 - 1})$. At least, that
 is what I had to do to get something that agrees with Magma and Oscar.
 
 Now we encounter the same problem again. We'd like to evaluate $m(q^44)/m(q)$, but we
