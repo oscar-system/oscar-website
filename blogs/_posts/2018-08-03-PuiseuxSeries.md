@@ -214,7 +214,7 @@ in terms of this function.
 
 But now we encounter another issue. Trying to evaluate our functions at the nome q
 results in a very slow runtime. This is probably because we are no longer working with
-the correct precision, as we used subst which does not truncate things to the precision
+the correct precision, as we used `subs` which does not truncate things to the precision
 of the power series ring we are working over.
 
 At this point we are just writing a custom q-series module and it is hard to know how we
