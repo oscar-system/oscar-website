@@ -228,8 +228,8 @@ expert might be able to more easily do the computation, without losing performan
 
 Magma supports Puiseux series. As with Oscar, it requires one to specify the internal
 Laurent series precision, depending on the fractional power of q you are using. For
-example, to compute to $O(q^n)$ with Puiseux series in $q^{1/24}$ requires a Puiseux
-series precision of at least $24n$.
+example, to compute to $O(q^n)$ with Puiseux series in $q^{1/24}$ requires a Magma
+`PuiseuxSeriesRing` precision of at least $24n$.
 
 The DedekindEta function computes the Puiseux expansion of the Dedekind eta function in
 Magma. But it immediately complains that the rationals are not contained in the
