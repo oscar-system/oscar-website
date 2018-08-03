@@ -25,12 +25,13 @@ modular form of weight $1/2$, if you know about such things.
 We have been investigating identities for certain functions that are defined in terms of
 the Dedekind eta function, that hold for all $\tau \in \mathbb{H}$.
 
-We start with a generalisation of the Weber modular function
+One of the classical Weber modular functions is
 $$\mathfrak{f}_2(\tau) = \sqrt{2}\frac{\eta(2\tau)}{\eta(\tau)}.$$
 
-In particular, we start with
-$$\mathfrak{m}_{n, \infty} = \sqrt{n}\frac{\eta(n\tau)}{\eta(\tau)},$$
-where $n = 2$ is obviously the classical Weber case.
+In this blog we work with a generalisation of this, defined by
+$$\mathfrak{m}_{n, \infty}(\tau) = \sqrt{n}\frac{\eta(n\tau)}{\eta(\tau)}.$$
+Obviously $n = 2$ is the classical Weber function $\mathfrak{f}_2(\tau)$.
+
 For any $m \in \mathbb{N}$ we define
 $$x_{n, m}(\tau) = \frac{\mathfrak{m}_{n,\infty}(mn\tau)}{\mathfrak{m}_{n,\infty}(\tau)}, \;\; y_{n,m}(\tau) = \frac{\mathfrak{m}_{n,\infty}(n\tau)}{\mathfrak{m}_{n,\infty}(m\tau)}.$$
 
