@@ -114,6 +114,12 @@ number of multiplications to the given precision, that would need to be computed
 The following table gives our estimates for the various systems we tried this with along
 with an actual timing for Oscar (which makes use of Nemo.jl).
 
+In order to keep things simple, we did not actually construct the matrix (which takes
+perhaps twice as long), but simply tried to approximate how long a single q-series
+product would take and then multiplied by 4500. The timings are of course approximations,
+though for example, constructing the full matrix in memory takes about 20 minutes in
+Oscar.
+
 n = 11, m = 4 | SageMath | Mathematica | Magma | Oscar
 --------------|----------|-------------|-------|-------
 Puiseux       | ??       |             |       | 630s 
