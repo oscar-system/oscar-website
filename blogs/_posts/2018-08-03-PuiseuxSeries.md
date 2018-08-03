@@ -88,8 +88,8 @@ $$s(q) = x(q)/y(q),\;\; t(q) = x(q)^{12}.$$
 We then compute these out to $O(q^{9001})$. Although the q-series of $s(q)$ and $t(q)$
 are in the nome $q$, they are defined in terms of functions in $q^{1/24}$. This
 means that naively the Puiseux series will be using an internal precision of
-$24\times 9001 = 216024$. In fact, all of the systems we discuss in this blog work to
-this precision initially.
+$24\times 9001 = 216024$. In fact, all of the systems that we discuss in this blog, with
+true Puiseux series implementations, have to work to this precision initially.
 
 Once we have computed $s(q)$ and $t(q)$ to this precision, we compute the q-series of
 $s^it^j$ for $i \in [0, 300]$ and $j \in [0, 15]$.
