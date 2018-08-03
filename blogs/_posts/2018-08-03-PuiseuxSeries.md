@@ -176,8 +176,8 @@ We had some existing Mathematica code that we had been using in webMathematica, 
 was only necessary to alter the code.
 
 Unfortunately, due to a recent update in webMathematica, there is a parser error that
-caused newlines to be interpreted as products in some cases, meaning our code broke.
-Therefore it was not possible to use Mathematica until they fixed this issue.
+causes newlines to be interpreted as products in some cases, meaning our code no longer
+works. Therefore it is not possible to use webMathematica until they fix this issue.
 
 However, we do know that once bignums are encountered in power series, Mathematica
 switches to a generic representation, and things get really slow. We found that the
