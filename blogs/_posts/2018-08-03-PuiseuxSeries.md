@@ -237,6 +237,10 @@ I guess that substituting $q^n + O(\mbox{blah})$ into a function is not efficien
 certainly not efficient to substitute $q^n$, due to the dense representation, so I'm
 really not sure what the correct approach is.
 
+Note that it is not enough to simply use `subs` then truncate the power series to
+$q^{9001}$ since this would be equivalent to using an absolute cap, whereas we really
+want a relative precision cap.
+
 Actual arithmetic on power series in Sage seems to be performant, assuming you can
 finally get the precisions correct. But composing q-series in the way that we do with
 the Oscar code above just doesn't seem to be the correct approach for the SageMath power 
