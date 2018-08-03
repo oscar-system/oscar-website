@@ -231,7 +231,7 @@ I'm sure some SageMath expert knows how to do computations like this, but I unfo
 don't. Therefore, I have not been able to complete the computation in SageMath.
 
 Moreover, the functions I was able to compute correctly seem to be horrendously slow.
-I guess that substituting $q^n + O(blah)$ into a function is not efficient.
+I guess that substituting $q^n + O(\mbox{blah})$ into a function is not efficient.
 
 Actual arithmetic on power series in Sage seems to be performant, assuming you have the
 precisions correct. But composing q-series in the way that we do with the Oscar code
