@@ -42,7 +42,7 @@ $P_{n,m}$ has coefficients in $\mathbb{Z}$.
 
 We call such a relation $P_{n,m}(x, y) = 0$ a modular equation of degree $m$ for level
 $n$ functions, though terminology varies wildly here, and these certainly don't relate
-directly to the modular equations of Schlaefli, Weber, Jacobi, Russel, etc.
+directly to the modular equations of Schlaefli, Weber, Jacobi, Russel, Ramanujan, etc.
 
 As an example, the minimum relation for $n = 2$ (corresponding to the original Weber
 modular function) and $m = 3$ is given by
