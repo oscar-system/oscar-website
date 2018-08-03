@@ -68,7 +68,7 @@ For any given values of $m$ and $n$, we can do a computation to check they are s
 This computation boils down to finding the nullspace of a certain matrix over
 $\mathbb{Q}$ and checking that its nullity is 1. If it is, the bounds are sharp.
 
-If the nullity is $1$, then it is a theorem that the generator of the nullspace gives
+If the nullity is $1$, then we can prove that the generator of the nullspace gives
 the coefficients of the minimal polynomial $P_{n, m}(x, y) \in \mathbb{Z}[x, y]$ that
 appears in our modular equation.
 
@@ -99,11 +99,11 @@ $s^it^j$.
 Thus, there are $300\times 15 = 4500$ columns and $9001$ rows in the matrix, since the
 q-series must be computed out to $O(q^{9001})$.
 
-This gives us the matrix for $n = 11$ and $m = 4$ which is conjecturally nullity 1.
+This gives us the matrix for $n = 11$ and $m = 4$ which conjecturally has nullity 1.
 
 ## Computing the q-series in Oscar
 
-First we should write out how the computation can be done in Oscar (note that the $\sqrt{11}$ cancel in the functions we are using and can be omitted).
+First we should write out how the computation can be done in Oscar (note that the $\sqrt{11}$ cancels in the functions we are using and can be omitted).
 
 As we will be working with Puiseux series in $q^{1/24}$ we will need to work with
 $9001\times 24$ terms in order to compute everything out to $O(q^{9001})$.
