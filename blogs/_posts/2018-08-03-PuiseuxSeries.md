@@ -15,7 +15,7 @@ came from.
 
 The Dedekind eta function is given by the following infinite q-series product
 $$\eta(q) = q^{1/24}\prod_{n=1}^\infty (1 - q^n),$$
-in the "nome" $q^{1/24}$. Naturally, we can only work with a finite precision
+in the "nome" $q$. Naturally, we can only work with a finite precision
 approximation out to $O(q^N)$ for some precision $N$, on a computer.
 
 Here, $q = exp(2\pi i\tau)$ for $\tau$ in the complex upper half plane $\mathbb{H}$. This
@@ -85,7 +85,7 @@ First we define the functions
 $$s(q) = x(q)/y(q),\;\; t(q) = x(q)^{12}.$$
 
 We then compute these out to $O(q^{9001})$. Although the q-series of $s(q)$ and $t(q)$
-are in the nome $q$, they are defined in terms of functions in the nome $q^{1/24}$. This
+are in the nome $q$, they are defined in terms of functions in $q^{1/24}$. This
 means that naively the Puiseux series will be using an internal precision of
 $24\times 9001 = 216024$. In fact, all of the systems we discuss in this blog work to
 this precision initially.
