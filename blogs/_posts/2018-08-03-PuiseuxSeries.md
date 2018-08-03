@@ -231,7 +231,7 @@ Laurent series precision, depending on the fractional power of q you are using. 
 example, to compute to $O(q^n)$ with Puiseux series in $q^{1/24}$ requires a Magma
 `PuiseuxSeriesRing` precision of at least $24n$.
 
-The DedekindEta function computes the Puiseux expansion of the Dedekind eta function in
+The `DedekindEta` function computes the Puiseux expansion of the Dedekind eta function in
 Magma. But it immediately complains that the rationals are not contained in the
 coefficient ring of the argument. So we must work with PuiseuxSeries over the rationals.
 
