@@ -31,9 +31,10 @@ In particular, we start with
 $$\mathfrak{m}_{n, \infty} = \sqrt{n}\frac{\eta(n\tau)}{\eta(\tau)}.$$
 
 For any $m \in \mathbb{N}$ we define
-$$x_{n, m}(\tau) = \frac{\mathfrak{m}_{n,\infty}(mn\tau)}{\mathfrak{m}_{n,\infty}(\tau)}, \;\; y_{n,m}(tau) = \frac{\mathfrak{m}_{n,\infty}(n\tau)}{\mathfrak{m}_{n,\infty}(m\tau)}.$$
+$$x_{n, m}(\tau) = \frac{\mathfrak{m}_{n,\infty}(mn\tau)}{\mathfrak{m}_{n,\infty}(\tau)}, \;\; y_{n,m}(\tau) = \frac{\mathfrak{m}_{n,\infty}(n\tau)}{\mathfrak{m}_{n,\infty}(m\tau)}.$$
 
-We have been computing the minimum polynomial relation $P_{n,m}(x_{n,m}, y_{n,m}) = 0$
+We have been computing the minimum polynomial relation
+$P_{n,m}(x_{n,m}(\tau), y_{n,m}(\tau)) = 0$
 that holds as an identity for all $\tau \in \mathbb{H}$. We call such a relation a
 modular equation of degree $m$ for the level $n$ functions, though terminology varies
 wildly here, and these certainly don't relate directly to the modular equations of
@@ -64,38 +65,45 @@ For any given values of $m$ and $n$, we can do a computation to prove they are s
 This computation boils down to finding the nullspace of a certain matrix over
 $\mathbb{Q}$ and checking that it's nullity is 1. If it is, the bounds are sharp.
 
+If the nullity is $1$, then it is a theorem that the generator of the nullspace gives
+the coefficients of the minimal relation $P_{n, m}$.
+
 ## The interesting computational challenge
 
 The interesting challenge is not in computing the rank of the matrix (this can be done
-modulo a random prime, which bounds the nullity above), but in computing the matrix
-itself.
+modulo a random prime, which bounds the nullity above), so that we can test the nullity,
+but in computing the entries of the matrix.
 
 As an example of this challenge, we explicitly describe this matrix for the case $n = 11$
-and $m = 4$. The resulting matrix is about 4500x9000 over $\mathbb{Q}$.
+and $m = 4$. The resulting matrix is 4500x9001 over $\mathbb{Q}$.
 
 First we define the functions
 $$s(q) = x(q)/y(q),\;\; t(q) = x(q)^{12}.$$
 
-We then compute these out to $q^{9001}$. Although the q-series of $s(q)$ and $t(q)$ are
-in the nome $q$, they are defined in terms of functions in the nome $q^{1/24}$. This
-means that internally the Puiseux series must be using a precision of
+We then compute these out to $O(q^{9001})$. Although the q-series of $s(q)$ and $t(q)$
+are in the nome $q$, they are defined in terms of functions in the nome $q^{1/24}$. This
+means that internally the Puiseux series must initially be using a precision of
 $24\times 9001 = 216024$.
 
 Next, we compute the q-series of $s^it^j$ for $i \in [0, 300]$ and $j \in [0, 15]$.
 
-The coefficients of the resulting q-series for each of these functions then form the
-rows of a matrix whose nullity is conjecturally 1.
+The entries in each row of our matrix are the q-series coefficients of one of the
+$s^it^j$.
 
-There are $300\times 15 = 4500$ rows and $9001$ columns in the matrix.
+Thus, there are $300\times 15 = 4500$ rows and $9001$ columns in the matrix, since the
+q-series must be computed out to $O(q^9001)$.
+
+This gives us the matrix for $n = 11$ and $m = 4$ which is conjecturally nullity 1.
 
 ## Timings for various computer algebra systems
 
 Although we are not able to compute the given matrix using other systems, we decided to
 do some timings to give an estimate on how long it would actually take.
 
-This means working out the asymptotics of the q-series arithmetic in those systems, and
-multiplying by the total number of multiplications to the given precision, that would
-need to be computed (namely ~216024).
+This means working out the asymptotics of the q-series arithmetic in those systems,
+timing some q-series operations and extrapolation, and then multiplying by the total
+number of multiplications to the given precision, that would need to be computed
+(namely ~216024).
 
 The following table gives our estimates for the various systems we tried this with.
 
