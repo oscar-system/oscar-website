@@ -195,7 +195,7 @@ convenient, but it works in our case after some minutes with a pen and paper.
 
 But then we encounter our next issue. The `qexp_eta` function in Sage does not seem
 to work with Laurent series. It seems to require a power series ring. The solution to
-this issue is obvious.
+this issue is to use one.
 
 Also, the `qexp_eta` function does not take a "nome" as input, but rather a ring in
 which you want to compute the expansion of the eta product, minus the leading $q^{1/24}$.
@@ -203,26 +203,38 @@ which you want to compute the expansion of the eta product, minus the leading $q
 This is fine if you actually want to compute $\eta(q)$, but not if you want to compute
 $\eta(q^n)$ for example, as we do.
 
-The solution seems to be to substitute $q^n$ for $q$ in the output of `qexp_eta`.
+Trying to solve this leads to another problem that is very subtle and the solution only
+occurred to me because I have implemented numerous power series modules myself.
 
-In order to mimic what we had done in Oscar, we wrote a function $etaq(q)$ which accepts
-a nome in a power series ring, and substitutes it into the q-series expansion of eta
-from SageMath's `eta_qexp` function.
+What seems logical is that we ought to substitute $q^n$ for $q$ in the output of
+`qexp_eta` to get $\eta(q^n)$. One can perform such substitutions in SageMath using
+either the `subs` function, or by functional evaluation of the $q$-series at $q^n$, i.e.
+by typing $f(q^n)$, where $f$ is the power series in question.
 
-It might seem like we are done, since we can now write all the other functions we need
-in terms of this function.
+However, SageMath has a notion of exact power series. The precision we specify when we
+create a power series ring in SageMath is only used for certain computations that cannot
+be given an exact expression. It is not a precision cap, as one might naively expect.
 
-But now we encounter another issue. Trying to evaluate our functions at the nome q
-results in a very slow runtime. This is probably because we are no longer working with
-the correct precision, as we used `subs` which does not truncate things to the precision
-of the power series ring we are working over.
+Therefore, $f(q^n)$ will result in a power series whose precision is $n$ times higher
+that that of $f$. This is because the expression $q^n$ is an exact power series in
+SageMath, as though it were given to infinite precision.
 
-At this point we are just writing a custom q-series module and it is hard to know how we
-can get an apples for apples comparison.
+The correct thing seems to be to evaluate at $q^n + O(q^(n + 9001 - 1))$. At least, that
+is what I had to do to get something that agrees with Magma and Oscar.
 
-If we persist long enough, we can get timings comparable with Oscar, but it just didn't
-seem to be in the spirit of the task to implement things this way. Of course, a Sage
-expert might be able to more easily do the computation, without losing performance.
+Now we encounter the same problem again. We'd like to evaluate $m(q^44)/m(q)$, but we
+cannot simply substitute those powers of $q$. We must again figure out what precision
+to use in each case.
+
+I'm sure some SageMath expert knows how to do computations like this, but I unfortunately
+don't. Therefore, I have not been able to do the computation in SageMath.
+
+Moreover, the functions I was able to compute correctly seem to be horrendously slow.
+I guess that substituting $q^n + O(blah)$ into a function is not efficient.
+
+Actual arithmetic on power series in Sage seems to be performant, assuming you have the
+precisions correct. But composing q-series in the way that we do with the Oscar code
+above just doesn't seem to be the correct approach in SageMath.
 
 ## Computation of the q-series in Magma
 
