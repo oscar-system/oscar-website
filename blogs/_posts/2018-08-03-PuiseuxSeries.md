@@ -253,6 +253,9 @@ finally get the precisions correct. But composing q-series in the way that we do
 the Oscar code above just doesn't seem to be the correct approach for the SageMath power 
 series model.
 
+In summary, we did not feel confident we could give an apples for apples comparison with
+SageMath, and have excluded it until we have a better understanding.
+
 ## Computation of the q-series in Magma
 
 Magma supports Puiseux series. As with Oscar, it requires one to specify the internal
