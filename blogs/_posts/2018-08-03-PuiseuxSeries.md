@@ -410,8 +410,8 @@ end for;
 This takes about 2477s.
 
 As already mentioned, Magma ends up computing to a slightly higher precision (around
-$O(q^{13000})$) due to some slight differences in its power series model. If we do this,
-the time goes down to about 1811s.
+$O(q^{13000})$) due to some slight differences in its power series model. If we truncate
+to the lower precision before this last step, the time goes down to about 1811s.
 
 ## Summary
 
