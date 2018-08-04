@@ -359,7 +359,7 @@ radically if we don't precompute these q-series.
 Finally we compute the products of the powers of $s$ and $t$. This takes about 829s.
 
 As already mentioned, Magma ends up computing to a slightly higher precision (around
-$O(q^{13000})$ due to some slight differences in its power series model.
+$O(q^{13000})$) due to some slight differences in its power series model.
 
 ## Summary
 
