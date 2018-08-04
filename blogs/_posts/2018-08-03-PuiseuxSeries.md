@@ -227,7 +227,7 @@ Timing[
 
 However, closer inspection of the results indicates the powers are being computed to
 precision higher than $O(q^{9001})$. In fact, `sp[300]` is accurate to about
-$O(q^{13000})`. This is in fact also the case for Magma.
+$O(q^{13000})$. This is in fact also the case for Magma.
 
 The concept of a power series ring to a fixed relative precision is a foreign concept
 in Mathematica, and it is necessary to manually keep the precision at $O(q^{9001})$ by
@@ -357,6 +357,9 @@ over an hour to compute all the powers. In comparison, the Oscar times do not ch
 radically if we don't precompute these q-series.
 
 Finally we compute the products of the powers of $s$ and $t$. This takes about 829s.
+
+As already mentioned, Magma ends up computing to a slightly higher precision (around
+$O(q^{13000})$ due to some slight differences in its power series model.
 
 ## Summary
 
