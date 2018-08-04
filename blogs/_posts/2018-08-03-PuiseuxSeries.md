@@ -312,18 +312,17 @@ Actually, the result is horrendously slow, and we don't feel comfortable publish
 the results as an apples for apples comparison with Sage. For one thing, substituting
 some power of $q + O(q^{9002})$ is not efficient in Sage.
 
-Note that it is not enough to simply truncate to an appropriate precision, use `subs`
-then truncate the power series to $q^{9001}$ since this would be equivalent to using an
-absolute cap, whereas we really want a relative precision cap.
+We could simply truncate to an appropriate precision, use `subs` then truncate the power series to $q^{9001}$. This would technically be equivalent to using an absolute cap,
+whereas we really want a relative precision cap, but it may be fairer.
 
-To do this properly would require a lot of highly nontrivial work. At this point we'd
-essentially be implementing our own power series model on top of the Sage model, and
-that would also make an unfair comparison.
+To do all this properly would require nontrivial work. At this point we'd essentially
+be implementing our own power series model on top of the Sage model, and that would
+also make it an unfair comparison.
 
-On the other hand, both Magma and Mathematica do end up computing to a slightly higher
-precision than Oscar, due again to subtle differences in power series model. The issue
-for SageMath is that making substitutions and truncations to force it to behave in the
-same way as the other systems is not something we consider to be fair.
+Magma and Mathematica do end up computing to a slightly higher precision than Oscar,
+which we can adjust for by truncating as though we had an absolute precision cap. The
+issue for SageMath is that making substitutions and truncations to force it to behave
+in the same way as the other systems is not something we consider to be fair.
 
 Arithmetic operations on power series in SageMath seem to be performant and certainly
 comparable with Magma and Oscar, assuming you can get expressions with the same
@@ -346,20 +345,73 @@ coefficient ring of the argument. So we must work with Puiseux series over the r
 
 After this, it's easy to define the functions we require in Magma.
 
+```
+R<q> := PuiseuxSeriesRing(Rationals(), 9001*24);
+
+function m(q)
+   return DedekindEta(q^11)/DedekindEta(q);
+end function;
+
+function x(q)
+   return m(q^44)/m(q);
+end function;
+
+function y(q)
+   return m(q^11)/m(q^4);
+end function;
+
+function s(q)
+   return x(q)/y(q);
+end function;
+
+function t(q)
+   return x(q)^12;
+end function;
+```
+
 As in Oscar, this takes negligible time, as nothing is actually computed.
 
-At the next step we try to compute arrays of powers of $s(q)$ and $t(q)$. This takes
-approximately 85s.
+At the next step we try to compute arrays of powers of $s(q)$ and $t(q)$.
+
+```
+sq := s(q);
+tq := t(q);
+
+S := [sq^0];
+
+for i := 1 to 300 do
+   S := Append(S, S[i]*sq);
+
+end for;
+
+T := [tq^0];
+for i := 1 to 15 do
+   T := Append(T, T[i]*tq);
+end for;
+```
+
+This takes approximately 101s.
 
 One has to be very careful to precompute $s(q)$ and $t(q)$. Otherwise this takes 10s
 each time each of these are computed. Without being careful about this, Magma could take
 over an hour to compute all the powers. In comparison, the Oscar times do not change
 radically if we don't precompute these q-series.
 
-Finally we compute the products of the powers of $s$ and $t$. This takes about 829s.
+Finally we compute the products of the powers of $s$ and $t$.
+
+```
+for i := 1 to 301 do
+   for j := 1 to 16 do
+      p := S[i]*T[j];
+   end for;
+end for;
+```
+
+This takes about 2477s.
 
 As already mentioned, Magma ends up computing to a slightly higher precision (around
-$O(q^{13000})$) due to some slight differences in its power series model.
+$O(q^{13000})$) due to some slight differences in its power series model. If we do this,
+the time goes down to about 1811s.
 
 ## Summary
 
@@ -367,14 +419,15 @@ Here is a table summarising the results.
 
 n = 11, m = 4 | SageMath | Mathematica | Magma | Oscar
 --------------|----------|-------------|-------|-------
-Puiseux       | ??       | > 1 day     | 914s  | 643s 
+Puiseux       | ??       | > 1 day     | 1912s | 643s 
 
 I'm not sure what we learn from this, other than that benchmarking complex calculations
-can be somewhat of a deep hole at times. It's not at all clear how we could fairly
-compare all the systems.
+can be somewhat of a deep hole at times. Artificially truncating series and doing
+additional precomputation to keep times in check doesn't seem like it reflects what a
+user would do.
 
 We feel that the comparison with Magma is not unfair. But it's not clear how much work
-it is fair for us to do in order to include the other systems.
+is required for us to be completely fair to all systems.
 
 We should point out that we believe Magma has very fast nullspace code (very likely
 much faster than our own). So perhaps that would make a more reasonable benchmark for
@@ -408,7 +461,10 @@ in Flint.
 
 The modular equation for $n = 11$, $m = 4$ is really too huge to reproduce here (and in
 fact, we have not bothered computing it). We were only interested in checking whether
-our bounds on the degrees are tight, in this blog.
+our bounds on the degrees are tight, for this benchmark.
+
+To finish this blog, we give an example of an actual modular equation that we have
+computed using our methods.
 
 In terms of the functions $x_{n,m}$ and $y_{n,m}$ described above, the modular equation
 for $n = 5$ and $m = 8$ is
