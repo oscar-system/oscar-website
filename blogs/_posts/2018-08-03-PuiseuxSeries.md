@@ -184,6 +184,73 @@ However, we do know that once bignums are encountered in power series, Mathemati
 switches to a generic representation, and things get really slow. We found that the
 computation was not really practical in Mathematica when the code was working.
 
+In the end, we were able to write something that worked in desktop Mathematica.
+
+Here are the basic definitions.
+
+```
+\[Eta][q_] := q^(1/24)*QPochhammer[q,q];
+f[q_] := \[Eta][q^11]/\[Eta][q];
+x[q_] := f[q^44]/f[q];
+y[q_] := f[q^11]/f[q^4];
+s[q_] := x[q]/y[q];
+t[q_] := x[q]^12;
+```
+
+Computing s and t to precision O(q^9001) takes about 4 minutes. The `PowerExpand` is
+necessary to enforce the rule `(q^a)^(1/24) = q^(a/24)`, which is true in this case.
+This results in power series data types using only integral exponents.
+
+```
+Timing[
+    sq=Series[PowerExpand[s[q]],{q,0,9000}];
+    tq=Series[PowerExpand[t[q]],{q,0,9000}];
+][[1]]
+
+243
+```
+
+The timing here is in seconds.
+
+We next need to fill in powers of s and t, which the following code does in 3.5 hours.
+
+```
+Timing[
+    sp[0] = 1 + O[q]^9001;
+    Do[sp[i] = sp[i-1]*sq, {i,1,300}];
+    tp[0] = 1 + O[q]^9001;
+    Do[tp[i] = tp[i-1]*tq, {i,1,15}];
+][[1]]
+
+12306
+```
+
+However, closer inspection of the results indicates the powers are being computed to
+precision higher than $O(q^{9001})$. In fact, `sp[300]` is accurate to about
+$O(q^{13000})`. This is in fact also the case for Magma.
+
+The concept of a power series ring to a fixed relative precision is a foreign concept
+in Mathematica, and it is necessary to manually keep the precision at $O(q^{9001})$ by
+adding `O[q]^9001` after the computation of each product.
+
+```
+Timing[
+    sp[0] = 1 + O[q]^9001;
+    Do[sp[i] = sp[i-1]*sq + O[q]^9001, {i,1,300}];
+    tp[0] = 1 + O[q]^9001;
+    Do[tp[i] = tp[i-1]*tq + O[q]^9001,{i,1,15}];
+][[1]]
+```
+
+We were not patient enough to let this complete. We estimate that the above code should
+complete in about 2 hours. The following code should then take about 16 times as long,
+which puts a conservative estimate on the total time to fill in the matrix to be well
+over one day.
+
+```
+Timing[Do[sp[i]*tp[j],{i,0,300},{j,0,15}][[1]]
+```
+
 ## Computation of the q-series in SageMath
 
 The first issue we encountered in SageMath is that we were unable to figure out how to
@@ -253,6 +320,11 @@ To do this properly would require a lot of highly nontrivial work. At this point
 essentially be implementing our own power series model on top of the Sage model, and
 that would also make an unfair comparison.
 
+On the other hand, both Magma and Mathematica do end up computing to a slightly higher
+precision than Oscar, due again to subtle differences in power series model. The issue
+for SageMath is that making substitutions and truncations to force it to behave in the
+same way as the other systems is not something we consider to be fair.
+
 Arithmetic operations on power series in SageMath seem to be performant and certainly
 comparable with Magma and Oscar, assuming you can get expressions with the same
 precision as those systems.
@@ -292,7 +364,7 @@ Here is a table summarising the results.
 
 n = 11, m = 4 | SageMath | Mathematica | Magma | Oscar
 --------------|----------|-------------|-------|-------
-Puiseux       | ??       | ??          | 914s  | 643s 
+Puiseux       | ??       | > 1 day     | 914s  | 643s 
 
 I'm not sure what we learn from this, other than that benchmarking complex calculations
 can be somewhat of a deep hole at times. It's not at all clear how we could fairly
