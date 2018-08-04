@@ -241,7 +241,7 @@ fractional powers doesn't seem to be available.
 In this specific case, just because we are using eta quotients, it is possible to work
 out how to write the series in terms of Laurent series instead. This isn't always
 convenient, but it works in our case after some minutes with a pen and paper (at least,
-the third time we checked our arithmetic, it worked)..
+the third time we checked our arithmetic, it worked).
 
 But then we encounter our next issue. The `qexp_eta` function in SageMath does not seem
 to work with Laurent series. It seems to require a power series ring. Of course, we can
@@ -430,11 +430,14 @@ This takes about 2488s.
 
 ## Summary
 
-Here is a table summarising the results.
+Here is a table summarising the results. We give the times to compute the arrays of
+powers of $s(q)$ and $t(q)$ separately, since these show a different aspect of the
+performance comparison than the total times for the whole benchmark
 
 n = 11, m = 4 | SageMath | Mathematica | Magma | Oscar
 --------------|----------|-------------|-------|-------
-Puiseux       | 1840s    | ~ 2 days    | 2592s | 643s 
+Setup         | 190s     | ~ 3.5 hours | 104s  | 38s
+Total         | 1840s    | ~ 2 days    | 2592s | 643s 
 
 I'm not sure what we learn from this, other than that benchmarking complex calculations
 can be somewhat of a deep hole at times. Artificially truncating series and doing
