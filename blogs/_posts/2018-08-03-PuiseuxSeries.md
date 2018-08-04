@@ -206,7 +206,7 @@ leading $q^{1/24}$.
 This is fine if you actually want to compute $\eta(q)$, but not if you want to compute
 $\eta(q^n)$ for example, as we do.
 
-Trying to solve this leads to another problem that is subtle and I was only able to
+Trying to solve this leads to another problem that is subtle and that I was only able to
 detect because I have implemented numerous power series modules myself.
 
 Naively, what seems logical is that we ought to substitute $q^n$ for $q$ in the output of
@@ -220,10 +220,10 @@ substituting it into the expression from `eta_qexp` results in an expression wit
 $n$ times the precision. Because of the dense representation in Sage, this would kill
 performance.
 
-Of course we can replace $q$ with $q + O(q^9002)$ to emulate not working with infinite
+Of course we can replace $q$ with $q + O(q^{9002})$ to emulate not working with infinite
 precision power series. However, this still isn't sufficient.
 
-Both Magma and Oscar do not interpret eta$(q^n)$ as substituting $(q + O(q^9002))^n$
+Both Magma and Oscar do not interpret eta$(q^n)$ as substituting $(q + O(q^{9002}))^n$
 into the $q$-series for eta. They interpret it to mean that we want the $q$-series
 expansion of eta in a ring with relative precision $9001$. This is subtly different,
 though it takes a little thought to see why.
@@ -237,13 +237,13 @@ $1/(1 + q)$.
 Because of this completely different model of power series, it's going to be hard to get
 an apples for apples comparison with Sage.
 
-As a first approximation, we can simply replace $q$ with $q + O(q^9002)$ in the Sage
+As a first approximation, we can simply replace $q$ with $q + O(q^{9002})$ in the Sage
 computations. But this will result in Sage working to higher precision than the other
 systems.
 
 Actually, the result is horrendously slow, and we don't feel comfortable publishing
 the results as an apples for apples comparison with Sage. For one thing, substituting
-some power of $q + O(q^9002)$ is not efficient in Sage.
+some power of $q + O(q^{9002})$ is not efficient in Sage.
 
 Note that it is not enough to simply truncate to an appropriate precision, use `subs`
 then truncate the power series to $q^{9001}$ since this would be equivalent to using an
