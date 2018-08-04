@@ -224,28 +224,9 @@ Timing[
 
 12306
 ```
-
-However, closer inspection of the results indicates the powers are being computed to
-precision higher than $O(q^{9001})$. In fact, `sp[300]` is accurate to about
-$O(q^{13000})$. This is in fact also the case for Magma.
-
-The concept of a power series ring to a fixed relative precision is a foreign concept
-in Mathematica, and it is necessary to manually keep the precision at $O(q^{9001})$ by
-adding `O[q]^9001` after the computation of each product.
-
-```
-Timing[
-    sp[0] = 1 + O[q]^9001;
-    Do[sp[i] = sp[i-1]*sq + O[q]^9001, {i,1,300}];
-    tp[0] = 1 + O[q]^9001;
-    Do[tp[i] = tp[i-1]*tq + O[q]^9001,{i,1,15}];
-][[1]]
-```
-
-We were not patient enough to let this complete. We estimate that the above code should
-complete in about 2 hours. The following code should then take about 16 times as long,
-which puts a conservative estimate on the total time to fill in the matrix to be well
-over one day.
+The following code should then take at least 16 times as long as the code above, which
+puts a conservative estimate on the total time to fill in the matrix to be more than
+two days.
 
 ```
 Timing[Do[sp[i]*tp[j],{i,0,300},{j,0,15}][[1]]
@@ -259,7 +240,8 @@ fractional powers doesn't seem to be available.
 
 In this specific case, just because we are using eta quotients, it is possible to work
 out how to write the series in terms of Laurent series instead. This isn't always
-convenient, but it works in our case after some minutes with a pen and paper.
+convenient, but it works in our case after some minutes with a pen and paper (at least,
+the third time we checked our arithmetic, it worked)..
 
 But then we encounter our next issue. The `qexp_eta` function in SageMath does not seem
 to work with Laurent series. It seems to require a power series ring. Of course, we can
@@ -308,29 +290,64 @@ As a first approximation, we can simply replace $q$ with $q + O(q^{9002})$ in th
 computations. But this will result in Sage working to higher precision than the other
 systems.
 
-Actually, the result is horrendously slow, and we don't feel comfortable publishing
-the results as an apples for apples comparison with Sage. For one thing, substituting
-some power of $q + O(q^{9002})$ is not efficient in Sage.
+We can truncate the power series to $q^{9001}$. This is technically equivalent to using
+an absolute cap, whereas we really want a relative precision cap, so this advantages
+Sage somewhat.
 
-We could simply truncate to an appropriate precision, use `subs` then truncate the power series to $q^{9001}$. This would technically be equivalent to using an absolute cap,
-whereas we really want a relative precision cap, but it may be fairer.
+We question whether we are just implementing a power series module on top of Sage, at
+this point.
 
-To do all this properly would require nontrivial work. At this point we'd essentially
-be implementing our own power series model on top of the Sage model, and that would
-also make it an unfair comparison.
+First we implement the functions we require.
 
-Magma and Mathematica do end up computing to a slightly higher precision than Oscar,
-which we can adjust for by truncating as though we had an absolute precision cap. The
-issue for SageMath is that making substitutions and truncations to force it to behave
-in the same way as the other systems is not something we consider to be fair.
+```
+R.<q> = PowerSeriesRing(ZZ, default_prec=9001)
 
-Arithmetic operations on power series in SageMath seem to be performant and certainly
-comparable with Magma and Oscar, assuming you can get expressions with the same
-precision as those systems.
+def m(q):
+    return qexp_eta(R, 9001)((q + O(q^9002))^11)/qexp_eta(R, 9001)(q + O(q^9002))
 
-However, we did not feel confident we could give an apples for apples comparison with
-SageMath on the benchmark in question, due to the different q-series model. For this
-reason, we have excluded it from our benchmarks.
+def x(q):
+    return m((q + O(q^9002))^44)/m(q + O(q^9002))
+
+def y(q):
+    return m((q + O(q^9002))^11)/m((q + O(q^9002))^4)
+
+def s(q):
+    return (q + O(q^9002))^15*x(q+O(q^9002))/y(q+O(q^9002))
+
+def t(q):
+    return (q + O(q^9002))^215*x(q+O(q^9002))^12
+```
+
+As usual, this takes no time as nothing is actually computed.
+
+Next we compute the arrays of powers of $s$ and $t$. To ensure Sage is not disadvantaged,
+we truncate $s(q)$ and $t(q)$ to the same precision as it is computed in Oscar.
+
+```
+sq = s(q) + O(q^9016);
+tq = t(q) + O(q^9216);
+
+S = [sq^0]
+T = [tq^0]
+
+for i in range(1, 301):
+    S.append(S[i - 1]*sq)
+
+for i in range(1, 16):
+    T.append(T[i - 1]*tq)
+```
+
+This takes around 190s.
+
+Finally, we compute the products of the powers.
+
+```
+for i in range(0, 301):
+    for j in range(0, 16):
+        p = S[i]*T[j]
+```
+
+This takes around 1650s.
 
 ## Computation of the q-series in Magma
 
@@ -371,11 +388,13 @@ end function;
 
 As in Oscar, this takes negligible time, as nothing is actually computed.
 
-At the next step we try to compute arrays of powers of $s(q)$ and $t(q)$.
+At the next step we try to compute arrays of powers of $s(q)$ and $t(q)$. In order to
+ensure Magma is not at a disadvantage we truncate $s(q)$ and $t(q)$ to the same
+precision as it is computed in Oscar, though this makes little difference.
 
 ```
-sq := s(q);
-tq := t(q);
+sq := s(q) + O(q^9016);
+tq := t(q) + O(q^9216);
 
 S := [sq^0];
 
@@ -390,12 +409,12 @@ for i := 1 to 15 do
 end for;
 ```
 
-This takes approximately 101s.
+This takes approximately 104s.
 
 One has to be very careful to precompute $s(q)$ and $t(q)$. Otherwise this takes 10s
 each time each of these are computed. Without being careful about this, Magma could take
-over an hour to compute all the powers. In comparison, the Oscar times do not change
-radically if we don't precompute these q-series.
+over an hour to compute all the powers. In comparison, the total Oscar time does not
+change radically if we don't precompute these q-series.
 
 Finally we compute the products of the powers of $s$ and $t$.
 
@@ -407,11 +426,7 @@ for i := 1 to 301 do
 end for;
 ```
 
-This takes about 2477s.
-
-As already mentioned, Magma ends up computing to a slightly higher precision (around
-$O(q^{13000})$) due to some slight differences in its power series model. If we truncate
-to the lower precision before this last step, the time goes down to about 1811s.
+This takes about 2488s.
 
 ## Summary
 
@@ -419,19 +434,16 @@ Here is a table summarising the results.
 
 n = 11, m = 4 | SageMath | Mathematica | Magma | Oscar
 --------------|----------|-------------|-------|-------
-Puiseux       | ??       | > 1 day     | 1912s | 643s 
+Puiseux       | 1840s    | ~ 2 days    | 2592s | 643s 
 
 I'm not sure what we learn from this, other than that benchmarking complex calculations
 can be somewhat of a deep hole at times. Artificially truncating series and doing
 additional precomputation to keep times in check doesn't seem like it reflects what a
 user would do.
 
-We feel that the comparison with Magma is not unfair. But it's not clear how much work
-is required for us to be completely fair to all systems.
-
-We should point out that we believe Magma has very fast nullspace code (very likely
-much faster than our own). So perhaps that would make a more reasonable benchmark for
-our next blog.
+We should point out that we have heard that Magma has very fast nullspace code (very
+likely much faster than our own). So perhaps that would make a more reasonable benchmark 
+for a future blog.
 
 ## Why are Oscar q-series fast
 
