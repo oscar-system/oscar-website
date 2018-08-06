@@ -229,7 +229,7 @@ puts a conservative estimate on the total time to fill in the matrix to be more 
 two days.
 
 ```
-Timing[Do[sp[i]*tp[j],{i,0,300},{j,0,15}][[1]]
+Timing[Do[sp[i]*tp[j],{i,0,300},{j,0,15}]][[1]]
 ```
 
 ## Computation of the q-series in SageMath
