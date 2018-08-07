@@ -13,8 +13,8 @@ layout: none
 {% for post in site.categories.blogs %}
   <entry>
     <title>{{ post.title }}</title>
-    <link href="{{ site.baseurl }}{{ post.url }}"/>
-    <id>{{ site.baseurl }}{{ post.url }}</id>
+    <link href="{{ site.url}}{{ site.baseurl }}{{ post.url | absolute }}"/>
+    <id>{{ site.url }}{{ site.baseurl }}{{ post.url | absolute }}</id>
     <updated>{{ post.date }}</updated>
   </entry>
 {% endfor %}
