@@ -14,7 +14,7 @@ layout: none
   <entry>
     <title>{{ post.title }}</title>
     <link href="https://nbviewer.jupyter.org/github/{{ post.repository }}/blob/master/{{ post.filename }}.ipynb"/>
-    <id>{{ site.baseurl }}{{ post.url }}</id>
+    <id>{{ site.url}}{{ site.baseurl }}{{ post.url | absolute }}</id>
     <updated>{{ post.date }}</updated>
   </entry>
 {% endfor %}
