@@ -105,7 +105,7 @@ docker run -it oscarsystem/oscardocker:latest
 {% endhighlight %}
 
 Docker will then download the OSCAR Docker image for you (approx. 6GB), and start a new
-shell in a Docker containter. You can then start `julia`.
+shell in a Docker container. You can then start `julia`.
 
 ### Jupyter in the Docker container
 
