@@ -15,3 +15,60 @@
   date: "September 27, 2017"
   location: Aachen
   pdf: "Aachen2017.pdf"
+
+- title: "Nemo and Hecke: number theory in KL"
+  author: "Claus Fieker"
+  date: "June 30, 2017"
+  location: Oldenburg
+
+- title: "Nemo/Hecke: computer algebra and number theory packages for the Julia programming language"
+  author: "Claus Fieker, William Hart, Tommy Hofmann, Fredrik Johansson"
+  date: "July 28, 2017"
+  location: Kaiserslautern
+
+- title: "Basic arithmetic in Flint and Nemo"
+  author: "William Hart"
+  date: "October 25, 2017"
+  location: Lyon
+
+- title: "The OSCAR Computer Algebra System"
+  author: "William Hart"
+  date: "March 07, 2018"
+  location: "GDMV, Paderborn"
+
+- title: "Hecke: A Fresh Approach to Computational Algebraic Number Theory"
+  author: "Claus Fieker, Tommy Hofmann, Carlo Sircana"
+  date: "March 07, 2018"
+  location: "GDMV, Paderborn"
+
+- title: "Aktuelle Entwicklungen bei Open-Source Gröbner Basen Algorithmen"
+  author: "Christian Eder"
+  date: "March 8, 2018"
+  location: "GDMV, Paderborn"
+
+- title: "Some hope"
+  author: "Claus Fieker"
+  date: "May 31, 2018"
+  location: "Greensboro"
+
+- title: "The curse of the large degree Classgroup Computations in Large Degree"
+  author: "Claus Fieker"
+  date: "May 28, 2018"
+  location: "Greensboro"
+
+- title: "The power of asymptotics"
+  author: "Claus Fieker"
+  date: "May 29, 2018"
+  location: "Greensboro"
+
+- title: "On the construction of class fields"
+  author: "Claus Fieker, Tommy Hofmann, Carlo Sircana"
+  date: "July 19, 2018"
+  location: "ANTS, Wisconsin"
+
+- title: "Large Class Groups in Nemo"
+  author: "Claus Fieker"
+  date: "June 8, 2018"
+  location: "Canada"
+
+
