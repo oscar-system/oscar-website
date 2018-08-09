@@ -84,6 +84,9 @@ Pkg.add("Hecke")
 Pkg.clone("https://github.com/wbhart/Singular.jl")
 Pkg.build("Singular")
 
+Pkg.clone("https://github.com/ederc/GB.jl")
+Pkg.build("GB")
+
 Pkg.clone("https://github.com/oscar-system/Polymake.jl")
 Pkg.build("Polymake")
 {% endhighlight %}
