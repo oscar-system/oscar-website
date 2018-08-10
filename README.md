@@ -55,6 +55,7 @@ Please add a new entry to the file `_data/talks.yml`, following this template
   author: Sebastian Gutsche
   location: Aachen
   date: May 28, 1988
+  date_sortable: 19880528
 ```
 
 To add a link to the PDF to your talk, you can either provide full

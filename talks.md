@@ -5,7 +5,7 @@ title: Talks and conferences
 
 A collection of talks about the OSCAR project, given on various conferences:
 
-{% assign entries = site.data.talks %}
+{% assign entries = site.data.talks | sort:"date_sortable" | reverse %}
 <ul>
 {% for p in entries %}
 {% assign has_link = false %}

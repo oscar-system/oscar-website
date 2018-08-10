@@ -1,74 +1,91 @@
 - title: "Integrating GAP and Julia"
   author: "Sebastian Gutsche"
   date: "July 24, 2018"
+  date_sortable: 20180724
   location: "ICMS 2018, Notre Dame"
   pdf_url: "https://sebasguts.github.io/downloads/ICMS2018.pdf"
 
 - title: "OSCAR: a visionary, new computer algebra system"
   author: "Wolfram Decker, Sebastian Gutsche, William Hart, Michael Joswig"
   date: "December 11, 2017"
+  date_sortable: 20171211
   location: Leipzig
   pdf: "Leipzig2017.pdf"
 
 - title: "OSCAR: a visionary, new computer algebra system"
   author: "Reimer Behrends, Thomas Breuer, Sebastian Gutsche, William Hart"
   date: "September 27, 2017"
+  date_sortable: 20170927
   location: Aachen
   pdf: "Aachen2017.pdf"
 
 - title: "Nemo and Hecke: number theory in KL"
   author: "Claus Fieker"
   date: "June 30, 2017"
+  date_sortable: 20170630
   location: Oldenburg
 
 - title: "Nemo/Hecke: computer algebra and number theory packages for the Julia programming language"
   author: "Claus Fieker, William Hart, Tommy Hofmann, Fredrik Johansson"
   date: "July 28, 2017"
+  date_sortable: 20170728
   location: Kaiserslautern
 
 - title: "Basic arithmetic in Flint and Nemo"
   author: "William Hart"
   date: "October 25, 2017"
   location: Lyon
+  pdf: "RIAM-talk.pdf"
 
 - title: "The OSCAR Computer Algebra System"
   author: "William Hart"
   date: "March 07, 2018"
+  date_sortable: 20180307
   location: "GDMV, Paderborn"
+  pdf: "Nemo-Paderborn-2018.pdf"
 
 - title: "Hecke: A Fresh Approach to Computational Algebraic Number Theory"
   author: "Claus Fieker, Tommy Hofmann, Carlo Sircana"
   date: "March 07, 2018"
+  date_sortable: 20180307
   location: "GDMV, Paderborn"
 
-- title: "Aktuelle Entwicklungen bei Open-Source Gröbner Basen Algorithmen"
+- title: "Current Advances in Open Source Gröbner Basis Algorithms"
   author: "Christian Eder"
   date: "March 8, 2018"
+  date_sortable: 20180308
   location: "GDMV, Paderborn"
+  pdf: "eder-dmv-2018.pdf"
 
 - title: "Some hope"
   author: "Claus Fieker"
   date: "May 31, 2018"
+  date_sortable: 20180531
   location: "Greensboro"
 
 - title: "The curse of the large degree Classgroup Computations in Large Degree"
   author: "Claus Fieker"
   date: "May 28, 2018"
+  date_sortable: 20180528
   location: "Greensboro"
+  pdf_url: https://www.uncg.edu/mat/numbertheory/summerschool/2018/Fieker_2018_Class-Group-Large-Degree.pdf
 
 - title: "The power of asymptotics"
   author: "Claus Fieker"
   date: "May 29, 2018"
+  date_sortable: 20180529
   location: "Greensboro"
 
 - title: "On the construction of class fields"
   author: "Claus Fieker, Tommy Hofmann, Carlo Sircana"
   date: "July 19, 2018"
+  date_sortable: 20180719
   location: "ANTS, Wisconsin"
 
 - title: "Large Class Groups in Nemo"
   author: "Claus Fieker"
   date: "June 8, 2018"
+  date_sortable: 20180608
   location: "Canada"
 
 
