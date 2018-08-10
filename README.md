@@ -53,9 +53,11 @@ Please add a new entry to the file `_data/talks.yml`, following this template
 ```
 - title: First things
   author: Sebastian Gutsche
-  location: Aachen
+  location: Aachen, Germany
   date: May 28, 1988
   date_sortable: 19880528
+  conference: My conference
+  conference_url: http://my.conference.de
 ```
 
 To add a link to the PDF to your talk, you can either provide full

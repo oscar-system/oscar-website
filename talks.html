@@ -1,0 +1,45 @@
+---
+layout: page
+title: Talks and conferences
+---
+
+A collection of talks about the OSCAR project, given at various conferences:
+
+{% assign years = "2018,2017" | split: "," %}
+{% assign entries = site.data.talks | sort:"date_sortable" | reverse %}
+
+{% for year in years %}
+    <h3> {{ year }} </h3>
+    <ul>
+    {% for p in entries %}
+        {% if p.date contains year %}
+        {% assign has_link = false %}
+        <li>
+            {{ p.author }}:<br/>
+            {% if p.pdf_url != null %}
+                {% assign has_link = true %}
+                <a href="{{ p.pdf_url }}">
+            {% elsif p.pdf != null %}
+                {% assign has_link = true %}
+                <a href="{{ site.baseurl }}public/{{ p.pdf }}">
+            {% endif %}
+            <emph>{{ p.title }}</emph>
+            {% if has_link == true %}
+                </a>
+            {% endif %}
+            <br/>
+            {% if p.conference_url != null %}
+                <a href="{{ p.conference_url }}">
+            {% endif %}
+            {% if p.conference != null %}
+            {{ p.conference }},<br/>
+            {% endif %}
+            {% if p.conference_url != null %}
+                </a>
+            {% endif %}
+            {{ p.location }}, {{ p.date }}
+        </li>
+    {% endif %}
+    {% endfor %}
+    </ul>
+{% endfor %}
