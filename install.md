@@ -49,7 +49,7 @@ First set up a sane build environment:
 
 {% highlight bash %}
 sudo apt-get update
-sudo apt-get install build-essential m4 wget \
+sudo apt-get install build-essential m4 wget git \
                      libtool-bin autoconf autogen cmake \
                      libboost-all-dev libxml2-dev \
                      libperl-dev ninja-build \
