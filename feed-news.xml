@@ -13,8 +13,8 @@ layout: none
 {% for post in site.categories.news %}
   <entry>
     <title>{{ post.title }}</title>
-    <link href="{{ site.url}}{{ site.baseurl }}{{ post.url | absolute }}"/>
-    <id>{{ site.url}}{{ site.baseurl }}{{ post.url | absolute }}</id>
+    <link href="{{ post.url | absolute_url }}"/>
+    <id>{{ post.url | absolute_url }}</id>
     <updated>{{ post.date }}</updated>
   </entry>
 {% endfor %}
