@@ -1,3 +1,12 @@
+- title: "OSCAR - the work"
+  author: "Reimer Behrends, Thomas Breuer, Sebastian Gutsche, William Hart"
+  date: "September 25, 2018"
+  date_sortable: 20180925
+  conference: Annual meeting TRR 195
+  conference_url: http://www.math.uni-tuebingen.de/arbeitsbereiche/geometrie/annual-meeting-sfb-trr-195-1
+  location: "Tübingen, Germany"
+  pdf: "tuebingen2018-thework.pdf"
+
 - title: "Integrating GAP and Julia"
   author: "Sebastian Gutsche"
   date: "July 24, 2018"
