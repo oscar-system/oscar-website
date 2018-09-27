@@ -99,8 +99,7 @@ Note that the various packages are independent and you do not need to install th
 ## Docker (On Linux/Windows/Mac OS)
 
 The fastest way to get a fully working version of all software packages
-in the OSCAR project is using [Docker](http://www.docker.com). To install
-Docker on your system, follow the instructions on [the Docker website](https://docs.docker.com/install/).
+in the OSCAR project is using [Docker](http://www.docker.com). To install Docker on your system, follow the instructions on [the Docker website](https://www.docker.com/products/docker-desktop).
 
 Once you have Docker installed, you can run the OSCAR Docker image via the command
 {% highlight bash %}
