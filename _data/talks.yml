@@ -7,6 +7,15 @@
   location: "Tübingen, Germany"
   pdf: "tuebingen2018-thework.pdf"
 
+- title: "OSCAR - the dream"
+  author: "Mohamed Barakat, Wolfram Decker, Claus Fieker, Michael Joswig, Frank Lübeck"
+  date: "September 24, 2018"
+  date_sortable: 20180924
+  conference: Annual meeting TRR 195
+  conference_url: http://www.math.uni-tuebingen.de/arbeitsbereiche/geometrie/annual-meeting-sfb-trr-195-1
+  location: "Tübingen, Germany"
+  pdf: "tuebingen2018-thedream.pdf"
+
 - title: "Integrating GAP and Julia"
   author: "Sebastian Gutsche"
   date: "July 24, 2018"
