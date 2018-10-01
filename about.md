@@ -6,7 +6,8 @@ title: About the OSCAR project
 The OSCAR project will integrate the four computer algebra systems
 [GAP](http://www.gap-system.org), [polymake](http://polymake.org),
 [Singular](http://www.singular.uni-kl.de),
-and [ANTIC](http://www.nemocas.org) developed within the [TRR 195](https://www.computeralgebra.de/sfb/) into a
+and Antic ([Hecke](https://github.com/thofma/Hecke.jl/), [Nemo](http://nemocas.org))
+developed within the [TRR 195](https://www.computeralgebra.de/sfb/) into a
 visionary next generation open source computer algebra system
 surpassing the combined mathematical capabilities of the underlying
 systems.
