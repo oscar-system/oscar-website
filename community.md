@@ -7,13 +7,6 @@ title: Community
 
 For the latest news on the development on OSCAR, visit the [News]({{site.baseurl }}news) page.
 
-## Stay informed about the OSCAR project
-
-If you want to stay informed about the latest development in the OSCAR project, please subscribe to the [OSCAR mailing list](https://mail.mathematik.uni-kl.de/mailman/listinfo/oscar).
-
-For additional information about development questions you can also subscribe to the
-[OSCAR-dev mailing list](https://mail.mathematik.uni-kl.de/mailman/listinfo/oscar-dev).
-
 ## How to report issues
 
 If you encounter any problems with OSCAR, please feel free to report the problems as an issue on [GitHub](https://github.com/oscar-system). If you are not sure to which part of the OSCAR project the
