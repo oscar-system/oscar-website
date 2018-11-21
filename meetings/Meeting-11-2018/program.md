@@ -24,38 +24,38 @@ meeting_nr: 201811
 
 ### Monday
 
-#### 14:00 - 16:00: Food for thought & Discussion
+#### 14:00 - 16:00: Food for thought & Discussion (MA 313)
 
 * **Michael Joswig:** Shaping OSCAR
 * **Bill Hart:** Object model in Julia
 
-#### 16:00 - 18:00: Task forces
+#### 16:00 - 18:00: Task forces (MA 313, MA 621)
 
 #### 18:00: Dinner at [Cafe Hardenberg](http://cafe-hardenberg.com/)
 
 ### Tuesday
 
-#### 10:00 - 12:00: Status report
+#### 10:00 - 12:00: Status report (MA 313)
 
 * **Christian Eder:** GB.jl
 * **Claus Fieker:** Hecke.jl
 * **Sebastian Gutsche:** GAP-Julia integration
 * **Sascha Timme:** Polymake.jl
 
-#### 14:00 - 18:00 Task forces
+#### 14:00 - 18:00 Task forces (MA 212, MA 621)
 
 ### Wednesday
 
-#### 10:00 - 12:00: Task forces
+#### 10:00 - 12:00: Task forces (MA 212, MA 621)
 
-#### 14:00 - 16:00: Taks forces & Discussion
+#### 14:00 - 16:00: Taks forces (MA 212, MA 621) & Discussion (MA 212)
 
-#### 16:00 - 18:00: Talk: TBA
+#### 16:00 - 18:00: Talk: TBA (MA 621)
 
 ### Thursday
 
-#### TBA
+#### TBA (MA 313)
 
 ### Friday
 
-#### TBA
+#### TBA (MA 212)
