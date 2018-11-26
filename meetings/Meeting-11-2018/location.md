@@ -11,7 +11,7 @@ The OSCAR Meeting in November 2018 takes place in
 
 The room numbers of the events on the program have been annotated in
 parentheses in the
-[program](https://oscar.computeralgebra.de/meetings/Meeting-1-2018/program/).
+[program](https://oscar.computeralgebra.de/meetings/Meeting-11-2018/program/).
 
 <h4>Address</h4>
 Technische Universität Berlin<br/>
