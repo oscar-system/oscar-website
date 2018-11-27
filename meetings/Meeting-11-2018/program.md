@@ -59,3 +59,13 @@ meeting_nr: 201811
 ### Friday
 
 #### TBA (MA 212)
+
+
+## Results
+
+### Data type for mutivariate ideals in Oscar.jl
+
+* A data type `MPolyIdl <: AbstractIdeal` is to be created.
+* For now, this will be just be another abstraction layer for `sideal` from Singular.jl.
+* In contrast to `sideal`, `MPolyIdl` should model ideals as mathematical objects, not as lists of generators
+  as in Singular.
