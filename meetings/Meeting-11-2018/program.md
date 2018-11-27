@@ -10,6 +10,10 @@ meeting_nr: 201811
 * Start: Monday, November 26, at noon
 * Finish: Friday, November 30, at noon
 
+### Progress reports
+
+Please add intermediate results and reports of task forces to [this pad](https://hackmd.io/_uIlbM8FSE6CjttGMoGm7w#).
+
 ### Explanations
 
 * Two initial talks (of 30 minutes each) serve as *food for thought*, with suggestions for our long-term goals. Focus on usability and user perspective.
