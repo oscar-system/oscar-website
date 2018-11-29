@@ -58,7 +58,11 @@ Please add intermediate results and reports of task forces to [this pad](https:/
 
 ### Thursday
 
-#### TBA (MA 313)
+#### 10:00 - 12:00: Task forces (MA 621)
+
+#### 14:00 - 16:00: Taks forces (MA 621)
+
+#### 16:00 - 18:00: Task forces (MA 621)
 
 ### Friday
 
