@@ -61,15 +61,14 @@ sudo apt-get install build-essential m4 wget git \
 Now install Julia:
 
 {% highlight bash %}
-wget https://julialang-s3.julialang.org/bin/linux/x64/0.6/julia-0.6.3-linux-x86_64.tar.gz
-tar -xvf julia-0.6.3-linux-x86_64.tar.gz
-mv julia-d55cadc350 julia-0.6
+wget https://julialang-s3.julialang.org/bin/linux/x64/1.0/julia-1.0.2-linux-x86_64.tar.gz
+tar -xvf julia-1.0.2-linux-x86_64.tar.gz
 {% endhighlight %}
 
 Now start Julia with the right environment setting:
 
 {% highlight bash %}
-JULIA_CXX_RTTI=1 julia-0.6/bin/julia
+julia-1.0.2/bin/julia
 {% endhighlight %}
 
 Now install the relevant Julia packages:
