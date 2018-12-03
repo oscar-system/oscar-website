@@ -71,9 +71,9 @@ parent(a::PolynomialElem) = a.parent
 ### Continuous integration (CI)
 
 Various formats of tests
-  * Unit tests & Regression tests
+  * Unit tests & Regression tests:
     Short tests, can be run for every commit/PR
-  * Integration tests
+  * Integration tests:
     Longer tests, for stability and compatibility of the whole ecosystem
   * Monitoring of performance: Monitor test times
 
@@ -121,8 +121,8 @@ slack
 * Private: oscar-private (TRR organisation only, not public, no archive)
 * Announcements: oscar (public subscription, archive)
 * Public: Options
-  - Discourse ($100 month/open source, maintained)
-  - PhPBB(free/open source, we maintain)
+  - Discourse (\$15 per month with academic discount, open source, maintained)
+  - phpBB(free/open source, we maintain(possible security nightmare))
 
 * GitHub: issue tracking, wiki
 * Website: starting points, blog
