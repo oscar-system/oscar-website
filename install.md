@@ -45,50 +45,80 @@ To start bash in a later session, just search for "bash".
 
 ## Installation for Ubuntu 16.04
 
-First set up a sane build environment:
+First set up a sane build environment. This manual is for `bash`. If you are not sure, start a bash by typing
 
 {% highlight bash %}
-sudo apt-get update
-sudo apt-get install build-essential m4 wget git \
-                     libtool-bin autoconf autogen cmake \
-                     libboost-all-dev libxml2-dev \
-                     libperl-dev ninja-build \
-                     libxml-writer-perl libxml-perl \
-                     libxml-libxslt-perl libperl-dev \
-                     libxml-writer-perl
+bash
+{% endhighlight %}
+
+Now update and install the necessary system packages.
+
+{% highlight bash %}
+apt-get update
+apt-get install 4ti2 ant ant-optional autoconf autogen bliss build-essential bzip2 clang cmake curl debhelper default-jdk gfortran git graphviz language-pack-el-base language-pack-en libbliss-dev libboost-dev libboost-python-dev libcdd-dev libcdd0d libdatetime-perl libflint-dev libglpk-dev libgmp-dev libgmp10 libgmpxx4ldbl libjson-perl libmpfr-dev libncurses5-dev libnormaliz-dev libntl-dev libperl-dev libppl-dev libreadline6-dev libsvn-perl libterm-readkey-perl libterm-readline-gnu-perl libtool libxml-libxml-perl libxml-libxslt-perl libxml-perl libxml-writer-perl libxml2-dev libxslt-dev libzmq3-dev m4 make nano ninja-build patch pkg-config python-dev python3-pip sudo unzip vim wget xsltproc
 {% endhighlight %}
 
 Now install Julia:
 
 {% highlight bash %}
-wget https://julialang-s3.julialang.org/bin/linux/x64/1.0/julia-1.0.2-linux-x86_64.tar.gz
-tar -xvf julia-1.0.2-linux-x86_64.tar.gz
+wget https://julialang-s3.julialang.org/bin/linux/x64/1.1/julia-1.1.0-linux-x86_64.tar.gz
+tar xf julia-1.1.0-linux-x86_64.tar.gz
 {% endhighlight %}
 
-Now start Julia with the right environment setting:
+Using a recent Julia version is crucial for interoperability with GAP. It needs to be a 1.1.* Version.
+To install and link GAP correctly, we store the correct Julia path in an evironment variable.
 
 {% highlight bash %}
-julia-1.0.2/bin/julia
+cd julia-1.1.0
+JULIA_PATH=$(pwd)
+{% endhighlight %}
+
+We currently need a development version of GAP. To download and install this version of GAP, execute the following lines
+
+{% highlight bash %}
+wget -q https://github.com/gap-system/gap/archive/master.zip
+unzip -q master.zip
+cd gap-master
+./autogen.sh
+./configure --with-julia=${JULIA_PATH}/include --with-gc=julia
+make
+make bootstrap-pkg-full
+cd pkg
+../bin/BuildPackages.sh
+git clone https://github.com/oscar-system/GAPJulia
+cd GAPJulia
+./configure
+make
+{% endhighlight %}
+
+Now start Julia
+
+{% highlight bash %}
+julia-1.1.0/bin/julia
 {% endhighlight %}
 
 Now install the relevant Julia packages:
 
 {% highlight julia %}
+using Pkg
+
+Pkg.add("CxxWrap")
+
 Pkg.add("AbstractAlgebra")
 
 Pkg.add("Nemo")
 
 Pkg.add("Hecke")
 
-Pkg.clone("https://github.com/wbhart/Singular.jl")
-Pkg.build("Singular")
+Pkg.add(PackageSpec(url="https://github.com/oscar-system/Singular.jl", rev="master" ))
 
-Pkg.clone("https://github.com/ederc/GB.jl")
-Pkg.build("GB")
+Pkg.add(PackageSpec(url="https://github.com/ederc/GB.jl", rev="master" ))
 
-Pkg.clone("https://github.com/oscar-system/Polymake.jl")
-Pkg.build("Polymake")
+Pkg.add(PackageSpec(url="https://github.com/oscar-system/Polymake.jl", rev="master" ))
 {% endhighlight %}
+
+If you have your own recent polymake installed, you can tell Polymake.jl to use it by setting the
+`POLYMAKE_CONFIG` environment variable to your `polymake-config` executable.
 
 The whole process will take some time (> 1 hour). But if everything went well, you are
 good to go.
