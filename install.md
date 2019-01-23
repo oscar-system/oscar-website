@@ -80,7 +80,7 @@ wget -q https://github.com/gap-system/gap/archive/master.zip
 unzip -q master.zip
 cd gap-master
 ./autogen.sh
-./configure --with-julia=${JULIA_PATH}/include --with-gc=julia
+./configure --with-julia=${JULIA_PATH} --with-gc=julia
 make
 make bootstrap-pkg-full
 cd pkg
@@ -118,7 +118,8 @@ Pkg.add(PackageSpec(url="https://github.com/oscar-system/Polymake.jl", rev="mast
 {% endhighlight %}
 
 If you have your own recent polymake installed, you can tell Polymake.jl to use it by setting the
-`POLYMAKE_CONFIG` environment variable to your `polymake-config` executable.
+`POLYMAKE_CONFIG` environment variable to your `polymake-config` executable. If you do not
+have a recent polymake, do not worry. Polymake.jl will download it for you.
 
 The whole process will take some time (> 1 hour). But if everything went well, you are
 good to go.
@@ -137,6 +138,12 @@ docker run -it oscarsystem/oscardocker:latest
 
 Docker will then download the OSCAR Docker image for you (approx. 6GB), and start a new
 shell in a Docker container. You can then start `julia`.
+
+To load GAP in Julia in the Docker container, execute the following commands in Julia
+{% highlight julia %}
+include("/home/oscar/gap-master/pkg/GAPJulia/LibGAP.jl/src/initialization.jl")
+GAP.run_it("/home/oscar/gap-master")
+{% endhighlight %}
 
 ### Jupyter in the Docker container
 
