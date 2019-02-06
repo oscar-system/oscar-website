@@ -1,5 +1,5 @@
 - name: AbstractAlgebra.jl
-  documentation_url: https://nemocas.github.io/AbstractAlgebra.jl/
+  documentation_url: https://nemocas.github.io/AbstractAlgebra.jl/latest/
   description: Pure Julia package implementing generic algorithms for basic arithmetic
                and algebraic structures. It also defines standard interfaces for
                generics, that can be implemented by other packages.
