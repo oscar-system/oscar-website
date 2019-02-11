@@ -7,6 +7,10 @@ title: Community
 
 For the latest news on the development on OSCAR, visit the [News]({{site.baseurl }}news) page.
 
+## Development list
+
+The OSCAR development list is public and can be accessed via the [OSCAR-dev](https://mail.mathematik.uni-kl.de/mailman/listinfo/oscar-dev) page.
+
 ## How to report issues
 
 If you encounter any problems with OSCAR, please feel free to report the problems as an issue on [GitHub](https://github.com/oscar-system). If you are not sure to which part of the OSCAR project the
