@@ -1,3 +1,12 @@
+- title: "OSCAR"
+  author: "The OSCAR Team"
+  date: "February 18, 2019"
+  date_sortable: 20180925
+  conference: Retreat TRR 195
+  conference_url: https://www.computeralgebra.de/sfb/events/retreat-2019-of-the-sfb-trr-195/
+  location: "Bad Münster am Stein, Germany"
+  pdf: "BMS-talk.pdf"
+
 - title: "OSCAR - the work"
   author: "Reimer Behrends, Thomas Breuer, Sebastian Gutsche, William Hart"
   date: "September 25, 2018"
