@@ -65,32 +65,6 @@ wget https://julialang-s3.julialang.org/bin/linux/x64/1.1/julia-1.1.0-linux-x86_
 tar xf julia-1.1.0-linux-x86_64.tar.gz
 {% endhighlight %}
 
-Using a recent Julia version is crucial for interoperability with GAP. It needs to be a 1.1.* Version.
-To install and link GAP correctly, we store the correct Julia path in an evironment variable.
-
-{% highlight bash %}
-cd julia-1.1.0
-JULIA_PATH=$(pwd)
-{% endhighlight %}
-
-We currently need a development version of GAP. To download and install this version of GAP, execute the following lines
-
-{% highlight bash %}
-wget -q https://github.com/gap-system/gap/archive/master.zip
-unzip -q master.zip
-cd gap-master
-./autogen.sh
-./configure --with-julia=${JULIA_PATH} --with-gc=julia
-make
-make bootstrap-pkg-full
-cd pkg
-../bin/BuildPackages.sh
-git clone https://github.com/oscar-system/GAPJulia
-cd GAPJulia
-./configure
-make
-{% endhighlight %}
-
 Now start Julia
 
 {% highlight bash %}
@@ -114,6 +88,8 @@ Pkg.add(PackageSpec(url="https://github.com/oscar-system/Singular.jl", rev="mast
 
 Pkg.add(PackageSpec(url="https://github.com/ederc/GB.jl", rev="master" ))
 
+Pkg.add(PackageSpec(url="https://github.com/oscar-system/GAP.jl", rev="master" ))
+
 Pkg.add(PackageSpec(url="https://github.com/oscar-system/Polymake.jl", rev="master" ))
 {% endhighlight %}
 
@@ -125,6 +101,22 @@ The whole process will take some time (> 1 hour). But if everything went well, y
 good to go.
 
 Note that the various packages are independent and you do not need to install them all.
+
+### Starting GAP with JuliaInterface
+
+If you have the Julia module GAP.jl installed above, you can also use the packages in the OSCAR ecosystem from GAP.
+
+You can start a GAP, linked to your downloaded Julia, via
+
+{% highlight bash %}
+~/.julia/gap.sh
+{% endhighlight %}
+
+In GAP, you can load the Julia interface via
+
+{% highlight GAP %}
+LoadPackage( "JuliaInterface" );
+{% endhighlight %}
 
 ## Docker (On Linux/Windows/Mac OS)
 
