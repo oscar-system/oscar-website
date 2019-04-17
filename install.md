@@ -93,6 +93,10 @@ Pkg.add(PackageSpec(url="https://github.com/oscar-system/GAP.jl", rev="master" )
 Pkg.add(PackageSpec(url="https://github.com/oscar-system/Polymake.jl", rev="master" ))
 {% endhighlight %}
 
+If you have your own copy of GAP installed, and compiled it against your Julia,
+you can tell the GAP.jl installation to use this GAP by setting the `GAPROOT`
+environment variable to the GAP directory.
+
 If you have your own recent polymake installed, you can tell Polymake.jl to use it by setting the
 `POLYMAKE_CONFIG` environment variable to your `polymake-config` executable. If you do not
 have a recent polymake, do not worry. Polymake.jl will download it for you.
