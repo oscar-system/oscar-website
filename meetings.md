@@ -5,7 +5,7 @@ meeting: true
 ---
 
 <ol>
-    {% assign pages_list = site.pages | sort:"name" %}
+    {% assign pages_list = site.pages | sort: "meeting_nr" %}
     {% for node in pages_list %}
         {% if node.title != null %}
             {% if node.is_meeting_index %}
