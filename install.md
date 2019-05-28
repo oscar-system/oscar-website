@@ -86,11 +86,11 @@ Pkg.add("Hecke")
 
 Pkg.add("Polymake)
 
+Pkg.add("GAP")
+
 Pkg.add(PackageSpec(url="https://github.com/oscar-system/Singular.jl", rev="master" ))
 
 Pkg.add(PackageSpec(url="https://github.com/ederc/GB.jl", rev="master" ))
-
-Pkg.add(PackageSpec(url="https://github.com/oscar-system/GAP.jl", rev="master" ))
 {% endhighlight %}
 
 If you have your own copy of GAP installed, and compiled it against your Julia,
