@@ -1,8 +1,17 @@
+- name: Aslam Ali
+  affiliation: TU Kaiserslautern
+  
 - name: Mohamed Barakat
   affiliation: University of Siegen
 
 - name: Reimer Behrends
   affiliation: TU Kaiserslautern
+
+- name: Janko Boehm
+  affiliation: TU Kaiserslautern
+
+- name: Simon Brandhorst
+  affiliation: Saarland University
 
 - name: Thomas Breuer
   affiliation: RWTH Aachen University
@@ -16,10 +25,16 @@
 - name: Claus Fieker
   affiliation: TU Kaiserslautern
 
+- name: Rafael Forquet
+  affiliation: France
+
 - name: Sebastian Gutsche
   affiliation: University of Siegen
 
 - name: Bill Hart
+  affiliation: TU Kaiserslautern
+
+- name: Tommy Hofmann
   affiliation: TU Kaiserslautern
 
 - name: Max Horn
@@ -27,39 +42,24 @@
 
 - name: Michael Joswig
   affiliation: TU Berlin
-
-- name: Simon Brandhorst
-  affiliation: Saarland University
   
-- name: Erec Thorn
-  affiliation: TU Kaiserslautern
+- name: Marek Kaluba
+  affiliation: Adam Mickiewicz University
   
-- name: Tommy Hofmann
-  affiliation: TU Kaiserslautern
+- name: Anna Samoza
+  affiliation: MPIM
   
-- name: Carlo Sircana
+- name: Hans Schoenemann
   affiliation: TU Kaiserslautern
   
 - name: Daniel Schultz
   affiliation: TU Kaiserslautern
   
-- name: Anna Samoza
-  affiliation: MPIM
-  
-- name: Rafael Forquet
-affiliation: France
-
-- name: Janko Boehm
+- name: Carlo Sircana
   affiliation: TU Kaiserslautern
-
-- name: Hans Schoenemann
-  affiliation: TU Kaiserslautern
-  
-- name: Aslam Ali
-  affiliation: TU Kaiserslautern
-  
-- name: Marek Kaluba
-  affiliation: Adam Mickiewicz
   
 - name: Jayantha Suranimalee
+  affiliation: TU Kaiserslautern
+
+- name: Erec Thorn
   affiliation: TU Kaiserslautern
