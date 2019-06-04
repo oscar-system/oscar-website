@@ -11,6 +11,6 @@ The OSCAR Meeting in June 2019 takes place in
 
 <h4>Address</h4>
 Gottlieb-Daimler-Straße<br/>
-building 48<br/>
+building 48, room 436<br/>
 67663 Kaiserslautern<br/>
 Germany
