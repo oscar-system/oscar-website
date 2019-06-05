@@ -154,9 +154,22 @@ a.sidebar-nav-item:focus {
 .sidebar-nav-item.active {
   font-weight: bold;
 }
+
 .sidebar-nav-item.minor {
   color: rgba(0,0,0);
   font-size: 75%;
+}
+
+@media (max-width: 48em) {
+  .mobile-hidden {
+    display: none;
+  }
+}
+
+@media (min-width: 48em) {
+  .mobile-display {
+    display: none;  
+  }
 }
 
 /* Sticky sidebar
