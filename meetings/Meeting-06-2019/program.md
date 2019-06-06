@@ -29,7 +29,31 @@ coding and short discussions when necessary.
 > I will show how to model the Boolean algebra of constructible sets
 > in an affine/projective ambient variety starting X
 > from the category of free modules over the (homogeneous) coordinate ring of X.
+* 19:45 Dinner at the Sommerhaus
+
+### Wednesday
+
+* 10:00 Coding sprint
+* 12:00 Lunch
+* 13:00 Coding sprint
+* 17:00 Status reports
+* 19:00 Dinner
+
+### Thursday
+
+* 10:00 Coding sprint
+* 12:00 Lunch
+* 13:00 Coding sprint
+* 17:00 Status reports
+* 19:00 Dinner
+
+### Friday
+
+* 10:00 Coding sprint
+* 11:00 Final status reports
+* 12:00 Departure
+* Note: participants are welcome to stay and work until 5pm if they wish
 
 ## Coding Sprints
 
-You can suggest coding sprint topics on the [Wiki](https://github.com/oscar-system/OSCAR-private/wiki/2019-06-Workshop)
+You can suggest coding sprint topics on the [Wiki](https://github.com/oscar-system/Oscar.jl/wiki/Coding-Sprints----Towards-OSCAR-1.0-(June-'19))
