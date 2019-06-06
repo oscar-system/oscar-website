@@ -14,8 +14,9 @@ coding and short discussions when necessary.
 
 ### Tuesday
 
-* 12:30: Lunch
-* 13:50: Begin
+* 12:15: Lunch
+* 13:00: Begin
+* 17:45: Group photo
 * 18:00: Claus Fieker: **Modules in Oscar - An attempt at a unified structure**
 > Modules are some of the most fundamental mathematical structures for
 > computer algebra, once we move past rings.
