@@ -16,7 +16,7 @@ coding and short discussions when necessary.
 
 * 12:30: Lunch
 * 13:50: Begin
-* 14:00: Claus Fieker: **Modules in Oscar - An attempt at a unified structure**
+* 16:00: Claus Fieker: **Modules in Oscar - An attempt at a unified structure**
 > Modules are some of the most fundamental mathematical structures for
 > computer algebra, once we move past rings.
 > Due to their importance, and due to the many different applications in
@@ -24,7 +24,7 @@ coding and short discussions when necessary.
 > many inconsistent bad habits in different areas).
 > This tries to define a compromise that allows both sophisticated users
 > and beginners to use (at least) some modules for computations.
-* 15:00: Mohamed Barakat: **Modeling embedded varieties**
+* 18:00: Mohamed Barakat: **Modeling embedded varieties**
 > I will show how to model the Boolean algebra of constructible sets
 > in an affine/projective ambient variety starting X
 > from the category of free modules over the (homogeneous) coordinate ring of X.
