@@ -14,6 +14,12 @@ coding and short discussions when necessary.
 
 ### Tuesday
 
+**Important Note**: As you might have noticed, the talks end directly before the dinner,
+which takes place at the [Unique](https://unique-kl.de/), next to the university.
+If you want to attend dinner, you will not be able to go to your hotel between the
+talks and dinner, so we advise that you either check in before the workshop starts,
+or inform your hotel that you check in late.
+
 * 12:15: Lunch
 * 13:00: Begin
 * 17:45: Group photo
@@ -29,6 +35,7 @@ coding and short discussions when necessary.
 > I will show how to model the Boolean algebra of constructible sets
 > in an affine/projective ambient variety starting X
 > from the category of free modules over the (homogeneous) coordinate ring of X.
+* 19:45: Dinner at Unique
 
 ## Coding Sprints
 
