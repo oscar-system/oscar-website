@@ -36,7 +36,21 @@ coding and short discussions when necessary.
 * 10:00 Coding sprint
 * 12:00 Lunch
 * 13:00 Coding sprint
-* 17:00 Status reports
+* 16:00 Status reports
+* 16:15 Santiago Laplagne: **Exact polynomial sum of squares decompositions**
+> Writing a positive polynomial as a sum of squares (SOS) is an important
+> problem in computational mathematics, with many applications in continuous
+> and combinatorial optimization.
+> A natural question is to which extent can an approximated sum of squares
+> decomposition be rounded off to an exact rational decomposition, so a to
+> provide a non-negativity certificate. In this talk we first prove that if a
+> rational polynomial is the sum of two squares in an algebraic extension of
+> odd degree of the rational numbers, then it can always be decomposed as a
+> rational SOS. For the case of more than two polynomials we provide an
+> explicit example of a rational polynomial that is the sum of three squares
+> with coefficients in Q(alpha), alpha the cubic root of 2, that cannot be
+> decomposed as a rational SOS.  We will show computations in Maple and
+> Singular to answer these questions and find the decompositions.
 * 19:00 Dinner
 
 ### Thursday
