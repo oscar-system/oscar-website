@@ -7,11 +7,17 @@
   website: http://www.mathematik.uni-kl.de/agag/mitglieder/wissenschaftliche-mitarbeiter/dr-reimer-behrends/
   paid_by_dfg: true
 
+- name: Alex Best
+  affiliation: Boston University
+  website: https://github.com/alexjbest
+  
 - name: Thomas Breuer
   affiliation: RWTH Aachen University
   email: thomas.breuer@math.rwth-aachen.de
   website: http://www.math.rwth-aachen.de/~Thomas.Breuer/
   paid_by_dfg: true
+  
+- name: Edgar Costa
 
 - name: Wolfram Decker
   affiliation: TU Kaiserslautern
@@ -21,6 +27,10 @@
   affiliation: TU Kaiserslautern
   website: http://www.mathematik.uni-kl.de/~ederc/index.html
 
+- name: Raul Epure
+  affiliation: TU Kaiserslautern
+  website: https://github.com/raulepure
+  
 - name: Claus Fieker
   affiliation: TU Kaiserslautern
   website: http://www.mathematik.uni-kl.de/agag/mitglieder/professoren/prof-dr-claus-fieker/
@@ -36,6 +46,10 @@
   website: http://www.mathematik.uni-kl.de/agag/mitglieder/wissenschaftliche-mitarbeiter/dr-william-hart/
   paid_by_dfg: true
 
+- name: Florian Heiderich
+  affiliation: RWTH Aachen University
+  website: https://github.com/heiderich
+  
 - name: Tommy Hofmann
   affiliation: TU Kaiserslautern
   website: http://www.mathematik.uni-kl.de/agag/mitglieder/wissenschaftliche-mitarbeiter/thofmann/
@@ -67,15 +81,33 @@
 - name: Frank Lübeck
   affiliation: RWTH Aachen University
   website: http://www.math.rwth-aachen.de/~Frank.Luebeck/index.html
+  
+- name: Alexander Mattes
+  website: https://github.com/alexandermattes
+  
+- name: Sachin Mohan
+  affiliation: TU Kaiserslautern
+  website: https://github.com/sachinkm308
 
 - name: Oleksandr Motsak
   affiliation: IMAGINARY
   website: https://imaginary.org/users/oleksandr-motsak
-
+  
+- name: Markus Pfeiffer
+  website: https://github.com/markuspf
+  
 - name: Sebastian Posur
   affiliation: University of Siegen
   website: https://sebastianpos.github.io/
 
+- name: Martin Raum
+  affiliation: Chalmers University
+  website: https://github.com/martinra
+
+- name: Johannes Schmitt
+  affiliation: TU Kaiserslautern
+  website: https://github.com/joschmitt
+  
 - name: Hans Schönemann
   affiliation: TU Kaiserslautern
   website: http://www.mathematik.uni-kl.de/agag/mitglieder/wissenschaftliche-mitarbeiter/dr-hans-schoenemann/
@@ -87,4 +119,12 @@
 - name: Andreas Steenpaß
   affiliation: TU Kaiserslautern
   website: http://www.mathematik.uni-kl.de/agag/mitglieder/wissenschaftliche-mitarbeiter/dr-andreas-steenpass/
+  
+- name: Sascha Timme
+  affiliation: TU Berlin
+  website: https://github.com/saschatimme
+  
+- name: Erec Thorn
+  affiliation: TU Kaiserslautern
+  website: https://github.com/erecthorn
 
