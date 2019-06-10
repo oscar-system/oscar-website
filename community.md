@@ -29,3 +29,17 @@ All Software developed for the OSCAR project is available on [GitHub](https://gi
 If you want to contribute to OSCAR, please fork the repository you want to contribute to
 and provide a pull request.
 
+Here is a list of all official repositories of the OSCAR project:
+
+* [AbstractAlgebra.jl](https://github.com/Nemocas/AbstractAlgebra.jl) - Generic abstract algebra and abstract type definitions
+* [GAP.jl](https://github.com/oscar-system/GAP.jl/) - GAP 4 to Julia bidirectional interface
+* [GB.jl](https://github.com/ederc/GB.jl) - Christian Eder's Groebner basis project
+* [Hecke.jl](https://github.com/thofma/Hecke.jl) - Algebraic number theory
+* [HomalgProject.jl](https://github.com/homalg-project/HomalgProject.jl) - The homalg project compatibility package for Julia
+* [Nemo.jl](https://github.com/Nemocas/Nemo.jl) - Wrappers of Flint/Arb/Antic C libraries
+* [Singular.jl](https://github.com/oscar-system/Singular.jl) - Singular interface
+* [Oscar.jl](https://github.com/oscar-system/Oscar.jl) - The OSCAR Julia interface
+* [Polymake.jl](https://github.com/oscar-system/Polymake.jl) - Polymake interface
+
+
+
