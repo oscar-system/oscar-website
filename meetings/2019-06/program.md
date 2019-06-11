@@ -3,6 +3,8 @@ layout: meeting
 title: Program and results
 meeting: true
 meeting_nr: 201906
+redirect_from:
+  - /meetings/Meeting-06-2019/program/
 ---
 
 ## Program

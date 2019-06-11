@@ -4,6 +4,8 @@ title: Meeting 11/2018
 meeting: true
 meeting_nr: 201811
 is_meeting_index: true
+redirect_from:
+  - /meetings/Meeting-11-2018/
 ---
 
 # OSCAR developer meeting

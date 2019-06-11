@@ -3,6 +3,8 @@ layout: meeting
 title: Location
 meeting: true
 meeting_nr: 201906
+redirect_from:
+  - /meetings/Meeting-06-2019/location/
 ---
 
 The OSCAR Meeting in June 2019 takes place in

@@ -3,6 +3,8 @@ layout: meeting
 title: Location
 meeting: true
 meeting_nr: 201801
+redirect_from:
+  - /meetings/Meeting-1-2018/location/
 ---
 
 The OSCAR Days January 2018 takes place in Aachen
