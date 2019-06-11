@@ -3,6 +3,8 @@ layout: meeting
 title: Location
 meeting: true
 meeting_nr: 201811
+redirect_from:
+  - /meetings/Meeting-11-2018/location/
 ---
 
 The OSCAR Meeting in November 2018 takes place in

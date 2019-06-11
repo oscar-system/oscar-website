@@ -1,14 +1,16 @@
 ---
 layout: meeting
-title: Meeting 06/2019
+title: Meeting 05/2018
 meeting: true
-meeting_nr: 201906
+meeting_nr: 201805
 is_meeting_index: true
+redirect_from:
+  - /meetings/Meeting-5-2018/
 ---
 
 # OSCAR developer meeting
 
-## June 11 - June 14 ,<br> TU Kaiserslautern
+## May 2018,<br> Siegen University
 
 ## Information
 
@@ -29,7 +31,6 @@ For more information, see
 If you have questions or suggestions, please contact the organizers:
 
 * [Sebastian Gutsche](mailto:gutsche@mathematik.uni-siegen.de)
-* [William Hart](mailto:wbhart@mathematik.uni-kl.de)
 
 ## Sponsors
 

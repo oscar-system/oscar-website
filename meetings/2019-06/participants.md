@@ -3,6 +3,8 @@ layout: meeting
 title: Participants
 meeting: true
 meeting_nr: 201906
+redirect_from:
+  - /meetings/Meeting-06-2019/participants/
 people:
     - name: Aslam Ali
       affiliation: TU Kaiserslautern
