@@ -16,6 +16,13 @@ coding and short discussions when necessary.
 
 * 12:15: Lunch
 * 13:00: Begin
+* 14:00: **Overview of core components**
+  + Sebastian Gutsche: **GAP.jl**
+  + Sebastian Gutsche & William Hart: **Singular.jl**
+  + Marek Kaluba: **Polymake.jl**
+  + William Hart: **Nemo.jl**
+  + William Hart: **AbstractAlgebra.jl**
+  + Claus Fieker & Tommy Hofmann: **Hecke.jl** 
 * 17:45: Group photo
 * 18:00: Claus Fieker: **Modules in Oscar - An attempt at a unified structure**
 > Modules are some of the most fundamental mathematical structures for
