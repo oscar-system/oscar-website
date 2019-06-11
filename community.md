@@ -37,9 +37,6 @@ Here is a list of all official repositories of the OSCAR project:
 * [Hecke.jl](https://github.com/thofma/Hecke.jl) - Algebraic number theory
 * [HomalgProject.jl](https://github.com/homalg-project/HomalgProject.jl) - The homalg project compatibility package for Julia
 * [Nemo.jl](https://github.com/Nemocas/Nemo.jl) - Wrappers of Flint/Arb/Antic C libraries
-* [Singular.jl](https://github.com/oscar-system/Singular.jl) - Singular interface
 * [Oscar.jl](https://github.com/oscar-system/Oscar.jl) - The OSCAR Julia interface
 * [Polymake.jl](https://github.com/oscar-system/Polymake.jl) - Polymake interface
-
-
-
+* [Singular.jl](https://github.com/oscar-system/Singular.jl) - Singular interface
