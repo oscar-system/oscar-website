@@ -5,7 +5,9 @@ highlighter:      rouge
 # Permalinks
 permalink:        pretty
 
-gems: [jekyll-paginate]
+plugins:
+  - jekyll-paginate
+  - jekyll-redirect-from
 
 # Setup
 title:            'OSCAR Computer Algebra System'
