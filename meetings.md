@@ -4,9 +4,9 @@ title: OSCAR Meetings
 meeting: true
 ---
 
-<ol>
+<ol reversed>
     {% assign pages_list = site.pages | sort: "meeting_nr" %}
-    {% for node in pages_list %}
+    {% for node in pages_list reversed %}
         {% if node.title != null %}
             {% if node.is_meeting_index %}
                 <li>
