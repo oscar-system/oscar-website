@@ -17,12 +17,12 @@ coding and short discussions when necessary.
 * 12:15: Lunch
 * 13:00: Begin
 * 14:00: **Overview of core components**
+  + Tommy Hofmann: **Hecke.jl**
   + Sebastian Gutsche: **GAP.jl**
   + Sebastian Gutsche & William Hart: **Singular.jl**
-  + Marek Kaluba: **Polymake.jl**
-  + William Hart: **Nemo.jl**
   + William Hart: **AbstractAlgebra.jl**
-  + Tommy Hofmann: **Hecke.jl**
+  + William Hart: **Nemo.jl**
+  + Marek Kaluba: **Polymake.jl**
 * 15:00: Coffee Break
 * 16:00: Group photo
 * 16:15: Claus Fieker: **Modules in Oscar - An attempt at a unified structure**
