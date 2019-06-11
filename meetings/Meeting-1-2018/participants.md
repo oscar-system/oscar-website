@@ -29,7 +29,7 @@ people:
       affiliation: TU Kaiserslautern
 
     - name: Max Horn
-      affiliation: Justus Liebig University Giessen
+      affiliation: Justus Liebig University Gießen
 
     - name: Michael Joswig
       affiliation: TU Berlin
