@@ -22,7 +22,7 @@ coding and short discussions when necessary.
   + Marek Kaluba: **Polymake.jl**
   + William Hart: **Nemo.jl**
   + William Hart: **AbstractAlgebra.jl**
-  + Claus Fieker & Tommy Hofmann: **Hecke.jl** 
+  + Tommy Hofmann: **Hecke.jl**
 * 17:45: Group photo
 * 18:00: Claus Fieker: **Modules in Oscar - An attempt at a unified structure**
 > Modules are some of the most fundamental mathematical structures for
