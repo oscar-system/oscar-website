@@ -7,7 +7,7 @@ permalink:        pretty
 
 plugins:
   - jekyll-paginate
-  - jekyll-redirect-from
+  #- jekyll-redirect-from
 
 # Setup
 title:            'OSCAR Computer Algebra System'
