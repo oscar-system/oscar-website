@@ -12,6 +12,8 @@ redirect_from:
 
 ## June 11 - June 14 ,<br> TU Kaiserslautern
 
+![alt text](IMG_7429.jpg "Participants")
+
 ## Information
 
 For more information, see
