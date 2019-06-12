@@ -20,7 +20,7 @@ If it belongs to a different package, we will move it there for you.
 
 To make the issue visible to all participants of the project and to make sorting out responsibilities easier for us, please do not write emails to single people, but post the issue on GitHub.
 
-If you do not want to create an account on GitHub, plese send the issue to [OSCAR-dev](mailto:oscar-dev@mathematik.uni-kl.de).
+If you do not want to create an account on GitHub, please send the issue to [OSCAR-dev](mailto:oscar-dev@mathematik.uni-kl.de).
 
 ## How to contribute
 
