@@ -16,18 +16,18 @@ coding and short discussions when necessary.
 
 ### Tuesday
 
-* 12:15: Lunch
-* 13:00: Begin
-* 14:00: **Overview of core components**
+* 12:15 Lunch
+* 13:00 Begin
+* 14:00 **Overview of core components**
   + Tommy Hofmann: **Hecke.jl**
   + Sebastian Gutsche: **GAP.jl**
   + Sebastian Gutsche & William Hart: **Singular.jl**
   + William Hart: **AbstractAlgebra.jl**
   + William Hart: **Nemo.jl**
   + Marek Kaluba: **Polymake.jl**
-* 15:00: Coffee Break
-* 16:00: Group photo
-* 16:15: Claus Fieker: **Modules in Oscar - An attempt at a unified structure**
+* 15:00 Coffee Break
+* 16:00 Group photo
+* 16:15 Claus Fieker: **Modules in Oscar - An attempt at a unified structure**
 > Modules are some of the most fundamental mathematical structures for
 > computer algebra, once we move past rings.
 > Due to their importance, and due to the many different applications in
@@ -35,7 +35,7 @@ coding and short discussions when necessary.
 > many inconsistent bad habits in different areas).
 > This tries to define a compromise that allows both sophisticated users
 > and beginners to use (at least) some modules for computations.
-* 17:15: Mohamed Barakat: **Modeling embedded varieties**
+* 17:15 Mohamed Barakat: **Modeling embedded varieties**
 > I will show how to model the Boolean algebra of constructible sets
 > in an affine/projective ambient variety starting X
 > from the category of free modules over the (homogeneous) coordinate ring of X.
@@ -44,9 +44,10 @@ coding and short discussions when necessary.
 ### Wednesday
 
 * 10:00 Coding sprint
+* 11:00 Coffee Break
 * 12:00 Lunch
 * 13:00 Coding sprint
-* 16:00 Status reports
+* 15:45 Coffee Break
 * 16:15 Santiago Laplagne: **Exact polynomial sum of squares decompositions**
 > Writing a positive polynomial as a sum of squares (SOS) is an important
 > problem in computational mathematics, with many applications in continuous
@@ -61,6 +62,7 @@ coding and short discussions when necessary.
 > with coefficients in Q(alpha), alpha the cubic root of 2, that cannot be
 > decomposed as a rational SOS.  We will show computations in Maple and
 > Singular to answer these questions and find the decompositions.
+* 17:30 Status reports
 * 19:00 Dinner
 
 ### Thursday
