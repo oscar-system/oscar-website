@@ -44,9 +44,10 @@ coding and short discussions when necessary.
 ### Wednesday
 
 * 10:00 Coding sprint
+* 11:00 Coffee Break
 * 12:00 Lunch
 * 13:00 Coding sprint
-* 16:00 Status reports
+* 15:45 Coffee Break
 * 16:15 Santiago Laplagne: **Exact polynomial sum of squares decompositions**
 > Writing a positive polynomial as a sum of squares (SOS) is an important
 > problem in computational mathematics, with many applications in continuous
@@ -61,6 +62,7 @@ coding and short discussions when necessary.
 > with coefficients in Q(alpha), alpha the cubic root of 2, that cannot be
 > decomposed as a rational SOS.  We will show computations in Maple and
 > Singular to answer these questions and find the decompositions.
+* 17:30 Status reports
 * 19:00 Dinner
 
 ### Thursday
