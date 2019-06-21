@@ -84,7 +84,7 @@ Pkg.add("Nemo")
 
 Pkg.add("Hecke")
 
-Pkg.add("Polymake)
+Pkg.add("Polymake")
 
 Pkg.add("GAP")
 
