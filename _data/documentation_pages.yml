@@ -20,3 +20,6 @@
   documentation_url: http://thofma.github.io/Hecke.jl/latest/
   description: Algebraic number theory in Julia.
 
+- name: HomalgProject.jl
+  documentation_url: https://homalg-project.github.io/HomalgProject.jl/latest
+  description: The homalg project compatibility package for Julia.
