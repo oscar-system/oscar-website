@@ -92,7 +92,7 @@ for the OSCAR project:
           {% assign link_open = true %}
       {% endif %}
       <strong>{{ p.name }}</strong>{% if link_open %}</a>{% assign link_open = false %}{% endif %}
-      {% if p.authors != null %? ({{p.authors }}){% endif %}
+      {% if p.authors != null %} ({{p.authors }}){% endif %}
   </li>
   {% endfor %}
 </ul>
