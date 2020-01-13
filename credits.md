@@ -79,3 +79,20 @@ for the OSCAR project:
 {% endif %}
 {% endfor %}
 </ul>
+
+## Citations of Oscar and its components
+
+### Papers
+
+<ul>
+  {% for p in site.data.citations %}
+  <li>
+      {% if p.url != null %}
+          <a href="{{ p.url }}">
+          {% assign link_open = true %}
+      {% endif %}
+      <strong>{{ p.name }}</strong>{% if link_open %}</a>{% assign link_open = false %}{% endif %}
+      {% if p.authors != null %? ({{p.authors }}){% endif %}
+  </li>
+  {% endfor %}
+</ul>
