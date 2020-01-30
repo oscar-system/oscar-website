@@ -55,7 +55,7 @@ Now update and install the necessary system packages.
 
 {% highlight bash %}
 apt-get update
-apt-get install 4ti2 ant ant-optional autoconf autogen bliss build-essential bzip2 clang cmake curl debhelper default-jdk gfortran git graphviz language-pack-el-base language-pack-en libbliss-dev libboost-dev libboost-python-dev libcdd-dev libcdd0d libdatetime-perl libflint-dev libglpk-dev libgmp-dev libgmp10 libgmpxx4ldbl libjson-perl libmpfr-dev libncurses5-dev libnormaliz-dev libntl-dev libperl-dev libppl-dev libreadline6-dev libsvn-perl libterm-readkey-perl libterm-readline-gnu-perl libtool libxml-libxml-perl libxml-libxslt-perl libxml-perl libxml-writer-perl libxml2-dev libxslt-dev libzmq3-dev m4 make nano ninja-build patch pkg-config python-dev python3-pip sudo unzip vim wget xsltproc
+apt-get install autoconf build-essential bzip2 cmake curl git libcurl4-gnutls-dev libczmq-dev libgmp-dev libreadline6-dev libtool m4 make wget zlib1g-dev
 {% endhighlight %}
 
 Now install Julia:
