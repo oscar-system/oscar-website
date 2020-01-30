@@ -15,11 +15,15 @@ people:
     - name: Bill Hart
       affiliation: TU Kaiserslautern
 
+    - name: Tommy Hofmann
+      affiliation: TU Kaiserslautern
+
     - name: Max Horn
       affiliation: University of Siegen
 
     - name: Hans Schönemann
       affiliation: TU Kaiserslautern
+
 ---
 
 {% include participants.html participants=page.people %}
