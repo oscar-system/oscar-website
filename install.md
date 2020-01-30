@@ -61,8 +61,8 @@ apt-get install 4ti2 ant ant-optional autoconf autogen bliss build-essential bzi
 Now install Julia:
 
 {% highlight bash %}
-wget https://julialang-s3.julialang.org/bin/linux/x64/1.1/julia-1.1.0-linux-x86_64.tar.gz
-tar xf julia-1.1.0-linux-x86_64.tar.gz
+wget https://julialang-s3.julialang.org/bin/linux/x64/1.3/julia-1.3.1-linux-x86_64.tar.gz
+tar xf julia-1.3.1-linux-x86_64.tar.gz
 {% endhighlight %}
 
 Now start Julia
