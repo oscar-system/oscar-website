@@ -1,3 +1,12 @@
+- title: "Chevalley’s Theorem on constructible images made constructive"
+  author: "Mohamed Barakat"
+  date: "January 30, 2020"
+  date_sortable: 20200130
+  conference: Computational and algorithmic methods
+  conference_url: https://www.newton.ac.uk/seminar/20200130091010001
+  location: "Isaac Newton Institute, Cambridge, UK"
+  pdf_url: https://www.newton.ac.uk/files/seminar/20200130091010001-1787124.pdf
+
 - title: "OSCAR"
   author: "The OSCAR Team"
   date: "February 18, 2019"
