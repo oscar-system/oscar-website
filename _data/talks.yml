@@ -1,7 +1,6 @@
 - title: "Chevalley’s Theorem on constructible images made constructive"
   author: "Mohamed Barakat"
-  date: "January 30, 2020"
-  date_sortable: 20200130
+  date: "2020-01-30"
   conference: Computational and algorithmic methods
   conference_url: https://www.newton.ac.uk/event/graw02
   location: "Isaac Newton Institute, Cambridge, UK"
@@ -10,8 +9,7 @@
 
 - title: "OSCAR"
   author: "The OSCAR Team"
-  date: "February 18, 2019"
-  date_sortable: 20180925
+  date: "2019-02-18"
   conference: Retreat TRR 195
   conference_url: https://www.computeralgebra.de/sfb/events/retreat-2019-of-the-sfb-trr-195/
   location: "Bad Münster am Stein, Germany"
@@ -19,8 +17,7 @@
 
 - title: "OSCAR - the work"
   author: "Reimer Behrends, Thomas Breuer, Sebastian Gutsche, William Hart"
-  date: "September 25, 2018"
-  date_sortable: 20180925
+  date: "2018-09-25"
   conference: Annual meeting TRR 195
   conference_url: http://www.math.uni-tuebingen.de/arbeitsbereiche/geometrie/annual-meeting-sfb-trr-195-1
   location: "Tübingen, Germany"
@@ -28,8 +25,7 @@
 
 - title: "OSCAR - the dream"
   author: "Mohamed Barakat, Wolfram Decker, Claus Fieker, Michael Joswig, Frank Lübeck"
-  date: "September 24, 2018"
-  date_sortable: 20180924
+  date: "2018-09-24"
   conference: Annual meeting TRR 195
   conference_url: http://www.math.uni-tuebingen.de/arbeitsbereiche/geometrie/annual-meeting-sfb-trr-195-1
   location: "Tübingen, Germany"
@@ -37,8 +33,7 @@
 
 - title: "Integrating GAP and Julia"
   author: "Sebastian Gutsche"
-  date: "July 24, 2018"
-  date_sortable: 20180724
+  date: "2018-07-24"
   conference: ICMS 2018
   conference_url: http://icms-conference.org/2018/
   location: "Notre Dame, USA"
@@ -46,8 +41,7 @@
 
 - title: "OSCAR: a visionary, new computer algebra system"
   author: "Wolfram Decker, Sebastian Gutsche, William Hart, Michael Joswig"
-  date: "December 11, 2017"
-  date_sortable: 20171211
+  date: "2017-12-11"
   conference: Open Source Computer Algebra Research (OSCAR)
   conference_url: https://www.mis.mpg.de/calendar/conferences/2017/oscar2017.html
   location: "Leipzig, Germany"
@@ -55,8 +49,7 @@
 
 - title: "OSCAR: a visionary, new computer algebra system"
   author: "Reimer Behrends, Thomas Breuer, Sebastian Gutsche, William Hart"
-  date: "September 27, 2017"
-  date_sortable: 20170927
+  date: "2017-09-27"
   conference: First annual meeting of the DFG collaborative research center SFB-TRR 195
   conference_url: http://www.math.rwth-aachen.de/~Sebastian.Schoennenbeck/Jahrestagung/index.html
   location: Aachen, Germany
@@ -64,71 +57,61 @@
 
 - title: "Nemo and Hecke: number theory in KL"
   author: "Claus Fieker"
-  date: "June 30, 2017"
-  date_sortable: 20170630
+  date: "2017-06-30"
   location: Oldenburg
 
 - title: "Nemo/Hecke: computer algebra and number theory packages for the Julia programming language"
   author: "Claus Fieker, William Hart, Tommy Hofmann, Fredrik Johansson"
-  date: "July 28, 2017"
-  date_sortable: 20170728
+  date: "2017-07-28"
   location: Kaiserslautern
 
 - title: "Basic arithmetic in Flint and Nemo"
   author: "William Hart"
-  date: "October 25, 2017"
+  date: "2017-10-23"
   location: Lyon
-  pdf: "RIAM-talk.pdf"
+  pdf: "RAIM-talk.pdf"
 
 - title: "The OSCAR Computer Algebra System"
   author: "William Hart"
-  date: "March 07, 2018"
-  date_sortable: 20180307
+  date: "2018-03-07"
   location: "GDMV, Paderborn"
   pdf: "Nemo-Paderborn-2018.pdf"
 
 - title: "Hecke: A Fresh Approach to Computational Algebraic Number Theory"
   author: "Claus Fieker, Tommy Hofmann, Carlo Sircana"
-  date: "March 07, 2018"
-  date_sortable: 20180307
+  date: "2018-03-07"
   location: "GDMV, Paderborn"
 
 - title: "Current Advances in Open Source Gröbner Basis Algorithms"
   author: "Christian Eder"
-  date: "March 8, 2018"
-  date_sortable: 20180308
+  date: "2018-03-08"
   location: "GDMV, Paderborn"
   pdf: "eder-dmv-2018.pdf"
 
 - title: "Some hope"
   author: "Claus Fieker"
-  date: "May 31, 2018"
-  date_sortable: 20180531
+  date: "2018-05-31"
   location: "Greensboro"
 
 - title: "The curse of the large degree Classgroup Computations in Large Degree"
   author: "Claus Fieker"
-  date: "May 28, 2018"
-  date_sortable: 20180528
+  date: "2018-05-28"
   location: "Greensboro"
   pdf_url: https://www.uncg.edu/mat/numbertheory/summerschool/2018/Fieker_2018_Class-Group-Large-Degree.pdf
 
 - title: "The power of asymptotics"
   author: "Claus Fieker"
-  date: "May 29, 2018"
-  date_sortable: 20180529
+  date: "2018-05-29"
   location: "Greensboro"
 
 - title: "On the construction of class fields"
   author: "Claus Fieker, Tommy Hofmann, Carlo Sircana"
-  date: "July 19, 2018"
-  date_sortable: 20180719
+  date: "2018-07-19"
   location: "ANTS, Wisconsin"
 
 - title: "Large Class Groups in Nemo"
   author: "Claus Fieker"
-  date: "June 8, 2018"
-  date_sortable: 20180608
+  date: "2018-06-08"
   location: "Canada"
 
 
