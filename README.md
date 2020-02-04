@@ -116,7 +116,7 @@ Please add a new entry to the `_data/contributors.yml` file, of the following fo
 - name: Sebastian Gutsche
   affiliation: University of Siegen
   email: gutsche@mathematik.uni-siegen.de
-  website: http://sebasguts.github.io
+  website: https://sebasguts.github.io
 ```
 All three entries, `affiliation`, `email`, and `website` are optional. If you provide an `email` and a `website`, the name will link to the website.
 
@@ -125,7 +125,7 @@ All three entries, `affiliation`, `email`, and `website` are optional. If you pr
 Please add a new entry to the `_data/used_software.yml` file, of the following form:
 ```
 - name: GAP
-  website: http://www.gap-system.org
+  website: https://www.gap-system.org
 ```
 
 ## How to add a new meeting subpage

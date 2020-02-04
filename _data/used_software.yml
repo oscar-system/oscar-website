@@ -1,5 +1,5 @@
 - name: GAP
-  website: http://www.gap-system.org
+  website: https://www.gap-system.org
 
 - name: Nemo
   website: http://www.nemocas.org
@@ -8,25 +8,25 @@
   website: https://github.com/thofma/Hecke.jl/
 
 - name: Polymake
-  website: http://www.polymake.org/
+  website: https://www.polymake.org/
 
 - name: Singular
   website: http://www.singular.uni-kl.de/
 
 - name: GMP
-  website: http://gmplib.org/
+  website: https://gmplib.org/
 
 - name: MPIR
   website: http://mpir.org/
 
 - name: MPFR
-  website: http://mpfr.org/
+  website: https://www.mpfr.org/
 
 - name: Arb
   website: http://arblib.org/
 
 - name: NTL
-  website: http://www.shoup.net/ntl
+  website: https://www.shoup.net/ntl
 
 - name: Flint
   website: http://www.flintlib.org
