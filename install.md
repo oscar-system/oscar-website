@@ -76,8 +76,6 @@ Now install the relevant Julia packages:
 {% highlight julia %}
 using Pkg
 
-Pkg.add("CxxWrap")
-
 Pkg.add("AbstractAlgebra")
 
 Pkg.add("Nemo")
@@ -88,11 +86,11 @@ Pkg.add("Polymake")
 
 Pkg.add("GAP")
 
-Pkg.add(PackageSpec(url="https://github.com/oscar-system/Singular.jl", rev="master" ))
+Pkg.add("Singular")
+
+Pkg.add("HomalgProject")
 
 Pkg.add(PackageSpec(url="https://github.com/ederc/GB.jl", rev="master" ))
-
-Pkg.add(PackageSpec(url="https://github.com/homalg-project/HomalgProject.jl", rev="master" ))
 {% endhighlight %}
 
 If you have your own copy of GAP installed, and compiled it against your Julia,
