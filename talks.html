@@ -18,6 +18,9 @@ A collection of talks about the OSCAR project, given at various conferences:
             {{ p.author }}:<br/>
             {% if p.pdf_url != null %}
                 {% assign has_link = true %}
+                <a href="{{ p.talk_url }}">
+            {% elsif p.pdf_url != null %}
+                {% assign has_link = true %}
                 <a href="{{ p.pdf_url }}">
             {% elsif p.pdf != null %}
                 {% assign has_link = true %}
