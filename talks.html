@@ -10,12 +10,13 @@ A collection of talks about the OSCAR project, given at various conferences:
 
 {% for year in years %}
     <h3> {{ year }} </h3>
-    <ul>
+    <dl>
     {% for p in entries %}
         {% if p.date contains year %}
         {% assign has_link = false %}
-        <li>
-            {{ p.author }}:<br/>
+        <dt>{{ p.date | date: "%B %e, %Y" }}</dt>
+        <dd>
+            {{ p.author }}<br/>
             {% if p.pdf_url != null %}
                 {% assign has_link = true %}
                 <a href="{{ p.talk_url }}">
@@ -26,7 +27,7 @@ A collection of talks about the OSCAR project, given at various conferences:
                 {% assign has_link = true %}
                 <a href="{{ site.baseurl }}public/{{ p.pdf }}">
             {% endif %}
-            <emph>{{ p.title }}</emph>
+            <em>&ldquo;{{ p.title }}&rdquo;</em>
             {% if has_link == true %}
                 </a>
             {% endif %}
@@ -40,9 +41,9 @@ A collection of talks about the OSCAR project, given at various conferences:
             {% if p.conference_url != null %}
                 </a>
             {% endif %}
-            {{ p.location }}, {{ p.date | date: "%B %e, %Y" }}
-        </li>
+            {{ p.location }}
+        </dd>
         {% endif %}
     {% endfor %}
-    </ul>
+    </dl>
 {% endfor %}
