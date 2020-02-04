@@ -9,8 +9,7 @@
 
 - title: "OSCAR, a Tech Preview"
   author: "Michael Joswig"
-  date: "January 24, 2020"
-  date_sortable: 20200124
+  date: "2020-01-24"
   conference: 11th polymake conference and developer meeting
   conference_url: https://www.mis.mpg.de/de/veranstaltungen/konferenzen/2020/polymake2020.html
   location: "MPI-MIS, Leipzig"
