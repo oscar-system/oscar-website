@@ -4,7 +4,7 @@
 
 - name: Reimer Behrends
   affiliation: TU Kaiserslautern
-  website: http://www.mathematik.uni-kl.de/agag/mitglieder/wissenschaftliche-mitarbeiter/dr-reimer-behrends/
+  #website: https://www.mathematik.uni-kl.de/agag/mitglieder/wissenschaftliche-mitarbeiter/dr-reimer-behrends/
   paid_by_dfg: true
 
 - name: Alex Best
@@ -19,11 +19,11 @@
 
 - name: Wolfram Decker
   affiliation: TU Kaiserslautern
-  website: http://www.mathematik.uni-kl.de/en/agag/members/professors/prof-dr-wolfram-decker/
+  website: https://www.mathematik.uni-kl.de/en/agag/people/head/prof-dr-wolfram-decker/
 
 - name: Christian Eder
   affiliation: TU Kaiserslautern
-  website: http://www.mathematik.uni-kl.de/~ederc/index.html
+  website: https://www.mathematik.uni-kl.de/~ederc/index.html
 
 - name: Raul Epure
   affiliation: TU Kaiserslautern
@@ -31,7 +31,7 @@
   
 - name: Claus Fieker
   affiliation: TU Kaiserslautern
-  website: http://www.mathematik.uni-kl.de/agag/mitglieder/professoren/prof-dr-claus-fieker/
+  website: https://www.mathematik.uni-kl.de/en/agag/people/head/prof-dr-claus-fieker/
 
 - name: Sebastian Gutsche
   affiliation: University of Siegen
@@ -41,7 +41,7 @@
 
 - name: William Hart
   affiliation: TU Kaiserslautern
-  website: http://www.mathematik.uni-kl.de/agag/mitglieder/wissenschaftliche-mitarbeiter/dr-william-hart/
+  #website: https://www.mathematik.uni-kl.de/agag/mitglieder/wissenschaftliche-mitarbeiter/dr-william-hart/
   paid_by_dfg: true
 
 - name: Florian Heiderich
@@ -50,7 +50,7 @@
   
 - name: Tommy Hofmann
   affiliation: TU Kaiserslautern
-  website: http://www.mathematik.uni-kl.de/agag/mitglieder/wissenschaftliche-mitarbeiter/thofmann/
+  website: https://www.mathematik.uni-kl.de/~thofmann/
 
 - name: Max Horn
   affiliation: University of Siegen
@@ -62,7 +62,7 @@
 
 - name: Michael Joswig
   affiliation: TU Berlin
-  website: http://page.math.tu-berlin.de/~joswig/
+  website: https://page.math.tu-berlin.de/~joswig/
 
 - name: Marek Kaluba
   affiliation: Adam Mickiewicz University, Poznań
@@ -70,7 +70,7 @@
 
 - name: Lars Kastner
   affiliation: TU Berlin
-  website: http://page.math.tu-berlin.de/~kastner/
+  website: https://page.math.tu-berlin.de/~kastner/
 
 - name: Benjamin Lorenz
   affiliation: TU Berlin
@@ -108,15 +108,15 @@
   
 - name: Hans Schönemann
   affiliation: TU Kaiserslautern
-  website: http://www.mathematik.uni-kl.de/agag/mitglieder/wissenschaftliche-mitarbeiter/dr-hans-schoenemann/
+  #website: https://www.mathematik.uni-kl.de/agag/mitglieder/wissenschaftliche-mitarbeiter/dr-hans-schoenemann/
 
 - name: Carlo Sircana
   affiliation: TU Kaiserslautern
-  website: http://www.mathematik.uni-kl.de/agag/mitglieder/wissenschaftliche-mitarbeiter/carlo-sircana/
+  #website: https://www.mathematik.uni-kl.de/agag/mitglieder/wissenschaftliche-mitarbeiter/carlo-sircana/
 
 - name: Andreas Steenpaß
   affiliation: TU Kaiserslautern
-  website: http://www.mathematik.uni-kl.de/agag/mitglieder/wissenschaftliche-mitarbeiter/dr-andreas-steenpass/
+  #website: https://www.mathematik.uni-kl.de/agag/mitglieder/wissenschaftliche-mitarbeiter/dr-andreas-steenpass/
   
 - name: Sascha Timme
   affiliation: TU Berlin
