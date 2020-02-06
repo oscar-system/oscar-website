@@ -20,11 +20,11 @@ For that purpose we give install instructions for various platforms below.
 
 ## Windows
 
-If you only wish to use AbstractAlgebra.jl, Hecke.jl and Nemo.jl, you can install a
+If you only wish to use `AbstractAlgebra.jl`, `Hecke.jl` and `Nemo.jl`, you can install a
 Julia binary from the [Julia website](https://julialang.org) and follow the instructions
 for adding the relevant packages, below.
 
-However, if you want to make use of Singular.jl or Polymake.jl, OSCAR cannot run as a
+However, if you want to make use of `Singular.jl` or `Polymake.jl`, OSCAR cannot run as a
 native binary. If you have Windows 10, you can use the Windows Subsystem for Linux
 instead.
 
@@ -51,14 +51,16 @@ First set up a sane build environment. This manual is for `bash`. If you are not
 bash
 {% endhighlight %}
 
-Now update and install the necessary system packages.
+Next we need to install the necessary system packages, such as a C compiler,
+and some other tools (this list of package should become considerably shorter
+in the future).
 
 {% highlight bash %}
-apt-get update
-apt-get install autoconf build-essential bzip2 cmake curl git libcurl4-gnutls-dev libczmq-dev libgmp-dev libreadline6-dev libtool m4 make wget zlib1g-dev
+sudo apt-get update
+sudo apt-get install autoconf build-essential bzip2 cmake curl git libcurl4-gnutls-dev libczmq-dev libgmp-dev libreadline6-dev libtool m4 make wget zlib1g-dev
 {% endhighlight %}
 
-Now install Julia:
+Now install Julia by downloading it from the Julia homepage:
 
 {% highlight bash %}
 wget https://julialang-s3.julialang.org/bin/linux/x64/1.3/julia-1.3.1-linux-x86_64.tar.gz
@@ -71,35 +73,27 @@ Now start Julia
 julia-1.3.1/bin/julia
 {% endhighlight %}
 
-Now install the relevant Julia packages:
+Now install the relevant Julia packages (in the future, this will be reduced
+to installing a single `OSCAR` package):
 
 {% highlight julia %}
 using Pkg
-
 Pkg.add("AbstractAlgebra")
-
 Pkg.add("Nemo")
-
 Pkg.add("Hecke")
-
 Pkg.add("Polymake")
-
 Pkg.add("GAP")
-
 Pkg.add("Singular")
-
 Pkg.add("HomalgProject")
-
-Pkg.add(PackageSpec(url="https://github.com/ederc/GB.jl", rev="master" ))
 {% endhighlight %}
 
 If you have your own copy of GAP installed, and compiled it against your Julia,
-you can tell the GAP.jl installation to use this GAP by setting the `GAPROOT`
+you can tell the `GAP.jl` installation to use this GAP by setting the `GAPROOT`
 environment variable to the GAP directory.
 
-If you have your own recent polymake installed, you can tell Polymake.jl to use it by setting the
+If you have your own recent polymake installed, you can tell `Polymake.jl` to use it by setting the
 `POLYMAKE_CONFIG` environment variable to your `polymake-config` executable. If you do not
-have a recent polymake, do not worry. Polymake.jl will download it for you.
+have a recent polymake, do not worry. `Polymake.jl` will download it for you.
 
 The whole process will take some time (> 1 hour). But if everything went well, you are
 good to go.
@@ -108,7 +102,7 @@ Note that the various packages are independent and you do not need to install th
 
 ### Starting GAP with JuliaInterface
 
-If you have the Julia module GAP.jl installed above, you can also use the packages in the OSCAR ecosystem from GAP.
+If you have the Julia module `GAP.jl` installed above, you can also use the packages in the OSCAR ecosystem from GAP.
 
 You can start a GAP, linked to your downloaded Julia, via
 
