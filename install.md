@@ -95,7 +95,7 @@ If you have your own recent polymake installed, you can tell `Polymake.jl` to us
 `POLYMAKE_CONFIG` environment variable to your `polymake-config` executable. If you do not
 have a recent polymake, do not worry. `Polymake.jl` will download it for you.
 
-The whole process will take some time (> 1 hour). But if everything went well, you are
+The whole process will take some time. But if everything went well, you are
 good to go.
 
 Note that the various packages are independent and you do not need to install them all.
@@ -128,12 +128,6 @@ docker run -it oscarsystem/oscardocker:latest
 
 Docker will then download the OSCAR Docker image for you (approx. 6GB), and start a new
 shell in a Docker container. You can then start `julia`.
-
-To load GAP in Julia in the Docker container, execute the following commands in Julia
-{% highlight julia %}
-include("/home/oscar/gap-master/pkg/GAPJulia/LibGAP.jl/src/initialization.jl")
-GAP.run_it("/home/oscar/gap-master")
-{% endhighlight %}
 
 ### Jupyter in the Docker container
 
