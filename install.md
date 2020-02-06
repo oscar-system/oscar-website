@@ -68,7 +68,7 @@ tar xf julia-1.3.1-linux-x86_64.tar.gz
 Now start Julia
 
 {% highlight bash %}
-julia-1.1.0/bin/julia
+julia-1.3.1/bin/julia
 {% endhighlight %}
 
 Now install the relevant Julia packages:
