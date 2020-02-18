@@ -21,7 +21,16 @@ people:
     - name: Max Horn
       affiliation: University of Siegen
 
+    - name: Johannes Schmitt
+      affiliation: TU Kaiserslautern
+
     - name: Hans Schönemann
+      affiliation: TU Kaiserslautern
+
+    - name: Daniel Schultz
+      affiliation: TU Kaiserslautern
+
+    - name: Carlo Sircana
       affiliation: TU Kaiserslautern
 
 ---
