@@ -25,9 +25,11 @@ You can find it on our [Examples page]({{ site.baseurl }}example)
 You can view it immediately in rendered form by clicking on the AbstractAlgebra
 notebook.
 
+<!--
 If you want to play around with it with a running Julia/Oscar kernel, click the binder
 link on the Examples page. This will take some minutes to load at present, as we
 currently build some Oscar sources when setting up the binder. 
+-->
 
 Now we can discuss some of the rationale and features of AbstractAlgebra.
 

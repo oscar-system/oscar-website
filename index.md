@@ -29,9 +29,11 @@ See the [About]({{site.baseurl }}about) page for more information.
 For examples, see the [Examples page]({{site.baseurl }}example), where pre-rendered notebooks showcase
 selected things the software developed in the OSCAR project can already do.
 
+<!--
 To try OSCAR live from your browser, click on the [binder](https://mybinder.org) links on the Examples page.
 At present, these will take a few minutes to load, as we 
 currently still build some dependencies from source behind the scenes.
+-->
 
 If you wish to contribute to the OSCAR development, see the [Installation page]({{site.baseurl }}install) for
 instructions on how to build everything on a growing number of supported platforms.
