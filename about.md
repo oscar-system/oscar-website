@@ -63,7 +63,7 @@ four cornerstone systems.
 
 [Julia](http://www.julialang.org) is a an actively developed
 interactive and expressive programing
-languange. Julia offers
+language. Julia offers
 
 * data types that can depend on other types, for example modeling
 matrices over polynomial rings over number fields;
