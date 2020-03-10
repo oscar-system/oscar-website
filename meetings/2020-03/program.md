@@ -67,6 +67,28 @@ if any, should be focused on this goal.
 * 12:00 Departure
 * Note: participants are welcome to stay and work until 5pm if they wish
 
-## Coding Sprints
+## Results
 
-You can suggest coding sprint topics on the [Wiki](https://github.com/oscar-system/Oscar.jl/wiki/Coding-Sprints----Towards-OSCAR-1.0-(June-'19))
+### GapGroups.jl
+ - intended to become `Oscar/src/Groups` eventually
+ - implements groups for Oscar based on Gap
+ - focus was initially on permutation groups (Carlo, Giovanni),
+   in the end, work proceeded towards arbitrary group types
+ - basic functionality is available, core difference to Gap is the introduction
+   of proper (Magma-style) parents that are absent from Gap.
+
+### Oscar.jl
+ - graded sub-quotient modules (free modules, direct sums, hom spaces
+   quotients, sub modules, homomorphisms)
+ - Polymake applications in number theory (factorisations into irreducibles in 
+   number fields)
+ - support for arbitrary orderings in polynomial rings
+
+### Gap.jl
+ - much reduced installation time, about 90' on a test system (25% faster
+   than Polymake on this machiene) aiming for 30'
+ - integration of the Gap-package manager
+ - documentation has been added
+ - better handling of Gap-errors in Julia
+ - fixed and extended conversions between Gap and Julia
+
