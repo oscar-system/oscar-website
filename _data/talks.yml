@@ -15,6 +15,12 @@
   location: "MPI-MIS, Leipzig"
   talk_url: https://github.com/micjoswig/oscar-notebooks/tree/master/MPI-demo-200124
 
+- title: "Introduction to GAP and Polymake in Julia"
+  author: "Sebastian Gutsche"
+  date: "2019-04-19"
+  location: "Lehrstuhl B für Mathematik, RWTH Aachen"
+  talk_url: https://github.com/sebasguts/IntroductionJuliaPolymakeGAP
+
 - title: "OSCAR"
   author: "The OSCAR Team"
   date: "2019-02-18"
@@ -95,6 +101,13 @@
   date: "2018-03-08"
   location: "GDMV, Paderborn"
   pdf: "eder-dmv-2018.pdf"
+
+- title: "GAP/Julia Interface"
+  author: "Sebastian Gutsche, Thomas Breuer"
+  date: "2018-05-01"
+  conference: Interfacing math software with low level libraries
+  conference_url: https://opendreamkit.org/meetings/2018-04-30-Cernay/program/
+  location: "Cernay-la-Ville"
 
 - title: "Some hope"
   author: "Claus Fieker"
