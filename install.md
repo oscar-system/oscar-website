@@ -73,8 +73,7 @@ Now start Julia
 julia-1.3.1/bin/julia
 {% endhighlight %}
 
-Now install the relevant Julia packages (in the future, this will be reduced
-to installing a single `OSCAR` package):
+Now install Oscar:
 
 {% highlight julia %}
 using Pkg
