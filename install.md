@@ -12,21 +12,10 @@ instructions.
 OSCAR is currently under heavy development, so all parts
 change continuously.
 
-If you only intend to use OSCAR we recommend you install Docker on your machine and
-install the OSCAR Docker image, as this is intended to work everywhere.
-
-If you are a developer, you will probably want to know how to install OSCAR yourself.
-For that purpose we give install instructions for various platforms below.
-
 ## Windows
 
-If you only wish to use `AbstractAlgebra.jl`, `Hecke.jl` and `Nemo.jl`, you can install a
-Julia binary from the [Julia website](https://julialang.org) and follow the instructions
-for adding the relevant packages, below.
-
-However, if you want to make use of `Singular.jl` or `Polymake.jl`, OSCAR cannot run as a
-native binary. If you have Windows 10, you can use the Windows Subsystem for Linux
-instead.
+Unfortunately, OSCAR cannot run natively in Windows, however there
+is no problem running it in the Windows Subsystem for Linux.
 
 ### Installing the Windows Subsystem for Linux (Windows 10)
 
@@ -39,9 +28,41 @@ instead.
   * Select "Ubuntu" and "Get" the app
   * Click "Launch" and follow the prompts
 
-You can now follow the instructions for Ubuntu 16.04 below.
+You can now follow the instructions for *Linux* below.
 
 To start bash in a later session, just search for "bash".
+
+## Installation in Linux
+If you have a (moderately) recent linux, e.g.
+
+ - Ubuntui/ Debia 18.04
+ - Feodra 28
+
+(*Moderately recent* is more technically defined as having a c++-17 capable 
+compiler and a matching ```cmake```)
+
+Just go to the [julia download](http://julialang.org/Download)
+and follow those instructions. ***Note*** you need version 1.3.1.
+
+To then install OSCAR, just start julia and run
+{% highlight julia %}
+  using Pkg
+  Pkg.add("Oscar")
+{% endhighlight %}
+
+This will run a few minutes. From then on, do
+{% highlight julia %}
+  using Oscar
+{% endhighlight %}
+to use it.
+
+Please have a look at 
+
+  - [introductory examples](https://oscar.computeralgebra.de/example/)
+  - [polymake examples](https://github.com/micjoswig/oscar-notebooks)
+  - [Hecke examples](https://github.com/thofma/HeckeTutorials.jl)
+
+at some examples (as Jupyter notebooks)
 
 ## Installation for Ubuntu 16.04
 
@@ -77,16 +98,8 @@ Now install Oscar:
 
 {% highlight julia %}
 using Pkg
-Pkg.add("https://github.com/oscar-system/Oscar.jl")
+Pkg.add("Oscar")
 {% endhighlight %}
-
-If you have your own copy of GAP installed, and compiled it against your Julia,
-you can tell the `GAP.jl` installation to use this GAP by setting the `GAPROOT`
-environment variable to the GAP directory.
-
-If you have your own recent polymake installed, you can tell `Polymake.jl` to use it by setting the
-`POLYMAKE_CONFIG` environment variable to your `polymake-config` executable. If you do not
-have a recent polymake, do not worry. `Polymake.jl` will download it for you.
 
 The whole process will take some time. But if everything went well, you are
 good to go.
