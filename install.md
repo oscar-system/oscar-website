@@ -35,10 +35,12 @@ sudo apt-get install build-essential g++ gcc
 <summary id="install-ubuntu1604">
 Ubuntu 16.04 "Xenial"
 </summary>
+<p>
 The LTS release Ubuntu 16.04 has reached end of life in April 2019, but still receives
 security updates until April 2021. In general we recommend that you upgrade to a more
 recent Ubuntu version. 
-
+</p>
+<p>
 If you wish to proceed with it anyway, you can install a newer compiler as follows.
 Enter the following commands into a terminal (this will prompt for your password
 and requires that you have permissions to administer your computer).
@@ -49,6 +51,7 @@ sudo apt update
 sudo apt install g++-7 -y
 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 60 --slave /usr/bin/g++ g++ /usr/bin/g++-7
 {% endhighlight %}
+</p>
 </details>
 
 <details>
