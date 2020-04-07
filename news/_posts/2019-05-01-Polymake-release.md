@@ -4,9 +4,7 @@ title: Polymake release 3.4 and Polymake.jl release 0.1.0
 author: Michael Joswig
 ---
 
-Dear friends of polymake,
-
-this is to announce the release of polymake 3.4, which is actually available
+This is to announce the release of polymake 3.4, which is actually available
 since 15 April.  So you will find it already in some of the quicker Linux
 distributions such as arch.
 
