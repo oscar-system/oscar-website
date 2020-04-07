@@ -12,10 +12,10 @@ Today marks both
 
 To install Oscar, you simply need to start Julia (version 1.3.1 preferably) and then
 
-```
+{% highlight julia %}
 julia> using Pkg
 julia> Pkg.add("Oscar")
-```
+{% endhighlight %}
 
 To then (and later) use it:
 
@@ -35,5 +35,3 @@ Version 0.2.0-dev ...
 Type: '?Oscar' for more information
 (c) 2019-2020 by The Oscar Development Team
 ```
-
-

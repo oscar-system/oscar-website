@@ -5,6 +5,5 @@ author: Claus Fieker
 ---
 
 Update to match changes in Nemo and AbstractAlgebra, mainly
-
-Replace Nemo.Group by AbstractAlgebra.AdditiveGroup
+- Replace Nemo.Group by AbstractAlgebra.AdditiveGroup
 

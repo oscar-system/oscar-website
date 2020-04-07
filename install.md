@@ -125,7 +125,7 @@ Pkg.add("Oscar")
 This will run for a few minutes. From then on, you can start Julia, then type `using Oscar`
 and press enter to use OSCAR. The result should look something like this:
 
-{% highlight julia %}
+```
 julia> using Oscar
 ...
  -----    -----    -----      -      -----
@@ -143,7 +143,7 @@ Type: '?Oscar' for more information
 (c) 2019-2020 by The Oscar Development Team
 
 julia> 
-{% endhighlight %}
+```
 
 Please have a look at 
 
