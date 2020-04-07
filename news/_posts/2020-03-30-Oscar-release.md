@@ -1,3 +1,9 @@
+---
+layout: post
+title: Oscar 0.2.0 and official Julia package
+author: Claus Fieker
+---
+
 Oscar is now registered as an official Julia package!
 
 Today marks both

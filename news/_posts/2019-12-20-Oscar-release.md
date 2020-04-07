@@ -1,3 +1,9 @@
+---
+layout: post
+title: Oscar.jl release 0.1.0
+author: Bill Hart
+---
+
 Hi all,
 
 Today, as mandated by our various funding sources, I tagged Singular.jl
