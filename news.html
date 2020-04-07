@@ -13,7 +13,7 @@ the <a href="{{ site.baseurl }}feed-news.xml">OSCAR news atom feed</a>.
   {% for post in site.categories.news %}
   <div class="post">
     <h3 class="post-title">
-      <a href="{{ site.baseurl }}{{ post.url }}">
+      <a href="{{ post.url | absolute_url }}">
         {{ post.title }}
       </a>
     </h3>
@@ -22,7 +22,7 @@ the <a href="{{ site.baseurl }}feed-news.xml">OSCAR news atom feed</a>.
 
     {{ post.excerpt }}
     {% if post.excerpt != post.content %}
-        <a href="{{ site.baseurl }}{{ post.url }}">Read more</a>
+        <a href="{{ post.url | absolute_url }}">Read more</a>
     {% endif %}
   </div>
   {% endfor %}
