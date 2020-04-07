@@ -1,0 +1,12 @@
+.clickdesc details {
+  margin: 1rem;
+}
+
+.clickdesc summary {
+  font-weight: bold;
+}
+
+.clickdesc summary::after {
+  content: " (click to expand)";
+  font-size: small;
+}
