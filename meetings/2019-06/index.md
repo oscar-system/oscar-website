@@ -41,4 +41,4 @@ This workshop is supported by [SFB-TRR 195](https://www.computeralgebra.de/sfb/)
 
 ## Other meetings
 
-Please visit [the meetings page]({{ site.baseurl }}meetings) for an overview of the OSCAR meetings.
+Please visit [the meetings page]({{ site.baseurl }}/meetings) for an overview of the OSCAR meetings.
