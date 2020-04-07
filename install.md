@@ -125,6 +125,8 @@ Please have a look at
 
 at some examples (as Jupyter notebooks)
 
+<!-- TODO: disabled until https://github.com/oscar-system/GAP.jl/issues/335 is resolved
+
 ### Starting GAP with JuliaInterface
 
 If you have the Julia module `GAP.jl` installed above, you can also use the packages in the OSCAR ecosystem from GAP.
@@ -140,4 +142,4 @@ On the resulting GAP prompt, you can then load the Julia interface via
 {% highlight GAP %}
 LoadPackage( "JuliaInterface" );
 {% endhighlight %}
-
+-->
