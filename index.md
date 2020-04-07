@@ -43,8 +43,8 @@ a technology preview. See the [News page]({{site.baseurl }}/news) for announceme
 
 ## Stay informed
 
-If you want to get notifications about news, new blog posts, or new examples, you can subscribe to
-the [OSCAR blog atom feed]({{ site.baseurl }}/feed-blog.xml), the [OSCAR news atom feed]({{ site.baseurl }}/feed-news.xml),
+If you want to get notifications about news items or new examples, you can subscribe to
+the [OSCAR news atom feed]({{ site.baseurl }}/feed-news.xml)
 or the [OSCAR examples atom feed]({{ site.baseurl }}/feed-examples.xml).
 
 You can also subscribe to the [OSCAR](https://mail.mathematik.uni-kl.de/mailman/listinfo/oscar) or the [OSCAR-dev](https://mail.mathematik.uni-kl.de/mailman/listinfo/oscar-dev) email lists. You can also view the archives for [OSCAR](https://mail.mathematik.uni-kl.de/pipermail/oscar/) and [OSCAR-dev](https://mail.mathematik.uni-kl.de/pipermail/oscar-dev/).
