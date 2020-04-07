@@ -16,9 +16,9 @@ terminal interface
 
 <div class="clickdesc">
 
-<details>
+<details id="install-ubuntu1804">
 <summary>
-Ubuntu 18.04 or newer.
+Ubuntu 18.04 or newer
 </summary>
 Enter the following commands into a terminal (this will prompt for your password
 and requires that you have permissions to administer your computer).
@@ -29,7 +29,7 @@ sudo apt-get install build-essential g++ gcc
 </details>
 
 <details>
-<summary>
+<summary id="install-ubuntu1604">
 Ubuntu 16.04 LTS
 </summary>
 Enter the following commands into a terminal (this will prompt for your password
@@ -86,7 +86,7 @@ We currently only support Windows 10 or newer using <a href="https://docs.micros
 <li>Click "Launch" and follow the prompts</li>
 </ol>
 <p>
-You can now follow the instructions for <em>Linux</em> below.
+You can now follow the instructions for <em><a href="#install-ubuntu1804">Ubuntu 18.04 or newer</a></em> above.
 </p>
 <p>
 To start bash in a later session, just search for <q>bash</q>.
