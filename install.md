@@ -118,31 +118,32 @@ and following their [platform specific instructions](https://julialang.org/downl
 To then install OSCAR, just start julia and run
 
 {% highlight julia %}
-  using Pkg
-  Pkg.add("Oscar")
+using Pkg
+Pkg.add("Oscar")
 {% endhighlight %}
 
-This will run a few minutes. From then on, you can start Julia and enter
+This will run for a few minutes. From then on, you can start Julia, then type `using Oscar`
+and press enter to use OSCAR. The result should look something like this:
 
 {% highlight julia %}
-  using Oscar
-  ...
-   -----    -----    -----      -      -----
-  |     |  |     |  |     |    | |    |     |
-  |     |  |        |         |   |   |     |
-  |     |   -----   |        |     |  |-----
-  |     |        |  |        |-----|  |   |
-  |     |  |     |  |     |  |     |  |    |
-   -----    -----    -----   -     -  -     -
+julia> using Oscar
+...
+-----    -----    -----      -      -----
+|     |  |     |  |     |    | |    |     |
+|     |  |        |         |   |   |     |
+|     |   -----   |        |     |  |-----
+|     |        |  |        |-----|  |   |
+|     |  |     |  |     |  |     |  |    |
+-----    -----    -----   -     -  -     -
 
-  ...combining (and extending) GAP, Hecke, Nemo, Polymake and Singular
-  Version 0.2.0-dev ...
-   ... which comes with absolutely no warranty whatsoever
-  Type: '?Oscar' for more information
-  (c) 2019-2020 by The Oscar Development Team
+...combining (and extending) GAP, Hecke, Nemo, Polymake and Singular
+Version 0.2.0-dev ...
+... which comes with absolutely no warranty whatsoever
+Type: '?Oscar' for more information
+(c) 2019-2020 by The Oscar Development Team
+
+julia> 
 {% endhighlight %}
-
-to use OSCAR.
 
 Please have a look at 
 
