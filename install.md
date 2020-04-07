@@ -128,13 +128,13 @@ and press enter to use OSCAR. The result should look something like this:
 {% highlight julia %}
 julia> using Oscar
 ...
------    -----    -----      -      -----
+ -----    -----    -----      -      -----
 |     |  |     |  |     |    | |    |     |
 |     |  |        |         |   |   |     |
 |     |   -----   |        |     |  |-----
 |     |        |  |        |-----|  |   |
 |     |  |     |  |     |  |     |  |    |
------    -----    -----   -     -  -     -
+ -----    -----    -----   -     -  -     -
 
 ...combining (and extending) GAP, Hecke, Nemo, Polymake and Singular
 Version 0.2.0-dev ...
