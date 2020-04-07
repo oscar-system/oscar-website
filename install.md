@@ -8,17 +8,20 @@ change continuously.
 
 ## Step 1: Install prerequisites
 
-Using OSCAR requires a working copy of [Julia 1.3.1 or newer](http://julialang.org/Download) and
-a fairly recent C++ compiler. 
+Using OSCAR requires a fairly recent C++ compiler supporting the C++17 standard. Suitable compilers
+include
+- GNU C/C++ compiler (gcc) version 7 or newer,
+- Clang C/C++ compiler version 5 or newer,
+- Intel C/C++ Compiler (icc) version 19.0 or newer.
 
 The following instructions all require that you are at least somewhat familiar with using a
-terminal interface
+terminal interface.
 
 <div class="clickdesc">
 
 <details id="install-ubuntu1804">
 <summary>
-Ubuntu 18.04 or newer
+Ubuntu 18.04 "Bionic" or newer; Debian 10 "Buster" or newer
 </summary>
 Enter the following commands into a terminal (this will prompt for your password
 and requires that you have permissions to administer your computer).
@@ -30,8 +33,13 @@ sudo apt-get install build-essential g++ gcc
 
 <details>
 <summary id="install-ubuntu1604">
-Ubuntu 16.04 LTS
+Ubuntu 16.04 "Xenial"
 </summary>
+The LTS release Ubuntu 16.04 has reached end of life in April 2019, but still receives
+security updates until April 2021. In general we recommend that you upgrade to a more
+recent Ubuntu version. 
+
+If you wish to proceed with it anyway, you can install a newer compiler as follows.
 Enter the following commands into a terminal (this will prompt for your password
 and requires that you have permissions to administer your computer).
 {% highlight bash %}
@@ -47,15 +55,14 @@ sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 60 --slave /u
 <summary>
 Other Linux distributions (e.g. Fedora 28 or newer)
 </summary>
-Please install C and C++ compiler for your Linux distribution (we recommend GCC 7 or newer).
+Please install a supported C/C++ compiler for your Linux distribution, as described above.
 </details>
 
 <details>
 <summary>
 macOS
 </summary>
-On macOS, you need to install the Xcode command line tools; we also
-expect you to be familiar with using the Terminal, either 
+On macOS, you need to install the Xcode command line tools, as explained in the following instructions.
 <ol>
 <li>Install Xcode <a href="https://apps.apple.com/de/app/xcode/id497799835">via the App Store</a>.</li>
 <li>Launch a Terminal and enter the command <code>xcode-select —install</code>, then press enter.</li>
