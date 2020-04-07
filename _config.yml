@@ -15,7 +15,7 @@ tagline:          ''
 description:      'The OSCAR project'
 location:         ''
 url:              https://oscar.github.io
-baseurl:          /oscar-website/
+baseurl:          /oscar-website
 
 
 exclude: [ "LICENSE.hyde.md", "README.hyde.md" ]

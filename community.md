@@ -5,7 +5,7 @@ title: Community
 
 ## News about OSCAR
 
-For the latest news on the development on OSCAR, visit the [News]({{site.baseurl }}news) page.
+For the latest news on the development on OSCAR, visit the [News]({{site.baseurl }}/news) page.
 
 ## Development list
 
