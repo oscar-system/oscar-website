@@ -5,7 +5,6 @@ Sebastian Gutsche <gutsche@mathematik.uni-siegen.de>, May 2018
 
 - [How to contribute](#how-to-contribute)
 - [How to contribute a News post](#how-to-contribute-a-news-post)
-- [How to contribute a Blog post](#how-to-contribute-a-blog-post)
 - [How to contribute an example notebook](#how-to-contribute-an-example-notebook)
 - [How to add a new documentation URL](#how-to-add-a-new-documentation-url)
 - [How to add a new contributor](#how-to-add-a-new-contributor)
@@ -123,7 +122,7 @@ Please add a new entry to the `_data/used_software.yml` file, of the following f
 
 ## How to add a new meeting subpage
 
-Send an email to [Sebastian Gutsche](mailto:gutsche@mathematik.uni-siegen.de) and ask for help.
+Send an email to [Max Horn](mailto:horn@mathematik.uni-kl.de) and ask for help.
 
 ## How to use syntax highlighting in Markdown files
 
@@ -136,7 +135,3 @@ julia> print(2)
 {% endhighlight %}
 ```
 A full list of supported languages can be found [here](https://haisum.github.io/2014/11/07/jekyll-pygments-supported-highlighters/).
-
- 
-
-
