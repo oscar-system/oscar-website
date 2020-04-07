@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Release 0.1.0 of Oscar.jl and Singular.jl 
+title: Oscar.jl 0.1.0 and Singular.jl 0.1.0 released
 author: Bill Hart
 ---
 
@@ -30,9 +30,6 @@ are still some unavoidable dependencies to install Oscar:
 * cmake
 * gnu make
 * Julia 1.0, 1.1 or 1.2
-
-There are also additional dependencies that must be installed for some of
-the individual packages that make up Oscar, which we will list in due time.
 
 Congratulations everyone on this significant technical milestone.
 

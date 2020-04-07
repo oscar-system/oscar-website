@@ -1,23 +1,22 @@
 ---
 layout: post
-title: Oscar 0.2.0 and official Julia package
+title: Oscar 0.2.0 released; now an official Julia package
 author: Claus Fieker
 ---
 
-Oscar is now registered as an official Julia package!
+Oscar is now registered as an official Julia package! This means that
+starting with version 0.2.0, the `Oscar.jl` Julia package can be
+installed as conveniently as any other Julia package.
 
-Today marks both
- - the release of Oscar 0.2.0
- - and the official Julia registration
-
-To install Oscar, you simply need to start Julia (version 1.3.1 preferably) and then
-
+It requires Julia 1.3.1 and a recent enough C++ compiler (for details,
+please [refer to the install instructions]({{ site.baseurl }}/install/)).
+Now start Julia and enter
 {% highlight julia %}
-julia> using Pkg
-julia> Pkg.add("Oscar")
+using Pkg ; Pkg.add("Oscar")
 {% endhighlight %}
 
-To then (and later) use it:
+From this point on, you can load Oscar from any Julia session
+by entering `using Oscar`:
 
 ```
 julia> using Oscar
