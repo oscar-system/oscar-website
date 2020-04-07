@@ -14,7 +14,7 @@ title:            'OSCAR Computer Algebra System'
 tagline:          ''
 description:      'The OSCAR project'
 location:         ''
-url:              http://oscar.github.io
+url:              https://oscar.github.io
 baseurl:          /oscar-website
 
 

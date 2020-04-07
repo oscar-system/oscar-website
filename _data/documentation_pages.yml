@@ -17,7 +17,7 @@
   description: The interface to Singular from Julia.
 
 - name: Hecke.jl
-  documentation_url: http://thofma.github.io/Hecke.jl/latest/
+  documentation_url: https://thofma.github.io/Hecke.jl/latest/
   description: Algebraic number theory in Julia.
 
 - name: HomalgProject.jl
