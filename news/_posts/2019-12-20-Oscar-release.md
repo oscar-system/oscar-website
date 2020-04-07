@@ -4,8 +4,6 @@ title: Oscar.jl release 0.1.0
 author: Bill Hart
 ---
 
-Hi all,
-
 Today, as mandated by our various funding sources, I tagged Singular.jl
 v0.1.0 and registered it as an official Julia package and tagged the
 Oscar.jl v0.1.0 release.
