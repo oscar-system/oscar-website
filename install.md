@@ -113,15 +113,32 @@ and following their [platform specific instructions](https://julialang.org/downl
 ## Step 3: Install OSCAR
 
 To then install OSCAR, just start julia and run
+
 {% highlight julia %}
   using Pkg
   Pkg.add("Oscar")
 {% endhighlight %}
 
 This will run a few minutes. From then on, you can start Julia and enter
+
 {% highlight julia %}
   using Oscar
+  ...
+   -----    -----    -----      -      -----
+  |     |  |     |  |     |    | |    |     |
+  |     |  |        |         |   |   |     |
+  |     |   -----   |        |     |  |-----
+  |     |        |  |        |-----|  |   |
+  |     |  |     |  |     |  |     |  |    |
+   -----    -----    -----   -     -  -     -
+
+  ...combining (and extending) GAP, Hecke, Nemo, Polymake and Singular
+  Version 0.2.0-dev ...
+   ... which comes with absolutely no warranty whatsoever
+  Type: '?Oscar' for more information
+  (c) 2019-2020 by The Oscar Development Team
 {% endhighlight %}
+
 to use OSCAR.
 
 Please have a look at 
@@ -130,7 +147,7 @@ Please have a look at
   - [polymake examples](https://github.com/micjoswig/oscar-notebooks)
   - [Hecke examples](https://github.com/thofma/HeckeTutorials.jl)
 
-at some examples (as Jupyter notebooks)
+at some examples (as [Jupyter](https://jupyter.org/) notebooks)
 
 <!-- TODO: disabled until https://github.com/oscar-system/GAP.jl/issues/335 is resolved
 
