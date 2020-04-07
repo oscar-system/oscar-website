@@ -3,46 +3,18 @@ layout: page
 title: Download and Installation
 ---
 
-The OSCAR project initially encompasses a number of different software projects. 
-Below are instructions to install the current parts of the OSCAR project.
-Please be aware that there is no single OSCAR system, nor a single OSCAR binary
-to use yet. For simplicity, we will nevertheless refer to OSCAR during the following
-instructions.
-
 OSCAR is currently under heavy development, so all parts
 change continuously.
 
-## Windows
+## Prerequisits
 
-Unfortunately, OSCAR cannot run natively in Windows, however there
-is no problem running it in the Windows Subsystem for Linux.
+A working [julia 1.3.1](http://julialang.org/Download) and
+ * in Windows 10: [Windows subsystem lor linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) 
+ * a c++-17 capable compiler (automatic for recent linux distributions and WSL)
+ * on MacOS: [Xcode](bla)
 
-### Installing the Windows Subsystem for Linux (Windows 10)
 
-  * Search for "Turn Windows features on or off"
-  * On the left panel, select "Turn Windows features on or off"
-  * Select "Windows subsystem for Linux" and press "Ok"
-  * Click "Restart the PC"
-  * Click the Windows store icon (shopping bag)
-  * Search for "Ubuntu" in the store - it's free!
-  * Select "Ubuntu" and "Get" the app
-  * Click "Launch" and follow the prompts
-
-You can now follow the instructions for *Linux* below.
-
-To start bash in a later session, just search for "bash".
-
-## Installation in Linux
-If you have a (moderately) recent linux, e.g.
-
- - Ubuntui/ Debia 18.04
- - Feodra 28
-
-(*Moderately recent* is more technically defined as having a c++-17 capable 
-compiler and a matching ```cmake```)
-
-Just go to the [julia download](http://julialang.org/Download)
-and follow those instructions. ***Note*** you need version 1.3.1.
+## Install OSCAR
 
 To then install OSCAR, just start julia and run
 {% highlight julia %}
