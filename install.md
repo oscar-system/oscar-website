@@ -27,7 +27,7 @@ Enter the following commands into a terminal (this will prompt for your password
 and requires that you have permissions to administer your computer).
 {% highlight bash %}
 sudo apt-get update
-sudo apt-get install build-essential g++ gcc
+sudo apt-get install build-essential
 {% endhighlight %}
 </details>
 
