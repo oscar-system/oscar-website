@@ -7,5 +7,3 @@ Among the changes are:
 - Adjust to changes in AbstractAlgebra regarding the type hierarchy of groups.
 - fix docstrings
 - adding of LoadFlint to fix some memory corruption problems
-
-

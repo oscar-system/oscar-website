@@ -211,4 +211,3 @@ possible.
 
 Look back here often for updates on the OSCAR project, as we release them. You can
 already find a lot of interesting news on the new website that this blog is a part of!
-
