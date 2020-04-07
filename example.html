@@ -11,7 +11,7 @@ the example, powered by <a href="https://mybinder.org">mybinder</a>.
 -->
 <br/>
 If you want to get notifications about new OSCAR examples, you can subscribe to
-the <a href="{{ site.baseurl }}/feed-examples.xml">OSCAR examples atom feed</a>.
+the <a href="{{ site.baseurl }}feed-examples.xml">OSCAR examples atom feed</a>.
 
 <br/>
 <br/>
@@ -21,7 +21,7 @@ the <a href="{{ site.baseurl }}/feed-examples.xml">OSCAR examples atom feed</a>.
   {% for post in site.categories.examples %}
 		<div class="item_example">
         <a  href="https://nbviewer.jupyter.org/github/{{ post.repository }}/blob/master/{{ post.filename }}.ipynb">
-            <img class="item_example-image" src="{{ site.baseurl }}/public/thumbnails/{{ post.thumbnail }}">
+            <img class="item_example-image" src="{{ site.baseurl }}public/thumbnails/{{ post.thumbnail }}">
             <div class="item_example_text_wrap">
 				    <div class="item_example-name">{{ post.title }}</div>
             <div class="item_example-name">{{ post.author }}</div>
