@@ -76,3 +76,20 @@ Based on https://codepen.io/jdsteinbach/pen/GYmQjo
     display: none;
   }
 }
+
+
+.read-more
+{
+    font-style: italic;
+}
+
+/* override theme defaults */
+.page,
+.post {
+  margin-bottom: 2em;
+}
+
+.post p
+{
+    margin-bottom: 0em;
+}
