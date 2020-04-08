@@ -3,7 +3,7 @@ layout: page
 title: About the OSCAR project
 ---
 
-The OSCAR project will integrate the four computer algebra systems
+The OSCAR project integrates the four computer algebra systems
 [GAP](https://www.gap-system.org), [polymake](https://polymake.org),
 [Singular](https://www.singular.uni-kl.de),
 and Antic ([Hecke](https://github.com/thofma/Hecke.jl/), [Nemo](http://nemocas.org))
@@ -12,27 +12,29 @@ visionary next generation open source computer algebra system
 surpassing the combined mathematical capabilities of the underlying
 systems.
 
-OSCAR will allow users to construct new mathematical objects efficiently
+OSCAR allows users to construct new mathematical objects efficiently
 by combining existing building blocks from any of the cornerstones and
-will equip these objects with mathematical capabilities exceeding
+equip these objects with mathematical capabilities exceeding
 those of the individual systems in a transparent way.
 
 ## The four cornerstones
 
 This project builds on four leading computer algebra systems which
 are, with the exception of the new system ANTIC, widely used
-internationally. While the envisaged computer algebra system will be
-created by tightly integrating the four cornerstones, the individual
+internationally. Although the new computer algebra system tightly integrates
+the four cornerstones, the individual
 systems will continue to be developed further. This includes working
 together with the developers of the individual cornerstones
 to develop the cornerstones in a way the best integration can be achieved.
 
-[ANTIC](http://www.nemocas.org) is an evolving number theoretic software project focusing on
+[Nemo](http://www.nemocas.org), [Hecke](http://github.com/thofma/Hecke.jl)  areevolving number theoretic software projects focusing on
 computations in and with number fields and generic finitely presented
 rings. ANTIC is written in a mixture of C and Julia, building on top
-of the very successful Flint project of William Hart. In order to
+of the very successful Flint project of William Hart, while
+Hecke is pure Julia. In order to
 reach the mathematical goals of the OSCAR project, the functionality
-of ANTIC will be considerably extended.
+of both will be considerably extended.
+
 
 [GAP](https://www.gap-system.org) is a system for computational discrete algebra, with particular
 emphasis on group and representation theory. One of the distinguishing
@@ -54,10 +56,7 @@ computations, with particular emphasis on applications in algebraic
 geometry, commutative algebra, and singularity theory, and with two
 subsystems for non-commutative algebra, Plural and
 Letterplace. Singular has a kernel written in C++ and provides its own
-interpreted user language. The Singular language will be enhanced with
-regard to efficiency and expressiveness by rewriting its interpreter
-in the modern language [Julia](https://www.julialang.org), which will also be used to integrate the
-four cornerstone systems.
+interpreted user language. 
 
 ## The role of Julia
 
@@ -74,8 +73,8 @@ kernels of the cornerstones efficiently;
 * easy access to standard third-party libraries, (e.g., for string
 manipulation, visualisation, networking).
 
-Julia will serve as an integration layer allowing the four
-cornerstones to communicate in a more profound way than through
-unidirectional interfaces. Furthermore it will serve as high-level
+Julia serves as an integration layer allowing the four
+cornerstones to communicate in a more direct way than through
+unidirectional interfaces. Furthermore it serves as high-level
 language for implementing efficient algorithms utilizing all
 cornerstones.
