@@ -48,7 +48,7 @@ The system [polymake](https://polymake.org) is a standard tool for dealing with 
 polytopes, polyhedral fans, tropical hypersurfaces,
 and related objects from combinatorics and
 geometry. It is designed as a hybrid written in C++ and Perl. A
-proprietary rule based mechanism decides which low-level C++
+sophisticated rule based mechanism decides which low-level C++
 functions are to be called to satisfy user demands.
 
 [Singular](https://www.singular.uni-kl.de) is a well-established computer algebra system for polynomial
