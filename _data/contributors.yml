@@ -33,6 +33,9 @@
   affiliation: TU Kaiserslautern
   website: https://www.mathematik.uni-kl.de/en/agag/people/head/prof-dr-claus-fieker/
 
+- name: Rafael Fourquet
+  affiliation: TU Kaiserslautern
+
 - name: Sebastian Gutsche
   affiliation: University of Siegen
   email: gutsche@mathematik.uni-siegen.de
@@ -47,13 +50,14 @@
 - name: Florian Heiderich
   affiliation: University of Siegen
   website: https://www.heiderich.org/math/
-  
+  paid_by_dfg: true
+
 - name: Tommy Hofmann
   affiliation: TU Kaiserslautern
   website: https://www.mathematik.uni-kl.de/~thofmann/
 
 - name: Max Horn
-  affiliation: University of Siegen
+  affiliation: TU Kaiserslautern
   website: https://www.quendi.de/math
 
 - name: Fredrik Johansson
@@ -71,6 +75,10 @@
 - name: Lars Kastner
   affiliation: TU Berlin
   website: https://page.math.tu-berlin.de/~kastner/
+
+- name: Avi Kulkarni
+  affiliation: Dartmouth College
+  website: https://math.dartmouth.edu/~akulkarn/index.html
 
 - name: Benjamin Lorenz
   affiliation: TU Berlin
@@ -125,8 +133,3 @@
 - name: Erec Thorn
   affiliation: TU Kaiserslautern
   website: https://github.com/erecthorn
-
-- name: Avi Kulkarni
-  affiliation: Dartmouth College
-  website: https://math.dartmouth.edu/~akulkarn/index.html
-

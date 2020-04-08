@@ -59,7 +59,7 @@ OSCAR project:
 
 ## Contributors financed by the DFG SFB-TRR 195 (2017 - 2020)
 
-Additionally, the following people are financed by the [SFB-TRR 195](https://www.computeralgebra.de/sfb/) to mainly work on software
+Additionally, the following people were or are financed by the [SFB-TRR 195](https://www.computeralgebra.de/sfb/) to mainly work on software
 for the OSCAR project:
 
 <ul>
