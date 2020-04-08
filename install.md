@@ -18,7 +18,9 @@ include
 - Clang C/C++ compiler version 5 or newer,
 - Intel C/C++ Compiler (icc) version 19.0 or newer.
 
-The following instructions all require that you are at least somewhat familiar with using a
+Moreover, GNU make is required.
+
+The following instructions assume that you are at least somewhat familiar with using a
 terminal interface.
 
 <div class="clickdesc">
@@ -65,7 +67,7 @@ Fedora 28 or newer
 Enter the following commands into a terminal (this will prompt for your password
 and requires that you have permissions to administer your computer).
 {% highlight bash %}
-sudo dnf install gcc-c++ cmake
+sudo dnf install gcc-c++ make
 {% endhighlight %}
 </details>
 

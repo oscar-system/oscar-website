@@ -1,0 +1,9 @@
+[Unit]
+Description="Check whether OSCAR webhook requested update"
+
+[Path]
+PathChanged=/tmp/oscar-website.trigger
+Unit=oscar-website.service
+
+[Install]
+WantedBy=multi-user.target

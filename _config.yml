@@ -5,18 +5,15 @@ highlighter:      rouge
 # Permalinks
 permalink:        pretty
 
-plugins:
-  - jekyll-paginate
-  #- jekyll-redirect-from
-
 # Setup
 title:            'OSCAR Computer Algebra System'
-tagline:          ''
 description:      'The OSCAR project'
-location:         ''
 url:              https://oscar.github.io
 baseurl:          /oscar-website
 
-
-exclude: [ "LICENSE.hyde.md", "README.hyde.md" ]
-include: [ ]
+exclude:
+  - _config_production.yml
+  - etc
+  - LICENSE.hyde.md
+  - README.hyde.md
+  - README.md

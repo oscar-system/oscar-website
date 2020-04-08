@@ -1,0 +1,11 @@
+[Unit]
+Description="Update OSCAR website"
+
+[Service]
+User=oscar
+Group=www-data
+Type=oneshot
+ExecStart=/home/oscar/oscar-website/etc/update.sh
+
+[Install]
+WantedBy=multi-user.target
