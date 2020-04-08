@@ -4,7 +4,11 @@ title: Download and Installation
 ---
 
 OSCAR is currently under heavy development, so all parts
-change continuously.
+change continuously. If you encounter any trouble while following
+the steps outlined below, feel free to contact us via
+[our issue tracker](https://github.com/oscar-system/Oscar.jl/issues)
+or by sending an email to <mailto:oscar@mathematik.uni-kl.de>.
+
 
 ## Step 1: Install prerequisites
 
@@ -56,11 +60,20 @@ sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 60 --slave /u
 
 <details>
 <summary>
-Other Linux distributions (e.g. Fedora 28 or newer)
+Fedora 28 or newer
 </summary>
+Enter the following commands into a terminal (this will prompt for your password
+and requires that you have permissions to administer your computer).
 {% highlight bash %}
 sudo dnf install gcc-c++ cmake
 {% endhighlight %}
+</details>
+
+<details>
+<summary>
+Other Linux distributions
+</summary>
+Please install a supported C/C++ compiler for your Linux distribution, as described above.
 </details>
 
 <details>
@@ -111,8 +124,6 @@ To start bash in a later session, just search for <q>bash</q>.
 
 Install Julia 1.3.1 or newer [by downloading it from the Julia homepage](https://julialang.org/downloads/),
 and following their [platform specific instructions](https://julialang.org/downloads/platform/).
-
-
 
 
 ## Step 3: Install OSCAR
