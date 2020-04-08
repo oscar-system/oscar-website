@@ -9,16 +9,13 @@ Clicking on the example will open a static version of the example, powered by <a
 Clicking on the launch binder button will open an interactive version of
 the example, powered by <a href="https://mybinder.org">mybinder</a>.
 -->
-<br/>
-If you want to get notifications about new OSCAR examples, you can subscribe to
-the <a href="{{ site.baseurl }}/feed-examples.xml">OSCAR examples atom feed</a>.
 
 <br/>
 <br/>
 
 
 <div class="gallery_example">
-  {% for post in site.categories.examples %}
+  {% for post in site.data.examples %}
 		<div class="item_example">
         <a  href="https://nbviewer.jupyter.org/github/{{ post.repository }}/blob/master/{{ post.filename }}.ipynb">
             <img class="item_example-image" src="{{ site.baseurl }}/public/thumbnails/{{ post.thumbnail }}">

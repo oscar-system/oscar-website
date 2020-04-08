@@ -1,0 +1,55 @@
+- title: Polymake.jl example
+  repository: oscar-system/OSCARBinder
+  filename: Polymake
+  author: Sebastian Gutsche
+  thumbnail: polymake.png
+  language: julia
+
+- title: G-vectors
+  repository: oscar-system/OSCARBinder
+  filename: g-vectors_of_random_simplicial_6-polytopes
+  author: Michael Joswig
+  thumbnail: polymake.png
+  language: julia
+
+- title: Singular.jl example
+  repository: oscar-system/OSCARBinder
+  filename: Singular
+  author: Sebastian Gutsche
+  thumbnail: singular.png
+  language: julia
+
+- title: "Example AbstractAlgebra.jl"
+  repository: oscar-system/OSCARBinder
+  filename: AbstractAlgebra
+  author: William Hart
+  thumbnail: AbstractAlgebra.png
+  language: julia
+
+- title: "Singular from GAP 1"
+  repository: oscar-system/OSCARBinder
+  filename: GAPJulia_Singular_car
+  author: Thomas Breuer
+  thumbnail: GapLogo.png
+  language: GAP
+
+- title: "Singular from GAP 2"
+  repository: oscar-system/OSCARBinder
+  filename: GAPJulia_Singular_blog
+  author: Thomas Breuer
+  thumbnail: GapLogo.png
+  language: GAP
+
+- title: "Coherent sheaves on P1"
+  repository: oscar-system/OSCARBinder
+  filename: CohP1
+  author: Mohamed Barakat
+  thumbnail: Logo_CAP.jpg
+  language: CAP using GAP and Singular
+
+- title: "Intro Number Fields: Towers"
+  repository: oscar-system/OSCARBinder
+  filename: Hecke
+  author: Claus Fieker
+  thumbnail: Hecke.png
+  language: julia
