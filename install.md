@@ -58,7 +58,9 @@ sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 60 --slave /u
 <summary>
 Other Linux distributions (e.g. Fedora 28 or newer)
 </summary>
-Please install a supported C/C++ compiler for your Linux distribution, as described above.
+{% highlight bash %}
+sudo dnf install gcc-c++ cmake
+{% endhighlight %}
 </details>
 
 <details>
@@ -137,7 +139,7 @@ julia> using Oscar
  -----    -----    -----   -     -  -     -
 
 ...combining (and extending) GAP, Hecke, Nemo, Polymake and Singular
-Version 0.2.0-dev ...
+Version 0.2.0 ...
 ... which comes with absolutely no warranty whatsoever
 Type: '?Oscar' for more information
 (c) 2019-2020 by The Oscar Development Team
@@ -151,7 +153,7 @@ Please have a look at
   - [polymake examples](https://github.com/micjoswig/oscar-notebooks)
   - [Hecke examples](https://github.com/thofma/HeckeTutorials.jl)
 
-at some examples (as [Jupyter](https://jupyter.org/) notebooks)
+for some examples (as [Jupyter](https://jupyter.org/) notebooks)
 
 <!-- TODO: disabled until https://github.com/oscar-system/GAP.jl/issues/335 is resolved
 
