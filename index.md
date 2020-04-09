@@ -10,7 +10,7 @@ system for computations in algebra, geometry, and number theory. In particular,
 the emphasis is on supporting complex computations which require a high level
 of integration of tools from different mathematical areas. 
 
- <img src="{{ site.baseurl }}/public/oscar_main.svg" alt="OSCAR" width="75%" style="margin-left:8%;" align="center">
+ <img src="{{ site.baseurl }}/public/OSCAR-Organigramm.svg" alt="OSCAR" width="95%" style="margin-left:2%;" align="center">
 
 The project builds on and extends the four cornerstone systems
 
