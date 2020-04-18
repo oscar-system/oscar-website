@@ -55,8 +55,10 @@ functions are to be called to satisfy user demands.
 [Singular](https://www.singular.uni-kl.de) is a well-established computer algebra system for polynomial
 computations, with particular emphasis on applications in algebraic
 geometry, commutative algebra, and singularity theory, and with two
-subsystems for non-commutative algebra, Plural and
-Letterplace. Singular has a kernel written in C++ and provides its own
+subsystems for non-commutative algebra,
+[PLURAL](https://www.singular.uni-kl.de/Manual/4-1-2/sing_423.htm#SEC463) and
+[LETTERPLACE](https://www.singular.uni-kl.de/Manual/4-1-2/sing_789.htm#SEC841).
+Singular has a kernel written in C++ and provides its own
 interpreted user language. 
 
 ## The role of Julia
