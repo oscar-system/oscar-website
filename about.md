@@ -27,10 +27,11 @@ systems will continue to be developed further. This includes working
 together with the developers of the individual cornerstones
 to develop the cornerstones in a way the best integration can be achieved.
 
-[Nemo](http://www.nemocas.org), [Hecke](http://github.com/thofma/Hecke.jl)  areevolving number theoretic software projects focusing on
+[Nemo](http://www.nemocas.org), [Hecke](http://github.com/thofma/Hecke.jl)
+are evolving number theoretic software projects focusing on
 computations in and with number fields and generic finitely presented
 rings. ANTIC is written in a mixture of C and Julia, building on top
-of the very successful Flint project of William Hart, while
+of the very successful [FLINT](http://flintlib.org) project of William Hart, while
 Hecke is pure Julia. In order to
 reach the mathematical goals of the OSCAR project, the functionality
 of both will be considerably extended.
