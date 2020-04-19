@@ -4,10 +4,11 @@ set -e
 GIT_REPO=$HOME/oscar-website
 PUBLIC_WWW=/var/www/oscar-website
 
-# fech latest changes
+# fetch latest changes
 cd $GIT_REPO
 git fetch --all --prune
-git checkout --force origin/gh-pages
+git checkout gh-pages
+git reset --hard origin/gh-pages
 
 # install prerequsits if necessary
 export GEM_HOME=$HOME/gems
