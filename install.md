@@ -101,11 +101,11 @@ the C and C++ compiler.</li>
 <summary>
 macOS 10.11 or older
 </summary>
-Unfortunately the latest Xcode for these older macOS versions does not support C++17.
-We recommend updating to a newer macOS version, with at least Xcode 9.2
-If this is not an option and you are an experienced user, you might be able to get
-things working by installing a newer C/C++ compiler, e.g. via Homebrew, but we cannot
-provide support for.
+Unfortunately the Xcode versions available for older macOS versions do not
+support C++17. We recommend updating to macOS 10.12 or later, and Xcode 9.2 or
+later. If this is not an option and you are an experienced user, you might be
+able to get things working by installing a newer C/C++ compiler through some
+other means, e.g. via Homebrew. However, we cannot provide support for this.
 </details>
 
 <details>
