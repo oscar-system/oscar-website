@@ -80,7 +80,7 @@ Please install a supported C/C++ compiler for your Linux distribution, as descri
 
 <details>
 <summary>
-macOS
+macOS 10.12 or newer
 </summary>
 On macOS, you need to install the Xcode command line tools, as explained in the following instructions.
 <ol>
@@ -95,6 +95,17 @@ now?</q>. Confirm this by clicking <q>Install</q>.</li>
 contains executables such as <code>clang</code> and <code>clang++</code>,
 the C and C++ compiler.</li>
 </ol>
+</details>
+
+<details>
+<summary>
+macOS 10.11 or older
+</summary>
+Unfortunately the latest Xcode for these older macOS versions does not support C++17.
+We recommend updating to a newer macOS version, with at least Xcode 9.2
+If this is not an option and you are an experienced user, you might be able to get
+things working by installing a newer C/C++ compiler, e.g. via Homebrew, but we cannot
+provide support for.
 </details>
 
 <details>
