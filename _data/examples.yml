@@ -26,19 +26,19 @@
   thumbnail: AbstractAlgebra.png
   language: julia
 
-- title: "Singular from GAP 1"
-  repository: oscar-system/OSCARBinder
-  filename: GAPJulia_Singular_car
-  author: Thomas Breuer
-  thumbnail: GapLogo.png
-  language: GAP
-
-- title: "Singular from GAP 2"
-  repository: oscar-system/OSCARBinder
-  filename: GAPJulia_Singular_blog
-  author: Thomas Breuer
-  thumbnail: GapLogo.png
-  language: GAP
+#- title: "Singular from GAP 1"
+#  repository: oscar-system/OSCARBinder
+#  filename: GAPJulia_Singular_car
+#  author: Thomas Breuer
+#  thumbnail: GapLogo.png
+#  language: GAP
+#
+#- title: "Singular from GAP 2"
+#  repository: oscar-system/OSCARBinder
+#  filename: GAPJulia_Singular_blog
+#  author: Thomas Breuer
+#  thumbnail: GapLogo.png
+#  language: GAP
 
 - title: "Coherent sheaves on P1"
   repository: oscar-system/OSCARBinder
