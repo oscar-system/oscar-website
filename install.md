@@ -44,7 +44,7 @@ Ubuntu 16.04 "Xenial"
 <p>
 The LTS release Ubuntu 16.04 has reached end of life in April 2019, but still receives
 security updates until April 2021. In general we recommend that you upgrade to a more
-recent Ubuntu version. 
+recent Ubuntu version.
 </p>
 <p>
 If you wish to proceed with it anyway, you can install a newer compiler as follows.
@@ -95,6 +95,24 @@ now?</q>. Confirm this by clicking <q>Install</q>.</li>
 contains executables such as <code>clang</code> and <code>clang++</code>,
 the C and C++ compiler.</li>
 </ol>
+<p>
+Note: some users have experienced build failures on macOS 10.15 with Xcode 11.4
+(cf. this <a href="https://github.com/oscar-system/Oscar.jl/issues/82">github issue</a>).
+Until a proper fix is found, the following might serve as a workaround, consisting in building <code>libcxxwrap-julia</code>
+with Xcode 11.4 instead of using the binaries (replace <code>$SOMEWHERE</code> by
+the directory in which you wish to install <code>libcxxwrap-julia</code>):
+{% highlight bash %}
+git clone -b v0.6.6 --depth 1 https://github.com/JuliaInterop/libcxxwrap-julia
+cd libcxxwrap-julia
+mkdir build
+cd build
+cmake -DCMAKE_INSTALL_PREFIX=$SOMEWHERE/libcxxwrap-julia-install -DCMAKE_BUILD_TYPE=Release ..
+VERBOSE=ON cmake --build . --config Release --target install
+{% endhighlight %}
+Then, set the <code>JLCXX_DIR</code> environment variable to <code>$SOMEWHERE/libcxxwrap-julia-install</code>,
+e.g. by putting <code>ENV["JLCXX_DIR"] = "$SOMEWHERE/libcxxwrap-julia-install"</code> in your julia startup
+file (located at <code>~/.julia/config/startup.jl</code> by default).
+</p>
 </details>
 
 <details>
@@ -168,10 +186,10 @@ Version 0.2.0 ...
 Type: '?Oscar' for more information
 (c) 2019-2020 by The Oscar Development Team
 
-julia> 
+julia>
 ```
 
-Please have a look at 
+Please have a look at
 
   - [introductory examples](https://oscar.computeralgebra.de/example/)
   - [polymake examples](https://github.com/micjoswig/oscar-notebooks)
