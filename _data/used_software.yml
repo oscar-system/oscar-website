@@ -38,11 +38,10 @@
   website: http://home.imf.au.dk/jensen/software/gfan/gfan.html
 
 - name: Factory
-  website: ftp://www.mathematik.uni-kl.de/pub/Math/Singular/Factory
+  website: https://www.mathematik.uni-kl.de/ftp/pub/Math/Singular/Factory
 
 - name: cdd
   website: http://www-oldurls.inf.ethz.ch/personal/fukudak/cdd_home/
 
 - name: AbstractAlgebra
   website: https://github.com/Nemocas/AbstractAlgebra.jl
-
