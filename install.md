@@ -100,7 +100,8 @@ Note: some users have experienced build failures on macOS 10.15 with Xcode 11.4
 (cf. this <a href="https://github.com/oscar-system/Oscar.jl/issues/82">github issue</a>).
 Until a proper fix is found, the following might serve as a workaround, consisting in building <code>libcxxwrap-julia</code>
 with Xcode 11.4 instead of using the binaries (replace <code>$SOMEWHERE</code> by
-the directory in which you wish to install <code>libcxxwrap-julia</code>):
+the directory in which you wish to install <code>libcxxwrap-julia</code>,
+for example <code>$HOME/.julia/cxxwrap-workaround/</code>):
 {% highlight bash %}
 git clone -b v0.6.6 --depth 1 https://github.com/JuliaInterop/libcxxwrap-julia
 cd libcxxwrap-julia
