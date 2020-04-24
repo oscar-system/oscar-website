@@ -112,7 +112,9 @@ VERBOSE=ON cmake --build . --config Release --target install
 {% endhighlight %}
 Then, set the <code>JLCXX_DIR</code> environment variable to <code>$SOMEWHERE/libcxxwrap-julia-install</code>,
 e.g. by putting <code>ENV["JLCXX_DIR"] = "$SOMEWHERE/libcxxwrap-julia-install"</code> in your julia startup
-file (located at <code>~/.julia/config/startup.jl</code> by default).
+file (located at <code>~/.julia/config/startup.jl</code> by default),
+and rebuild <code>Oscar</code> by typing the following in your Julia REPL:
+<code>using Pkg; Pkg.build("Oscar")</code>.
 </p>
 </details>
 
