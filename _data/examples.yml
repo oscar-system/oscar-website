@@ -1,13 +1,20 @@
-- title: Polymake.jl example
-  repository: oscar-system/OSCARBinder
-  filename: Polymake
-  author: Sebastian Gutsche
+#- title: Polymake.jl example
+#  repository: oscar-system/OSCARBinder
+#  filename: Polymake
+#  author: Sebastian Gutsche
+#  thumbnail: polymake.png
+#  language: julia
+
+- title: G-vectors
+  repository: micjoswig/oscar-notebooks
+  filename: polymake/g-vectors_of_random_simplicial_6-polytopes
+  author: Michael Joswig
   thumbnail: polymake.png
   language: julia
 
-- title: G-vectors
-  repository: oscar-system/OSCARBinder
-  filename: g-vectors_of_random_simplicial_6-polytopes
+- title: "Recognizing Manifolds"
+  repository: micjoswig/oscar-notebooks
+  filename: polymake/K3-16
   author: Michael Joswig
   thumbnail: polymake.png
   language: julia
@@ -53,3 +60,18 @@
   author: Claus Fieker
   thumbnail: Hecke.png
   language: julia
+
+- title: "Combinatorial Automorphisms"
+  repository: micjoswig/oscar-notebooks
+  filename: MPI-demo-200124/combinatorial-automorphisms
+  author: Michael Joswig
+  thumbnail: polymake.png
+  language: julia
+
+- title: "Wronski Polynomial Systems"
+  repository: micjoswig/oscar-notebooks
+  filename: MPI-demo-200124/wronski-polynomials
+  author: Michael Joswig
+  thumbnail: polymake.png
+  language: julia
+
