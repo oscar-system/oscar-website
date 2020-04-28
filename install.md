@@ -103,17 +103,22 @@ with Xcode 11.4 instead of using the binaries (replace <code>$SOMEWHERE</code> b
 the directory in which you wish to install <code>libcxxwrap-julia</code>,
 for example <code>$HOME/.julia/cxxwrap-workaround/</code>):
 {% highlight bash %}
-git clone -b v0.6.6 --depth 1 https://github.com/JuliaInterop/libcxxwrap-julia
+git clone -b v0.7.0 --depth 1 https://github.com/JuliaInterop/libcxxwrap-julia
 cd libcxxwrap-julia
 mkdir build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX=$SOMEWHERE/libcxxwrap-julia-install -DCMAKE_BUILD_TYPE=Release ..
 VERBOSE=ON cmake --build . --config Release --target install
 {% endhighlight %}
-Then, set the <code>JLCXX_DIR</code> environment variable to <code>$SOMEWHERE/libcxxwrap-julia-install</code>,
-e.g. by putting <code>ENV["JLCXX_DIR"] = "$SOMEWHERE/libcxxwrap-julia-install"</code> in your julia startup
-file (located at <code>~/.julia/config/startup.jl</code> by default),
-and rebuild <code>Oscar</code> by typing the following in your Julia REPL:
+Then, set up an "override file" (as indicated
+<a href="https://github.com/JuliaInterop/libcxxwrap-julia#using-the-compiled-libcxxwrap-julia-in-cxxwrap">here</a>),
+which is, by default, located at <code>~/.julia/artifacts/Overrides.toml</code>.
+Create this file if it doesn't already exist, and add to it the following content:
+{% highlight toml %}
+[3eaa8342-bff7-56a5-9981-c04077f7cee7]
+libcxxwrap_julia = "$SOMEWHERE/libcxxwrap-julia-install"
+{% endhighlight %}
+Finally, rebuild <code>Oscar</code> by typing the following in your Julia REPL:
 <code>using Pkg; Pkg.build("Oscar")</code>.
 </p>
 </details>
