@@ -1,7 +1,4 @@
-
-# Website for the Oscar project.
-
-Sebastian Gutsche <gutsche@mathematik.uni-siegen.de>, May 2018
+# Website for the Oscar project
 
 - [How to contribute](#how-to-contribute)
 - [How to contribute a News post](#how-to-contribute-a-news-post)
