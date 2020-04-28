@@ -72,21 +72,17 @@ To contribute a new example notebook, please follow these steps
 
 2. Create a thumbnail for the notebook, say `mythumbnail.png` and store it in `/public/thumbnails`.
 
-3. Create a new `.md` file in the folder `examples/_posts`. The filename
-   must be of the format `YYYY-MM-DD-title-of-notebook.md`.
+3. Create a new entry in the `_data/examples.yml` file, consisting of the following lines:
+```
+- title: "My new notebook"
+  repository: myusername/mybinderrepo
+  filename: mynotebook
+  author: My Name
+  thumbnail: mythumbnail.png
+  language: julia
 
-4. At the beginning of your `.md` file, add the following lines:
 ```
----
-layout: post
-title: My new notebook
-repository: myusername/mybinderrepo
-filename: mynotebook
-author: My Name
-thumbnail: mythumbnail.png
----
-```
-Please adjust all entries accordingly. All further content of the file is ignored.
+Please adjust all entries accordingly, including the language entry if necessary (e.g. `GAP`).
 
 ## How to add a new documentation URL
 
