@@ -48,12 +48,12 @@
 #  language: GAP
 
 - title: "Coherent sheaves on P1"
-  repository: oscar-system/OSCARBinder
+  repository: homalg-project/CapHomalgNotebooks
   filename: CohP1
   author: Mohamed Barakat
   thumbnail: Logo_CAP.jpg
-  language: CAP using GAP and Singular
-
+  language: CAP using homalg and Singular
+  
 - title: "Intro Number Fields: Towers"
   repository: oscar-system/OSCARBinder
   filename: Hecke
