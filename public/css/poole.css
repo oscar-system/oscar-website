@@ -186,6 +186,10 @@ pre code {
 }
 .highlight pre {
   margin-bottom: 0;
+
+  /* add scrolling for code blocks which are too wide */
+  white-space: pre;
+  overflow: auto;
 }
 
 /* Gist via GitHub Pages */
