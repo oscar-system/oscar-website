@@ -167,9 +167,8 @@ pre {
   font-size: .8rem;
   line-height: 1.4;
   white-space: pre;
-  white-space: pre-wrap;
   word-break: break-all;
-  word-wrap: break-word;
+  overflow: auto;
   background-color: #f9f9f9;
 }
 pre code {
@@ -186,10 +185,6 @@ pre code {
 }
 .highlight pre {
   margin-bottom: 0;
-
-  /* add scrolling for code blocks which are too wide */
-  white-space: pre;
-  overflow: auto;
 }
 
 /* Gist via GitHub Pages */
