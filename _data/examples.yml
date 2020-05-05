@@ -54,6 +54,13 @@
   thumbnail: Logo_CAP.jpg
   language: CAP using homalg and Singular
   
+- title: "Uniform matrix product states"
+  repository: homalg-project/CapHomalgNotebooks
+  filename: uMPS(2,2,4)_0dim
+  author: Mohamed Barakat
+  thumbnail: Logo_CAP.jpg
+  language: CAP using homalg and Singular
+
 - title: "Intro Number Fields: Towers"
   repository: oscar-system/OSCARBinder
   filename: Hecke
