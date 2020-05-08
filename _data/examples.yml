@@ -82,3 +82,10 @@
   thumbnail: polymake.png
   language: julia
 
+- title: "Example GroebnerBasis.jl"
+  repository: ederc/GroebnerBasisNotebooks
+  filename: GroebnerBasis
+  author: Christian Eder
+  thumbnail: GroebnerBasis.png
+  language: julia
+
