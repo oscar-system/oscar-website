@@ -89,3 +89,10 @@
   thumbnail: GroebnerBasis.png
   language: julia
 
+- title: "Computing GIT-Fans"
+  repository: oscar-system/GITFans
+  filename: ipynb/GITFans
+  author: Thomas Breuer and Janko Boehm
+  thumbnail: oscar.png
+  language: julia
+
