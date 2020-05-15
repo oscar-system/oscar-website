@@ -22,7 +22,7 @@ Here is an overview of the changes in this release:
 - Complete overhaul of the build process for GAP, making it more robust
 - Ensure that we link against the same GMP and readline as other components of
   OSCAR do
-- Remove the implicit dependency on LinearAlgebra.jl
+- Remove the implicit dependency on the `LinearAlgebra` standard library
 - Fix a bunch of minor bugs
 - Various janitorial changes
 
