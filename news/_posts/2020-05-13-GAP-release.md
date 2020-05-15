@@ -15,7 +15,7 @@ Here is an overview of the changes in this release:
 - Overload the Julia 'in' operator for GAP objects
 - Add conversion constructors for various Julia types, to allow for more
   idiomatic Julia code accessing GAP objects
-- Improve GAP <-> Julia conversion
+- Improve GAP <-> Julia conversions
 - Show the GAP banner again by default, unless we are being loaded from Oscar.jl
 - Switch to Julia "artifact" system for downloading the GAP sources,
   which can save time and disk space when rebuilding or reinstalling GAP.jl
