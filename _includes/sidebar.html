@@ -11,23 +11,25 @@
     </div>
 
     <nav class="sidebar-nav">
-      
+
       <a class="sidebar-nav-item{% if page.url == '/' %} active{% endif %}" href="{{ site.baseurl }}/">Home</a>
-      
+
       <a class="sidebar-nav-item{% if page.url == '/about/' %} active{% endif %}" href="{{ site.baseurl }}/about/">About</a>
-      
+
       <a class="sidebar-nav-item{% if page.url == '/news/' %} active{% endif %}" href="{{ site.baseurl }}/news/">News</a>
-      
+
       <a class="sidebar-nav-item{% if page.url == '/install/' %} active{% endif %}" href="{{ site.baseurl }}/install/">Installation</a>
-      
+
       <a class="sidebar-nav-item{% if page.url == '/example/' %} active{% endif %}" href="{{ site.baseurl }}/example/">Examples</a>
-      
+
+      <a class="sidebar-nav-item{% if page.url == '/exampleNEW/' %} active{% endif %}" href="{{ site.baseurl }}/exampleNEW/">Examples NEW</a>
+
       <a class="sidebar-nav-item{% if page.url == '/documentation/' %} active{% endif %}" href="{{ site.baseurl }}/documentation/">Documentation</a>
-      
+
       <a class="sidebar-nav-item{% if page.url == '/community/' %} active{% endif %}" href="{{ site.baseurl }}/community/">Community</a>
 
       <a class="sidebar-nav-item{% if page.url == '/talks/' %} active{% endif %}" href="{{ site.baseurl }}/talks/">Talks</a>
-      
+
       <a class="sidebar-nav-item{% if page.meeting %} active{% endif %}" href="{{ site.baseurl }}/meetings/">Meetings</a>
 
       <div class="mobile-hidden">
@@ -53,9 +55,9 @@
           {% endfor %}
         {% endif %}
       </div>
-      
+
       <a class="sidebar-nav-item{% if page.url == '/credits/' %} active{% endif %}" href="{{ site.baseurl }}/credits">Credits</a>
-      
+
       <!-- {% comment %}
         The code below dynamically generates a sidebar nav of pages with
         `layout: page` in the front-matter. See readme for usage.

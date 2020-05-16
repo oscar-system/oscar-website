@@ -1,0 +1,79 @@
+Clicking on the example will open a static version of the example, powered by <a href="https://nbviewer.jupyter.org/">nbviewer</a>.
+
+<div class="clickdesc">
+  <details>
+    <summary>
+      How to interact with a "live" version
+    </summary>
+    It is possible from the notebook page to download it and run it locally:
+    <ul>
+      <li>open the context menu (via right-click on Linux and Windows, or ctrl-click on macOS)
+        on the download icon of the notebook (in the upper right corner), which will allow
+        you to save the notebook file (say <code>Singular.ipynb</code>) in a directory of your choice
+        (say <code>~/Documents</code>);</li>
+      <li>make sure that you have the <code>Oscar</code> package installed
+        (cf. the <a href="{{ site.baseurl }}/install">installation page</a>);
+        in some cases, you migth have to also install explicitly one of its subpackages, for
+        example <code>Singular</code> (this is accomplished by running
+        <code>using Pkg; Pkg.add("Singular")</code>) in a Julia REPL;</li>
+      <li>install <code>IJulia</code> if it is not already installed (typically by running
+        <code>using Pkg; Pkg.add("IJulia")</code> at the Julia REPL, cf.
+        <a href="https://github.com/JuliaLang/IJulia.jl#Installation">installation instructions</a>),
+        and launch it (typically by running <code>using IJulia; notebook()</code>);</li>
+      <li> you should by now have landed on
+        a page in your web browser, with "jupyter" written in the upper left corner;
+        below is a file explorer: open the notebook file (e.g. browse to
+        <code>~/Documents</code> and click on <code>Singular.ipynb</code>);
+        you might see a pop-up with the message "Kernel not found", in which case
+        just select the Jupyter kernel you installed (e.g. "Julia 1.4.1") in the drop-down menu.
+      </li>
+    </ul>
+  </details>
+</div>
+
+Click on one of the links below to filter notebooks.
+<div class="row">
+{%- for component in site.data.examples_components -%}
+  <div class="column">
+    <a href="{{ site.baseurl }}/example/{{ component }}">
+      <img class="item_example-image-link"
+           src="{{ site.baseurl }}/public/thumbnails/{{ component }}.png">
+      {{ component }}
+    </a>
+  </div>
+  {%- endfor -%}
+</div>
+
+<br/>
+<div class="gallery_example">
+  {%- if page.main -%}
+  {%-     assign someexamples = site.data.examples -%}
+  {%- else -%}
+  {%-     assign someexamples = site.data.examples | where:"thumbnail",page.component -%}
+  {%- endif -%}
+  {%- for post in someexamples  -%}
+  <div class="item_example">
+    <a  href="https://nbviewer.jupyter.org/github/{{ post.repository }}/blob/master/{{ post.filename }}.ipynb">
+      <img class="item_example-image"
+           src="{{ site.baseurl }}/public/thumbnails/{{ post.thumbnail }}">
+      <div class="item_example_text_wrap">
+	<div class="item_example-name">{{ post.title }}</div>
+        <div class="item_example-name">{{ post.author }}</div>
+        <div class="item_example-name">Language: {{ post.language }}</div>
+      </div>
+    </a>
+    <div class="item_example-name" style="float: right;">
+      <a href="https://nbviewer.jupyter.org/github/{{ post.repository }}/blob/master/{{ post.filename }}.ipynb">
+        <img src="https://img.shields.io/badge/View-Notebook-brightgreen.svg"
+             alt="view notebook"
+             style="margin-top:15%;"/>
+      </a>
+      <!--
+      <a href="https://mybinder.org/v2/gh/{{ post.repository }}/master?filepath={{ post.filename }}.ipynb">
+        <img src="https://mybinder.org/badge.svg" alt="Run on binder" style="margin-top:15%;"/>
+      </a>
+      -->
+    </div>
+  </div>
+  {% endfor %}
+</div>
