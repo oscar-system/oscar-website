@@ -4,32 +4,67 @@ title: OSCAR examples
 ---
 
 Clicking on the example will open a static version of the example, powered by <a href="https://nbviewer.jupyter.org/">nbviewer</a>.
-To interact with a "live" version, it is possible from there to download the notebook and run it locally:
-<ul>
-  <li>open the context menu (via right-click on Linux and Windows, or ctrl-click on macOS)
-    on the download icon of the notebook (in the upper right corner), which will allow
-    you to save the notebook file (say <code>Singular.ipynb</code>) in a directory of your choice
-    (say <code>~/Documents</code>);
-  </li>
-  <li>make sure that you have the <code>Oscar</code> package installed
-    (cf. the <a href="{{ site.baseurl }}/install">installation page</a>);
-    in some cases, you migth have to also install explicitly one of its subpackages, for
-    example <code>Singular</code> (this is accomplished by running
-    <code>using Pkg; Pkg.add("Singular")</code>) in a Julia REPL;
-  </li>
-  <li>install <code>IJulia</code> if it is not already installed (typically by running
-    <code>using Pkg; Pkg.add("IJulia")</code> at the Julia REPL, cf.
-    <a href="https://github.com/JuliaLang/IJulia.jl#Installation">installation instructions</a>),
-    and launch it (typically by running <code>using IJulia; notebook()</code>);
-  </li>
-  <li> you should by now have landed on
-    a page in your web browser, with "jupyter" written in the upper left corner;
-    below is a file explorer: open the notebook file (e.g. browse to
-    <code>~/Documents</code> and click on <code>Singular.ipynb</code>);
-    you might see a pop-up with the message "Kernel not found", in which case
-    just select the Jupyter kernel you installed (e.g. "Julia 1.4.1") in the drop-down menu.
-  </li>
-</ul>
+
+<details>
+  <summary>
+    How to interact with a "live" version
+  </summary>
+  It is possible from the notebook page to download it and run it locally:
+  <ul>
+    <li>open the context menu (via right-click on Linux and Windows, or ctrl-click on macOS)
+      on the download icon of the notebook (in the upper right corner), which will allow
+      you to save the notebook file (say <code>Singular.ipynb</code>) in a directory of your choice
+      (say <code>~/Documents</code>);</li>
+    <li>make sure that you have the <code>Oscar</code> package installed
+      (cf. the <a href="{{ site.baseurl }}/install">installation page</a>);
+      in some cases, you migth have to also install explicitly one of its subpackages, for
+      example <code>Singular</code> (this is accomplished by running
+      <code>using Pkg; Pkg.add("Singular")</code>) in a Julia REPL;</li>
+    <li>install <code>IJulia</code> if it is not already installed (typically by running
+      <code>using Pkg; Pkg.add("IJulia")</code> at the Julia REPL, cf.
+      <a href="https://github.com/JuliaLang/IJulia.jl#Installation">installation instructions</a>),
+      and launch it (typically by running <code>using IJulia; notebook()</code>);</li>
+    <li> you should by now have landed on
+      a page in your web browser, with "jupyter" written in the upper left corner;
+      below is a file explorer: open the notebook file (e.g. browse to
+      <code>~/Documents</code> and click on <code>Singular.ipynb</code>);
+      you might see a pop-up with the message "Kernel not found", in which case
+      just select the Jupyter kernel you installed (e.g. "Julia 1.4.1") in the drop-down menu.
+    </li>
+  </ul>
+</details>
+
+<div class="clickdesc">
+  <details>
+    <summary>
+      How to interact with a "live" version
+    </summary>
+    It is possible from the notebook page to download it and run it locally:
+    <ul>
+      <li>open the context menu (via right-click on Linux and Windows, or ctrl-click on macOS)
+        on the download icon of the notebook (in the upper right corner), which will allow
+        you to save the notebook file (say <code>Singular.ipynb</code>) in a directory of your choice
+        (say <code>~/Documents</code>);</li>
+      <li>make sure that you have the <code>Oscar</code> package installed
+        (cf. the <a href="{{ site.baseurl }}/install">installation page</a>);
+        in some cases, you migth have to also install explicitly one of its subpackages, for
+        example <code>Singular</code> (this is accomplished by running
+        <code>using Pkg; Pkg.add("Singular")</code>) in a Julia REPL;</li>
+      <li>install <code>IJulia</code> if it is not already installed (typically by running
+        <code>using Pkg; Pkg.add("IJulia")</code> at the Julia REPL, cf.
+        <a href="https://github.com/JuliaLang/IJulia.jl#Installation">installation instructions</a>),
+        and launch it (typically by running <code>using IJulia; notebook()</code>);</li>
+      <li> you should by now have landed on
+        a page in your web browser, with "jupyter" written in the upper left corner;
+        below is a file explorer: open the notebook file (e.g. browse to
+        <code>~/Documents</code> and click on <code>Singular.ipynb</code>);
+        you might see a pop-up with the message "Kernel not found", in which case
+        just select the Jupyter kernel you installed (e.g. "Julia 1.4.1") in the drop-down menu.
+      </li>
+    </ul>
+  </details>
+</div>
+
 
 <!--
 <br/>
