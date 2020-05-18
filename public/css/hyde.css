@@ -112,7 +112,7 @@ html {
     margin-left: 4px;
     margin-right: 4px;
   }
-  
+
   .inner-sidebar-nav-item {
     display: inline;
     margin-left: 4px;
@@ -123,7 +123,7 @@ html {
     margin-left: 4px;
     margin-right: 4px;
   }
-  
+
   .inner-sidebar-nav-item-two {
     display: inline;
     margin-left: 4px;
@@ -168,7 +168,7 @@ a.sidebar-nav-item:focus {
 
 @media (min-width: 48em) {
   .mobile-display {
-    display: none;  
+    display: none;
   }
 }
 
@@ -331,6 +331,14 @@ a.sidebar-nav-item:focus {
   color: #e4e4e7;
 }
 
+
+.oscar_detail {
+  width: 100%;
+  padding: 10px;
+  background-color: #e4e4e7;
+  border-radius: 5px;
+}
+
 .item_example {
   width: 85%;
   padding: 10px;
@@ -342,6 +350,7 @@ a.sidebar-nav-item:focus {
 }
 
 .item_example_text_wrap {
+  clear: left;
   float: left;
 }
 
@@ -357,6 +366,20 @@ a.sidebar-nav-item:focus {
   float: left;
   margin-right: 2%;
   margin-top: 4%;
+}
+
+/* cf. https://travishorn.com/responsive-grid-in-2-minutes-with-css-grid-layout-4842a41420fe */
+.gallery_example_cards {
+    margin: 0 auto;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+}
+
+.item_example_card {
+  background-color: #e4e4e7;
+  padding: 10px;
+  border-radius: 5px;
 }
 
 .menu_bar_paragraph {
