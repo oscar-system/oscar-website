@@ -53,7 +53,7 @@
   author: Mohamed Barakat
   thumbnail: Logo_CAP.jpg
   language: CAP using homalg and Singular
-  
+
 - title: "Uniform matrix product states"
   repository: homalg-project/CapHomalgNotebooks
   filename: uMPS(2,2,4)_0dim
@@ -96,3 +96,9 @@
   thumbnail: oscar.png
   language: julia
 
+- title: "Decomposition of Binomial Ideals"
+  repository: rfourquet/OSCARBinder
+  filename: AlgebraicGeometry
+  author: Clara Petroll
+  thumbnail: oscar.png
+  language: julia
