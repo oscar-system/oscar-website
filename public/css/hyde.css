@@ -334,12 +334,18 @@ a.sidebar-nav-item:focus {
 .item_example-image-link {
     height: 55px;
     width: auto;
+    display: inline-block; /* for centering */
 }
 
 /* Three image containers (use 25% for four, and 50% for two, etc) */
 .column {
   float: left;
-  padding: 10px;
+  padding: 13px;
+  text-align: center;
+}
+
+.row {
+    margin-bottom: 5%;
 }
 
 /* Clear floats after image containers */
@@ -349,7 +355,7 @@ a.sidebar-nav-item:focus {
   display: table;
 }
 
-.oscar_detail {
+.oscar_detail, .row {
   width: 100%;
   padding: 10px;
   background-color: #e4e4e7;

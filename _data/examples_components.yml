@@ -1,8 +1,14 @@
-- All
-- oscar
-- AbstractAlgebra
-- Hecke
-- polymake
-- Logo_CAP
-- singular
-- GroebnerBasis
+- logo: oscar
+  name: Oscar
+- logo: AbstractAlgebra
+  name: AbstractAlgebra
+- logo: Hecke
+  name: Hecke
+- logo: polymake
+  name: Polymake
+- logo: Logo_CAP
+  name: CAP
+- logo: singular
+  name: Singular
+- logo: GroebnerBasis
+  name: GroebnerBasis
