@@ -1,14 +1,14 @@
-- logo: oscar
+- logo: oscar.png
   name: Oscar
-- logo: AbstractAlgebra
+- logo: AbstractAlgebra.png
   name: AbstractAlgebra
-- logo: Hecke
+- logo: Hecke.png
   name: Hecke
-- logo: polymake
+- logo: polymake.png
   name: Polymake
-- logo: Logo_CAP
+- logo: Logo_CAP.jpg
   name: CAP
-- logo: singular
+- logo: singular.png
   name: Singular
-- logo: GroebnerBasis
+- logo: GroebnerBasis.png
   name: GroebnerBasis
