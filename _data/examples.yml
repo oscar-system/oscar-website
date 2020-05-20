@@ -102,3 +102,10 @@
   author: Clara Petroll
   thumbnail: oscar.png
   language: julia
+
+- title: "Tropicalization of a p-adic surface"
+  repository: micjoswig/oscar-notebooks
+  filename: patchworking/Tropicalization
+  author: Michael Joswig
+  thumbnail: oscar.png
+  language: julia
