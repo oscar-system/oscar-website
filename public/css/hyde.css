@@ -364,31 +364,43 @@ a.sidebar-nav-item:focus {
 
 .item_example {
   width: 85%;
-  padding: 10px;
+  padding: 1rem;
   float: left;
-  margin-right: 5%;
-  margin-bottom: 5%;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
   background-color: #e4e4e7;
   border-radius: 5px;
+  vertical-align: center;
 }
 
-.item_example_text_wrap {
-  clear: left;
+.item_example_text_left {
   float: left;
+  clear: both;
 }
 
-.item_exmaple-name {
+.item_example_text_right {
+  float: left;
+  clear: both;
+}
+
+.item_example-title {
   text-align: left;
   float: left;
   margin-left:10%;
 }
 
-.item_example-image {
-  height: 40px;
-  width: auto;
+.item_example-author {
+  text-align: left;
   float: left;
-  margin-right: 2%;
-  margin-top: 4%;
+  margin-left:10%;
+  font-size: 80%;
+}
+
+.item_example-image {
+  height: auto;
+  width: 50px;
+  float: left;
+  margin: 0.5rem;
 }
 
 /* cf. https://travishorn.com/responsive-grid-in-2-minutes-with-css-grid-layout-4842a41420fe */
