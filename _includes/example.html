@@ -37,10 +37,10 @@ Clicking on the example will open a static version of the example, powered by <a
 
 <br/>
 Click on one of the links below to filter notebooks (and re-click to disable filtering).
-<div class="row">
+<div class="example_row">
   {%- for component in site.data.examples_components -%}
   {%- assign component_url = "/example/" | append: component.name | append: "/" %}
-  <div class="column">
+  <div class="example_column">
     <a style="display: block; "
        {% if page.url == component_url %}
            href="{{ site.baseurl }}/example/"

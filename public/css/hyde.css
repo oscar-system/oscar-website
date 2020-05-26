@@ -338,24 +338,24 @@ a.sidebar-nav-item:focus {
 }
 
 /* Three image containers (use 25% for four, and 50% for two, etc) */
-.column {
+.example_column {
   float: left;
   padding: 13px;
   text-align: center;
 }
 
-.row {
+.example_row {
     margin-bottom: 5%;
 }
 
 /* Clear floats after image containers */
-.row::after {
+.example_row::after {
   content: "";
   clear: both;
   display: table;
 }
 
-.oscar_detail, .row {
+.oscar_detail, .example_row {
   width: 100%;
   padding: 10px;
   background-color: #e4e4e7;
