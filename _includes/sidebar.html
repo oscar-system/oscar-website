@@ -20,7 +20,7 @@
 
       <a class="sidebar-nav-item{% if page.url == '/install/' %} active{% endif %}" href="{{ site.baseurl }}/install/">Installation</a>
 
-      <a class="sidebar-nav-item{% if page.url == '/example/' %} active{% endif %}" href="{{ site.baseurl }}/example/">Examples</a>
+      <a class="sidebar-nav-item{% if page.url contains '/example/' %} active{% endif %}" href="{{ site.baseurl }}/example/">Examples</a>
 
       <a class="sidebar-nav-item{% if page.url == '/documentation/' %} active{% endif %}" href="{{ site.baseurl }}/documentation/">Documentation</a>
 
