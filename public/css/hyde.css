@@ -331,8 +331,31 @@ a.sidebar-nav-item:focus {
   color: #e4e4e7;
 }
 
+.item_example-image-link {
+    height: 55px;
+    width: auto;
+    display: inline-block; /* for centering */
+}
 
-.oscar_detail {
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.example_column {
+  float: left;
+  padding: 13px;
+  text-align: center;
+}
+
+.example_row {
+    margin-bottom: 5%;
+}
+
+/* Clear floats after image containers */
+.example_row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.oscar_detail, .example_row {
   width: 100%;
   padding: 10px;
   background-color: #e4e4e7;
