@@ -61,6 +61,13 @@
   thumbnail: Logo_CAP.jpg
   language: CAP using homalg and Singular
 
+- title: "Tilting equivalence"
+  repository: homalg-project/CapHomalgNotebooks
+  filename: TiltingEquivalence
+  author: Kamal Saleh and Mohamed Barakat
+  thumbnail: Logo_CAP.jpg
+  language: CAP using homalg and Singular
+
 - title: "Intro Number Fields: Towers"
   repository: oscar-system/OSCARBinder
   filename: Hecke
