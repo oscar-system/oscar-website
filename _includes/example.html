@@ -75,7 +75,8 @@ the example, powered by <a href="https://mybinder.org">mybinder</a>.
   {%- else -%}
   {%-     assign someexamples = site.data.examples | where:"thumbnail",page.component -%}
   {%- endif -%}
-  {%- for post in someexamples  -%}
+  {%- assign sortedexamples = someexamples | sort: "level" -%}
+  {%- for post in sortedexamples  -%}
   <div class="item_example_card">
     <a  href="https://nbviewer.jupyter.org/github/{{ post.repository }}/blob/master/{{ post.filename }}.ipynb">
       <img class="item_example-image"

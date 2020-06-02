@@ -11,6 +11,7 @@
   author: Michael Joswig
   thumbnail: polymake.png
   language: julia
+  level: 2-intermediate
 
 - title: "Recognizing Manifolds"
   repository: micjoswig/oscar-notebooks
@@ -18,6 +19,7 @@
   author: Michael Joswig
   thumbnail: polymake.png
   language: julia
+  level: 2-intermediate
 
 - title: Singular.jl example
   repository: oscar-system/OSCARBinder
@@ -25,6 +27,7 @@
   author: Sebastian Gutsche
   thumbnail: singular.png
   language: julia
+  level: 1-introduction
 
 - title: "Example AbstractAlgebra.jl"
   repository: oscar-system/OSCARBinder
@@ -32,6 +35,7 @@
   author: William Hart
   thumbnail: AbstractAlgebra.png
   language: julia
+  level: 1-introduction
 
 #- title: "Singular from GAP 1"
 #  repository: oscar-system/OSCARBinder
@@ -53,6 +57,7 @@
   author: Mohamed Barakat
   thumbnail: Logo_CAP.jpg
   language: CAP using homalg and Singular
+  level: 2-intermediate?
 
 - title: "Uniform matrix product states"
   repository: homalg-project/CapHomalgNotebooks
@@ -60,6 +65,7 @@
   author: Mohamed Barakat
   thumbnail: Logo_CAP.jpg
   language: CAP using homalg and Singular
+  level: 3-advanced?
 
 - title: "Tilting equivalence"
   repository: homalg-project/CapHomalgNotebooks
@@ -67,6 +73,7 @@
   author: Kamal Saleh and Mohamed Barakat
   thumbnail: Logo_CAP.jpg
   language: CAP using homalg and Singular
+  level: 3-advanced
 
 - title: "Intro Number Fields: Towers"
   repository: oscar-system/OSCARBinder
@@ -74,6 +81,7 @@
   author: Claus Fieker
   thumbnail: Hecke.png
   language: julia
+  level: 1-introduction
 
 - title: "Combinatorial Automorphisms"
   repository: micjoswig/oscar-notebooks
@@ -81,6 +89,7 @@
   author: Michael Joswig
   thumbnail: polymake.png
   language: julia
+  level: 1-introduction
 
 - title: "Wronski Polynomial Systems"
   repository: micjoswig/oscar-notebooks
@@ -88,6 +97,7 @@
   author: Michael Joswig
   thumbnail: polymake.png
   language: julia
+  level: 2-intermediate
 
 - title: "Example GroebnerBasis.jl"
   repository: ederc/GroebnerBasisNotebooks
@@ -95,6 +105,7 @@
   author: Christian Eder
   thumbnail: GroebnerBasis.png
   language: julia
+  level: 1-introduction
 
 - title: "Computing GIT-Fans"
   repository: oscar-system/GITFans
@@ -102,6 +113,7 @@
   author: Thomas Breuer and Janko Boehm
   thumbnail: oscar.png
   language: julia
+  level: 3-advanced
 
 - title: "Decomposition of Binomial Ideals"
   repository: rfourquet/OSCARBinder
@@ -109,6 +121,7 @@
   author: Clara Petroll
   thumbnail: oscar.png
   language: julia
+  level: 3-advanced
 
 - title: "Tropicalization of a p-adic surface"
   repository: micjoswig/oscar-notebooks
@@ -116,3 +129,4 @@
   author: Michael Joswig
   thumbnail: oscar.png
   language: julia
+  level: 2-intermediate
