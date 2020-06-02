@@ -373,26 +373,19 @@ a.sidebar-nav-item:focus {
   vertical-align: center;
 }
 
-.item_example_text_left {
+.item_example_left {
   float: left;
-  clear: both;
 }
 
-.item_example_text_right {
-  float: left;
-  clear: both;
+.item_example_right {
+  text-align: center;
+  margin-left: 20%;
 }
 
 .item_example-title {
-  text-align: left;
-  float: left;
-  margin-left:10%;
 }
 
 .item_example-author {
-  text-align: left;
-  float: left;
-  margin-left:10%;
   font-size: 80%;
 }
 
@@ -415,6 +408,10 @@ a.sidebar-nav-item:focus {
   background-color: #e4e4e7;
   padding: 10px;
   border-radius: 5px;
+  height: 5rem; /* so that all cards have the same height, and that everything  */
+                /* still fits when narrowing the window and 3 lines are used    */
+                /* might need adjustment when 4 lines are used (i.e. long title */
+                /* and long author names), or change of `grid-template-columns` */
 }
 
 .menu_bar_paragraph {
