@@ -364,31 +364,36 @@ a.sidebar-nav-item:focus {
 
 .item_example {
   width: 85%;
-  padding: 10px;
+  padding: 1rem;
   float: left;
-  margin-right: 5%;
-  margin-bottom: 5%;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
   background-color: #e4e4e7;
   border-radius: 5px;
+  vertical-align: center;
 }
 
-.item_example_text_wrap {
-  clear: left;
+.item_example_left {
   float: left;
 }
 
-.item_exmaple-name {
+.item_example_right {
   text-align: left;
-  float: left;
-  margin-left:10%;
+  margin-left: 20%;
+}
+
+.item_example-title {
+}
+
+.item_example-author {
+  font-size: 80%;
 }
 
 .item_example-image {
-  height: 40px;
-  width: auto;
+  height: auto;
+  width: 50px;
   float: left;
-  margin-right: 2%;
-  margin-top: 4%;
+  margin: 0.5rem;
 }
 
 /* cf. https://travishorn.com/responsive-grid-in-2-minutes-with-css-grid-layout-4842a41420fe */
@@ -403,6 +408,10 @@ a.sidebar-nav-item:focus {
   background-color: #e4e4e7;
   padding: 10px;
   border-radius: 5px;
+  height: 5rem; /* so that all cards have the same height, and that everything  */
+                /* still fits when narrowing the window and 3 lines are used    */
+                /* might need adjustment when 4 lines are used (i.e. long title */
+                /* and long author names), or change of `grid-template-columns` */
 }
 
 .menu_bar_paragraph {
