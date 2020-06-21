@@ -39,7 +39,7 @@
   affiliation: TU Kaiserslautern
 
 - name: Sebastian Gutsche
-  affiliation: University of Siegen
+  affiliation: Amazon
   email: gutsche@mathematik.uni-siegen.de
   website: https://sebasguts.github.io/
   paid_by_dfg: true
@@ -67,13 +67,16 @@
   affiliation: Institut de Mathématiques de Bordeaux
   website: http://fredrikj.net/
 
+- name: Alexej Jordan
+  affiliation: TU Berlin
+
 - name: Michael Joswig
   affiliation: TU Berlin
   website: https://page.math.tu-berlin.de/~joswig/
   is_active_PI: true
 
 - name: Marek Kaluba
-  affiliation: Adam Mickiewicz University, Poznań
+  affiliation: Adam Mickiewicz University, Poznań and TU Berlin
   website: https://kalmar.faculty.wmi.amu.edu.pl/
 
 - name: Lars Kastner
