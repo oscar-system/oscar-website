@@ -3,6 +3,28 @@ layout: page
 title: Contributors
 ---
 
+## Active PIs
+
+<ul>
+{% for p in site.data.contributors %}
+{% if p.is_active_PI == true %}
+  <li>
+    {% if p.website != null %}
+        <a href="{{ p.website }}">
+        {% assign link_open = true %}
+    {% elsif p.email != null %}
+        <a href="mailto:{{ p.email }}">
+        {% assign link_open = true %}
+    {% endif %}
+    <strong>{{ p.name }}</strong>{% if link_open %}</a>{% assign link_open = false %}{% endif %}
+    {% if p.affiliation != null %} ({{ p.affiliation }}){% endif %}
+  </li>
+{% endif %}
+{% endfor %}
+</ul>
+
+## Contributors
+
 Currently, the following people contributed very significantly to the software in the
 OSCAR project:
 
