@@ -44,15 +44,15 @@ for the OSCAR project.
     <strong>{{ p.name }}</strong>{% if link_open %}</a>{% assign link_open = false %}{% endif %}
     {% if p.affiliation != null or p.paid_by_dfg == true %}
         (
-        {% if p.affiliation != null %}
+        {%- if p.affiliation != null -%}
             {{ p.affiliation }}
-        {% endif %}
-        {% if p.paid_by_dfg == true %}
-            {% if p.affiliation != null %}
+        {%- endif -%}
+        {%- if p.paid_by_dfg == true -%}
+            {%- if p.affiliation != null -%}
             ,
             {% endif %}
             financed by the <a href="https://www.computeralgebra.de/sfb/">SFB-TRR 195</a>
-        {% endif %}
+        {%- endif -%}
         )
     {% endif %}
 
