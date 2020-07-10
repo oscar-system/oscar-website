@@ -3,7 +3,7 @@ layout: page
 title: Contributors
 ---
 
-## Active PIs
+## Project leaders
 
 <ul>
 {% for p in site.data.contributors %}
