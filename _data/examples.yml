@@ -61,6 +61,13 @@
   thumbnail: Logo_CAP.jpg
   language: CAP using homalg and Singular
 
+- title: "A divisionally free not inductively free arrangement with a minimal number of hyperplanes"
+  repository: homalg-project/CapHomalgNotebooks
+  filename: DivFreeNotIndFree
+  author: Mohamed Barakat and Lukas Kühne
+  thumbnail: Logo_CAP.jpg
+  language: CAP using homalg and Singular
+
 - title: "Tilting equivalence"
   repository: homalg-project/CapHomalgNotebooks
   filename: TiltingEquivalence
