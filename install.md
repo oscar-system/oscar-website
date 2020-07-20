@@ -177,7 +177,7 @@ Please have a look at
   - [polymake examples](https://github.com/micjoswig/oscar-notebooks)
   - [Hecke examples](https://github.com/thofma/HeckeTutorials.jl)
 
-for some examples (as [Jupyter](https://jupyter.org/) notebooks)
+for some examples (as [Jupyter](https://jupyter.org/) notebooks).
 
 <!-- TODO: disabled until https://github.com/oscar-system/GAP.jl/issues/335 is resolved
 
