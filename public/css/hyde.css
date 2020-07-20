@@ -401,17 +401,18 @@ a.sidebar-nav-item:focus {
     margin: 0 auto;
     display: grid;
     grid-gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); /* use 16rem for 3 lines per card */
 }
 
 .item_example_card {
   background-color: #e4e4e7;
   padding: 10px;
   border-radius: 5px;
-  height: 5rem; /* so that all cards have the same height, and that everything  */
-                /* still fits when narrowing the window and 3 lines are used    */
-                /* might need adjustment when 4 lines are used (i.e. long title */
-                /* and long author names), or change of `grid-template-columns` */
+  height: 7rem; /* so that all cards have the same height, and that everything        */
+                /* still fits when narrowing the window and 4 lines are used          */
+                /* might need adjustment when 5 lines are used (i.e. long title       */
+                /* and long author names), or change of `grid-template-columns`       */
+                /* use 5rem for 3 lines per card (by default on "wide-enough" screen) */
 }
 
 .menu_bar_paragraph {
