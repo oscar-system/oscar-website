@@ -111,7 +111,7 @@
   language: julia
 
 - title: "Decomposition of Binomial Ideals"
-  repository: rfourquet/OSCARBinder
+  repository: oscar-system/OSCARBinder
   filename: AlgebraicGeometry
   author: Clara Petroll
   thumbnail: oscar.png
