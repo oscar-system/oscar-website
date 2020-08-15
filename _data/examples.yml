@@ -123,3 +123,17 @@
   author: Michael Joswig
   thumbnail: oscar.png
   language: julia
+
+- title: "Homology of VR complexes"
+  repository: oscar-system/OSCARBinder
+  filename: homology_of_vr_complexes
+  author: Ivan Spirandelli
+  thumbnail: polymake.png
+  language: julia
+
+- title: "Barcode and persistence diagrams of VR complexes"
+  repository: oscar-system/OSCARBinder
+  filename: persistent_homology_of_vr_complexes_and_visualizations
+  author: Ivan Spirandelli
+  thumbnail: polymake.png
+  language: julia
