@@ -137,3 +137,10 @@
   author: Ivan Spirandelli
   thumbnail: polymake.png
   language: julia
+
+- title: "Computing polynomial bases 1"
+  repository: johannesflake/polybases-examples
+  filename: polybases-ex-1
+  author: Johannes Flake
+  thumbnail: oscar.png
+  language: julia
