@@ -11,7 +11,7 @@ Here is an overview of the changes in this release:
 - Implementation of Laurent polynomials.
 - Proper handling of operator precedence when printing complex expressions. To this end,
   a new interface function `expressify` was introduced in a backwards compatible way.
-  (See <https://github.com/Nemocas/AbstractAlgebra.jl/pull/611>] or the documentation).
+  (See <https://github.com/Nemocas/AbstractAlgebra.jl/pull/611> or the documentation).
 - Rename `set_prec!` to `set_precision!` and `set_val!` to `set_valuation!`.
 - Square root for field elements (falling back to factorization)
 - Various small bugfixes.
