@@ -140,7 +140,7 @@
 
 - title: "Computing monomial bases 1"
   repository: johannesflake/polybases-examples
-  filename: polybases-ex-1
+  filename: polybases-example-1
   author: Johannes Flake
   thumbnail: oscar.png
   language: julia
