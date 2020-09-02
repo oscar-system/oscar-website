@@ -138,7 +138,7 @@
   thumbnail: polymake.png
   language: julia
 
-- title: "Computing polynomial bases 1"
+- title: "Computing monomial bases 1"
   repository: johannesflake/polybases-examples
   filename: polybases-ex-1
   author: Johannes Flake
