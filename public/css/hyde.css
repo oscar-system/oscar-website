@@ -408,11 +408,11 @@ a.sidebar-nav-item:focus {
   background-color: #e4e4e7;
   padding: 10px;
   border-radius: 5px;
-  height: 7rem; /* so that all cards have the same height, and that everything        */
-                /* still fits when narrowing the window and 4 lines are used          */
-                /* might need adjustment when 5 lines are used (i.e. long title       */
-                /* and long author names), or change of `grid-template-columns`       */
-                /* use 5rem for 3 lines per card (by default on "wide-enough" screen) */
+  height: 8.5rem; /* so that all cards have the same height, and that everything    */
+                  /* still fits when narrowing the window and 4 lines are used      */
+                  /* might need adjustment when 5 lines are used (i.e. long title   */
+                  /* and long author names), or change of `grid-template-columns`   */
+                  /* use 5rem for 3 lines per card and 7rem for 4 lines per card    */
 }
 
 .menu_bar_paragraph {
