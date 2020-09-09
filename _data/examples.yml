@@ -75,6 +75,13 @@
   thumbnail: Logo_CAP.jpg
   language: CAP using homalg and Singular
 
+- title: "Computations in the symmetric algebra internal to the tensor category of finite dimensional representations of Sym(4)"
+  repository: homalg-project/CapHomalgNotebooks
+  filename: SymmetricAlgebraInternalToS4rep
+  author: Mohamed Barakat and Fabian Zickgraf
+  thumbnail: Logo_CAP.jpg
+  language: CAP using homalg and Singular
+
 - title: "Intro Number Fields: Towers"
   repository: oscar-system/OSCARBinder
   filename: Hecke
