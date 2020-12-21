@@ -8,8 +8,8 @@
   documentation_url: http://nemocas.github.io/Nemo.jl/latest/
   description: The interface to the Flint, Arb and Antic C libraries from Julia.
 
-- name: GB.jl
-  documentation_url: https://ederc.github.io/GB.jl/
+- name: GroebnerBasis.jl
+  documentation_url: https://ederc.github.io/GroebnerBasis.jl/
   description: The interface to the gb C library from Julia
 
 - name: Singular.jl
