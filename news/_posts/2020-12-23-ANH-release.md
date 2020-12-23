@@ -14,7 +14,7 @@ Here is an overview of the changes in this release:
   triple `solve`, `can_solve` and `can_solve_with_solution`, which work for
   fields and rings supporting Hermite form computations. The functions also
   have a `side` keyword so that one can either solve `AX = B` or `XA = B`.
-- Experimental code for factorization of multivariate polynomials, which
+- Experimental code for factorization of multivariate polynomials over exact fields of characteristic zero, which
   reduces the problem to factorization of univariate polynomials.
 - Finite fields now support iteration.
 - Rename `rref` for matrices over rings to `rref_rational`.
