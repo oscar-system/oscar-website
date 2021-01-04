@@ -16,7 +16,7 @@ Here is an overview of the changes in this release:
 - Experimental code for factorization of multivariate polynomials over exact fields of characteristic zero, which
   reduces the problem to factorization of univariate polynomials.
 - Finite fields now support iteration.
-- Rename `rref` for matrices over rings to `rref_rational`.
+- Rename `rref` for matrices over rings to `rref_rational` (breaking).
 - Various small bugfixes.
 
 For more details, please consult the
