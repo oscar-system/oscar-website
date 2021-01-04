@@ -1,10 +1,9 @@
 ---
 layout: post
-title: AbstractAlgebra.jl 0.12.0, Nemo 0.19.0 and Hecke 0.9.0 released
+title: AbstractAlgebra 0.12.0, Nemo 0.19.0 and Hecke 0.9.0 released
 author: Tommy Hofmann
 ---
-We are pleased to announce the release of new versions of AbstractAlgebra.jl
-(0.12.0), Nemo (0.19.0) and Hecke (0.9.0).
+We are pleased to announce the release of new versions of AbstractAlgebra (0.12.0), Nemo (0.19.0) and Hecke (0.9.0).
 
 Here is an overview of the changes in this release:
 
