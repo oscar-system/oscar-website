@@ -145,7 +145,7 @@ and following their [platform specific instructions](https://julialang.org/downl
 
 2. On macOS, you can also install it via [Homebrew](https://brew.sh): `brew install julia` 
 
-3. The [JILL](https://github.com/johnnychen94/jill.py) project is a python package which allows installing and updating Julia on Linux, macOS, Windows -- this is in particular handy for experienced users who may want to install multiple Julia versions in parallel; but also for beginners it can be convenient as it allows updating the installed Julia version quite easily.
+3. The [JILL](https://github.com/johnnychen94/jill.py) project is a python package which allows installing and updating Julia on Linux, macOS -- this is in particular handy for experienced users who may want to install multiple Julia versions in parallel; but also for beginners it can be convenient as it allows updating the installed Julia version quite easily. (JILL also supports Windows, but as explained in step 1 above, OSCAR does not work under Windows directly, but rather requires the Windows Subsystem for Linux (WSL).)
 
 4. For Linux users, it may also be tempting to install Julia via your distro package manager (e.g., `apt`, `pac`, `dnf`, ...). We advise against this, as at least in the past these often provided outdated or broken Julia versions (e.g. with incorrect binary dependency versions, or with parts of Julia removed). Feel free to try this route, but if anything breaks, please consider installing Julia via one of the other methods listed above.
 
