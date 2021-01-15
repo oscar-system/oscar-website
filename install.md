@@ -133,10 +133,21 @@ To start bash in a later session, just search for <q>bash</q>.
 
 </div>
 
-## Step 2: Install Julia 1.3.1 or newer
+## Step 2: Install Julia
 
-Install Julia 1.3.1 or newer [by downloading it from the Julia homepage](https://julialang.org/downloads/),
+OSCAR requires at least Julia 1.3.1, but we recommend running it with the latest stable Julia release,
+which is 1.5.3 at the time this is written.
+
+There are several ways to install Julia:
+
+1. [By downloading it from the Julia homepage](https://julialang.org/downloads/),
 and following their [platform specific instructions](https://julialang.org/downloads/platform/).
+
+2. On macOS, you can also install it via [Homebrew](https://brew.sh): `brew install julia` 
+
+3. The [JILL](https://github.com/johnnychen94/jill.py) project is a python package which allows installing and updating Julia on Linux, macOS, Windows -- this is in particular handy for experienced users who may want to install multiple Julia versions in parallel; but also for beginners it can be convenient as it allows updating the installed Julia version quite easily.
+
+4. For Linux users, it may also be tempting to install Julia via your distro package manager (e.g., `apt`, `pac`, `dnf`, ...). We advise against this, as at least in the past these often provided outdated or broken Julia versions (e.g. with incorrect binary dependency versions, or with parts of Julia removed). Feel free to try this route, but if anything breaks, please consider installing Julia via one of the other methods listed above.
 
 
 ## Step 3: Install OSCAR
@@ -163,7 +174,7 @@ julia> using Oscar
  -----    -----    -----   -     -  -     -
 
 ...combining (and extending) GAP, Hecke, Nemo, Polymake and Singular
-Version 0.2.0 ...
+Version 0.5.0 ...
 ... which comes with absolutely no warranty whatsoever
 Type: '?Oscar' for more information
 (c) 2019-2020 by The Oscar Development Team
