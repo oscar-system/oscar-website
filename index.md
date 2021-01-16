@@ -36,7 +36,7 @@ currently still build some dependencies from source behind the scenes.
 -->
 
 If you wish to contribute to the OSCAR development, see the [Installation page]({{site.baseurl }}/install) for
-instructions on how to build everything on a growing number of supported platforms.
+instructions on how to install it, and also check out our [community page]({{site.baseurl }}/community).
 
 Note that OSCAR has not reached a first public release yet, and its parts should be treated as
 a technology preview. See the [News page]({{site.baseurl }}/news) for announcements about OSCAR development.
