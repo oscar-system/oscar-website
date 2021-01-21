@@ -11,6 +11,11 @@ For the latest news on the development on OSCAR, visit the [News]({{site.baseurl
 
 The OSCAR development list is public and can be accessed via the [OSCAR-dev](https://mail.mathematik.uni-kl.de/mailman/listinfo/oscar-dev) page.
 
+## Slack
+
+Slack is a non-public chat platform that we use for informal discussions, questions, etc. Anyone is welcome to join, just send us an
+<a href="mailto:webmaster-oscar@mathematik.uni-kl.de">email</a> and we will send you an invitation.
+
 ## How to report issues
 
 If you encounter any problems with OSCAR, please feel free to report the problems as an issue on [GitHub](https://github.com/oscar-system). If you are not sure to which part of the OSCAR project the
