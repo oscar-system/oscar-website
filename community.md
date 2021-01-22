@@ -28,8 +28,8 @@ All Software developed for the OSCAR project is available on [GitHub](https://gi
 
 Contributions are welcome. If you want to contribute to OSCAR, you can simply fork the repository you want to  
 contribute to and provide a pull request. We recommend that you also (or possibly beforehand) get in touch with us to    
-avoid duplication of efforts; we'll also be happy to talk to you about design decisions, help you figure out how 
-to do things etc.
+avoid duplication of efforts; we'll also be happy to talk with you about design decisions, help you figure out how 
+to do things, etc.
 
 Here is a list of all official repositories of the OSCAR project:
 
