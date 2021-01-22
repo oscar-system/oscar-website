@@ -143,6 +143,9 @@ There are several ways to install Julia:
 1. [By downloading it from the Julia homepage](https://julialang.org/downloads/),
 and following their [platform specific instructions](https://julialang.org/downloads/platform/).
 
+   **WARNING:** Windows users should *not* install the Julia version for Windows here, as Oscar does not
+   currently work directly on Windows. Instead, please install the Linux version inside Windows Subsystem for Linux (WSL).
+
 2. On macOS, you can also install it via [Homebrew](https://brew.sh): `brew install julia` 
 
 3. The [JILL](https://github.com/johnnychen94/jill.py) project is a python package which allows installing and updating Julia on Linux, macOS -- this is in particular handy for experienced users who may want to install multiple Julia versions in parallel; but also for beginners it can be convenient as it allows updating the installed Julia version quite easily. (JILL also supports Windows, but as explained in step 1 above, OSCAR does not work under Windows directly, but rather requires the Windows Subsystem for Linux (WSL).)
