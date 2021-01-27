@@ -46,7 +46,8 @@ if any, should be focused on this goal.
 ### Monday
 
 - 10:00 Begin of official program, program planning
-- 10:30 Coding sprint
+- 10:30 Discussion of the development model
+- 12:00 Coding sprint, implementation of the model
 - 17:30 Status reports
 
 ### Tuesday
