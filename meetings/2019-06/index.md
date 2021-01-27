@@ -22,7 +22,7 @@ For more information, see
 {% for node_inner in pages_list %}
     {% if node_inner.meeting_nr == page.meeting_nr and node_inner.is_meeting_index != true %}
         <li>
-            <a href="{{ node_inner.url | absolute_url }}">{{node_inner.title}}</a>
+            <a href="{{ node_inner.url | relative_url }}">{{node_inner.title}}</a>
         </li>
     {% endif %}
 {% endfor %}
