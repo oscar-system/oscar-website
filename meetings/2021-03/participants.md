@@ -10,6 +10,15 @@ people:
     - name: Max Horn
       affiliation: TU Kaiserslautern
 
+    - name: Thomas Breuer
+      affiliation: RWTH Aachen
+
+    - name: Lars Kastner
+      affiliation: TU Berlin
+
+    - name: Giovanni De Franceschi
+      affiliation: TU Kaiserslautern
+
 ---
 
 {% include participants.html participants=page.people %}
