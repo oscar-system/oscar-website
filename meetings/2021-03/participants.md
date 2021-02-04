@@ -19,6 +19,9 @@ people:
     - name: Giovanni De Franceschi
       affiliation: TU Kaiserslautern
 
+    - name: Hans Schönemann
+      affiliation: TU Kaiserslautern
+
 ---
 
 {% include participants.html participants=page.people %}
