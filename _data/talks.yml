@@ -1,3 +1,19 @@
+- title: "msolve - An open source C library for algebraic multivariate system solving"
+  author: Christian Eder
+  date: "2020-11-27"
+  conference: Workshop on Computational Algebra 2020 (virtual)
+  conference_url: https://fachgruppe-computeralgebra.de/ca2020/
+  location: "Kaiserslautern, Germany"
+  pdf_url: https://www.mathematik.uni-kl.de/~ederc/download/workshop-computational-algebra-2020.pdf
+
+- title: "msolve - An open source C library for algebraic multivariate system solving"
+  author: Christian Eder
+  date: "2020-07-13"
+  conference: ICMS 2020 (virtual)
+  conference_url: http://icms-conference.org/2020/
+  location: "Braunschweig, Germany"
+  pdf_url: https://www.mathematik.uni-kl.de/~ederc/download/workshop-computational-algebra-2020.pdf
+
 - title: "Chevalley’s Theorem on constructible images made constructive"
   author: "Mohamed Barakat"
   date: "2020-01-30"
@@ -134,5 +150,3 @@
   author: "Claus Fieker"
   date: "2018-06-08"
   location: "Canada"
-
-
