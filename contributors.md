@@ -25,7 +25,7 @@ title: Contributors
 
 ## Contributors
 
-Currently, the following people contributed very significantly to the software in the
+Currently, the following people contributed significantly to the software in the
 OSCAR project.
 Additionally, people who are financed by the [SFB-TRR 195](https://www.computeralgebra.de/sfb/) mainly work on software
 for the OSCAR project.

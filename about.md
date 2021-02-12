@@ -17,6 +17,8 @@ by combining existing building blocks from any of the cornerstones and
 equip these objects with mathematical capabilities exceeding
 those of the individual systems in a transparent way.
 
+ <img src="{{ site.baseurl }}/public/OSCAR-Organigramm.svg" alt="OSCAR" width="95%" style="margin-left:2%;" align="center">
+
 ## The four cornerstones
 
 This project builds on four leading computer algebra systems which
@@ -44,6 +46,7 @@ interpreted programming language especially suited to algebraic
 applications. It is easy to extend GAP’s functionality; currently over
 120 GAP packages contributed by third party authors are distributed
 with each release.
+GAP is integrated into OSCAR via the [GAP.jl](https://github.com/oscar-system/GAP.jl) Julia package.
 
 The system [polymake](https://polymake.org) is a standard tool for dealing with convex
 polytopes, polyhedral fans, tropical hypersurfaces,
@@ -51,6 +54,7 @@ and related objects from combinatorics and
 geometry. It is designed as a hybrid written in C++ and Perl. A
 sophisticated rule based mechanism decides which low-level C++
 functions are to be called to satisfy user demands.
+Polymake is integrated into OSCAR via the [Polymake.jl](https://github.com/oscar-system/Polymake.jl) Julia package.
 
 [Singular](https://www.singular.uni-kl.de) is a well-established computer algebra system for polynomial
 computations, with particular emphasis on applications in algebraic
@@ -60,6 +64,8 @@ subsystems for non-commutative algebra,
 [LETTERPLACE](https://www.singular.uni-kl.de/Manual/4-1-2/sing_789.htm#SEC841).
 Singular has a kernel written in C++ and provides its own
 interpreted user language. 
+Singular is integrated into OSCAR via the [Singular.jl](https://github.com/oscar-system/Singular.jl) Julia package.
+
 
 ## The role of Julia
 
