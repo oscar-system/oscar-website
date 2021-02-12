@@ -28,6 +28,9 @@ people:
     - name: Benjamin Lorenz
       affiliation: TU Berlin
 
+    - name: Michael Joswig
+      affiliation: TU Berlin
+
 ---
 
 {% include participants.html participants=page.people %}
