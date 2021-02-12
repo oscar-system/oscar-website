@@ -22,6 +22,12 @@ people:
     - name: Hans Schönemann
       affiliation: TU Kaiserslautern
 
+    - name: Tommy Hofmann
+      affiliation: TU Kaiserslautern
+
+    - name: Benjamin Lorenz
+      affiliation: TU Berlin
+
 ---
 
 {% include participants.html participants=page.people %}
