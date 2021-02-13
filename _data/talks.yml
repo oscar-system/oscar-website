@@ -14,6 +14,13 @@
   location: "Braunschweig, Germany"
   pdf_url: https://www.mathematik.uni-kl.de/~ederc/download/workshop-computational-algebra-2020.pdf
 
+- title: "Massively parallel fan traversals and applications"
+  author: Janko Boehm
+  date: "2020-07-13"
+  conference: ICMS 2020 (virtual)
+  conference_url: http://people.math.binghamton.edu/schroeter/2020ICMS/
+  location: "Braunschweig, Germany"
+
 - title: "Chevalley’s Theorem on constructible images made constructive"
   author: "Mohamed Barakat"
   date: "2020-01-30"
