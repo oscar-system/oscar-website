@@ -211,3 +211,13 @@ On the resulting GAP prompt, you can then load the Julia interface via
 LoadPackage( "JuliaInterface" );
 {% endhighlight %}
 -->
+
+## Using IJulia for notebooks
+
+IJulia can be installed by following its
+[installation page](https://julialang.github.io/IJulia.jl/stable/manual/installation/).
+Note that in some cases, IJulia must be "built" explicitly, see
+the [trouble shooting page](https://julialang.github.io/IJulia.jl/stable/manual/troubleshooting/).
+If you try to open an existing notebook (stored in a ".ipynb" file), it might refer to an
+older Julia version, resulting in a "Kernel error"; the solution is then to select
+a different kernel from the menu.
