@@ -15,7 +15,7 @@ Here is an overview of the changes in this release:
   printing routines.
 - Matrices now implement the iterator interface of julia.
 - Matrix spaces now implement the iterator interface (if the base ring is
-  iteratable).
+  iterable).
 - Use of `one(G)` instead of `G()` to create the identity element of
   permutation groups.
 - Renaming `rref` to `rref_rational` for rings.
