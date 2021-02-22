@@ -31,6 +31,15 @@ people:
     - name: Michael Joswig
       affiliation: TU Berlin
 
+    - name: Daniel Schultz
+      affiliation: TU Kaiserslautern
+
+    - name: Carlo Sircana
+      affiliation: TU Kaiserslautern
+
+    - name: Delphine Pol
+      affiliation: TU Kaiserslautern
+
 ---
 
 {% include participants.html participants=page.people %}
