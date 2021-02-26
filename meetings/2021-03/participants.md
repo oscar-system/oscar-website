@@ -5,6 +5,7 @@ meeting: true
 meeting_nr: 202103
 people:
     - {name: Benjamin Lorenz, affiliation: TU Berlin}
+    - {name: Bill Hart, affiliation: TU Kaiserslautern}
     - {name: Carlo Sircana, affiliation: TU Kaiserslautern}
     - {name: Claus Fieker, affiliation: TU Kaiserslautern}
     - {name: Daniel Schultz, affiliation: TU Kaiserslautern}
@@ -14,6 +15,8 @@ people:
     - {name: Lars Kastner, affiliation: TU Berlin}
     - {name: Max Horn, affiliation: TU Kaiserslautern}
     - {name: Michael Joswig, affiliation: TU Berlin}
+    - {name: Oguzhan Yuruk, affiliation: TU Berlin}
+    - {name: Taylor Brysiewicz, affiliation: MPI MiS}
     - {name: Thomas Breuer, affiliation: RWTH Aachen}
     - {name: Tommy Hofmann, affiliation: TU Kaiserslautern}
 ---
