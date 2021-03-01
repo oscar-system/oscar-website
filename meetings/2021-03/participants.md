@@ -4,6 +4,7 @@ title: Participants
 meeting: true
 meeting_nr: 202103
 people:
+    - {name: Alexej Jordan, affiliation: TU Berlin}
     - {name: Benjamin Lorenz, affiliation: TU Berlin}
     - {name: Bill Hart, affiliation: TU Kaiserslautern}
     - {name: Carlo Sircana, affiliation: TU Kaiserslautern}
@@ -17,9 +18,11 @@ people:
     - {name: Max Horn, affiliation: TU Kaiserslautern}
     - {name: Michael Joswig, affiliation: TU Berlin}
     - {name: Oguzhan Yuruk, affiliation: TU Berlin}
+    - {name: Simon Brandhorst, affiliation: Uni Saarbrücken}
     - {name: Taylor Brysiewicz, affiliation: MPI MiS}
     - {name: Thomas Breuer, affiliation: RWTH Aachen}
-    - {name: Tommy Hofmann, affiliation: TU Kaiserslautern}
+    - {name: Tommy Hofmann, affiliation: Uni Saarbrücken}
+
 ---
 
 {% include participants.html participants=page.people %}
