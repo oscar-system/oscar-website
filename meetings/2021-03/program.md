@@ -48,25 +48,25 @@ if any, should be focused on this goal.
 - 10:00 Begin of official program, program planning
 - 10:30 Discussion of the development model
 - 12:00 Coding sprint, implementation of the model
-- 17:30 Status reports
+- 16:30 Status reports
 
 ### Tuesday
 
 - 09:30 Morning standup
 - 10:00 Coding sprint
-- 17:30 Status reports
+- 16:30 Status reports
 
 ### Wednesday
 
 - 09:30 Morning standup
 - 10:00 Coding sprint
-- 17:30 Status reports
+- 16:30 Status reports
 
 ### Thursday
 
 - 09:30 Morning standup
 - 10:00 Coding sprint
-- 17:30 Status reports
+- 16:30 Status reports
 
 ### Friday
 
