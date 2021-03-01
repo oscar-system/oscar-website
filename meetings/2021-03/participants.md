@@ -12,6 +12,7 @@ people:
     - {name: Delphine Pol, affiliation: TU Kaiserslautern}
     - {name: Giovanni De Franceschi, affiliation: TU Kaiserslautern}
     - {name: Hans Schönemann, affiliation: TU Kaiserslautern}
+    - {name: Janko Böhm, affiliation: TU Kaiserslautern}
     - {name: Lars Kastner, affiliation: TU Berlin}
     - {name: Max Horn, affiliation: TU Kaiserslautern}
     - {name: Michael Joswig, affiliation: TU Berlin}
