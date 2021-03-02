@@ -60,7 +60,7 @@ if any, should be focused on this goal.
 
 - 09:30 Morning standup
 - 10:00 Coding sprint
-- 16:30 Status reports
+- 16:00 Status reports
 
 ### Thursday
 
