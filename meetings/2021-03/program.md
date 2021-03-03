@@ -60,6 +60,7 @@ if any, should be focused on this goal.
 
 - 09:30 Morning standup
 - 10:00 Coding sprint
+- 13:00 Discussion on G-sets in Oscar.jl (see [PR #304](https://github.com/oscar-system/Oscar.jl/pull/304))
 - 16:00 Status reports
 
 ### Thursday
