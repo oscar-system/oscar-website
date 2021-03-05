@@ -6,6 +6,14 @@
   location: "Kaiserslautern, Germany"
   pdf_url: https://www.mathematik.uni-kl.de/~ederc/download/workshop-computational-algebra-2020.pdf
 
+- title: "Equations for the K3-Lehmer map"
+  author: Simon Brandhorst
+  date: "2020-09-21"
+  conference: Fourth annual conference of the SFB-TRR 195 (virtual)
+  conference_url: https://www.computeralgebra.de/sfb/our-news/fourth-annual-conference-of-the-sfb-trr-195/
+  location: "Germany"
+  pdf_url: https://www.computeralgebra.de/wp-content/uploads/2020/09/4th-talk-brandhorst.pdf
+
 - title: "msolve - An open source C library for algebraic multivariate system solving"
   author: Christian Eder
   date: "2020-07-13"
