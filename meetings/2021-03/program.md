@@ -72,7 +72,7 @@ if any, should be focused on this goal.
 ### Friday
 
 * 09:30 Coding sprint
-* 12:00 Final status reports
+* 13:30 Final status reports
 
 ## Results
 
