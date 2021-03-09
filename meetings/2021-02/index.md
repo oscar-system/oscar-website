@@ -1,6 +1,6 @@
 ---
 layout: meeting
-title: Meeting 02/2021
+title: Sage/Oscar Days 02/2021
 meeting: true
 meeting_nr: 202102
 is_meeting_index: true
