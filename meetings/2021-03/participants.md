@@ -18,10 +18,10 @@ people:
     - {name: Max Horn, affiliation: TU Kaiserslautern}
     - {name: Michael Joswig, affiliation: TU Berlin}
     - {name: Oguzhan Yuruk, affiliation: TU Berlin}
-    - {name: Simon Brandhorst, affiliation: Uni Saarbrücken}
+    - {name: Simon Brandhorst, affiliation: Saarland University}
     - {name: Taylor Brysiewicz, affiliation: MPI MiS}
     - {name: Thomas Breuer, affiliation: RWTH Aachen}
-    - {name: Tommy Hofmann, affiliation: Uni Saarbrücken}
+    - {name: Tommy Hofmann, affiliation: Saarland University}
 
 ---
 
