@@ -12,5 +12,3 @@ people:
 ---
 
 {% include participants.html participants=page.people %}
-
-Registration will be open soon.

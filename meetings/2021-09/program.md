@@ -5,7 +5,6 @@ meeting: true
 meeting_nr: 202109
 ---
 
-## Program
 * Start: Monday, September 6
 * Finish: Friday, September 10
 
