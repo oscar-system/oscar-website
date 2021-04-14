@@ -40,6 +40,9 @@
   website: https://www.mathematik.uni-kl.de/en/agag/people/head/prof-dr-claus-fieker/
   is_active_PI: true
 
+- name: Giovanni De Franceschi
+  affiliation: TU Kaiserslautern
+
 - name: Rafael Fourquet
   affiliation: TU Kaiserslautern
 
@@ -114,6 +117,9 @@
 - name: Markus Pfeiffer
   website: https://github.com/markuspf
 
+- name: Delphine Pol
+  affiliation: TU Kaiserslautern
+
 - name: Sebastian Posur
   affiliation: University of Siegen
   website: https://sebastianpos.github.io/
@@ -126,6 +132,9 @@
   affiliation: TU Kaiserslautern
   website: https://github.com/joschmitt
 
+- name: Daniel Schultz
+  affiliation: TU Kaiserslautern
+
 - name: Hans Schönemann
   affiliation: TU Kaiserslautern
   #website: https://www.mathematik.uni-kl.de/agag/mitglieder/wissenschaftliche-mitarbeiter/dr-hans-schoenemann/
@@ -137,6 +146,9 @@
 - name: Andreas Steenpaß
   affiliation: TU Kaiserslautern
   #website: https://www.mathematik.uni-kl.de/agag/mitglieder/wissenschaftliche-mitarbeiter/dr-andreas-steenpass/
+
+- name: Jayantha Suranimalee
+  affiliation: TU Kaiserslautern
 
 - name: Sascha Timme
   affiliation: TU Berlin
