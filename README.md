@@ -1,4 +1,4 @@
-# Website for the Oscar project
+# Website for the OSCAR project
 
 - [How to contribute](#how-to-contribute)
 - [How to contribute a News post](#how-to-contribute-a-news-post)
