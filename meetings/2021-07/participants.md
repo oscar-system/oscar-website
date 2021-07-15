@@ -4,9 +4,12 @@ title: Participants
 meeting: true
 meeting_nr: 202107
 people:
+    - {name: Bill Hart, affiliation: TU Kaiserslautern}
     - {name: Claus Fieker, affiliation: TU Kaiserslautern}
-    - {name: Max Horn, affiliation: TU Kaiserslautern}
+    - {name: Delphine Pol, affiliation: TU Kaiserslautern}
     - {name: Matthias Zach, affiliation: Uni Hannover}
+    - {name: Max Horn, affiliation: TU Kaiserslautern}
+    - {name: Thomas Breuer, affiliation: RWTH Aachen}
 
 ---
 
