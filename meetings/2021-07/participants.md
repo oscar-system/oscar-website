@@ -12,6 +12,7 @@ people:
     - {name: Thomas Breuer, affiliation: RWTH Aachen}
     - {name: Daniel Schultz, affiliation: TU Kaiserslautern}
     - {name: Tommy Hofmann, affiliation: Saarland University}
+    - {name: Christian Eder, affiliation: TU Kaiserslautern}
 
 ---
 
