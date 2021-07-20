@@ -10,6 +10,8 @@ people:
     - {name: Matthias Zach, affiliation: Uni Hannover}
     - {name: Max Horn, affiliation: TU Kaiserslautern}
     - {name: Thomas Breuer, affiliation: RWTH Aachen}
+    - {name: Daniel Schultz, affiliation: TU Kaiserslautern}
+    - {name: Tommy Hofmann, affiliation: Saarland University}
 
 ---
 
