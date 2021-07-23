@@ -11,8 +11,10 @@ people:
     - {name: Max Horn, affiliation: TU Kaiserslautern}
     - {name: Thomas Breuer, affiliation: RWTH Aachen}
     - {name: Daniel Schultz, affiliation: TU Kaiserslautern}
-    - {name: Tommy Hofmann, affiliation: Saarland University}
+    - {name: Tommy Hofmann, affiliation: TU Kaiserslautern}
     - {name: Christian Eder, affiliation: TU Kaiserslautern}
+    - {name: Jack Garzella, affiliation: UCSD}
+    - {name: Carlo Sircana, affiliation: TU Kaiserslautern}
 
 ---
 
