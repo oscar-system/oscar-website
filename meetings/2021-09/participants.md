@@ -26,7 +26,7 @@ people:
     - {name: Yvonne Weber, affiliation: TU Kaiserslautern}
     - {name: Jens Brandt, affiliation: RWTH Aachen}
     - {name: Firoozeh Aga, affiliation: Saarbrücken+ITWM}
-    - {name: Sogo Sanon,  Pierreaffiliation: TU Kaiserslautern}
+    - {name: Sogo Pierre Sanon, affiliation: TU Kaiserslautern}
     - {name: Sergio Siccha, affiliation: TU Kaiserslautern}
     - {name: Ali, Aslam, affiliation: TU Kaiserslautern}
     - {name: Robert Nowak, affiliation: Oldenburg}
