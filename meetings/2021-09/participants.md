@@ -28,7 +28,7 @@ people:
     - {name: Firoozeh Aga, affiliation: Saarbrücken+ITWM}
     - {name: Sogo Pierre Sanon, affiliation: TU Kaiserslautern}
     - {name: Sergio Siccha, affiliation: TU Kaiserslautern}
-    - {name: Ali, Aslam, affiliation: TU Kaiserslautern}
+    - {name: Ali Aslam, affiliation: TU Kaiserslautern}
     - {name: Robert Nowak, affiliation: Oldenburg}
 
 ---
