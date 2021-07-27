@@ -1,6 +1,6 @@
 ---
 layout: meeting
-title: Meeting 07/2021
+title: OSCAR documentation sprint 07/2021
 meeting: true
 meeting_nr: 202107
 is_meeting_index: true
