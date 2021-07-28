@@ -8,7 +8,13 @@ is_meeting_index: true
 
 # Summer School “Computer algebra”
 
-## September 6 - 10,<br> RWTH Aachen
+## September 6 - 10,<br> Virtual Reality
+
+<p class="message">
+Attention: Due to recent developments, the summer school cannot take place in Aachen.
+Instead, it will be done completely online. We will use
+<a href="https://www.gather.town">gather.town</a> and other tools.
+</p>
 
 ## Information
 
