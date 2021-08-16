@@ -33,6 +33,8 @@ people:
     - {name: Matias Klimpel, affiliation: Uni Saarbrücken}
     - {name: Anna Sucker, affiliation: RWTH Aachen}
     - {name: Nicolas Faroß, affiliation: Uni Saarbrücken}
+    - {name: Sylvain Spitz, affiliation: TU Berlin}
+    - {name: Vanishree Kirekod, affiliation: TU Kaiserslautern}
 
 ---
 
