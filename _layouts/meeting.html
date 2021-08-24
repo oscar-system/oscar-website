@@ -1,1 +1,16 @@
-page.html
+---
+layout: default
+---
+
+{% if page.is_meeting_index != true %}
+{% assign parent_dir = page.path | remove: page.name | prepend: "/" %}
+{% assign parent = site.pages | where: "dir", parent_dir | first %}
+<a href="{{ site.baseurl }}{{ parent.url }}">Back to "{{parent.title}}"</a>
+{% endif %}
+
+<div class="page">
+{% if page.is_meeting_index != true %}
+  <h1 class="page-title">{{ page.title }}</h1>
+{% endif %}
+  {{ content }}
+</div>
