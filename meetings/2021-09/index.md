@@ -34,10 +34,10 @@ For more information, see
 
 If you have questions or suggestions, please contact the organizers:
 
-* [Claus Fieker](mailto:fieker@mathematik.uni-kl.de)
-* [Max Horn](mailto:horn@mathematik.uni-kl.de)
-* [Thomas Breuer](mailto:sam@math.rwth-aachen.de)
-* [Tommy Hofmann](mailto:thofmann@mathematik.uni-kl.de)
+* [Claus Fieker](mailto:fieker@mathematik.uni-kl.de),
+  [Max Horn](mailto:horn@mathematik.uni-kl.de),
+  [Thomas Breuer](mailto:sam@math.rwth-aachen.de),
+  [Tommy Hofmann](mailto:thofmann@mathematik.uni-kl.de)
 
 ## Sponsors
 
