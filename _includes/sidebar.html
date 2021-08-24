@@ -32,21 +32,18 @@
 
       <div class="mobile-hidden">
         {% if page.meeting %}
-          {% assign pages_list = site.pages | sort:"meeting_nr" %}
+          {% assign pages_list = site.pages | where: "is_meeting_index", "true" | sort:"meeting_nr" %}
           {% for node in pages_list reversed %}
           {% if node.title != null %}
                 {% if node.is_meeting_index %}
                 <a class="inner-sidebar-nav-item{% if page.meeting_nr == node.meeting_nr %} active{% endif %}" href="{{ node.url | relative_url }}">{{ node.title }}</a>
-                  {% if page.meeting_nr != null %}
-                  {% for node_inner in pages_list %}
-                    {% if node_inner.title != null %}
-                      {% if node_inner.meeting_nr == node.meeting_nr and node_inner.meeting_nr == page.meeting_nr %}
-                        {% if node_inner.is_meeting_index != true %}
-                          <a class="inner-sidebar-nav-item-two{% if page.url == node_inner.url %} active{% endif %}" href="{{ node_inner.url | relative_url }}">{{ node_inner.title }}</a>
-                        {% endif %}
+                  {% if node.meeting_nr == page.meeting_nr %}
+                    {% assign subpages = site.pages | where: "meeting_nr", page.meeting_nr | sort:"title" %}
+                    {% for node_inner in subpages %}
+                      {% if node_inner.is_meeting_index != true and node_inner.title != null %}
+                        <a class="inner-sidebar-nav-item-two{% if page.url == node_inner.url %} active{% endif %}" href="{{ node_inner.url | relative_url }}">{{ node_inner.title }}</a>
                       {% endif %}
-                    {% endif %}
-                  {% endfor %}
+                    {% endfor %}
                   {% endif %}
                 {% endif %}
           {% endif %}

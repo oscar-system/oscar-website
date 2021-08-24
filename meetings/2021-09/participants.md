@@ -35,6 +35,9 @@ people:
     - {name: Nicolas Faroß, affiliation: Uni Saarbrücken}
     - {name: Sylvain Spitz, affiliation: TU Berlin}
     - {name: Vanishree Kirekod, affiliation: TU Kaiserslautern}
+    - {name: Yvonne Neuy, affiliation: Uni Saarbrücken}
+    - {name: George Balla, affiliation: RWTH Aachen}
+    - {name: Dante Luber, affiliation: TU Berlin}
 
 ---
 
