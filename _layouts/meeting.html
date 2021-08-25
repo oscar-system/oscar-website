@@ -5,10 +5,10 @@ layout: default
 {% assign meeting_pages = site.pages | where: "meeting_nr", page.meeting_nr | sort: "name" %}
 {% assign parent = meeting_pages | where: "is_meeting_index", "true" | first %}
 
-<a href="{{ parent.url | relative_url }}">{{parent.title}}</a>
+<a href="{{ parent.url | relative_url }}">{{ parent.title }}</a>
 {% for p in meeting_pages %}
     {% if p.is_meeting_index != true %}
-       | <a href="{{ p.url | relative_url }}">{{p.title}}</a>
+       | <a href="{{ p.url | relative_url }}">{{ p.title }}</a>
     {% endif %}
 {% endfor %}
 
