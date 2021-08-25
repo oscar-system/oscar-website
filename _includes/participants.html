@@ -2,8 +2,8 @@
 {% assign participants = include.participants | sort: "name" %}
 {% for p in participants %}
   <li>
-    <strong>{{ p.name }}</strong>
-    {% if p.affiliation != null %} ({{ p.affiliation }}){% endif %}
+    <strong class="participants-{{ p.category }}">{{ p.name }}</strong>
+    {% if p.affiliation != null %} ({{ p.affiliation }}{% if p.category != null %}; {{ p.category }}{% endif %}){% endif %}
     {% if p.links != null %}
         {% for item in p.links %}
             <a href="{{ item[1] }}">({{ item[0] }})</a>
