@@ -5,23 +5,10 @@ meeting: true
 ---
 
 <ol reversed>
-    {% assign pages_list = site.pages | sort: "meeting_nr" %}
+    {% assign pages_list = site.pages | where: "is_meeting_index", "true" | sort: "meeting_nr" %}
     {% for node in pages_list reversed %}
         {% if node.title != null %}
-            {% if node.is_meeting_index %}
-                <li>
-                    <a href="{{ node.url  | relative_url }}">{{ node.title }}</a>
-                    <ul>
-                    {% for node_inner in pages_list %}
-                        {% if node_inner.meeting_nr == node.meeting_nr and node_inner.is_meeting_index != true %}
-                            <li>
-                                <a href="{{ node_inner.url | relative_url }}">{{node_inner.title}}</a>
-                            </li>
-                        {% endif %}
-                    {% endfor %}
-                    </ul>
-                </li>
-            {% endif %}
+            <li><a href="{{ node.url  | relative_url }}">{{ node.title }}</a></li>
         {% endif %}
     {% endfor %}
 </ol>
