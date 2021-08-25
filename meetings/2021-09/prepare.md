@@ -11,6 +11,7 @@ installing a bunch of software on your recommend.
 We urge you to do this *before* we start, but if you have trouble with any of it,
 then note that Monday morning is set aside for helping each other preparing everything.
 
+- [Register a GitHub account](https://github.com/signup)
 - Find a terminal emulator for your operating system and familiarize yourself with the basics
 - Windows users need to install WSL (Windows Subsystem for Linux) and later install Julia in there
 - Install OSCAR [via our install instruction]({{site.baseurl}}/install/)
