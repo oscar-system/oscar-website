@@ -4,12 +4,12 @@ title: Participants
 meeting: true
 meeting_nr: 202109
 people:
-    - {name: Claus Fieker, affiliation: TU Kaiserslautern}
-    - {name: Max Horn, affiliation: TU Kaiserslautern}
-    - {name: Thomas Breuer, affiliation: RWTH Aachen}
-    - {name: Tommy Hofmann, affiliation: TU Kaiserslautern}
-    - {name: Eamonn O'Brien, affiliation: University of Auckland}
-    - {name: Clément Pernet, affiliation: Université Grenoble Alpes}
+    - {name: Claus Fieker, affiliation: TU Kaiserslautern, category: organizer}
+    - {name: Max Horn, affiliation: TU Kaiserslautern, category: organizer}
+    - {name: Thomas Breuer, affiliation: RWTH Aachen, category: organizer}
+    - {name: Tommy Hofmann, affiliation: TU Kaiserslautern, category: organizer}
+    - {name: Eamonn O'Brien, affiliation: University of Auckland, category: speaker}
+    - {name: Clément Pernet, affiliation: Université Grenoble Alpes, category: speaker}
     - {name: Alheydis Geiger, affiliation: Tübingen}
     - {name: Simon Telen, affiliation: MPI Leipzig}
     - {name: Dominik Bernhardt, affiliation: RWTH Aachen}
