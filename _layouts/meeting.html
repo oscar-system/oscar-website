@@ -2,11 +2,15 @@
 layout: default
 ---
 
-{% if page.is_meeting_index != true %}
-{% assign parent_dir = page.path | remove: page.name | prepend: "/" %}
-{% assign parent = site.pages | where: "dir", parent_dir | first %}
-<a href="{{ site.baseurl }}{{ parent.url }}">Back to "{{parent.title}}"</a>
-{% endif %}
+{% assign meeting_pages = site.pages | where: "meeting_nr", page.meeting_nr | sort: "name" %}
+{% assign parent = meeting_pages | where: "is_meeting_index", "true" | first %}
+
+<a href="{{ parent.url | relative_url }}">{{parent.title}}</a>
+{% for p in meeting_pages %}
+    {% if p.is_meeting_index != true %}
+       | <a href="{{ p.url | relative_url }}">{{p.title}}</a>
+    {% endif %}
+{% endfor %}
 
 <div class="page">
 {% if page.is_meeting_index != true %}
