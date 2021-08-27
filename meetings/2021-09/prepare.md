@@ -18,6 +18,8 @@ then note that Monday morning is set aside for helping each other preparing ever
 - [Join the OSCAR slack](https://join.slack.com/t/oscar-system/shared_invite/zt-thtcv97k-2678bKQ~RpR~5gZszDcISw)
   (a multi user chat system) and familiarize yourself with it, so that you can get additional support before,
   during and after the summer school.
-- If you do *not* have a favorite programming editor with Julia syntax highlighting, install [Visual Studio Code](https://code.visualstudio.com) with the ["Live Share" plugin](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vslivesharen)
+- If you do *not* have a favorite programming editor with Julia syntax highlighting, install [Visual Studio Code](https://code.visualstudio.com)
+    with at least the ["Live Share" plugin](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare)
+    and the ["Julia" plugin](https://marketplace.visualstudio.com/items?itemName=julialang.language-julia)
 - Install [tmate](https://tmate.io)
 - Install either Firefox or a Chrome-derived browser for optimal compatibility with [gather.town](https://www.gather.town)
