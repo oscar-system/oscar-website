@@ -25,17 +25,17 @@ changes regularly.
 ## Tuesday, September 7
   - 09:00 Morning standup
   - 09:30 Exercises
-  - 10:30 Talk 1 on algorithmic group theory by Eamonn O'Brien
+  - 10:30 Talk 1 on “Algorithms for polycyclic groups: abelian quotients, polycyclic presentations, collection” (Eamonn O'Brien)
   - 11:30 Exercises
   - 12:30 Lunch break
-  - 13:30 Talk “Advanced Julia: How to not write slow code” (Tommy)
+  - 13:30 Talk “Advanced Julia: How to not write slow code” (Tommy Hofmann)
   - 14:30 Exercises
   - 16:30 Evening standup
 
 ## Wednesday, September 8
   - 09:00 Morning standup
   - 09:30 Exercises
-  - 10:30 Talk 2 on algorithmic group theory by Eamonn O'Brien
+  - 10:30 Talk 2 on “Algorithms for polycyclic groups: p-quotient algorithm” (Eamonn O'Brien)
   - 11:30 Exercises
   - 12:30 Lunch break
   - 13:30 Talk “Advanced Git & GitHub” (Max Horn)
@@ -44,8 +44,8 @@ changes regularly.
 
 ## Thursday, September 9
   - 09:00 Morning standup
-  - 09:30 Talk on computational linear algebra by Clément Pernet 
-  - 10:30 Talk 3 on algorithmic group theory by Eamonn O'Brien
+  - 09:30 Talk on computational linear algebra (Clément Pernet) 
+  - 10:30 Talk 3 on “Algorithms for polycyclic groups: p-group generation algorithm, SmallGroups project” (Eamonn O'Brien)
   - 11:30 Exercises
   - 12:30 Lunch break
   - 13:30 Exercises
