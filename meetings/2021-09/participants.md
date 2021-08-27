@@ -10,7 +10,7 @@ people:
     - {name: Tommy Hofmann, affiliation: TU Kaiserslautern, category: organizer}
     - {name: Eamonn O'Brien, affiliation: University of Auckland, category: speaker}
     - {name: Clément Pernet, affiliation: Université Grenoble Alpes, category: speaker}
-    - {name: Alheydis Geiger, affiliation: Tübingen}
+    - {name: Alheydis Geiger, affiliation: Uni Tübingen}
     - {name: Simon Telen, affiliation: MPI Leipzig}
     - {name: Dominik Bernhardt, affiliation: RWTH Aachen}
     - {name: Phil Pützstück, affiliation: RWTH Aachen}
@@ -29,7 +29,7 @@ people:
     - {name: Sogo Pierre Sanon, affiliation: TU Kaiserslautern}
     - {name: Sergio Siccha, affiliation: TU Kaiserslautern}
     - {name: Ali Aslam, affiliation: TU Kaiserslautern}
-    - {name: Robert Nowak, affiliation: Oldenburg}
+    - {name: Robert Nowak, affiliation: Uni Oldenburg}
     - {name: Matias Klimpel, affiliation: Uni Saarbrücken}
     - {name: Anna Sucker, affiliation: RWTH Aachen}
     - {name: Nicolas Faroß, affiliation: Uni Saarbrücken}
@@ -38,6 +38,8 @@ people:
     - {name: Yvonne Neuy, affiliation: Uni Saarbrücken}
     - {name: George Balla, affiliation: RWTH Aachen}
     - {name: Dante Luber, affiliation: TU Berlin}
+    - {name: Jan Rodriguez, affiliation: RWTH Aachen}
+    - {name: Max Mayer, affiliation: TU Kaiserslautern}
 
 ---
 
