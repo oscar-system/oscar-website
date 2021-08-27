@@ -6,24 +6,40 @@ title: Download and Installation
 OSCAR is currently under heavy development, so all parts
 change continuously. If you encounter any trouble while following
 the steps outlined below, feel free to contact us via
-[our issue tracker](https://github.com/oscar-system/Oscar.jl/issues)
+[GitHub discussion](https://github.com/oscar-system/Oscar.jl/discussions),
+[our issue tracker](https://github.com/oscar-system/Oscar.jl/issues),
 or by sending an email to <mailto:oscar@mathematik.uni-kl.de>.
 
 
 ## Step 1: Install prerequisites
 
-Using OSCAR requires a fairly recent C++ compiler supporting the C++17 standard. Suitable compilers
-include
-- GNU C/C++ compiler (gcc) version 7 or newer,
-- Clang C/C++ compiler version 5 or newer,
-- Intel C/C++ Compiler (icc) version 19.0 or newer.
-
-Moreover, GNU make is required.
-
 The following instructions assume that you are at least somewhat familiar with using a
 terminal interface.
 
 <div class="clickdesc">
+
+<details>
+<summary>
+Windows
+</summary>
+We currently only support Windows 10 or newer using <a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">Windows Subsystem for Linux (WSL)</a>.
+<ol>
+<li>Search for "Turn Windows features on or off"</li>
+<li>On the left panel, select "Turn Windows features on or off"</li>
+<li>Select "Windows subsystem for Linux" and press "Ok"</li>
+<li>Click "Restart the PC"</li>
+<li>Click the Windows store icon (shopping bag)</li>
+<li>Search for "Ubuntu" in the store - it's free!</li>
+<li>Select "Ubuntu" and "Get" the app</li>
+<li>Click "Launch" and follow the prompts</li>
+</ol>
+<p>
+You can now follow the instructions for <em><a href="#install-ubuntu1804">Ubuntu 18.04 or newer</a></em> above.
+</p>
+<p>
+To start bash in a later session, just search for <q>bash</q>.
+</p>
+</details>
 
 <details id="install-ubuntu1804">
 <summary>
@@ -73,13 +89,6 @@ sudo dnf install gcc-c++ make
 
 <details>
 <summary>
-Other Linux distributions
-</summary>
-Please install a supported C/C++ compiler for your Linux distribution, as described above.
-</details>
-
-<details>
-<summary>
 macOS 10.12 or newer
 </summary>
 On macOS, you need to install the Xcode command line tools, as explained in the following instructions.
@@ -110,25 +119,15 @@ other means, e.g. via Homebrew. However, we cannot provide support for this.
 
 <details>
 <summary>
-Windows 10
+Other Linux / BSD / Unix variants supported by Julia
 </summary>
-We currently only support Windows 10 or newer using <a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">Windows Subsystem for Linux (WSL)</a>.
-<ol>
-<li>Search for "Turn Windows features on or off"</li>
-<li>On the left panel, select "Turn Windows features on or off"</li>
-<li>Select "Windows subsystem for Linux" and press "Ok"</li>
-<li>Click "Restart the PC"</li>
-<li>Click the Windows store icon (shopping bag)</li>
-<li>Search for "Ubuntu" in the store - it's free!</li>
-<li>Select "Ubuntu" and "Get" the app</li>
-<li>Click "Launch" and follow the prompts</li>
-</ol>
-<p>
-You can now follow the instructions for <em><a href="#install-ubuntu1804">Ubuntu 18.04 or newer</a></em> above.
-</p>
-<p>
-To start bash in a later session, just search for <q>bash</q>.
-</p>
+You will need to install at least GNU make, and a fairly recent C++ compiler supporting the C++17 standard.
+Suitable compilers include
+<ul>
+<li>GNU C/C++ compiler (gcc) version 7 or newer,</li>
+<li>Clang C/C++ compiler version 5 or newer,</li>
+<li>Intel C/C++ Compiler (icc) version 19.0 or newer.</li>
+</ul>
 </details>
 
 </div>
@@ -136,21 +135,32 @@ To start bash in a later session, just search for <q>bash</q>.
 ## Step 2: Install Julia
 
 OSCAR requires at least Julia 1.3.1, but we recommend running it with the latest stable Julia release,
-which is 1.5.3 at the time this is written.
+which is 1.6.2 at the time this is written.
+
 
 There are several ways to install Julia:
 
 1. [By downloading it from the Julia homepage](https://julialang.org/downloads/),
 and following their [platform specific instructions](https://julialang.org/downloads/platform/).
 
-   **WARNING:** Windows users should *not* install the Julia version for Windows here, as Oscar does not
-   currently work directly on Windows. Instead, please install the Linux version inside Windows Subsystem for Linux (WSL).
+<p class="message">
+   <strong>WARNING:</strong> Windows users should <em>not</em> install the Julia version for Windows.
+   Instead, please install the Linux version inside Windows Subsystem for Linux (WSL).
+</p>
 
 2. On macOS, you can also install it via [Homebrew](https://brew.sh): `brew install julia` 
 
-3. The [JILL](https://github.com/johnnychen94/jill.py) project is a python package which allows installing and updating Julia on Linux, macOS -- this is in particular handy for experienced users who may want to install multiple Julia versions in parallel; but also for beginners it can be convenient as it allows updating the installed Julia version quite easily. (JILL also supports Windows, but as explained in step 1 above, OSCAR does not work under Windows directly, but rather requires the Windows Subsystem for Linux (WSL).)
+3. The [JILL](https://github.com/johnnychen94/jill.py) project is a
+   python package which allows installing and updating Julia -- this is
+   in particular handy for experienced users who may want to install
+   multiple Julia versions in parallel; but also for beginners it can be
+   convenient as it allows updating the installed Julia version quite
+   easily.
 
-4. For Linux users, it may also be tempting to install Julia via your distro package manager (e.g., `apt`, `pac`, `dnf`, ...). We advise against this, as at least in the past these often provided outdated or broken Julia versions (e.g. with incorrect binary dependency versions, or with parts of Julia removed). Feel free to try this route, but if anything breaks, please consider installing Julia via one of the other methods listed above.
+4. For Linux users, it may also be tempting to install Julia via your
+   distro package manager (e.g., `apt`, `pac`, `dnf`, ...). We advise
+   against this, as at least in the past these often provided outdated
+   or broken Julia versions.
 
 
 ## Step 3: Install OSCAR
@@ -167,7 +177,6 @@ and press enter to use OSCAR. The result should look something like this:
 
 ```
 julia> using Oscar
-...
  -----    -----    -----      -      -----
 |     |  |     |  |     |    | |    |     |
 |     |  |        |         |   |   |     |
@@ -176,11 +185,11 @@ julia> using Oscar
 |     |  |     |  |     |  |     |  |    |
  -----    -----    -----   -     -  -     -
 
-...combining (and extending) GAP, Hecke, Nemo, Polymake and Singular
-Version 0.5.0 ...
-... which comes with absolutely no warranty whatsoever
+...combining (and extending) ANTIC, GAP, Polymake and Singular
+Version 0.6.0 ...
+ ... which comes with absolutely no warranty whatsoever
 Type: '?Oscar' for more information
-(c) 2019-2020 by The Oscar Development Team
+(c) 2019-2021 by The Oscar Development Team
 
 julia>
 ```
