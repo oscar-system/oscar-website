@@ -15,37 +15,37 @@ changes regularly.
 ## Monday, September 6
   - 09:00 Time to install stuff, try Gather.town/Zoom/Julia/...
   - 12:00 Lunch break
-  - 13:00 Welcome
-  - 13:10 Talk "Introduction to Julia" (Tommy Hofmann)
-  - 14:10 Talk "An overview of Oscar" (Claus Fieker)
-  - 14:40 Talk "Git crash course" (Thomas Breuer)
+  - 13:00 Welcome session on Gather.town
+  - 13:10 Talk “Introduction to Julia” (Tommy Hofmann)
+  - 14:10 Talk “An overview of Oscar” (Claus Fieker)
+  - 14:40 Talk “Git crash course” (Thomas Breuer)
   - 15:40 Exercises
   - 16:30 Evening standup
 
 ## Tuesday, September 7
   - 09:00 Morning standup
   - 09:30 Exercises
-  - 10:30 Talk 1 by Eamonn O'Brien
+  - 10:30 Talk 1 on algorithmic group theory by Eamonn O'Brien
   - 11:30 Exercises
   - 12:30 Lunch break
-  - 13:30 Talk "Advanced Julia: How to not write slow code" (Tommy)
+  - 13:30 Talk “Advanced Julia: How to not write slow code” (Tommy)
   - 14:30 Exercises
   - 16:30 Evening standup
 
 ## Wednesday, September 8
   - 09:00 Morning standup
   - 09:30 Exercises
-  - 10:30 Talk 2 by Eamonn O'Brien
+  - 10:30 Talk 2 on algorithmic group theory by Eamonn O'Brien
   - 11:30 Exercises
   - 12:30 Lunch break
-  - 13:30 Talk "Advanced Git & GitHub" (Max Horn)
+  - 13:30 Talk “Advanced Git & GitHub” (Max Horn)
   - 14:30 Exercises
   - 16:30 Evening standup
 
 ## Thursday, September 9
   - 09:00 Morning standup
-  - 09:30 Talk by Clément Pernet
-  - 10:30 Talk 3 by Eamonn O'Brien
+  - 09:30 Talk on computational linear algebra by Clément Pernet 
+  - 10:30 Talk 3 on algorithmic group theory by Eamonn O'Brien
   - 11:30 Exercises
   - 12:30 Lunch break
   - 13:30 Exercises
