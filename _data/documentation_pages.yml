@@ -32,3 +32,11 @@
 - name: HomalgProject.jl
   documentation_url: https://homalg-project.github.io/HomalgProject.jl/dev/
   description: The homalg project compatibility package for Julia.
+
+- name: GAP.jl
+  documentation_url: https://oscar-system.github.io/GAP.jl/dev/
+  description: The interface to GAP from Julia.
+
+- name: Polymake.jl
+  documentation_url: https://oscar-system.github.io/Polymake.jl/dev/
+  description: The interface to Polymake from Julia.
