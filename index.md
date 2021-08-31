@@ -10,7 +10,7 @@ title: Home
 
 # {{ site.title }}
 
-The OSCAR project develops a comprehensive open source computer algebra
+The OSCAR project develops a comprehensive **O**pen **S**ource **C**omputer **A**lgebra **R**esearch
 system for computations in algebra, geometry, and number theory. In particular,
 the emphasis is on supporting complex computations which require a high level
 of integration of tools from different mathematical areas. 
