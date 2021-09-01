@@ -40,6 +40,10 @@ people:
     - {name: Dante Luber, affiliation: TU Berlin}
     - {name: Jan Rodriguez, affiliation: RWTH Aachen}
     - {name: Max Mayer, affiliation: TU Kaiserslautern}
+    - {name: Rafael Mohr, affiliation: TU Kaiserslautern}
+    - {name: Yue Ren, affiliation: Durham University}
+    - {name: Paul Helminck, affiliation: Durham University}
+    - {name: Tom Görtzen, affiliation: RWTH Aachen}
 
 ---
 
