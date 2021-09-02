@@ -16,11 +16,13 @@ then note that Monday morning is set aside for helping each other preparing ever
 - [Register a **GitHub** account](https://github.com/signup)
 - Find a **terminal** emulator for your operating system and familiarize yourself with the basics (e.g. [the first three sections of this tutorial](http://swcarpentry.github.io/shell-novice/))
 - Windows users need to first [install **WSL** (Windows Subsystem for Linux)](https://docs.microsoft.com/en-us/windows/wsl/install-win10) 
-- Install the Linux or macOS version of **Julia** (the Windows version is not supported; use the Linux version via WSL)
+- Install the Linux or macOS version of **Julia** (Windows users: the Windows version is not supported; use the Linux version via WSL)
 - Install **Oscar** [via our install instruction]({{site.baseurl}}/install/)
   (a multi user chat system) and familiarize yourself with it
-- If you do *not* have a favorite programming editor with Julia syntax highlighting, install [**Visual Studio Code**](https://code.visualstudio.com)
-    with at least the ["Live Share" plugin](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare)
-    and the ["Julia" plugin](https://marketplace.visualstudio.com/items?itemName=julialang.language-julia)
-- Install [tmate](https://tmate.io)
+- If you do *not* have a favorite programming editor with Julia syntax highlighting:
+    - install [**Visual Studio Code**](https://code.visualstudio.com)
+    - in it, install ["Live Share" plugin](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare)
+      ([click here for instructions on how to use Live Share](https://docs.microsoft.com/en-us/visualstudio/liveshare/use/vscode))
+    - also install the ["Julia" plugin](https://marketplace.visualstudio.com/items?itemName=julialang.language-julia)
+- Install [tmate](https://tmate.io) and try it out
 - Install either Firefox or a Chrome-derived browser for optimal compatibility with [gather.town](https://www.gather.town)
