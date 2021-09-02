@@ -113,7 +113,7 @@ TODO: Exercises for the participants will appear here
         println(x == ["a", "b", "c", "d", "e"])
         ```
 
-3. Caching*
+5. Caching*
 
     Write a function `cached(f)`, that given a function/callable object `f`, returns a variant of `f` which caches the values.
     Test it with various functions:
@@ -137,12 +137,47 @@ TODO: Exercises for the participants will appear here
     @time g(2) # this should take 1 second
     ```
       
+6. Vector vs Tuple
 
-1. TODO: exercise Vector vs Tuple
+    1.  Observe the difference in timings for the following two ways of calculating the
+        millionth Fibonacci number (modulo 2^64).
 
-2. TODO: exercise `methods`, `methodswith`
+        ```
+        F(a::Tuple{Int, Int}) = (a[2], a[1]+a[2])
+        F(a::Vector{Int})     = [a[2], a[1]+a[2]]
 
-3. ...
+        function G(a, n)
+          for i in 1:n
+            a = F(a)
+          end
+          a
+        end
+
+        @time G((0,1), 10^6)
+        @time G([0,1], 10^6)
+        ```
+
+    2.  Write a function `H` that accepts an input `n::Int` and returns a `Tuple{Bool, Int}`
+        where the first return indicates whether `n` is a square and the second return
+        is the positive square root if it exists or zero otherwise. You should have
+
+        ```
+        @assert H(0) == (true, 0)
+        @assert H(1) == (true, 1)
+        @assert H(2) == (false, 0)
+        @assert H(3) == (false, 0)
+        @assert H(4) == (true, 2)
+        @assert H(-1) == (false, 0)
+        ```
+
+        Try to change `H` to return a vector and observe what happens to the type of the return.
+
+7. `methods` and `methodswith`
+
+    1.  What arguments does `pushfirst!` expect?
+    2.  Without `using Oscar`, list all functions that accept a `Vector` argument.
+    3.  After `using Oscar`, list all functions that accept an `FmpzPolyRing`.
+    4.  List all functions that accept both an `fmpz_mat` and an `fmpz`.
 
 
 # Oscar exercises
