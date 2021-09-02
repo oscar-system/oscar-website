@@ -19,6 +19,125 @@ TODO: Exercises for the participants will appear here
 
 # Julia exercises
 
+1. Hello
+
+    1. Implement a hello world function `hello_world()`, which prints "hello world".
+    2. Implement a hello function `hello(name::String)`, which prints "hello x", where x is the first argument.
+
+2. Collatz conjecture
+    
+    1. Implement a function `f(n::Int)`, which returns $n/2$ if $n$ is even and $3n + 1$ if $n$ is odd.
+    2. Implement a function `g(n::Int)`, which determines the smallest $k$ with $f^k(n) = 1$.
+    3. Find two numbers $> 100$ for which $g$ returns the same value.
+
+3. Pascal triangle
+
+    Implement a function `pascal_triangle(n)` which prints the first $n$ rows of Pascal's triangle.
+    For example, `pascal_triangle(5)` should return
+    ```
+       1
+      1 1
+  1 2 1
+ 1 3 3 1
+1 4 6 4 1
+    ```
+    At the start, you might consider ignoring the proper layout of the triangle.
+
+4.  My permutation
+
+    Consider the following type, which defines a permutation:
+
+    ```julia
+    struct Permutation
+      images::Vector{Int}
+    end
+    ```
+
+    Thus the permutation with field `[1, 2, 3]` is the identity on 3 letters and
+    `[2, 1, 3]` is the transposition $(1, 2)$ on 3 letters.
+
+    1.  Fill in the stub below to write a function for multiplying two permutations.
+        Permutations are applied from the right, so that, $(1, 2)(2, 3) = (1, 2, 3)$.
+
+        ```julia
+        function *(x::Permutation, y::Permutation)
+        end
+        ```
+    
+        Test your function by computing `Permutation([2, 1, 3]) * Permutation([1, 3, 2])`.
+
+    2.  Write a function `apply` that applies a `Permutation` to an `Int`. Make sure that the function has the right types.
+
+        ```julia
+        function apply(p::Permutation, x::Int)
+        end
+        ```
+
+        Test your function:
+
+        ```julia
+        p = Permutation([2, 3, 4, 5, 1])
+        println(apply(p, 1) == 2)
+        println(apply(p, 5) == 1)
+        ```
+ 
+    3. Write another `apply` method that entry-wise applies a permutation to a tuple. 
+
+        ```julia
+        function apply(p::Permutation, x::Tuple)
+        end
+        ```
+
+    4. Write an `apply!` function that permutes the entries of a given `Vector` of the same length.
+
+        ```julia
+        function apply!(p::Permutation, x::Vector)
+        end
+        ```
+
+        Test your function:
+
+        ```julia
+        p = Permutation([2, 3, 4, 5, 1])
+        x = ["a", "b", "c", "d", "e"]
+        println(apply!(p, x))
+        println(x == ["b", "c", "d", "e", "a"])
+        ```
+
+        Derive a method `apply(p::Permutation, x::Vector)`, which does the same as `apply!` without changing the input.
+
+        ```julia
+        p = Permutation([2, 3, 4, 5, 1])
+        x = ["a", "b", "c", "d", "e"]
+        println(apply(p, x) == ["b", "c", "d", "e", "a"])
+        println(x == ["a", "b", "c", "d", "e"])
+        ```
+
+3. Caching*
+
+    Write a function `cached(f)`, that given a function/callable object `f`, returns a variant of `f` which caches the values.
+    Test it with various functions:
+
+    ```julia
+    g = cached(+)
+    println(g(1, 1)) == 1 + 1
+    ```
+
+    To check the caching, try the following function:
+
+    ```julia
+    h = function(s)
+      sleep(1)
+      return s
+    end
+
+    g = cached(h)
+    @time g(1) # this should take 1 second
+    @time g(1) # this should take almost no time
+    @time g(2) # this should take 1 second
+    ```
+      
+
 1. TODO: exercise Vector vs Tuple
 
 2. TODO: exercise `methods`, `methodswith`
@@ -31,12 +150,12 @@ TODO: Exercises for the participants will appear here
 ## Number theory and algebra
 
 1. Vandermonde matrices
-    1. Create the polynomial ring $R = \mathbf{Q}[x_1,\dotsc,x_5]$.
+    1. Create the polynomial ring $R = \mathbf{Q}[x\_1,\dotsc,x\_5]$.
     2. Create the Vandermonde matrix $$
-        V = (x_i^j)_{1 \leq i \leq 5, 0 \leq j \leq 4} \in R^{5 \times 5}
+        V = (x_i^j)\_{1 \leq i \leq 5, 0 \leq j \leq 4} \in R^{5 \times 5}
        $$
 
-    3. Compute and factorize the determinant $det(V)$.
+    3. Compute and factorize the determinant $\det(V)$.
     4. Pick 10 random elements $p \in \mathbf{Q}^5$ and verify that $\det(V)(p) = \det(V(p))$.
 
     <small>Hint:`PolynomialRing`, `factor`, `rand`, `evaluate`, `map_entries`</small>
@@ -68,29 +187,29 @@ TODO: Exercises for the participants will appear here
     3. Find a normal extension $L/K$ as in part 2 such that $L/\mathbf{Q}$ is normal.
     4. Determine $\operatorname{Gal}(L/\mathbf{Q})$ for the field found in part 3.
 
-    <small>Hint: `number_field`, `abelian_extensions`, `abelian_normal_extensions`, `automorphism_group`, `galois_group`</small>
+    <small>Hint: `number_field`, `abelian_extensions`, `abelian_normal_extensions`, `absolute_field`, `automorphism_group`, `galois_group`</small>
 
 5. Determinantal variety
 
-    1. Define the polynomial ring $R = \mathbf{F}_2[x_{ij}_{1 \leq i \leq 3, 1 \leq j \leq 3]$.
+    1. Define the polynomial ring $R = {\mathbf{F}}{\_2}[x\_{ij} \mid 1 \leq i \leq 3, 1 \leq j \leq 3]$.
     2. Define the matrix $$
         M = (x_{ij})_{1 \leq i \leq 3, 1 \leq j \leq 3} \in R^{3 \times 3}
        $$
 
     3. Determine the determinantal variety $V$ of size $3 \times 3$ and rank 1, which is defined as the vanishing set of the $2$-minors of $M$.
     4. Determine the dimension of $V$?
-    5. Determine $\lvert V(\mathbf{F_2}) \rvert \subseteq \mathbf{F}_2^9$.
+    5. Determine $\lvert V(\mathbf{F}_2) \rvert \subseteq \mathbf{F}_2^9$.
 
     <small>Hint: `polynomial_ring`, `matrix`, `minors`, `dim`, `Oscar.AbstractAlgebra.ProductIterator`.</small>
 
 6. Gröbner bases
 
     1. Define the polynomial ring $R = \mathbf{Q}[x, y, z]$.
-    2. Define the ideal $I = \langle I xy + z, yz − x, zx − y \rangle$.
+    2. Define the ideal $I = \langle xy + z, yz − x, zx − y \rangle$.
     3. Determine $\dim(I)$.
     4. Compute a Gröbner basis of $I$ with respect to the lexicographical ordering.
-    5. Determine $V(\mathbf{Q})$.
-    6. Determine $V(\mathbf{Q}[i])$.
+    5. Determine $V(\mathbf{Q}) \subseteq \mathbf{Q}^3$.
+    6. Determine $V(\mathbf{Q}[i]) \subseteq \mathbf{Q}[i]^3$.
 
     <small>Hint: `polynomial_ring`, `ideal`, `groebner_basis`, `to_univariate`, `roots`.</small>
 
@@ -101,7 +220,7 @@ TODO: Exercises for the participants will appear here
        \begin{pmatrix}
        2 & 1 & 1 \\
        1 & 2 & 1 \\
-       1 & 1 & 6
+       1 & 1 & 68
        \end{pmatrix}
        $$
      2. Determine generators $S$ for the automorphism group of $L$ and its order.
@@ -123,8 +242,45 @@ TODO: Exercises for the participants will appear here
 
     <small>Hint: `number_field`, `ring_of_integers`, `tr`, `Zlattice`, `genus_representatives`, `isisometric`.</small>
 
+## Implement something your own
 
+1. Product of rings.
+   
+    The goal of this exercise is two implement $R \times S$, the product of two commutative rings $R$ and $S$.
 
+    ```julia
+    mutable struct ProdRing{S, T} <: Ring
+      first::S
+      second::T
+    end
+    ```
+
+    ```julia
+    mutable struct ProdRingElem{U, V} <: RingElement
+      first::S
+      second::T
+      parent
+    ```
+
+    Implement enough functionality to make the following work:
+
+    ```julia
+    R = product_ring(ZZ, QQ)
+    a = R(ZZ(2), QQ(1, 2))
+    M = matrix(R, 2, 2, [1, a, 0, 1])
+    M * M
+    Rx, x = R["x"]
+    f = (a * x)^2
+    ```
+
+    Assuming that both rings are Euclidean and support the `divrem` function, implement
+    `divrem` also for product rings. Try to make the following work:
+
+    ```julia
+    hnf(M)
+    ```
+
+2.  
 
 1. TODO
 
