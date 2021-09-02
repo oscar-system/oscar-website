@@ -4,11 +4,8 @@
   <li>
     <strong class="participants-{{ p.category }}">{{ p.name }}</strong>
     {% if p.affiliation != null %} ({{ p.affiliation }}{% if p.category != null %}; {{ p.category }}{% endif %}){% endif %}
-    {% if p.links != null %}
-        {% for item in p.links %}
-            <a href="{{ item[1] }}">({{ item[0] }})</a>
-        {% endfor %}
-    {% endif %}
+    {% if p.github != null %}<a href="https://github.com/{{ p.github }}">(GitHub)</a>{% endif %}
+    {% if p.links != null %}{% for item in p.links %}<a href="{{ item[1] }}">({{ item[0] }})</a>{% endfor %}{% endif %}
     <br/>
       {% if p.talk != null %} Talk: {{ p.talk }}{% endif %}
   </li>

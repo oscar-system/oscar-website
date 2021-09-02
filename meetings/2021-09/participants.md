@@ -4,17 +4,17 @@ title: Participants
 meeting: true
 meeting_nr: 202109
 people:
-    - {name: Claus Fieker, affiliation: TU Kaiserslautern, category: organizer, links: [[Github, https://github.com/fieker]]}
+    - {name: Claus Fieker, affiliation: TU Kaiserslautern, category: organizer, github: fieker}
 
-    - {name: Max Horn, affiliation: TU Kaiserslautern, category: organizer, links: [[Github, https://github.com/fingolfin]]}
+    - {name: Max Horn, affiliation: TU Kaiserslautern, category: organizer, github: fingolfin}
 
-    - {name: Thomas Breuer, affiliation: RWTH Aachen, category: organizer, links: [[Github, https://github.com/ThomasBreuer]]}
+    - {name: Thomas Breuer, affiliation: RWTH Aachen, category: organizer, github: ThomasBreuer}
 
-    - {name: Tommy Hofmann, affiliation: TU Kaiserslautern, category: organizer, links: [[Github, https://github.com/thofma]]}
+    - {name: Tommy Hofmann, affiliation: TU Kaiserslautern, category: organizer, github: thofma}
 
     - {name: Eamonn O'Brien, affiliation: University of Auckland, category: speaker}
 
-    - {name: Clément Pernet, affiliation: Université Grenoble Alpes, category: speaker, links: [[Github, https://github.com/ClementPernet]]}
+    - {name: Clément Pernet, affiliation: Université Grenoble Alpes, category: speaker, github: ClementPernet}
 
     - {name: Alheydis Geiger, affiliation: Uni Tübingen}
 
@@ -38,7 +38,7 @@ people:
 
     - {name: Friedrich Rober, affiliation: RWTH Aachen}
 
-    - {name: Julien Schanz,  affiliation: Uni Saarbrücken}
+    - {name: Julien Schanz, affiliation: Uni Saarbrücken}
 
     - {name: Daniel Rademacher, affiliation: RWTH Aachen}
 
