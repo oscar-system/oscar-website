@@ -191,16 +191,16 @@ TODO: Exercises for the participants will appear here
 
 5. Determinantal variety
 
-    1. Define the polynomial ring $R = {\mathbf{F}}{\_2}[x\_{ij} \mid 1 \leq i \leq 3, 1 \leq j \leq 3]$.
+    1. Define the polynomial ring $R = {\mathbf{F}}{\_4}[x\_{ij} \mid 1 \leq i \leq 3, 1 \leq j \leq 3]$.
     2. Define the matrix $$
         M = (x_{ij})_{1 \leq i \leq 3, 1 \leq j \leq 3} \in R^{3 \times 3}
        $$
 
     3. Determine the determinantal variety $V$ of size $3 \times 3$ and rank 1, which is defined as the vanishing set of the $2$-minors of $M$.
     4. Determine the dimension of $V$?
-    5. Determine $\lvert V(\mathbf{F}_2) \rvert \subseteq \mathbf{F}_2^9$.
+    5. Determine $\lvert V(\mathbf{F}_4) \rvert \subseteq \mathbf{F}_4^9$.
 
-    <small>Hint: `polynomial_ring`, `matrix`, `minors`, `dim`, `Oscar.AbstractAlgebra.ProductIterator`.</small>
+    <small>Hint: `polynomial_ring`, `FiniteField`, `matrix`, `minors`, `dim`, `Oscar.AbstractAlgebra.ProductIterator`.</small>
 
 6. Gröbner bases
 
@@ -280,7 +280,94 @@ TODO: Exercises for the participants will appear here
     hnf(M)
     ```
 
-2.  
+    As an example, consider the implementation of $\mathbf{Z}[i]$ [here](https://github.com/ulthiel/GaussianIntegers.jl/blob/master/src/GaussianIntegers.jl).
+
+2.  Skew polynomial rings
+
+    Let $S = R[X]$ be the set of all polynomials $\sum_{i} a_i X^i$ and $f$ a ring endomorphism of $R$. We define $X^n \cdot r = f(r)\cdot X^n$ for $r \in R$. With the ordinary additional of polynomials, this yields a skew-polynomial ring, which we want to implement.
+
+    ```julia
+    mutable struct SkewPolyRing{S, T} <: NCRing
+      poly_ring::S
+      f::T
+    end
+
+    mutable struct SkewPolyRingElem{U} <: NCRingElement
+      poly::U
+      parent
+    ```
+
+    The goal is to make the following work:
+
+    ```julia
+    S, x = skew_polynomial_ring(QQ, a -> 1//a, "x")
+    f = QQ(2) * x
+    g = f * QQ(3)
+    M = matrix(S, 2, 2, [1, f, 0, 1])
+    M * M
+    ```
+
+    As an example, consider the implementation of $\mathbf{Z}[i]$ [here](https://github.com/ulthiel/GaussianIntegers.jl/blob/master/src/GaussianIntegers.jl).
+
+3.  $\mathbf{Z}[\sqrt{2}]$ as an Euclidean ring
+
+    The aim of this exercise is to implement the ring $\Z[\sqrt{2}]$ together with its Euclidean structure, which is determined by the Euclidean function $v(a + b \sqrt 2) = \lvert a^2 - 2b^2 \rvert$.
+    To satisfy the ring interface, we will use the following type for the parent.
+
+    ```julia
+    mutable struct ZZSqrt2Elem
+    end
+    ```
+
+    We will represent elements of a + b \sqrt 2$ using the following type:
+
+    ```julia
+    mutable struct ZZSqrt2Elem
+      a::fmpz
+      b::fmpz
+      parent
+    end
+    ```
+
+    Implement enough functions to make the following work
+
+    ```julia
+    R = ZZSqrt2()
+    x = R(2, 3)
+    y = R(0, 1)
+    q, r = divrem(x, y)
+    M = matrix(R, 2, 2, [1, 2, x, y])
+    hnf(M)
+    ```
+
+4.  Inverting integer matrices
+
+    The aim is to invert an invertible integer matrix $M \in \mathbf{Z}^{n \times n}$ using the Chinese remainder theorem and $p$-adic lifting
+
+    1. Implement a function
+        
+        ```julia
+        function inverse_via_lifting(A, p)
+        end
+        ```
+       
+        which given an invertible integer matrix, determines the inverse via $p$-adic lifting and inversion of matrices over $\mathbf{F}\_p$.
+
+        Hint: If $B$ is the inverse of $A$, write $B = B_0 + pB_1 + p^2 B_2 + \dotsb$ and reduce modulo $p$.
+
+
+    2. Implement a function
+
+        ```julia
+        function inverse_via_crt(A, startp)
+        end
+        ```
+
+        which given an invertible integer matrix, determines the inverse using the Chinese remainder theorem and inversion of matrices over $\mathbf{F}\_p$ for various primes $p$.
+
+    3. Compare both functions on random matrices of different sizes.
+
+    4. Can you do the same for matrices over $\mathbf{F}\_q[x]$ by replacing primes with irreducible polynomials?
 
 1. TODO
 
