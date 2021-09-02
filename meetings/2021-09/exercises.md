@@ -383,6 +383,81 @@ TODO: Exercises for the participants will appear here
 
 3. ....
 
+## Exercises related to Eamonn O'Brien's first lecture
+
+1.  Abelian quotients
+
+    1.  Write a Julia function that computes the isomorphism type of the abelian quotient $G/G'$ of a given `FPGroup` $G$ via the Smith normal form of the matrix of abelianized relators.
+
+        <small>Hint: The Oscar function `snf` for computing the Smith normal form can be used.</small>
+
+        Test the function by comparing the results with the function available in Oscar.
+        (Note the difference between the diagonal of the Smith normal form and the result of the GAP function `AbelianInvariants`.)
+
+    2.  In order to write down a group epimorphism from $G$ to $G/G'$ that maps the generators of $G$ to the corresponding integer vectors, one needs not only the Smith normal form but also a transformation matrix.
+        Write a Julia function that computes the epimorphism.
+
+    3.  The entries in the transformation matrices that occur in the computation of the Smith normal form can get quite large.
+        Make some experiments with random integer matrices whose entries have small absolute value.
+        Consider also $n$ by $n$ diagonal matrices with diagonal entries $1, 2, \ldots, n$.
+
+2.  Collection
+
+    <small>Hint: There is a github repository with a [straightforward implementation of collection in pc groups](https://github.com/ThomasBreuer/Summerschool21Exercises.jl).  You can clone it, add the Julia module to your Julia session, and then extendand improve the code.</small>
+
+    1.  Implement the collection process in Julia.
+        That is, define data structures representing an (uncollected) word and a collector object that contains the relators of a consistent pc-presentation.
+
+        Test the implementation for various groups:
+
+        - Try different collection strategies, by providing suitable `findfirst_uncollected` functions.  How many steps are needed for various examples?
+
+        - What are the steps when one applies collection for multiplying elements in abelian groups?
+
+        - Try also some infinite groups, for example the infinite dihedral group.
+
+        - How can the implementation be simplified for finite groups and for finite $p$-groups?
+
+    2.  The GAP system provides several implementations of collectors (written in C) for finite polycyclic groups.
+        (And the GAP package `Polycyclic` deals also with collection for infinite polycyclic groups.)
+        How can some of the tricks used in that code be used in the Julia implementation?
+
+    3.  Implement a new type of elements in polycyclic groups for which multiplication and inversion are based on collection in Julia, not on underlying group elements in GAP.
+
+## Exercises related to Eamonn O'Brien's second lecture
+
+1.  Consistency algorithm
+
+    1.  Implement the consistency algorithm for $p$-groups.
+        That is, write a Julia function that takes a perhaps inconsistent pc-presentation (via a collector object, see the exercises for the first lecture), and returns a consistent one.
+
+    2.  Implement a check whether a given pc-presentation is consistent.
+
+    3.  The consistency theorem is stated for $p$-groups only.
+        How would a consistency theorem for general polycyclic presentations look like?
+
+2.  $p$-covering group
+
+    Write a function that takes a consistent pc-presentation of a $p$-group $G$ (via a collector object, see the exercises for the first lecture) and returns a consistent pc-presentation of the $p$-covering group of $G$.
+
+## Exercises related to Eamonn O'Brien's third lecture
+
+1.  Burnside groups
+
+    We know that the Burnside group $B(2,4)$ (the largest $2$-generator group of exponent $4$) is finite and has order $2^{12}$.
+    Find a proof for this statement, by constructing a presentation for $B(2,4)$, with suitable $4$-th powers as relators.
+
+    (It is known that the minimal number of relators is $9$.)
+
+2.  Fibonacci groups
+
+    1.  Write a function that creates the generalized Fibonacci groups $G_n(m, k)$ as a finitely presented group.
+
+    2.  Use the theorem mentioned in the talk to prove that $G_9(1, 2)$ and $G_9(3, 4)$ are infinite.
+
+        <small>Hint: The GAP implementation of the p-quotient algorithm can be used.
+        Consider the first steps of the $p$-central series of a suitable subgroup of $G_9(1, 2)$, for a suitable $p$.</small>
+
 
 ## TODO more Oscar topic ....
 
