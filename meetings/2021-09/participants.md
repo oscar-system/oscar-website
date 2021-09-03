@@ -84,6 +84,8 @@ people:
 
     - {name: Tom Görtzen, affiliation: RWTH Aachen}
 
+    - {name: Nils Pawelzik, affiliation: RWTH Aachen}
+
 ---
 
 {% include participants.html participants=page.people %}
