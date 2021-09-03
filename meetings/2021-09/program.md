@@ -47,7 +47,7 @@ The schedule will be adjusted as we go along, so please watch out for changes.
 ### Thursday, September 9
   - 09:00 Morning standup
   - 09:30 Talk “Computational exact linear algebra: from theory to practice” (Clément Pernet)
-    [abstract](#abstract-pernet)
+    [abstract](#computational-exact-linear-algebra-from-theory-to-practice-clément-pernet)
 
   - 10:30 Talk “Algorithms for polycyclic groups: p-group generation algorithm, SmallGroups project” (Eamonn O'Brien)
   - 11:30 Exercises
