@@ -13,9 +13,10 @@ meeting_nr: 202109
 
 The schedule will be adjusted as we go along, so please watch out for changes.
 
+The talks will be in Zoom. Everything else will take place in our gather.town workspace.
 
 ### Monday, September 6
-  - 09:00 Time to install stuff, try Gather.town/Zoom/Julia/...
+  - 09:00 Time to install stuff, try Gather.town, socialize, ...
   - 12:00 Lunch break
   - 13:00 Welcome session on Gather.town
   - 13:10 Talk “Introduction to Julia” (Tommy Hofmann)
