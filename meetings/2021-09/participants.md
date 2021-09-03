@@ -16,6 +16,8 @@ people:
 
     - {name: Clément Pernet, affiliation: Université Grenoble Alpes, category: speaker, github: ClementPernet}
 
+    - {name: Daniel Schultz, affiliation: TU Kaiserslautern, category: instructor}
+
     - {name: Alheydis Geiger, affiliation: Uni Tübingen}
 
     - {name: Simon Telen, affiliation: MPI Leipzig}
