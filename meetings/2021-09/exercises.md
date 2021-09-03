@@ -450,7 +450,34 @@ TODO: Exercises for the participants will appear here
 
 ## Group theory
 
-1.  Given a finite group $G$ of $n \times n$ matrices over `QQ`, find a matrix $T$ such that conjugation of $G$ with $T$ yields a group of matrices over `ZZ`.
+1.  Compute, for small values of $n$, the number of fixed point free permutations on $n$ points.
+
+    Compute the proportion $x(n)$ of these permutations in the symmetric group on $n$ points, and the first decimal digits of $x(n)$ and $1/x(n)$.
+
+    Do you have a conjecture what $\lim_{n \rightarrow\infty} x(n)$ is?
+
+    <small>Hint: Using `conjugacy_classes`, one can avoid to run over all group elements.</small>
+
+2.  Inspect the groups returned by the following function, for small values of `n`.
+    ```julia
+    function shuffle_group(n::Int)
+      out_perm = zeros(Int, 2*n)
+      out_perm[1:2:(2*n-1)] = 1:n
+      out_perm[2:2:(2*n)] = (n+1):(2*n)
+
+      in_perm = zeros(Int, 2*n)
+      in_perm[1:2:(2*n-1)] = (n+1):(2*n)
+      in_perm[2:2:(2*n)] = 1:n
+
+      sym = symmetric_group(2*n)
+      return sub(sym, [sym(out_perm), sym(in_perm)])[1]
+    end
+    ```
+    What are the group orders?
+    Are the groups abelian, perfect, simple, solvable?
+    Can you give an interpretation what these groups describe?
+
+3.  Given a finite group $G$ of $n \times n$ matrices over `QQ`, find a matrix $T$ such that conjugation of $G$ with $T$ yields a group of matrices over `ZZ`.
 
     <small>Hint: More generally, let $R$ be a ring with quotient field $K$, and let $G$ be a matrix group over $K$.  Let $m$ be an integer such that the entries of $m M$ are in $R$, for all $M \in G$, and consider the set $U = m R^n G$; then $U$ is a subset of $R^n$ and invariant under multiplication with elements of $G$.
     If we know that any finitely generated $R$-submodule of $R^n$ has an $R$-basis then we can compute the action of $G$ on $U$ w.r.t. such a basis.</small>
@@ -475,10 +502,6 @@ TODO: Exercises for the participants will appear here
 
     4.  Does this method work also for (finitely generated) infinite groups?
 
-
-2. TODO
-
-3. ....
 
 ## Exercises related to Eamonn O'Brien's first lecture
 
