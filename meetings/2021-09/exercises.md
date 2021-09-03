@@ -483,6 +483,8 @@ TODO: Exercises for the participants will appear here
 
     3.  Implement a new type of elements in polycyclic groups for which multiplication and inversion are based on collection in Julia, not on underlying group elements in GAP.
 
+    4.  The GAP help for "Pc Groups" (a chapter in the GAP Reference Manual) lists more rules for a power-conjugate presentation than the definition of a polycyclic presentation in the talk.  Are the additional rules necessary?
+
 ## Exercises related to Eamonn O'Brien's second lecture
 
 1.  Consistency algorithm
