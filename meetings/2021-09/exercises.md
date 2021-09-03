@@ -22,13 +22,18 @@ TODO: Exercises for the participants will appear here
 1. Hello
 
     1. Implement a hello world function `hello_world()`, which prints "hello world".
+
     2. Implement a hello function `hello(name::String)`, which prints "hello x", where x is the first argument.
+
 
 2. Collatz conjecture
     
     1. Implement a function `f(n::Int)`, which returns $n/2$ if $n$ is even and $3n + 1$ if $n$ is odd.
+
     2. Implement a function `g(n::Int)`, which determines the smallest $k$ with $f^k(n) = 1$.
+
     3. Find two numbers $> 100$ for which $g$ returns the same value.
+
 
 3. Pascal triangle
 
@@ -88,6 +93,12 @@ TODO: Exercises for the participants will appear here
         end
         ```
 
+        Test your function
+        ```julia
+        p = Permutation([2, 3, 4, 5, 1])
+        println(apply(p, (1, 5)) == (2, 1))
+        ```
+
     4. Write an `apply!` function that permutes the entries of a given `Vector` of the same length.
 
         ```julia
@@ -112,8 +123,53 @@ TODO: Exercises for the participants will appear here
         println(apply(p, x) == ["b", "c", "d", "e", "a"])
         println(x == ["a", "b", "c", "d", "e"])
         ```
+      
+5. Vector vs Tuple
 
-5. Caching*
+    1.  Observe the difference in timings for the following two ways of calculating the
+        millionth Fibonacci number (modulo 2^64).
+
+        ```julia
+        F(a::Tuple{Int, Int}) = (a[2], a[1]+a[2])
+        F(a::Vector{Int})     = [a[2], a[1]+a[2]]
+
+        function G(a, n)
+          for i in 1:n
+            a = F(a)
+          end
+          a
+        end
+
+        @time G((0,1), 10^6)
+        @time G([0,1], 10^6)
+        ```
+
+    2.  Write a function `H` that accepts an input `n::Int` and returns a `Tuple{Bool, Int}`
+        where the first return indicates whether `n` is a square and the second return
+        is the positive square root if it exists or zero otherwise. You should have
+
+        ```julia
+        @assert H(0) == (true, 0)
+        @assert H(1) == (true, 1)
+        @assert H(2) == (false, 0)
+        @assert H(3) == (false, 0)
+        @assert H(4) == (true, 2)
+        @assert H(-1) == (false, 0)
+        ```
+
+        Try to change `H` to return a vector and observe what happens to the type of the return.
+
+6. `methods` and `methodswith`
+
+    1.  What arguments does `pushfirst!` expect?
+
+    2.  Without `using Oscar`, list all functions that accept a `Vector` argument.
+
+    3.  After `using Oscar`, list all functions that accept an `FmpzPolyRing`.
+
+    4.  List all functions that accept both an `fmpz_mat` and an `fmpz`.
+
+7. Caching*
 
     Write a function `cached(f)`, that given a function/callable object `f`, returns a variant of `f` which caches the values.
     Test it with various functions:
@@ -136,48 +192,6 @@ TODO: Exercises for the participants will appear here
     @time g(1) # this should take almost no time
     @time g(2) # this should take 1 second
     ```
-      
-6. Vector vs Tuple
-
-    1.  Observe the difference in timings for the following two ways of calculating the
-        millionth Fibonacci number (modulo 2^64).
-
-        ```
-        F(a::Tuple{Int, Int}) = (a[2], a[1]+a[2])
-        F(a::Vector{Int})     = [a[2], a[1]+a[2]]
-
-        function G(a, n)
-          for i in 1:n
-            a = F(a)
-          end
-          a
-        end
-
-        @time G((0,1), 10^6)
-        @time G([0,1], 10^6)
-        ```
-
-    2.  Write a function `H` that accepts an input `n::Int` and returns a `Tuple{Bool, Int}`
-        where the first return indicates whether `n` is a square and the second return
-        is the positive square root if it exists or zero otherwise. You should have
-
-        ```
-        @assert H(0) == (true, 0)
-        @assert H(1) == (true, 1)
-        @assert H(2) == (false, 0)
-        @assert H(3) == (false, 0)
-        @assert H(4) == (true, 2)
-        @assert H(-1) == (false, 0)
-        ```
-
-        Try to change `H` to return a vector and observe what happens to the type of the return.
-
-7. `methods` and `methodswith`
-
-    1.  What arguments does `pushfirst!` expect?
-    2.  Without `using Oscar`, list all functions that accept a `Vector` argument.
-    3.  After `using Oscar`, list all functions that accept an `FmpzPolyRing`.
-    4.  List all functions that accept both an `fmpz_mat` and an `fmpz`.
 
 
 # Oscar exercises
@@ -185,103 +199,132 @@ TODO: Exercises for the participants will appear here
 ## Number theory and algebra
 
 1. Vandermonde matrices
+
     1. Create the polynomial ring $R = \mathbf{Q}[x\_1,\dotsc,x\_5]$.
-    2. Create the Vandermonde matrix $$
-        V = (x_i^j)\_{1 \leq i \leq 5, 0 \leq j \leq 4} \in R^{5 \times 5}
-       $$
+
+    2. Create the Vandermonde matrix
+        $$
+           V = (x_i^j)_{1 \leq i \leq 5, 0 \leq j \leq 4} \in R^{5 \times 5}.
+        $$
 
     3. Compute and factorize the determinant $\det(V)$.
+
     4. Pick 10 random elements $p \in \mathbf{Q}^5$ and verify that $\det(V)(p) = \det(V(p))$.
 
-    <small>Hint:`PolynomialRing`, `factor`, `rand`, `evaluate`, `map_entries`</small>
+    <small>Hint:`PolynomialRing`, `matrix`, `det`, `factor`, `rand`, `evaluate`, `map_entries`.</small>
 
 
 2. Invariants of number fields.
 
     1. Define the number field $K = \mathbf{Q}(\sqrt[3]{65})$.
-    2. Determine the ring of integers $\mathcal{O}_K$ and its discriminant.
-    3. Determine the class group $\mathrm{Cl}_K$.
-    4. Determine the set $S$ of prime ideals of $\mathcal{O}_K$ lying over $2$. Are these ideals ramified?
-    5. How large is the subgroup of $\mathrm{Cl}_K$ generated by the classes of $S$?
 
-    <small>Hint: `number_field`, `ring_of_integers`, `discriminant`, `class_group`, `prime_decomposition`, `preimage`.</small>
+    2. Determine the ring of integers $\mathcal{O}_K$ and its discriminant.
+
+    3. Determine the class group $\mathrm{Cl}_K$.
+
+    4. Determine the set $S$ of prime ideals of $\mathcal{O}_K$ lying over $2$. Are these ideals ramified?
+
+    5. How large is the subgroup of $\mathrm{Cl}_K$ generated by the classes of the ideals in $S$?
+
+    <small>Hint: `number_field`, `ring_of_integers`, `discriminant`, `class_group`, `prime_decomposition`/`prime_ideals_over`, `isramified`, `preimage`, `subgroup`, `order`.</small>
 
 3. Galois groups
 
     1. Determine the Galois group of $f = x^3 + x + 1 \in \mathbf{Z}[x]$.
-    2. Find a polynomial of degree 6 with the same Galois groups as $f$.
-    3. Determine the Galois groups of 10000 random irreducible polynomials in $\mathbf{Z}[x]$ of degree $3$ and coefficients bounded in absolute value by $100$. What is the distribution?
-    4. For all transitive groups of order 5, find an irreducible polynomial of degree 5 of $\mathbf{Z}[x]$ with that Galois group.
 
-    <small>Hint: `galois_group`, `number_field`, `normal_closure`, `defining_polynomial`, `rand`, `transitive_group_identification`, `number_transitive_groups`</small>
+    2. Find a polynomial of degree $6$ with the same Galois groups as $f$.
+
+    3. Determine the Galois groups of $1000$ random monic, irreducible polynomials in $\mathbf{Z}[x]$ of degree $3$ and coefficients bounded in absolute value by $10$.
+        What is the distribution?
+
+    4. For all transitive groups of order $4$, find a monic irreducible polynomial of degree $4$ of $\mathbf{Z}[x]$ with that Galois group (random monic polynomials with coefficients in absolute value bounded by $10$ will do).
+
+    <small>Hint: `galois_group`, `number_field`, `normal_closure`, `defining_polynomial`, `rand`, `setcoeff!`, `isirreducible`, `transitive_group_identification`, `number_transitive_groups`, `count`.</small>
 
 4. Abelian extensions
 
-    1. Define the number field $K = \mathbf{Q}(\sqrt[3]{2})$.
-    2. Find a normal extension $L/K$ such that $\operatorname{Gal}(L/K) \cong \operatorname{C_2} \times \operatorname{C_4}$.
-    3. Find a normal extension $L/K$ as in part 2 such that $L/\mathbf{Q}$ is normal.
-    4. Determine $\operatorname{Gal}(L/\mathbf{Q})$ for the field found in part 3.
+    1. Define the number field $K = \mathbf{Q}(\sqrt{2})$.
 
-    <small>Hint: `number_field`, `abelian_extensions`, `abelian_normal_extensions`, `absolute_field`, `automorphism_group`, `galois_group`</small>
+    2. Find a normal extension $L/K$ such that $\operatorname{Gal}(L/K) \cong \operatorname{C_2} \times \operatorname{C_2}$.
+
+    3. Find all normal extension $L/K$ as in part 2 such that $L/\mathbf{Q}$ is normal and the absolute discriminant of $L$ is bounded by $10^{10}$.
+
+    4. Determine a defining polynomial for one of the fields $L$ found in part 3. What is $\operatorname{Gal}(L/\mathbf{Q})$?
+
+    <small>Hint: `number_field`, `automorphism_group`, `abelian_normal_extensions`, `absolute_simple_field`, `galois_group`, `describe`.</small>
 
 5. Determinantal variety
 
     1. Define the polynomial ring $R = {\mathbf{F}}{\_4}[x\_{ij} \mid 1 \leq i \leq 3, 1 \leq j \leq 3]$.
-    2. Define the matrix $$
-        M = (x_{ij})_{1 \leq i \leq 3, 1 \leq j \leq 3} \in R^{3 \times 3}
+
+    2. Define the matrix
+       $$
+          M = (x_{ij})_{1 \leq i \leq 3, 1 \leq j \leq 3} \in R^{3 \times 3}
        $$
 
-    3. Determine the determinantal variety $V$ of size $3 \times 3$ and rank 1, which is defined as the vanishing set of the $2$-minors of $M$.
-    4. Determine the dimension of $V$?
-    5. Determine $\lvert V(\mathbf{F}_4) \rvert \subseteq \mathbf{F}_4^9$.
+    3. Determine the defining ideal of the determinantal variety $V$ of size $3 \times 3$ and rank 1, which is defined as the vanishing set of the $2$-minors of $M$.
 
-    <small>Hint: `polynomial_ring`, `FiniteField`, `matrix`, `minors`, `dim`, `Oscar.AbstractAlgebra.ProductIterator`.</small>
+    4. What is the dimension of $V$?
+
+    5. Determine $\lvert V(\mathbf{F}_4) \rvert$, where $V(\mathbf{F}\_4) \subseteq \mathbf{F}_4^9$.
+
+    <small>Hint: `polynomial_ring`, `FiniteField`/`GF`, `matrix`, `minors`, `ideal`, `dim`, `AbstractAlgebra.ProductIterator`.</small>
 
 6. Gröbner bases
 
     1. Define the polynomial ring $R = \mathbf{Q}[x, y, z]$.
-    2. Define the ideal $I = \langle xy + z, yz − x, zx − y \rangle$.
-    3. Determine $\dim(I)$.
-    4. Compute a Gröbner basis of $I$ with respect to the lexicographical ordering.
-    5. Determine $V(\mathbf{Q}) \subseteq \mathbf{Q}^3$.
-    6. Determine $V(\mathbf{Q}[i]) \subseteq \mathbf{Q}[i]^3$.
 
-    <small>Hint: `polynomial_ring`, `ideal`, `groebner_basis`, `to_univariate`, `roots`.</small>
+    2. Define the ideal $I = \langle xy + z, yz − x, zx − y \rangle$.
+
+    3. Determine $\dim(I)$.
+
+    4. Compute a Gröbner basis of $I$ with respect to the lexicographical ordering.
+
+    5. What is the $\mathbf{Q}$-dimension of the quotient $R/I$?
+
+    <small>Hint: `polynomial_ring`, `ideal`, `groebner_basis`, `quo`, `dim`.</small>
 
 7. Integral lattices
 
-    1. Define the $\mathbf{Z}$-lattice $L$ with Gram matrix
-       $$
-       \begin{pmatrix}
-       2 & 1 & 1 \\
-       1 & 2 & 1 \\
-       1 & 1 & 68
-       \end{pmatrix}
-       $$
-     2. Determine generators $S$ for the automorphism group of $L$ and its order.
-     3. Define the matrix group $G = \langle S \rangle \subseteq \operatorname{GL}_3(\mathbf{Q})$.
-     4. Determine the maximal subgroups of $G$. Can you find out which group this is?
-     5. Determine the class number of $L$.
-     6. Find representatives for the isometry classes in the genus of $L$.
-     7. Use the mass formula to show that the result of part 6 is correct.
+    1.  Define the $\mathbf{Z}$-lattice $L$ with Gram matrix
+        $$
+           \begin{pmatrix}
+           2 & 1 & 1 \\
+           1 & 2 & 1 \\
+           1 & 1 & 68
+           \end{pmatrix}
+        $$
 
-     <small>Hint: `Zlattlice`, `automorphism_group_generators`, `automorphism_group_order`, `maximal_subgroups`, `genus_representatives`, `mass`.</small>
+    2. Determine generators $S$ for the automorphism group of $L$ and its order.
+
+    3. Define the matrix group $G = \langle S \rangle \subseteq \operatorname{GL}_3(\mathbf{Q})$.
+
+    4. Find an isomorphic matrix group $H$ over a finite field.
+
+    5. Can you find out which group this is?
+
+    6. Find representatives for the isometry classes in the genus of $L$.
+
+    7. Use the mass formula to show that the result of part 6 is correct.
+
+     <small>Hint: `Zlattlice`, `automorphism_group_generators`, `automorphism_group_order`, `Oscar.isomorphic_group_over_finite_field`, `genus_representatives`, `mass`.</small>
 
 8. Lattices from number fields
 
     1. Define $K = \mathbf{Q}(\sqrt{2})$.
+
     2. Determine the $\mathbf{Z}$-lattice $(\mathcal{O}_K, q)$, where $q$ is the quadratic form
-    associated to the trace pairing.
+       associated to the trace pairing.
+
     3. Determine the class number of $L$.
-    4. Try to represent each isometry class in the genus of $L$ as a lattice attached to a number field.
 
-    <small>Hint: `number_field`, `ring_of_integers`, `tr`, `Zlattice`, `genus_representatives`, `isisometric`.</small>
+    4. Find an isometry class of a lattice which is not coming from a number field.
 
-## Implement something your own
+    <small>Hint: `number_field`, `ring_of_integers`, `trace`, `basis`, `Zlattice`, `genus_representatives`, `isisometric`.</small>
 
-1. Product of rings.
+9. Product of rings.
    
-    The goal of this exercise is two implement $R \times S$, the product of two commutative rings $R$ and $S$.
+    The goal of this exercise is to implement $R \times S$, the product of two commutative rings $R$ and $S$.
 
     ```julia
     mutable struct ProdRing{S, T} <: Ring
@@ -292,9 +335,10 @@ TODO: Exercises for the participants will appear here
 
     ```julia
     mutable struct ProdRingElem{U, V} <: RingElement
-      first::S
-      second::T
+      first::U
+      second::V
       parent
+    end
     ```
 
     Implement enough functionality to make the following work:
@@ -317,7 +361,7 @@ TODO: Exercises for the participants will appear here
 
     As an example, consider the implementation of $\mathbf{Z}[i]$ [here](https://github.com/ulthiel/GaussianIntegers.jl/blob/master/src/GaussianIntegers.jl).
 
-2.  Skew polynomial rings
+10.  Skew-polynomial rings
 
     Let $S = R[X]$ be the set of all polynomials $\sum_{i} a_i X^i$ and $f$ a ring endomorphism of $R$. We define $X^n \cdot r = f(r)\cdot X^n$ for $r \in R$. With the ordinary additional of polynomials, this yields a skew-polynomial ring, which we want to implement.
 
@@ -344,7 +388,7 @@ TODO: Exercises for the participants will appear here
 
     As an example, consider the implementation of $\mathbf{Z}[i]$ [here](https://github.com/ulthiel/GaussianIntegers.jl/blob/master/src/GaussianIntegers.jl).
 
-3.  $\mathbf{Z}[\sqrt{2}]$ as an Euclidean ring
+11.  $\mathbf{Z}[\sqrt{2}]$ as an Euclidean ring
 
     The aim of this exercise is to implement the ring $\Z[\sqrt{2}]$ together with its Euclidean structure, which is determined by the Euclidean function $v(a + b \sqrt 2) = \lvert a^2 - 2b^2 \rvert$.
     To satisfy the ring interface, we will use the following type for the parent.
@@ -375,9 +419,9 @@ TODO: Exercises for the participants will appear here
     hnf(M)
     ```
 
-4.  Inverting integer matrices
+12.  Inverting integer matrices
 
-    The aim is to invert an invertible integer matrix $M \in \mathbf{Z}^{n \times n}$ using the Chinese remainder theorem and $p$-adic lifting
+    The aim is to invert an invertible integer matrix $M \in \mathbf{Z}^{n \times n}$ using the Chinese remainder theorem and $p$-adic lifting.
 
     1. Implement a function
         
@@ -403,12 +447,6 @@ TODO: Exercises for the participants will appear here
     3. Compare both functions on random matrices of different sizes.
 
     4. Can you do the same for matrices over $\mathbf{F}\_q[x]$ by replacing primes with irreducible polynomials?
-
-1. TODO
-
-2. TODO
-
-3. ....
 
 ## Group theory
 
