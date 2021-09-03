@@ -124,3 +124,12 @@ Based on https://codepen.io/jdsteinbach/pen/GYmQjo
   background-color: rgb(170, 0, 0);
   background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
 }
+
+.meeting-nav {
+  padding-bottom: 1rem;
+}
+
+.meeting-nav a {
+  margin-left: 4px;
+  margin-right: 4px;
+}

@@ -55,7 +55,7 @@ html {
 
 .sidebar {
   text-align: center;
-  padding: 1.5rem 0.7rem;
+  padding: 0.7rem 0.7rem;
   color: rgba(0,0,0);
   background-color: #202020;
   overflow: auto;
@@ -195,8 +195,8 @@ a.sidebar-nav-item:focus {
  */
 
 .content {
-  padding-top:    4rem;
-  padding-bottom: 4rem;
+  padding-top:    2rem;
+  padding-bottom: 2rem;
 }
 
 @media (min-width: 48em) {
