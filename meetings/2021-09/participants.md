@@ -10,7 +10,7 @@ people:
 
     - {name: Thomas Breuer, affiliation: RWTH Aachen, category: organizer, github: ThomasBreuer}
 
-    - {name: Tommy Hofmann, affiliation: TU Kaiserslautern, category: organizer, github: thofma}
+    - {name: Tommy Hofmann, affiliation: University of Siegen, category: organizer, github: thofma}
 
     - {name: Eamonn O'Brien, affiliation: University of Auckland, category: speaker}
 
@@ -28,7 +28,7 @@ people:
 
     - {name: Lars Göttgens, affiliation: RWTH Aachen}
 
-    - {name: Stevell Muller, affiliation: Uni Saarbrücken}
+    - {name: Stevell Muller, affiliation: Uni Saarland}
 
     - {name: Liam Rogel, affiliation: TU Kaiserslautern}
 
@@ -40,7 +40,7 @@ people:
 
     - {name: Friedrich Rober, affiliation: RWTH Aachen}
 
-    - {name: Julien Schanz, affiliation: Uni Saarbrücken}
+    - {name: Julien Schanz, affiliation: Uni Saarland}
 
     - {name: Daniel Rademacher, affiliation: RWTH Aachen}
 
@@ -48,7 +48,7 @@ people:
 
     - {name: Jens Brandt, affiliation: RWTH Aachen}
 
-    - {name: Firoozeh Aga, affiliation: Uni Saarbrücken+ITWM}
+    - {name: Firoozeh Aga, affiliation: Uni Saarland+ITWM}
 
     - {name: Sogo Pierre Sanon, affiliation: TU Kaiserslautern}
 
@@ -58,17 +58,17 @@ people:
 
     - {name: Robert Nowak, affiliation: Uni Oldenburg}
 
-    - {name: Matias Klimpel, affiliation: Uni Saarbrücken}
+    - {name: Matias Klimpel, affiliation: Uni Saarland}
 
     - {name: Anna Sucker, affiliation: RWTH Aachen}
 
-    - {name: Nicolas Faroß, affiliation: Uni Saarbrücken}
+    - {name: Nicolas Faroß, affiliation: Uni Saarland}
 
     - {name: Sylvain Spitz, affiliation: TU Berlin}
 
     - {name: Vanishree Kirekod, affiliation: TU Kaiserslautern}
 
-    - {name: Yvonne Neuy, affiliation: Uni Saarbrücken}
+    - {name: Yvonne Neuy, affiliation: Uni Saarland}
 
     - {name: George Balla, affiliation: RWTH Aachen}
 
