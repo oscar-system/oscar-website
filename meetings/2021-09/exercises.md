@@ -311,8 +311,11 @@ You may wish to consult the [Oscar documentation](https://oscar-system.github.io
   4. Compute a Gröbner basis of $I$ with respect to the lexicographical ordering.
      {% include hint.html content="`groebner_basis`" %}
 
-  5. What is the $\mathbf{Q}$-dimension of the quotient $R/I$?
-     {% include hint.html content="`quo`" %}
+  5. Is $I$ a prime ideal?
+     {% include hint.html content="`isprime`" %}
+
+  6. Find a prime ideal containing $I$.
+     {% include hint.html content="`issubseteq`" %}
 
 ### 7. Integral lattices
 
