@@ -138,6 +138,7 @@ details.spoiler summary::after {
   content: var(--hidden);
   filter: blur(4px);
   display: block;
+  margin-bottom:1em;
 }
 
 details[open] summary::after {
