@@ -180,7 +180,7 @@ You may wish to consult the [Julia documentation](https://docs.julialang.org/en/
      {% include hint.html content="`@which`, `@less`, `@edit`" %}
 
 
-### 7. Caching*
+### 7. Caching
 
   Write a function `cached(f)` that takes a function/callable object `f` and returns a new function which returns the same values as `f` but caches the return value for any input value.
   Test it with various functions:
@@ -207,6 +207,10 @@ You may wish to consult the [Julia documentation](https://docs.julialang.org/en/
 
 ## Oscar exercises: Number theory and algebra
 
+Exercises 1-8 provide opportunities to get to know Oscar and its functionality.
+On the other hand, exercises 9-12 are about implementing functionality on your
+own using basic functionality provided by Oscar.
+
 You may wish to consult the [Oscar documentation](https://oscar-system.github.io/Oscar.jl/stable/).
 
 ### 1. Vandermonde matrices
@@ -224,7 +228,7 @@ You may wish to consult the [Oscar documentation](https://oscar-system.github.io
      {% include hint.html content="`det`, `factor`" %}
 
   4. Pick 10 random elements $p \in \mathbf{Q}^5$ and verify that $\det(V)(p) = \det(V(p))$.
-     {% include hint.html content="`rand`, `evaluate`, `map_entries`." %}
+     {% include hint.html content="`rand` (e.g. `rand(QQ, -2:2)`), `evaluate`, `map_entries`." %}
 
 
 ### 2. Invariants of number fields
@@ -268,10 +272,10 @@ You may wish to consult the [Oscar documentation](https://oscar-system.github.io
      {% include hint.html content="`automorphism_group`" %}
 
   3. Find all normal extension $L/K$ as in part 2 such that $L/\mathbf{Q}$ is normal and the absolute discriminant of $L$ is bounded by $10^{10}$.
-     {% include hint.html content="`abelian_normal_extensions`, `absolute_simple_field`" %}
+     {% include hint.html content="`abelian_normal_extensions`" %}
 
   4. Determine a defining polynomial for one of the fields $L$ found in part 3. What is $\operatorname{Gal}(L/\mathbf{Q})$?
-     {% include hint.html content="`galois_group`, `describe`" %}
+     {% include hint.html content="`absolute_simple_field`, `galois_group`, `describe`" %}
 
 ### 5. Determinantal variety
 
@@ -291,7 +295,7 @@ You may wish to consult the [Oscar documentation](https://oscar-system.github.io
      {% include hint.html content="`dim`" %}
 
   5. Determine $\lvert V(\mathbf{F}_4) \rvert$, where $V(\mathbf{F}\_4) \subseteq \mathbf{F}_4^9$.
-     {% include hint.html content="`AbstractAlgebra.ProductIterator`" %}
+     {% include hint.html content="`AbstractAlgebra.ProductIterator`, `evaluate`, `all`" %}
 
 ### 6. Gröbner bases
 
@@ -313,12 +317,13 @@ You may wish to consult the [Oscar documentation](https://oscar-system.github.io
 ### 7. Integral lattices
 
   1. Define the $\mathbf{Z}$-lattice $L$ with Gram matrix
+
      $$
         \begin{pmatrix}
         2 & 1 & 1 \\
         1 & 2 & 1 \\
         1 & 1 & 68
-        \end{pmatrix}
+        \end{pmatrix}.
      $$
      {% include hint.html content="`Zlattice`, `matrix`" %}
 
@@ -337,23 +342,24 @@ You may wish to consult the [Oscar documentation](https://oscar-system.github.io
   6. Find representatives for the isometry classes in the genus of $L$.
      {% include hint.html content="`genus_representatives`" %}
 
-  7. Use the mass formula to show that the result of part 6 is correct.
+  7. Use the mass formula to show that the result of part 6 is correct ($\operatorname{mass}(L) = \sum_{L'} 1/\lvert \operatorname{Aut}(L') \rvert$, where the sum runs over a set of genus representatives of $L$).
      {% include hint.html content="`mass`" %}
 
 ### 8. Lattices from number fields
 
-  1. Define $K = \mathbf{Q}(\sqrt{2})$.
+  1. Create the number field $K$ with defining polynomial $x^3 - 54x - 150 \in \mathbf{Q}[x]$.
      {% include hint.html content="`number_field`" %}
 
-  2. Determine the $\mathbf{Z}$-lattice $(\mathcal{O}_K, q)$, where $q$ is the quadratic form
+  2. Determine the $\mathbf{Z}$-lattice $L = (\mathcal{O}_K, q)$, where $q$ is the quadratic form
      associated to the trace pairing.
-     {% include hint.html content="`trace`" %}
+     {% include hint.html content="`Zlattice`, `basis`, `trace`" %}
 
-  3. Determine the class number of $L$.
-     {% include hint.html content="`basis`" %}
+  3. What is the signature of $L$? What is the signature of $K$?
+     {% include hint.html content="`signature`" %}
 
-  4. Find an isometry class of a lattice which is not coming from a number field.
-     {% include hint.html content="`Zlattice`, `genus_representatives`, `isisometric`" %}
+  4. Consider the fields $K_1$ and $K_2$ defined by $x^3 - 36x - 78$ and $x^3 - 18x - 6$ respectively. For $K_1$ and $K_2$ construct lattices $L_1$ and $L_2$.
+     Are the fields $K_i$ isomorphic to $K$? Are the lattices $L_i$ in the same genus as $L$? Are the lattices $L_i$ isometric to $L$?
+     {% include hint.html content="`genus`, `isisometric`, `isisomorphic`" %}
 
 ### 9. Product of rings
  
@@ -413,9 +419,10 @@ You may wish to consult the [Oscar documentation](https://oscar-system.github.io
   The goal is to make the following work:
 
   ```julia
-  S, x = skew_polynomial_ring(QQ, a -> 1//a, "x")
-  f = QQ(2) * x
-  g = f * QQ(3)
+  F, a = FiniteField(3, 2, "a")
+  S, x = skew_polynomial_ring(F, a -> a^3, "x")
+  f = F(2) * x
+  g = f * F(3)
   M = matrix(S, 2, 2, [1, f, 0, 1])
   M * M
   ```
@@ -425,10 +432,10 @@ You may wish to consult the [Oscar documentation](https://oscar-system.github.io
 ### 11. $\mathbf{Z}[\sqrt{2}]$ as an Euclidean ring
 
   The aim of this exercise is to implement the ring $\mathbf{Z}[\sqrt{2}]$ together with its Euclidean structure, which is determined by the Euclidean function $v(a + b \sqrt 2) = \lvert a^2 - 2b^2 \rvert$.
-  To satisfy the ring interface, we will use the following type for the parent.
+  To satisfy the ring interface, we will use the following type for the parent:
 
   ```julia
-  mutable struct ZZSqrt2Elem
+  mutable struct ZZSqrt2
   end
   ```
 
@@ -457,7 +464,7 @@ You may wish to consult the [Oscar documentation](https://oscar-system.github.io
 
 ### 12. Inverting integer matrices
 
-  The aim is to invert an invertible integer matrix $M \in \mathbf{Z}^{n \times n}$ using the Chinese remainder theorem and $p$-adic lifting.
+  The aim is to implement two methods to invert invertible integer matrices. The first method will be based on $p$-adic lifting and the second one on the Chinese remainder theorem.
 
   1. Implement a function
       
@@ -468,7 +475,7 @@ You may wish to consult the [Oscar documentation](https://oscar-system.github.io
      
       which given an invertible integer matrix, determines the inverse via $p$-adic lifting and inversion of matrices over $\mathbf{F}\_p$.
 
-      Hint: If $B$ is the inverse of $A$, write $B = B_0 + pB_1 + p^2 B_2 + \dotsb$ and reduce modulo $p$.
+      Hint: If $B$ is the inverse of $A$, write $B = B_0 + pB_1 + p^2 B_2 + \dotsb$ and reduce modulo $p$. There is no need to work with $p$-adic integers. It is sufficient to work in $\mathbf{Z}$ and $\mathbf{F}_p$. Helpful commands: `change_base_ring`, `inv`, `lift`, `divexact`.
 
 
   2. Implement a function
@@ -479,6 +486,8 @@ You may wish to consult the [Oscar documentation](https://oscar-system.github.io
       ```
 
       which given an invertible integer matrix, determines the inverse using the Chinese remainder theorem and inversion of matrices over $\mathbf{F}\_p$ for various primes $p$.
+
+      Helpful commands: `change_base_ring`, `inv`, `lift`, `crt`.
 
   3. Compare both functions on random matrices of different sizes.
 
