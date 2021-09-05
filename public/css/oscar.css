@@ -133,3 +133,14 @@ Based on https://codepen.io/jdsteinbach/pen/GYmQjo
   margin-left: 4px;
   margin-right: 4px;
 }
+
+details.spoiler summary::after {
+  content: var(--hidden);
+  filter: blur(4px);
+  display: block;
+  margin-bottom:1em;
+}
+
+details[open] summary::after {
+  display: none;
+}
