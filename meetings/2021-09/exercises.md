@@ -571,14 +571,15 @@ You may wish to consult the [Oscar documentation](https://oscar-system.github.io
 
 ### 2. Collection
 
-  <small>Hint: There is a github repository with a [straightforward implementation of collection in pc groups](https://github.com/ThomasBreuer/Summerschool21Exercises.jl).  You can clone it, add the Julia module to your Julia session, and then extend and improve the code.</small>
+  <small>Hint: There is a github repository with a [straightforward implementation of collection in pc groups](https://github.com/oscar-system/Summerschool21Exercises.jl).  You can (fork and) clone it, add the Julia module to your Julia session, and then extend and improve the code.</small>
 
 1. Implement the collection process in Julia.
     That is, define data structures representing an (uncollected) word and a collector object that contains the relators of a consistent pc-presentation.
 
     Test the implementation for various groups:
 
-    - Try different collection strategies, by providing suitable `findfirst_uncollected` functions. How many steps are needed for various examples?
+    - Try different collection strategies (collection to the left, from the right, from the left, as defined in the talk), by providing suitable `findfirst_uncollected` functions.
+      How many steps are needed for various examples?
 
     - What are the steps when one applies collection for multiplying elements in abelian groups?
 
