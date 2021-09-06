@@ -432,12 +432,3 @@ a.sidebar-nav-item:focus {
     max-width: 30%;
   }
 } */
-
-
-.participants-organizer {
-  color: blue;
-}
-
-.participants-speaker {
-  color: green;
-}

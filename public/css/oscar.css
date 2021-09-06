@@ -134,6 +134,14 @@ Based on https://codepen.io/jdsteinbach/pen/GYmQjo
   margin-right: 4px;
 }
 
+.participants-organizer { color: green; }
+
+.participants-speaker { color: black; }
+
+.participants-blue-group { color: #005493; }
+
+.participants-red-group { color: #941100; }
+
 details.spoiler summary::after {
   content: var(--hidden);
   filter: blur(4px);

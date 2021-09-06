@@ -18,75 +18,75 @@ people:
 
     - {name: Daniel Schultz, affiliation: TU Kaiserslautern, category: instructor}
 
-    - {name: Alheydis Geiger, affiliation: Uni Tübingen}
+    - {name: Alheydis Geiger, affiliation: Uni Tübingen, category: blue group}
 
-    - {name: Simon Telen, affiliation: MPI Leipzig}
+    - {name: Ali Aslam, affiliation: TU Kaiserslautern, category: red group}
 
-    - {name: Dominik Bernhardt, affiliation: RWTH Aachen}
+    - {name: Anna Sucker, affiliation: RWTH Aachen, category: blue group}
 
-    - {name: Phil Pützstück, affiliation: RWTH Aachen}
+    - {name: Daniel Rademacher, affiliation: RWTH Aachen, category: blue group}
 
-    - {name: Lars Göttgens, affiliation: RWTH Aachen}
+    - {name: Dante Luber, affiliation: TU Berlin, category: red group}
 
-    - {name: Stevell Muller, affiliation: Uni Saarland}
+    - {name: Dominik Bernhardt, affiliation: RWTH Aachen, category: red group}
 
-    - {name: Liam Rogel, affiliation: TU Kaiserslautern}
+    - {name: Enis Kaya, affiliation: University of Groningen, category: blue group}
 
-    - {name: Enis Kaya, affiliation: University of Groningen}
+    - {name: Firoozeh Aga, affiliation: Uni Saarland+ITWM, category: blue group}
 
-    - {name: Kunda Kambaso, affiliation: RWTH Aachen}
+    - {name: Friedrich Rober, affiliation: RWTH Aachen, category: red group}
 
-    - {name: Ibrahim Ahmad, affiliation: RWTH Aachen}
+    - {name: George Balla, affiliation: RWTH Aachen, category: blue group}
 
-    - {name: Friedrich Rober, affiliation: RWTH Aachen}
+    - {name: Ibrahim Ahmad, affiliation: RWTH Aachen, category: red group}
 
-    - {name: Julien Schanz, affiliation: Uni Saarland}
+    - {name: Jan Rodriguez, affiliation: RWTH Aachen, category: red group}
 
-    - {name: Daniel Rademacher, affiliation: RWTH Aachen}
+    - {name: Jens Brandt, affiliation: RWTH Aachen, category: blue group}
 
-    - {name: Yvonne Weber, affiliation: TU Kaiserslautern}
+    - {name: Julien Schanz, affiliation: Uni Saarland, category: blue group}
 
-    - {name: Jens Brandt, affiliation: RWTH Aachen}
+    - {name: Kunda Kambaso, affiliation: RWTH Aachen, category: red group}
 
-    - {name: Firoozeh Aga, affiliation: Uni Saarland+ITWM}
+    - {name: Lars Göttgens, affiliation: RWTH Aachen, category: blue group}
 
-    - {name: Sogo Pierre Sanon, affiliation: TU Kaiserslautern}
+    - {name: Liam Rogel, affiliation: TU Kaiserslautern, category: blue group}
 
-    - {name: Sergio Siccha, affiliation: TU Kaiserslautern}
+    - {name: Matias Klimpel, affiliation: Uni Saarland, category: red group}
 
-    - {name: Ali Aslam, affiliation: TU Kaiserslautern}
+    - {name: Max Mayer, affiliation: TU Kaiserslautern, category: red group}
 
-    - {name: Robert Nowak, affiliation: Uni Oldenburg}
+    - {name: Nicolas Faroß, affiliation: Uni Saarland, category: red group}
 
-    - {name: Matias Klimpel, affiliation: Uni Saarland}
+    - {name: Nils Pawelzik, affiliation: RWTH Aachen, category: blue group}
 
-    - {name: Anna Sucker, affiliation: RWTH Aachen}
+    - {name: Paul Helminck, affiliation: Durham University, category: blue group}
 
-    - {name: Nicolas Faroß, affiliation: Uni Saarland}
+    - {name: Phil Pützstück, affiliation: RWTH Aachen, category: red group}
 
-    - {name: Sylvain Spitz, affiliation: TU Berlin}
+    - {name: Rafael Mohr, affiliation: TU Kaiserslautern, category: blue group}
 
-    - {name: Vanishree Kirekod, affiliation: TU Kaiserslautern}
+    - {name: Robert Nowak, affiliation: Uni Oldenburg, category: red group}
 
-    - {name: Yvonne Neuy, affiliation: Uni Saarland}
+    - {name: Sergio Siccha, affiliation: TU Kaiserslautern, category: blue group}
 
-    - {name: George Balla, affiliation: RWTH Aachen}
+    - {name: Simon Telen, affiliation: MPI Leipzig, category: blue group}
 
-    - {name: Dante Luber, affiliation: TU Berlin}
+    - {name: Sogo Pierre Sanon, affiliation: TU Kaiserslautern, category: blue group}
 
-    - {name: Jan Rodriguez, affiliation: RWTH Aachen}
+    - {name: Stevell Muller, affiliation: Uni Saarland, category: red group}
 
-    - {name: Max Mayer, affiliation: TU Kaiserslautern}
+    - {name: Sylvain Spitz, affiliation: TU Berlin, category: blue group}
 
-    - {name: Rafael Mohr, affiliation: TU Kaiserslautern}
+    - {name: Tom Görtzen, affiliation: RWTH Aachen, category: red group}
 
-    - {name: Yue Ren, affiliation: Durham University}
+    - {name: Vanishree Kirekod, affiliation: TU Kaiserslautern, category: red group}
 
-    - {name: Paul Helminck, affiliation: Durham University}
+    - {name: Yue Ren, affiliation: Durham University, category: blue group}
 
-    - {name: Tom Görtzen, affiliation: RWTH Aachen}
+    - {name: Yvonne Neuy, affiliation: Uni Saarland, category: red group}
 
-    - {name: Nils Pawelzik, affiliation: RWTH Aachen}
+    - {name: Yvonne Weber, affiliation: TU Kaiserslautern, category: blue group}
 
 ---
 
