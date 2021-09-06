@@ -90,7 +90,7 @@ people:
 
 ---
 
-- <span class="participants-organizer">organizers wear a green hat in gather.town</span>
+- <span class="participants-organizer">organizers and instructors wear a green hat in gather.town</span>
 - <span class="participants-blue-group">the blue group meets in the room with blue chairs in gather.town for standups</span>
 - <span class="participants-red-group">the red group meets in the room with red chairs in gather.town for standups</span>
 
