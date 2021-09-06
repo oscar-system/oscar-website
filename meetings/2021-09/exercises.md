@@ -42,7 +42,11 @@ For some problem areas, participants volunteered to help out, so you can also as
 
 ### 1. Exercise solutions in git
 
-  1. TODO
+  Create a fork of the repository [https://github.com/oscar-system/Summerschool21Exercises.jl](https://github.com/oscar-system/Summerschool21Exercises.jl) and clone this to your computer.
+  In the `solutions` directory in your local repository, create a subdirectory whose name is your GitHub username, and add solutions to some of the exercises to this directory, commit them, and push them to your fork.
+  If you want, create a pull request to merge the additions into the original repository.
+
+  (Note: Forks of public repositories are automatically public.  With some effort, you can create a corresponding private repository, or one with restricted access if you want.)
 
 ### 2. git in the browser
 
