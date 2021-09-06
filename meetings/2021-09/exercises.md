@@ -71,7 +71,7 @@ You may wish to consult the [Julia documentation](https://docs.julialang.org/en/
   `[2, 1, 3]` is the transposition $(1, 2)$ on 3 letters.
 
   1. Fill in the stub below to write a function for multiplying two permutations.
-     Permutations are applied from the right, so that $(1, 2)(2, 3) = (1, 2, 3)$.
+     Permutations are applied from the right, so that $(1, 2)(2, 3) = (1, 3, 2)$.
 
      ```julia
      function *(x::Permutation, y::Permutation)
