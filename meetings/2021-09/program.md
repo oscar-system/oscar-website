@@ -19,7 +19,7 @@ The talks will be in Zoom. Everything else will take place in our gather.town wo
   - 09:00 Time to install stuff, try Gather.town, socialize, ...
   - 12:00 Lunch break
   - 13:00 Welcome session on Gather.town
-  - 13:10 Talk “Introduction to Julia” (Tommy Hofmann)
+  - 13:10 Talk “Introduction to Julia” (Tommy Hofmann) [notebook](https://github.com/thofma/summerschool2021/blob/master/notebooks/Introduction%20to%20Julia.ipynb)
   - 14:10 Talk “An overview of Oscar” (Claus Fieker)
   - 14:40 Talk [“Git crash course”](https://www.math.rwth-aachen.de/~Thomas.Breuer/git_intro.pdf) (Thomas Breuer)
   - 15:40 Exercises
