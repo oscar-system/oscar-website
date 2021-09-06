@@ -21,7 +21,7 @@ The talks will be in Zoom. Everything else will take place in our gather.town wo
   - 13:00 Welcome session on Gather.town
   - 13:10 Talk “Introduction to Julia” (Tommy Hofmann)
   - 14:10 Talk “An overview of Oscar” (Claus Fieker)
-  - 14:40 Talk “Git crash course” (Thomas Breuer)
+  - 14:40 Talk [“Git crash course”](https://www.math.rwth-aachen.de/~Thomas.Breuer/git_intro.pdf) (Thomas Breuer)
   - 15:40 Exercises
   - 16:30 Evening standup
 
