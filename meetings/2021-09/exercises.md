@@ -7,22 +7,43 @@ meeting_nr: 202109
 
 <p class="message">
 This is a live document and will be updated during the week.
+
+Please talk to us and each other all the time.
 </p>
 
 * This will become a table of contents (this text will be scrapped).
 {:toc}
 
-<!-- 
+
+## Bring your own problem
+
+### 1. Questions and problems
+
+  1. TODO 
+
+### 2. Work on your own Julia/Oscar code
+
+  1. TODO 
+
+### 3. TODO
+
+  1. TODO
+
 
 ## Git and GitHub exercises
 
-1. Fork the repository XYZ
+### 1. Exercise solutions in git
 
-2. Create a pull request doing XYZ
+  1. TODO
 
-3. ... TODO
+### 2. git in the browser
 
- -->
+  1. TODO
+
+### 3. TODO
+
+  1. TODO
+
 
 ## Julia exercises
 
