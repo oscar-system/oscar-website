@@ -70,7 +70,7 @@ people:
 
     - {name: Sergio Siccha, affiliation: TU Kaiserslautern, category: blue group}
 
-    - {name: Simon Telen, affiliation: MPI Leipzig, category: blue group}
+    - {name: Simon Telen, affiliation: MPI Leipzig, category: red group}
 
     - {name: Sogo Pierre Sanon, affiliation: TU Kaiserslautern, category: blue group}
 
@@ -89,5 +89,9 @@ people:
     - {name: Yvonne Weber, affiliation: TU Kaiserslautern, category: blue group}
 
 ---
+
+- <span class="participants-organizer">organizers wear a green hat in gather.town</span>
+- <span class="participants-blue-group">the blue group meets in the room with blue chairs in gather.town for standups</span>
+- <span class="participants-red-group">the red group meets in the room with red chairs in gather.town for standups</span>
 
 {% include participants.html participants=page.people %}
