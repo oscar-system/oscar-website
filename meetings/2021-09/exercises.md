@@ -20,6 +20,8 @@ This is a live document and will be updated during the week.
 If you have any questions about or problems with anything related to the workshop,
 talk to us! Via gather.town, Slack, email, telephone, carrier pigeon, ...
 
+Do you need help with the Git/Github setup for your project? Would you like do discuss when to use another branch? When do you commit? After evey line you changed?
+
 For some problem areas, participants volunteered to help out, so you can also ask them.
 (Feel free to add your name here).
 
