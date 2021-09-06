@@ -12,17 +12,44 @@ This is a live document and will be updated during the week.
 * This will become a table of contents (this text will be scrapped).
 {:toc}
 
-<!-- 
+
+## Bring your own problem
+
+### 1. Questions and problems
+
+If you have any questions about or problems with anything related to the workshop,
+talk to us! Via gather.town, Slack, email, telephone, carrier pigeon, ...
+
+For some problem areas, participants volunteered to help out, so you can also ask them.
+(Feel free to add your name here).
+
+  - git: Jens Brandt, ...
+  - Julia: ...
+  - Oscar: ...
+
+### 2. Work on your own Julia/Oscar code
+
+  1. TODO 
+
+### 3. TODO
+
+  1. TODO
+
 
 ## Git and GitHub exercises
 
-1. Fork the repository XYZ
+### 1. Exercise solutions in git
 
-2. Create a pull request doing XYZ
+  1. TODO
 
-3. ... TODO
+### 2. git in the browser
 
- -->
+  1. TODO
+
+### 3. TODO
+
+  1. TODO
+
 
 ## Julia exercises
 
