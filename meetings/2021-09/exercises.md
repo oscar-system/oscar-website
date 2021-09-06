@@ -20,7 +20,7 @@ This is a live document and will be updated during the week.
 If you have any questions about or problems with anything related to the workshop,
 talk to us! Via gather.town, Slack, email, telephone, carrier pigeon, ...
 
-Do you need help with the Git/Github setup for your project? Would you like do discuss when to use another branch? When do you commit? After evey line you changed?
+Do you need help with the Git/Github setup for your project? Would you like do discuss when to use another branch? When do you commit? After every line you changed?
 
 For some problem areas, participants volunteered to help out, so you can also ask them.
 (Feel free to add your name here).
@@ -31,20 +31,20 @@ For some problem areas, participants volunteered to help out, so you can also as
 
 ### 2. Work on your own Julia/Oscar code
 
-  1. TODO 
+If you are already working on Julia code, possibly even are using Oscar, e.g. for your thesis project, feel free to continue working on that, and just asking us for general help.
 
-### 3. TODO
-
-  1. TODO
+Although, if you are already that good at it, surely finishing a few exercises quickly won't be a problem for you, so why not try? You might still learn something here or there.
 
 
 ## Git and GitHub exercises
 
 ### 1. Exercise solutions in git
 
-  Create a fork of the repository [https://github.com/oscar-system/Summerschool21Exercises.jl](https://github.com/oscar-system/Summerschool21Exercises.jl) and clone this to your computer.
-  In the `solutions` directory in your local repository, create a subdirectory whose name is your GitHub username, and add solutions to some of the exercises to this directory, commit them, and push them to your fork.
-  If you want, create a pull request to merge the additions into the original repository.
+  1. Fork the repository <https://github.com/oscar-system/Summerschool21Exercises.jl> and clone this to your computer.
+
+  2. In the `solutions` directory in your local clone, create a subdirectory whose name is your GitHub username, and add solutions to some of the exercises to this directory, commit them, and push them to your fork.
+
+  3. Optionally, if you want, create a pull request to merge the additions into the original repository.
 
   (Note: Forks of public repositories are automatically public.  With some effort, you can create a corresponding private repository, or one with restricted access if you want.)
 
@@ -57,10 +57,6 @@ For some problem areas, participants volunteered to help out, so you can also as
   3. Edit your entry in the participants list by adding your GitHub username (using the syntax already in use for some of the entries)
 
   4. Submit your change as a pull request.
-
-### 3. TODO
-
-  1. TODO
 
 
 ## Julia exercises
