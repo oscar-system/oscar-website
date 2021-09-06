@@ -71,7 +71,7 @@ You may wish to consult the [Julia documentation](https://docs.julialang.org/en/
 
 
 ### 2. Collatz conjecture
-  
+
   1. Implement a function `f(n::Int)` which returns $n/2$ if $n$ is even and $3n + 1$ if $n$ is odd.
 
   2. Implement a function `g(n::Int)` which determines the smallest $k$ with $f^k(n) = 1$.
@@ -112,7 +112,7 @@ You may wish to consult the [Julia documentation](https://docs.julialang.org/en/
      function *(x::Permutation, y::Permutation)
      end
      ```
- 
+
      Test your function by computing `Permutation([2, 1, 3]) * Permutation([1, 3, 2])`.
 
   2. Write a function `apply` that applies a `Permutation` to an `Int`. Make sure that the function has the right signature.
@@ -130,7 +130,7 @@ You may wish to consult the [Julia documentation](https://docs.julialang.org/en/
      println(apply(p, 5) == 1)
      ```
 
-  3. Write another `apply` method that entry-wise applies a permutation to a tuple. 
+  3. Write another `apply` method that entry-wise applies a permutation to a tuple.
 
       ```julia
       function apply(p::Permutation, x::Tuple)
@@ -167,7 +167,7 @@ You may wish to consult the [Julia documentation](https://docs.julialang.org/en/
       println(apply(p, x) == ["b", "c", "d", "e", "a"])
       println(x == ["a", "b", "c", "d", "e"])
       ```
-    
+
 ### 5. `Vector` vs `Tuple`
 
   1. Observe the difference in timings for the following two ways of calculating the
@@ -210,11 +210,11 @@ You may wish to consult the [Julia documentation](https://docs.julialang.org/en/
 
   2. Without `using Oscar`, list all functions that accept a `Vector` argument.
      {% include hint.html content="`methodswith`" %}
-  
+
   3. After `using Oscar`, list all functions that accept an `FmpzPolyRing`.
 
   4. List all functions that accept both an `fmpz_mat` and an `fmpz`.
-  
+
   5. Find the source code for the method computing the power `fmpz(2)^10`.
      {% include hint.html content="`@which`, `@less`, `@edit`" %}
 
@@ -404,7 +404,7 @@ You may wish to consult the [Oscar documentation](https://oscar-system.github.io
      {% include hint.html content="`genus`, `isisometric`, `isisomorphic`" %}
 
 ### 9. Product of rings
- 
+
   The goal of this exercise is to implement $R \times S$, the product of two commutative rings $R$ and $S$.
 
   ```julia
@@ -509,12 +509,12 @@ You may wish to consult the [Oscar documentation](https://oscar-system.github.io
   The aim is to implement two methods to invert invertible integer matrices. The first method will be based on $p$-adic lifting and the second one on the Chinese remainder theorem.
 
   1. Implement a function
-      
+
       ```julia
       function inverse_via_lifting(A, p)
       end
       ```
-     
+
       which given an invertible integer matrix, determines the inverse via $p$-adic lifting and inversion of matrices over $\mathbf{F}\_p$.
 
       Hint: If $B$ is the inverse of $A$, write $B = B_0 + pB_1 + p^2 B_2 + \dotsb$ and reduce modulo $p$. There is no need to work with $p$-adic integers. It is sufficient to work in $\mathbf{Z}$ and $\mathbf{F}_p$. Helpful commands: `change_base_ring`, `inv`, `lift`, `divexact`.
@@ -569,7 +569,7 @@ You may wish to consult the [Oscar documentation](https://oscar-system.github.io
   1. Determine the group orders.
 
   2. How many of the groups are abelian / perfect / simple / solvable?
- 
+
   3. Can you give an interpretation what these groups describe?
 
 ### 3. Matrix groups
