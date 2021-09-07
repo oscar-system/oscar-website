@@ -48,7 +48,7 @@ people:
 
     - {name: Kunda Kambaso, affiliation: RWTH Aachen, category: red group}
 
-    - {name: Lars Göttgens, affiliation: RWTH Aachen, category: blue group}
+    - {name: Lars Göttgens, affiliation: RWTH Aachen, category: blue group, github: lgoe-ac}
 
     - {name: Liam Rogel, affiliation: TU Kaiserslautern, category: blue group}
 
