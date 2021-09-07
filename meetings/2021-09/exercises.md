@@ -181,7 +181,7 @@ You may wish to consult the [Julia documentation](https://docs.julialang.org/en/
        for i in 1:n
          a = F(a)
        end
-       a
+       return a
      end
 
      @time G((0,1), 10^6)
