@@ -19,7 +19,7 @@ The talks will be in Zoom. Everything else will take place in our gather.town wo
   - 09:00 Time to install stuff, try Gather.town, socialize, ...
   - 12:00 Lunch break
   - 13:00 Welcome session on Gather.town
-  - 13:10 Talk “Introduction to Julia” (Tommy Hofmann) [notebook](https://github.com/thofma/summerschool2021/blob/master/notebooks/Introduction%20to%20Julia.ipynb)
+  - 13:10 Talk “Introduction to Julia” (Tommy Hofmann) ([notebook](https://github.com/thofma/summerschool2021/blob/master/notebooks/Introduction%20to%20Julia.ipynb))
   - 14:10 Talk “An overview of Oscar” (Claus Fieker)
   - 14:40 Talk [“Git crash course”](https://www.math.rwth-aachen.de/~Thomas.Breuer/git_intro.pdf) (Thomas Breuer)
   - 15:40 Exercises
@@ -31,7 +31,7 @@ The talks will be in Zoom. Everything else will take place in our gather.town wo
   - 10:30 Talk [“Algorithms for polycyclic groups: abelian quotients, polycyclic presentations, collection” (Eamonn O'Brien)](https://www.math.rwth-aachen.de/~Thomas.Breuer/obrien_lecture1.pdf)
   - 11:30 Exercises
   - 12:30 Lunch break
-  - 13:30 Talk “Advanced Julia: How to not write slow code” (Tommy Hofmann)
+  - 13:30 Talk “Advanced Julia: How to not write slow code” (Tommy Hofmann) ([notebook](https://github.com/thofma/summerschool2021/blob/master/notebooks/Introduction%20to%20Julia.ipynb))
   - 14:30 Exercises
   - 16:30 Evening standup
 
