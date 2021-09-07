@@ -226,7 +226,7 @@ You may wish to consult the [Julia documentation](https://docs.julialang.org/en/
 
   ```julia
   g = cached(+)
-  println(g(1, 1)) == 1 + 1
+  println(g(1, 1) == 1 + 1)
   ```
 
   To check the caching, try the following function:
