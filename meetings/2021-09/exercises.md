@@ -293,7 +293,7 @@ You may wish to consult the [Oscar documentation](https://oscar-system.github.io
      {% include hint.html content="`galois_group`, `number_field`" %}
 
   2. Find a polynomial of degree $6$ with the same Galois groups as $f$.
-     {% include hint.html content="`normal_closure`, `defining_polynomial`" %}
+     {% include hint.html content="`normal_closure`, `defining_polynomial`, `isisomorphic`" %}
 
   3. Determine the Galois groups of $1000$ random monic, irreducible polynomials in $\mathbf{Z}[x]$ of degree $3$ and coefficients bounded in absolute value by $10$.
       What is the distribution?
@@ -307,10 +307,10 @@ You may wish to consult the [Oscar documentation](https://oscar-system.github.io
   1. Define the number field $K = \mathbf{Q}(\sqrt{2})$.
      {% include hint.html content="`number_field`" %}
 
-  2. Find a normal extension $L/K$ such that $\operatorname{Gal}(L/K) \cong \operatorname{C_2} \times \operatorname{C_2}$.
-     {% include hint.html content="`automorphism_group`" %}
+  2. Find a normal extension $L/K$ such that $\operatorname{Gal}(L/K)$ is non-cyclic of order $4$.
+     {% include hint.html content="`automorphism_group`, `iscyclic`, `order`" %}
 
-  3. Find all normal extension $L/K$ as in part 2 such that $L/\mathbf{Q}$ is normal and the absolute discriminant of $L$ is bounded by $10^{10}$.
+  3. Find all normal extension $L/K$ with $\operatorname{Gal}(L/K) \cong C_2 \timex C_2$ such that $L/\mathbf{Q}$ is normal and the absolute discriminant of $L$ is bounded by $10^{10}$.
      {% include hint.html content="`abelian_normal_extensions`" %}
 
   4. Determine a defining polynomial for one of the fields $L$ found in part 3. What is $\operatorname{Gal}(L/\mathbf{Q})$?
