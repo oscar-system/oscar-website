@@ -66,7 +66,7 @@ people:
 
     - {name: Rafael Mohr, affiliation: TU Kaiserslautern, category: blue group}
 
-    - {name: Robert Nowak, affiliation: Uni Oldenburg, category: red group}
+    - {name: Robert Nowak, affiliation: Uni Oldenburg, category: red group, GitHub: Asconik}
 
     - {name: Sergio Siccha, affiliation: TU Kaiserslautern, category: blue group}
 
