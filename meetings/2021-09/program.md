@@ -28,7 +28,7 @@ The talks will be in Zoom. Everything else will take place in our gather.town wo
 ### Tuesday, September 7
   - 09:00 Morning standup
   - 09:30 Exercises
-  - 10:30 Talk “Algorithms for polycyclic groups: abelian quotients, polycyclic presentations, collection” (Eamonn O'Brien)
+  - 10:30 Talk [“Algorithms for polycyclic groups: abelian quotients, polycyclic presentations, collection” (Eamonn O'Brien)](https://www.math.rwth-aachen.de/~Thomas.Breuer/obrien_lecture1.pdf)
   - 11:30 Exercises
   - 12:30 Lunch break
   - 13:30 Talk “Advanced Julia: How to not write slow code” (Tommy Hofmann)
