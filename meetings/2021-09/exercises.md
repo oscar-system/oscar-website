@@ -339,7 +339,7 @@ You may wish to consult the [Oscar documentation](https://oscar-system.github.io
 ### 6. Gröbner bases
 
   1. Define the polynomial ring $R = \mathbf{Q}[x, y, z]$.
-     {% include hint.html content="`polynomial_ring`" %}
+     {% include hint.html content="`PolynomialRing`" %}
 
   2. Define the ideal $I = \langle xy + z, yz − x, zx − y \rangle$.
      {% include hint.html content="`ideal`" %}
