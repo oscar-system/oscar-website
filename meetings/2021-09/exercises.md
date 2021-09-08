@@ -404,14 +404,14 @@ You may wish to consult the [Oscar documentation](https://oscar-system.github.io
   The goal of this exercise is to implement $R \times S$, the product of two commutative rings $R$ and $S$.
 
   ```julia
-  mutable struct ProdRing{S, T} <: Ring
+  mutable struct ProdRing{S, T} <: AbstractAlgebra.Ring
     first::S
     second::T
   end
   ```
 
   ```julia
-  mutable struct ProdRingElem{U, V} <: RingElement
+  mutable struct ProdRingElem{U, V} <: AbstractAlgebra.RingElem
     first::U
     second::V
     parent
