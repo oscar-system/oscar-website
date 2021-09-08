@@ -322,6 +322,7 @@ You may wish to consult the [Oscar documentation](https://oscar-system.github.io
      {% include hint.html content="`polynomial_ring`, `FiniteField`, `GF`" %}
 
   2. Define the matrix
+
      $$
         M = (x_{ij})_{1 \leq i \leq 3, 1 \leq j \leq 3} \in R^{3 \times 3}.
      $$
