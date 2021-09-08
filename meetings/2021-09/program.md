@@ -44,7 +44,7 @@ The talks will be in Zoom. Everything else will take place in our gather.town wo
   - 13:30 Talk “Advanced Git & GitHub” (Max Horn)
   - 14:30 Exercises
   - 16:30 Evening standup
-  - 19:00 Social gathering in Gater.Town
+  - 19:00 Social gathering in Gather.Town
 
 ### Thursday, September 9
   - 09:00 Morning standup
