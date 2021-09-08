@@ -356,13 +356,13 @@ You may wish to consult the [Oscar documentation](https://oscar-system.github.io
 ### 7. Integral lattices
 
   1. Define the $\mathbf{Z}$-lattice $L$ with Gram matrix
-     $$
+     $
         \begin{pmatrix}
         2 & 1 & 1 \\
         1 & 2 & 1 \\
         1 & 1 & 68
         \end{pmatrix}.
-     $$
+     $
      {% include hint.html content="`Zlattice`, `matrix`" %}
 
   2. Determine generators $S$ for the automorphism group of $L$ and its order.
