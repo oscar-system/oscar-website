@@ -319,7 +319,7 @@ You may wish to consult the [Oscar documentation](https://oscar-system.github.io
 ### 5. Determinantal variety
 
   1. Define the polynomial ring $R = {\mathbf{F}}{\_4}[x\_{ij} \mid 1 \leq i \leq 3, 1 \leq j \leq 3]$.
-     {% include hint.html content="`polynomial_ring`, `FiniteField`, `GF`" %}
+     {% include hint.html content="`PolynomialRing`, `FiniteField`, `GF`" %}
 
   2. Define the matrix $M = (x\_{ij})\_{1 \leq i \leq 3, 1 \leq j \leq 3} \in R^{3 \times 3}$.
      {% include hint.html content="`matrix`" %}
@@ -336,7 +336,7 @@ You may wish to consult the [Oscar documentation](https://oscar-system.github.io
 ### 6. Gröbner bases
 
   1. Define the polynomial ring $R = \mathbf{Q}[x, y, z]$.
-     {% include hint.html content="`polynomial_ring`" %}
+     {% include hint.html content="`PolynomialRing`" %}
 
   2. Define the ideal $I = \langle xy + z, yz − x, zx − y \rangle$.
      {% include hint.html content="`ideal`" %}
@@ -351,7 +351,7 @@ You may wish to consult the [Oscar documentation](https://oscar-system.github.io
      {% include hint.html content="`isprime`" %}
 
   6. Find a prime ideal containing $I$.
-     {% include hint.html content="`issubseteq`" %}
+     {% include hint.html content="`issubset`" %}
 
 ### 7. Integral lattices
 
