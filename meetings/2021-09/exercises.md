@@ -310,7 +310,7 @@ You may wish to consult the [Oscar documentation](https://oscar-system.github.io
   2. Find a normal extension $L/K$ such that $\operatorname{Gal}(L/K)$ is non-cyclic of order $4$.
      {% include hint.html content="`automorphism_group`, `iscyclic`, `order`" %}
 
-  3. Find all normal extension $L/K$ with $\operatorname{Gal}(L/K) \cong C_2 \timex C_2$ such that $L/\mathbf{Q}$ is normal and the absolute discriminant of $L$ is bounded by $10^{10}$.
+  3. Find all normal extension $L/K$ with $\operatorname{Gal}(L/K) \cong C_2 \times C_2$ such that $L/\mathbf{Q}$ is normal and the absolute discriminant of $L$ is bounded by $10^{10}$.
      {% include hint.html content="`abelian_normal_extensions`" %}
 
   4. Determine a defining polynomial for one of the fields $L$ found in part 3. What is $\operatorname{Gal}(L/\mathbf{Q})$?
@@ -319,7 +319,7 @@ You may wish to consult the [Oscar documentation](https://oscar-system.github.io
 ### 5. Determinantal variety
 
   1. Define the polynomial ring $R = {\mathbf{F}}{\_4}[x\_{ij} \mid 1 \leq i \leq 3, 1 \leq j \leq 3]$.
-     {% include hint.html content="`polynomial_ring`, `FiniteField`, `GF`" %}
+     {% include hint.html content="`PolynomialRing`, `FiniteField`, `GF`" %}
 
   2. Define the matrix
      $$
