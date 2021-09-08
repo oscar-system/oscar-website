@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>reveal-md</title>
+    <link rel="shortcut icon" href="./favicon.ico"/>
+    <link rel="stylesheet" href="./dist/reveal.css" />
+    <link rel="stylesheet" href="./dist/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/zenburn.css" />
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template">
+# Advanced Git and GitHub
+
+Max Horn
+
+Summer School “Computeralgebra”
+
+September 2021
+
+Powered by [Reveal.js](https://revealjs.com/) 
+and [reveal-md](https://github.com/webpro/reveal-md)
+
+</script></section><section  data-markdown><script type="text/template">
+## On git versions
+  - <!-- .element: class="fragment" -->Which version of git do you have?
+  - <!-- .element: class="fragment" -->Check using <code>git --version</code>
+  - <!-- .element: class="fragment" -->Ubuntu 20.04: 2.25.1
+  - <!-- .element: class="fragment" -->macOS: 2.21.1
+  - <!-- .element: class="fragment" --> e.g. <code>git restore</code> was added in 2.25.0
+</script></section><section  data-markdown><script type="text/template">
+## Configuring git
+  - <!-- .element: class="fragment" --> there are tons of git options 
+  - <!-- .element: class="fragment" --> most of which you will and should ignore
+  - <!-- .element: class="fragment" --> but a few are important or super useful
+  - <!-- .element: class="fragment" --> set or query them with <code>git config</code> or edit <code>~/.gitconfig</code> or <code>.git/config</code>
+  - <!-- .element: class="fragment" --> Everyone should set a username and email so that commits are attributed right!
+    ```bash
+    git config --global user.name "Mona Lisa"
+    git config --global user.email "email@example.com"
+    ```
+  - <!-- .element: class="fragment" --> I'll show you some more as we progress
+</script></section><section  data-markdown><script type="text/template">
+## Nicer highlighting in diffs
+  1. <!-- .element: class="fragment" --> install <code>diff-highlight</code>, e.g. from <https://bit.ly/diff-highlight>
+      ```bash
+      cd ~/bin  # go to any dir in your PATH you can write to
+      curl -L -o diff-highlight https://bit.ly/diff-highlight
+      chmod a+x diff-highlight
+      ```
+  2. <!-- .element: class="fragment" --> Tell git to use it:
+    ```bash
+    git config --global interactive.diffFilter diff-highlight
+    ```
+  3. <!-- .element: class="fragment" --> Now try <code>git diff</code> or <code>git show</code> or <code>git log -p</code> or ... 
+  4. <!-- .element: class="fragment" -->Demo time!
+</script></section><section  data-markdown><script type="text/template">
+## `pull`, `fetch`, `merge`, `rebase`
+  - <!-- .element: class="fragment" --> <code>git fetch</code> downloads any changes from the remote but does not apply them
+  - <!-- .element: class="fragment" --> <code>git merge</code> (or for advanced users: <code>git rebase</code>) applies remote changes locally
+  - <!-- .element: class="fragment" --> <code>git pull</code> combines those two
+  - <!-- .element: class="fragment" --> (for pros: <code>git pull -r</code> combines <code>fetch</code> and <code>rebase</code> instead)
+  - <!-- .element: class="fragment" --> Using <code>git pull</code> can lead to annoying issues when your branch and the remote diverged
+  - <!-- .element: class="fragment" --> Demo time
+</script></section><section  data-markdown><script type="text/template">
+## Safer <code>git pull</code>
+   - <!-- .element: class="fragment" --> Make <code>git pull</code> only do "fast forwards:"
+     ```
+     git config --global pull.ff only
+     ```
+   - <!-- .element: class="fragment" --> Or set up nice aliases:
+     ```
+     git config --global alias.up 'pull --ff-only'
+     ```
+</script></section><section  data-markdown><script type="text/template">
+## How to not retype your password all the time
+  - [GitHub has nice instructions on this](https://docs.github.com/en/get-started/getting-started-with-git/why-is-git-always-asking-for-my-password)
+  - My recommendation: [set up an SSH key](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+</script></section><section  data-markdown><script type="text/template">
+## GitHub on the command line
+  - <!-- .element: class="fragment" --> install the <code>gh</code> tool from https://cli.github.com
+  - <!-- .element: class="fragment" --> some things you can do
+    - <!-- .element: class="fragment" --> browse and manage issues and pull requests (PRs)
+    - <!-- .element: class="fragment" --> submit PRs
+    - <!-- .element: class="fragment" --> create, clone, fork, and view repositories
+    - <!-- .element: class="fragment" --> manage SSH keys
+    - <!-- .element: class="fragment" --> ... and much more
+</script></section><section  data-markdown><script type="text/template">
+## Exploring the code
+  - <!-- .element: class="fragment" --> <code>git grep</code>
+  - <!-- .element: class="fragment" --> For <code>bash</code> users:
+    ```
+    # print line numbers, use Perl regex
+    alias gg='git grep -n -P'
+    ``` 
+  - <!-- .element: class="fragment" --> excursion: ripgrep / <code>rg</code> from <https://github.com/BurntSushi/ripgrep>
+  - <!-- .element: class="fragment" --> <code>git log</code>
+  - <!-- .element: class="fragment" --> <code>git log --decorate --graph</code>
+  - <!-- .element: class="fragment" --> <code>git blame</code>
+      - via git: <code>git blame</code>
+      - via GitHub: 
+      - via tig <https://jonas.github.io/tig/>
+      - via VS Code
+</script></section><section  data-markdown><script type="text/template">
+## Worktree, staging area and committed code
+  - <!-- .element: class="fragment" --> Let's discuss worktree and the staging area
+  - <!-- .element: class="fragment" --> this enables some really powerful things
+    ```bash
+    git add -p       # stage some changes
+    git reset -p     # unstage some changes
+    git checkout -p  # discard some changes
+    ```
+  - <!-- .element: class="fragment" --> Make them slightly nicer:
+    ```
+    git config --global interactive.singlekey true
+    ```
+</script></section><section  data-markdown><script type="text/template">
+## Dealing with mistakes in commits
+  
+  - <!-- .element: class="fragment" --> Made a mistake and want to undo it?
+  - <!-- .element: class="fragment" --> E.g. a typo in the commit message, or you added a backup file by accident, or ....
+  - <!-- .element: class="fragment" --> If your code is already public and used by others: best to just live with it!
+  - <!-- .element: class="fragment" --> if you want to undo a change, can still use this:
+  ```
+  git revert COMMIT
+  ```
+  - <!-- .element: class="fragment" --> But what if you really want to get rid of it?
+</script></section><section  data-markdown><script type="text/template">
+## Rewriting history <img src="danger.png" width="100" align=center>
+  
+  - <!-- .element: class="fragment" --> change last commit:
+    ```
+    git commit --amend
+    ```
+  - <!-- .element: class="fragment" --> change or even reorder multiple commits:
+    ```
+    git rebase -i BASECOMMIT
+    ```
+  - <!-- .element: class="fragment" --> Committed to the wrong branch? Use
+    ```
+    git cherry-pick
+    ```
+  - <!-- .element: class="fragment" --> 
+    ```
+    git commit --fixup
+    # for best experience in interactive rebase set this config option:
+    git config --global rebase.autosquash true
+    ```
+</script></section><section  data-markdown><script type="text/template">
+## Recovering from errors
+  - <!-- .element: class="fragment" --> <code>git rebase --abort</code>, <code>git merge --abort</code>, ...
+  - <!-- .element: class="fragment" --> on resolving rebase and merge conflicts
+  - <!-- .element: class="fragment" --> more, see refs at end
+</script></section><section  data-markdown><script type="text/template">
+## Further reading
+  - <https://git-scm.com/doc>
+  - <https://ohmygit.org>
+  - <https://dangitgit.com/en>
+  - <https://github.blog/2015-06-08-how-to-undo-almost-anything-with-git/>
+  - <https://archaeogeek.github.io/gettingstartedwithgit/extras/disaster.html>
+</script></section><section  data-markdown><script type="text/template">
+## GitHub Action and Continuous Integration CI)
+  1. <!-- .element: class="fragment" --> what is CI?
+  2. <!-- .element: class="fragment" --> how to set it up for a simple Julia project
+  3. <!-- .element: class="fragment" --> how to interpret the output
+</script></section><section  data-markdown><script type="text/template">
+
+## MISC
+
+- commit message guidelines
+- what about my git scripts??
+- https://ohmygit.org
+- `git reflog` / `HEAD@{1}`
+- https://dangitgit.com/en
+- https://github.blog/2015-06-08-how-to-undo-almost-anything-with-git/
+</script></section></div>
+    </div>
+
+    <script src="./dist/reveal.js"></script>
+
+    <script src="./plugin/markdown/markdown.js"></script>
+    <script src="./plugin/highlight/highlight.js"></script>
+    <script src="./plugin/zoom/zoom.js"></script>
+    <script src="./plugin/notes/notes.js"></script>
+    <script src="./plugin/math/math.js"></script>
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath
+        ]
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>

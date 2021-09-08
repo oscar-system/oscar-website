@@ -41,7 +41,7 @@ The talks will be in Zoom. Everything else will take place in our gather.town wo
   - 10:30 Talk [“Algorithms for polycyclic groups: p-quotient algorithm”](https://www.math.rwth-aachen.de/~Thomas.Breuer/obrien_lectures1_2.pdf) (Eamonn O'Brien)
   - 11:30 Exercises
   - 12:30 Lunch break
-  - 13:30 Talk “Advanced Git & GitHub” (Max Horn)
+  - 13:30 Talk [“Advanced Git & GitHub”](../slides/advanced-git-github) (Max Horn)
   - 14:30 Exercises
   - 16:30 Evening standup
   - 19:00 Social gathering in Gather.Town
