@@ -50,7 +50,7 @@ people:
 
     - {name: Lars Göttgens, affiliation: RWTH Aachen, category: blue group, github: lgoe-ac}
 
-    - {name: Liam Rogel, affiliation: TU Kaiserslautern, category: blue group}
+    - {name: Liam Rogel, affiliation: TU Kaiserslautern, category: blue group, github: rogeliam}
 
     - {name: Matias Klimpel, affiliation: Uni Saarland, category: red group}
 
