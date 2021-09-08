@@ -18,7 +18,7 @@ people:
 
     - {name: Daniel Schultz, affiliation: TU Kaiserslautern, category: instructor}
 
-    - {name: Alheydis Geiger, affiliation: Uni Tübingen, category: blue group}
+    - {name: Alheydis Geiger, affiliation: Uni Tübingen, category: blue group, github: AlheydisGeiger}
 
     - {name: Ali Aslam, affiliation: TU Kaiserslautern, category: red group}
 
