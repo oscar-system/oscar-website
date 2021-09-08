@@ -321,11 +321,7 @@ You may wish to consult the [Oscar documentation](https://oscar-system.github.io
   1. Define the polynomial ring $R = {\mathbf{F}}{\_4}[x\_{ij} \mid 1 \leq i \leq 3, 1 \leq j \leq 3]$.
      {% include hint.html content="`polynomial_ring`, `FiniteField`, `GF`" %}
 
-  2. Define the matrix
-
-     $$
-        M = (x_{ij})_{1 \leq i \leq 3, 1 \leq j \leq 3} \in R^{3 \times 3}.
-     $$
+  2. Define the matrix $M = (x\_{ij})\_{1 \leq i \leq 3, 1 \leq j \leq 3} \in R^{3 \times 3}$.
      {% include hint.html content="`matrix`" %}
 
   3. Determine the defining ideal of the determinantal variety $V$ of size $3 \times 3$ and rank 1, which is defined as the vanishing set of the $2$-minors of $M$.
