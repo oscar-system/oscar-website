@@ -74,7 +74,7 @@ people:
 
     - {name: Sogo Pierre Sanon, affiliation: TU Kaiserslautern, category: blue group}
 
-    - {name: Stevell Muller, affiliation: Uni Saarland, category: red group}
+    - {name: Stevell Muller, affiliation: Uni Saarland, category: red group, github: StevellM}
 
     - {name: Sylvain Spitz, affiliation: TU Berlin, category: blue group}
 
