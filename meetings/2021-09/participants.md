@@ -87,6 +87,8 @@ people:
     - {name: Yvonne Neuy, affiliation: Uni Saarland, category: red group}
 
     - {name: Yvonne Weber, affiliation: TU Kaiserslautern, category: blue group}
+    
+    - {name: Michael Schlößer, affiliation: RWTH Aachen, category: red group, github: MichaelSchloesser}
 
 ---
 
