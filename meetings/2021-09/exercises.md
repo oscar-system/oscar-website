@@ -354,7 +354,7 @@ You may wish to consult the [Oscar documentation](https://oscar-system.github.io
      {% include hint.html content="`isprime`" %}
 
   6. Find a prime ideal containing $I$.
-     {% include hint.html content="`issubseteq`" %}
+     {% include hint.html content="`issubset`" %}
 
 ### 7. Integral lattices
 
