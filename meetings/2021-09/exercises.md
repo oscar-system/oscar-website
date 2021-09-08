@@ -440,7 +440,7 @@ You may wish to consult the [Oscar documentation](https://oscar-system.github.io
 
 ### 10. Skew-polynomial rings
 
-  Let $S = R[X]$ be the set of all polynomials $\sum_{i} a_i X^i$ and $f$ a ring endomorphism of $R$. We define $X^n \cdot r = f(r)\cdot X^n$ for $r \in R$. With the ordinary additional of polynomials, this yields a skew-polynomial ring, which we want to implement.
+  Let $S = R[X]$ be the set of all polynomials $\sum_{i} a_i X^i$ and $f$ a ring endomorphism of $R$. We define $X \cdot r = f(r)\cdot X$ for $r \in R$. With the ordinary additional of polynomials, this yields a skew-polynomial ring, which we want to implement.
 
   ```julia
   mutable struct SkewPolyRing{S, T} <: NCRing
