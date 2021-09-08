@@ -28,7 +28,7 @@ The talks will be in Zoom. Everything else will take place in our gather.town wo
 ### Tuesday, September 7
   - 09:00 Morning standup
   - 09:30 Exercises
-  - 10:30 Talk [“Algorithms for polycyclic groups: abelian quotients, polycyclic presentations, collection” (Eamonn O'Brien)](https://www.math.rwth-aachen.de/~Thomas.Breuer/obrien_lecture1.pdf)
+  - 10:30 Talk [“Algorithms for polycyclic groups: abelian quotients, polycyclic presentations, collection”](https://www.math.rwth-aachen.de/~Thomas.Breuer/obrien_lecture1.pdf) (Eamonn O'Brien)
   - 11:30 Exercises
   - 12:30 Lunch break
   - 13:30 Talk “Advanced Julia: How to not write slow code” (Tommy Hofmann) ([notebook](https://github.com/thofma/summerschool2021/blob/master/notebooks/How%20to%20not%20write%20slow%20Julia%20code.ipynb))
@@ -38,7 +38,7 @@ The talks will be in Zoom. Everything else will take place in our gather.town wo
 ### Wednesday, September 8
   - 09:00 Morning standup
   - 09:30 Exercises
-  - 10:30 Talk “Algorithms for polycyclic groups: p-quotient algorithm” (Eamonn O'Brien)
+  - 10:30 Talk [“Algorithms for polycyclic groups: p-quotient algorithm”](https://www.math.rwth-aachen.de/~Thomas.Breuer/obrien_lectures1_2.pdf) (Eamonn O'Brien)
   - 11:30 Exercises
   - 12:30 Lunch break
   - 13:30 Talk “Advanced Git & GitHub” (Max Horn)
