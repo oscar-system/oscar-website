@@ -51,7 +51,7 @@ The talks will be in Zoom. Everything else will take place in our gather.town wo
   - 09:30 Talk “Computational exact linear algebra: from theory to practice” (Clément Pernet)
     [abstract](#computational-exact-linear-algebra-from-theory-to-practice-clément-pernet)
 
-  - 10:30 Talk “Algorithms for polycyclic groups: p-group generation algorithm, SmallGroups project” (Eamonn O'Brien)
+  - 10:30 Talk [“Algorithms for polycyclic groups: p-group generation algorithm, SmallGroups project”](https://www.math.rwth-aachen.de/~Thomas.Breuer/obrien_lectures1_2_3.pdf) (Eamonn O'Brien)
   - 11:30 Exercises
   - 12:30 Lunch break
   - 13:30 Exercises
@@ -74,8 +74,8 @@ delivers competitive theoretical complexities and also better harnesses the effi
 computing infrastructures. We will present an overview on the recent advances in exact linear
 algebra algorithmic and implementation techniques, and highlight the few key ideas that have proven
 successful in their design. After considering the choice of the low level computer arithmetic, we
-will illutsrate how algorithmic reductions designed for theoretical complexity improvements become
-also relevant for efficiency in practice. Laslty, we will give a special care to the design and
+will illustrate how algorithmic reductions designed for theoretical complexity improvements become
+also relevant for efficiency in practice. Lastly, we will give a special care to the design and
 implementation of parallel exact linear algebra routines, trying to emphasize the similarities and
 distinctness with parallel numerical linear algebra. We aim to provide the working computer
 algebraist with a set of best practices for the use or the design of exact linear algebra software.
