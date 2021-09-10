@@ -48,7 +48,7 @@ The talks will be in Zoom. Everything else will take place in our gather.town wo
 
 ### Thursday, September 9
   - 09:00 Morning standup
-  - 09:30 Talk “Computational exact linear algebra: from theory to practice” (Clément Pernet)
+  - 09:30 Talk [“Computational exact linear algebra: from theory to practice”](../slides/oscar_linalg.pdf) (Clément Pernet)
     [abstract](#computational-exact-linear-algebra-from-theory-to-practice-clément-pernet)
 
   - 10:30 Talk [“Algorithms for polycyclic groups: p-group generation algorithm, SmallGroups project”](https://www.math.rwth-aachen.de/~Thomas.Breuer/obrien_lectures1_2_3.pdf) (Eamonn O'Brien)
