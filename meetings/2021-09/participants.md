@@ -44,7 +44,7 @@ people:
 
     - {name: Jens Brandt, affiliation: RWTH Aachen, category: blue group}
 
-    - {name: Julien Schanz, affiliation: Uni Saarland, category: blue group}
+    - {name: Julien Schanz, affiliation: Uni Saarland, category: blue group, github: julien-schanz}
 
     - {name: Kunda Kambaso, affiliation: RWTH Aachen, category: red group}
 
