@@ -52,7 +52,7 @@ people:
 
     - {name: Liam Rogel, affiliation: TU Kaiserslautern, category: blue group, github: rogeliam}
 
-    - {name: Matias Klimpel, affiliation: Uni Saarland, category: red group}
+    - {name: Matias Klimpel, affiliation: Uni Saarland, category: red group, github: mklimpel}
 
     - {name: Max Mayer, affiliation: TU Kaiserslautern, category: red group}
 
