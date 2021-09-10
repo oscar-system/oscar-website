@@ -38,7 +38,7 @@ people:
 
     - {name: George Balla, affiliation: RWTH Aachen, category: blue group}
 
-    - {name: Ibrahim Ahmad, affiliation: RWTH Aachen, category: red group}
+    - {name: Ibrahim Ahmad, affiliation: RWTH Aachen, category: red group, github: ibrahim-ahm}
 
     - {name: Jan Rodriguez, affiliation: RWTH Aachen, category: red group}
 
