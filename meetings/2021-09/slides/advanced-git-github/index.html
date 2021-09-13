@@ -7,7 +7,7 @@
     <title>reveal-md</title>
     <link rel="shortcut icon" href="./favicon.ico"/>
     <link rel="stylesheet" href="./dist/reveal.css" />
-    <link rel="stylesheet" href="./dist/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="./dist/theme/moon.css" id="theme" />
     <link rel="stylesheet" href="./css/highlight/zenburn.css" />
 
   </head>
@@ -22,23 +22,27 @@ Summer School “Computeralgebra”
 
 September 2021
 
-Powered by [Reveal.js](https://revealjs.com/) 
+Powered by [Reveal.js](https://revealjs.com/)
 and [reveal-md](https://github.com/webpro/reveal-md)
 
+<style type="text/css" media="screen">
+code { color: white }
+</style>
 </script></section><section  data-markdown><script type="text/template">
 ## On git versions
   - <!-- .element: class="fragment" -->Which version of git do you have?
   - <!-- .element: class="fragment" -->Check using <code>git --version</code>
-  - <!-- .element: class="fragment" -->Ubuntu 20.04: 2.25.1
-  - <!-- .element: class="fragment" -->macOS: 2.21.1
+  - <!-- .element: class="fragment" -->Ubuntu 20.04: 2.25.1; macOS: 2.21.1
+  - <!-- .element: class="fragment" -->Newer ones have more futures, better help, ec.
+  - <!-- .element: class="fragment" -->I'll try to stick to “classics” but mistakes happen...
   - <!-- .element: class="fragment" --> e.g. <code>git restore</code> was added in 2.25.0
 </script></section><section  data-markdown><script type="text/template">
 ## Configuring git
-  - <!-- .element: class="fragment" --> there are tons of git options 
+  - <!-- .element: class="fragment" --> there are tons of git options
   - <!-- .element: class="fragment" --> most of which you will and should ignore
   - <!-- .element: class="fragment" --> but a few are important or super useful
   - <!-- .element: class="fragment" --> set or query them with <code>git config</code> or edit <code>~/.gitconfig</code> or <code>.git/config</code>
-  - <!-- .element: class="fragment" --> Everyone should set a username and email so that commits are attributed right!
+  - <!-- .element: class="fragment" --> everyone should set a username and email so that commits are attributed right!
     ```bash
     git config --global user.name "Mona Lisa"
     git config --global user.email "email@example.com"
@@ -46,18 +50,20 @@ and [reveal-md](https://github.com/webpro/reveal-md)
   - <!-- .element: class="fragment" --> I'll show you some more as we progress
 </script></section><section  data-markdown><script type="text/template">
 ## Nicer highlighting in diffs
-  1. <!-- .element: class="fragment" --> install <code>diff-highlight</code>, e.g. from <https://bit.ly/diff-highlight>
-      ```bash
-      cd ~/bin  # go to any dir in your PATH you can write to
-      curl -L -o diff-highlight https://bit.ly/diff-highlight
-      chmod a+x diff-highlight
-      ```
-  2. <!-- .element: class="fragment" --> Tell git to use it:
+  - <!-- .element: class="fragment" --> install <code>diff-highlight</code>
     ```bash
-    git config --global interactive.diffFilter diff-highlight
+    cd ~/bin  # go to any dir in your PATH you can write to
+    curl -L -o diff-highlight https://bit.ly/diff-highlight
+    chmod a+x diff-highlight
     ```
-  3. <!-- .element: class="fragment" --> Now try <code>git diff</code> or <code>git show</code> or <code>git log -p</code> or ... 
-  4. <!-- .element: class="fragment" -->Demo time!
+  - <!-- .element: class="fragment" --> tell git to use it:
+    ```bash
+    git config --global pager.diff 'diff-highlight | less'
+    git config --global pager.log 'diff-highlight | less'
+    git config --global pager.show 'diff-highlight | less'
+    ```
+  - <!-- .element: class="fragment" --> now try <code>git diff</code>, <code>git show</code>, <code>git log -p</code>
+  - <!-- .element: class="fragment" -->alternative: <a href="https://github.com/so-fancy/diff-so-fancy">https://github.com/so-fancy/diff-so-fancy</a>
 </script></section><section  data-markdown><script type="text/template">
 ## `pull`, `fetch`, `merge`, `rebase`
   - <!-- .element: class="fragment" --> <code>git fetch</code> downloads any changes from the remote but does not apply them
@@ -65,14 +71,13 @@ and [reveal-md](https://github.com/webpro/reveal-md)
   - <!-- .element: class="fragment" --> <code>git pull</code> combines those two
   - <!-- .element: class="fragment" --> (for pros: <code>git pull -r</code> combines <code>fetch</code> and <code>rebase</code> instead)
   - <!-- .element: class="fragment" --> Using <code>git pull</code> can lead to annoying issues when your branch and the remote diverged
-  - <!-- .element: class="fragment" --> Demo time
 </script></section><section  data-markdown><script type="text/template">
 ## Safer <code>git pull</code>
-   - <!-- .element: class="fragment" --> Make <code>git pull</code> only do "fast forwards:"
+   - <!-- .element: class="fragment" --> Make <code>git pull</code> only do “fast forwards:”
      ```
      git config --global pull.ff only
      ```
-   - <!-- .element: class="fragment" --> Or set up nice aliases:
+   - <!-- .element: class="fragment" --> Or set up a nice alias, e.g. <code>git up</code>:
      ```
      git config --global alias.up 'pull --ff-only'
      ```
@@ -82,28 +87,51 @@ and [reveal-md](https://github.com/webpro/reveal-md)
   - My recommendation: [set up an SSH key](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
 </script></section><section  data-markdown><script type="text/template">
 ## GitHub on the command line
-  - <!-- .element: class="fragment" --> install the <code>gh</code> tool from https://cli.github.com
-  - <!-- .element: class="fragment" --> some things you can do
-    - <!-- .element: class="fragment" --> browse and manage issues and pull requests (PRs)
-    - <!-- .element: class="fragment" --> submit PRs
+  - <!-- .element: class="fragment" --> install the <code>gh</code> tool from <a href="https://cli.github.com">https://cli.github.com</a>
+  - <!-- .element: class="fragment" --> some things it can do for you:
+    - <!-- .element: class="fragment" --> browse and manage issues and pull requests
+    - <!-- .element: class="fragment" --> submit pull requests
     - <!-- .element: class="fragment" --> create, clone, fork, and view repositories
     - <!-- .element: class="fragment" --> manage SSH keys
     - <!-- .element: class="fragment" --> ... and much more
 </script></section><section  data-markdown><script type="text/template">
-## Exploring the code
-  - <!-- .element: class="fragment" --> <code>git grep</code>
-  - <!-- .element: class="fragment" --> For <code>bash</code> users:
+## Exploring the code: grep
+  - <!-- .element: class="fragment" --> <code>git grep</code>: search text in your repository, fast!
+  - <!-- .element: class="fragment" --> I use it a lot, and have this in my <code>~/.bashrc</code>
     ```
     # print line numbers, use Perl regex
     alias gg='git grep -n -P'
-    ``` 
-  - <!-- .element: class="fragment" --> excursion: ripgrep / <code>rg</code> from <https://github.com/BurntSushi/ripgrep>
-  - <!-- .element: class="fragment" --> <code>git log</code>
-  - <!-- .element: class="fragment" --> <code>git log --decorate --graph</code>
+    ```
+  - <!-- .element: class="fragment" --> e.g. search <code>*.jl</code> files for <code>quo</code> methods on groups:
+    ```
+    gg quo.*Group :*.jl
+    ```
+  - <!-- .element: class="fragment" --> even faster: ripgrep / <code>rg</code> from <a href="https://github.com/BurntSushi/ripgrep">https://github.com/BurntSushi/ripgrep</a>
+    ```
+    rg --type=julia quo.*Group
+    ```
+</script></section><section  data-markdown><script type="text/template">
+## Exploring the code: log
+  - <!-- .element: class="fragment" --> <code>git log</code> helps you see how code developed
+  - <!-- .element: class="fragment" --> <code>git log --graph</code> also shows branching
+  - <!-- .element: class="fragment" --> <code>git log --oneline</code> shows compact log
+  - <!-- .element: class="fragment" --> can be combined!
+  - <!-- .element: class="fragment" --> tons of ways to tweak the output; e.g. I use this to get the oneline graph log on stereoids:
+   ```
+    git log --graph --abbrev-commit --pretty=format:\
+    '%C(auto)%h%Creset %Cgreen(%ad)%C(auto)%d%Creset \
+    %s %C(bold blue)<%an>%Creset'
+   ```
+</script></section><section  data-markdown><script type="text/template">
+## Exploring the code: log 2
+  - <!-- .element: class="fragment" --> <code>git log</code> has many useful options to restrict which commits it shows, e.g. restrict the author, date, commit message, ...
+  - <!-- .element: class="fragment" --> <code>git log -G PATTERN</code> finds all commits for which the diff matches the given pattern; allows to e.g. discover when some code was added or removed
+</script></section><section  data-markdown><script type="text/template">
+## Exploring the code: blame
   - <!-- .element: class="fragment" --> <code>git blame</code>
       - via git: <code>git blame</code>
-      - via GitHub: 
-      - via tig <https://jonas.github.io/tig/>
+      - via GitHub:
+      - via tig <a href="https://jonas.github.io/tig/">https://jonas.github.io/tig/</a>
       - via VS Code
 </script></section><section  data-markdown><script type="text/template">
 ## Worktree, staging area and committed code
@@ -120,7 +148,7 @@ and [reveal-md](https://github.com/webpro/reveal-md)
     ```
 </script></section><section  data-markdown><script type="text/template">
 ## Dealing with mistakes in commits
-  
+
   - <!-- .element: class="fragment" --> Made a mistake and want to undo it?
   - <!-- .element: class="fragment" --> E.g. a typo in the commit message, or you added a backup file by accident, or ....
   - <!-- .element: class="fragment" --> If your code is already public and used by others: best to just live with it!
@@ -131,7 +159,7 @@ and [reveal-md](https://github.com/webpro/reveal-md)
   - <!-- .element: class="fragment" --> But what if you really want to get rid of it?
 </script></section><section  data-markdown><script type="text/template">
 ## Rewriting history <img src="danger.png" width="100" align=center>
-  
+
   - <!-- .element: class="fragment" --> change last commit:
     ```
     git commit --amend
@@ -144,7 +172,7 @@ and [reveal-md](https://github.com/webpro/reveal-md)
     ```
     git cherry-pick
     ```
-  - <!-- .element: class="fragment" --> 
+  - <!-- .element: class="fragment" -->
     ```
     git commit --fixup
     # for best experience in interactive rebase set this config option:
@@ -157,26 +185,18 @@ and [reveal-md](https://github.com/webpro/reveal-md)
   - <!-- .element: class="fragment" --> more, see refs at end
 </script></section><section  data-markdown><script type="text/template">
 ## Further reading
-  - <https://git-scm.com/doc>
-  - <https://ohmygit.org>
-  - <https://dangitgit.com/en>
-  - <https://github.blog/2015-06-08-how-to-undo-almost-anything-with-git/>
-  - <https://archaeogeek.github.io/gettingstartedwithgit/extras/disaster.html>
+  - <a href="https://git-scm.com/doc">https://git-scm.com/doc</a>
+  - <a href="https://ohmygit.org">https://ohmygit.org</a>
+  - <a href="https://dangitgit.com/en">https://dangitgit.com/en</a>
+  - <a href="https://github.blog/2015-06-08-how-to-undo-almost-anything-with-git/">https://github.blog/2015-06-08-how-to-undo-almost-anything-with-git/</a>
+  - <a href="https://archaeogeek.github.io/gettingstartedwithgit/extras/disaster.html">https://archaeogeek.github.io/gettingstartedwithgit/extras/disaster.html</a>
 </script></section><section  data-markdown><script type="text/template">
-## GitHub Action and Continuous Integration CI)
-  1. <!-- .element: class="fragment" --> what is CI?
-  2. <!-- .element: class="fragment" --> how to set it up for a simple Julia project
-  3. <!-- .element: class="fragment" --> how to interpret the output
-</script></section><section  data-markdown><script type="text/template">
-
-## MISC
+## TODO
 
 - commit message guidelines
-- what about my git scripts??
-- https://ohmygit.org
-- `git reflog` / `HEAD@{1}`
-- https://dangitgit.com/en
-- https://github.blog/2015-06-08-how-to-undo-almost-anything-with-git/
+- `git bisect`
+- `git stash`
+- `git stash pop` = `git stash apply` + `git stash drop`
 </script></section></div>
     </div>
 
@@ -220,7 +240,7 @@ and [reveal-md](https://github.com/webpro/reveal-md)
       // options from URL query string
       var queryOptions = Reveal().getQueryHash() || {};
 
-      var options = extend(defaultOptions, {}, queryOptions);
+      var options = extend(defaultOptions, {"transition":"slide","progress":false,"pdfSeparateFragments":false,"fragments":false}, queryOptions);
     </script>
 
 
