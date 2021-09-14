@@ -198,3 +198,115 @@ If you are using OSCAR in the Windows Subsystem for Linux, you will require a br
 in your subsystem. This can be a probem as the default subsystem is Ubuntu and Ubuntu 
 installs browsers via snap which is disabled for subsystems. To circumvent this problem, 
 please see [how to install browsers via deb](https://www.omgubuntu.co.uk/2022/04/how-to-install-firefox-deb-apt-ubuntu-22-04).
+
+
+## System-wide installation of Oscar
+
+It is possible to install Oscar and its cornerstones only once on your system,
+and to let several people use this installation.
+For that, the following `bash` scripts can be used.
+
+<div class="clickdesc">
+
+<details>
+<summary>
+Install Oscar system-wide.
+</summary>
+Enter the following commands into a file (for example <code>oscar_systemwide_install</code>),
+adjust the paths for the variables <code>julia_for_oscar</code> and <code>central_depot</code>,
+and then run the script in a terminal (with administrator rights).
+{% highlight bash %}
+#!/bin/bash
+
+# Specify the intended version of Julia.
+julia_for_oscar=/users/oscar/julia-1.6.1/bin/julia
+
+# Specify the intended location of the central Oscar installation.
+central_depot=/users/oscar/JULIA_DEPOT
+
+# Set the Julia variables that control the location of packages.
+# (Do not admit the current user's own depot path.)
+export JULIA_DEPOT_PATH=${central_depot}
+export JULIA_LOAD_PATH="@:@v#.#:@stdlib:${central_depot}/environments/globalenv"
+
+# Let Julia install and precompile the packages.
+${julia_for_oscar} -e 'using Pkg; \
+Pkg.add("Oscar"); using Oscar; \
+Pkg.add("GAP"); using GAP; \
+Pkg.add("Nemo"); using Nemo; \
+Pkg.add("Hecke"); using Hecke; \
+Pkg.add("Singular"); using Singular; \
+Pkg.add("Polymake"); using Polymake; \
+Pkg.add("AbstractAlgebra"); using AbstractAlgebra; \
+exit();'
+
+# Write a file that will be loaded by Julia on startup.
+echo 'using Pkg; Pkg.activate("'${central_depot}'/environments/v" * join(split(string(VERSION), ".")[1:2], "."))' > ${central_depot}/julia_load_initial.jl
+{% endhighlight %}
+</details>
+
+<details>
+<summary>
+Call Julia such that the system-wide installation of Oscar gets loaded
+when the user enters <code>using Oscar</code> in the Julia session.
+</summary>
+Enter the following commands into a file (for example <code>julia_with_oscar</code>),
+adjust the paths for the variables <code>julia_for_oscar</code> and <code>central_depot</code>,
+and then run the script in a terminal (not with administrator rights).
+{% highlight bash %}
+#!/bin/bash
+
+# Specify the intended version of Julia.
+julia_for_oscar=/users/oscar/julia-1.6.1/bin/julia
+
+# Specify the intended location of the central Oscar installation.
+central_depot=/users/oscar/JULIA_DEPOT
+
+# Admit the user's own depot path and the path with the central installation.
+export JULIA_DEPOT_PATH=$HOME/.julia:${central_depot}
+export JULIA_LOAD_PATH="@:@v#.#:@stdlib:${central_depot}/environments/globalenv"
+
+# Call Julia.
+${julia_for_oscar} --load ${central_depot}/julia_load_initial.jl
+{% endhighlight %}
+</details>
+
+<details>
+<summary>
+Update the system-wide installation of Oscar when a new version is available.
+</summary>
+Enter the following commands into a file (for example <code>oscar_systemwide_update</code>),
+adjust the paths for the variables <code>julia_for_oscar</code> and <code>central_depot</code>,
+and then run the script in a terminal (with administrator rights).
+{% highlight bash %}
+#!/bin/bash
+
+# Specify the intended version of Julia.
+julia_for_oscar=/users/oscar/julia-1.6.1/bin/julia
+
+# Specify the intended location of the central Oscar installation.
+central_depot=/users/oscar/JULIA_DEPOT
+
+# Set the Julia variables that control the location of packages.
+export JULIA_DEPOT_PATH=${central_depot}
+export JULIA_LOAD_PATH="@:@v#.#:@stdlib:${central_depot}/environments/globalenv"
+
+# Let Julia update and precompile the installed packages.
+${julia_for_oscar} -e 'using Pkg; \
+Pkg.update(); \
+using Oscar; \
+using GAP; \
+using Nemo; \
+using Hecke; \
+using Singular; \
+using Polymake; \
+using AbstractAlgebra; \
+exit();'
+
+# Write a file that will be loaded by Julia on startup.
+echo 'using Pkg; Pkg.activate("'${central_depot}'/environments/v" * join(split(string(VERSION), ".")[1:2], "."))' > ${central_depot}/julia_load_initial.jl
+{% endhighlight %}
+</details>
+
+</div>
+>>>>>>> add info about a system-wide Oscar installation
