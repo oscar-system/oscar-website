@@ -210,7 +210,8 @@ For that, the following `bash` scripts can be used.
 
 <details>
 <summary>
-Install Oscar system-wide.
+Install Oscar system-wide,
+or update the system-wide installation of Oscar when a new version is available.
 </summary>
 Enter the following commands into a file (for example <code>oscar_systemwide_install</code>),
 adjust the paths for the variables <code>julia_for_oscar</code> and <code>central_depot</code>,
@@ -229,8 +230,12 @@ central_depot=/users/oscar/JULIA_DEPOT
 export JULIA_DEPOT_PATH=${central_depot}
 export JULIA_LOAD_PATH="@:@v#.#:@stdlib:${central_depot}/environments/globalenv"
 
-# Let Julia install and precompile the packages.
+# Clean the environment, such that the already centrally installed packages
+# get replaced by newer versions if necessary.
+# (This is safer than calling `Pkg.update()` in Julia.)
+# Then let Julia install and precompile the packages.
 ${julia_for_oscar} -e 'using Pkg; \
+rm("'${central_depot}'/environments/v" * join(split(string(VERSION), ".")[1:2], ".") * "/Project.toml", force=true)
 Pkg.add("Oscar"); using Oscar; \
 Pkg.add("GAP"); using GAP; \
 Pkg.add("Nemo"); using Nemo; \
@@ -268,43 +273,6 @@ export JULIA_LOAD_PATH="@:@v#.#:@stdlib:${central_depot}/environments/globalenv"
 
 # Call Julia.
 ${julia_for_oscar} --load ${central_depot}/julia_load_initial.jl
-{% endhighlight %}
-</details>
-
-<details>
-<summary>
-Update the system-wide installation of Oscar when a new version is available.
-</summary>
-Enter the following commands into a file (for example <code>oscar_systemwide_update</code>),
-adjust the paths for the variables <code>julia_for_oscar</code> and <code>central_depot</code>,
-and then run the script in a terminal (with administrator rights).
-{% highlight bash %}
-#!/bin/bash
-
-# Specify the intended version of Julia.
-julia_for_oscar=/users/oscar/julia-1.6.1/bin/julia
-
-# Specify the intended location of the central Oscar installation.
-central_depot=/users/oscar/JULIA_DEPOT
-
-# Set the Julia variables that control the location of packages.
-export JULIA_DEPOT_PATH=${central_depot}
-export JULIA_LOAD_PATH="@:@v#.#:@stdlib:${central_depot}/environments/globalenv"
-
-# Let Julia update and precompile the installed packages.
-${julia_for_oscar} -e 'using Pkg; \
-Pkg.update(); \
-using Oscar; \
-using GAP; \
-using Nemo; \
-using Hecke; \
-using Singular; \
-using Polymake; \
-using AbstractAlgebra; \
-exit();'
-
-# Write a file that will be loaded by Julia on startup.
-echo 'using Pkg; Pkg.activate("'${central_depot}'/environments/v" * join(split(string(VERSION), ".")[1:2], "."))' > ${central_depot}/julia_load_initial.jl
 {% endhighlight %}
 </details>
 
