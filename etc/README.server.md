@@ -77,3 +77,22 @@ following as root:
 
     chown -R oscar:www-data /home/oscar/oscar-website
     chown -R oscar:www-data /var/www/oscar-website
+
+
+## Initial setup / what if the server VM is upgraded
+
+Some random notes on what to do...
+
+As root (`sudo -s`):
+```
+apt-get install ruby-dev
+```
+
+
+As oscar:www-data  (`sudo -u oscar -g www-data bash`)
+```
+# execute top part of update.sh, up to (and excluding `bundle install`)
+gem install bundler
+bundle update
+bundle install
+```
