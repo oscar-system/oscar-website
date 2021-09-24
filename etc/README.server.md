@@ -77,9 +77,9 @@ following as root:
 ### Requirements
 
 - Ubuntu or Debian VM
-- Apache 2
+- Apache 2 (`apt install apache2`)
 - Ruby 2.7 or newer, including development headers (`apt-get install ruby-dev`)
-- PHP (only for the webhook)
+- PHP (only for the webhook) (`apt install libapache2-mod-php ; a2enmod php7.4`)
 - Jekyll (installed via `gem` and `bundler`, see below)
 
 
@@ -94,7 +94,8 @@ following as root:
         chown -R oscar:www-data /var/www/oscar-website
 
    In the config for that site, make sure to set `GITHUB_WEBHOOK_SECRET` as described
-   elsewhere in this file
+   elsewhere in this file, and enable PHP.
+   Of course also set up SSL/TLS and a scheme to update the certificates.
 
 3. In the `oscar` home directory add a clone of the `oscar-website` git repository, i.e.,
    in `/home/oscar/oscar-website` (otherwise adjust `oscar-website.service`)
