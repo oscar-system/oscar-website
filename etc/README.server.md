@@ -124,3 +124,15 @@ gem install bundler # TODO: maybe also needs to be run as root?
 bundle update
 bundle install
 ```
+
+
+## On GitHub
+
+Go to <https://github.com/oscar-system/oscar-website/settings/hooks> and
+make sure the webhook there is setup right:
+
+ - Payload URL: https://oscar.computeralgebra.de/webhook.php
+ - Content-type: application/x-www-form-urlencoded (TODO: switch to JSON at some point?)
+ - Secret should of course match `GITHUB_WEBHOOK_SECRET` used elsewhere
+ - enable SSL validation
+ - trigger: "just the push event"
