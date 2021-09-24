@@ -27,7 +27,7 @@ repository, GitHub activates a webhook we provide via `webhook.php` at
 <https://oscar.computeralgebra.de/webhook.php>.
 
 The crucial bit is at the end of this .php file, where an empty file
-`/tmp/oscar-website.trigger` is created. This is detected by a systemd unit
+`/home/oscar/oscar-website.trigger` is created. This is detected by a systemd unit
 /etc/systemd/system/oscar-website.path (a copy of this file is in the
 /etc/ directory of the oscar-website repo).
 
