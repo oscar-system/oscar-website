@@ -3,13 +3,6 @@
 This document describes how the OSCAR website hosting is set up, to help
 people who need to troubleshoot it or migrate it to a new host.
 
-## Requirements
-
-- Ubuntu VM
-- Apache 2
-- PHP (only for the webhook)
-- Jekyll
-
 ## Where it is
 
 The server can be reached via SSH:
@@ -81,18 +74,42 @@ following as root:
 
 ## Initial setup / what if the server VM is upgraded
 
-Some random notes on what to do...
+### Requirements
 
-As root (`sudo -s`):
-```
-apt-get install ruby-dev
-```
+- Ubuntu or Debian VM
+- Apache 2
+- Ruby 2.7 or newer, including development headers (`apt-get install ruby-dev`)
+- PHP (only for the webhook)
+- Jekyll (installed via `gem` and `bundler`, see below)
 
 
-As oscar:www-data  (`sudo -u oscar -g www-data bash`)
+## Further steps as `root`
+
+
+1. Set up a user `oscar` in group `www-data` (with disabled login shell)
+2. In the `oscar` home directory add a clone of the `oscar-website` git repository, i.e.,
+   in `/home/oscar/oscar-website` (otherwise adjust `oscar-website.service`)
+3. Install the systemd units
+
+        cp /home/oscar/oscar-website/etc/oscar-website.* /etc/systemd/system/
+
+
+## Further steps as `oscar`
+
+As oscar:www-data  (`sudo -u oscar -g www-data bash`):
+
+For convenience, add this at the end of `.bashrc`:
 ```
-# execute top part of update.sh, up to (and excluding `bundle install`)
-gem install bundler
+# Install Ruby Gems to ~/gems
+export GEM_HOME=$HOME/gems
+export PATH=$HOME/gems/bin:$PATH
+```
+
+To ensure all the relevant ruby gems are installed, do this:
+```
+cd /home/oscar/oscar-website
+# execute top part of etc/update.sh, up to (and excluding `bundle install`)
+gem install bundler # TODO: maybe also needs to be run as root?
 bundle update
 bundle install
 ```
