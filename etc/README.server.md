@@ -74,6 +74,7 @@ following as root:
 
     chown -R oscar:www-data /home/oscar/oscar-website
     chown -R oscar:www-data /var/www/oscar-website
+    chmod 0664 /home/oscar/oscar-website.trigger
 
 
 ## Initial setup / what if the server VM is upgraded
@@ -102,11 +103,15 @@ following as root:
    Of course also set up SSL/TLS and a scheme to update the certificates.
 
 3. In the `oscar` home directory add a clone of the `oscar-website` git repository, i.e.,
-   in `/home/oscar/oscar-website` (otherwise adjust `oscar-website.service`)
+   in `/home/oscar/oscar-website` (otherwise adjust `oscar-website.service`). Also do
+
+        touch /home/oscar/oscar-website.trigger
+        chmod 0664 /home/oscar/oscar-website.trigger
 
 4. Install the systemd units
 
         cp /home/oscar/oscar-website/etc/oscar-website.* /etc/systemd/system/
+        systemctl enable oscar-website.service oscar-website.path
 
 
 ## Further steps as `oscar`
