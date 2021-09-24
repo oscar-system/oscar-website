@@ -63,6 +63,10 @@ found". In that case, make sure that `oscar-website.service` and
     cp /home/oscar/oscar-website/etc/oscar-website.* /etc/systemd/system/
     systemctl enable oscar-website.service oscar-website.path
 
+Also helpful is to study the log for the relevant systemd units
+
+    journalctl -f -u oscar-website.*
+
 A problem that sometimes happens (e.g. if one directly pokes into the git
 clone) are broken file permissions which can impede further operations, such
 as git pulling updates or jekyll updating the website. To fix these, run the
