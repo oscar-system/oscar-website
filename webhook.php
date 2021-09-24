@@ -88,7 +88,7 @@ switch (strtolower($_SERVER['HTTP_X_GITHUB_EVENT'])) {
         exec("echo 'Running oscar-website webhook' | logger");
         $status = touch("/tmp/oscar-website.trigger");
         exec("echo '   touched /tmp/oscar-website.trigger, result $status' | logger");
-        echo 'touched /tmp/oscar-website.trigger, result $status';
+        echo "touched /tmp/oscar-website.trigger, result $status";
         break;
     default:
         header('HTTP/1.0 404 Not Found');
