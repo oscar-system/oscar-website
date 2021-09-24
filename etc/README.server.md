@@ -87,9 +87,19 @@ following as root:
 
 
 1. Set up a user `oscar` in group `www-data` (with disabled login shell)
-2. In the `oscar` home directory add a clone of the `oscar-website` git repository, i.e.,
+
+2. Set up an Apache2 site with data in `/var/www/oscar-website/` (or modify the units
+   here for alternate locations); ensure `oscar` owns it, i.e.
+
+        chown -R oscar:www-data /var/www/oscar-website
+
+   In the config for that site, make sure to set `GITHUB_WEBHOOK_SECRET` as described
+   elsewhere in this file
+
+3. In the `oscar` home directory add a clone of the `oscar-website` git repository, i.e.,
    in `/home/oscar/oscar-website` (otherwise adjust `oscar-website.service`)
-3. Install the systemd units
+
+4. Install the systemd units
 
         cp /home/oscar/oscar-website/etc/oscar-website.* /etc/systemd/system/
 
