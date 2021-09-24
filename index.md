@@ -23,7 +23,7 @@ The project builds on and extends the four cornerstone systems
   * Antic ([Hecke](https://github.com/thofma/Hecke.jl/), [Nemo](http://nemocas.org)) - number theory
 
 as well as further libraries and packages, which are combined together into the
-[Oscar.jl](https://github.com/oscar-system/Oscar.jl) Julia packages
+[Oscar.jl](https://github.com/oscar-system/Oscar.jl) Julia package.
 
 The development of OSCAR is supported by the Deutsche Forschungsgemeinschaft DFG within the [Collaborative Research Center TRR 195](https://www.computeralgebra.de/sfb/).
 
