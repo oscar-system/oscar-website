@@ -86,7 +86,7 @@ switch (strtolower($_SERVER['HTTP_X_GITHUB_EVENT'])) {
     case 'push':
         // create file to trigger systemd unit which regenerates the website
         exec("echo 'Running oscar-website webhook' | logger");
-        $success = touch("/tmp/oscar-website.trigger");
+        $status = touch("/tmp/oscar-website.trigger");
         exec("echo '   touched /tmp/oscar-website.trigger, result $status' | logger");
         echo 'touched /tmp/oscar-website.trigger, result $status';
         break;
