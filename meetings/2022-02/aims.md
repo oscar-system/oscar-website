@@ -1,0 +1,8 @@
+---
+layout: meeting
+title: Aims
+meeting: true
+meeting_nr: 202202
+---
+
+This coding workshops aims to teach Oscar tropical geometry. Main guideline will be the book "*Introduction to Tropical Algebraic Geometry*" by Diane Maclagan and Bernd Sturmfels.
