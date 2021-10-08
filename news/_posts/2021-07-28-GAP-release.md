@@ -1,6 +1,6 @@
 ---
 layout: post
-title: GAP.jl 0.4.0 released
+title: GAP.jl 0.6.0 released
 author: Max Horn
 ---
 We are pleased to announce the release of GAP.jl 0.460, a major update to the
