@@ -49,6 +49,7 @@ Enter the following commands into a terminal (this will prompt for your password
 and requires that you have permissions to administer your computer).
 {% highlight bash %}
 sudo apt-get update
+sudo apt-get upgrade
 sudo apt-get install build-essential
 {% endhighlight %}
 </details>
@@ -70,6 +71,7 @@ and requires that you have permissions to administer your computer).
 sudo apt-get install -y software-properties-common
 sudo add-apt-repository ppa:ubuntu-toolchain-r/test
 sudo apt update
+sudo apt-get upgrade
 sudo apt install g++-7 -y
 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 60 --slave /usr/bin/g++ g++ /usr/bin/g++-7
 {% endhighlight %}
