@@ -3,11 +3,9 @@ layout: page
 title: Documentation
 ---
 
-Besides the
-<a href="https://oscar-system.github.io/Oscar.jl/dev/">documentation for the OSCAR system itself</a>,
-the following links to documentation for software projects encompassed by OSCAR
-are useful.
-Other projects are in development now, and will be announced soon.
+You can find the OSCAR manual here:
+ - [for the latest development version of Oscar.jl](https://oscar-system.github.io/Oscar.jl/dev)
+<!-- - [for the latest stable release of Oscar.jl](https://oscar-system.github.io/Oscar.jl/latest) -->
 
 Note that an aim of OSCAR is to combine and extend the capabilities of
 Antic (<a href="https://github.com/thofma/Hecke.jl/">Hecke</a>,
@@ -15,6 +13,10 @@ Antic (<a href="https://github.com/thofma/Hecke.jl/">Hecke</a>,
 <a href="https://www.gap-system.org/">GAP</a>,
 <a href="https://polymake.org/doku.php">Polymake</a>, and
 <a href="https://www.singular.uni-kl.de/">Singular</a>.
+
+Below are links to documentation for Julia software projects
+encompassed by OSCAR.
+Other projects are in development now, and will be announced soon.
 
 {% assign entries = site.data.documentation_pages | sort_natural:"name" %}
 <ul>
