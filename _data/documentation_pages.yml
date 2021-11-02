@@ -1,12 +1,3 @@
-- name: Oscar.jl
-  documentation_url: https://oscar-system.github.io/Oscar.jl/dev/
-  description: High-level code that combines and extends the capabilities of
-               Antic (<a href="https://github.com/thofma/Hecke.jl/">Hecke</a>,
-               <a href="http://nemocas.org">Nemo</a>),
-               <a href="https://www.gap-system.org/">GAP</a>,
-               <a href="https://polymake.org/doku.php">Polymake</a>, and
-               <a href="https://www.singular.uni-kl.de/">Singular</a>.
-
 - name: AbstractAlgebra.jl
   documentation_url: https://nemocas.github.io/AbstractAlgebra.jl/dev/
   description: Pure Julia package implementing generic algorithms for basic arithmetic
