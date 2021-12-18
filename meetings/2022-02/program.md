@@ -84,4 +84,4 @@ The program below is just a scaffold. If you have any comments or questions, ple
 ### Friday
 
 * 09:30 Coding sprint
-* 13:30 Final status reports + Book chapter discussion
+* 13:30 Final status reports
