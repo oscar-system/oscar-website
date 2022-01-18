@@ -134,8 +134,8 @@ Suitable compilers include
 
 ## Step 2: Install Julia
 
-OSCAR requires at least Julia 1.3.1, but we recommend running it with the latest stable Julia release,
-which is 1.6.2 at the time this is written.
+OSCAR requires at least Julia 1.6.0, but we recommend running it with the latest stable Julia release,
+which is 1.7.1 at the time this is written.
 
 
 There are several ways to install Julia:
@@ -186,7 +186,7 @@ julia> using Oscar
  -----    -----    -----   -     -  -     -
 
 ...combining (and extending) ANTIC, GAP, Polymake and Singular
-Version 0.6.0 ...
+Version 0.7.0 ...
  ... which comes with absolutely no warranty whatsoever
 Type: '?Oscar' for more information
 (c) 2019-2021 by The Oscar Development Team
