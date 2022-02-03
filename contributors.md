@@ -33,6 +33,7 @@ for the OSCAR project.
 {% assign entries = site.data.contributors | sort_natural:"name" %}
 <ul>
 {% for p in site.data.contributors %}
+{% if p.is_active_PI != true %}
   <li>
     {% if p.website != null %}
         <a href="{{ p.website }}">
@@ -55,7 +56,7 @@ for the OSCAR project.
         {%- endif -%}
         )
     {% endif %}
-
-</li>
+ </li>
+{% endif %}
     {% endfor %}
 </ul>
