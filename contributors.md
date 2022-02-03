@@ -78,8 +78,8 @@ contributors:
     website: https://www.heiderich.org/math/
 
   - name: Tommy Hofmann
-    affiliation: TU Kaiserslautern
-    website: https://www.mathematik.uni-kl.de/~thofmann/
+    affiliation: University of Siegen
+    website: https://www.thofma.com
 
   - name: Max Horn
     affiliation: TU Kaiserslautern
@@ -211,8 +211,6 @@ contributors:
 
 Currently, the following people contributed significantly to the software in the
 OSCAR project.
-Additionally, people who are financed by the [SFB-TRR 195](https://www.computeralgebra.de/sfb/) mainly work on software
-for the OSCAR project.
 
 <ul>
 {% for p in page.contributors %}
