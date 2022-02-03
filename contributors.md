@@ -8,10 +8,19 @@ contributors:
 
   - name: Reimer Behrends
     affiliation: TU Kaiserslautern
+    retired: true
 
   - name: Alex Best
     affiliation: Boston University
     website: https://github.com/alexjbest
+
+  - name: Martin Bies
+    affiliation: University of Pennsylvania
+    website: https://martinbies.github.io
+
+  - name: Simon Brandhorst
+    affiliation: Saarland University
+    website: https://www.math.uni-sb.de/ag/brandhorst/index.php
 
   - name: Thomas Breuer
     affiliation: RWTH Aachen University
@@ -29,13 +38,16 @@ contributors:
     website: https://www.mathematik.uni-kl.de/en/agag/people/head/prof-dr-wolfram-decker/
     is_active_PI: true
 
+  - name: Alexander Dinges
+    affiliation: TU Kaiserslautern
+
   - name: Christian Eder
     affiliation: TU Kaiserslautern
     website: https://www.mathematik.uni-kl.de/~ederc/index.html
 
   - name: Raul Epure
     affiliation: TU Kaiserslautern
-    website: https://github.com/raulepure
+    retired: true
 
   - name: Claus Fieker
     affiliation: TU Kaiserslautern
@@ -44,14 +56,17 @@ contributors:
 
   - name: Giovanni De Franceschi
     affiliation: TU Kaiserslautern
+    retired: true
 
   - name: Rafael Fourquet
     affiliation: TU Kaiserslautern
+    retired: true
 
   - name: Sebastian Gutsche
-    affiliation: Amazon
+    affiliation: TU Kaiserslautern
     email: gutsche@mathematik.uni-siegen.de
     website: https://sebasguts.github.io/
+    retired: true
 
   - name: William Hart
     affiliation: TU Kaiserslautern
@@ -84,7 +99,7 @@ contributors:
     is_active_PI: true
 
   - name: Marek Kaluba
-    affiliation: Adam Mickiewicz University, Poznań and TU Berlin
+    affiliation: KIT Karlsruhe
     website: https://kalmar.faculty.wmi.amu.edu.pl/
 
   - name: Lars Kastner
@@ -114,7 +129,12 @@ contributors:
     affiliation: IMAGINARY
     website: https://imaginary.org/users/oleksandr-motsak
 
+  - name: Oguzhan Yürük
+    affiliation: TU Berlin
+
   - name: Markus Pfeiffer
+    affiliation: St Andrews
+    retired: true
     website: https://github.com/markuspf
 
   - name: Delphine Pol
@@ -147,17 +167,23 @@ contributors:
 
   - name: Andreas Steenpaß
     affiliation: TU Kaiserslautern
+    retired: true
 
   - name: Jayantha Suranimalee
     affiliation: TU Kaiserslautern
 
   - name: Sascha Timme
     affiliation: TU Berlin
+    retired: true
     website: https://github.com/saschatimme
 
   - name: Erec Thorn
     affiliation: TU Kaiserslautern
     website: https://github.com/erecthorn
+
+  - name: Matthias Zach
+    affiliation: TU Kaiserslautern
+    paid_by_dfg: true
 
 ---
 
@@ -200,20 +226,18 @@ for the OSCAR project.
         {% assign link_open = true %}
     {% endif %}
     <strong>{{ p.name }}</strong>{% if link_open %}</a>{% assign link_open = false %}{% endif %}
-    {% if p.affiliation != null or p.paid_by_dfg == true %}
-        (
+    {%- if p.affiliation != null or p.paid_by_dfg == true -%}
+    <em>
         {%- if p.affiliation != null -%}
-            {{ p.affiliation }}
+            , {{ p.affiliation }}{% if p.retired == true %} (formerly){% endif %}
         {%- endif -%}
         {%- if p.paid_by_dfg == true -%}
-            {%- if p.affiliation != null -%}
-            ,
-            {% endif %}
+            {%- if p.affiliation != null -%},{% endif %}
             financed by the <a href="https://www.computeralgebra.de/sfb/">SFB-TRR 195</a>
         {%- endif -%}
-        )
+    </em>
     {% endif %}
  </li>
 {% endif %}
-    {% endfor %}
+{% endfor %}
 </ul>
