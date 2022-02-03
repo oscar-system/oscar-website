@@ -4,8 +4,6 @@
 
 - name: Reimer Behrends
   affiliation: TU Kaiserslautern
-  #website: https://www.mathematik.uni-kl.de/agag/mitglieder/wissenschaftliche-mitarbeiter/dr-reimer-behrends/
-  paid_by_dfg: true
 
 - name: Alex Best
   affiliation: Boston University
@@ -50,7 +48,6 @@
   affiliation: Amazon
   email: gutsche@mathematik.uni-siegen.de
   website: https://sebasguts.github.io/
-  paid_by_dfg: true
 
 - name: William Hart
   affiliation: TU Kaiserslautern
@@ -60,7 +57,6 @@
 - name: Florian Heiderich
   affiliation: University of Siegen
   website: https://www.heiderich.org/math/
-  paid_by_dfg: true
 
 - name: Tommy Hofmann
   affiliation: TU Kaiserslautern
@@ -132,20 +128,21 @@
   affiliation: TU Kaiserslautern
   website: https://github.com/joschmitt
 
+- name: Hans Schönemann
+  affiliation: TU Kaiserslautern
+
+- name: Benjamin Schröter
+  affiliation: KTH Stochkholm
+  website: https://people.kth.se/~schrot
+
 - name: Daniel Schultz
   affiliation: TU Kaiserslautern
 
-- name: Hans Schönemann
-  affiliation: TU Kaiserslautern
-  #website: https://www.mathematik.uni-kl.de/agag/mitglieder/wissenschaftliche-mitarbeiter/dr-hans-schoenemann/
-
 - name: Carlo Sircana
   affiliation: TU Kaiserslautern
-  #website: https://www.mathematik.uni-kl.de/agag/mitglieder/wissenschaftliche-mitarbeiter/carlo-sircana/
 
 - name: Andreas Steenpaß
   affiliation: TU Kaiserslautern
-  #website: https://www.mathematik.uni-kl.de/agag/mitglieder/wissenschaftliche-mitarbeiter/dr-andreas-steenpass/
 
 - name: Jayantha Suranimalee
   affiliation: TU Kaiserslautern
