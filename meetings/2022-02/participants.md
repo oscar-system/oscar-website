@@ -8,6 +8,8 @@ people:
 
     - {name: Alessio Borzi, affiliation: Warwick University}
 
+    - {name: Dan Corey, affiliation: TU Berlin}
+
     - {name: Alheydis Geiger, affiliation: Eberhard Karls Universität Tübingen}
 
     - {name: Paul Helminck, affiliation: Durham University}
@@ -19,6 +21,8 @@ people:
     - {name: Marta Panizzut, affiliation: TU Berlin}
 
     - {name: Yue Ren, affiliation: Durham University}
+
+    - {name: Kemal Rose, affiliation: MPI MiS Leipzig}
 
     - {name: Victoria Schleis, affiliation: Eberhard Karls Universität Tübingen}
 
