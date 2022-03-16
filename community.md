@@ -3,6 +3,8 @@ layout: page
 title: Community
 ---
 
+We are very much interested in interacting with our community. Here are various services we offer to you.
+
 ## News about OSCAR
 
 For the latest news on the development on OSCAR, visit the [News]({{site.baseurl }}/news) page.
@@ -10,11 +12,11 @@ For the latest news on the development on OSCAR, visit the [News]({{site.baseurl
 ## Development list
 
 The OSCAR development list is public and can be accessed via the [OSCAR-dev](https://mail.mathematik.uni-kl.de/mailman/listinfo/oscar-dev) page.
+It is very low traffice and can be used for questions about Oscar development.
 
 ## Slack
 
-Slack is a non-public chat platform that we use for informal discussions, questions, etc. Anyone is welcome to join, just send us an
-<a href="mailto:webmaster-oscar@mathematik.uni-kl.de">email</a> and we will send you an invitation.
+[Slack](https://slack.com) is a non-public chat platform that we use for informal discussions, questions, and so on. Whether you need help installing OSCAR, using it, or writing new code for it, you can ask here. Anyone is welcome to join. [Use this invite link](https://join.slack.com/t/oscar-system/shared_invite/zt-thtcv97k-2678bKQ~RpR~5gZszDcISw). You can use it from a web browser, or via one of the many native clients for phones, tablets and computers.
 
 ## How to report issues
 
@@ -31,19 +33,19 @@ If you do not want to create an account on GitHub, please send the issue to [OSC
 
 All Software developed for the OSCAR project is available on [GitHub](https://github.com/oscar-system).
 
-Contributions are welcome. If you want to contribute to OSCAR, you can simply fork the repository you want to
+Contributions are always welcome. If you want to contribute to OSCAR, you can simply fork the repository you want to
 contribute to and provide a pull request. We recommend that you also (or possibly beforehand) get in touch with us to
 avoid duplication of efforts; we'll also be happy to talk with you about design decisions, help you figure out how
 to do things, etc.
 
 Here is a list of all official repositories of the OSCAR project:
 
+* [Oscar.jl](https://github.com/oscar-system/Oscar.jl) - The main OSCAR repository
 * [AbstractAlgebra.jl](https://github.com/Nemocas/AbstractAlgebra.jl) - Generic abstract algebra and abstract type definitions
 * [GAP.jl](https://github.com/oscar-system/GAP.jl/) - GAP 4 to Julia bidirectional interface
 * [GroebnerBasis.jl](https://github.com/ederc/GroebnerBasis.jl) - Christian Eder's Groebner basis project
 * [Hecke.jl](https://github.com/thofma/Hecke.jl) - Algebraic number theory
 * [HomalgProject.jl](https://github.com/homalg-project/HomalgProject.jl) - The homalg project compatibility package for Julia
 * [Nemo.jl](https://github.com/Nemocas/Nemo.jl) - Wrappers of Flint/Arb/Antic C libraries
-* [Oscar.jl](https://github.com/oscar-system/Oscar.jl) - The OSCAR Julia interface
 * [Polymake.jl](https://github.com/oscar-system/Polymake.jl) - Polymake interface
 * [Singular.jl](https://github.com/oscar-system/Singular.jl) - Singular interface
