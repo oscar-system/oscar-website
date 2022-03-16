@@ -3,7 +3,7 @@ layout: page
 title: Community
 ---
 
-We are very much interested in interacting with our community. Here are various services we offer to you.
+Here are various services we offer to our community.
 
 ## News about OSCAR
 
@@ -17,6 +17,10 @@ It is very low traffice and can be used for questions about Oscar development.
 ## Slack
 
 [Slack](https://slack.com) is a non-public chat platform that we use for informal discussions, questions, and so on. Whether you need help installing OSCAR, using it, or writing new code for it, you can ask here. Anyone is welcome to join. [Use this invite link](https://join.slack.com/t/oscar-system/shared_invite/zt-thtcv97k-2678bKQ~RpR~5gZszDcISw). You can use it from a web browser, or via one of the many native clients for phones, tablets and computers.
+
+## Discussion forum
+
+We are also experiment with a [GitHub discussion forum](https://github.com/oscar-system/Oscar.jl/discussions), which also can be used for discussions, questions and so on. Note that it is public, and permanent, while Slack is ephemeral (i.e., discussions there vanish after some time). Using it requires a free [GitHub account](https://github.com).
 
 ## How to report issues
 
