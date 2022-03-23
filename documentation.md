@@ -3,10 +3,10 @@ layout: page
 title: Documentation
 ---
 
-<p class="message">
+<div class="message">
 You can find the OSCAR manual here:
 <ul><li><a href="https://oscar-system.github.io/Oscar.jl/dev">for the latest development version of Oscar.jl</a></li></ul>
-</p>
+</div>
 
 Note that an aim of OSCAR is to combine and extend the capabilities of
 Antic (<a href="https://github.com/thofma/Hecke.jl/">Hecke</a>,
