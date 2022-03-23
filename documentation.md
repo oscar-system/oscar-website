@@ -4,8 +4,7 @@ title: Documentation
 ---
 
 <div class="message">
-You can find the OSCAR manual here:
-<ul><li><a href="https://oscar-system.github.io/Oscar.jl/dev">for the latest development version of Oscar.jl</a></li></ul>
+<strong><a href="https://oscar-system.github.io/Oscar.jl/dev">Click here for the OSCAR manual for the latest development version of Oscar.jl</a></strong>
 </div>
 
 Note that an aim of OSCAR is to combine and extend the capabilities of
