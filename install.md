@@ -34,64 +34,19 @@ We currently only support Windows 10 or newer using <a href="https://docs.micros
 <li>Click "Launch" and follow the prompts</li>
 </ol>
 <p>
-You can now follow the instructions for <em><a href="#install-ubuntu1804">Ubuntu 18.04 or newer</a></em> above.
+You can now follow the instructions for <em><a href="#install-ubuntu">Ubuntu</a></em>.
 </p>
 <p>
 To start bash in a later session, just search for <q>bash</q>.
 </p>
 </details>
 
-<details id="install-ubuntu1804">
-<summary>
-Ubuntu 18.04 "Bionic" or newer; Debian 10 "Buster" or newer
-</summary>
-Enter the following commands into a terminal (this will prompt for your password
-and requires that you have permissions to administer your computer).
-{% highlight bash %}
-sudo apt-get update
-sudo apt-get install build-essential
-{% endhighlight %}
-</details>
-
-<details>
-<summary id="install-ubuntu1604">
-Ubuntu 16.04 "Xenial"
-</summary>
-<p>
-The LTS release Ubuntu 16.04 has reached end of life in April 2019, but still receives
-security updates until April 2021. In general we recommend that you upgrade to a more
-recent Ubuntu version.
-</p>
-<p>
-If you wish to proceed with it anyway, you can install a newer compiler as follows.
-Enter the following commands into a terminal (this will prompt for your password
-and requires that you have permissions to administer your computer).
-{% highlight bash %}
-sudo apt-get install -y software-properties-common
-sudo add-apt-repository ppa:ubuntu-toolchain-r/test
-sudo apt update
-sudo apt install g++-7 -y
-sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 60 --slave /usr/bin/g++ g++ /usr/bin/g++-7
-{% endhighlight %}
-</p>
-</details>
-
 <details>
 <summary>
-Fedora 28 or newer
+macOS
 </summary>
-Enter the following commands into a terminal (this will prompt for your password
-and requires that you have permissions to administer your computer).
-{% highlight bash %}
-sudo dnf install gcc-c++ make
-{% endhighlight %}
-</details>
-
-<details>
-<summary>
-macOS 10.12 or newer
-</summary>
-On macOS, you need to install the Xcode command line tools, as explained in the following instructions.
+If you are using macOS 10.12 or newer, you need to install the Xcode command
+line tools, as explained in the following instructions.
 <ol>
 <li>Launch a Terminal and copy and paste the command <code>xcode-select --install</code>, then press enter.</li>
 <li>A window will appear asking you: <q>The xcode-select command requires
@@ -105,22 +60,38 @@ the C and C++ compiler.</li>
 </ol>
 </details>
 
-<details>
+<details id="install-ubuntu">
 <summary>
-macOS 10.11 or older
+Ubuntu or Debian
 </summary>
-Unfortunately the Xcode versions available for older macOS versions do not
-support C++17. We recommend updating to macOS 10.12 or later, and Xcode 9.2 or
-later. If this is not an option and you are an experienced user, you might be
-able to get things working by installing a newer C/C++ compiler through some
-other means, e.g. via Homebrew. However, we cannot provide support for this.
+If you are using Ubuntu 18.04 "Bionic" or newer, or Debian 10 "Buster" or newer, proceed as follows:
+Enter these commands into a terminal (this will prompt for your password
+and requires that you have permissions to administer your computer).
+{% highlight bash %}
+sudo apt-get update
+sudo apt-get install build-essential
+{% endhighlight %}
 </details>
 
 <details>
 <summary>
-Other Linux / BSD / Unix variants supported by Julia
+Fedora
 </summary>
-You will need to install at least GNU make, and a fairly recent C++ compiler supporting the C++17 standard.
+If you are using Fedora 28 or newer,
+enter the following commands into a terminal (this will prompt for your password
+and requires that you have permissions to administer your computer).
+{% highlight bash %}
+sudo dnf install gcc-c++ make
+{% endhighlight %}
+</details>
+
+<details>
+<summary>
+Other or older operating systems supported by Julia
+</summary>
+We do not provided official support for other such systems at this time. But
+if you wish to try anyway, you will need to install at least GNU make, and a
+fairly recent C++ compiler supporting the C++17 standard.
 Suitable compilers include
 <ul>
 <li>GNU C/C++ compiler (gcc) version 7 or newer,</li>
@@ -134,18 +105,28 @@ Suitable compilers include
 ## Step 2: Install Julia
 
 OSCAR requires at least Julia 1.6.0, but we recommend running it with the latest stable Julia release,
-which is 1.7.1 at the time this is written.
+which is 1.7.2 at the time this is written.
+
+<div class="message">
+   <strong>WARNING:</strong>
+   <ul>
+   <li>
+   <strong>Windows</strong> users should <em>not</em> install the Julia version for Windows.
+   Instead, please install the Linux version inside Windows Subsystem for Linux (WSL).
+   </li>
+   <li>
+   <strong>Linux</strong> users should generally <em>not</em> install the Julia version
+   provided by their package manager (e.g., `apt`, `pac`, `dnf`, ...), as in many cases,
+   these Julia version are either outdated, or crippled, or both.
+   </li>
+   </ul>
+</div>
 
 
 There are several ways to install Julia:
 
 1. [By downloading it from the Julia homepage](https://julialang.org/downloads/),
 and following their [platform specific instructions](https://julialang.org/downloads/platform/).
-
-<p class="message">
-   <strong>WARNING:</strong> Windows users should <em>not</em> install the Julia version for Windows.
-   Instead, please install the Linux version inside Windows Subsystem for Linux (WSL).
-</p>
 
 2. On macOS, you can also install it via [Homebrew](https://brew.sh): `brew install julia` 
 
@@ -155,11 +136,6 @@ and following their [platform specific instructions](https://julialang.org/downl
    multiple Julia versions in parallel; but also for beginners it can be
    convenient as it allows updating the installed Julia version quite
    easily.
-
-4. For Linux users, it may also be tempting to install Julia via your
-   distro package manager (e.g., `apt`, `pac`, `dnf`, ...). We advise
-   against this, as at least in the past these often provided outdated
-   or broken Julia versions.
 
 
 ## Step 3: Install OSCAR
@@ -185,10 +161,10 @@ julia> using Oscar
  -----    -----    -----   -     -  -     -
 
 ...combining (and extending) ANTIC, GAP, Polymake and Singular
-Version 0.7.0 ...
+Version 0.8.2 ...
  ... which comes with absolutely no warranty whatsoever
 Type: '?Oscar' for more information
-(c) 2019-2021 by The Oscar Development Team
+(c) 2019-2022 by The Oscar Development Team
 
 julia>
 ```
@@ -201,24 +177,30 @@ Please have a look at
 
 for some examples (as [Jupyter](https://jupyter.org/) notebooks).
 
-<!-- TODO: disabled until https://github.com/oscar-system/GAP.jl/issues/335 is resolved
 
-### Starting GAP with JuliaInterface
+### Getting a GAP prompt
 
-If you have the Julia module `GAP.jl` installed above, you can also use the packages in the OSCAR ecosystem from GAP.
+If you are a GAP user and have installed loaded OSCAR in a Julia session as
+described above, you can at any time switch back and forth between the Julia prompt
+and a GAP prompt, by using the command `GAP.prompt()`:
 
-You can start a GAP, linked to your downloaded Julia, via
+<pre>
+<span style="color: green">julia></span> x = 1
+1
 
-{% highlight bash %}
-~/.julia/gap.sh
-{% endhighlight %}
+<span style="color: green">julia></span> GAP.prompt()
+<span style="color: blue">gap></span> Julia.x;
+1
+<span style="color: blue">gap></span> G := SymmetricGroup(3);
+Sym( [ 1 .. 3 ] )
+<span style="color: blue">gap></span> quit;   # or press Ctrl-D
 
-On the resulting GAP prompt, you can then load the Julia interface via
+<span style="color: green">julia></span> GAP.Globals.G
+GAP: Sym( [ 1 .. 3 ] )
 
-{% highlight GAP %}
-LoadPackage( "JuliaInterface" );
-{% endhighlight %}
--->
+</pre>
+
+
 
 ## Using IJulia for notebooks
 

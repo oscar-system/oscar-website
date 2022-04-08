@@ -3,7 +3,7 @@ Based on https://codepen.io/jdsteinbach/pen/GYmQjo
 */
 
 .clickdesc details {
-  margin: 1rem auto;
+  margin: 0.5rem auto;
   padding: 0 1rem;
   width: 40em;
   max-width: calc(100% - 2rem);
@@ -43,7 +43,7 @@ Based on https://codepen.io/jdsteinbach/pen/GYmQjo
 }
 
 .clickdesc summary {
-  padding: 1rem 2em 1rem 0;
+  padding: 0.5rem 0.5rem 0.5rem 0;
   display: block;
   position: relative;
 /*   font-size: 1.33em; */
