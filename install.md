@@ -93,8 +93,7 @@ macOS 10.12 or newer
 </summary>
 On macOS, you need to install the Xcode command line tools, as explained in the following instructions.
 <ol>
-<li>Install Xcode <a href="https://apps.apple.com/de/app/xcode/id497799835">via the App Store</a>.</li>
-<li>Launch a Terminal and enter the command <code>xcode-select —install</code>, then press enter.</li>
+<li>Launch a Terminal and copy and paste the command <code>xcode-select --install</code>, then press enter.</li>
 <li>A window will appear asking you: <q>The xcode-select command requires
 the command line developer tools. Would you like to install the tools
 now?</q>. Confirm this by clicking <q>Install</q>.</li>
