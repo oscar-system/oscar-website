@@ -4,8 +4,14 @@ title: Documentation
 ---
 
 <div class="message">
-<strong><a href="https://oscar-system.github.io/Oscar.jl/dev">Click here for the OSCAR manual for the latest development version of Oscar.jl</a></strong>
+You can find the OSCAR manual here:
+<ul>
+<li><strong><a href="https://oscar-system.github.io/Oscar.jl/stable">Manual for the latest stable release</a></strong></li>
+<li><strong><a href="https://oscar-system.github.io/Oscar.jl/dev">Manual for the latest development version</a></strong></li>
+</ul>
 </div>
+
+### Additional documentation
 
 Note that an aim of OSCAR is to combine and extend the capabilities of
 Antic (<a href="https://github.com/thofma/Hecke.jl/">Hecke</a>,
