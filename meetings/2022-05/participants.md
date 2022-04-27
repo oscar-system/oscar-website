@@ -11,6 +11,7 @@ people:
     - {name: Stevell Muller, affiliation: Saarland University}
     - {name: Thomas Breuer, affiliation: RWTH Aachen}
     - {name: Yvonne Elise Neuy, affiliation: Saarland University}
+    - {name: Daniel Rademacher, affiliation: RWTH Aachen}
 
 ---
 
