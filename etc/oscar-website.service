@@ -2,10 +2,10 @@
 Description="Update OSCAR website"
 
 [Service]
-User=oscar
-Group=www-data
+User=oscar-www
+Group=oscar-www
 Type=oneshot
-ExecStart=/home/oscar/oscar-website/etc/update.sh
+ExecStart=/home/oscar-www/oscar-website/etc/update.sh
 
 [Install]
 WantedBy=multi-user.target
