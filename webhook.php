@@ -11,7 +11,7 @@ webhook; this can be configured at
 <https://github.com/oscar-system/oscar-website/settings/hooks>.
 
 The crucial bit is at the end of this .php file, where an empty file
-`/home/oscar-www/oscar-website.trigger` is created. This is detected by a systemd unit
+$triggerfile is created. This is detected by a systemd unit
 /etc/systemd/system/oscar-website.path (a copy of this file is in the
 /etc/ directory of the oscar-website repo).
 
@@ -20,7 +20,7 @@ This then triggers /etc/systemd/system/oscar-website.service
 
 This finally executes etc/update.sh, which runs jekyll.
 */
-
+$triggerfile = "/home/oscar-www/oscar-website.trigger"
 
 /*
 We set a secret token in /etc/apache2/sites-enabled/oscar.conf
@@ -86,9 +86,10 @@ switch (strtolower($_SERVER['HTTP_X_GITHUB_EVENT'])) {
     case 'push':
         // create file to trigger systemd unit which regenerates the website
         exec("echo 'Running oscar-website webhook' | logger");
-        $status = touch("/home/oscar-www/oscar-website.trigger");
-        exec("echo '   touched /home/oscar-www/oscar-website.trigger, result $status' | logger");
-        echo "touched /home/oscar-www/oscar-website.trigger, result $status";
+        echo "about to touch $triggerfile";
+        $status = touch($triggerfile);
+        exec("echo '   touched $triggerfile, result $status' | logger");
+        echo "touched $triggerfile, result $status";
         break;
     default:
         header('HTTP/1.0 404 Not Found');
