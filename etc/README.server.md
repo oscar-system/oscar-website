@@ -36,10 +36,10 @@ repository, GitHub activates a webhook we provide via `webhook.php` at
 The crucial bit is at the end of this .php file, where an empty file
 `/home/oscar-www/oscar-website.trigger` is created. This is detected by a
 systemd unit `/etc/systemd/system/oscar-website.path` (a copy of this file is
-in the `etc` directory of the oscar-website repo).
+in the `etc` directory of the oscar-website repository).
 
-This then triggers `/etc/systemd/system/oscar-website.service`
-(a copy of this file is in the `etc` directory of the oscar-website repo).
+This then triggers `/etc/systemd/system/oscar-website.service` (a copy of that
+file is in the `etc` directory of the oscar-website repository).
 
 This finally executes `etc/update.sh`, which runs jekyll.
 
