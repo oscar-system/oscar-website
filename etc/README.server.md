@@ -80,7 +80,10 @@ as git pulling updates or jekyll updating the website. To fix these, run the
 following as root:
 
     chown -R oscar-www:oscar-www /home/oscar-www/oscar-website
-    chown -R oscar-www:oscar-www /var/www/oscar-website
+    chown -R oscar-www:oscar-www /srv/www/oscar
+
+    touch /home/oscar-www/oscar-website.trigger
+    chown oscar-www:www-data /home/oscar-www/oscar-website.trigger
     chmod 0664 /home/oscar-www/oscar-website.trigger
 
 
@@ -99,20 +102,14 @@ following as root:
 
 1. Set up a user `oscar-www` in group `oscar-www`
 
-2. Set up an Apache2 site with data in `/var/www/oscar-website/` (or modify the units
-   here for alternate locations); ensure `oscar` owns it, i.e.
+2. Set up an Apache2 site with data in `/srv/www/oscar/` (or modify the units
+   here for alternate locations); ensure `oscar-www` owns it, i.e.
 
-        chown -R oscar-www:oscar-www /var/www/oscar-website
+        chown -R oscar-www:oscar-www /srv/www/oscar
 
    In the config for that site, make sure to set `GITHUB_WEBHOOK_SECRET` as described
    elsewhere in this file, and enable PHP.
    Of course also set up SSL/TLS and a scheme to update the certificates.
-
-3. In the `oscar` home directory add a clone of the `oscar-website` git repository, i.e.,
-   in `/home/oscar-www/oscar-website` (otherwise adjust `oscar-website.service`). Also do
-
-        touch /home/oscar-www/oscar-website.trigger
-        chmod 0664 /home/oscar-www/oscar-website.trigger
 
 4. Install the systemd units
 
@@ -123,12 +120,19 @@ following as root:
 ## Further steps as `oscar-www`
 
 As `oscar-www:oscar-www`  (`sudo -u oscar-www -g oscar-www bash`):
-To ensure all the relevant ruby gems are installed, do this:
-```
-cd /home/oscar-www/oscar-website
-bundle config set --local path 'vendor/bundle'
-bundle install
-```
+
+1. In the `oscar-www` home directory add a clone of the `oscar-website` git repository, i.e.,
+   in `/home/oscar-www/oscar-website` (otherwise adjust `oscar-website.service`). Also do
+
+        touch /home/oscar-www/oscar-website.trigger
+        chown oscar-www:www-data /home/oscar-www/oscar-website.trigger
+        chmod 0664 /home/oscar-www/oscar-website.trigger
+
+2. To ensure all the relevant ruby gems are installed, do this:
+
+        cd /home/oscar-www/oscar-website
+        bundle config set --local path 'vendor/bundle'
+        bundle install
 
 
 ## On GitHub
