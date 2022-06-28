@@ -25,7 +25,7 @@ repository at
 This clone is owned by use `oscar-www` and group `oscar-www`. If anything goes
 wrong with these permissions, they can be fixed via
 
-  chown -R oscar-www:oscar-www /home/oscar-www/oscar-website
+    chown -R oscar-www:oscar-www /home/oscar-www/oscar-website
 
 ## Automatic updates via webhook
 
@@ -38,8 +38,8 @@ The crucial bit is at the end of this .php file, where an empty file
 systemd unit `/etc/systemd/system/oscar-website.path` (a copy of this file is
 in the `etc` directory of the oscar-website repo).
 
-This then triggers /etc/systemd/system/oscar-website.service
-(a copy of this file is in the etc/ directory of the oscar-website repo).
+This then triggers `/etc/systemd/system/oscar-website.service`
+(a copy of this file is in the `etc` directory of the oscar-website repo).
 
 This finally executes `etc/update.sh`, which runs jekyll.
 
@@ -79,8 +79,8 @@ clone) are broken file permissions which can impede further operations, such
 as git pulling updates or jekyll updating the website. To fix these, run the
 following as root:
 
-    chown -R oscar:www-data /home/oscar-www/oscar-website
-    chown -R oscar:www-data /var/www/oscar-website
+    chown -R oscar-www:oscar-www /home/oscar-www/oscar-website
+    chown -R oscar-www:oscar-www /var/www/oscar-website
     chmod 0664 /home/oscar-www/oscar-website.trigger
 
 
@@ -97,13 +97,12 @@ following as root:
 
 ## Further steps as `root`
 
-
-1. Set up a user `oscar` in group `www-data` (with disabled login shell)
+1. Set up a user `oscar-www` in group `oscar-www`
 
 2. Set up an Apache2 site with data in `/var/www/oscar-website/` (or modify the units
    here for alternate locations); ensure `oscar` owns it, i.e.
 
-        chown -R oscar:www-data /var/www/oscar-website
+        chown -R oscar-www:oscar-www /var/www/oscar-website
 
    In the config for that site, make sure to set `GITHUB_WEBHOOK_SECRET` as described
    elsewhere in this file, and enable PHP.
@@ -121,23 +120,13 @@ following as root:
         systemctl enable oscar-website.service oscar-website.path
 
 
-## Further steps as `oscar`
+## Further steps as `oscar-www`
 
-As oscar:www-data  (`sudo -u oscar -g www-data bash`):
-
-For convenience, add this at the end of `.bashrc`:
-```
-# Install Ruby Gems to ~/gems
-export GEM_HOME=$HOME/gems
-export PATH=$HOME/gems/bin:$PATH
-```
-
+As `oscar-www:oscar-www`  (`sudo -u oscar-www -g oscar-www bash`):
 To ensure all the relevant ruby gems are installed, do this:
 ```
 cd /home/oscar-www/oscar-website
-# execute top part of etc/update.sh, up to (and excluding `bundle install`)
-gem install bundler # TODO: maybe also needs to be run as root?
-bundle update
+bundle config set --local path 'vendor/bundle'
 bundle install
 ```
 
@@ -147,8 +136,8 @@ bundle install
 Go to <https://github.com/oscar-system/oscar-website/settings/hooks> and
 make sure the webhook there is setup right:
 
- - Payload URL: https://oscar.computeralgebra.de/webhook.php
- - Content-type: application/x-www-form-urlencoded (TODO: switch to JSON at some point?)
+ - Payload URL: <https://oscar.computeralgebra.de/webhook.php>
+ - Content-type: `application/x-www-form-urlencoded` (TODO: switch to JSON at some point?)
  - Secret should of course match `GITHUB_WEBHOOK_SECRET` used elsewhere
  - enable SSL validation
  - trigger: "just the push event"
