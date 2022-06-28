@@ -20,7 +20,7 @@ This then triggers /etc/systemd/system/oscar-website.service
 
 This finally executes etc/update.sh, which runs jekyll.
 */
-$triggerfile = "/home/oscar-www/oscar-website.trigger"
+$triggerfile = "/home/oscar-www/oscar-website.trigger";
 
 /*
 We set a secret token in /etc/apache2/sites-enabled/oscar.conf
