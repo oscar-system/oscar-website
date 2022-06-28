@@ -76,6 +76,7 @@ contributors:
   - name: Florian Heiderich
     affiliation: University of Siegen
     website: https://www.heiderich.org/math/
+    retired: true
 
   - name: Tommy Hofmann
     affiliation: University of Siegen
@@ -128,6 +129,7 @@ contributors:
   - name: Oleksandr Motsak
     affiliation: IMAGINARY
     website: https://imaginary.org/users/oleksandr-motsak
+    retired: true
 
   - name: Oguzhan Yürük
     affiliation: TU Berlin
@@ -139,6 +141,7 @@ contributors:
 
   - name: Delphine Pol
     affiliation: TU Kaiserslautern
+    retired: true
 
   - name: Sebastian Posur
     affiliation: University of Siegen
