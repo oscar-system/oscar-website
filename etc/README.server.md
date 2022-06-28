@@ -72,7 +72,7 @@ found". In that case, make sure that `oscar-website.service` and
 
 Also helpful is to study the log for the relevant systemd units
 
-    journalctl -f -u oscar-website.*
+    journalctl -f -u "oscar-website.*"
 
 A problem that sometimes happens (e.g. if one directly pokes into the git
 clone) are broken file permissions which can impede further operations, such
