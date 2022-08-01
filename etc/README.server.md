@@ -111,10 +111,11 @@ following as root:
    elsewhere in this file, and enable PHP.
    Of course also set up SSL/TLS and a scheme to update the certificates.
 
-4. Install the systemd units
+4. Install and activate the systemd units
 
         cp /home/oscar-www/oscar-website/etc/oscar-website.* /etc/systemd/system/
         systemctl enable oscar-website.service oscar-website.path
+        systemctl start oscar-website.service oscar-website.path
 
 
 ## Further steps as `oscar-www`
