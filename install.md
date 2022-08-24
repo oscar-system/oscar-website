@@ -115,8 +115,8 @@ which is 1.7.2 at the time this is written.
    Instead, please install the Linux version inside Windows Subsystem for Linux (WSL).
    </li>
    <li>
-   <strong>Linux</strong> users should generally <em>not</em> install the Julia version
-   provided by their package manager (e.g., `apt`, `pac`, `dnf`, ...), as in many cases,
+   <strong>Linux</strong> and <strong>macOS</strong> users should generally <em>not</em> install the Julia version
+   provided by their package manager (e.g., `apt`, `pac`, `dnf`, `homebrew`, ...), as in many cases,
    these Julia version are either outdated, or crippled, or both.
    </li>
    </ul>
