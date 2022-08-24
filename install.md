@@ -128,15 +128,13 @@ There are several ways to install Julia:
 1. [By downloading it from the Julia homepage](https://julialang.org/downloads/),
 and following their [platform specific instructions](https://julialang.org/downloads/platform/).
 
-2. On macOS, you can also install it via [Homebrew](https://brew.sh): `brew install julia` 
-
-3. The [JILL](https://github.com/johnnychen94/jill.py) project is a
-   python package which allows installing and updating Julia -- this is
+2. The [juliaup](https://github.com/JuliaLang/juliaup) and
+   [JILL](https://github.com/johnnychen94/jill.py) projects are
+   external packages which allow installing and updating Julia -- this is
    in particular handy for experienced users who may want to install
    multiple Julia versions in parallel; but also for beginners it can be
    convenient as it allows updating the installed Julia version quite
    easily.
-
 
 ## Step 3: Install OSCAR
 
