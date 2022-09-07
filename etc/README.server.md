@@ -122,18 +122,12 @@ following as root:
 
 As `oscar-www:oscar-www`  (`sudo -u oscar-www -g oscar-www bash`):
 
-1. In the `oscar-www` home directory add a clone of the `oscar-website` git repository, i.e.,
-   in `/home/oscar-www/oscar-website` (otherwise adjust `oscar-website.service`). Also do
+In the `oscar-www` home directory add a clone of the `oscar-website` git repository, i.e.,
+in `/home/oscar-www/oscar-website` (otherwise adjust `oscar-website.service`). Also do
 
-        touch /home/oscar-www/oscar-website.trigger
-        chown oscar-www:www-data /home/oscar-www/oscar-website.trigger
-        chmod 0664 /home/oscar-www/oscar-website.trigger
-
-2. To ensure all the relevant ruby gems are installed, do this:
-
-        cd /home/oscar-www/oscar-website
-        bundle config set --local path 'vendor/bundle'
-        bundle install
+    touch /home/oscar-www/oscar-website.trigger
+    chown oscar-www:www-data /home/oscar-www/oscar-website.trigger
+    chmod 0664 /home/oscar-www/oscar-website.trigger
 
 
 ## On GitHub
