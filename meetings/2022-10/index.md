@@ -8,7 +8,7 @@ is_meeting_index: true
 
 # OSCAR workshop
 
-## October 10 - 14, TU Kaiserslautern
+## October 10 - 14, Uni Saarbrücken
 
 ## Information
 
