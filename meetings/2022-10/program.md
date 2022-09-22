@@ -8,34 +8,35 @@ meeting_nr: 202210
 ## Program
 * Start: Monday, October 10, at 13:00
 * Finish: Friday, October 14, at 13:00
+* Where: Lecture Hall III, building E2 5 (unless noted otherwise)
 
 This workshop aims at all levels of OSCAR users and developers.
 For beginners, there is an introductory crash course at the start.
 We also invited three experts to give accessible introduction to
-various topics in computational mathematics. We then will try together to
-implement what they covered in OSCAR.
+various topics. We then will try together to implement what they covered
+using OSCAR, during live hands-on session. 
 
-The program below is just a scaffold; more concrete plans
-may be added later or during the workshop; e.g. specific times for certain discussions.
-If you have suggestions or wishes, please contact [Claus](mailto:fieker@mathematik.uni-kl.de)
-and [Max](mailto:horn@mathematik.uni-kl.de).
+**Please bring a laptop and [follow the preparation instructions](../prepare)**
+
+The program below may still be revised and we may even augment it during the
+week. If you have suggestions or wishes, please contact [Claus Fieker](mailto:fieker@mathematik.uni-kl.de)
+and [Max Horn](mailto:horn@mathematik.uni-kl.de).
 
 
 ### Monday
 
-- all morning: help installing Julia, Oscar ([see also here](../prepare))
-- 12:30: Coffee break
+- all morning starting from : help installing Julia, Oscar ([see also here](../prepare))
 - 13:00: Welcome
-- 13:05: Presentation "Introduction to Oscar"
-- 14:15: Hands-on session "Julia and Oscar"
-- 15:15: Coffee break
-- 15:30: Work and problem session
+- 13:05: Presentation *"Introduction to Oscar"*
+- 14:15: Hands-on session *"Julia and Oscar"*
+- 15:00: Coffee break with "Quantum Cake" *(entrance lobby of building E2 4)*
+- 16:00: "Kolloquiums-Talk" Work and/or problem session
 
 ### Tuesday
 
-- 09:00: First math talk "Topic A"
+- 09:00: First talk *"Computing Optimal Quantum Measurements: The SIC-POVM problem"* by [Markus Grassl](http://www.markus-grassl.de)
 - 10:20: Coffee break
-- 10:40: Hand-on session "Topic A"
+- 10:40: Hand-on session
 - 12:10: lunch
 - 13:30: Work and problem session
 - 15:00: Coffee break
@@ -43,7 +44,7 @@ and [Max](mailto:horn@mathematik.uni-kl.de).
 
 ### Wednesday
 
-- 09:00: Second math talk "Topic B"
+- 09:00: Second talk "Topic B"
 - 10:20: Coffee break
 - 10:40: Hand-on session "Topic B"
 - 12:10: lunch
@@ -51,7 +52,7 @@ and [Max](mailto:horn@mathematik.uni-kl.de).
 
 ### Thursday
 
-- 09:00: Third math talk "Topic C"
+- 09:00: Third talk by [Markus Kirschmer](http://www.math.rwth-aachen.de/~Markus.Kirschmer/)
 - 10:20: Coffee break
 - 10:40: Hand-on session "Topic C"
 - 12:10: lunch
