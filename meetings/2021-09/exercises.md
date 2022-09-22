@@ -5,9 +5,11 @@ meeting: true
 meeting_nr: 202109
 ---
 
+<!--
 <p class="message">
 This is a live document and will be updated during the week.
 </p>
+-->
 
 * This will become a table of contents (this text will be scrapped).
 {:toc}
