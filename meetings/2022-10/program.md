@@ -51,7 +51,7 @@ and [Max Horn](mailto:horn@mathematik.uni-kl.de).
 
 ### Wednesday
 
-- 09:00: Second talk "Topic B"
+- 09:00: Second talk *"Computing convex hulls"* by [Antony Della Vecchia]()
 - 10:20: Coffee break
 - 10:40: Hand-on session for the second talk
 - 12:10: lunch
@@ -59,7 +59,7 @@ and [Max Horn](mailto:horn@mathematik.uni-kl.de).
 
 ### Thursday
 
-- 09:00: Third talk by [Markus Kirschmer](http://www.math.rwth-aachen.de/~Markus.Kirschmer/)
+- 09:00: Third talk *TBA* by [Markus Kirschmer](http://www.math.rwth-aachen.de/~Markus.Kirschmer/)
 - 10:20: Coffee break
 - 10:40: Hand-on session for the third talk
 - 12:10: lunch
