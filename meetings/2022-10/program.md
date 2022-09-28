@@ -69,6 +69,8 @@ and [Max Horn](mailto:horn@mathematik.uni-kl.de).
 
 ## Friday
 
+This final day is for a general OSCAR coding sprint and will take place at
+TU Kaiserslautern.
+
 - 09:00: Coding sprint / bring your own problem ...
-- 12:00: lunch
-- End of meeting
+- 17:00: End of meeting
