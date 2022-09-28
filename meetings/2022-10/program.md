@@ -44,7 +44,7 @@ and [Max Horn](mailto:horn@mathematik.uni-kl.de).
 - 09:00: First talk *"Computing Optimal Quantum Measurements: The SIC-POVM problem"* by [Markus Grassl](http://www.markus-grassl.de)
 - 10:20: Coffee break
 - 10:40: Hand-on session for the first talk
-- 12:10: lunch
+- 12:10: Lunch
 - 13:30: Work and problem session
 - 15:00: Coffee break
 - 15:30: Work and problem session
@@ -54,7 +54,7 @@ and [Max Horn](mailto:horn@mathematik.uni-kl.de).
 - 09:00: Second talk *"Computing convex hulls"* by Antony Della Vecchia
 - 10:20: Coffee break
 - 10:40: Hand-on session for the second talk
-- 12:10: lunch
+- 12:10: Lunch
 - 13:00: Excursion
 
 ### Thursday
@@ -62,7 +62,7 @@ and [Max Horn](mailto:horn@mathematik.uni-kl.de).
 - 09:00: Third talk *Factoring polynomials over finite fields* by [Markus Kirschmer](https://www.math.rwth-aachen.de/~Markus.Kirschmer/)
 - 10:20: Coffee break
 - 10:40: Hand-on session for the third talk
-- 12:10: lunch
+- 12:10: Lunch
 - 13:30: Work and problem session
 - 15:00: Coffee break
 - 15:30: Work and problem session
