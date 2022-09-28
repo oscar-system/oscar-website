@@ -51,7 +51,7 @@ and [Max Horn](mailto:horn@mathematik.uni-kl.de).
 
 ### Wednesday
 
-- 09:00: Second talk *"Computing convex hulls"* by [Antony Della Vecchia]()
+- 09:00: Second talk *"Computing convex hulls"* by Antony Della Vecchia
 - 10:20: Coffee break
 - 10:40: Hand-on session for the second talk
 - 12:10: lunch
