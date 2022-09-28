@@ -59,7 +59,7 @@ and [Max Horn](mailto:horn@mathematik.uni-kl.de).
 
 ### Thursday
 
-- 09:00: Third talk *TBA* by [Markus Kirschmer](http://www.math.rwth-aachen.de/~Markus.Kirschmer/)
+- 09:00: Third talk *Factoring polynomials over finite fields* by [Markus Kirschmer](https://www.math.rwth-aachen.de/~Markus.Kirschmer/)
 - 10:20: Coffee break
 - 10:40: Hand-on session for the third talk
 - 12:10: lunch
