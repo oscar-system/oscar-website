@@ -6,7 +6,7 @@ title: About the OSCAR project
 The OSCAR project integrates the four computer algebra systems
 [GAP](https://www.gap-system.org), [polymake](https://polymake.org),
 [Singular](https://www.singular.uni-kl.de),
-and Antic ([Hecke](https://github.com/thofma/Hecke.jl/), [Nemo](http://nemocas.org))
+and Antic ([Hecke](https://github.com/thofma/Hecke.jl/), [Nemo](https://github.com/Nemocas/Nemo.jl/))
 developed within the [TRR 195](https://www.computeralgebra.de/sfb/) into a
 visionary next generation open source computer algebra system
 surpassing the combined mathematical capabilities of the underlying
@@ -29,7 +29,7 @@ systems will continue to be developed further. This includes working
 together with the developers of the individual cornerstones
 to develop the cornerstones in a way the best integration can be achieved.
 
-[Nemo](http://www.nemocas.org), [Hecke](http://github.com/thofma/Hecke.jl)
+[Nemo](https://github.com/Nemocas/Nemo.jl), [Hecke](http://github.com/thofma/Hecke.jl)
 are evolving number theoretic software projects focusing on
 computations in and with number fields and generic finitely presented
 rings. ANTIC is written in a mixture of C and Julia, building on top
