@@ -20,7 +20,7 @@ The project builds on and extends the four cornerstone systems
   * [GAP](https://www.gap-system.org/) - computational discrete algebra (via [GAP.jl](https://github.com/oscar-system/GAP.jl))
   * [Singular](https://www.singular.uni-kl.de/) - commutative and non-commutative algebra, algebraic geometry (via [Singular.jl](https://github.com/oscar-system/Singular.jl))
   * [Polymake](https://polymake.org/doku.php) - polyhedral geometry (via [Polymake.jl](https://github.com/oscar-system/Polymake.jl))
-  * Antic ([Hecke](https://github.com/thofma/Hecke.jl/), [Nemo](http://nemocas.org)) - number theory
+  * Antic ([Hecke](https://github.com/thofma/Hecke.jl/), [Nemo](https://github.com/Nemocas/Nemo.jl)) - number theory
 
 as well as further libraries and packages, which are combined together into the
 [Oscar.jl](https://github.com/oscar-system/Oscar.jl) Julia package.

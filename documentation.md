@@ -15,7 +15,7 @@ You can find the OSCAR manual here:
 
 Note that an aim of OSCAR is to combine and extend the capabilities of
 Antic (<a href="https://github.com/thofma/Hecke.jl/">Hecke</a>,
-<a href="http://nemocas.org">Nemo</a>),
+<a href="https://github.com/Nemocas/Nemo.jl">Nemo</a>),
 <a href="https://www.gap-system.org/">GAP</a>,
 <a href="https://polymake.org/doku.php">Polymake</a>, and
 <a href="https://www.singular.uni-kl.de/">Singular</a>.
