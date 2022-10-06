@@ -7,7 +7,7 @@ meeting_nr: 202210
 
 ## Program
 * Start: Monday, October 10, at 13:00
-* Finish: Friday, October 14, at 13:00
+* Finish: Friday, October 14, open ended
 * Where: Lecture Hall III, building E2 5 (unless noted otherwise)
    - in addition, we reserved the "Zeichensaal" in the same building
      (except Tuesday + Thursday from 12-14)
