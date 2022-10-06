@@ -71,7 +71,7 @@ and [Max Horn](mailto:horn@mathematik.uni-kl.de).
 
 ### Thursday
 
-- 09:30: Third talk *Factoring polynomials over finite fields* by [Markus Kirschmer](https://www.math.rwth-aachen.de/~Markus.Kirschmer/)
+- 09:30: Third talk *"Factoring polynomials over finite fields"* by [Markus Kirschmer](https://www.math.rwth-aachen.de/~Markus.Kirschmer/)
 - 10:45: Coffee break
 - 11:00: Hand-on session for the third talk
 - 12:15: Lunch
