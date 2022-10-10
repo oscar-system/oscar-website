@@ -52,7 +52,7 @@ and [Max Horn](mailto:horn@mathematik.uni-kl.de).
 
 ### Tuesday
 
-- **Note: The morning session will be in Lecture Hall 003, building E1 3**
+- **Note: Today's morning session will take place in the same location as the other days after all.**
 - 09:30: First talk *"Computing Optimal Quantum Measurements: The SIC-POVM problem"* by [Markus Grassl](http://www.markus-grassl.de)
 - 10:45: Coffee break
 - 11:00: Hand-on session for the first talk
