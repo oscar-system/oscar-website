@@ -55,7 +55,7 @@ and [Max Horn](mailto:horn@mathematik.uni-kl.de).
 - **Note: Today's morning session will take place in the same location as the other days after all.**
 - 09:30: First talk *"Computing Optimal Quantum Measurements: The SIC-POVM problem"* by [Markus Grassl](http://www.markus-grassl.de)
 - 10:45: Coffee break
-- 11:00: Hand-on session for the first talk ([Jupyter notebook](https://github.com/antonydellavecchia/jupyter-notebooks/blob/master/working-with-polymake.ipynb))
+- 11:00: Hand-on session for the first talk
 - 12:15: Lunch
 - 13:30: Work and problem session
 - 15:00: Coffee break
@@ -63,9 +63,9 @@ and [Max Horn](mailto:horn@mathematik.uni-kl.de).
 
 ### Wednesday
 
-- 09:30: Second talk *"Computing convex hulls"* by Antony Della Vecchia
+- 09:30: Second talk *"Computing convex hulls"* by Antony [Della Vecchia](https://antonydellavecchia.github.io/)
 - 10:45: Coffee break
-- 11:00: Hand-on session for the second talk
+- 11:00: Hand-on session for the second talk ([Jupyter notebook](https://github.com/antonydellavecchia/jupyter-notebooks/blob/master/working-with-polymake.ipynb))
 - 12:15: Lunch
 - 13:00: Free afternoon
 
