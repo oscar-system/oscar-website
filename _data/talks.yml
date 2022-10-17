@@ -1,3 +1,24 @@
+- title: "OSCAR snapshots"
+  author: Members of SFB-TRR 195
+  date: "2022-09-20"
+  conference: Sixth annual conference of the SFB-TRR 195
+  conference_url: https://www.math.uni-tuebingen.de/en/research-chairs/combinatorial-algebraic-geometry/sfb-trr-195/annual-meeting-2022/annual-meeting-2022
+  location: "Blaubeuren, Germany"
+
+- title: "OSCAR status report"
+  author: Michael Joswig
+  date: "2022-09-19"
+  conference: Sixth annual conference of the SFB-TRR 195
+  conference_url: https://www.math.uni-tuebingen.de/en/research-chairs/combinatorial-algebraic-geometry/sfb-trr-195/annual-meeting-2022/annual-meeting-2022
+  location: "Blaubeuren, Germany"
+
+- title: "OSCAR status report"
+  author: Claus Fieker
+  date: "2021-09-13"
+  conference: Fifth annual conference of the SFB-TRR 195 (virtual)
+  conference_url: https://www.art.rwth-aachen.de/cms/MATHB/Forschung/~oampy/5-Jahrestagung-SFB-TRR/
+  location: "Germany"
+
 - title: "msolve - An open source C library for algebraic multivariate system solving"
   author: Christian Eder
   date: "2020-11-27"
