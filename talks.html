@@ -16,7 +16,7 @@ A collection of talks about the OSCAR project:
         {% assign has_link = false %}
         <dt>{{ p.date | date: "%B %e, %Y" }}</dt>
         <dd>
-            {{ p.author }}<br/>
+            {{ p.author }}:
             {% if p.talk_url != null %}
                 {% assign has_link = true %}
                 <a href="{{ p.talk_url }}">
