@@ -60,6 +60,13 @@ or you can copy the pdf, say `my.pdf` to the `public` subfolder of the website a
 ```
 to the entry in the `talks.yml` file.
 
+If your talk happens to be in a year that previously was not listed on the
+website, then please add the new year in the line
+```
+{% assign years = "2022,2021,2020,2019,2018,2017" | split: "," %}
+```
+of `talks.html`. Otherwise your talk will not show up on the website.
+
 ## How to contribute an example notebook
 
 To contribute a new example notebook, please follow these steps

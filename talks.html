@@ -5,7 +5,7 @@ title: Talks
 
 A collection of talks about the OSCAR project:
 
-{% assign years = "2020,2019,2018,2017" | split: "," %}
+{% assign years = "2022,2021,2020,2019,2018,2017" | split: "," %}
 {% assign entries = site.data.talks | sort:"date" | reverse %}
 
 {% for year in years %}
@@ -16,7 +16,7 @@ A collection of talks about the OSCAR project:
         {% assign has_link = false %}
         <dt>{{ p.date | date: "%B %e, %Y" }}</dt>
         <dd>
-            {{ p.author }}<br/>
+            {{ p.author }}:
             {% if p.talk_url != null %}
                 {% assign has_link = true %}
                 <a href="{{ p.talk_url }}">

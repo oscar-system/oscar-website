@@ -1,3 +1,52 @@
+- title: "The OSCAR Computer Algebra System"
+  author: Max Horn
+  date: "2022-03-09"
+  conference: Tagung der Fachgruppe Computeralgebra 2022
+  conference_url: https://indico.mpp.mpg.de/event/8469/
+  location: "Munich, Germany (Virtual)"
+
+- title: "OSCAR snapshots"
+  author: Members of SFB-TRR 195
+  date: "2022-09-20"
+  conference: Sixth annual conference of the SFB-TRR 195
+  conference_url: https://www.math.uni-tuebingen.de/en/research-chairs/combinatorial-algebraic-geometry/sfb-trr-195/annual-meeting-2022/annual-meeting-2022
+  location: "Blaubeuren, Germany"
+
+- title: "OSCAR status report"
+  author: Michael Joswig
+  date: "2022-09-19"
+  conference: Sixth annual conference of the SFB-TRR 195
+  conference_url: https://www.math.uni-tuebingen.de/en/research-chairs/combinatorial-algebraic-geometry/sfb-trr-195/annual-meeting-2022/annual-meeting-2022
+  location: "Blaubeuren, Germany"
+
+- title: "OSCAR – A new Computer Algebra System"
+  author: Wolfram Decker
+  date: "2022-06-23"
+  conference: Effective Methods in Algebraic Geometry (MEGA 2022)
+  conference_url: Effective Methods in Algebraic Geometry
+  location: "Kraków, Poland"
+
+- title: "OSCAR status report"
+  author: Claus Fieker
+  date: "2021-09-13"
+  conference: Fifth annual conference of the SFB-TRR 195 (virtual)
+  conference_url: https://www.art.rwth-aachen.de/cms/MATHB/Forschung/~oampy/5-Jahrestagung-SFB-TRR/
+  location: "Germany"
+
+- title: "The OSCAR Computer Algebra System"
+  author: Claus Fieker and Max Horn
+  date: "2021-07-30"
+  conference: JuliaCon 2021
+  conference_url: https://pretalx.com/juliacon2021/talk/WQ8MJK/
+  location: Virtual
+
+- title: "OSCAR - The Project"
+  author: Michael Joswig
+  date: "2021-02-16"
+  conference: Sage/Oscar Days for Combinatorial Algebraic Geometry
+  conference_url: https://icerm.brown.edu/programs/sp-s21/w2/#workshopoverview
+  location: ICERM (Virtual)
+
 - title: "msolve - An open source C library for algebraic multivariate system solving"
   author: Christian Eder
   date: "2020-11-27"
