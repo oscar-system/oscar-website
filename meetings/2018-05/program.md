@@ -55,4 +55,4 @@ redirect_from:
   - Using GAP and Hecke in second cohomology computations
 
 - Julia 
-  - Exploration of further possibilites of linking Julia and C++
+  - Exploration of further possibilities of linking Julia and C++

@@ -7,7 +7,7 @@ author: Marek Kaluba
 This is a technical release focused on bringing more functionality to Julia.
 With `Polymake-v0.2.0` we require `polymake-3.5`.
 
-The main change is the addition of the `@pm` macro. This macro is the swiss army knife of calls to `polymake` library (it transforms julia-like syntax to low-level calls to `polymake`). Therefore nearly all functionality of `polymake` is now accesible in `Polymake.jl` in one form or another.
+The main change is the addition of the `@pm` macro. This macro is the swiss army knife of calls to `polymake` library (it transforms julia-like syntax to low-level calls to `polymake`). Therefore nearly all functionality of `polymake` is now accessible in `Polymake.jl` in one form or another.
 
 ----
 

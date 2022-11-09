@@ -70,7 +70,7 @@ Singular is integrated into OSCAR via the [Singular.jl](https://github.com/oscar
 ## The role of Julia
 
 [Julia](https://www.julialang.org) is a an actively developed
-interactive and expressive programing
+interactive and expressive programming
 language. Julia offers
 
 * data types that can depend on other types, for example modeling
