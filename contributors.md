@@ -1,6 +1,9 @@
 ---
 layout: page
 title: Contributors
+# In the list below, all three entries, `affiliation`, `email`, and
+# `website` are optional. If you provide an `email` and a `website`, the
+# name will link to the website.
 contributors:
   - name: Mohamed Barakat
     affiliation: University of Siegen

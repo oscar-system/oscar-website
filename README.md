@@ -91,39 +91,6 @@ To contribute a new example notebook, please follow these steps
 ```
 Please adjust all entries accordingly, including the language entry if necessary (e.g. `GAP`).
 
-## How to add a new documentation URL
-
-Please add a new entry to the `_data/documentation_pages.yml` file, of the following form:
-```
-- name: Singular.jl
-  documentation_url: https://www.singular.uni-kl.de
-  description: The interface to Singular
-               from Julia
-```
-
-## How to add a new contributor
-
-Please add a new entry to the `_data/contributors.yml` file, of the following form:
-```
-- name: Sebastian Gutsche
-  affiliation: University of Siegen
-  email: gutsche@mathematik.uni-siegen.de
-  website: https://sebasguts.github.io
-```
-All three entries, `affiliation`, `email`, and `website` are optional. If you provide an `email` and a `website`, the name will link to the website.
-
-## How to add a new software dependency
-
-Please add a new entry to the `_data/used_software.yml` file, of the following form:
-```
-- name: GAP
-  website: https://www.gap-system.org
-```
-
-## How to add a new meeting subpage
-
-Send an email to [Max Horn](mailto:horn@mathematik.uni-kl.de) and ask for help.
-
 ## How to use syntax highlighting in Markdown files
 
 You can use Jekylls highlighter to get syntax highlighting.
