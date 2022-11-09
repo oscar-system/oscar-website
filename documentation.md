@@ -42,13 +42,10 @@ docs:
 
 ---
 
-<div class="message">
-You can find the OSCAR manual here:
-<ul>
-<li><strong><a href="https://oscar-system.github.io/Oscar.jl/stable/">Manual for the latest stable release</a></strong></li>
-<li><strong><a href="https://oscar-system.github.io/Oscar.jl/dev/">Manual for the latest development version</a></strong></li>
-</ul>
+<div class="message message-big">
+<a href="https://oscar-system.github.io/Oscar.jl/stable/">Click here for the latest OSCAR manual.</a>
 </div>
+Expert users may also wish to use the [manual for the latest development version](https://oscar-system.github.io/Oscar.jl/dev/).
 
 ### Additional documentation
 

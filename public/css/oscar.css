@@ -154,3 +154,9 @@ details.spoiler summary::after {
 details[open] summary::after {
   display: none;
 }
+
+.message-big {
+  text-align: center;
+  font-weight: bold;
+  font-size:2em
+}
