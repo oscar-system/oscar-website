@@ -54,6 +54,9 @@ used_software:
 
     - name: AbstractAlgebra
       website: https://github.com/Nemocas/AbstractAlgebra.jl
+      
+    - name: msolve
+      website: https://msolve.lip6.fr/
 
 used_software_technical:
     - name: CxxWrap.jl
