@@ -151,3 +151,10 @@
   author: Johannes Flake
   thumbnail: oscar.png
   language: julia
+
+- title: "Analyzing Rubik's Cube"
+  repository: oscar-system/OSCARBinder
+  filename: rubik
+  author: Martin Schönert (translated to Oscar by Thomas Breuer)
+  thumbnail: oscar.png
+  language: julia
