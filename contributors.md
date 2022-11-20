@@ -18,7 +18,7 @@ contributors:
     website: https://github.com/alexjbest
 
   - name: Martin Bies
-    affiliation: University of Pennsylvania
+    affiliation: TU Kaiserslautern
     website: https://martinbies.github.io
 
   - name: Simon Brandhorst
