@@ -9,7 +9,7 @@ citations:
       url: https://link.springer.com/article/10.1007/JHEP11(2022)004
       authors: Martin Bies, Mirjam Cvetič, Ron Donagi, Marielle Ong
     - name: Introduction to Toric Geometry
-      url: https://arxiv.org/pdf/2203.01690.pdf
+      url: https://arxiv.org/abs/2203.01690
       authors: Simon Telen
 
 used_software:
