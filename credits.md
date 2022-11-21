@@ -5,7 +5,7 @@ citations:
     - name: Exact semidefinite programming bounds for packing problems
       url: https://arxiv.org/abs/2001.00256
       authors: Maria Dostert, David de Laat, Philippe Moustrou
-    - name: Brill-Noether-general limit root bundles: Absence of vector-like exotics in F-theory Standard Models
+    - name: "Brill-Noether-general limit root bundles: Absence of vector-like exotics in F-theory Standard Models"
       url: https://link.springer.com/article/10.1007/JHEP11(2022)004
       authors: Martin Bies, Mirjam Cvetič, Ron Donagi, Marielle Ong
     - name: Introduction to Toric Geometry
