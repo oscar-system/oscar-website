@@ -159,7 +159,7 @@
   thumbnail: oscar.png
   language: julia
 
-- title: "Generation of sporadic simple groups by $\pi$- and $\pi'$-subgroups"
+- title: "Generation of sporadic simple groups by 𝜋- and 𝜋'-subgroups"
   repository: oscar-system/OSCARBinder
   filename: pi_piprime_generation
   author: Thomas Breuer
