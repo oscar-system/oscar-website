@@ -105,7 +105,7 @@ Suitable compilers include
 ## Step 2: Install Julia
 
 OSCAR requires at least Julia 1.6.0, but we recommend running it with the latest stable Julia release,
-which is 1.7.2 at the time this is written.
+which is 1.8.2 at the time this is written.
 
 <div class="message">
    <strong>WARNING:</strong>
@@ -115,8 +115,8 @@ which is 1.7.2 at the time this is written.
    Instead, please install the Linux version inside Windows Subsystem for Linux (WSL).
    </li>
    <li>
-   <strong>Linux</strong> users should generally <em>not</em> install the Julia version
-   provided by their package manager (e.g., `apt`, `pac`, `dnf`, ...), as in many cases,
+   <strong>Linux</strong> and <strong>macOS</strong> users should generally <em>not</em> install the Julia version
+   provided by their package manager (e.g., `apt`, `pac`, `dnf`, `homebrew`, ...), as in many cases,
    these Julia version are either outdated, or crippled, or both.
    </li>
    </ul>
@@ -128,15 +128,13 @@ There are several ways to install Julia:
 1. [By downloading it from the Julia homepage](https://julialang.org/downloads/),
 and following their [platform specific instructions](https://julialang.org/downloads/platform/).
 
-2. On macOS, you can also install it via [Homebrew](https://brew.sh): `brew install julia` 
-
-3. The [JILL](https://github.com/johnnychen94/jill.py) project is a
-   python package which allows installing and updating Julia -- this is
+2. The [juliaup](https://github.com/JuliaLang/juliaup) and
+   [JILL](https://github.com/johnnychen94/jill.py) projects are
+   external packages which allow installing and updating Julia -- this is
    in particular handy for experienced users who may want to install
    multiple Julia versions in parallel; but also for beginners it can be
    convenient as it allows updating the installed Julia version quite
    easily.
-
 
 ## Step 3: Install OSCAR
 

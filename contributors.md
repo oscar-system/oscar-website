@@ -1,6 +1,9 @@
 ---
 layout: page
 title: Contributors
+# In the list below, all three entries, `affiliation`, `email`, and
+# `website` are optional. If you provide an `email` and a `website`, the
+# name will link to the website.
 contributors:
   - name: Mohamed Barakat
     affiliation: University of Siegen
@@ -15,7 +18,7 @@ contributors:
     website: https://github.com/alexjbest
 
   - name: Martin Bies
-    affiliation: University of Pennsylvania
+    affiliation: TU Kaiserslautern
     website: https://martinbies.github.io
 
   - name: Simon Brandhorst
@@ -76,6 +79,7 @@ contributors:
   - name: Florian Heiderich
     affiliation: University of Siegen
     website: https://www.heiderich.org/math/
+    retired: true
 
   - name: Tommy Hofmann
     affiliation: University of Siegen
@@ -128,6 +132,7 @@ contributors:
   - name: Oleksandr Motsak
     affiliation: IMAGINARY
     website: https://imaginary.org/users/oleksandr-motsak
+    retired: true
 
   - name: Oguzhan Yürük
     affiliation: TU Berlin
@@ -139,6 +144,7 @@ contributors:
 
   - name: Delphine Pol
     affiliation: TU Kaiserslautern
+    retired: true
 
   - name: Sebastian Posur
     affiliation: University of Siegen
