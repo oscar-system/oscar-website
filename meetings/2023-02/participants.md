@@ -6,6 +6,8 @@ meeting_nr: 202302
 people:
     - {name: Claus Fieker, affiliation: RPTU Kaiserslautern-Landau}
     - {name: Max Horn, affiliation: RPTU Kaiserslautern-Landau}
+    - {name: Stevell Muller, affiliation: Saarland University}
+    - {name: Thomas Breuer, affiliation: RWTH Aachen}
 
 ---
 
