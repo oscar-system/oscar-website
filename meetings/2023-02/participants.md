@@ -8,6 +8,8 @@ people:
     - {name: Max Horn, affiliation: RPTU Kaiserslautern-Landau}
     - {name: Stevell Muller, affiliation: Saarland University}
     - {name: Thomas Breuer, affiliation: RWTH Aachen}
+    - {name: Laura Voggesberger, affiliation: Ruhr University Bochum}
+    - {name: Martin Bies, affiliation: RPTU Kaiserslautern-Landau}
 
 ---
 
