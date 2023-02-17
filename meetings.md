@@ -12,3 +12,5 @@ meeting: true
         {% endif %}
     {% endfor %}
 </ol>
+
+For more OSCAR-related meetings, please also take a look at the [meetings of the SFB - TRR 195](https://www.computeralgebra.de/sfb/events/).
