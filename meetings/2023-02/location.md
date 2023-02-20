@@ -10,13 +10,8 @@ The OSCAR meeting in February 2023 takes place in
 [AGAG](https://www.mathematik.uni-kl.de/en/agag/) group
 at the [RPTU Kaiserslautern-Landau](https://rptu.de).
 
-The precise details (which room...) will be published here
-in time before the meeting begins.
-
-<!--
 <h4>Address</h4>
 Gottlieb-Daimler-Straße<br/>
-building 48, room 436<br/>
+building 48, room 519<br/>
 67663 Kaiserslautern<br/>
 Germany
--->
