@@ -2,7 +2,7 @@
 Description="Check whether OSCAR webhook requested update"
 
 [Path]
-PathChanged=/home/oscar-www/oscar-website.trigger
+PathChanged=/srv/www/www-mathe-oscar/data/oscar-website.trigger
 Unit=oscar-website.service
 
 [Install]
