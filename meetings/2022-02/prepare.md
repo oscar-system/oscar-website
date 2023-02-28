@@ -14,4 +14,4 @@ To install:
 - Install a programming editor with Julia syntax highlighting
 
 To familiarize:
-- Check out (some of) the Julia and Oscar exercises of the [Summer School](https://oscar.computeralgebra.de/meetings/2021-09/exercises/)
+- Check out (some of) the Julia and Oscar exercises of the [Summer School](https://www.oscar-system.org/meetings/2021-09/exercises/)

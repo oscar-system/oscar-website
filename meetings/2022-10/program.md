@@ -21,7 +21,7 @@ using OSCAR, during live hands-on session.
 **Please bring a laptop and [follow the preparation instructions](../prepare)**
 
 Besides this, participants are also invited to work through Julia tutorials
-or [OSCAR exercises](https://oscar.computeralgebra.de/meetings/2021-09/exercises/),
+or [OSCAR exercises](https://www.oscar-system.org/meetings/2021-09/exercises/),
 or to bring their own problems (e.g. from their research) and will try to
 provide support.
 

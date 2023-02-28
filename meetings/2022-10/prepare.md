@@ -17,4 +17,4 @@ To install:
 
 To familiarize:
 - Try out some [Julia tutorials](https://julialang.org/learning/tutorials/)
-- Check out (some of) the Julia and Oscar exercises of the [OSCAR Summer School 2021](https://oscar.computeralgebra.de/meetings/2021-09/exercises/)
+- Check out (some of) the Julia and Oscar exercises of the [OSCAR Summer School 2021](https://www.oscar-system.org/meetings/2021-09/exercises/)

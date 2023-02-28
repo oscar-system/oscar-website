@@ -52,7 +52,7 @@ Although, if you are already that good at it, surely finishing a few exercises q
 
 ### 2. git in the browser
 
-  1. Go to the [participants list](https://oscar.computeralgebra.de/meetings/2021-09/participants/) in your web browser
+  1. Go to the [participants list](https://www.oscar-system.org/meetings/2021-09/participants/) in your web browser
 
   2. Follow the "Edit this page" link in the navigation sidebar (resp. at the very end of the page, if your browser window is narrow / you are using a mobile browser)
 

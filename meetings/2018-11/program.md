@@ -112,7 +112,7 @@ For tropical varieties, GIT fans, Groebner fans and secondary fans we are curren
 #### What we have
 ##### [Link to mailing lists on the wiki](https://github.com/oscar-system/OSCAR-private/wiki/Mailing-Lists)
 
-[website](https://oscar.computeralgebra.de/), [blog](https://oscar.computeralgebra.de/blog/)
+[website](https://www.oscar-system.org/), [blog](https://oscar.computeralgebra.de/blog/)
 [github](https://github.com/oscar-system)
 email
 slack

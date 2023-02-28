@@ -7,7 +7,7 @@ layout: none
     <name>The OSCAR Team</name>
   </author>
   <title>OSCAR news</title>
-  <id>https://oscar.computeralgebra.de</id>
+  <id>https://www.oscar-system.org</id>
   <updated>{{ site.time }}</updated>
 
 {% for post in site.categories.news %}

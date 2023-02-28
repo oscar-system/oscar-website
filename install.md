@@ -169,7 +169,7 @@ julia>
 
 Please have a look at
 
-  - [introductory examples](https://oscar.computeralgebra.de/example/)
+  - [introductory examples](https://www.oscar-system.org/example/)
   - [polymake examples](https://github.com/micjoswig/oscar-notebooks)
   - [Hecke examples](https://github.com/thofma/HeckeTutorials.jl)
 
