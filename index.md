@@ -46,9 +46,9 @@ instructions on how to install it, and also check out our [community page]({{sit
 Note that OSCAR has not reached a first public release yet, and its parts should be treated as
 a technology preview. See the [News page]({{site.baseurl }}/news) for announcements about OSCAR development.
 
-## Stay informed
+## Get in touch
 
-If you want to get notifications about news items, you can subscribe to
-the [OSCAR news atom feed]({{ site.baseurl }}/feed-news.xml).
-
-You can also subscribe to the [OSCAR](https://mail.mathematik.uni-kl.de/mailman/listinfo/oscar) or the [OSCAR-dev](https://mail.mathematik.uni-kl.de/mailman/listinfo/oscar-dev) email lists. You can also view the archives for [OSCAR](https://mail.mathematik.uni-kl.de/pipermail/oscar/) and [OSCAR-dev](https://mail.mathematik.uni-kl.de/pipermail/oscar-dev/).
+A great place to ask questions about OSCAR and discuss all aspects of it is
+via [Slack -- click here to join it]({{site.baseurl }}/slack).
+Please check out the [community page]({{site.baseurl }}/community) for further
+ways to get in touch with us.
