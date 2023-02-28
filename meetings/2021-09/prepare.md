@@ -12,7 +12,7 @@ We urge you to do this *before* we start, but if you have trouble with any of it
 then note that Monday morning is set aside for helping each other preparing everything.
 
 - Install either Firefox or a Chrome-derived **browser** for optimal compatibility with tools we use
-- [Join the Oscar **slack**](https://join.slack.com/t/oscar-system/shared_invite/zt-thtcv97k-2678bKQ~RpR~5gZszDcISw)
+- [Join the Oscar **slack**](https://oscar-system.org/slack)
   (a multi user chat system), familiarize yourself with it,
   and there join the `#summerschool` channel
 - [Register a **GitHub** account](https://github.com/signup)
