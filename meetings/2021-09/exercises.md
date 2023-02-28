@@ -252,7 +252,7 @@ Exercises 1-8 provide opportunities to get to know Oscar and its functionality.
 On the other hand, exercises 9-12 are about implementing functionality on your
 own using basic functionality provided by Oscar.
 
-You may wish to consult the [Oscar documentation](https://oscar-system.github.io/Oscar.jl/stable/).
+You may wish to consult the [Oscar documentation](https://docs.oscar-system.org/stable/).
 
 ### 1. Vandermonde matrices
 
@@ -535,7 +535,7 @@ You may wish to consult the [Oscar documentation](https://oscar-system.github.io
 
 ## Oscar exercises: Group theory
 
-You may wish to consult the [Oscar documentation](https://oscar-system.github.io/Oscar.jl/stable/).
+You may wish to consult the [Oscar documentation](https://docs.oscar-system.org/stable/).
 
 ### 1. Fixed point free permutations
 

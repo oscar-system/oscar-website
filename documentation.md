@@ -29,7 +29,7 @@ docs:
       description: The interface to the Flint, Arb and Antic C libraries from Julia.
 
     - name: Oscar.jl
-      url: https://oscar-system.github.io/Oscar.jl/stable/
+      url: https://docs.oscar-system.org/stable/
       description: The main OSCAR package.
 
     - name: Polymake.jl
@@ -43,9 +43,9 @@ docs:
 ---
 
 <div class="message message-big">
-<a href="https://oscar-system.github.io/Oscar.jl/stable/">Click here for the latest OSCAR manual.</a>
+<a href="https://docs.oscar-system.org/stable/">Click here for the latest OSCAR manual.</a>
 </div>
-Expert users may also wish to use the [manual for the latest development version](https://oscar-system.github.io/Oscar.jl/dev/).
+Expert users may also wish to use the [manual for the latest development version](https://docs.oscar-system.org/dev/).
 
 ### Additional documentation
 
