@@ -22,7 +22,7 @@ terminal interface.
 <summary>
 Windows
 </summary>
-We currently only support Windows 10 or newer using <a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">Windows Subsystem for Linux (WSL)</a>.
+We currently only support Windows 10 or newer using <a href="https://learn.microsoft.com/en-us/windows/wsl/install">Windows Subsystem for Linux (WSL)</a>.
 <ol>
 <li>Search for "Turn Windows features on or off"</li>
 <li>On the left panel, select "Turn Windows features on or off"</li>
@@ -159,10 +159,10 @@ julia> using Oscar
  -----    -----    -----   -     -  -     -
 
 ...combining (and extending) ANTIC, GAP, Polymake and Singular
-Version 0.8.2 ...
+Version 0.11.3 ...
  ... which comes with absolutely no warranty whatsoever
 Type: '?Oscar' for more information
-(c) 2019-2022 by The Oscar Development Team
+(c) 2019-2023 by The OSCAR Development Team
 
 julia>
 ```
