@@ -11,6 +11,9 @@ citations:
     - name: Introduction to Toric Geometry
       url: https://arxiv.org/abs/2203.01690
       authors: Simon Telen
+    - name: Toric Geometry in OSCAR
+      url: https://arxiv.org/abs/2303.08110
+      authors: Martin Bies, Lars Kastner
 
 used_software:
     - name: GAP
