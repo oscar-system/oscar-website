@@ -22,8 +22,8 @@ The project builds on and extends the four cornerstone systems
   * [Polymake](https://polymake.org/doku.php) - polyhedral geometry (via [Polymake.jl](https://github.com/oscar-system/Polymake.jl))
   * Antic ([Hecke](https://github.com/thofma/Hecke.jl/), [Nemo](https://github.com/Nemocas/Nemo.jl)) - number theory
 
-as well as further libraries and packages, which are combined together into the
-[Oscar.jl](https://github.com/oscar-system/Oscar.jl) Julia package.
+as well as further libraries and packages, which are tied together using [the Julia language](https://julialang.org) into the
+[Oscar.jl](https://github.com/oscar-system/Oscar.jl) package.
 
 The development of OSCAR is supported by the Deutsche Forschungsgemeinschaft DFG within the [Collaborative Research Center TRR 195](https://www.computeralgebra.de/sfb/).
 

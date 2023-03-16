@@ -7,9 +7,16 @@ permalink:        pretty
 
 # Setup
 title:            'OSCAR Computer Algebra System'
-description:      'The OSCAR project'
+description:      'OSCAR, an Open Source Computer Algebra Research System written in Julia'
 url:              https://oscar.github.io
 baseurl:          /oscar-website
+
+plugins:
+  - jekyll-seo-tag
+
+# for SEO plugin
+tagline:          'OSCAR Computer Algebra System'
+logo:             /public/OSCAR_logo.png
 
 exclude:
   - _config_production.yml
