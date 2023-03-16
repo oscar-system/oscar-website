@@ -13,6 +13,7 @@ baseurl:          /oscar-website
 
 plugins:
   - jekyll-seo-tag
+  - jekyll-sitemap
 
 # for SEO plugin
 tagline:          'OSCAR Computer Algebra System'
