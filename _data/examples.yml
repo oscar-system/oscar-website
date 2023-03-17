@@ -155,7 +155,7 @@
 - title: "Analyzing Rubik's Cube"
   repository: oscar-system/OSCARBinder
   filename: rubik
-  author: Martin Schönert (translated to Oscar by Thomas Breuer)
+  author: Martin Schönert (translated to OSCAR by Thomas Breuer)
   thumbnail: oscar.png
   language: julia
 
