@@ -12,7 +12,7 @@ For the latest news on the development on OSCAR, visit the [News]({{site.baseurl
 ## Development list
 
 The OSCAR development list is public and can be accessed via the [OSCAR-dev](https://mail.mathematik.uni-kl.de/mailman/listinfo/oscar-dev) page.
-It is very low traffice and can be used for questions about OSCAR development.
+It is very low traffic and can be used for questions about OSCAR development.
 
 ## Slack
 
