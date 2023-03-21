@@ -209,3 +209,8 @@ the [trouble shooting page](https://julialang.github.io/IJulia.jl/stable/manual/
 If you try to open an existing notebook (stored in a ".ipynb" file), it might refer to an
 older Julia version, resulting in a "Kernel error"; the solution is then to select
 a different kernel from the menu.
+
+If you are using OSCAR in the Windows Subsystem for Linux, you will require a browser 
+in your subsystem. This can be a probem as the default subsystem is Ubuntu and Ubuntu 
+installs browsers via snap which is disabled for subsystems. To circumvent this problem, 
+please see [how to install browsers via deb](https://www.omgubuntu.co.uk/2022/04/how-to-install-firefox-deb-apt-ubuntu-22-04).
