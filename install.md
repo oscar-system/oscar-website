@@ -22,11 +22,7 @@ terminal interface.
 <summary>
 Windows
 </summary>
-Please install Windows Subsystem for Linux (WSL) following the <a href="https://learn.microsoft.com/en-us/windows/wsl/install">official instructions</a>. You should now have an App "Ubuntu" in your start menu and a folder "Linux" on the left sidebar of your file explorer. You can now follow the instructions for <em><a href="#install-ubuntu">Ubuntu</a></em>. Please note: 
-<ol>
-<li> When you start Ubuntu, your terminal will be in the folder "Linux/Ubuntu/home/your_username>". Please avoid changing anything outside that folder unless you are absolutely sure.</li>
-<li> Your browser may be unable to download files directly to the "Linux" folder. Instead, download it to somewhere temporarily and move the file to "Linux" manually.</li>
-</ol>
+Please install Windows Subsystem for Linux (WSL) following the <a href="https://learn.microsoft.com/en-us/windows/wsl/install">official instructions</a>. You should now have an App "Ubuntu" in your start menu and a folder "Linux" on the left sidebar of your file explorer. You can now follow the instructions for <em><a href="#install-ubuntu">Ubuntu</a></em>. 
 </details>
 
 <details>
