@@ -22,23 +22,7 @@ terminal interface.
 <summary>
 Windows
 </summary>
-We currently only support Windows 10 or newer using <a href="https://learn.microsoft.com/en-us/windows/wsl/install">Windows Subsystem for Linux (WSL)</a>.
-<ol>
-<li>Search for "Turn Windows features on or off"</li>
-<li>On the left panel, select "Turn Windows features on or off"</li>
-<li>Select "Windows subsystem for Linux" and press "Ok"</li>
-<li>Click "Restart the PC"</li>
-<li>Click the Windows store icon (shopping bag)</li>
-<li>Search for "Ubuntu" in the store - it's free!</li>
-<li>Select "Ubuntu" and "Get" the app</li>
-<li>Click "Launch" and follow the prompts</li>
-</ol>
-<p>
-You can now follow the instructions for <em><a href="#install-ubuntu">Ubuntu</a></em>.
-</p>
-<p>
-To start bash in a later session, just search for <q>bash</q>.
-</p>
+Please install Windows Subsystem for Linux (WSL) following the <a href="https://learn.microsoft.com/en-us/windows/wsl/install">official instructions</a>. You should now have an App "Ubuntu" in your start menu (run "explorer.exe ." in the Ubuntu terminal to open the current folder in the Windows File Explorer). You can now follow the instructions for <em><a href="#install-ubuntu">Ubuntu</a></em>. 
 </details>
 
 <details>
