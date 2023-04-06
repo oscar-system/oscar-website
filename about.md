@@ -3,7 +3,8 @@ layout: page
 title: About the OSCAR project
 ---
 
-The OSCAR project integrates the four computer algebra systems
+The OSCAR project uses the [Julia programming language](https://julialang.org)
+to integrate the four computer algebra systems
 [GAP](https://www.gap-system.org), [polymake](https://polymake.org),
 [Singular](https://www.singular.uni-kl.de),
 and Antic ([Hecke](https://github.com/thofma/Hecke.jl/), [Nemo](https://github.com/Nemocas/Nemo.jl/))
@@ -70,8 +71,7 @@ Singular is integrated into OSCAR via the [Singular.jl](https://github.com/oscar
 ## The role of Julia
 
 [Julia](https://www.julialang.org) is a an actively developed
-interactive and expressive programming
-language. Julia offers
+interactive and expressive programming language. Julia offers:
 
 * data types that can depend on other types, for example modeling
 matrices over polynomial rings over number fields;

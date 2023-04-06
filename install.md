@@ -88,8 +88,8 @@ Suitable compilers include
 
 ## Step 2: Install Julia
 
-OSCAR requires at least Julia 1.6.0, but we recommend running it with the latest stable Julia release,
-which is 1.8.2 at the time this is written.
+OSCAR requires at least [Julia](https://julialang.org) 1.6.0, but we recommend running it with the latest stable Julia release,
+which is 1.8.5 at the time this is written.
 
 <div class="message">
    <strong>WARNING:</strong>
