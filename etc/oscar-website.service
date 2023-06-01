@@ -7,4 +7,4 @@ ExecStart=/srv/www/www-mathe-oscar/data/oscar-website/etc/update.sh
 WorkingDirectory=/srv/www/www-mathe-oscar/data/oscar-website/
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=default.target
