@@ -5,7 +5,7 @@ title: Tutorials
 
 Here is a list of tutorials (all [Jupyter notebooks](https://jupyter.org/)) on selected topics:
 
-1. [Commutative Algebra](https://github.com/oscar-system/oscar-website/blob/gh-pages/tutorials/CommutativeAlgebraInOSCAR.ipynb) (by Luca Remke, last updated on June 6, 2023).
+1. [Commutative Algebra](https://github.com/oscar-system/oscar-website/blob/gh-pages/tutorials/CommutativeAlgebraInOSCAR.ipynb) (by Luca Remke, last updated on June 21, 2023).
 2. [Polyhedral Geometry](https://github.com/oscar-system/oscar-website/blob/gh-pages/tutorials/PolyhedralGeometryInOSCAR.ipynb) (by Luca Remke, last updated on June 6, 2023).
 3. [Toric Geometry](https://github.com/oscar-system/oscar-website/blob/gh-pages/tutorials/ToricGeometryInOSCAR1.ipynb) (by Luca Remke, last updated on June 6, 2023).
 4. [Advanced topics on toric geometry](https://github.com/oscar-system/oscar-website/blob/gh-pages/tutorials/ToricGeometryInOSCAR.ipynb) (by [Martin Bies](https://martinbies.github.io/), last updated on March 7, 2023).
