@@ -5,11 +5,15 @@ title: Contributors
 # `website` are optional. If you provide an `email` and a `website`, the
 # name will link to the website.
 contributors:
+  - name: John Abbott
+    affiliation: University of Kaiserslautern-Landau
+    paid_by_dfg: true
+
   - name: Mohamed Barakat
     affiliation: University of Siegen
     website: https://mohamed-barakat.github.io/
 
-  - name: Reimer Behrends
+  - name: Reimer Behrends  # parallelization, GAP garbage collector interface
     affiliation: TU Kaiserslautern
     retired: true
 
@@ -18,7 +22,7 @@ contributors:
     website: https://github.com/alexjbest
 
   - name: Martin Bies
-    affiliation: TU Kaiserslautern
+    affiliation: University of Kaiserslautern-Landau
     website: https://martinbies.github.io
 
   - name: Simon Brandhorst
@@ -36,16 +40,19 @@ contributors:
     affiliation: Max Planck Institute for Mathematics in the Sciences
     website: https://sites.google.com/view/taylorbrysiewicz/home
 
+  - name: Janko Böhm  
+    affiliation: University of Kaiserslautern-Landau
+
   - name: Wolfram Decker
-    affiliation: TU Kaiserslautern
+    affiliation: University of Kaiserslautern-Landau
     website: https://www.mathematik.uni-kl.de/en/agag/people/head/prof-dr-wolfram-decker/
     is_active_PI: true
 
-  - name: Alexander Dinges
+  - name: Alexander Dinges  # worked for Janko on modules
     affiliation: TU Kaiserslautern
 
   - name: Christian Eder
-    affiliation: TU Kaiserslautern
+    affiliation: University of Kaiserslautern-Landau
     website: https://www.mathematik.uni-kl.de/~ederc/index.html
 
   - name: Raul Epure
@@ -53,15 +60,15 @@ contributors:
     retired: true
 
   - name: Claus Fieker
-    affiliation: TU Kaiserslautern
+    affiliation: University of Kaiserslautern-Landau
     website: https://www.mathematik.uni-kl.de/en/agag/people/head/prof-dr-claus-fieker/
     is_active_PI: true
 
-  - name: Giovanni De Franceschi
+  - name: Giovanni De Franceschi  # group theory
     affiliation: TU Kaiserslautern
     retired: true
 
-  - name: Rafael Fourquet
+  - name: Rafael Fourquet  # general infrastructure
     affiliation: TU Kaiserslautern
     retired: true
 
@@ -73,8 +80,7 @@ contributors:
 
   - name: William Hart
     affiliation: TU Kaiserslautern
-    #website: https://www.mathematik.uni-kl.de/agag/mitglieder/wissenschaftliche-mitarbeiter/dr-william-hart/
-    paid_by_dfg: true
+    retired: true
 
   - name: Florian Heiderich
     affiliation: University of Siegen
@@ -86,7 +92,7 @@ contributors:
     website: https://www.thofma.com
 
   - name: Max Horn
-    affiliation: TU Kaiserslautern
+    affiliation: University of Kaiserslautern-Landau
     website: https://www.quendi.de/math
     is_active_PI: true
 
@@ -134,9 +140,6 @@ contributors:
     website: https://imaginary.org/users/oleksandr-motsak
     retired: true
 
-  - name: Oguzhan Yürük
-    affiliation: TU Berlin
-
   - name: Markus Pfeiffer
     affiliation: St Andrews
     retired: true
@@ -154,41 +157,56 @@ contributors:
     affiliation: Chalmers University
     website: https://github.com/martinra
 
-  - name: Johannes Schmitt
-    affiliation: TU Kaiserslautern
+  - name: Yue Ren
+    affiliation: Durham University
+
+  - name: Morgan Rodgers
+    affiliation: University of Kaiserslautern-Landau
+
+  - name: Johannes Schmitt  # PhD student of Ulrich Thiel
+    affiliation: University of Kaiserslautern-Landau
     website: https://github.com/joschmitt
 
   - name: Hans Schönemann
-    affiliation: TU Kaiserslautern
+    affiliation: University of Kaiserslautern-Landau
 
-  - name: Benjamin Schröter
+  - name: Lukas Kühne  # works on matroids with Benjamin Schröter
+    affiliation: Bielefeld University
+
+  - name: Benjamin Schröter  # works on matroids with Lukas Kühne
     affiliation: KTH Stochkholm
     website: https://people.kth.se/~schrot
 
   - name: Daniel Schultz
     affiliation: TU Kaiserslautern
+    retired: true
 
-  - name: Carlo Sircana
-    affiliation: TU Kaiserslautern
-
-  - name: Andreas Steenpaß
+  - name: Carlo Sircana  # PhD student of Claus Fieker
     affiliation: TU Kaiserslautern
     retired: true
 
-  - name: Jayantha Suranimalee
+  - name: Andreas Steenpaß  # commutative algebra
     affiliation: TU Kaiserslautern
+    retired: true
+
+  - name: Jayantha Suranimalee  # PhD student of Claus Fieker
+    affiliation: TU Kaiserslautern
+    retired: true
 
   - name: Sascha Timme
     affiliation: TU Berlin
     retired: true
     website: https://github.com/saschatimme
 
-  - name: Erec Thorn
+  - name: Erec Thorn  # PhD student of Ulrich Thiel
     affiliation: TU Kaiserslautern
     website: https://github.com/erecthorn
 
-  - name: Matthias Zach
-    affiliation: TU Kaiserslautern
+  - name: Oguzhan Yürük
+    affiliation: TU Berlin
+
+  - name: Matthias Zach  # algebraic geometry
+    affiliation: University of Kaiserslautern-Landau
     paid_by_dfg: true
 
 ---
