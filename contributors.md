@@ -72,6 +72,10 @@ contributors:
     affiliation: TU Kaiserslautern
     retired: true
 
+  - name: Lars Göttgens  # PhD student of Ghislain Fourier
+    affiliation: RWTH Aachen University
+    website: https://www.art.rwth-aachen.de/cms/MATHB/Der-Lehrstuhl/Team/Wissenschaftliche-Beschaeftigte/~bbxbwx/Lars-Goettgens/
+
   - name: Sebastian Gutsche
     affiliation: TU Kaiserslautern
     email: gutsche@mathematik.uni-siegen.de
@@ -128,8 +132,10 @@ contributors:
     affiliation: RWTH Aachen University
     website: http://www.math.rwth-aachen.de/~Frank.Luebeck/index.html
 
-  - name: Alexander Mattes
+  - name: Alexander Mattes  # Masters student of Claus Fieker
+    affiliation: TU Kaiserslautern
     website: https://github.com/alexandermattes
+    retired: true
 
   - name: Sachin Mohan
     affiliation: TU Kaiserslautern
