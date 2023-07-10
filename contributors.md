@@ -16,14 +16,16 @@ contributors:
   - name: Reimer Behrends  # parallelization, GAP garbage collector interface
     affiliation: TU Kaiserslautern
     retired: true
+    #github: rbehrends
 
   - name: Alex Best
     affiliation: Boston University
-    website: https://github.com/alexjbest
+    github: alexjbest
 
   - name: Martin Bies
     affiliation: University of Kaiserslautern-Landau
     website: https://martinbies.github.io
+    github: HereAround
 
   - name: Simon Brandhorst
     affiliation: Saarland University
@@ -34,6 +36,7 @@ contributors:
     email: thomas.breuer@math.rwth-aachen.de
     website: http://www.math.rwth-aachen.de/~Thomas.Breuer/
     paid_by_dfg: true
+    github: ThomasBreuer
 
   - name: Taylor Brysiewicz
     email: Taylor.Brysiewicz@mis.mpg.de
@@ -42,11 +45,13 @@ contributors:
 
   - name: Janko Böhm  
     affiliation: University of Kaiserslautern-Landau
+    github: jankoboehm
 
   - name: Wolfram Decker
     affiliation: University of Kaiserslautern-Landau
     website: https://www.mathematik.uni-kl.de/en/agag/people/head/prof-dr-wolfram-decker/
     is_active_PI: true
+    github: wdecker
 
   - name: Alexander Dinges  # worked for Janko on modules
     affiliation: TU Kaiserslautern
@@ -54,6 +59,7 @@ contributors:
   - name: Christian Eder
     affiliation: University of Kaiserslautern-Landau
     website: https://www.mathematik.uni-kl.de/~ederc/index.html
+    github: ederc
 
   - name: Raul Epure
     affiliation: TU Kaiserslautern
@@ -63,6 +69,7 @@ contributors:
     affiliation: University of Kaiserslautern-Landau
     website: https://www.mathematik.uni-kl.de/en/agag/people/head/prof-dr-claus-fieker/
     is_active_PI: true
+    github: fieker
 
   - name: Giovanni De Franceschi  # group theory
     affiliation: TU Kaiserslautern
@@ -75,6 +82,7 @@ contributors:
   - name: Lars Göttgens  # PhD student of Ghislain Fourier
     affiliation: RWTH Aachen University
     website: https://www.art.rwth-aachen.de/cms/MATHB/Der-Lehrstuhl/Team/Wissenschaftliche-Beschaeftigte/~bbxbwx/Lars-Goettgens/
+    github: lgoettgens
 
   - name: Sebastian Gutsche
     affiliation: TU Kaiserslautern
@@ -94,11 +102,13 @@ contributors:
   - name: Tommy Hofmann
     affiliation: University of Siegen
     website: https://www.thofma.com
+    github: thofma
 
   - name: Max Horn
     affiliation: University of Kaiserslautern-Landau
     website: https://www.quendi.de/math
     is_active_PI: true
+    github: fingolfin
 
   - name: Fredrik Johansson
     affiliation: Institut de Mathématiques de Bordeaux
@@ -111,6 +121,7 @@ contributors:
     affiliation: TU Berlin
     website: https://page.math.tu-berlin.de/~joswig/
     is_active_PI: true
+    github: micjoswig
 
   - name: Marek Kaluba
     affiliation: KIT Karlsruhe
@@ -119,6 +130,7 @@ contributors:
   - name: Lars Kastner
     affiliation: TU Berlin
     website: https://page.math.tu-berlin.de/~kastner/
+    github: lkastner
 
   - name: Avi Kulkarni
     affiliation: Dartmouth College
@@ -136,10 +148,11 @@ contributors:
     affiliation: TU Kaiserslautern
     website: https://github.com/alexandermattes
     retired: true
+    github: alexandermattes
 
   - name: Sachin Mohan
     affiliation: TU Kaiserslautern
-    website: https://github.com/sachinkm308
+    github: sachinkm308
 
   - name: Oleksandr Motsak
     affiliation: IMAGINARY
@@ -149,7 +162,7 @@ contributors:
   - name: Markus Pfeiffer
     affiliation: St Andrews
     retired: true
-    website: https://github.com/markuspf
+    github: markuspf
 
   - name: Delphine Pol
     affiliation: TU Kaiserslautern
@@ -161,7 +174,7 @@ contributors:
 
   - name: Martin Raum
     affiliation: Chalmers University
-    website: https://github.com/martinra
+    website: https://www.raum-brothers.eu/martin/ # https://github.com/martinra
 
   - name: Yue Ren
     affiliation: Durham University
@@ -171,10 +184,11 @@ contributors:
 
   - name: Johannes Schmitt  # PhD student of Ulrich Thiel
     affiliation: University of Kaiserslautern-Landau
-    website: https://github.com/joschmitt
+    github: joschmitt
 
   - name: Hans Schönemann
     affiliation: University of Kaiserslautern-Landau
+    github: hannes14
 
   - name: Lukas Kühne  # works on matroids with Benjamin Schröter
     affiliation: Bielefeld University
@@ -202,11 +216,11 @@ contributors:
   - name: Sascha Timme
     affiliation: TU Berlin
     retired: true
-    website: https://github.com/saschatimme
+    github: saschatimme
 
   - name: Erec Thorn  # PhD student of Ulrich Thiel
     affiliation: TU Kaiserslautern
-    website: https://github.com/erecthorn
+    github: erecthorn
 
   - name: Oguzhan Yürük
     affiliation: TU Berlin
@@ -223,15 +237,10 @@ contributors:
 {% for p in page.contributors %}
 {% if p.is_active_PI == true %}
   <li>
-    {% if p.website != null %}
-        <a href="{{ p.website }}">
-        {% assign link_open = true %}
-    {% elsif p.email != null %}
-        <a href="mailto:{{ p.email }}">
-        {% assign link_open = true %}
-    {% endif %}
-    <strong>{{ p.name }}</strong>{% if link_open %}</a>{% assign link_open = false %}{% endif %}
-    {% if p.affiliation != null %} ({{ p.affiliation }}){% endif %}
+    <a href="{{ p.website }}"><strong>{{ p.name }}</strong></a>, {{ p.affiliation }}
+    {%- if p.github != null %}
+        — <a href="https://github.com/{{ p.github }}">{{ p.github }} on GitHub</a>
+    {%- endif -%}
   </li>
 {% endif %}
 {% endfor %}
@@ -262,6 +271,9 @@ OSCAR project.
         {%- if p.paid_by_dfg == true -%}
             {%- if p.affiliation != null -%},{% endif %}
             financed by the <a href="https://www.computeralgebra.de/sfb/">SFB-TRR 195</a>
+        {%- endif -%}
+        {%- if p.github != null %}
+            — <a href="https://github.com/{{ p.github }}">{{ p.github }} on GitHub</a>
         {%- endif -%}
     </em>
     {% endif %}
