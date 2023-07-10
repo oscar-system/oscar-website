@@ -241,7 +241,7 @@ A collection of talks about the OSCAR project:
 {% assign entries = page.talks | sort:"date" | reverse %}
 
 {% for year in years %}
-    <h3> {{ year }} </h3>
+    <h3><a href="#{{ year }}" name="{{ year }}">{{ year }}</a></h3>
     <dl>
     {% for p in entries %}
         {% if p.date contains year %}
