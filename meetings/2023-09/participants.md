@@ -4,6 +4,7 @@ title: Participants
 meeting: true
 meeting_nr: 202309
 people:
+    - {name: Thomas Breuer, affiliation: RWTH Aachen}
     - {name: Claus Fieker, affiliation: RPTU Kaiserslautern-Landau}
     - {name: Isaac Holt, affiliation: Durham University}
     - {name: Jürgen Klüners, affiliation: Paderborn University}
