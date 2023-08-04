@@ -5,8 +5,10 @@ meeting: true
 meeting_nr: 202309
 people:
     - {name: Thomas Breuer, affiliation: RWTH Aachen}
+    - {name: Antony Della Vella, affiliation: TU Berlin}
     - {name: Claus Fieker, affiliation: RPTU Kaiserslautern-Landau}
     - {name: Isaac Holt, affiliation: Durham University}
+    - {name: Michael Joswig, affiliation: TU Berlin}
     - {name: Jürgen Klüners, affiliation: Paderborn University}
     - {name: Yue Ren, affiliation: Durham University}
 
