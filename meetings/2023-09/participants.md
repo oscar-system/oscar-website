@@ -4,6 +4,7 @@ title: Participants
 meeting: true
 meeting_nr: 202309
 people:
+    - {name: George Balla, affiliation: TU Beriln}
     - {name: Thomas Breuer, affiliation: RWTH Aachen}
     - {name: Sebastian Degen, affiliation: Bielefeld University}
     - {name: Antony Della Vella, affiliation: TU Berlin}
