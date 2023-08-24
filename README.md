@@ -102,12 +102,6 @@ function foo(x)
 end
 ```
 ````
-which renders as
-```julia
-function foo(x)
-  return x
-end
-```
 
 For code samples involving the Julia REPL mode, use this:
 ````
@@ -116,11 +110,6 @@ julia> print(2)
 2
 ```
 ````
-which renders as
-```console?lang=julia
-julia> print(2)
-2
-```
 
 Note however that the triple-backtick syntax does not work when nested inside
 HTML elements. In that case, you can also use the following Jekyll syntax:
