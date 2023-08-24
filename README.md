@@ -94,7 +94,7 @@ Please adjust all entries accordingly, including the language entry if necessary
 ## How to use syntax highlighting in Markdown files
 
 You can use Jekylls highlighter to get syntax highlighting.
-For Julia, do the following
+For Julia code, do the following
 ````
 ```julia
 function foo(x)
@@ -102,14 +102,35 @@ function foo(x)
 end
 ```
 ````
-respectively for code involving the Julia console
+which renders as
+```julia
+function foo(x)
+  return x
+end
+```
+
+For code samples involving the Julia REPL mode, use this:
 ````
 ```console?lang=julia
-```julia
 julia> print(2)
 2
 ```
 ````
+which renders as
+```console?lang=julia
+julia> print(2)
+2
+```
 
-A full list of supported languages can be found [here](https://haisum.github.io/2014/11/07/jekyll-pygments-supported-highlighters/).
+Note however that the triple-backtick syntax does not work when nested inside
+HTML elements. In that case, you can also use the following Jekyll syntax:
+```
+{% highlight julia %}
+function foo(x)
+  return x
+end
+{% endhighlight %}
+```
+
+A full list of supported languages can be found [here](https://github.com/rouge-ruby/rouge/blob/master/docs/Languages.md).
 
