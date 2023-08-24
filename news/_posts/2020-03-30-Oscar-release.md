@@ -11,14 +11,14 @@ installed as conveniently as any other Julia package.
 It requires Julia 1.3.1 and a recent enough C++ compiler (for details,
 please [refer to the install instructions]({{ site.baseurl }}/install/)).
 Now start Julia and enter
-{% highlight julia %}
+```julia
 using Pkg ; Pkg.add("Oscar")
-{% endhighlight %}
+```
 
 From this point on, you can load Oscar from any Julia session
 by entering `using Oscar`:
 
-```
+```console?lang=julia
 julia> using Oscar
  -----    -----    -----      -      -----   
 |     |  |     |  |     |    | |    |     |  

@@ -95,11 +95,21 @@ Please adjust all entries accordingly, including the language entry if necessary
 
 You can use Jekylls highlighter to get syntax highlighting.
 For Julia, do the following
+````
+```julia
+function foo(x)
+  return x
+end
 ```
-{% highlight julia %}
+````
+respectively for code involving the Julia console
+````
+```console?lang=julia
+```julia
 julia> print(2)
 2
-{% endhighlight %}
 ```
+````
+
 A full list of supported languages can be found [here](https://haisum.github.io/2014/11/07/jekyll-pygments-supported-highlighters/).
 

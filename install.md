@@ -124,15 +124,15 @@ and following their [platform specific instructions](https://julialang.org/downl
 
 To then install OSCAR, just start julia and run
 
-{% highlight julia %}
+```julia
 using Pkg
 Pkg.add("Oscar")
-{% endhighlight %}
+```
 
 This will run for a few minutes. From then on, you can start Julia, then type `using Oscar`
 and press enter to use OSCAR. The result should look something like this:
 
-```
+```console?lang=julia
 julia> using Oscar
  -----    -----    -----      -      -----
 |     |  |     |  |     |    | |    |     |

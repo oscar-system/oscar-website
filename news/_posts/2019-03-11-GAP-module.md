@@ -7,17 +7,17 @@ author: Sebastian Gutsche
 After a major restructuring of GAPJulia (our GAP-Julia integration part)
 it is now a Julia package, named GAP.jl, which means it can be installed via
 
-{% highlight julia %}
+```julia
 ] add https://github.com/oscar-system/GAP.jl
-{% endhighlight %}
+```
 
 This downloads and compiles a recent version of GAP (currently the
 master branch, we can hopefully set it to a stable branch soon) together
 with all GAP packages. Loading GAP into Julia is now done via
 
-{% highlight julia %}
+```julia
 using GAP
-{% endhighlight %}
+```
 
 This will make all current interface functionality available to Julia,
 including the possibility to access all GAP GVars (global variables and

@@ -46,7 +46,7 @@ obj = @pm appname.BigObject{Template, Parameters}(args)
 ```
 
 `@convert_to` macro is provided to facilitate conversion between different polymake types:
-```julia
+```console?lang=julia
 julia> c = polytope.cube(3);
 
 julia> f = c.FACETS;
