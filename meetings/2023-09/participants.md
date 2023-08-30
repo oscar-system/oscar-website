@@ -13,8 +13,8 @@ people:
     - {name: Isaac Holt, affiliation: Durham University}
     - {name: Michael Joswig, affiliation: TU Berlin}
     - {name: Lars Kastner, affiliation: TU Berlin}
-    - {name: Jürgen Klüners, affiliation: Paderborn University}
     - {name: Aaruni Kaushik, affiliation: RPTU Kaiserslautern-Landau}
+    - {name: Jürgen Klüners, affiliation: Paderborn University}
     - {name: Yue Ren, affiliation: Durham University}
 
 ---
