@@ -165,3 +165,10 @@
   author: Thomas Breuer
   thumbnail: oscar.png
   language: julia
+
+- title: "Perfect central extensions of PSL(3,4) in the Monster group"
+  repository: oscar-system/OSCARBinder
+  filename: L34_extensions_in_M
+  author: Thomas Breuer
+  thumbnail: oscar.png
+  language: julia
