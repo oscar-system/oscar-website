@@ -6,8 +6,8 @@ meeting_nr: 202309
 ---
 
 ## Program
-* Start: Wednesday, September 20, at TBA
-* Finish: Thursday, Septebmer 21, at TBA
+* Start: Wednesday, September 20, at 09:30
+* Finish: Thursday, Septebmer 21, at 16:00
 
 Goal of the meeting is to strengthen existing and explore new collaborations between the [SFB-TRR 195](https://www.computeralgebra.de/sfb/) and [SFB-TRR 358](https://trr358.math.uni-bielefeld.de/).  More concretely, we will be discussing intersections of the OSCAR project with the following projects of the SFB-TRR 358:
 
@@ -20,8 +20,13 @@ The program is just a scaffold; more concrete plans may be added later or during
 
 ### Wednesday
 
-TBA
+* 09:30 - General welcome and introductions
+* 11:00 onwards - Discussion and working groups
+* (official times for coffee and lunch TBA)
+* 19:00 - Conference dinner at TBA
 
 ### Thursday
 
-TBA
+* 09:30 onwards - Discussion and working groups
+* (official times for coffee and lunch TBA)
+* 15:00 - Wrap up session
