@@ -220,29 +220,40 @@ and then run the script in a terminal (with administrator rights).
 #!/bin/bash
 
 # Specify the intended version of Julia.
-julia_for_oscar=/users/oscar/julia-1.6.1/bin/julia
+julia_for_oscar=/users/oscar/julia-1.8.5/bin/julia
 
 # Specify the intended location of the central Oscar installation.
 central_depot=/users/oscar/JULIA_DEPOT
 
+# We will store the necessary artifacts in the
+# "architecture dependent location" in Julia's default DEPOT_PATH.
+# First determine this path and create the directory if necessary.
+system_depot=$(${julia_for_oscar} --startup-file=no -e 'println(DEPOT_PATH[2])')
+if ! test -d "${system_depot}/artifacts"; then
+  mkdir -p "${system_depot}/artifacts"
+fi
+
 # Set the Julia variables that control the location of packages.
 # (Do not admit the current user's own depot path.)
-export JULIA_DEPOT_PATH=${central_depot}
+export JULIA_DEPOT_PATH=${central_depot}:${system_depot}
 export JULIA_LOAD_PATH="@:@v#.#:@stdlib:${central_depot}/environments/globalenv"
 
 # Clean the environment, such that the already centrally installed packages
 # get replaced by newer versions if necessary.
 # (This is safer than calling `Pkg.update()` in Julia.)
 # Then let Julia install and precompile the packages.
-${julia_for_oscar} -e 'using Pkg; \
+${julia_for_oscar} -e 'using Pkg, Artifacts; \
 rm("'${central_depot}'/environments/v" * join(split(string(VERSION), ".")[1:2], ".") * "/Project.toml", force=true)
-Pkg.add("Oscar"); using Oscar; \
-Pkg.add("GAP"); using GAP; \
-Pkg.add("Nemo"); using Nemo; \
-Pkg.add("Hecke"); using Hecke; \
-Pkg.add("Singular"); using Singular; \
-Pkg.add("Polymake"); using Polymake; \
-Pkg.add("AbstractAlgebra"); using AbstractAlgebra; \
+Artifacts.with_artifacts_directory("'${system_depot}'/artifacts") do; \
+Pkg.add("Oscar"); \
+Pkg.add("GAP"); \
+Pkg.add("Nemo"); \
+Pkg.add("Hecke"); \
+Pkg.add("Singular"); \
+Pkg.add("Polymake"); \
+Pkg.add("AbstractAlgebra"); \
+Pkg.instantiate(); \
+end; \
 exit();'
 
 # Write a file that will be loaded by Julia on startup.
@@ -262,7 +273,7 @@ and then run the script in a terminal (not with administrator rights).
 #!/bin/bash
 
 # Specify the intended version of Julia.
-julia_for_oscar=/users/oscar/julia-1.6.1/bin/julia
+julia_for_oscar=/users/oscar/julia-1.8.5/bin/julia
 
 # Specify the intended location of the central Oscar installation.
 central_depot=/users/oscar/JULIA_DEPOT
@@ -271,10 +282,12 @@ central_depot=/users/oscar/JULIA_DEPOT
 export JULIA_DEPOT_PATH=$HOME/.julia:${central_depot}
 export JULIA_LOAD_PATH="@:@v#.#:@stdlib:${central_depot}/environments/globalenv"
 
+# Polymake may need a directory writable by the user.
+export POLYMAKE_USER_DIR=$HOME/.julia/polymake_user
+
 # Call Julia.
-${julia_for_oscar} --load ${central_depot}/julia_load_initial.jl
+${julia_for_oscar} --load ${central_depot}/julia_load_initial.jl $*
 {% endhighlight %}
 </details>
 
 </div>
->>>>>>> add info about a system-wide Oscar installation
