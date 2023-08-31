@@ -198,3 +198,16 @@ If you are using OSCAR in the Windows Subsystem for Linux, you will require a br
 in your subsystem. This can be a probem as the default subsystem is Ubuntu and Ubuntu 
 installs browsers via snap which is disabled for subsystems. To circumvent this problem, 
 please see [how to install browsers via deb](https://www.omgubuntu.co.uk/2022/04/how-to-install-firefox-deb-apt-ubuntu-22-04).
+
+## Experimental Methods
+
+<span style="color:red;font-size:large;font-weight:bold">EXPERIMENTAL</span>
+> These installation methods are experimental. They may change in the future. Please report bugs at bugs@email.tld .
+
+### macOS (Intel)
+
+On Intel macs with macos 10.11 or newer, it is possible to install OSCAR using a disk image. As a pre requisite, you must already have XCode Tools installed on your mac.
+
+Simply type `xcode-select --install` in a terminal to begin the graphical installation of Xcode Tools.
+
+Then, download the OSCAR disk image from [here](https://seafile.rlp.net/f/8f544c90cdba4a239aee/?dl=1). Mount the DMG file, copy-paste the OSCAR app to your Applications folder, and simply open the OSCAR app from Launchpad.
