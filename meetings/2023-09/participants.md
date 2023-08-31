@@ -15,6 +15,7 @@ people:
     - {name: Michael Joswig, affiliation: TU Berlin}
     - {name: Lars Kastner, affiliation: TU Berlin}
     - {name: Aaruni Kaushik, affiliation: RPTU Kaiserslautern-Landau}
+    - {name: Markus Kirschmer, affiliation: Paderborn University}
     - {name: Jürgen Klüners, affiliation: Paderborn University}
     - {name: Victoria Schleis, affiliation: Tübingen University}
     - {name: Yue Ren, affiliation: Durham University}
