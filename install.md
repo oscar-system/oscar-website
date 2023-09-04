@@ -228,21 +228,21 @@ central_depot=/users/oscar/JULIA_DEPOT
 # We will store the necessary artifacts in the
 # "architecture dependent location" in Julia's default DEPOT_PATH.
 # First determine this path and create the directory if necessary.
+# (Here we asume that `DEPOT_PATH[2]` is the architecture-specific
+# shared system directory, as documented for the default value of
+# `DEPOT_PATH`.)
 system_depot=$(${julia_for_oscar} --startup-file=no -e 'println(DEPOT_PATH[2])')
-if ! test -d "${system_depot}/artifacts"; then
-  mkdir -p "${system_depot}/artifacts"
-fi
+mkdir -p "${system_depot}/artifacts"
 
 # Set the Julia variables that control the location of packages.
 # (Do not admit the current user's own depot path.)
 export JULIA_DEPOT_PATH=${central_depot}:${system_depot}
-export JULIA_LOAD_PATH="@:@v#.#:@stdlib:${central_depot}/environments/globalenv"
 
 # Clean the environment, such that the already centrally installed packages
 # get replaced by newer versions if necessary.
 # (This is safer than calling `Pkg.update()` in Julia.)
 # Then let Julia install and precompile the packages.
-${julia_for_oscar} -e 'using Pkg, Artifacts; \
+${julia_for_oscar} --project=@v#.#-oscar -e 'using Pkg, Artifacts; \
 rm("'${central_depot}'/environments/v" * join(split(string(VERSION), ".")[1:2], ".") * "/Project.toml", force=true)
 Artifacts.with_artifacts_directory("'${system_depot}'/artifacts") do; \
 Pkg.add("Oscar"); \
@@ -255,9 +255,6 @@ Pkg.add("AbstractAlgebra"); \
 Pkg.instantiate(); \
 end; \
 exit();'
-
-# Write a file that will be loaded by Julia on startup.
-echo 'using Pkg; Pkg.activate("'${central_depot}'/environments/v" * join(split(string(VERSION), ".")[1:2], "."))' > ${central_depot}/julia_load_initial.jl
 {% endhighlight %}
 </details>
 
@@ -278,15 +275,11 @@ julia_for_oscar=/users/oscar/julia-1.8.5/bin/julia
 # Specify the intended location of the central Oscar installation.
 central_depot=/users/oscar/JULIA_DEPOT
 
-# Admit the user's own depot path and the path with the central installation.
-export JULIA_DEPOT_PATH=$HOME/.julia:${central_depot}
-export JULIA_LOAD_PATH="@:@v#.#:@stdlib:${central_depot}/environments/globalenv"
-
-# Polymake may need a directory writable by the user.
-export POLYMAKE_USER_DIR=$HOME/.julia/polymake_user
+# Admit the path with the central installation.
+export JULIA_DEPOT_PATH=:${central_depot}
 
 # Call Julia.
-${julia_for_oscar} --load ${central_depot}/julia_load_initial.jl $*
+${julia_for_oscar} --project=@v#.#-oscar $*
 {% endhighlight %}
 </details>
 
