@@ -10,6 +10,7 @@ people:
     - {name: Sebastian Degen, affiliation: Bielefeld University}
     - {name: Antony Della Vella, affiliation: TU Berlin}
     - {name: Claus Fieker, affiliation: RPTU Kaiserslautern-Landau}
+    - {name: Fabian Gundlach, affiliation: Paderborn University}
     - {name: Tommy Hofmann, affiliation: University of Siegen}
     - {name: Isaac Holt, affiliation: Durham University}
     - {name: Michael Joswig, affiliation: TU Berlin}
