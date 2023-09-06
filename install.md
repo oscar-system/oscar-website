@@ -206,6 +206,10 @@ It is possible to install Oscar and its cornerstones only once on your system,
 and to let several people use this installation.
 For that, the following `bash` scripts can be used.
 
+(Users of such a system-wide installation may run into Julia errors
+if they have already installed some dependencies of Oscar in their
+<code>~/.julia/packages</code>, or if they <C>add</C> them later on.)
+
 <div class="clickdesc">
 
 <details>
@@ -277,9 +281,10 @@ central_depot=/users/oscar/JULIA_DEPOT
 
 # Admit the path with the central installation.
 export JULIA_DEPOT_PATH=:${central_depot}
+export JULIA_LOAD_PATH=":@v#.#-oscar"
 
 # Call Julia.
-${julia_for_oscar} --project=@v#.#-oscar $*
+${julia_for_oscar} $*
 {% endhighlight %}
 </details>
 
