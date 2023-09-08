@@ -2,6 +2,9 @@
 layout: page
 title: Credits
 citations:
+    - name: Computations of Gromov-Witten invariants of toric varieties
+      url: https://arxiv.org/abs/2309.03741
+      authors: Giosuè Muratore
     - name: Exact semidefinite programming bounds for packing problems
       url: https://arxiv.org/abs/2001.00256
       authors: Maria Dostert, David de Laat, Philippe Moustrou
