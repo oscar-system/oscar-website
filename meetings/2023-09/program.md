@@ -6,8 +6,8 @@ meeting_nr: 202309
 ---
 
 ## Program
-* Start: Wednesday, September 20, at 09:30
-* Finish: Thursday, Septebmer 21, at 16:00
+* Start: Wednesday, September 20, at 09:30 in D2.314 (Building D, Floor 2, Room 314)
+* Finish: Thursday, Septebmer 21, at 16:00 in D2.314
 
 Goal of the meeting is to strengthen existing and explore new collaborations between the [SFB-TRR 195](https://www.computeralgebra.de/sfb/) and [SFB-TRR 358](https://trr358.math.uni-bielefeld.de/).  More concretely, we will be discussing intersections of the OSCAR project with the following projects of the SFB-TRR 358:
 
