@@ -23,7 +23,7 @@ The program is just a scaffold; more concrete plans may be added later or during
 * 09:30 - General welcome and introductions
 * 11:00 onwards - Discussion and working groups
 * (official times for coffee and lunch TBA)
-* 19:00 - Conference dinner at TBA
+* 19:00 - Conference dinner at [Brauhaus](https://maps.app.goo.gl/Pn7jjcmLNtRcXmWM8)
 
 ### Thursday
 
