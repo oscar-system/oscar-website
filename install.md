@@ -89,7 +89,7 @@ Suitable compilers include
 ## Step 2: Install Julia
 
 OSCAR requires at least [Julia](https://julialang.org) 1.6.0, but we recommend running it with the latest stable Julia release,
-which is 1.8.5 at the time this is written.
+which is 1.9.3 at the time this is written.
 
 <div class="message">
    <strong>WARNING:</strong>
@@ -107,18 +107,13 @@ which is 1.8.5 at the time this is written.
 </div>
 
 
-There are several ways to install Julia:
+We recommend installing Julia via [juliaup](https://github.com/JuliaLang/juliaup)
+which makes it  easy to install and update Julia. For advanced users it can also
+manage multiple Julia versions in parallel.
 
-1. [By downloading it from the Julia homepage](https://julialang.org/downloads/),
-and following their [platform specific instructions](https://julialang.org/downloads/platform/).
+Alternatively you can also [download it from the Julia homepage](https://julialang.org/downloads/),
+and follow their [platform specific instructions](https://julialang.org/downloads/platform/).
 
-2. The [juliaup](https://github.com/JuliaLang/juliaup) and
-   [JILL](https://github.com/johnnychen94/jill.py) projects are
-   external packages which allow installing and updating Julia -- this is
-   in particular handy for experienced users who may want to install
-   multiple Julia versions in parallel; but also for beginners it can be
-   convenient as it allows updating the installed Julia version quite
-   easily.
 
 ## Step 3: Install OSCAR
 
@@ -143,7 +138,7 @@ julia> using Oscar
  -----    -----    -----   -     -  -     -
 
 ...combining (and extending) ANTIC, GAP, Polymake and Singular
-Version 0.11.3 ...
+Version 0.13.0 ...
  ... which comes with absolutely no warranty whatsoever
 Type: '?Oscar' for more information
 (c) 2019-2023 by The OSCAR Development Team
