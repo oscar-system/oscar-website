@@ -26,6 +26,9 @@ citations:
     - name: Some thoughts and experiments on Bergman's compact amalgamation problem
       url: https://arxiv.org/abs/2304.08365
       authors: Michael Joswig, Mario Kummer, Andreas Thom, Claudia He Yun
+    - name: On Q-factorial terminalizations of symplectic linear quotient singularities
+      url: https://nbn-resolving.org/urn:nbn:de:hbz:386-kluedo-73512
+      authors: Johannes Schmitt
 
 used_software:
     - name: GAP

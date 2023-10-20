@@ -187,9 +187,11 @@ contributors:
   - name: Morgan Rodgers
     affiliation: University of Kaiserslautern-Landau
 
-  - name: Johannes Schmitt  # PhD student of Ulrich Thiel
-    affiliation: University of Kaiserslautern-Landau
+  - name: Johannes Schmitt  # former PhD student of Ulrich Thiel
+    affiliation: University of Siegen
     github: joschmitt
+    website: https://joschmitt.eu
+    paid_by_dfg: true
 
   - name: Hans Schönemann
     affiliation: University of Kaiserslautern-Landau
