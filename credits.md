@@ -17,6 +17,15 @@ citations:
     - name: Toric Geometry in OSCAR
       url: https://arxiv.org/abs/2303.08110
       authors: Martin Bies, Lars Kastner
+    - name: Algebraic and geometric computations in OSCAR
+      url: https://sinews.siam.org/Details-Page/algebraic-and-geometric-computations-in-oscar
+      authors: Mara Belotti, Michael Joswig, Chiara Meroni, Victoria Schleis, Johannes Schmitt
+    - name: Computing Galois Groups of Ehrhart Polynomials in OSCAR
+      url: https://www.emis.de/journals/SLC/wpapers/FPSAC2022/87.html
+      authors: Claus Fieker, Tommy Hofmann, Michael Joswig
+    - name: Some thoughts and experiments on Bergman's compact amalgamation problem
+      url: https://arxiv.org/abs/2304.08365
+      authors: Michael Joswig, Mario Kummer, Andreas Thom, Claudia He Yun
 
 used_software:
     - name: GAP
