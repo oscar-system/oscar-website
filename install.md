@@ -109,7 +109,10 @@ which is 1.9.3 at the time this is written.
 
 We recommend installing Julia via [juliaup](https://github.com/JuliaLang/juliaup)
 which makes it  easy to install and update Julia. For advanced users it can also
-manage multiple Julia versions in parallel.
+manage multiple Julia versions in parallel. Just enter
+```sh
+curl -fsSL https://install.julialang.org | sh
+```
 
 Alternatively you can also [download it from the Julia homepage](https://julialang.org/downloads/),
 and follow their [platform specific instructions](https://julialang.org/downloads/platform/).
