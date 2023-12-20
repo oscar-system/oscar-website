@@ -2,6 +2,9 @@
 layout: page
 title: Credits
 citations:
+    - name: An arithmetic count of osculating lines
+      url: https://arxiv.org/pdf/2312.12129
+      authors: Giosuè Muratore
     - name: Computations of Gromov-Witten invariants of toric varieties
       url: https://arxiv.org/abs/2309.03741
       authors: Giosuè Muratore
