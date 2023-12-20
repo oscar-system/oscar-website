@@ -5,33 +5,33 @@
 #  thumbnail: polymake.png
 #  language: julia
 
-- title: G-vectors
-  repository: micjoswig/oscar-notebooks
-  filename: polymake/g-vectors_of_random_simplicial_6-polytopes
-  author: Michael Joswig
-  thumbnail: polymake.png
-  language: julia
+#- title: G-vectors
+#  repository: micjoswig/oscar-notebooks
+#  filename: polymake/g-vectors_of_random_simplicial_6-polytopes
+#  author: Michael Joswig
+#  thumbnail: polymake.png
+#  language: julia
 
-- title: "Recognizing Manifolds"
-  repository: micjoswig/oscar-notebooks
-  filename: polymake/K3-16
-  author: Michael Joswig
-  thumbnail: polymake.png
-  language: julia
+#- title: "Recognizing Manifolds"
+#  repository: micjoswig/oscar-notebooks
+#  filename: polymake/K3-16
+#  author: Michael Joswig
+#  thumbnail: polymake.png
+#  language: julia
 
-- title: Singular.jl example
-  repository: oscar-system/OSCARBinder
-  filename: Singular
-  author: Sebastian Gutsche
-  thumbnail: singular.png
-  language: julia
+#- title: Singular.jl example
+#  repository: oscar-system/OSCARBinder
+#  filename: Singular
+#  author: Sebastian Gutsche
+#  thumbnail: singular.png
+#  language: julia
 
-- title: "Example AbstractAlgebra.jl"
-  repository: oscar-system/OSCARBinder
-  filename: AbstractAlgebra
-  author: William Hart
-  thumbnail: AbstractAlgebra.png
-  language: julia
+#- title: "Example AbstractAlgebra.jl"
+#  repository: oscar-system/OSCARBinder
+#  filename: AbstractAlgebra
+#  author: William Hart
+#  thumbnail: AbstractAlgebra.png
+#  language: julia
 
 #- title: "Singular from GAP 1"
 #  repository: oscar-system/OSCARBinder
@@ -47,128 +47,128 @@
 #  thumbnail: GapLogo.png
 #  language: GAP
 
-- title: "Coherent sheaves on P1"
-  repository: homalg-project/CapAndHomalgNotebooks
-  filename: CohP1
-  author: Mohamed Barakat
-  thumbnail: Logo_CAP.jpg
-  language: CAP using homalg and Singular
+#- title: "Coherent sheaves on P1"
+#  repository: homalg-project/CapAndHomalgNotebooks
+#  filename: CohP1
+#  author: Mohamed Barakat
+#  thumbnail: Logo_CAP.jpg
+#  language: CAP using homalg and Singular
 
-- title: "Uniform matrix product states"
-  repository: homalg-project/CapAndHomalgNotebooks
-  filename: uMPS(2,2,4)_0dim
-  author: Mohamed Barakat
-  thumbnail: Logo_CAP.jpg
-  language: CAP using homalg and Singular
+#- title: "Uniform matrix product states"
+#  repository: homalg-project/CapAndHomalgNotebooks
+#  filename: uMPS(2,2,4)_0dim
+#  author: Mohamed Barakat
+#  thumbnail: Logo_CAP.jpg
+#  language: CAP using homalg and Singular
 
-- title: "A divisionally free not inductively free arrangement with a minimal number of hyperplanes"
-  repository: homalg-project/CapAndHomalgNotebooks
-  filename: DivFreeNotIndFree
-  author: Mohamed Barakat and Lukas Kühne
-  thumbnail: Logo_CAP.jpg
-  language: CAP using homalg and Singular
+#- title: "A divisionally free not inductively free arrangement with a minimal number of hyperplanes"
+#  repository: homalg-project/CapAndHomalgNotebooks
+#  filename: DivFreeNotIndFree
+#  author: Mohamed Barakat and Lukas Kühne
+#  thumbnail: Logo_CAP.jpg
+#  language: CAP using homalg and Singular
 
-- title: "Tilting equivalence"
-  repository: homalg-project/CapAndHomalgNotebooks
-  filename: TiltingEquivalence
-  author: Kamal Saleh and Mohamed Barakat
-  thumbnail: Logo_CAP.jpg
-  language: CAP using homalg and Singular
+#- title: "Tilting equivalence"
+#  repository: homalg-project/CapAndHomalgNotebooks
+#  filename: TiltingEquivalence
+#  author: Kamal Saleh and Mohamed Barakat
+#  thumbnail: Logo_CAP.jpg
+#  language: CAP using homalg and Singular
 
-- title: "Computations in the symmetric algebra internal to the tensor category of finite dimensional representations of Sym(4)"
-  repository: homalg-project/CapAndHomalgNotebooks
-  filename: SymmetricAlgebraInternalToS4rep
-  author: Mohamed Barakat and Fabian Zickgraf
-  thumbnail: Logo_CAP.jpg
-  language: CAP using homalg and Singular
+#- title: "Computations in the symmetric algebra internal to the tensor category of finite dimensional representations of Sym(4)"
+#  repository: homalg-project/CapAndHomalgNotebooks
+#  filename: SymmetricAlgebraInternalToS4rep
+#  author: Mohamed Barakat and Fabian Zickgraf
+#  thumbnail: Logo_CAP.jpg
+#  language: CAP using homalg and Singular
 
-- title: "Intro Number Fields: Towers"
-  repository: oscar-system/OSCARBinder
-  filename: Hecke
-  author: Claus Fieker
-  thumbnail: Hecke.png
-  language: julia
+#- title: "Intro Number Fields: Towers"
+#  repository: oscar-system/OSCARBinder
+#  filename: Hecke
+#  author: Claus Fieker
+#  thumbnail: Hecke.png
+#  language: julia
 
-- title: "Combinatorial Automorphisms"
-  repository: micjoswig/oscar-notebooks
-  filename: MPI-demo-200124/combinatorial-automorphisms
-  author: Michael Joswig
-  thumbnail: polymake.png
-  language: julia
+#- title: "Combinatorial Automorphisms"
+#  repository: micjoswig/oscar-notebooks
+#  filename: MPI-demo-200124/combinatorial-automorphisms
+#  author: Michael Joswig
+#  thumbnail: polymake.png
+#  language: julia
 
-- title: "Wronski Polynomial Systems"
-  repository: micjoswig/oscar-notebooks
-  filename: MPI-demo-200124/wronski-polynomials
-  author: Michael Joswig
-  thumbnail: polymake.png
-  language: julia
+#- title: "Wronski Polynomial Systems"
+#  repository: micjoswig/oscar-notebooks
+#  filename: MPI-demo-200124/wronski-polynomials
+#  author: Michael Joswig
+#  thumbnail: polymake.png
+#  language: julia
 
-- title: "Example GroebnerBasis.jl"
-  repository: ederc/GroebnerBasisNotebooks
-  filename: GroebnerBasis
-  author: Christian Eder
-  thumbnail: GroebnerBasis.png
-  language: julia
+#- title: "Example GroebnerBasis.jl"
+#  repository: ederc/GroebnerBasisNotebooks
+#  filename: GroebnerBasis
+#  author: Christian Eder
+#  thumbnail: GroebnerBasis.png
+#  language: julia
 
-- title: "Computing GIT-Fans"
-  repository: oscar-system/GITFans
-  filename: ipynb/GITFans
-  author: Thomas Breuer and Janko Boehm
-  thumbnail: oscar.png
-  language: julia
+#- title: "Computing GIT-Fans"
+#  repository: oscar-system/GITFans
+#  filename: ipynb/GITFans
+#  author: Thomas Breuer and Janko Boehm
+#  thumbnail: oscar.png
+#  language: julia
 
-- title: "Decomposition of Binomial Ideals"
-  repository: oscar-system/OSCARBinder
-  filename: AlgebraicGeometry
-  author: Clara Petroll
-  thumbnail: oscar.png
-  language: julia
+#- title: "Decomposition of Binomial Ideals"
+#  repository: oscar-system/OSCARBinder
+#  filename: AlgebraicGeometry
+#  author: Clara Petroll
+#  thumbnail: oscar.png
+#  language: julia
 
-- title: "Tropicalization of a p-adic surface"
-  repository: micjoswig/oscar-notebooks
-  filename: patchworking/Tropicalization
-  author: Michael Joswig
-  thumbnail: oscar.png
-  language: julia
+#- title: "Tropicalization of a p-adic surface"
+#  repository: micjoswig/oscar-notebooks
+#  filename: patchworking/Tropicalization
+#  author: Michael Joswig
+#  thumbnail: oscar.png
+#  language: julia
 
-- title: "Homology of VR complexes"
-  repository: oscar-system/OSCARBinder
-  filename: homology_of_vr_complexes
-  author: Ivan Spirandelli
-  thumbnail: polymake.png
-  language: julia
+#- title: "Homology of VR complexes"
+#  repository: oscar-system/OSCARBinder
+#  filename: homology_of_vr_complexes
+#  author: Ivan Spirandelli
+#  thumbnail: polymake.png
+#  language: julia
 
-- title: "Barcode and persistence diagrams of VR complexes"
-  repository: oscar-system/OSCARBinder
-  filename: persistent_homology_of_vr_complexes_and_visualizations
-  author: Ivan Spirandelli
-  thumbnail: polymake.png
-  language: julia
+#- title: "Barcode and persistence diagrams of VR complexes"
+#  repository: oscar-system/OSCARBinder
+#  filename: persistent_homology_of_vr_complexes_and_visualizations
+#  author: Ivan Spirandelli
+#  thumbnail: polymake.png
+#  language: julia
 
-- title: "Computing monomial bases 1"
-  repository: johannesflake/polybases-examples
-  filename: polybases-example-1
-  author: Johannes Flake
-  thumbnail: oscar.png
-  language: julia
+#- title: "Computing monomial bases 1"
+#  repository: johannesflake/polybases-examples
+#  filename: polybases-example-1
+#  author: Johannes Flake
+#  thumbnail: oscar.png
+#  language: julia
 
-- title: "Analyzing Rubik's Cube"
-  repository: oscar-system/OSCARBinder
-  filename: rubik
-  author: Martin Schönert (translated to OSCAR by Thomas Breuer)
-  thumbnail: oscar.png
-  language: julia
+#- title: "Analyzing Rubik's Cube"
+#  repository: oscar-system/OSCARBinder
+#  filename: rubik
+#  author: Martin Schönert (translated to OSCAR by Thomas Breuer)
+#  thumbnail: oscar.png
+#  language: julia
 
-- title: "Generation of sporadic simple groups by 𝜋- and 𝜋'-subgroups"
-  repository: oscar-system/OSCARBinder
-  filename: pi_piprime_generation
-  author: Thomas Breuer
-  thumbnail: oscar.png
-  language: julia
+#- title: "Generation of sporadic simple groups by 𝜋- and 𝜋'-subgroups"
+#  repository: oscar-system/OSCARBinder
+#  filename: pi_piprime_generation
+#  author: Thomas Breuer
+#  thumbnail: oscar.png
+#  language: julia
 
-- title: "Perfect central extensions of PSL(3,4) in the Monster group"
-  repository: oscar-system/OSCARBinder
-  filename: L34_extensions_in_M
-  author: Thomas Breuer
-  thumbnail: oscar.png
-  language: julia
+#- title: "Perfect central extensions of PSL(3,4) in the Monster group"
+#  repository: oscar-system/OSCARBinder
+#  filename: L34_extensions_in_M
+#  author: Thomas Breuer
+#  thumbnail: oscar.png
+#  language: julia
