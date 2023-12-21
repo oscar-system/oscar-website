@@ -20,7 +20,7 @@ It is very low traffic and can be used for questions about OSCAR development.
 
 ## Discussion forum
 
-We are also experiment with a [GitHub discussion forum](https://github.com/oscar-system/Oscar.jl/discussions), which also can be used for discussions, questions and so on. Note that it is public, and permanent, while Slack is ephemeral (i.e., discussions there vanish after some time). Using it requires a free [GitHub account](https://github.com).
+We are experimenting with a [GitHub discussion forum](https://github.com/oscar-system/Oscar.jl/discussions), which also can be used for discussions, questions and so on. Note that it is public, and permanent, while Slack is ephemeral (i.e., discussions there vanish after some time). Using it requires a free [GitHub account](https://github.com).
 
 ## How to report issues
 
@@ -35,7 +35,7 @@ If you do not want to create an account on GitHub, please send the issue to [OSC
 
 ## How to contribute
 
-All Software developed for the OSCAR project is available on [GitHub](https://github.com/oscar-system).
+All software developed for the OSCAR project is available on [GitHub](https://github.com/oscar-system).
 
 Contributions are always welcome. If you want to contribute to OSCAR, you can simply fork the repository you want to
 contribute to and provide a pull request. We recommend that you also (or possibly beforehand) get in touch with us to
