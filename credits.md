@@ -29,7 +29,7 @@ citations:
     - name: Some thoughts and experiments on Bergman's compact amalgamation problem
       url: https://arxiv.org/abs/2304.08365
       authors: Michael Joswig, Mario Kummer, Andreas Thom, Claudia He Yun
-    - name: On $Q$-factorial terminalizations of symplectic linear quotient singularities
+    - name: On $\mathbb{Q}$-factorial terminalizations of symplectic linear quotient singularities
       url: https://doi.org/10.26204/KLUEDO/7351
       authors: Johannes Schmitt
 
