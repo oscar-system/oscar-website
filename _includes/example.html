@@ -1,5 +1,5 @@
-Clicking on the example will open a static version of the example, powered by <a href="https://nbviewer.jupyter.org/">nbviewer</a>.
-
+For each topic, you can decide to open a static version of the jupyter notebook, powered by <a href="https://nbviewer.jupyter.org/">nbviewer</a>.
+Alternatively, you can inspect the jupyter notebook directly on <a href="https://github.com/">github</a>.
 
 <div class="oscar_detail">
   <details>
@@ -37,10 +37,12 @@ Clicking on the example will open a static version of the example, powered by <a
 
 <br/>
 Click on one of the links below to filter notebooks (and re-click to disable filtering).
-<div class="example_row">
+
+  <table>
+    <tr>
   {%- for component in site.data.examples_components -%}
   {%- assign component_url = "/example/" | append: component.name | append: "/" %}
-  <div class="example_column">
+  <td class="example_column">
     <a style="display: block; "
        {% if page.url == component_url %}
            href="{{ site.baseurl }}/example/"
@@ -55,9 +57,10 @@ Click on one of the links below to filter notebooks (and re-click to disable fil
         {{ component.name }}
       </div>
     </a>
-  </div>
+  </td>
   {%- endfor -%}
-</div>
+</tr>
+</table>
 
 
 <!--
@@ -76,18 +79,18 @@ the example, powered by <a href="https://mybinder.org">mybinder</a>.
   {%- for post in someexamples  -%}
   <div class="item_example_card">
     <div class="item_example_left">
-      <a href="https://nbviewer.jupyter.org/github/{{ post.repository }}/blob/master/{{ post.filename }}.ipynb">
         <img class="item_example-image"
              src="{{ site.baseurl }}/public/thumbnails/{{ post.thumbnail }}">
-      </a>
     </div>
     <div class="item_example_right">
       <div class="item_example-title">
-        <a href="https://nbviewer.jupyter.org/github/{{ post.repository }}/blob/master/{{ post.filename }}.ipynb">
           {{ post.title }}
-        </a>
       </div>
-      <div class="item_example-author">by {{ post.author }}</div>
+      <div class="item_example-author">Author(s): {{ post.author }}</div>
+      <div class="item_last_modified">Last modified: {{ post.date }} </div>
+      <div><a href="https://nbviewer.jupyter.org/github/{{ post.repository }}/blob/master/{{ post.filename }}.ipynb">nbviewer</a> </div>
+      <a href="https://github.com/{{ post.repository }}/blob/master/{{ post.filename }}.ipynb">Github</a>
+
     </div>
   </div>
   {% endfor %}

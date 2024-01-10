@@ -1,7 +1,7 @@
 ---
 layout: example
 title: OSCAR examples
-component: Logo_CAP.jpg
+component: gap.png
 ---
 
 {% include example.html %}
