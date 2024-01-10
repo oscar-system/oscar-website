@@ -1,3 +1,51 @@
+- title: Commutative Algebra
+  repository: oscar-system/oscar-website
+  filename: _data/tutorials/CommutativeAlgebraInOSCAR
+  author: Luca Remke
+  thumbnail: oscar.png
+  language: julia
+  date: June 21, 2023
+
+- title: Polyhedral Geometry
+  repository: oscar-system/oscar-website
+  filename: _data/tutorials/PolyhedralGeometryInOSCAR.ipynb
+  author: Luca Remke
+  thumbnail: polymake.png
+  language: julia
+  date: June 6, 2023
+
+- title: Toric geometry
+  repository: oscar-system/oscar-website
+  filename: _data/tutorials/ToricGeometryInOSCAR1
+  author: Luca Remke
+  thumbnail: oscar.png
+  language: julia
+  date: June 6, 2023
+
+- title: Toric geometry - advanced topics
+  repository: oscar-system/oscar-website
+  filename: _data/tutorials/ToricGeometryInOSCAR
+  author: Martin Bies
+  thumbnail: oscar.png
+  language: julia
+  date: March 7, 2023
+
+- title: Quadratic lattices
+  repository: oscar-system/oscar-website
+  filename: _data/tutorials/quadratic_forms
+  author: Tommy Hofmann
+  thumbnail: oscar.png
+  language: julia
+  date: June 1, 2023
+
+- title: F-theory Tools
+  repository: oscar-system/oscar-website
+  filename: _data/tutorials/FTheoryToolsInOSCAR
+  author: Andrew P. Turner
+  thumbnail: oscar.png
+  language: julia
+  date: May 4, 2023
+
 #- title: Polymake.jl example
 #  repository: oscar-system/OSCARBinder
 #  filename: Polymake
@@ -37,14 +85,14 @@
 #  repository: oscar-system/OSCARBinder
 #  filename: GAPJulia_Singular_car
 #  author: Thomas Breuer
-#  thumbnail: GapLogo.png
+#  thumbnail: gap.png
 #  language: GAP
 #
 #- title: "Singular from GAP 2"
 #  repository: oscar-system/OSCARBinder
 #  filename: GAPJulia_Singular_blog
 #  author: Thomas Breuer
-#  thumbnail: GapLogo.png
+#  thumbnail: gap.png
 #  language: GAP
 
 #- title: "Coherent sheaves on P1"

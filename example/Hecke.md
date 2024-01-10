@@ -1,7 +1,7 @@
 ---
 layout: example
 title: OSCAR examples
-component: Hecke.png
+component: hecke.png
 ---
 
 {% include example.html %}
