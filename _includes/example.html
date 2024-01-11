@@ -41,14 +41,14 @@ Click on one of the links below to filter notebooks (and re-click to disable fil
   <table>
     <tr>
   {%- for component in site.data.examples_components -%}
-  {%- assign component_url = "/example/" | append: component.name | append: "/" %}
+  {%- assign component_url = "/tutorials/" | append: component.name | append: "/" %}
   <td class="example_column">
     <a style="display: block; "
        {% if page.url == component_url %}
-           href="{{ site.baseurl }}/example/"
+           href="{{ site.baseurl }}/tutorials/"
            style="font-weight: bold;"
        {% else %}
-           href="{{ site.baseurl }}/example/{{ component.name }}"
+           href="{{ site.baseurl }}/tutorials/{{ component.name }}"
        {% endif %}
        >
       <img class="item_example-image-link"

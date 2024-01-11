@@ -2,7 +2,7 @@
 
 - [How to contribute](#how-to-contribute)
 - [How to contribute a News post](#how-to-contribute-a-news-post)
-- [How to contribute an example notebook](#how-to-contribute-an-example-notebook)
+- [How to contribute a tutorial notebook](#how-to-contribute-a-tutorial-notebook)
 - [How to add a new documentation URL](#how-to-add-a-new-documentation-url)
 - [How to add a new contributor](#how-to-add-a-new-contributor)
 - [How to add a new software dependency](#how-to-add-a-new-software-dependency)
@@ -67,15 +67,14 @@ website, then please add the new year in the line
 ```
 of `talks.html`. Otherwise your talk will not show up on the website.
 
-## How to contribute an example notebook
+## How to contribute a tutorial notebook
 
-To contribute a new example notebook, please follow these steps
+To contribute a new tutorial notebook, please follow these steps
 
 1. Create a binder-ready repository on GitHub, containing the notebook file.
    Assume the repository is `https://github.com/myusername/mybinderrepo`
    and the notebook file is `mynotebook.ipynb` inside this repository.
-
-   For an example repository, see [OSCARBinder](https://github.com/oscar-system/OSCARBinder).
+   (For instance, cf. [OSCARBinder](https://github.com/oscar-system/OSCARBinder).)
 
 2. Create a thumbnail for the notebook, say `mythumbnail.png` and store it in `/public/thumbnails`.
 
@@ -87,9 +86,10 @@ To contribute a new example notebook, please follow these steps
   author: My Name
   thumbnail: mythumbnail.png
   language: julia
+  date: Date at which the notebook was last modified
 
 ```
-Please adjust all entries accordingly, including the language entry if necessary (e.g. `GAP`).
+Please adjust all entries accordingly.
 
 ## How to use syntax highlighting in Markdown files
 
@@ -122,4 +122,3 @@ end
 ```
 
 A full list of supported languages can be found [here](https://github.com/rouge-ruby/rouge/blob/master/docs/Languages.md).
-
