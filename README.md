@@ -78,7 +78,7 @@ To contribute a new tutorial notebook, please follow these steps
 
 2. Create a thumbnail for the notebook, say `mythumbnail.png` and store it in `/public/thumbnails`.
 
-3. Create a new entry in the `_data/examples.yml` file, consisting of the following lines:
+3. Create a new entry in the `_data/tutorials.yml` file, consisting of the following lines:
 ```
 - title: "My new notebook"
   repository: myusername/mybinderrepo
