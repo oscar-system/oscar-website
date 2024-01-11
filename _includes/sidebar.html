@@ -43,7 +43,7 @@
       {% for node in pages_list %}
         {% if node.title != null %}
           {% if node.notinsidebar == null %}
-            {% if node.layout == "page" or node.layout == "example" %}
+            {% if node.layout == "page" or node.layout == "tutorials" %}
               <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ site.baseurl }}/{{ node.url }}">{{ node.title }}</a>
               <p/>
             {% endif %}
