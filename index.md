@@ -31,7 +31,7 @@ See the [About]({{site.baseurl }}/about) page for more information.
 
 ## Getting started
 
-For examples, see the [Examples page]({{site.baseurl }}/example), where pre-rendered notebooks showcase
+For tutorials, see the [Tutorials page]({{site.baseurl }}/tutorials), where pre-rendered notebooks showcase
 selected things the software developed in the OSCAR project can already do.
 
 <!--
