@@ -1,5 +1,5 @@
 ---
-layout: example
+layout: tutorial
 title: OSCAR Tutorials
 main: true
 ---
