@@ -132,6 +132,11 @@ contributors:
     website: https://page.math.tu-berlin.de/~kastner/
     github: lkastner
 
+  - name: Aaruni Kaushik
+    affiliation: University of Kaiserslautern-Landau
+    website: https://akaushik.edufor.me
+    github: aaruni96
+
   - name: Avi Kulkarni
     affiliation: Dartmouth College
     website: https://math.dartmouth.edu/~akulkarn/index.html
