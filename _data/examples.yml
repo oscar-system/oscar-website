@@ -1,5 +1,6 @@
 - title: Commutative Algebra
   repository: oscar-system/oscar-website
+  branch: gh-pages
   filename: _data/tutorials/CommutativeAlgebraInOSCAR
   author: Luca Remke
   thumbnail: oscar.png
@@ -8,7 +9,8 @@
 
 - title: Polyhedral Geometry
   repository: oscar-system/oscar-website
-  filename: _data/tutorials/PolyhedralGeometryInOSCAR.ipynb
+  branch: gh-pages
+  filename: _data/tutorials/PolyhedralGeometryInOSCAR
   author: Luca Remke
   thumbnail: polymake.png
   language: julia
@@ -16,6 +18,7 @@
 
 - title: Toric geometry
   repository: oscar-system/oscar-website
+  branch: gh-pages
   filename: _data/tutorials/ToricGeometryInOSCAR
   author: Martin Bies, Luca Remke
   thumbnail: oscar.png
@@ -23,8 +26,9 @@
   date: January 17, 2024
 
 - title: Quadratic lattices
-  repository: oscar-system/oscar-website
-  filename: _data/tutorials/quadratic_forms
+  repository: thofma/HeckeTutorials.jl
+  branch: master
+  filename: quadratic_forms
   author: Tommy Hofmann
   thumbnail: oscar.png
   language: julia
@@ -32,6 +36,7 @@
 
 - title: F-theory Tools
   repository: oscar-system/oscar-website
+  branch: gh-pages
   filename: _data/tutorials/FTheoryToolsInOSCAR
   author: Andrew P. Turner
   thumbnail: oscar.png
