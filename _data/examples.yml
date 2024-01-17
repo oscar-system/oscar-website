@@ -16,19 +16,11 @@
 
 - title: Toric geometry
   repository: oscar-system/oscar-website
-  filename: _data/tutorials/ToricGeometryInOSCAR1
-  author: Luca Remke
-  thumbnail: oscar.png
-  language: julia
-  date: June 6, 2023
-
-- title: Toric geometry - advanced topics
-  repository: oscar-system/oscar-website
   filename: _data/tutorials/ToricGeometryInOSCAR
-  author: Martin Bies
+  author: Martin Bies, Luca Remke
   thumbnail: oscar.png
   language: julia
-  date: March 7, 2023
+  date: January 17, 2024
 
 - title: Quadratic lattices
   repository: oscar-system/oscar-website
