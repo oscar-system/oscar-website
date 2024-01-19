@@ -1,7 +1,7 @@
 - title: Polynomial Rings
   repository: oscar-system/oscar-website
   branch: gh-pages
-  filename: _data/tutorials/CommutativeAlgebraInOSCAR
+  filename: _data/tutorials/PolynomialRings
   author: Luca Remke
   thumbnail: oscar.png
   language: julia
