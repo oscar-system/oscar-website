@@ -141,10 +141,10 @@ julia> using Oscar
  -----    -----    -----   -     -  -     -
 
 ...combining (and extending) ANTIC, GAP, Polymake and Singular
-Version 0.13.0 ...
+Version 0.14.0 ...
  ... which comes with absolutely no warranty whatsoever
 Type: '?Oscar' for more information
-(c) 2019-2023 by The OSCAR Development Team
+(c) 2019-2024 by The OSCAR Development Team
 
 julia>
 ```
