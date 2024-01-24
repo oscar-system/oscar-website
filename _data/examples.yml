@@ -5,7 +5,7 @@
   author: Luca Remke
   thumbnail: oscar.png
   language: julia
-  date: June 21, 2023
+  date: January 19, 2024
 
 - title: Polyhedral Geometry
   repository: oscar-system/oscar-website
@@ -14,7 +14,7 @@
   author: Luca Remke
   thumbnail: polymake.png
   language: julia
-  date: June 6, 2023
+  date: January 24, 2024
 
 - title: Toric geometry
   repository: oscar-system/oscar-website
