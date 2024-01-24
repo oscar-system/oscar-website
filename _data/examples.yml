@@ -38,10 +38,10 @@
   repository: oscar-system/oscar-website
   branch: gh-pages
   filename: _data/tutorials/FTheoryToolsInOSCAR
-  author: Andrew P. Turner
+  author: Martin Bies, Andrew P. Turner
   thumbnail: oscar.png
   language: julia
-  date: May 4, 2023
+  date: January 24, 2024
 
 #- title: Polymake.jl example
 #  repository: oscar-system/OSCARBinder
