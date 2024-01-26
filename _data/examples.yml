@@ -1,25 +1,25 @@
 - title: Polynomial Rings
-  repository: oscar-system/oscar-website
-  branch: gh-pages
-  filename: _data/tutorials/PolynomialRings
+  repository: HereAround/MartinsOscarTutorials.jl
+  branch: master
+  filename: PolynomialRings
   author: Luca Remke
   thumbnail: oscar.png
   language: julia
   date: January 26, 2024
 
 - title: Polyhedral Geometry
-  repository: oscar-system/oscar-website
-  branch: gh-pages
-  filename: _data/tutorials/PolyhedralGeometryInOSCAR
+  repository: HereAround/MartinsOscarTutorials.jl
+  branch: master
+  filename: PolyhedralGeometryInOSCAR
   author: Luca Remke
   thumbnail: polymake.png
   language: julia
   date: January 26, 2024
 
 - title: Toric geometry
-  repository: oscar-system/oscar-website
-  branch: gh-pages
-  filename: _data/tutorials/ToricGeometryInOSCAR
+  repository: HereAround/MartinsOscarTutorials.jl
+  branch: master
+  filename: ToricGeometryInOSCAR
   author: Martin Bies, Luca Remke
   thumbnail: oscar.png
   language: julia
@@ -35,9 +35,9 @@
   date: June 1, 2023
 
 - title: F-Theory Tools
-  repository: oscar-system/oscar-website
-  branch: gh-pages
-  filename: _data/tutorials/FTheoryToolsInOSCAR
+  repository: HereAround/MartinsOscarTutorials.jl
+  branch: master
+  filename: FTheoryToolsInOSCAR
   author: Martin Bies, Andrew P. Turner
   thumbnail: oscar.png
   language: julia
