@@ -5,7 +5,7 @@
   author: Luca Remke
   thumbnail: oscar.png
   language: julia
-  date: January 19, 2024
+  date: January 26, 2024
 
 - title: Polyhedral Geometry
   repository: oscar-system/oscar-website
@@ -14,7 +14,7 @@
   author: Luca Remke
   thumbnail: polymake.png
   language: julia
-  date: January 24, 2024
+  date: January 26, 2024
 
 - title: Toric geometry
   repository: oscar-system/oscar-website
@@ -23,7 +23,7 @@
   author: Martin Bies, Luca Remke
   thumbnail: oscar.png
   language: julia
-  date: January 17, 2024
+  date: January 16, 2024
 
 - title: Quadratic lattices
   repository: thofma/HeckeTutorials.jl
@@ -34,14 +34,14 @@
   language: julia
   date: June 1, 2023
 
-- title: F-theory Tools
+- title: F-Theory Tools
   repository: oscar-system/oscar-website
   branch: gh-pages
   filename: _data/tutorials/FTheoryToolsInOSCAR
   author: Martin Bies, Andrew P. Turner
   thumbnail: oscar.png
   language: julia
-  date: January 24, 2024
+  date: January 26, 2024
 
 #- title: Polymake.jl example
 #  repository: oscar-system/OSCARBinder
