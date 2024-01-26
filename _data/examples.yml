@@ -23,7 +23,7 @@
   author: Martin Bies, Luca Remke
   thumbnail: oscar.png
   language: julia
-  date: January 16, 2024
+  date: January 26, 2024
 
 - title: Quadratic lattices
   repository: thofma/HeckeTutorials.jl
