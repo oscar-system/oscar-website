@@ -111,6 +111,9 @@ following as root:
    elsewhere in this file, and enable PHP.
    Of course also set up SSL/TLS and a scheme to update the certificates.
 
+3. Activate systemd user units:
+
+        loginctl enable-linger www-mathe-oscar
 
 ## Further steps as `www-mathe-oscar`
 
