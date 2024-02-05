@@ -15,31 +15,30 @@ To ensure the required software is installed on the server, run this
 
 The server can be reached via SSH:
 
-    ssh www.oscar-system.org
+    ssh www-mathe-oscar@www-admin11.uni-kl.de
 
-There is a dedicated user `www-mathe-oscar` who owns a clone of the oscar-website
-repository at
+The website is update from a git clone of the website repository at
 
     /srv/www/www-mathe-oscar/data/oscar-website
 
-This clone is owned by use `www-mathe-oscar` and group `www-mathe-oscar`. If anything goes
+This clone is owned by user `www-mathe-oscar` and group `www-mathe-oscar`. If anything goes
 wrong with these permissions, they can be fixed via
 
     chown -R www-mathe-oscar:www-mathe-oscar /srv/www/www-mathe-oscar/data/oscar-website
 
 ## Automatic updates via webhook
 
-Whenever a change is pushed to the master branch of the oscar-website
+Whenever a change is pushed to the `gh-pages` branch of the website
 repository, GitHub activates a webhook we provide via `webhook.php` at
 <https://www.oscar-system.org/webhook.php>.
 
 The crucial bit is at the end of this .php file, where an empty file
 `/srv/www/www-mathe-oscar/data/oscar-website.trigger` is created. This is detected by a
 systemd unit `~/.config/systemd/user/oscar-website.path` (a copy of this file is
-in the `etc` directory of the oscar-website repository).
+in the `etc` directory of the website repository).
 
 This then triggers `~/.config/systemd/user/oscar-website.service`
-(a copy of this file is in the `etc` directory of the oscar-website repository).
+(a copy of this file is in the `etc` directory of the website repository).
 
 This finally executes `etc/update.sh`, which runs jekyll.
 
