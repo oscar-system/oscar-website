@@ -2,10 +2,10 @@
   repository: HereAround/MartinsOscarTutorials.jl
   branch: master
   filename: PolynomialRings
-  author: Luca Remke
+  author: John Abbott, Martin Bies, Luca Remke
   thumbnail: oscar.png
   language: julia
-  date: January 26, 2024
+  date: February 21, 2024
 
 - title: Polyhedral Geometry
   repository: HereAround/MartinsOscarTutorials.jl
