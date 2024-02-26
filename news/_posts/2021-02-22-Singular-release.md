@@ -13,3 +13,5 @@ for turning a `libSingular.ring_ptr` into a bona fide `Ring`.
 function `AlgebraicFieldExtension`. This function takes a univariate `FunctionField`
 and a minimal polynomial in the function field to create the algebraic extension.
 - Various small bugs have been fixed.
+
+[Click here for a detailed list of changes](https://github.com/oscar-system/Singular.jl/releases/tag/v0.4.5).
