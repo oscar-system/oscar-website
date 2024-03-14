@@ -169,6 +169,11 @@ contributors:
     website: https://www.math.uni-sb.de/ag/brandhorst/index.php?option=com_content&view=article&id=26:muller-en-1&catid=18&lang=en&Itemid=114
     github: StevellM
 
+  - name: Erik Paemurru    # Postdoc with Simon Brandhorst, algebraic geometry
+    affiliation: Saarland University
+    website: https://www.math.uni-sb.de/ag/brandhorst/index.php?option=com_content&view=article&id=49:paemurru-en&catid=18&lang=en&Itemid=114
+    github: paemurru
+
   - name: Markus Pfeiffer
     affiliation: St Andrews
     retired: true
