@@ -32,6 +32,15 @@ citations:
     - name: On $\mathbb{Q}$-factorial terminalizations of symplectic linear quotient singularities
       url: https://doi.org/10.26204/KLUEDO/7351
       authors: Johannes Schmitt
+    - name: Invariant Grassmannians and a K3 surface with an action of order 192*2
+      url: https://arxiv.org/abs/2210.14585
+      authors: Stevell Muller
+    - name: Classification of Symplectic Birational Involutions of Manifolds of OG10 type
+      url: https://arxiv.org/abs/2206.13814
+      authors: Lisa Marquand, Stevell Muller
+    - name: Finite groups of symplectic birational transformations of IHS manifolds of OG10 type
+      url: https://arxiv.org/abs/2310.06580
+      authors: Lisa Marquand, Stevell Muller
 
 used_software:
     - name: GAP
