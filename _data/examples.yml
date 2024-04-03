@@ -43,12 +43,6 @@
   language: julia
   date: April 3, 2024
 
-#- title: Singular.jl example
-#  repository: oscar-system/OSCARBinder
-#  filename: Singular
-#  author: Sebastian Gutsche
-#  thumbnail: singular.png
-#  language: julia
 
 #- title: "Example AbstractAlgebra.jl"
 #  repository: oscar-system/OSCARBinder
