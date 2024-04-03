@@ -14,7 +14,7 @@
   author: Luca Remke
   thumbnail: polymake.png
   language: julia
-  date: January 26, 2024
+  date: April 3, 2024
 
 - title: Toric geometry
   repository: HereAround/MartinsOscarTutorials.jl
@@ -42,13 +42,6 @@
   thumbnail: oscar.png
   language: julia
   date: January 26, 2024
-
-#- title: Polymake.jl example
-#  repository: oscar-system/OSCARBinder
-#  filename: Polymake
-#  author: Sebastian Gutsche
-#  thumbnail: polymake.png
-#  language: julia
 
 #- title: G-vectors
 #  repository: micjoswig/oscar-notebooks
