@@ -43,6 +43,35 @@
   language: julia
   date: April 3, 2024
 
+- title: "Generation of sporadic simple groups by 𝜋- and 𝜋'-subgroups"
+  repository: oscar-system/OSCARBinder
+  branch: master
+  filename: pi_piprime_generation
+  author: Thomas Breuer
+  thumbnail: oscar.png
+  language: julia
+  date: April 3, 2024
+
+- title: "Analyzing Rubik's Cube"
+  repository: oscar-system/OSCARBinder
+  branch: master
+  filename: rubik
+  author: Martin Schönert (translated to OSCAR by Thomas Breuer)
+  thumbnail: oscar.png
+  language: julia
+  date: April 3, 2024
+
+#- title: "Perfect central extensions of PSL(3,4) in the Monster group"
+#  repository: oscar-system/OSCARBinder
+#  branch: master
+#  filename: L34_extensions_in_M
+#  author: Thomas Breuer
+#  thumbnail: oscar.png
+#  language: julia
+#  date: April 3, 2024
+
+
+
 
 #- title: "Example AbstractAlgebra.jl"
 #  repository: oscar-system/OSCARBinder
@@ -50,20 +79,6 @@
 #  author: William Hart
 #  thumbnail: AbstractAlgebra.png
 #  language: julia
-
-#- title: "Singular from GAP 1"
-#  repository: oscar-system/OSCARBinder
-#  filename: GAPJulia_Singular_car
-#  author: Thomas Breuer
-#  thumbnail: gap.png
-#  language: GAP
-#
-#- title: "Singular from GAP 2"
-#  repository: oscar-system/OSCARBinder
-#  filename: GAPJulia_Singular_blog
-#  author: Thomas Breuer
-#  thumbnail: gap.png
-#  language: GAP
 
 #- title: "Intro Number Fields: Towers"
 #  repository: oscar-system/OSCARBinder
@@ -93,26 +108,6 @@
 #  thumbnail: polymake.png
 #  language: julia
 
-#- title: "Analyzing Rubik's Cube"
-#  repository: oscar-system/OSCARBinder
-#  filename: rubik
-#  author: Martin Schönert (translated to OSCAR by Thomas Breuer)
-#  thumbnail: oscar.png
-#  language: julia
-
-#- title: "Generation of sporadic simple groups by 𝜋- and 𝜋'-subgroups"
-#  repository: oscar-system/OSCARBinder
-#  filename: pi_piprime_generation
-#  author: Thomas Breuer
-#  thumbnail: oscar.png
-#  language: julia
-
-#- title: "Perfect central extensions of PSL(3,4) in the Monster group"
-#  repository: oscar-system/OSCARBinder
-#  filename: L34_extensions_in_M
-#  author: Thomas Breuer
-#  thumbnail: oscar.png
-#  language: julia
 
 
 
