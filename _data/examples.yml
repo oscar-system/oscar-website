@@ -98,6 +98,7 @@
 #  thumbnail: oscar.png
 #  language: julia
 
+
 #- title: "Homology of VR complexes"
 #  repository: oscar-system/OSCARBinder
 #  filename: homology_of_vr_complexes
@@ -112,6 +113,12 @@
 #  thumbnail: polymake.png
 #  language: julia
 
+#- title: "g_vectors_of_random_simplicial_6-polytopes"
+#  repository: oscar-system/OSCARBinder
+#  filename: g_vectors_of_random_simplicial_6-polytopes
+#  author: Michael Joswig
+#  thumbnail: polymake.png
+#  language: julia
 
 
 
