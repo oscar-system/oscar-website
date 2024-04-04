@@ -1,3 +1,5 @@
+# Tutorials hosted at HereAround/MartinsOscarTutorials.jl
+
 - title: Polynomial Rings
   repository: HereAround/MartinsOscarTutorials.jl
   branch: master
@@ -25,6 +27,20 @@
   language: julia
   date: March 28, 2024
 
+- title: F-Theory Tools
+  repository: HereAround/MartinsOscarTutorials.jl
+  branch: master
+  filename: FTheoryToolsInOSCAR
+  author: Martin Bies, Andrew P. Turner
+  thumbnail: oscar.png
+  language: julia
+  date: April 3, 2024
+
+
+
+
+# Tutorials hosted at thofma/HeckeTutorials.jl
+
 - title: Quadratic lattices
   repository: thofma/HeckeTutorials.jl
   branch: master
@@ -34,14 +50,10 @@
   language: julia
   date: January 26, 2024
 
-- title: F-Theory Tools
-  repository: HereAround/MartinsOscarTutorials.jl
-  branch: master
-  filename: FTheoryToolsInOSCAR
-  author: Martin Bies, Andrew P. Turner
-  thumbnail: oscar.png
-  language: julia
-  date: April 3, 2024
+
+
+
+# Tutorials hosted at oscar-system/OSCARBinder
 
 - title: "Generation of sporadic simple groups by 𝜋- and 𝜋'-subgroups"
   repository: oscar-system/OSCARBinder
@@ -70,21 +82,18 @@
 #  language: julia
 #  date: April 3, 2024
 
-
-
+#- title: "Intro Number Fields: Towers"
+#  repository: oscar-system/OSCARBinder
+#  filename: Hecke
+#  author: Claus Fieker
+#  thumbnail: Hecke.png
+#  language: julia
 
 #- title: "Example AbstractAlgebra.jl"
 #  repository: oscar-system/OSCARBinder
 #  filename: AbstractAlgebra
 #  author: William Hart
 #  thumbnail: AbstractAlgebra.png
-#  language: julia
-
-#- title: "Intro Number Fields: Towers"
-#  repository: oscar-system/OSCARBinder
-#  filename: Hecke
-#  author: Claus Fieker
-#  thumbnail: Hecke.png
 #  language: julia
 
 #- title: "Decomposition of Binomial Ideals"
@@ -111,6 +120,7 @@
 
 
 
+# Tutorials hosted at oscar-system/GITFans
 
 #- title: "Computing GIT-Fans"
 #  repository: oscar-system/GITFans
@@ -121,6 +131,8 @@
 
 
 
+
+# Tutorials hosted at micjoswig/oscar-notebooks
 
 #- title: "Combinatorial Automorphisms"
 #  repository: micjoswig/oscar-notebooks
@@ -160,6 +172,7 @@
 
 
 
+# Tutorials hosted at ederc/GroebnerBasisNotebooks
 
 #- title: "Example GroebnerBasis.jl"
 #  repository: ederc/GroebnerBasisNotebooks
@@ -171,8 +184,7 @@
 
 
 
-
-
+# Tutorials hosted at johannesflake/polybases-examples
 
 #- title: "Computing monomial bases 1"
 #  repository: johannesflake/polybases-examples
