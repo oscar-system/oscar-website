@@ -161,16 +161,16 @@ details[open] summary::after {
   font-size:2em;
 }
 
-.fail{
+.failure{
   display: none;
 }
 
 
-div.borked > div.gallery_example_cards > div.item_example_card.fail{
+div.borked > div.gallery_example_cards > div.item_example_card.failure{
   display: block;
 }
 
-div.borked > div.gallery_example_cards > div.item_example_card.pass{
+div.borked > div.gallery_example_cards > div.item_example_card{
   display: none;
 }
 

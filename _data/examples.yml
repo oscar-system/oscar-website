@@ -8,7 +8,6 @@
   thumbnail: oscar.png
   language: julia
   date: March 28, 2024
-  status: pass
 
 - title: Polyhedral Geometry
   repository: HereAround/MartinsOscarTutorials.jl
@@ -18,7 +17,6 @@
   thumbnail: polymake.png
   language: julia
   date: April 3, 2024
-  status: fail
 
 - title: Toric geometry
   repository: HereAround/MartinsOscarTutorials.jl
@@ -28,7 +26,6 @@
   thumbnail: oscar.png
   language: julia
   date: March 28, 2024
-  status: pass
 
 - title: F-Theory Tools
   repository: HereAround/MartinsOscarTutorials.jl
@@ -38,7 +35,6 @@
   thumbnail: oscar.png
   language: julia
   date: April 3, 2024
-  status: pass
 
 
 
