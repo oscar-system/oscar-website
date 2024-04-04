@@ -82,7 +82,6 @@
   language: julia
   date: April 4, 2024
 
-
 #- title: "Perfect central extensions of PSL(3,4) in the Monster group"
 #  repository: oscar-system/OSCARBinder
 #  branch: master
@@ -91,13 +90,6 @@
 #  thumbnail: oscar.png
 #  language: julia
 #  date: April 3, 2024
-
-#- title: "Example AbstractAlgebra.jl"
-#  repository: oscar-system/OSCARBinder
-#  filename: AbstractAlgebra
-#  author: William Hart
-#  thumbnail: AbstractAlgebra.png
-#  language: julia
 
 #- title: "Decomposition of Binomial Ideals"
 #  repository: oscar-system/OSCARBinder
@@ -172,26 +164,3 @@
 #  thumbnail: polymake.png
 #  language: julia
 
-
-
-
-# Tutorials hosted at ederc/GroebnerBasisNotebooks
-
-#- title: "Example GroebnerBasis.jl"
-#  repository: ederc/GroebnerBasisNotebooks
-#  filename: GroebnerBasis
-#  author: Christian Eder
-#  thumbnail: GroebnerBasis.png
-#  language: julia
-
-
-
-
-# Tutorials hosted at johannesflake/polybases-examples
-
-#- title: "Computing monomial bases 1"
-#  repository: johannesflake/polybases-examples
-#  filename: polybases-example-1
-#  author: Johannes Flake
-#  thumbnail: oscar.png
-#  language: julia
