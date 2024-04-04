@@ -73,6 +73,16 @@
   language: julia
   date: April 3, 2024
 
+- title: "Introduction to Number Fields: Towers"
+  repository: oscar-system/OSCARBinder
+  branch: master
+  filename: Hecke
+  author: Claus Fieker
+  thumbnail: oscar.png
+  language: julia
+  date: April 4, 2024
+
+
 #- title: "Perfect central extensions of PSL(3,4) in the Monster group"
 #  repository: oscar-system/OSCARBinder
 #  branch: master
@@ -81,13 +91,6 @@
 #  thumbnail: oscar.png
 #  language: julia
 #  date: April 3, 2024
-
-#- title: "Intro Number Fields: Towers"
-#  repository: oscar-system/OSCARBinder
-#  filename: Hecke
-#  author: Claus Fieker
-#  thumbnail: Hecke.png
-#  language: julia
 
 #- title: "Example AbstractAlgebra.jl"
 #  repository: oscar-system/OSCARBinder
