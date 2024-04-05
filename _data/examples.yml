@@ -4,7 +4,7 @@
   repository: HereAround/MartinsOscarTutorials.jl
   branch: master
   filename: PolynomialRings
-  author: John Abbott, Martin Bies, Luca Remke
+  author: John Abbott, Martin Bies, Luca Remke, Hans Schönemann
   thumbnail: oscar.png
   language: julia
   date: March 28, 2024
