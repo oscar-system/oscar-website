@@ -78,7 +78,8 @@ the example, powered by <a href="https://mybinder.org">mybinder</a>.
   {%-     assign someexamples = site.data.examples | where:"thumbnail",page.component -%}
   {%- endif -%}
   {%- for post in someexamples  -%}
-  <div class="item_example_card">
+
+  <div class="item_example_card {{site.data.examples_status[post.filename]}}">
     <div class="item_example_left">
         <img class="item_example-image"
              src="{{ site.baseurl }}/public/thumbnails/{{ post.thumbnail }}">
@@ -96,3 +97,35 @@ the example, powered by <a href="https://mybinder.org">mybinder</a>.
   </div>
   {% endfor %}
 </div>
+
+<details style="padding-top: 2em; padding-bottom: 2em;">
+  <summary>Out of Date Tutorials</summary>
+<div class="borked">
+<div class="gallery_example_cards">
+  {%- if page.main -%}
+  {%-     assign someexamples = site.data.examples -%}
+  {%- else -%}
+  {%-     assign someexamples = site.data.examples | where:"thumbnail",page.component -%}
+  {%- endif -%}
+  {%- for post in someexamples  -%}
+  <div class="item_example_card {{site.data.examples_status[post.filename]}}">
+    <div class="item_example_left">
+        <img class="item_example-image"
+             src="{{ site.baseurl }}/public/thumbnails/{{ post.thumbnail }}">
+    </div>
+    <div class="item_example_right">
+      <div class="item_example-title">
+          {{ post.title }}
+      </div>
+      <div class="item_example-author">Author(s): {{ post.author }}</div>
+      <div class="item_last_modified">Last modified: {{ post.date }} </div>
+      <div><a href="https://nbviewer.jupyter.org/github/{{ post.repository }}/blob/{{ post.branch }}/{{ post.filename }}.ipynb">nbviewer</a> </div>
+      <a href="https://github.com/{{ post.repository }}/blob/master/{{ post.filename }}.ipynb">Github</a>
+
+    </div>
+  </div>
+  {% endfor %}
+</div>
+</div>
+</details>
+<span class="date">Last updated on {{ site.time | date: '%d-%m-%Y' }}</span>

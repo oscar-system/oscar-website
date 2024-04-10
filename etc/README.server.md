@@ -8,7 +8,7 @@ people who need to troubleshoot it or migrate it to a new host.
 To ensure the required software is installed on the server, run this
 (assuming a Debian or Ubuntu based environment):
 
-    apt install git bundler
+    apt install git bundler curl jq
 
 
 ## Where it is

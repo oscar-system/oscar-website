@@ -158,5 +158,32 @@ details[open] summary::after {
 .message-big {
   text-align: center;
   font-weight: bold;
-  font-size:2em
+  font-size:2em;
+}
+
+.failure{
+  display: none;
+}
+
+
+div.borked > div.gallery_example_cards > div.item_example_card.failure{
+  display: block;
+}
+
+div.borked > div.gallery_example_cards > div.item_example_card{
+  display: none;
+}
+
+.borked{
+  background: #e4e4e7;
+}
+
+div.borked > div.gallery_example_cards > div.item_example_card {
+  color: white;
+  margin: 15px;
+  background: #979797;
+}
+
+div.borked > div.gallery_example_cards > div.item_example_card > div.item_example_right > div> a, div.borked > div.gallery_example_cards > div.item_example_card > div.item_example_right > a{
+  color: skyblue;
 }
