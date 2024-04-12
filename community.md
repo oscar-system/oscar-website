@@ -46,8 +46,8 @@ Here is a list of all official repositories of the OSCAR project:
 
 * [Oscar.jl](https://github.com/oscar-system/Oscar.jl) - The main OSCAR repository
 * [AbstractAlgebra.jl](https://github.com/Nemocas/AbstractAlgebra.jl) - Generic abstract algebra and abstract type definitions
+* [AlgebraicSolving.jl](https://github.com/algebraic-solving/AlgebraicSolving.jl) - Algebraically solving multivariate polynomial systems
 * [GAP.jl](https://github.com/oscar-system/GAP.jl/) - GAP 4 to Julia bidirectional interface
-* [GroebnerBasis.jl](https://github.com/ederc/GroebnerBasis.jl) - Christian Eder's Groebner basis project
 * [Hecke.jl](https://github.com/thofma/Hecke.jl) - Algebraic number theory
 * [HomalgProject.jl](https://github.com/homalg-project/HomalgProject.jl) - The homalg project compatibility package for Julia
 * [Nemo.jl](https://github.com/Nemocas/Nemo.jl) - Wrappers of Flint/Arb/Antic C libraries

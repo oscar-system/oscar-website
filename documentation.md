@@ -8,13 +8,13 @@ docs:
                    and algebraic structures. It also defines standard interfaces for
                    generics, that can be implemented by other packages.
 
+    - name: AlgebraicSolving.jl
+      url: https://github.com/algebraic-solving/AlgebraicSolving.jl
+      description: A Julia package for algebraically solving multivariate polynomial systems.
+
     - name: GAP.jl
       url: https://oscar-system.github.io/GAP.jl/stable/
       description: The interface to GAP from Julia.
-
-    - name: GroebnerBasis.jl
-      url: https://ederc.github.io/GroebnerBasis.jl/
-      description: The interface to the gb C library from Julia.
 
     - name: Hecke.jl
       url: https://thofma.github.io/Hecke.jl/stable/
