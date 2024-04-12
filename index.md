@@ -15,16 +15,6 @@ system for computations in algebra, geometry, and number theory, written in [Jul
 the emphasis is on supporting complex computations which require a high level
 of integration of tools from different mathematical areas. 
 
-The project builds on and extends the four cornerstone systems
-
-  * [GAP](https://www.gap-system.org/) - computational discrete algebra (via [GAP.jl](https://github.com/oscar-system/GAP.jl) Julia package)
-  * [Singular](https://www.singular.uni-kl.de/) - commutative and non-commutative algebra, algebraic geometry (via [Singular.jl](https://github.com/oscar-system/Singular.jl) Julia package)
-  * [Polymake](https://polymake.org/doku.php) - polyhedral geometry (via [Polymake.jl](https://github.com/oscar-system/Polymake.jl) Julia package)
-  * Antic ([Hecke](https://github.com/thofma/Hecke.jl/), [Nemo](https://github.com/Nemocas/Nemo.jl)) - number theory
-
-as well as further libraries and packages, which are tied together using [the Julia language](https://julialang.org) into the
-[Oscar.jl](https://github.com/oscar-system/Oscar.jl) Julia package.
-
 The development of OSCAR is supported by the Deutsche Forschungsgemeinschaft DFG within the [Collaborative Research Center TRR 195](https://www.computeralgebra.de/sfb/).
 
 See the [About]({{site.baseurl }}/about) page for more information.
