@@ -52,8 +52,8 @@ If you are using Ubuntu 18.04 "Bionic" or newer, or Debian 10 "Buster" or newer,
 Enter these commands into a terminal (this will prompt for your password
 and requires that you have permissions to administer your computer).
 {% highlight bash %}
-sudo apt-get update
-sudo apt-get install build-essential
+sudo apt update
+sudo apt install build-essential
 {% endhighlight %}
 </details>
 
