@@ -412,7 +412,8 @@ a.sidebar-nav-item:focus {
   background-color: #e4e4e7;
   padding: 10px;
   border-radius: 5px;
-  height: 8.5rem; /* so that all cards have the same height, and that everything    */
+  //removing a set height makes the card height themselves dynamically
+  //height: 8.5rem; /* so that all cards have the same height, and that everything    */
                   /* still fits when narrowing the window and 4 lines are used      */
                   /* might need adjustment when 5 lines are used (i.e. long title   */
                   /* and long author names), or change of `grid-template-columns`   */
