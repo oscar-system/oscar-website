@@ -1,7 +1,7 @@
 ---
 layout: tutorial
-title: OSCAR tutorials
-component: polymake.png
+title: ToricGeometry
+component: ToricGeometry.png
 ---
 
 {% include tutorial.html %}

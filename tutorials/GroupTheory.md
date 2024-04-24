@@ -1,7 +1,7 @@
 ---
 layout: tutorial
-title: OSCAR tutorials
-component: gap.png
+title: GroupTheory
+component: GroupTheory.png
 ---
 
 {% include tutorial.html %}
