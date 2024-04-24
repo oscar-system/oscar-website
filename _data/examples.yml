@@ -5,7 +5,7 @@
   branch: master
   filename: PolynomialRings
   author: John Abbott, Martin Bies, Luca Remke, Hans Schönemann
-  thumbnail: oscar.png
+  thumbnail: PolynomialRings.png
   language: julia
   date: March 28, 2024
 
@@ -14,7 +14,7 @@
   branch: master
   filename: PolyhedralGeometryInOSCAR
   author: Luca Remke
-  thumbnail: polymake.png
+  thumbnail: PolyhedralGeometry.png
   language: julia
   date: April 3, 2024
 
@@ -23,7 +23,7 @@
   branch: master
   filename: ToricGeometryInOSCAR
   author: Martin Bies, Luca Remke
-  thumbnail: oscar.png
+  thumbnail: ToricGeometry.png
   language: julia
   date: March 28, 2024
 
@@ -32,7 +32,7 @@
   branch: master
   filename: FTheoryToolsInOSCAR
   author: Martin Bies, Andrew P. Turner
-  thumbnail: oscar.png
+  thumbnail: FTheoryTools.png
   language: julia
   date: April 3, 2024
 
@@ -46,7 +46,7 @@
   branch: master
   filename: quadratic_forms
   author: Tommy Hofmann
-  thumbnail: oscar.png
+  thumbnail: NumberTheory.png
   language: julia
   date: January 26, 2024
 
@@ -60,7 +60,7 @@
   branch: master
   filename: pi_piprime_generation
   author: Thomas Breuer
-  thumbnail: oscar.png
+  thumbnail: GroupTheory.png
   language: julia
   date: April 3, 2024
 
@@ -69,7 +69,7 @@
   branch: master
   filename: rubik
   author: Martin Schönert (translated to OSCAR by Thomas Breuer)
-  thumbnail: oscar.png
+  thumbnail: GroupTheory.png
   language: julia
   date: April 3, 2024
 
@@ -78,7 +78,7 @@
   branch: master
   filename: Hecke
   author: Claus Fieker
-  thumbnail: oscar.png
+  thumbnail: NumberTheory.png
   language: julia
   date: April 4, 2024
 
@@ -87,7 +87,7 @@
   branch: master
   filename: L34_extensions_in_M
   author: Thomas Breuer
-  thumbnail: oscar.png
+  thumbnail: GroupTheory.png
   language: julia
   date: April 12, 2024
 

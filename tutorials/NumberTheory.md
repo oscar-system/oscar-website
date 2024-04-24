@@ -1,7 +1,7 @@
 ---
 layout: tutorial
-title: OSCAR tutorials
-component: singular.png
+title: NumberTheory
+component: NumberTheory.png
 ---
 
 {% include tutorial.html %}

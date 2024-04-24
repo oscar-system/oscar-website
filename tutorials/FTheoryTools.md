@@ -1,7 +1,7 @@
 ---
 layout: tutorial
-title: OSCAR tutorials
-component: hecke.png
+title: FTheoryTools
+component: FTheoryTools.png
 ---
 
 {% include tutorial.html %}
