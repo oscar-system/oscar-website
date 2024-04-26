@@ -13,10 +13,10 @@
   repository: HereAround/MartinsOscarTutorials.jl
   branch: master
   filename: PolyhedralGeometryInOSCAR
-  author: Luca Remke
+  author: Martin Bies, Luca Remke
   thumbnail: PolyhedralGeometry.png
   language: julia
-  date: April 3, 2024
+  date: April 26, 2024
 
 - title: Toric geometry
   repository: HereAround/MartinsOscarTutorials.jl
