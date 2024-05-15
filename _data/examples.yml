@@ -91,12 +91,14 @@
   language: julia
   date: April 12, 2024
 
-#- title: "Decomposition of Binomial Ideals"
-#  repository: oscar-system/OSCARBinder
-#  filename: AlgebraicGeometry
-#  author: Clara Petroll
-#  thumbnail: oscar.png
-#  language: julia
+- title: "Computations with Binomial Ideals"
+  repository: oscar-system/OSCARBinder
+  branch: master
+  filename: BinomialIdeals
+  author: Wolfram Decker, Clara Petroll
+  thumbnail: PolynomialRings.png
+  language: julia
+  date: May 15, 2024
 
 
 #- title: "Homology of VR complexes"
