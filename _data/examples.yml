@@ -5,7 +5,7 @@
   branch: master
   filename: PolynomialRings
   author: John Abbott, Martin Bies, Luca Remke, Hans Schönemann
-  thumbnail: PolynomialRings.png
+  thumbnail: CommutativeAlgebra.png
   language: julia
   date: March 28, 2024
 
@@ -96,7 +96,7 @@
   branch: master
   filename: BinomialIdeals
   author: Wolfram Decker, Clara Petroll
-  thumbnail: PolynomialRings.png
+  thumbnail: CommutativeAlgebra.png
   language: julia
   date: May 15, 2024
 
