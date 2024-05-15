@@ -6,7 +6,7 @@
   name: NumberTheory
 - logo: PolyhedralGeometry.png
   name: PolyhedralGeometry
-- logo: PolynomialRings.png
-  name: PolynomialRings
+- logo: CommutativeAlgebra.png
+  name: CommutativeAlgebra
 - logo: ToricGeometry.png
   name: ToricGeometry
