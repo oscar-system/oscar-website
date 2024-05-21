@@ -31,5 +31,5 @@ for i in range(len(ogfile)):
     d = dt.date().strftime("%B %d, %Y")
     ogfile[i]['date'] = d
 
-with open('../_data/examples_with_updated_dates.yml', 'w') as outfile:
+with open('../_data/examples_with_updated_last_modified.yml', 'w') as outfile:
     outfile.write(yaml.dump(ogfile))
