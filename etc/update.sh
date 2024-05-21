@@ -14,7 +14,10 @@ cat /srv/www/www-mathe-oscar/data/webhook.secret >> .htaccess
 bundle config set --local path 'vendor/bundle'
 bundle install
 
-# run jekyll
+# get tutorial status
 statusurl=$(curl -SsL --retry 5 "https://api.github.com/repos/oscar-system/TutorialTesterforOscar/actions/workflows/CI.yml/runs?per_page=1" | jq  '.workflow_runs[0].jobs_url' | sed 's/"//g')
 curl -SsL --retry 5 $statusurl | jq '.["jobs"][1:] | .[] | .name+":"+.conclusion' | sed 's/^.*\s.*\s.*\s//' | sed 's/):/: /' | sed s'/"$//' > _data/examples_status.yml
+# get tutorial last modified dates
+python update-dates.py
+# run jekyll
 bundle exec jekyll build --config _config.yml,_config_production.yml -d /srv/www/www-mathe-oscar/data/http
