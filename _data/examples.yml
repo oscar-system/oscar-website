@@ -7,7 +7,7 @@
   author: John Abbott, Martin Bies, Luca Remke, Hans Schönemann
   thumbnail: CommutativeAlgebra.png
   language: julia
-  date: March 28, 2024
+  date: January 1, 1970
 
 - title: Polyhedral Geometry
   repository: HereAround/MartinsOscarTutorials.jl
@@ -16,7 +16,7 @@
   author: Martin Bies, Luca Remke
   thumbnail: PolyhedralGeometry.png
   language: julia
-  date: April 26, 2024
+  date: January 1, 1970
 
 - title: Toric geometry
   repository: HereAround/MartinsOscarTutorials.jl
@@ -25,7 +25,7 @@
   author: Martin Bies, Luca Remke
   thumbnail: ToricGeometry.png
   language: julia
-  date: March 28, 2024
+  date: January 1, 1970
 
 - title: F-Theory Tools
   repository: HereAround/MartinsOscarTutorials.jl
@@ -34,7 +34,7 @@
   author: Martin Bies, Andrew P. Turner
   thumbnail: FTheoryTools.png
   language: julia
-  date: April 3, 2024
+  date: January 1, 1970
 
 
 
@@ -48,7 +48,7 @@
   author: Tommy Hofmann
   thumbnail: NumberTheory.png
   language: julia
-  date: January 26, 2024
+  date: January 1, 1970
 
 
 
@@ -62,7 +62,7 @@
   author: Thomas Breuer
   thumbnail: GroupTheory.png
   language: julia
-  date: April 3, 2024
+  date: January 1, 1970
 
 - title: "Analyzing Rubik's Cube"
   repository: oscar-system/OSCARBinder
@@ -71,7 +71,7 @@
   author: Martin Schönert (translated to OSCAR by Thomas Breuer)
   thumbnail: GroupTheory.png
   language: julia
-  date: April 3, 2024
+  date: January 1, 1970
 
 - title: "Introduction to Number Fields: Towers"
   repository: oscar-system/OSCARBinder
@@ -80,7 +80,7 @@
   author: Claus Fieker
   thumbnail: NumberTheory.png
   language: julia
-  date: April 4, 2024
+  date: January 1, 1970
 
 - title: "Perfect central extensions of PSL(3,4) in the Monster group"
   repository: oscar-system/OSCARBinder
@@ -89,7 +89,7 @@
   author: Thomas Breuer
   thumbnail: GroupTheory.png
   language: julia
-  date: April 12, 2024
+  date: January 1, 1970
 
 - title: "Computations with Binomial Ideals"
   repository: oscar-system/OSCARBinder
@@ -98,7 +98,7 @@
   author: Wolfram Decker, Clara Petroll
   thumbnail: CommutativeAlgebra.png
   language: julia
-  date: May 15, 2024
+  date: January 1, 1970
 
 
 #- title: "Homology of VR complexes"
