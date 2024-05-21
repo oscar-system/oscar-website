@@ -71,9 +71,9 @@ the example, powered by <a href="https://mybinder.org">mybinder</a>.
 
 <div class="gallery_example_cards">
   {%- if page.main -%}
-  {%-     assign someexamples = site.data.examples_with_updated_date -%}
+  {%-     assign someexamples = site.data.with_updated_last_modified -%}
   {%- else -%}
-  {%-     assign someexamples = site.data.examples_with_updated_date | where:"thumbnail",page.component -%}
+  {%-     assign someexamples = site.data.with_updated_last_modified | where:"thumbnail",page.component -%}
   {%- endif -%}
   {%- for post in someexamples  -%}
 
@@ -101,9 +101,9 @@ the example, powered by <a href="https://mybinder.org">mybinder</a>.
 <div class="borked">
 <div class="gallery_example_cards">
   {%- if page.main -%}
-  {%-     assign someexamples = site.data.examples_with_updated_date -%}
+  {%-     assign someexamples = site.data.with_updated_last_modified -%}
   {%- else -%}
-  {%-     assign someexamples = site.data.examples_with_updated_date | where:"thumbnail",page.component -%}
+  {%-     assign someexamples = site.data.with_updated_last_modified | where:"thumbnail",page.component -%}
   {%- endif -%}
   {%- for post in someexamples  -%}
   <div class="item_example_card {{site.data.examples_status[post.filename]}}">
