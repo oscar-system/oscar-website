@@ -83,6 +83,8 @@ switch (strtolower($_SERVER['HTTP_X_GITHUB_EVENT'])) {
         echo 'pong';
         break;
     case 'push':
+    case 'workflow_job':
+    case 'workflow_run':
         // create file to trigger systemd unit which regenerates the website
         exec("echo 'Running webhook' | logger");
         echo "about to touch $triggerfile\n";
