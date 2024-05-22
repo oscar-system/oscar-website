@@ -82,9 +82,15 @@ switch (strtolower($_SERVER['HTTP_X_GITHUB_EVENT'])) {
     case 'ping':
         echo 'pong';
         break;
-    case 'push':
-    case 'workflow_job':
+    //case 'workflow_job':
     case 'workflow_run':
+        if ($payload['action'] != "completed") {
+          // do nothing unless a workflow run completed
+          break;
+        }
+        // if a workflow run completed, update the website by falling through
+        // to the code below
+    case 'push':
         // create file to trigger systemd unit which regenerates the website
         exec("echo 'Running webhook' | logger");
         echo "about to touch $triggerfile\n";
