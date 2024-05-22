@@ -77,7 +77,7 @@ switch ($_SERVER['CONTENT_TYPE']) {
 
 # Payload structure depends on triggered event
 # https://developer.github.com/v3/activity/events/types/
-$payload = json_decode($json);
+$payload = json_decode($json, true);
 switch (strtolower($_SERVER['HTTP_X_GITHUB_EVENT'])) {
     case 'ping':
         echo 'pong';
