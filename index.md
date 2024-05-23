@@ -36,6 +36,16 @@ instructions on how to install it, and also check out our [community page]({{sit
 Note that OSCAR has not reached a first public release yet, and its parts should be treated as
 a technology preview. See the [News page]({{site.baseurl }}/news) for announcements about OSCAR development.
 
+## The Book
+
+The book _The Computer Algebra System OSCAR_ presents version 1.0 of OSCAR. It is an invitation
+to use OSCAR. With discussions of theoretical and algorithmic aspects included, it offers a
+multitude of explicit code snippets. These are valuable for interested researchers from graduate
+students through established experts.
+
+Code snippets and list of errata are available on the companion website at
+[https://book.oscar-system.org/](https://book.oscar-system.org/)
+
 ## Get in touch
 
 A great place to ask questions about OSCAR and discuss all aspects of it is
