@@ -337,15 +337,18 @@ a.sidebar-nav-item:focus {
     display: inline-block; /* for centering */
 }
 
-/* Three image containers (use 25% for four, and 50% for two, etc) */
-.example_column {
-  float: left;
-  padding: 13px;
+.example_box {
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid #e5e5e5;
   text-align: center;
 }
 
-.example_row {
-    margin-bottom: 5%;
+/* Four image containers (use 25% for four, and 50% for two, etc) */
+.example {
+    width: calc(100%/4);
+    background-color: #f9f9f9;
+    border: inherit;
 }
 
 /* Clear floats after image containers */
