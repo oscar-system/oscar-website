@@ -38,10 +38,10 @@ Alternatively, you can inspect the jupyter notebook directly on <a href="https:/
 <br/>
 Click on one of the links below to filter notebooks (and re-click to disable filtering).
 
-<div class="example_column" style="padding: 0;display: flex; flex-wrap: wrap; border:1px solid #e5e5e5; margin-bottom: 80px;">
+<div class="example_box">
   {%- for component in site.data.examples_components -%}
   {%- assign component_url = "/tutorials/" | append: component.name | replace: " ", "" | append: "/" %}
-  <div style="width:calc(100%/4);background-color: #f9f9f9; border: inherit;">
+  <div class="example">
     <a style="display: block; text-align: center;"
        {% if page.url == component_url %}
            href="{{ site.baseurl }}/tutorials/"
