@@ -57,34 +57,38 @@ ways to get in touch with us.
 
 If you have used OSCAR in the preparation of a paper please cite it as described below:
 
-    [OSCAR]
-        OSCAR -- Open Source Computer Algebra Research system, Version 1.0.0,
-        The OSCAR Team, 2024. (https://www.oscar-system.org)
-    [OSCAR-book]
-        Wolfram Decker, Christian Eder, Claus Fieker, Max Horn, Michael Joswig, eds.
-        The Computer Algebra System OSCAR: Algorithms and Examples,
-        Algorithms and Computation in Mathematics, Springer, 2024. (https://link.springer.com/book/9783031621260)
+```md
+[OSCAR]
+    OSCAR -- Open Source Computer Algebra Research system, Version 1.0.0,
+    The OSCAR Team, 2024. (https://www.oscar-system.org)
+[OSCAR-book]
+    Wolfram Decker, Christian Eder, Claus Fieker, Max Horn, Michael Joswig, eds.
+    The Computer Algebra System OSCAR: Algorithms and Examples,
+    Algorithms and Computation in Mathematics, Springer, 2024. (https://link.springer.com/book/9783031621260)
+```
 
 If you are using BibTeX, you can use the following BibTeX entries:
 
-    @misc{OSCAR,
-      key          = {OSCAR},
-      organization = {The OSCAR Team},
-      title        = {OSCAR -- Open Source Computer Algebra Research system,
-                      Version 1.0.0},
-      year         = {2024},
-      url          = {https://www.oscar-system.org},
-      }
+```bibtex
+@misc{OSCAR,
+  key          = {OSCAR},
+  organization = {The OSCAR Team},
+  title        = {OSCAR -- Open Source Computer Algebra Research system,
+                  Version 1.0.0},
+  year         = {2024},
+  url          = {https://www.oscar-system.org},
+  }
 
-    @book{OSCAR-book,
-      editor = {Decker, Wolfram and Eder, Christian and Fieker, Claus and Horn, Max and Joswig, Michael},
-      title = {The {C}omputer {A}lgebra {S}ystem {OSCAR}: {A}lgorithms and {E}xamples},
-      year = {2024},
-      publisher = {Springer},
-      series = {Algorithms and {C}omputation in {M}athematics},
-      volume = {32},
-      edition = {1},
-      url = {https://link.springer.com/book/9783031621260},
-      month = {8},
-      issn = {1431-1550},
-    }
+@book{OSCAR-book,
+  editor = {Decker, Wolfram and Eder, Christian and Fieker, Claus and Horn, Max and Joswig, Michael},
+  title = {The {C}omputer {A}lgebra {S}ystem {OSCAR}: {A}lgorithms and {E}xamples},
+  year = {2024},
+  publisher = {Springer},
+  series = {Algorithms and {C}omputation in {M}athematics},
+  volume = {32},
+  edition = {1},
+  url = {https://link.springer.com/book/9783031621260},
+  month = {8},
+  issn = {1431-1550},
+}
+```
