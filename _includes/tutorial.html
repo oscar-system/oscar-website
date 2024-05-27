@@ -38,29 +38,27 @@ Alternatively, you can inspect the jupyter notebook directly on <a href="https:/
 <br/>
 Click on one of the links below to filter notebooks (and re-click to disable filtering).
 
-  <table>
-    <tr>
+<div class="example_column" style="padding: 0;display: flex; flex-wrap: wrap; border:1px solid #e5e5e5; margin-bottom: 80px;">
   {%- for component in site.data.examples_components -%}
-  {%- assign component_url = "/tutorials/" | append: component.name | append: "/" %}
-  <td class="example_column">
-    <a style="display: block; "
+  {%- assign component_url = "/tutorials/" | append: component.name | replace: " ", "" | append: "/" %}
+  <div style="width:calc(100%/4);background-color: #f9f9f9; border: inherit;">
+    <a style="display: block; text-align: center;"
        {% if page.url == component_url %}
            href="{{ site.baseurl }}/tutorials/"
-           style="font-weight: bold;"
+           style="display: block; text-align: center; font-weight: bold;"
        {% else %}
-           href="{{ site.baseurl }}/tutorials/{{ component.name }}"
+           href="{{ site.baseurl }}/{{component_url}}"
        {% endif %}
        >
       <img class="item_example-image-link"
            src="{{ site.baseurl }}/public/thumbnails/{{ component.logo }}">
-      <div>
+      <div style="word-break: break-word;">
         {{ component.name }}
       </div>
     </a>
-  </td>
+  </div>
   {%- endfor -%}
-</tr>
-</table>
+</div>
 
 <!--
 <br/>
