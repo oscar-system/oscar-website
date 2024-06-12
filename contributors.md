@@ -335,6 +335,7 @@ contributors:
     affiliation: TU Berlin
     website: https://page.math.tu-berlin.de/~weis/
     email: weis@math.tu-berlin.de
+    github: lenweis
 
   - name: Yichao Yu
     affiliation: Duke University
