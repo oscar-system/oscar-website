@@ -209,7 +209,7 @@ contributors:
   - name: Benjamin Lorenz
     affiliation: TU Berlin
     website: https://www.tu.berlin/dmg/ueber-uns/systemadministration
-    email: benjamin.lorenz@tu-berlin.de
+    email: lorenz@math.tu-berlin.de
     github: benlorenz
 
   - name: Dante Luber
