@@ -524,7 +524,7 @@ The following people are actively contributing to the OSCAR project.
 
 ## Former Contributors
 
-The following people did contribute to the OSCAR project in the past, but have not added code since June 2023.
+The following people did contribute to the OSCAR project in the past, but have not contributed code changes in the past 12 month (as of June 2024).
 
 <ul>
 {% for p in page.retired %}
