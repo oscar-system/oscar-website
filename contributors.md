@@ -129,6 +129,7 @@ contributors:
     github: sumiya11
 
   - name: Berenike Dieterle
+    affiliation: University of Kaiserslautern-Landau
     github: BD-00
 
   - name: Christian Eder
