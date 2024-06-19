@@ -9,7 +9,7 @@ docs:
                    generics, that can be implemented by other packages.
 
     - name: AlgebraicSolving.jl
-      url: https://github.com/algebraic-solving/AlgebraicSolving.jl
+      url: https://algebraic-solving.github.io/
       description: A Julia package for algebraically solving multivariate polynomial systems.
 
     - name: GAP.jl
