@@ -114,13 +114,13 @@ used_software:
       website: https://github.com/wbhart/antic
 
     - name: gfanlib
-      website: http://home.imf.au.dk/jensen/software/gfan/gfan.html
+      website: https://users-math.au.dk/~jensen/software/gfan/gfan.html
 
     - name: Factory
-      website: https://www.mathematik.uni-kl.de/ftp/pub/Math/Singular/Factory
+      website: https://www.singular.uni-kl.de/ftp/pub/Math/Singular/Factory/README
 
     - name: cdd
-      website: http://www-oldurls.inf.ethz.ch/personal/fukudak/cdd_home/
+      website: https://www.inf.ethz.ch/personal/fukudak/cdd_home/
 
     - name: AbstractAlgebra
       website: https://github.com/Nemocas/AbstractAlgebra.jl
