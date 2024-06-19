@@ -6,30 +6,26 @@ Alternatively, you can inspect the jupyter notebook directly on <a href="https:/
     <summary>
       How to interact with a "live" version
     </summary>
-    It is possible from the notebook page to download it and run it locally:
+    Live interaction requires to download the notebook. Please select
+    the notebook of your choice, and follow the instructions below.
     <ul>
-      <li>open the context menu (via right-click on Linux and Windows, or ctrl-click on macOS)
-        on the download icon of the notebook (in the upper right corner), which will allow
-        you to save the notebook file (say <code>Singular.ipynb</code>) in a directory of your choice
-        (say <code>~/Documents</code>);
+      <li>Go to <em>nbviewer</em>.</li>
+      <li>Find the download icon (top-right corner) and right-click on it (ctrl-click on macOS)
+        to open the context menu. Choose <em>Save Link As...</em> to download the notebook
+        (say <code>Tutorial.ipynb</code>) to a directory of your choice.
       </li>
-      <li>make sure that you have the <code>Oscar</code> package installed
-        (cf. the <a href="{{ site.baseurl }}/install">installation page</a>);
-        in some cases, you might have to also install explicitly one of its subpackages, for
-        example <code>Singular</code> (this is accomplished by running
-        <code>using Pkg; Pkg.add("Singular")</code>) in a Julia REPL;
+      <li>Make sure that you have the <code>Oscar</code> package installed
+        (cf. the <a href="{{ site.baseurl }}/install">Installation Page</a>).
       </li>
-      <li>install <code>IJulia</code> if it is not already installed (typically by running
-        <code>using Pkg; Pkg.add("IJulia")</code> at the Julia REPL, cf.
-        <a href="https://github.com/JuliaLang/IJulia.jl#Installation">installation instructions</a>),
-        and launch it (typically by running <code>using IJulia; notebook()</code>);
+      <li>Install <code>IJulia</code> by running <code>using Pkg; Pkg.add("IJulia")</code> in the Julia REPL
+        (<a href="https://github.com/JuliaLang/IJulia.jl?tab=readme-ov-file#quick-start">IJulia quick-start</a>).
+        This will automatically install <a href="https://jupyter.org/">jupyter</a>.
+        Launch <code>jupyter</code> by running <code>using IJulia; notebook()</code>.
       </li>
-      <li> you should by now have landed on
-        a page in your web browser, with "jupyter" written in the upper left corner;
-        below is a file explorer: open the notebook file (e.g. browse to
-        <code>~/Documents</code> and click on <code>Singular.ipynb</code>);
-        you might see a pop-up with the message "Kernel not found", in which case
-        just select the Jupyter kernel you installed (e.g. "Julia 1.4.1") in the drop-down menu.
+      <li> You should have landed on a page in your web browser, with <em>jupyter</em> written in the upper
+        left corner. Below is a file explorer. Open the notebook file you downloaded (e.g. <code>Tutorial.ipynb</code>).
+        You might see a pop-up with the message "Kernel not found", in which case you select a julia kernel from the
+        drop-down menu.
       </li>
     </ul>
   </details>
