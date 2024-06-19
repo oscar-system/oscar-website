@@ -20,10 +20,6 @@ docs:
       url: https://thofma.github.io/Hecke.jl/stable/
       description: Algebraic number theory in Julia.
 
-    - name: HomalgProject.jl
-      url: https://homalg-project.github.io/HomalgProject.jl/stable/
-      description: The homalg project compatibility package for Julia.
-
     - name: Nemo.jl
       url: http://nemocas.github.io/Nemo.jl/stable/
       description: The interface to the Flint, Arb and Antic C libraries from Julia.
