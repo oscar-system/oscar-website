@@ -95,9 +95,6 @@ used_software:
     - name: GMP
       website: https://gmplib.org/
 
-    - name: MPIR
-      website: http://mpir.org/
-
     - name: MPFR
       website: https://www.mpfr.org/
 
