@@ -2,6 +2,11 @@
 layout: page
 title: Credits
 citations:
+    - name: Computing the center of a fusion category
+      url: https://arxiv.org/abs/2406.13438
+      authors: Fabian Mäurer, Ulrich Thiel
+      month: June
+      year: 2024
     - name: Invariant Grassmannians and a K3 surface with an action of order 192*2
       url: https://arxiv.org/abs/2210.14585
       authors: Stevell Muller
