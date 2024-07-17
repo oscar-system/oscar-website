@@ -9,6 +9,6 @@ For more information about MaRDI, please visit the [MaRDI website](https://www.m
 
 ## File Format
 
-Any data that is serialized using OSCAR is encoded using the **mrdi** format. The format specification can be found on [zenodo](https://zenodo.org/records/12723387) and is described [here](https://link.springer.com/chapter/10.1007/978-3-031-64529-7_25). To learn more about storing data using OSCAR take a look [here](https://docs.oscar-system.org/stable/General/serialization/) or if you would like to extend the serialization to data types that are built from OSCAR types see [here](https://docs.oscar-system.org/stable/DeveloperDocumentation/serialization/#dev_serialization)
+Any data that is serialized using OSCAR is encoded using the **mrdi** format. The format specification can be found on [zenodo](https://zenodo.org/records/12723387) and is described [here](https://link.springer.com/chapter/10.1007/978-3-031-64529-7_25). To learn more about storing data using OSCAR take a look [here](https://docs.oscar-system.org/stable/General/serialization/) or if you would like to extend the serialization to data types that are built from OSCAR types see [here](https://docs.oscar-system.org/stable/DeveloperDocumentation/serialization/#dev_serialization).
 
 
