@@ -240,7 +240,7 @@ contributors:
     affiliation: Universidade de Lisboa
     website: https://sites.google.com/view/giosue-muratore
     email: muratore.g.e@gmail.com
-    github: GiosueMuratore
+    github: mgemath
 
   - name: Erik Paemurru  # Postdoc with Simon Brandhorst, algebraic geometry
     affiliation: Saarland University
