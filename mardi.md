@@ -3,9 +3,9 @@ layout: page
 title: MaRDI The Mathematical Research Data Initiative
 ---
 
-MaRDI, the Mathematical Research Data Initiative, is a German consortium dedicated to advancing the management, accessibility, and reuse of mathematical research data. As part of Germany's National Research Data Infrastructure (NFDI), MaRDI integrates efforts across various institutions to develop standardized protocols and robust digital infrastructures for mathematical data.
+MaRDI, the Mathematical Research Data Initiative, is a German consortium dedicated to setting guidelines and developing software for findability, accessibility, interoperability, and reuse of mathematical research data. As part of Germany's National Research Data Infrastructure (NFDI), MaRDI integrates efforts across various institutions to develop standardized protocols and robust digital infrastructures for mathematical data.
 
-For more information about MaRDI, please visit the [MaRDI website](https://www.mardi-germany.de).
+For more information about MaRDI, please visit the [MaRDI website](https://www.mardi4nfdi.de/about/mission).
 
 ## File Format
 
