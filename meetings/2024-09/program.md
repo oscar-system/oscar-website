@@ -61,3 +61,4 @@ What we actually will do will depend on who participates.
 - canonical maps
 - more serialization
 - work on Singular / Algebraic Geometry: complete <https://hackmd.io/hYXl0YRTSDKhqzfVSMpqsQ> 
+- ...
