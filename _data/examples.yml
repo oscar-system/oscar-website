@@ -38,6 +38,18 @@
 
 
 
+# Tutorials hosted at https://github.com/oscar-system/notebooks
+
+- title: Elliptic Fibrations and Covered Schemes
+  repository: oscar-system/notebooks/
+  branch: master
+  filename: notebooks/elliptic_fibrations/elliptic_fibrations_and_covered_schemes.ipynb
+  author: Simon Brandhorst, Matthias Zach
+  thumbnail: Schemes.png
+  language: julia
+  date: January 1, 1970
+
+
 
 # Tutorials hosted at thofma/HeckeTutorials.jl
 
