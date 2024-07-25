@@ -6,11 +6,13 @@ meeting_nr: 202409
 people:
     - {name: Claus Fieker, affiliation: RPTU Kaiserslautern-Landau}
     - {name: Max Horn, affiliation: RPTU Kaiserslautern-Landau}
+    - {name: Morgan Rodgers, affiliation: RPTU Kaiserslautern-Landau}
+    - {name: Friedrich Günther, affiliation: Saarland University}
 
 ---
 
 {% include participants.html participants=page.people %}
 
 If you plan to attend, please register by sending an email
-to [Max](mailto:horn@mathematik.uni-kl.de).
+to [Max](mailto:mhorn@rptu.de).
 This also applies to locals from Kaiserslautern!
