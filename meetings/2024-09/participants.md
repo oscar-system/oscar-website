@@ -8,6 +8,8 @@ people:
     - {name: Max Horn, affiliation: RPTU Kaiserslautern-Landau}
     - {name: Morgan Rodgers, affiliation: RPTU Kaiserslautern-Landau}
     - {name: Friedrich Günther, affiliation: Saarland University}
+    - {name: Martin Bies, affiliation: RPTU Kaiserslautern-Landau}
+    - {name: Mikelis Mikelsons, affiliation: RPTU Kaiserslautern-Landau}
 
 ---
 
