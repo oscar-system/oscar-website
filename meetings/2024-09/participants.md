@@ -10,6 +10,7 @@ people:
     - {name: Friedrich Günther, affiliation: Saarland University}
     - {name: Martin Bies, affiliation: RPTU Kaiserslautern-Landau}
     - {name: Mikelis Mikelsons, affiliation: RPTU Kaiserslautern-Landau}
+    - {name: Thomas Breuer, affiliation: RWTH Aachen University}
 
 ---
 
