@@ -12,8 +12,8 @@ people:
     - {name: Mikelis Mikelsons, affiliation: RPTU Kaiserslautern-Landau}
     - {name: Thomas Breuer, affiliation: RWTH Aachen University}
     - {name: Sreevatsa Sasisekar, affiliation: RPTU Kaiserslautern-Landau}
-    - {name: Torben Wiedemann, Universität Gießen}
-    - {name: Antony Della Vecchia, TU Berlin}
+    - {name: Torben Wiedemann, affiliation: Universität Gießen}
+    - {name: Antony Della Vecchia, affiliation: TU Berlin}
 
 ---
 
