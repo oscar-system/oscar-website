@@ -14,6 +14,8 @@ people:
     - {name: Sreevatsa Sasisekar, affiliation: RPTU Kaiserslautern-Landau}
     - {name: Torben Wiedemann, affiliation: Universität Gießen}
     - {name: Antony Della Vecchia, affiliation: TU Berlin}
+    - {name: Fabian Lenzen, affiliation: TU Berlin}
+    - {name: John Abbot, affiliation: RWTH Aachen University}
 
 ---
 
