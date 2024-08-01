@@ -42,7 +42,7 @@
 
 - title: Elliptic Fibrations and Covered Schemes
   repository: HechtiDerLachs/OscarTutorials
-  branch: master
+  branch: main
   filename: covered_schemes_and_elliptic_fibrations/elliptic_fibrations_and_covered_schemes
   author: Simon Brandhorst, Matthias Zach
   thumbnail: Schemes.png
