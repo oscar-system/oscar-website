@@ -15,7 +15,7 @@ people:
     - {name: Torben Wiedemann, affiliation: Universität Gießen}
     - {name: Antony Della Vecchia, affiliation: TU Berlin}
     - {name: Fabian Lenzen, affiliation: TU Berlin}
-    - {name: John Abbot, affiliation: RWTH Aachen University}
+    - {name: John Abbott, affiliation: RPTU Kaiserslautern-Landau}
 
 ---
 
