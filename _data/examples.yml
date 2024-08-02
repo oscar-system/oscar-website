@@ -38,12 +38,12 @@
 
 
 
-# Tutorials hosted at https://github.com/oscar-system/notebooks
+# Tutorials hosted at https://github.com/HechtiDerLachs/OscarTutorials
 
 - title: Elliptic Fibrations and Covered Schemes
   repository: HechtiDerLachs/OscarTutorials
   branch: main
-  filename: covered_schemes_and_elliptic_fibrations/elliptic_fibrations_and_covered_schemes
+  filename: elliptic_fibrations_and_covered_schemes
   author: Simon Brandhorst, Matthias Zach
   thumbnail: Schemes.png
   language: julia
