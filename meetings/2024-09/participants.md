@@ -16,6 +16,7 @@ people:
     - {name: Antony Della Vecchia, affiliation: TU Berlin}
     - {name: Fabian Lenzen, affiliation: TU Berlin}
     - {name: John Abbott, affiliation: RPTU Kaiserslautern-Landau}
+    - {name: Aaruni Kaushik, affiliation: RPTU Kaiserslautern-Landau}
 
 ---
 
