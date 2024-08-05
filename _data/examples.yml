@@ -64,6 +64,18 @@
 
 
 
+# Tutorials hosted at gdanielea/intersectionproductcurve
+
+- title: Intersection Product on the Cartesian Product of a Curve
+  repository: gdanielea/intersectionproductcurve
+  branch: main
+  filename: Intersection_cartesian_product_curve
+  author: Daniele Agostini, Daniel Plaumann, Rainer Sinn, Yannik Wesner
+  thumbnail: IntersectionTheory.png
+  language: julia
+  date: January 1, 1970
+
+
 
 # Tutorials hosted at oscar-system/OSCARBinder
 
