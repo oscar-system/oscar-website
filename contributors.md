@@ -89,12 +89,6 @@ contributors:
     github: ThomasBreuer
     paid_by_dfg: true
 
-  - name: Taylor Brysiewicz
-    affiliation: University of Western Ontario
-    website: https://sites.google.com/view/taylorbrysiewicz/home
-    email: tbrysiew@uwo.ca
-    github: tbrysiewicz
-
   - name: Tobias Boege
     affiliation: KTH Stockholm
     website: https://taboege.de/
@@ -115,6 +109,9 @@ contributors:
 
   - name: Andrei Comaneci
     github: andreicomaneci
+    website: https://page.math.tu-berlin.de/~comaneci/
+    email: comenaci@math.tu-berlin.de
+    affiliation: TU Berlin
 
   - name: Antony Della Vecchia
     affiliation: TU Berlin
@@ -131,12 +128,19 @@ contributors:
   - name: Berenike Dieterle
     affiliation: University of Kaiserslautern-Landau
     github: BD-00
+    email: dieterle@mathematik.uni-kl.de
 
   - name: Christian Eder
     affiliation: University of Kaiserslautern-Landau
     website: https://www.mathematik.uni-kl.de/~ederc/index.html
     email: ederc@rptu.de
     github: ederc
+
+  - name: Nicolas Faross
+    github: pinguly
+    affiliation: Saarland University
+    email: faross@math.uni-sb.de
+    website: https://www.uni-saarland.de/lehrstuhl/weber-moritz/team/nicolas-faross.html
 
   - name: Kamillo Ferry
     affiliation: TU Berlin
@@ -170,12 +174,21 @@ contributors:
 
   - name: Fabian Gundlach
     github: fagu
+    website: https://fabiangundlach.org/
+    email: fabian.gundlach@uni-paderborn.de
+    affiliation: Paderborn University
 
   - name: Jeroen Hanselmann
     affiliation: University of Kaiserslautern-Landau
     website: https://hanselmanj.eu/
     email: hanselman@mathematik.uni-kl.de
     github: JHanselman
+
+  - name: Ben Hollering
+    affiliation: TU Munich
+    website: https://sites.google.com/view/benhollering
+    email: benhollering@gmail.com
+    github: bkholler
 
   - name: Alexej Jordan
     affiliation: TU Berlin
@@ -205,6 +218,12 @@ contributors:
     affiliation: University of Kaiserslautern-Landau
     email: kurtz@mathematik.uni-kl.de
     github: mgkurtz
+
+  - name: Nando Leijenhorst
+    affiliation: Delft University of Technology
+    github: nanleij
+    email: n.m.leijenhorst@tudelft.nl
+    website: https://nanleij.github.io/
 
   - name: Benjamin Lorenz
     affiliation: TU Berlin
@@ -248,6 +267,12 @@ contributors:
     email: paemurru@math.uni-sb.de
     github: paemurru
 
+  - name: Andreas Paffenholz
+    affiliation: TU Darmstadt
+    website: https://www2.mathematik.tu-darmstadt.de/~paffenholz/
+    email: paffenholz@opt.tu-darmstadt.de 
+    github: apaffenholz
+
   - name: Lakshmi Ramesh
     affiliation: University of Kaiserslautern-Landau
     website: https://Lax202.github.io
@@ -273,7 +298,18 @@ contributors:
     github: felix-roehrich
 
   - name: Marcel Salmon
+    affiliation: Universität Oldenburg
     github: Syz-MS
+
+  - name: Sreevatsa Sasisekar
+    github: Sreevatsa2k
+    email: sasiseka@mathematik.uni-kl.de
+    affiliation: University of Kaiserslautern-Landau
+
+  - name: Bjoern Schaefer
+    affiliation: Saarland University
+    email: bschaefer@math.uni-sb.de
+    website: https://www.uni-saarland.de/lehrstuhl/weber-moritz/team.html
 
   - name: Julien Schanz
     affiliation: Saarland University
@@ -309,6 +345,8 @@ contributors:
   - name: Jan Philipp Thiele
     affiliation: WIAS Berlin
     github: jpthiele
+    website: https://wias-berlin.de/~thiele/
+    email: janphilipp.thiele@wias-berlin.de
 
   - name: Andrew P. Turner
     affiliation: University of Pennsylvania
@@ -367,6 +405,12 @@ retired:
   - name: Reimer Behrends  # parallelization, GAP garbage collector interface
     affiliation: University of Kaiserslautern-Landau
     github: rbehrends
+
+  - name: Taylor Brysiewicz
+    affiliation: University of Western Ontario
+    website: https://sites.google.com/view/taylorbrysiewicz/home
+    email: tbrysiew@uwo.ca
+    github: tbrysiewicz
 
   - name: Giovanni De Franceschi  # group theory
     affiliation: University of Kaiserslautern-Landau
@@ -455,7 +499,9 @@ retired:
     affiliation: University of Kaiserslautern-Landau
 
   - name: Jayantha Suranimalee  # PhD student of Claus Fieker
-    affiliation: University of Kaiserslautern-Landau
+    affiliation: University of Colombo
+    website: https://www.res.cmb.ac.lk/mathematics/mhmj-suranimalee/
+    email: suranimalee@maths.cmb.ac.lk
 
   - name: Erec Thorn  # PhD student of Ulrich Thiel
     affiliation: University of Kaiserslautern-Landau
@@ -466,6 +512,8 @@ retired:
   - name: Sascha Timme
     affiliation: TU Berlin
     github: saschatimme
+    website: https://www.saschatimme.com/
+    email: mail@saschatimme.com
 
   - name: Oguzhan Yürük
     affiliation: TU Berlin
