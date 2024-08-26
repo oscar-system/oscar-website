@@ -10,6 +10,7 @@ people:
     - {name: Erik Paemurru, affiliation: Saarland University}
     - {name: Fabian Lenzen, affiliation: TU Berlin}
     - {name: Friedrich Günther, affiliation: Saarland University}
+    - {name: Johannes Schmitt, affiliation: Universität Siegen}
     - {name: John Abbott, affiliation: RPTU Kaiserslautern-Landau}
     - {name: Lars Göttgens, affiliation: RWTH Aachen University}
     - {name: Martin Bies, affiliation: RPTU Kaiserslautern-Landau}
