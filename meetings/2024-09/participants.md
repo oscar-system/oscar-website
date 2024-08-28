@@ -5,6 +5,7 @@ meeting: true
 meeting_nr: 202409
 people:
     - {name: Aaruni Kaushik, affiliation: RPTU Kaiserslautern-Landau}
+    - {name: Ali Traore, affiliation: RPTU Kaiserslautern-Landau}
     - {name: Antony Della Vecchia, affiliation: TU Berlin}
     - {name: Claus Fieker, affiliation: RPTU Kaiserslautern-Landau}
     - {name: Erik Paemurru, affiliation: Saarland University}
