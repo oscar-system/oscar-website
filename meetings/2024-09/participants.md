@@ -14,6 +14,7 @@ people:
     - {name: Johannes Schmitt, affiliation: Universität Siegen}
     - {name: John Abbott, affiliation: RPTU Kaiserslautern-Landau}
     - {name: Lars Göttgens, affiliation: RWTH Aachen University}
+    - {name: Marcel Wack, affiliation: TU Berlin}
     - {name: Martin Bies, affiliation: RPTU Kaiserslautern-Landau}
     - {name: Max Horn, affiliation: RPTU Kaiserslautern-Landau}
     - {name: Mikelis Mikelsons, affiliation: RPTU Kaiserslautern-Landau}
