@@ -24,6 +24,7 @@ people:
     - {name: Morgan Rodgers, affiliation: RPTU Kaiserslautern-Landau}
     - {name: Sreevatsa Sasisekar, affiliation: RPTU Kaiserslautern-Landau}
     - {name: Thomas Breuer, affiliation: RWTH Aachen University}
+    - {name: Tommy Hofmann, affiliation: Universität Siegen}
     - {name: Torben Wiedemann, affiliation: Universität Gießen}
 
 ---
