@@ -11,6 +11,8 @@ meeting_nr: 202409
 The program is just a scaffold; more concrete plans may be added later or during the workshop.
 If you have suggestions or wishes, please contact the organisers.
 
+**Please bring a laptop and [follow the preparation instructions](../prepare)**
+
 ### Monday
 
 - 09:00 Begin of official program, program planning
