@@ -17,21 +17,23 @@ If you have suggestions or wishes, please contact the organisers.
 
 - 09:00 Begin of official program, program planning
 - 10:00 Installing Julia and OSCAR (for those who didn't already ...)
-- 13:00 Course for Julia and OSCAR beginners, part 1 (John Abbot, room 48-419)
+- 13:00 Julia and OSCAR crash course, part 1 (John Abbot, room 48-419)
+  - [OSCAR exercises](https://www.oscar-system.org/meetings/2021-09/exercises/) from our 2021 summer school
+  - [Julia learning resources](https://julialang.org/learning/)
 - 15:45 Status reports
 
 ### Tuesday
 
 - 09:00 Morning standup
 - 09:30 Group photo
-- 10:00 Course for Julia and OSCAR beginners, part 2 (John Abbot, room 48-419)
-- 13:00 Julia performance tuning crash course, part 1 (Max Horn, room 48-438)
+- 10:00 Julia and OSCAR crash course, part 2 (John Abbot, room 48-419)
+- 13:00 Julia performance tuning course, part 1 (Max Horn, room 48-438)
 - 15:45 Status reports
 
 ### Wednesday
 
 - 09:00 Morning standup
-- 09:30 Julia performance tuning crash course, part 2 (Max Horn, room 48-438)
+- 09:30 Julia performance tuning course, part 2 (Max Horn, room 48-438)
 - 15:45 Status reports
 
 ### Thursday
