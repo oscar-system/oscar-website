@@ -21,6 +21,7 @@ people:
     - {name: Max Horn, affiliation: RPTU Kaiserslautern-Landau}
     - {name: Mikelis Mikelsons, affiliation: RPTU Kaiserslautern-Landau}
     - {name: Morgan Rodgers, affiliation: RPTU Kaiserslautern-Landau}
+    - {name: Simon Brandhorst, affiliation: Saarland University}
     - {name: Sreevatsa Sasisekar, affiliation: RPTU Kaiserslautern-Landau}
     - {name: Thomas Breuer, affiliation: RWTH Aachen University}
     - {name: Tommy Hofmann, affiliation: Universität Siegen}
