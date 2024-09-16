@@ -27,13 +27,13 @@ If you have suggestions or wishes, please contact the organisers.
 - 09:00 Morning standup
 - 09:30 Group photo
 - 10:00 Julia and OSCAR crash course, part 2 (John Abbot, room 48-419)
-- 13:00 Julia performance tuning course, part 1 (Max Horn, room 48-438)
+- 13:00 Julia performance tuning course, part 1 (Max Horn, room 48-419)
 - 15:45 Status reports
 
 ### Wednesday
 
 - 09:00 Morning standup
-- 09:30 Julia performance tuning course, part 2 (Max Horn, room 48-438)
+- 09:30 Julia performance tuning course, part 2 (Max Horn, room 48-419)
 - 15:45 Status reports
 
 ### Thursday
