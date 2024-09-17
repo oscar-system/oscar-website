@@ -24,7 +24,7 @@ If you have suggestions or wishes, please contact the organisers.
 
 ### Tuesday
 
-**Tuesday our usual room is booked for another event, we can use 48-438 and 48-419 instead**
+**Tuesday afternoon our usual room is booked for another event, we can use 48-438 and 48-419 instead**
 
 - 09:00 Morning standup
 - 09:30 Group photo
