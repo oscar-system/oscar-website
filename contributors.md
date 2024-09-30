@@ -178,12 +178,6 @@ contributors:
     email: fabian.gundlach@uni-paderborn.de
     affiliation: Paderborn University
 
-  - name: Jeroen Hanselmann
-    affiliation: University of Kaiserslautern-Landau
-    website: https://hanselmanj.eu/
-    email: hanselman@mathematik.uni-kl.de
-    github: JHanselman
-
   - name: Ben Hollering
     affiliation: TU Munich
     website: https://sites.google.com/view/benhollering
@@ -195,6 +189,9 @@ contributors:
     website: https://www.tu.berlin/dmg/ueber-uns/team
     email: jordan@math.tu-berlin.de
     github: alexej-jordan
+
+  - name: Marie Kaltoft
+    github: MarieKaltoft
 
   - name: Lars Kastner
     affiliation: TU Berlin
@@ -255,12 +252,6 @@ contributors:
     email: muller@math.uni-sb.de
     github: StevellM
 
-  - name: Giosuè Muratore
-    affiliation: Universidade de Lisboa
-    website: https://sites.google.com/view/giosue-muratore
-    email: muratore.g.e@gmail.com
-    github: mgemath
-
   - name: Erik Paemurru  # Postdoc with Simon Brandhorst, algebraic geometry
     affiliation: Saarland University
     website: https://www.math.uni-sb.de/ag/brandhorst/index.php?option=com_content&view=article&id=49:paemurru-en&catid=18&lang=en&Itemid=114
@@ -307,6 +298,7 @@ contributors:
     affiliation: University of Kaiserslautern-Landau
 
   - name: Bjoern Schaefer
+    github: BjSchaefer
     affiliation: Saarland University
     email: bschaefer@math.uni-sb.de
     website: https://www.uni-saarland.de/lehrstuhl/weber-moritz/team.html
@@ -336,12 +328,6 @@ contributors:
     email: schrot@kth.se
     github: bschroter
 
-  - name: Justus Springer
-    affiliation: Universität Tübingen
-    website: https://www.math.uni-tuebingen.de/de/forschung/algebra/personen/justus-springer
-    email: justus.springer@uni-tuebingen.de
-    github: justus-springer
-
   - name: Jan Philipp Thiele
     affiliation: WIAS Berlin
     github: jpthiele
@@ -363,17 +349,14 @@ contributors:
     email: laura.voggesberger@ruhr-uni-bochum.de
     github: voggesbe
 
+  - name: Sebastian Volz
+    github: sebvz777
+
   - name: Marcel Wack
     affiliation: TU Berlin
     website: https://page.math.tu-berlin.de/~wack/
     email: wack@math.tu-berlin.de
     github: Sequenzer
-
-  - name: Lena Weis
-    affiliation: TU Berlin
-    website: https://page.math.tu-berlin.de/~weis/
-    email: weis@math.tu-berlin.de
-    github: lenweis
 
   - name: Yichao Yu
     affiliation: Duke University
@@ -431,6 +414,12 @@ retired:
     affiliation: University of Kaiserslautern-Landau
     website: https://sebasguts.github.io/
 
+  - name: Jeroen Hanselmann
+    affiliation: University of Kaiserslautern-Landau
+    website: https://hanselmanj.eu/
+    email: hanselman@mathematik.uni-kl.de
+    github: JHanselman
+
   - name: William Hart
     affiliation: University of Kaiserslautern-Landau
 
@@ -476,6 +465,12 @@ retired:
   - name: Oleksandr Motsak
     affiliation: IMAGINARY
 
+- name: Giosuè Muratore
+    affiliation: Universidade de Lisboa
+    website: https://sites.google.com/view/giosue-muratore
+    email: muratore.g.e@gmail.com
+    github: mgemath
+
   - name: Markus Pfeiffer
     affiliation: St Andrews
     github: markuspf
@@ -494,6 +489,12 @@ retired:
 
   - name: Carlo Sircana  # PhD student of Claus Fieker
     affiliation: University of Kaiserslautern-Landau
+
+  - name: Justus Springer
+    affiliation: Universität Tübingen
+    website: https://www.math.uni-tuebingen.de/de/forschung/algebra/personen/justus-springer
+    email: justus.springer@uni-tuebingen.de
+    github: justus-springer
 
   - name: Andreas Steenpaß  # commutative algebra
     affiliation: University of Kaiserslautern-Landau
@@ -514,6 +515,12 @@ retired:
     github: saschatimme
     website: https://www.saschatimme.com/
     email: mail@saschatimme.com
+
+  - name: Lena Weis
+    affiliation: TU Berlin
+    website: https://page.math.tu-berlin.de/~weis/
+    email: weis@math.tu-berlin.de
+    github: lenweis
 
   - name: Oguzhan Yürük
     affiliation: TU Berlin
