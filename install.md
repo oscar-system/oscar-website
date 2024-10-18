@@ -16,7 +16,7 @@ or by sending an email to <mailto:oscar@oscar-system.org>.
 The following instructions assume that you are at least somewhat familiar with using a
 terminal interface.
 
-The installation steps (specifically the precompliation) requires at least 4GB of free memory.
+The installation steps (specifically the precompliation) requires at least 6GB of free memory.
 
 <div class="clickdesc">
 
@@ -26,7 +26,7 @@ Windows
 </summary>
 Please install Windows Subsystem for Linux (WSL) following the <a href="https://learn.microsoft.com/en-us/windows/wsl/install">official instructions</a>. You should now have an App "Ubuntu" in your start menu (run "explorer.exe ." in the Ubuntu terminal to open the current folder in the Windows File Explorer). You can now follow the instructions for <em><a href="#install-ubuntu">Ubuntu</a></em>. 
 <br>
-Recall that your WSL Subsystem should have at least 4GB of free memory for the installation step (specifically, the precompilation). Please consult the <a href="https://learn.microsoft.com/en-us/windows/wsl/wsl-config#main-wsl-settings">official instructions</a> to learn how to adjust your WSL.
+Recall that your WSL Subsystem should have at least 6GB of free memory for the installation step (specifically, the precompilation). Please consult the <a href="https://learn.microsoft.com/en-us/windows/wsl/wsl-config#main-wsl-settings">official instructions</a> to learn how to adjust your WSL.
 
 </details>
 
