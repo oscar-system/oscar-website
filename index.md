@@ -10,6 +10,14 @@ title: Home
 
 # {{ site.title }}
 
+## Upcoming events
+
+* [LEAN meets MaRDI and OSCAR (5 - 6 Dec, 2024 at TU Berlin).](https://polymake.org/doku.php/workshops/lean_workshop1224)
+* [Computational Algebraic Geometry Workshop (18 - 22 Nov, 2024 at Durham University).](https://sites.google.com/view/durhamcompalggeom/home)
+
+
+## What is OSCAR?
+
 The OSCAR project develops a comprehensive **O**pen **S**ource **C**omputer **A**lgebra **R**esearch
 system for computations in algebra, geometry, and number theory, written in [Julia](https://julialang.org). In particular,
 the emphasis is on supporting complex computations which require a high level
