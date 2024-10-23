@@ -4,6 +4,7 @@ title: Meeting 02/2022
 meeting: true
 meeting_nr: 202202
 is_meeting_index: true
+weight: 1
 ---
 
 # OSCAR developer meeting - Tropical Geometry

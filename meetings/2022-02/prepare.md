@@ -3,6 +3,7 @@ layout: meeting
 title: Preparation
 meeting: true
 meeting_nr: 202202
+weight: 3
 ---
 
 *Before* the coding sprints begins, you should install and familiarize yourself with Julia and Oscar if you haven't done so already.

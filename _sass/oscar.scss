@@ -126,12 +126,20 @@ Based on https://codepen.io/jdsteinbach/pen/GYmQjo
 }
 
 .meeting-nav {
-  padding-bottom: 1rem;
+  margin-top: -40px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 60px;
+  margin-left: -60px;
+  background: #e4e4e7;
 }
 
 .meeting-nav a {
+  display: inline-block;
   margin-left: 4px;
   margin-right: 4px;
+  font-size: x-large;
+  padding: 5px;
 }
 
 .participants-organizer { color: green; }

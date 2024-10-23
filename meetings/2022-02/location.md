@@ -3,6 +3,7 @@ layout: meeting
 title: Location
 meeting: true
 meeting_nr: 202202
+weight: 5
 ---
 
 The OSCAR Meeting in February 2022 takes place in-person in

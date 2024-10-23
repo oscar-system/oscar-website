@@ -3,6 +3,7 @@ layout: meeting
 title: Participants
 meeting: true
 meeting_nr: 202202
+weight: 6
 people:
     - {name: Firoozeh Aga, affiliation: TU Kaiserslautern}
 
