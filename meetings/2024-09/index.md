@@ -4,6 +4,7 @@ title: Meeting 09/2024
 meeting: true
 meeting_nr: 202409
 is_meeting_index: true
+weight: 1
 ---
 
 # OSCAR workshop

@@ -26,7 +26,7 @@ people:
     - {name: Thomas Breuer, affiliation: RWTH Aachen University}
     - {name: Tommy Hofmann, affiliation: Universität Siegen}
     - {name: Torben Wiedemann, affiliation: Universität Gießen}
-
+weight: 5
 ---
 
 {% include participants.html participants=page.people %}

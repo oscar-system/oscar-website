@@ -3,6 +3,7 @@ layout: meeting
 title: Location
 meeting: true
 meeting_nr: 202409
+weight: 4
 ---
 
 The OSCAR meeting in September 2024 takes place in

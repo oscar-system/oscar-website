@@ -3,6 +3,7 @@ layout: meeting
 title: Program
 meeting: true
 meeting_nr: 202409
+weight: 2
 ---
 
 * Start: Monday, September 16, at 09:00 in room 48-436
