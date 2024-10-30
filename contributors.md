@@ -318,11 +318,11 @@ contributors:
     github: julien-schanz
 
   - name: Johannes Schmitt  # former PhD student of Ulrich Thiel
-    affiliation: University of Siegen
+    affiliation: Ruhr-Universität Bochum
     website: https://joschmitt.eu
-    email: johannes2.schmitt@uni-siegen.de
+    email: johannes.schmitt@ruhr-uni-bochum.de
     github: joschmitt
-    paid_by_dfg: true
+    paid_by_dfg: false
 
   - name: Hans Schönemann
     affiliation: University of Kaiserslautern-Landau
