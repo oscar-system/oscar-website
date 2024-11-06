@@ -1,0 +1,611 @@
+- name: Simon Brandhorst
+  affiliation: Saarland University
+  website: https://www.math.uni-sb.de/ag/brandhorst/index.php
+  email: brandhorst@math.uni-sb.de
+  github: simonbrandhorst
+  status: pi
+
+- name: Wolfram Decker
+  affiliation: University of Kaiserslautern-Landau
+  website: https://math.rptu.de/en/wgs/agag/people/head/decker
+  email: wolfram.decker@rptu.de
+  github: wdecker
+  status: pi
+
+- name: Claus Fieker
+  affiliation: University of Kaiserslautern-Landau
+  website: https://math.rptu.de/en/wgs/agag/people/head/fieker
+  email: claus.fieker@rptu.de
+  github: fieker
+  status: pi
+
+- name: Tommy Hofmann
+  affiliation: University of Siegen
+  website: https://www.thofma.com
+  email: tommy.hofmann@uni-siegen.de
+  github: thofma
+  status: pi
+
+- name: Max Horn
+  affiliation: University of Kaiserslautern-Landau
+  website: https://www.quendi.de/math
+  email: mhorn@rptu.de
+  github: fingolfin
+  status: pi
+
+- name: Michael Joswig
+  affiliation: TU Berlin
+  website: https://page.math.tu-berlin.de/~joswig/
+  email: joswig@math.tu-berlin.de
+  github: micjoswig
+  status: pi
+
+- name: John Abbott
+  affiliation: University of Kaiserslautern-Landau
+  website: https://math.rptu.de/ags/agag/personen/mitglieder
+  email: john.abbott@rptu.de
+  github: JohnAAbbott
+  paid_by_dfg: true
+  status: active
+
+- name: Albin Ahlbäck
+  affiliation: Chalmers University
+  website: https://albinahlback.gitlab.io/
+  email: albin.ahlback@gmail.com
+  github: albinahlback
+  status: active
+
+- name: Alex J. Best
+  affiliation: King's College London
+  website: https://alexjbest.github.io/
+  email: alex.j.best@gmail.com
+  github: alexjbest
+  status: active
+
+- name: Martin Bies
+  affiliation: University of Kaiserslautern-Landau
+  website: https://martinbies.github.io
+  email: martin.bies@rptu.de
+  github: HereAround
+  status: active
+
+- name: Thomas Breuer
+  affiliation: RWTH Aachen University
+  website: http://www.math.rwth-aachen.de/~Thomas.Breuer/
+  email: thomas.breuer@math.rwth-aachen.de
+  github: ThomasBreuer
+  paid_by_dfg: true
+  status: active
+
+- name: Tobias Boege
+  affiliation: KTH Stockholm
+  website: https://taboege.de/
+  email: post@taboege.de
+  github: taboege
+  status: active
+
+- name: Janko Böhm
+  affiliation: University of Kaiserslautern-Landau
+  website: https://agag-jboehm.math.rptu.de/~boehm/
+  email: boehm@mathematik.uni-kl.de
+  github: jankoboehm
+  status: active
+
+- name: Tobias Braun
+  affiliation: RWTH Aachen
+  website: https://www.math.rwth-aachen.de/~Tobias.Braun/
+  email: tobias.braun2@rwth aachen
+  github: SirToby25
+  status: active
+
+- name: Andrei Comaneci
+  github: andreicomaneci
+  website: https://page.math.tu-berlin.de/~comaneci/
+  email: comenaci@math.tu-berlin.de
+  affiliation: TU Berlin
+  status: active
+
+- name: Antony Della Vecchia
+  affiliation: TU Berlin
+  website: https://antonydellavecchia.github.io/
+  email: vecchia@math.tu-berlin.de
+  github: antonydellavecchia
+  status: active
+
+- name: Alexander Demin
+  affiliation: HSE University
+  website: https://sumiya11.github.io/
+  email: asdemin_2@edu.hse.ru
+  github: sumiya11
+  status: active
+
+- name: Berenike Dieterle
+  affiliation: University of Kaiserslautern-Landau
+  github: BD-00
+  email: dieterle@mathematik.uni-kl.de
+  status: active
+  comment: Master student of Claus Fieker as of 2024
+
+- name: Christian Eder
+  affiliation: University of Kaiserslautern-Landau
+  website: https://www.mathematik.uni-kl.de/~ederc/index.html
+  email: ederc@rptu.de
+  github: ederc
+  status: active
+
+- name: Nicolas Faross
+  github: pinguly
+  affiliation: Saarland University
+  email: faross@math.uni-sb.de
+  website: https://www.uni-saarland.de/lehrstuhl/weber-moritz/team/nicolas-faross.html
+  status: active
+  comment: PhD student of Moritz Weber in Saarbruecken, as of 2024
+
+- name: Kamillo Ferry
+  affiliation: TU Berlin
+  website: https://kafe.dev/
+  email: kafe@kafe.dev
+  github: ooinaruhugh
+  status: active
+
+- name: Ghislain Fourier
+  affiliation: RWTH Aachen University
+  website: https://www.art.rwth-aachen.de/cms/~rnko/
+  email: fourier@art.rwth-aachen.de
+  github: gfourier
+  status: active
+
+- name: Anne Frühbis-Krüger
+  affiliation: Universität Oldenburg
+  website: https://uol.de/en/mathematik/persons/profs/prof-dr-anne-fruehbis-krueger
+  email: anne.fruehbis-krueger@uol.de
+  github: afkafkafk13
+  status: active
+
+- name: Zoe Geiselmann
+  affiliation: TU Berlin
+  website: https://www.tu.berlin/dmg/ueber-uns/team
+  email: geiselmann@math.tu-berlin.de
+  github: zkgeiselmann
+  status: active
+
+- name: Lars Göttgens
+  affiliation: RWTH Aachen University
+  website: https://www.art.rwth-aachen.de/cms/~bbxbwx/
+  email: goettgens@art.rwth-aachen.de
+  github: lgoettgens
+  status: active
+
+- name: Fabian Gundlach
+  github: fagu
+  website: https://fabiangundlach.org/
+  email: fabian.gundlach@uni-paderborn.de
+  affiliation: Paderborn University
+  status: active
+
+- name: Jeroen Hanselmann
+  affiliation: University of Kaiserslautern-Landau
+  website: https://hanselmanj.eu/
+  email: hanselman@mathematik.uni-kl.de
+  github: JHanselman
+  status: active
+
+- name: Ben Hollering
+  affiliation: TU Munich
+  website: https://sites.google.com/view/benhollering
+  email: benhollering@gmail.com
+  github: bkholler
+  status: active
+
+- name: Alexej Jordan
+  affiliation: TU Berlin
+  website: https://www.tu.berlin/dmg/ueber-uns/team
+  email: jordan@math.tu-berlin.de
+  github: alexej-jordan
+  status: active
+
+- name: Lars Kastner
+  affiliation: TU Berlin
+  website: https://lkastner.github.io/
+  email: kastner@math.tu-berlin.de
+  github: lkastner
+  status: active
+
+- name: Aaruni Kaushik
+  affiliation: University of Kaiserslautern-Landau
+  website: https://akaushik.edufor.me
+  email: akaushik@mathematik.uni-kl.de
+  github: aaruni96
+  status: active
+
+- name: Lukas Kühne
+  affiliation: Bielefeld University
+  website: https://www.math.uni-bielefeld.de/~lkuehne/
+  email: lukas.kuehne@math.uni-bielefeld.de
+  github: LukasKuehne
+  status: active
+
+- name: Markus Kurtz
+  affiliation: University of Kaiserslautern-Landau
+  email: kurtz@mathematik.uni-kl.de
+  github: mgkurtz
+  status: active
+  comment: Former master student of Max Horn
+
+- name: Nando Leijenhorst
+  affiliation: Delft University of Technology
+  github: nanleij
+  email: n.m.leijenhorst@tudelft.nl
+  website: https://nanleij.github.io/
+  status: active
+
+- name: Benjamin Lorenz
+  affiliation: TU Berlin
+  website: https://www.tu.berlin/dmg/ueber-uns/systemadministration
+  email: lorenz@math.tu-berlin.de
+  github: benlorenz
+  status: active
+
+- name: Dante Luber
+  affiliation: TU Berlin
+  website: https://sites.google.com/view/dantelubermath/home
+  email: luber@math.tu-berlin.de
+  github: danteluber
+  status: active
+
+- name: Mikelis Emils Mikelsons
+  affiliation: University of Kaiserslautern-Landau
+  website: https://github.com/emikelsons
+  email: mikelis.emils.mikelsons@gmail.com
+  github: emikelsons
+  status: active
+
+- name: Rafael Mohr
+  affiliation: Sorbonne University and University of Kaiserslautern-Landau
+  website: https://polsys.lip6.fr/~mohr/
+  email: rafael.mohr@lip6.fr
+  github: RafaelDavidMohr
+  status: active
+
+- name: Stevell Muller
+  affiliation: Saarland University
+  website: https://www.math.uni-sb.de/ag/brandhorst/index.php?option=com_content&view=article&id=26:muller-en-1&catid=18&lang=en&Itemid=114
+  email: muller@math.uni-sb.de
+  github: StevellM
+  status: active
+
+- name: Giosuè Muratore
+  affiliation: Universidade de Lisboa
+  website: https://sites.google.com/view/giosue-muratore
+  email: muratore.g.e@gmail.com
+  github: mgemath
+  status: active
+
+- name: Erik Paemurru
+  affiliation: Saarland University
+  website: https://www.math.uni-sb.de/ag/brandhorst/index.php?option=com_content&view=article&id=49:paemurru-en&catid=18&lang=en&Itemid=114
+  email: paemurru@math.uni-sb.de
+  github: paemurru
+  status: active
+
+- name: Andreas Paffenholz
+  affiliation: TU Darmstadt
+  website: https://www2.mathematik.tu-darmstadt.de/~paffenholz/
+  email: paffenholz@opt.tu-darmstadt.de
+  github: apaffenholz
+  status: active
+
+- name: Lakshmi Ramesh
+  affiliation: University of Kaiserslautern-Landau
+  website: https://Lax202.github.io
+  email: ramesh@mathematik.uni-kl.de
+  github: Lax202
+  status: active
+
+- name: Yue Ren
+  affiliation: Durham University
+  website: https://www.yueren.de/
+  email: yue.ren2@durham.ac.uk
+  github: YueRen
+  status: active
+
+- name: Morgan Rodgers
+  affiliation: University of Kaiserslautern-Landau
+  website: https://math.rptu.de/ags/agag/personen/mitglieder
+  email: morgan.rodgers@rptu.de
+  github: mjrodgers
+  status: active
+
+- name: Felix Röhrich
+  affiliation: RWTH Aachen University
+  website: https://www.art.rwth-aachen.de/cms/~xlgua/
+  email: roehrich@art.rwth-aachen.de
+  github: felix-roehrich
+  status: active
+
+- name: Marcel Salmon
+  affiliation: Universität Oldenburg
+  github: Syz-MS
+  status: active
+  comment: Associated with Anne Fruhbig Kruger as of 2024
+
+- name: Sreevatsa Sasisekar
+  github: Sreevatsa2k
+  email: sasiseka@mathematik.uni-kl.de
+  affiliation: University of Kaiserslautern-Landau
+  status: active
+  comment: Master student of Claus Fieker as of 2024
+
+- name: Björn Schäfer
+  affiliation: Saarland University
+  email: bschaefer@math.uni-sb.de
+  website: https://www.uni-saarland.de/lehrstuhl/weber-moritz/team.html
+  status: active
+  github: BjSchaefer
+
+- name: Julien Schanz
+  affiliation: Saarland University
+  website: https://www.uni-saarland.de/lehrstuhl/weber-moritz/team/julien-schanz.html
+  email: schanz@math.uni-sb.de
+  github: julien-schanz
+  status: active
+
+- name: Johannes Schmitt
+  affiliation: Ruhr-Universität Bochum
+  website: https://joschmitt.eu
+  email: johannes.schmitt@ruhr-uni-bochum.de
+  github: joschmitt
+  paid_by_dfg: false
+  status: active
+
+- name: Hans Schönemann
+  affiliation: University of Kaiserslautern-Landau
+  website: https://math.rptu.de/ags/agag/personen/mitglieder
+  email: hans.schoenemann@math.rptu.de
+  github: hannes14
+  status: active
+
+- name: Benjamin Schröter
+  affiliation: KTH Stochkholm
+  website: https://people.kth.se/~schrot
+  email: schrot@kth.se
+  github: bschroter
+  status: active
+
+- name: Justus Springer
+  affiliation: Universität Tübingen
+  website: https://www.math.uni-tuebingen.de/de/forschung/algebra/personen/justus-springer
+  email: justus.springer@uni-tuebingen.de
+  github: justus-springer
+  status: active
+
+- name: Jan Philipp Thiele
+  affiliation: WIAS Berlin
+  github: jpthiele
+  website: https://wias-berlin.de/~thiele/
+  email: janphilipp.thiele@wias-berlin.de
+  status: active
+
+- name: Andrew P. Turner
+  affiliation: University of Pennsylvania
+  website: https://apturner.net/
+  email: turnerap@sas.upenn.edu
+  github: apturner
+  status: active
+
+- name: Grégory Vanuxem
+  github: gvanuxem
+  status: active
+  comment: Who ?
+
+- name: Laura Voggesberger
+  affiliation: Ruhr-Universität Bochum
+  website: https://www.ruhr-uni-bochum.de/ffm/Lehrstuehle/Lehrstuhl-VI/voggesberger.html
+  email: laura.voggesberger@ruhr-uni-bochum.de
+  github: voggesbe
+  status: active
+
+- name: Marcel Wack
+  affiliation: TU Berlin
+  website: https://page.math.tu-berlin.de/~wack/
+  email: wack@math.tu-berlin.de
+  github: Sequenzer
+  status: active
+
+- name: Lena Weis
+  affiliation: TU Berlin
+  website: https://page.math.tu-berlin.de/~weis/
+  email: weis@math.tu-berlin.de
+  github: lenweis
+  status: active
+
+- name: Yichao Yu
+  affiliation: Duke University
+  email: yyc1992@gmail.com
+  github: yuyichao
+  status: active
+  comment: Who ?
+
+- name: Matthias Zach
+  affiliation: University of Kaiserslautern-Landau
+  website: https://math.rptu.de/ags/agag/personen/mitglieder
+  email: zach@rptu.de
+  github: HechtiDerLachs
+  status: active
+
+- name: Mohamed Barakat
+  affiliation: University of Siegen
+  website: https://mohamed-barakat.github.io/
+  email: mohamed.barakat@uni-siegen.de
+  github: mohamed-barakat
+  status: retired
+
+- name: Reimer Behrends
+  affiliation: University of Kaiserslautern-Landau
+  github: rbehrends
+  status: retired
+  comment: Parallelization, GAP garbage collector interface
+
+- name: Taylor Brysiewicz
+  affiliation: University of Western Ontario
+  website: https://sites.google.com/view/taylorbrysiewicz/home
+  email: tbrysiew@uwo.ca
+  github: tbrysiewicz
+  status: retired
+
+- name: Giovanni De Franceschi
+  affiliation: University of Kaiserslautern-Landau
+  status: retired
+  comment: Was PostDoc in Kaiserslautern around 2021
+  github: GDeFranceschi
+
+- name: Alexander Dinges
+  affiliation: University of Kaiserslautern-Landau
+  website: https://pl.cs.uni-kl.de/homepage/de/staff/AlexanderDinges/
+  email: alexander.dinges@cs.rptu.de
+  github: AlexD97
+  status: retired
+  comment: Worked for Janko on modules
+
+- name: Raul Epure
+  affiliation: University of Kaiserslautern-Landau
+  status: retired
+  github: raulepure
+  comment: Used to work in TU KL, under whom and for what ? who ?
+
+- name: Rafael Fourquet
+  affiliation: University of Kaiserslautern-Landau
+  status: retired
+  comment: General infrastructure who ?
+  github: rfourquet
+
+- name: Sebastian Gutsche
+  affiliation: University of Kaiserslautern-Landau
+  website: https://sebasguts.github.io/
+  status: retired
+  github: sebasguts
+
+- name: William Hart
+  affiliation: University of Kaiserslautern-Landau
+  status: retired
+  github: wbhart
+  comment: Initial contributor to Oscar.
+
+- name: Florian Heiderich
+  affiliation: University of Siegen
+  website: https://www.heiderich.org/math/
+  status: retired
+  github: heiderich
+
+- name: Fredrik Johansson
+  affiliation: Institut de Mathématiques de Bordeaux
+  website: http://fredrikj.net/
+  email: fredrik.johansson@gmail.com
+  github: fredrik-johansson
+  status: retired
+  comment: The FLINT guy.
+
+- name: Marek Kaluba
+  affiliation: KIT Karlsruhe
+  website: https://kalmarek.github.io/
+  email: kalamar@mailbox.org
+  github: kalmarek
+  status: retired
+  comment: Freelance mathematician, formerly at KIT
+
+- name: Avinash (Avi) Kulkarni
+  affiliation: Dartmouth College
+  website: https://math.dartmouth.edu/~akulkarn/index.html
+  email: avinash.a.kulkarni@dartmouth.edu
+  github: a-kulkarn
+  status: retired
+  comment: Who ?
+
+- name: Alexander Mattes
+  affiliation: University of Kaiserslautern-Landau
+  website: https://github.com/alexandermattes
+  github: alexandermattes
+  status: retired
+  comment: Masters student of Claus Fieker
+
+- name: Sachin Mohan
+  affiliation: University of Kaiserslautern-Landau
+  website: https://sachinkmohan.github.io/
+  email: sachinkmohan@proton.me
+  github: sachinkm308
+  status: retired
+  comment: Who ?
+
+- name: Oleksandr Motsak
+  affiliation: IMAGINARY
+  status: retired
+  github: malex984
+  comment: Former student (phd?) in Kaiserslautern
+
+- name: Markus Pfeiffer
+  affiliation: St Andrews
+  github: markuspf
+  status: retired
+
+- name: Delphine Pol
+  affiliation: University of Kaiserslautern-Landau
+  status: retired
+  github: delphinepol
+  comment: Used to be a postdoc at Kaiserslautern, until ~2020
+
+- name: Martin Raum
+  affiliation: Chalmers University
+  website: https://www.raum-brothers.eu/martin/
+  email: raum@chalmers.se
+  github: martinra
+  status: retired
+
+- name: Daniel Schultz
+  affiliation: University of Kaiserslautern-Landau
+  status: retired
+  github: tthsqe12
+  comment: who ?
+
+- name: Carlo Sircana
+  affiliation: University of Kaiserslautern-Landau
+  status: retired
+  comment: PhD student of Claus Fieker
+  github: CarloSircana
+
+- name: Andreas Steenpaß
+  affiliation: University of Kaiserslautern-Landau
+  status: retired
+  comment: Commutative algebra
+  github: steenpass
+
+- name: Jayantha Suranimalee
+  affiliation: University of Colombo
+  website: https://www.res.cmb.ac.lk/mathematics/mhmj-suranimalee/
+  email: suranimalee@maths.cmb.ac.lk
+  status: retired
+  comment: Completed her PhD with Claus Fieker in about 2020
+  github: suranimalee
+
+- name: Erec Thorn
+  affiliation: University of Kaiserslautern-Landau
+  website: https://math.rptu.de/ags/agag/personen/mitglieder
+  email: thorn@mathematik.uni-kl.de
+  github: erecthorn
+  status: retired
+  comment: PhD student of Ulrich Thiel
+
+- name: Sascha Timme
+  affiliation: TU Berlin
+  github: saschatimme
+  website: https://www.saschatimme.com/
+  email: mail@saschatimme.com
+  status: retired
+  comment: Homotopy continuation people
+
+- name: Oguzhan Yürük
+  affiliation: TU Berlin
+  website: http://www.iaa.tu-bs.de/oguzhanyueruek/index.html
+  email: yuruk@math.tu-berlin.de
+  github: OguzhanYueruek
+  status: retired
+  comment: Postdoc of Michael Joswig in Berlin
