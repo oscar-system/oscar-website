@@ -27,3 +27,5 @@ group :jekyll_plugins do
 end
 
 gem "webrick", "~> 1.7"
+gem "sassc", "2.1.0"
+gem "logger", "1.4.2"
