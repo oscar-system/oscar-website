@@ -14,6 +14,7 @@ title: Home
 
 * [LEAN meets MaRDI and OSCAR (5 - 6 Dec, 2024 at TU Berlin).](https://polymake.org/doku.php/workshops/lean_workshop1224)
 * [Computational Algebraic Geometry Workshop (18 - 22 Nov, 2024 at Durham University).](https://sites.google.com/view/durhamcompalggeom/home)
+* [MaRDI Annual Meeting 2024 (18 - 20 Nov, 2024 at Fraunhofer ITWM Kaiserslautern)](https://www.itwm.fraunhofer.de/de/messen-veranstaltungen/2024/2024_11_18_mardi-annual-meeting.html)
 
 
 ## What is OSCAR?
