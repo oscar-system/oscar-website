@@ -6,7 +6,7 @@ layout: default
 {% assign parent = meeting_pages | where: "is_meeting_index", "true" | first %}
 
 <div class="meeting-nav">
-  <a href="{{parent.url | relative_url}}" style="{% if parent.url == page.url%} {%endif%} font-size: xx-large; margin-bottom: 10px" >{{ parent.title }}</a>
+  <a href="{{parent.url | relative_url}}" style="{% if parent.url == page.url%} font-weight: bold; {%endif%} font-size: xx-large; margin-bottom: 10px;" >{{ parent.title }}</a>
   <br>
 {% for p in meeting_pages %}
     {% if p.is_meeting_index != true %}
@@ -17,7 +17,7 @@ layout: default
 
 <div class="page">
 {% if page.is_meeting_index != true %}
-  <h1 class="page-title">{{ page.title }}</h1>
+  <h1>{{ page.title }}</h1>
 {% endif %}
   {{ content }}
 </div>
