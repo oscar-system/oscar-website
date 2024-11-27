@@ -44,7 +44,7 @@ jobs:
 
     - name: Read summary file
       id: getsummary
-      run: echo "::set-output name=summary::$(cat summary.txt)"
+      run: echo "{summary}={$(cat summary.txt)}" >> $GITHUB_OUTPUT
 
     # Create a pull request
     - name: Create Pull Request
