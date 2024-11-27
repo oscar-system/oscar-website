@@ -56,4 +56,4 @@ jobs:
         commit-message: "Update contributors on $(date +'%Y-%m-%d')"
         branch: update-contributors
         title: "Update contributors"
-        body: "${{ foo }}"
+        body: "${{ steps.getsummary.outputs.foo }}"
