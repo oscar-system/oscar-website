@@ -33,7 +33,7 @@ github_userlist = []
 API_KEY = os.getenv("API_KEY") # TODO: rename to whatever is the right env var
 
 # grab currently active devs
-if not os.path.isdir("repos"): #bla
+if not os.path.isdir("repos"): #bla a
     os.mkdir("repos")
 os.chdir("repos")
 for repo in repoList:
