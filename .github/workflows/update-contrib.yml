@@ -28,6 +28,7 @@ jobs:
         source /tmp/pyvenv/bin/activate
         cd etc
         python update-contributors.py
+        cd ..
 
     # Configure Git for the PR
     - name: Set up Git
