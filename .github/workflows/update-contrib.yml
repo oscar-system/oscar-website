@@ -21,7 +21,7 @@ jobs:
       run: |
         python3 -m venv /tmp/pyvenv
         source /tmp/pyvenv/bin/activate
-        pip install pyyaml
+        pip install pyyaml requests
 
     - name: Run update-contributors script
       run: |
