@@ -71,6 +71,8 @@ for repo in repoList:
         r = requests.get(github_commit_url, headers={"Authorization":f"Bearer {API_KEY}"})
         if r.status_code == 200:
             j = json.loads(r.text)
+            if j['author'] == None:
+                continue
             github_username = j['author']['login']
         else:
             # this will never happen, except if the API lies to you
