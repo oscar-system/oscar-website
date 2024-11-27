@@ -22,9 +22,9 @@ infile = "../_data/people_list.yml"
 with open(infile, "r") as ymlfile:
     peopleList = yaml.safe_load(ymlfile)
 names = [i['github'] for i in peopleList]
-repoList = ["thofma/Hecke.jl"]#, "oscar-system/Oscar.jl", "Nemocas/Nemo.jl",
-            #"Nemocas/AbstractAlgebra.jl", "oscar-system/GAP.jl", "oscar-system/Polymake.jl",
-            #"oscar-system/Singular.jl"]
+repoList = ["thofma/Hecke.jl", "oscar-system/Oscar.jl", "Nemocas/Nemo.jl",
+            "Nemocas/AbstractAlgebra.jl", "oscar-system/GAP.jl", "oscar-system/Polymake.jl",
+            "oscar-system/Singular.jl"]
 
 newList = []
 namelist = []
@@ -33,7 +33,7 @@ github_userlist = []
 API_KEY = os.getenv("API_KEY") # TODO: rename to whatever is the right env var
 summarystring = "This PR updates the contributors list based on the latest changes.\n"
 # grab currently active devs
-if not os.path.isdir("repos"): #bla a a
+if not os.path.isdir("repos"):
     os.mkdir("repos")
 os.chdir("repos")
 for repo in repoList:
