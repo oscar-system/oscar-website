@@ -42,6 +42,10 @@ jobs:
         git add _data/people_list.yml
         git commit -m "Update contributors on $(date +'%Y-%m-%d')" || ${echo "No changes to commit" && false}
 
+    - name: Read summary file
+      id: getsummary
+      run: echo "::set-output name=summary::$(cat summary.txt)"
+
     # Create a pull request
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v5
@@ -49,5 +53,4 @@ jobs:
         commit-message: "Update contributors on $(date +'%Y-%m-%d')"
         branch: update-contributors
         title: "Update contributors"
-        body: |
-          This PR updates the contributors list based on the latest changes.
+        body: "${steps.getsummary.outputs.summary}"

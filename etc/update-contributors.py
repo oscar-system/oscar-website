@@ -22,16 +22,16 @@ infile = "../_data/people_list.yml"
 with open(infile, "r") as ymlfile:
     peopleList = yaml.safe_load(ymlfile)
 names = [i['github'] for i in peopleList]
-repoList = ["thofma/Hecke.jl", "oscar-system/Oscar.jl", "Nemocas/Nemo.jl",
-            "Nemocas/AbstractAlgebra.jl", "oscar-system/GAP.jl", "oscar-system/Polymake.jl",
-            "oscar-system/Singular.jl"]
+repoList = ["thofma/Hecke.jl"]#, "oscar-system/Oscar.jl", "Nemocas/Nemo.jl",
+            #"Nemocas/AbstractAlgebra.jl", "oscar-system/GAP.jl", "oscar-system/Polymake.jl",
+            #"oscar-system/Singular.jl"]
 
 newList = []
 namelist = []
 github_newusers = []
 github_userlist = []
 API_KEY = os.getenv("API_KEY") # TODO: rename to whatever is the right env var
-
+summarystring = "This PR updates the contributors list based on the latest changes.\n"
 # grab currently active devs
 if not os.path.isdir("repos"): #bla a a
     os.mkdir("repos")
@@ -72,6 +72,7 @@ for repo in repoList:
         if r.status_code == 200:
             j = json.loads(r.text)
             if j['author'] == None:
+                summarystring += f" - Github username not found for {i[0]} with email {i[1]}. Excluding from people_list.yml\n"
                 continue
             github_username = j['author']['login']
         else:
@@ -128,3 +129,6 @@ with open('../_data/people_list.yml', 'w') as outfile:
     yaml.dump(activelist, outfile, Dumper=MyDumper, sort_keys=False)
     outfile.write("\n######################\n# Retired contributors\n######################\n\n")
     yaml.dump(retiredlist, outfile, Dumper=MyDumper, sort_keys=False)
+
+with open("../summary.txt", 'w') as summaryfile:
+    summaryfile.write(summarystring)
