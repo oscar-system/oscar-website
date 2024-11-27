@@ -26,7 +26,8 @@ jobs:
     - name: Run update-contributors script
       run: |
         source /tmp/pyvenv/bin/activate
-        python etc/update-contributors.py
+        cd etc
+        python update-contributors.py
 
     # Configure Git for the PR
     - name: Set up Git
