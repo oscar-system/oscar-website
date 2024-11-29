@@ -12,7 +12,7 @@ title: Contributors
 ## Project leaders
 
 <ul>
-{% for p in site.data.autogen_people_list %}
+{% for p in site.data.people_list %}
   {% if p.status == "pi" %}
     <li>
       <a href="{{ p.website }}"><strong>{{ p.name }}</strong></a>, {{ p.affiliation }}
@@ -30,7 +30,7 @@ The following people are actively[^1] contributing to the OSCAR project.
 
 
 <ul>
-{% for p in site.data.autogen_people_list %}
+{% for p in site.data.people_list %}
   {% if p.status == "active" %}
   <li>
     {% if p.website != null %}
@@ -69,7 +69,7 @@ not contributed code changes in the past 12 months[^1].
 [^1]: This list was last updated on {{ 'now' | date: "%d %b %Y" }}.
 
 <ul>
-{% for p in site.data.autogen_people_list %}
+{% for p in site.data.people_list %}
   {% if p.status == "retired" %}
   <li>
     {% if p.website != null %}
