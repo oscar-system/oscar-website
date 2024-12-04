@@ -21,13 +21,12 @@ jobs:
     # Run the update script
     - name: Setup venv and install pyyaml
       run: |
-        python3 -m venv /tmp/pyvenv
-        source /tmp/pyvenv/bin/activate
         pip install pyyaml requests
 
     - name: Run update-contributors script
+      env:
+        API_KEY: ${{secrets.API_KEY}}
       run: |
-        source /tmp/pyvenv/bin/activate
         cd etc
         python update-contributors.py
         cd ..
