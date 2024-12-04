@@ -8,7 +8,7 @@ import subprocess
 def custom_sort_function(item):
     name, _ = item
     sortweight = {"name": 0, "affiliation": 1, "email": 2, "github": 3, "website": 4,
-                  "paid_by_dfg": 5,"status": 6}
+                  "paid_by_dfg": 5,"status": 6, "comment": 7}
     return sortweight[name]
 
 # Hack copied from https://github.com/yaml/pyyaml/issues/127#issuecomment-525800484
