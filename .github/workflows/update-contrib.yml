@@ -41,7 +41,7 @@ jobs:
     - name: Commit Changes
       run: |
         git add _data/people_list.yml
-        git commit -m "Update contributors on $(date +'%Y-%m-%d')" || ${echo "No changes to commit" && false}
+        git commit -m "Update contributors on $(date +'%Y-%m-%d')"
 
     # Create a pull request
     - name: Create Pull Request
