@@ -15,9 +15,6 @@ class MyDumper(yaml.SafeDumper):
         if len(self.indents) == 1:
             super().write_line_break()
 
-# we don't want to overwrite the manually curated people_list
-# but we also need to include the autogen file if available
-# to keep a better track of retired people
 infile = "../_data/people_list.yml"
 with open(infile, "r") as ymlfile:
     peopleList = yaml.safe_load(ymlfile)
@@ -124,11 +121,11 @@ activelist = [i for i in sortedPeopleList if i['status'] == "active"]
 retiredlist = [i for i in sortedPeopleList if i['status'] == "retired"]
 with open('../_data/people_list.yml', 'w') as outfile:
     outfile.write("######################\n# Project leads\n######################\n\n")
-    yaml.dump(pilist, outfile, Dumper=MyDumper, sort_keys=False)
+    yaml.dump(pilist, outfile, Dumper=MyDumper, sort_keys=False, allow_unicode=True)
     outfile.write("\n######################\n# Active contributors\n######################\n\n")
-    yaml.dump(activelist, outfile, Dumper=MyDumper, sort_keys=False)
+    yaml.dump(activelist, outfile, Dumper=MyDumper, sort_keys=False, allow_unicode=True)
     outfile.write("\n######################\n# Retired contributors\n######################\n\n")
-    yaml.dump(retiredlist, outfile, Dumper=MyDumper, sort_keys=False)
+    yaml.dump(retiredlist, outfile, Dumper=MyDumper, sort_keys=False, allow_unicode=True)
 
 with open("../summary.txt", 'w') as summaryfile:
     summaryfile.write(summarystring)
