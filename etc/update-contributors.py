@@ -5,6 +5,11 @@ import yaml
 import requests
 import subprocess
 
+def custom_sort_function(item):
+    name, _ = item
+    sortweight = {"name": 0, "affiliation": 1, "email": 2, "github": 3, "website": 4, "status": 5}
+    return sortweight[name]
+
 # Hack copied from https://github.com/yaml/pyyaml/issues/127#issuecomment-525800484
 class MyDumper(yaml.SafeDumper):
     # HACK: insert blank lines between top-level objects
@@ -116,9 +121,9 @@ sortedPeopleList = sorted(peopleList, key= lambda d: d['name'].split()[-1])
 
 # save yml to *NEW* file
 # how inefficient is list comprehension ?
-pilist = [i for i in sortedPeopleList if i['status'] == "pi"]
-activelist = [i for i in sortedPeopleList if i['status'] == "active"]
-retiredlist = [i for i in sortedPeopleList if i['status'] == "retired"]
+pilist = [dict(sorted(i.items(), key=custom_sort_function)) for i in sortedPeopleList if i['status'] == "pi"]
+activelist = [dict(sorted(i.items(), key=custom_sort_function)) for i in sortedPeopleList if i['status'] == "active"]
+retiredlist = [dict(sorted(i.items(), key=custom_sort_function)) for i in sortedPeopleList if i['status'] == "retired"]
 with open('../_data/people_list.yml', 'w') as outfile:
     outfile.write("######################\n# Project leads\n######################\n\n")
     yaml.dump(pilist, outfile, Dumper=MyDumper, sort_keys=False, allow_unicode=True)
