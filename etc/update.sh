@@ -20,8 +20,6 @@ curl -SsL --retry 5 $statusurl | jq '.["jobs"][1:] | .[] | .name+":"+.conclusion
 # get tutorial last modified dates
 cd etc
 python3 update-dates.py
-# update contributors list
-python3 update-contributors.py
 cd ..
 # run jekyll
 bundle exec jekyll build --config _config.yml,_config_production.yml -d /srv/www/www-mathe-oscar/data/http
