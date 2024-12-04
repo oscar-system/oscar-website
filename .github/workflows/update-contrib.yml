@@ -51,3 +51,4 @@ jobs:
         branch: update-contributors
         title: "Update contributors"
         body-path: summary.txt
+        base: gh-pages
