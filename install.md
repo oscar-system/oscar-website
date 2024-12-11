@@ -16,18 +16,32 @@ or by sending an email to <mailto:oscar@oscar-system.org>.
 The following instructions assume that you are at least somewhat familiar with using a
 terminal interface.
 
-The installation steps (specifically the precompliation) requires at least 6GB of free memory.
-
+<div class="message">
+  <strong>WARNING:</strong>
+  The installation process, particularly the precompilation step, requires 
+  <strong>at least 6GB of free memory</strong>.
+<br>
+<br>
+  For <strong>Windows</strong> systems, it is necessary to use the 
+  <a href="https://learn.microsoft.com/en-us/windows/wsl"><strong>Windows Subsystem for Linux (WSL)</strong></a>. Please note that the memory available 
+  to WSL is <strong>less than the total memory available on your system</strong>. 
+  For detailed instructions and additional information, see the sections below.
+</div>
 <div class="clickdesc">
 
 <details>
 <summary>
 Windows
 </summary>
-Please install Windows Subsystem for Linux (WSL) following the <a href="https://learn.microsoft.com/en-us/windows/wsl/install">official instructions</a>. You should now have an App "Ubuntu" in your start menu (run "explorer.exe ." in the Ubuntu terminal to open the current folder in the Windows File Explorer). You can now follow the instructions for <em><a href="#install-ubuntu">Ubuntu</a></em>. 
+Please install <a href="https://learn.microsoft.com/en-us/windows/wsl">Windows Subsystem for Linux (WSL)</a> following the <a href="https://learn.microsoft.com/en-us/windows/wsl/install">official instructions</a>. You should now have an App "Ubuntu" in your start menu (run "explorer.exe ." in the Ubuntu terminal to open the current folder in the Windows File Explorer). You can now follow the prerequisites installation instructions for <em><a href="#install-ubuntu">Ubuntu</a></em> below.
 <br>
-Recall that your WSL Subsystem should have at least 6GB of free memory for the installation step (specifically, the precompilation). Please consult the <a href="https://learn.microsoft.com/en-us/windows/wsl/wsl-config#main-wsl-settings">official instructions</a> to learn how to adjust your WSL.
-
+<br>
+Recall that your WSL Subsystem should have <strong>at least 6GB of free memory</strong> for the installation step (specifically, the precompilation). Please note that the memory available 
+to WSL is <strong>less than the total memory available on your system</strong>.
+<br>
+<br>
+Please consult the <a href="https://learn.microsoft.com/en-us/windows/wsl/wsl-config#main-wsl-settings">official instructions</a> to learn how to adjust the memory of your WSL. Additionally, the <i>.wslconfig</i> sample file <a href="https://learn.microsoft.com/en-us/windows/wsl/wsl-config#example-wslconfig-file">here</a>
+demonstrates some of the configuration options available.
 </details>
 
 <details>
@@ -99,8 +113,8 @@ OSCAR requires at least [Julia](https://julialang.org) 1.6.0, but we recommend r
    <strong>WARNING:</strong>
    <ul>
    <li>
-   <strong>Windows</strong> users should <em>not</em> install the Julia version for Windows.
-   Instead, please install the Linux version inside Windows Subsystem for Linux (WSL).
+   <strong>Windows</strong> users should <strong>not</strong> install the Julia version for Windows.
+   Instead, please install the Linux version inside <a href="https://learn.microsoft.com/en-us/windows/wsl">Windows Subsystem for Linux (WSL)</a>.
    </li>
    <li>
    <strong>Linux</strong> and <strong>macOS</strong> users should generally <em>not</em> install the Julia version
