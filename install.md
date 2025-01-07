@@ -19,7 +19,7 @@ terminal interface.
 <div class="message">
   <strong>WARNING:</strong>
   The installation process, particularly the precompilation step, requires 
-  <strong>at least 6GB of free memory</strong>.
+  <strong>at least 6GB of free memory</strong>. For optimal performance with OSCAR, we recommend having <strong>at least 16GB of free memory</strong>.
 <br>
 <br>
   For <strong>Windows</strong> systems, it is necessary to use the 
@@ -36,8 +36,10 @@ Windows
 Please install <a href="https://learn.microsoft.com/en-us/windows/wsl">Windows Subsystem for Linux (WSL)</a> following the <a href="https://learn.microsoft.com/en-us/windows/wsl/install">official instructions</a>. You should now have an App "Ubuntu" in your start menu (run "explorer.exe ." in the Ubuntu terminal to open the current folder in the Windows File Explorer). You can now follow the prerequisites installation instructions for <em><a href="#install-ubuntu">Ubuntu</a></em> below.
 <br>
 <br>
-Recall that your WSL Subsystem should have <strong>at least 6GB of free memory</strong> for the installation step (specifically, the precompilation). Please note that the memory available 
-to WSL is <strong>less than the total memory available on your system</strong>.
+Ensure that your WSL subsystem has <strong>at least 6GB of free memory</strong> available for the installation process, particularly during the precompilation step. For optimal performance with OSCAR, we recommend having <strong>at least 16GB of free memory</strong>.
+<br>
+<br>
+Keep in mind that the memory available to WSL is <strong>less than the total memory available on your system</strong>.
 <br>
 <br>
 Please consult the <a href="https://learn.microsoft.com/en-us/windows/wsl/wsl-config#main-wsl-settings">official instructions</a> to learn how to adjust the memory of your WSL. Additionally, the <i>.wslconfig</i> sample file <a href="https://learn.microsoft.com/en-us/windows/wsl/wsl-config#example-wslconfig-file">here</a>
