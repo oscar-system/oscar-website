@@ -78,7 +78,7 @@ If you have used OSCAR in the preparation of a paper please cite it as described
 [OSCAR-book]
     Wolfram Decker, Christian Eder, Claus Fieker, Max Horn, Michael Joswig, eds.
     The Computer Algebra System OSCAR: Algorithms and Examples,
-    Algorithms and Computation in Mathematics, Springer, 2024. (https://link.springer.com/book/9783031621260)
+    Algorithms and Computation in Mathematics, Springer, 2025. (https://link.springer.com/book/9783031621260)
 ```
 
 If you are using BibTeX, you can use the following BibTeX entries:
@@ -96,7 +96,7 @@ If you are using BibTeX, you can use the following BibTeX entries:
 @book{OSCAR-book,
   editor = {Decker, Wolfram and Eder, Christian and Fieker, Claus and Horn, Max and Joswig, Michael},
   title = {The {C}omputer {A}lgebra {S}ystem {OSCAR}: {A}lgorithms and {E}xamples},
-  year = {2024},
+  year = {2025},
   publisher = {Springer},
   series = {Algorithms and {C}omputation in {M}athematics},
   volume = {32},
