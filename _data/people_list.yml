@@ -147,13 +147,6 @@
   website: https://kafe.dev/
   status: active
 
-- name: Ghislain Fourier
-  affiliation: RWTH Aachen University
-  email: fourier@art.rwth-aachen.de
-  github: gfourier
-  website: https://www.art.rwth-aachen.de/cms/~rnko/
-  status: active
-
 - name: Anne Frühbis-Krüger
   affiliation: Universität Oldenburg
   email: anne.fruehbis-krueger@uol.de
@@ -403,6 +396,10 @@
   github: SoongNoonien
   status: active
 
+- name: Torben Wiedemann
+  github: TWiedemann
+  status: active
+
 - name: Yichao Yu
   affiliation: Duke University
   email: yyc1992@gmail.com
@@ -461,6 +458,13 @@
   github: raulepure
   status: retired
   comment: PhD Student of Mathias Schulze until ~2021.
+
+- name: Ghislain Fourier
+  affiliation: RWTH Aachen University
+  email: fourier@art.rwth-aachen.de
+  github: gfourier
+  website: https://www.art.rwth-aachen.de/cms/~rnko/
+  status: retired
 
 - name: Rafael Fourquet
   affiliation: University of Kaiserslautern-Landau
