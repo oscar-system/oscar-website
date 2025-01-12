@@ -36,6 +36,15 @@
   language: julia
   date: January 1, 1970
 
+- title: F-Theory Tools -- Advanced Functionality
+  repository: HereAround/MartinsOscarTutorials.jl
+  branch: master
+  filename: FTheoryToolsPaper
+  author: Martin Bies, Andrew P. Turner, Mikelis E. Mikelson
+  thumbnail: FTheoryTools.png
+  language: julia
+  date: January 1, 1970
+
 
 
 # Tutorials hosted at https://github.com/HechtiDerLachs/OscarTutorials
