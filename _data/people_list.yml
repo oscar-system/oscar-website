@@ -104,13 +104,6 @@
   website: https://agag-jboehm.math.rptu.de/~boehm/
   status: active
 
-- name: Jens Brandt
-  affiliation: RWTH Aachen University
-  email: jens.brandt@rwth-aachen.de. 
-  github: flyingapfopenguin
-  website: https://www.math.rwth-aachen.de/~Jens.Brandt/
-  status: active
-
 - name: Andrei Comaneci
   affiliation: TU Berlin
   email: comenaci@math.tu-berlin.de
@@ -443,6 +436,13 @@
   email: alex.j.best@gmail.com
   github: alexjbest
   website: https://alexjbest.github.io/
+  status: retired
+
+- name: Jens Brandt
+  affiliation: RWTH Aachen University
+  email: jens.brandt@rwth-aachen.de.
+  github: flyingapfopenguin
+  website: https://www.math.rwth-aachen.de/~Jens.Brandt/
   status: retired
 
 - name: Taylor Brysiewicz
