@@ -139,6 +139,8 @@
   filename: LinearAlgebraInOSCAR
   author: Martin Bies, Aaruni Kaushik
   thumbnail: LinearAlgebra.png
+  language: julia
+  date: January 1, 1970
 
 #- title: "Homology of VR complexes"
 #  repository: oscar-system/OSCARBinder
