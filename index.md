@@ -13,15 +13,20 @@ title: Home
 
 ## Upcoming events
 
-{% assign sorted_conferences = site.data.conferences | group-by: "start-date" | sort: "end-date"%}
+{% assign sorted_conferences = site.data.conferences | group-by: "start-date" | sort: "end-date" %}
 {% assign today = "now" | date: "%Y-%m-%d" %}
+{% assign has_upcoming_events = false %}
 
 {% for event in sorted_conferences %}
   {% if event.end-date >= today %}
+    {% assign has_upcoming_events = true %}
 * [{{ event.title }} ({{ event.location }}, {{ event.start-date | date: "%d %b %Y" }} to {{ event.end-date | date: "%d %b %Y" }})]({{ event.website }})
-
   {% endif %}
 {% endfor %}
+
+{% unless has_upcoming_events %}
+Currently no upcoming events.
+{% endunless %}
 
 
 ## What is OSCAR?
