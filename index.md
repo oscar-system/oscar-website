@@ -40,14 +40,9 @@ See the [About]({{site.baseurl }}/about) page for more information.
 For tutorials, see the [Tutorials page]({{site.baseurl }}/tutorials), where pre-rendered notebooks showcase
 selected things the software developed in the OSCAR project can already do.
 
-<!--
-To try OSCAR live from your browser, click on the [binder](https://mybinder.org) links on the Examples page.
-At present, these will take a few minutes to load, as we 
-currently still build some dependencies from source behind the scenes.
--->
+If you wish to contribute to the OSCAR development, then please get in touch.
+See the [community page]({{site.baseurl }}/community) for details.
 
-If you wish to contribute to the OSCAR development, see the [Installation page]({{site.baseurl }}/install) for
-instructions on how to install it, and also check out our [community page]({{site.baseurl }}/community).
 See the [News page]({{site.baseurl }}/news) for announcements about OSCAR development.
 
 ## The Book
