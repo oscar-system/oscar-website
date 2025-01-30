@@ -83,8 +83,8 @@
   status: active
 
 - name: Tobias Braun
-  affiliation: RWTH Aachen
-  email: tobias.braun2@rwth aachen
+  affiliation: RWTH Aachen University
+  email: tobias.braun2@rwth-aachen.de
   github: SirToby25
   website: https://www.math.rwth-aachen.de/~Tobias.Braun/
   status: active
@@ -277,6 +277,7 @@
   status: active
 
 - name: Janika Peters
+  affiliation: RWTH Aachen University
   email: janika.peters@rwth-aachen.de
   github: janikapeters
   status: active
@@ -392,11 +393,13 @@
   status: active
 
 - name: Martin Wagner
+  affiliation: University of Kaiserslautern-Landau
   email: martin.wagner.dev@gmail.com
   github: SoongNoonien
   status: active
 
 - name: Torben Wiedemann
+  affiliation: University of Kaiserslautern-Landau
   github: TWiedemann
   status: active
 
@@ -440,7 +443,7 @@
 
 - name: Jens Brandt
   affiliation: RWTH Aachen University
-  email: jens.brandt@rwth-aachen.de.
+  email: jens.brandt@rwth-aachen.de
   github: flyingapfopenguin
   website: https://www.math.rwth-aachen.de/~Jens.Brandt/
   status: retired
