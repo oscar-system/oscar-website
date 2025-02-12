@@ -29,12 +29,14 @@ repoList = ["thofma/Hecke.jl", "oscar-system/Oscar.jl", "Nemocas/Nemo.jl",
             "Nemocas/AbstractAlgebra.jl", "oscar-system/GAP.jl", "oscar-system/Polymake.jl",
             "oscar-system/Singular.jl"]
 
+newcount = 0
 newList = []
 namelist = []
+newguylist = []
 github_newusers = []
 github_userlist = []
 API_KEY = os.getenv("API_KEY") # TODO: rename to whatever is the right env var
-summarystring = "This PR updates the contributors list based on the latest changes.\n"
+summarystring = ""
 # grab currently active devs
 if not os.path.isdir("repos"):
     os.mkdir("repos")
@@ -109,6 +111,8 @@ for repo in repoList:
         assert github_username != "__notfound__"
         if github_username not in names and github_username not in github_newusers:
             print("A new contributor!")
+            newcount += 1
+            newguylist.append(i[0])
             print(f"{i[0]}\t{i[1]}\t{github_username}")
             github_newusers.append(github_username)
             newList.append([i[0], i[1], github_username])
@@ -120,19 +124,30 @@ github_userlist = list(set(github_userlist))
 # mark active / retired
 # if PI, don't touch them
 os.chdir("..")
+retcount = 0
+revcount = 0
+retguylist = []
+revguylist = []
 for i in peopleList:
     if i['status']=='pi':
         continue
         #don't touch a thing!
     elif i['github'] in github_userlist:
+        if i['status'] == 'retired':
+            revcount += 1
+            revguylist.append(i['name'])
         i['status'] = 'active'
     else:
+        if i['status'] == 'active':
+            retcount += 1
+            retguylist.append(i['name'])
         i['status'] = 'retired'
 
 np = []
 for i in newList:
     if "users.noreply.github.com" in i[1]:
         np.append({"name": i[0], "github": i[2], "status": "active"})
+        summarystring += f"- Email not found for {i[0]} ({i[2]})..!\n"
     else:
         np.append({"name": i[0], "email": i[1], "github": i[2], "status": "active"})
 peopleList.extend(np)
@@ -151,6 +166,12 @@ with open('../_data/people_list.yml', 'w') as outfile:
     yaml.dump(activelist, outfile, Dumper=MyDumper, sort_keys=False, allow_unicode=True)
     outfile.write("\n######################\n# Retired contributors\n######################\n\n")
     yaml.dump(retiredlist, outfile, Dumper=MyDumper, sort_keys=False, allow_unicode=True)
+
+summarystring = f"""This PR updates the contributors list based on the latest changes.
+New contributors : {newcount} | {newguylist}
+Revived contributors : {revcount} | {revguylist}
+Newly retired contributors : {retcount} | {retguylist}
+\nSummary Notes:\n\n"""+ summarystring
 
 with open("../summary.txt", 'w') as summaryfile:
     summaryfile.write(summarystring)
