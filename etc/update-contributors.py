@@ -127,6 +127,8 @@ retcount = 0
 revcount = 0
 retguylist = []
 revguylist = []
+# these people are always active
+activeWhitelist = ['Janko Böhm'] # expand list as needed
 for i in peopleList:
     if i['status']=='pi':
         continue
@@ -137,10 +139,13 @@ for i in peopleList:
             revguylist.append(i['name'])
         i['status'] = 'active'
     else:
-        if i['status'] == 'active':
-            retcount += 1
-            retguylist.append(i['name'])
-        i['status'] = 'retired'
+        if i['name'] in activeWhitelist:
+            i['status'] = 'active'
+        else:
+            if i['status'] == 'active':
+                retcount += 1
+                retguylist.append(i['name'])
+            i['status'] = 'retired'
 
 np = []
 for i in newList:
