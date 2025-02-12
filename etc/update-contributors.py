@@ -64,6 +64,9 @@ for repo in repoList:
         count = count+1
         print(f"Item {count} of {len(dnamelist)}...")
         print(i)
+        if i[0] == 'dependabot[bot]':
+            print("Skipping dependabot!")
+            continue
         email = i[1]
         process = subprocess.Popen(['git', 'log', f'--author={email}', '--format=%H', '-n 1'],
                                    stdout=subprocess.PIPE)
@@ -74,10 +77,26 @@ for repo in repoList:
         r = requests.get(github_commit_url, headers={"Authorization":f"Bearer {API_KEY}"})
         if r.status_code == 200:
             j = json.loads(r.text)
+            github_username = ''
             if j['author'] == None:
-                summarystring += f" - Github username not found for {i[0]} with email {i[1]}. Excluding from people_list.yml\n"
-                continue
-            github_username = j['author']['login']
+                # this commit was authored by someone and committed by someone else
+                # so github can't find a github user for the author, only for committed
+                # so we go through our list entire people list and see if we know the combination of
+                # name and email already
+                flag = False
+                for guy in peopleList:
+                    if 'email' in guy.keys() and 'name' in guy.keys():
+                        if i[0] == guy['name'] and i[1] == guy['email']:
+                            # we know the guy, check if we know the github ID
+                            if 'github' in guy.keys() and guy['github'] != '':
+                                # we know the guy and the github, just mark guy as active
+                                github_username = guy['github']
+                                flag = True
+                if not flag:
+                    summarystring += f"- Github username not found for {i[0]} with email {i[1]}. Excluding from people_list.yml\n"
+                    continue
+            if github_username == '':
+                github_username = j['author']['login']
         else:
             # this will never happen, except if the API lies to you
             # or blocks access
