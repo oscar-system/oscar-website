@@ -70,10 +70,9 @@ for repo in repoList:
             print("Skipping dependabot!")
             continue
         email = i[1]
-        process = subprocess.Popen(['git', 'log', f'--author={email}', '--format=%H', '-n 1'],
-                                   stdout=subprocess.PIPE)
-        stdout, _ = process.communicate()
-        hash = stdout.decode().strip()
+        process = subprocess.run(['git', 'log', f'--author={email}', '--format=%H', '-n 1'],
+                                   capture_output=True)
+        hash = process.stdout.decode().strip()
         github_commit_url = f"https://api.github.com/repos/{repo}/commits/{hash}"
         #ask github API for username
         r = requests.get(github_commit_url, headers={"Authorization":f"Bearer {API_KEY}"})
