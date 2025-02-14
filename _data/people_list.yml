@@ -82,6 +82,13 @@
   website: https://taboege.de/
   status: active
 
+- name: Jens Brandt
+  affiliation: RWTH Aachen University
+  email: jens.brandt@rwth-aachen.de
+  github: flyingapfopenguin
+  website: https://www.math.rwth-aachen.de/~Jens.Brandt/
+  status: active
+
 - name: Tobias Braun
   affiliation: RWTH Aachen University
   email: tobias.braun2@rwth-aachen.de
@@ -104,13 +111,6 @@
   website: https://agag-jboehm.math.rptu.de/~boehm/
   status: active
 
-- name: Andrei Comaneci
-  affiliation: TU Berlin
-  email: comenaci@math.tu-berlin.de
-  github: andreicomaneci
-  website: https://page.math.tu-berlin.de/~comaneci/
-  status: active
-
 - name: Alexander Demin
   affiliation: HSE University
   email: asdemin_2@edu.hse.ru
@@ -131,14 +131,6 @@
   github: ederc
   website: https://www.mathematik.uni-kl.de/~ederc/index.html
   status: active
-
-- name: Nicolas Faross
-  affiliation: Saarland University
-  email: faross@math.uni-sb.de
-  github: pinguly
-  website: https://www.uni-saarland.de/lehrstuhl/weber-moritz/team/nicolas-faross.html
-  status: active
-  comment: PhD student of Moritz Weber in Saarbruecken, as of 2024
 
 - name: Kamillo Ferry
   affiliation: TU Berlin
@@ -212,13 +204,6 @@
   status: active
   comment: Former master student of Max Horn
 
-- name: Lukas Kühne
-  affiliation: Bielefeld University
-  email: lukas.kuehne@math.uni-bielefeld.de
-  github: LukasKuehne
-  website: https://www.math.uni-bielefeld.de/~lkuehne/
-  status: active
-
 - name: Benjamin Lorenz
   affiliation: TU Berlin
   email: lorenz@math.tu-berlin.de
@@ -287,6 +272,10 @@
   email: ramesh@mathematik.uni-kl.de
   github: Lax202
   website: https://Lax202.github.io
+  status: active
+
+- name: Hendrik Ranocha
+  github: ranocha
   status: active
 
 - name: Yue Ren
@@ -441,18 +430,18 @@
   website: https://alexjbest.github.io/
   status: retired
 
-- name: Jens Brandt
-  affiliation: RWTH Aachen University
-  email: jens.brandt@rwth-aachen.de
-  github: flyingapfopenguin
-  website: https://www.math.rwth-aachen.de/~Jens.Brandt/
-  status: retired
-
 - name: Taylor Brysiewicz
   affiliation: University of Western Ontario
   email: tbrysiew@uwo.ca
   github: tbrysiewicz
   website: https://sites.google.com/view/taylorbrysiewicz/home
+  status: retired
+
+- name: Andrei Comaneci
+  affiliation: TU Berlin
+  email: comenaci@math.tu-berlin.de
+  github: andreicomaneci
+  website: https://page.math.tu-berlin.de/~comaneci/
   status: retired
 
 - name: Alexander Dinges
@@ -468,6 +457,14 @@
   github: raulepure
   status: retired
   comment: PhD Student of Mathias Schulze until ~2021.
+
+- name: Nicolas Faross
+  affiliation: Saarland University
+  email: faross@math.uni-sb.de
+  github: pinguly
+  website: https://www.uni-saarland.de/lehrstuhl/weber-moritz/team/nicolas-faross.html
+  status: retired
+  comment: PhD student of Moritz Weber in Saarbruecken, as of 2024
 
 - name: Ghislain Fourier
   affiliation: RWTH Aachen University
@@ -543,6 +540,13 @@
   website: https://math.dartmouth.edu/~akulkarn/index.html
   status: retired
   comment: Who ?
+
+- name: Lukas Kühne
+  affiliation: Bielefeld University
+  email: lukas.kuehne@math.uni-bielefeld.de
+  github: LukasKuehne
+  website: https://www.math.uni-bielefeld.de/~lkuehne/
+  status: retired
 
 - name: Nando Leijenhorst
   affiliation: Delft University of Technology
