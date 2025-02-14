@@ -52,7 +52,7 @@ Having trouble? Visit our [Contact & Support]({{site.baseurl}}/contact-and-suppo
    ```sh
    curl -fsSL https://install.julialang.org | sh
    ```
-5. Alternatively, you can [download Julia directly from the official website](https://julialang.org/downloads/) and follow the [installation instructions for Linux Ubuntu]((https://julialang.org/downloads/platform/).
+5. Alternatively, you can [download Julia directly from the official website](https://julialang.org/downloads/) and follow the [installation instructions for Linux Ubuntu](https://julialang.org/downloads/platform/).
 
 
 ## Step 3: Install OSCAR

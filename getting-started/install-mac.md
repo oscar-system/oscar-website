@@ -56,7 +56,7 @@ If you are using macOS 10.12 or newer, you need to install the Xcode command lin
    ```sh
    curl -fsSL https://install.julialang.org | sh
    ```
-4. Alternatively, you can [download Julia directly from the official website](https://julialang.org/downloads/) and follow the [installation instructions for macOS]((https://julialang.org/downloads/platform/).
+4. Alternatively, you can [download Julia directly from the official website](https://julialang.org/downloads/) and follow the [installation instructions for macOS](https://julialang.org/downloads/platform/).
 
 
 ## Step 3: Install OSCAR

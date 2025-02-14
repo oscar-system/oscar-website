@@ -42,7 +42,7 @@ sudo apt install build-essential
 ```
 
 If you are using Fedora 40 or newer, enter the following commands into a terminal (this will prompt for your password
-and requires that you have permissions to administer your computer).
+and requires that you have permissions to administer your computer):
 ```sh
 sudo dnf install gcc-c++ make
 ```
@@ -62,7 +62,7 @@ sudo dnf install gcc-c++ make
    ```sh
    curl -fsSL https://install.julialang.org | sh
    ```
-4. Alternatively, you can [download Julia directly from the official website](https://julialang.org/downloads/) and follow the [installation instructions for macOS]((https://julialang.org/downloads/platform/).
+4. Alternatively, you can [download Julia directly from the official website](https://julialang.org/downloads/) and follow the [installation instructions for Linux](https://julialang.org/downloads/platform/).
 
 
 ## Step 3: Install OSCAR
