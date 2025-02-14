@@ -15,4 +15,7 @@ title: Installation Instructions
     else if (navigator.userAgent.includes("Macintosh")){
         window.location.replace("{{site.baseurl}}/getting-started/install-mac"+target);
     }
+    else {
+        window.location.replace("{{site.baseurl}}/getting-started/install-generic"+target);
+    }
 </script>
