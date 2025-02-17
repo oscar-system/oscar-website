@@ -3,7 +3,7 @@ layout: page
 title: Events
 ---
 
-### [OSCAR-organized Events]({{site.baseurl }}/events/oscar-events/)
+### [OSCAR-organized Events]({{site.baseurl }}/events/meetings/)
 OSCAR regularly organizes workshops, hackathons, and development meetings.
 
 ### [SFB-TRR 195 Events](https://www.computeralgebra.de/sfb/events/)
