@@ -8,7 +8,7 @@
   url: "/events/"
   submenu:
     - title: "OSCAR"
-      url: "/events/oscar-events/"
+      url: "/events/meetings/"
     - title: "Satellite"
       url: "/events/satellite-events/"
 - title: "Getting Started"
