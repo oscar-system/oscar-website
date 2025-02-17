@@ -1,6 +1,12 @@
-Redirect 301 /meetings/Meeting-06-2019/ https://www.oscar-system.org/meetings/2019-06/
-Redirect 301 /meetings/Meeting-11-2018/ https://www.oscar-system.org/meetings/2018-11/
-Redirect 301 /meetings/Meeting-5-2018/ https://www.oscar-system.org/meetings/2018-05/
-Redirect 301 /meetings/Meeting-1-2018/ https://www.oscar-system.org/meetings/2018-01/
-Redirect 302 /slack https://join.slack.com/t/oscar-system/shared_invite/zt-1i2mu14ef-EAo9EYOlBQ1zk3_RGbMUaA
-Redirect 302 /zoom https://uni-kl-de.zoom.us/j/63727262906?pwd=NExvcU9JaXpiMUJaMnVxbG5mMWxqdz09
+# old
+Redirect permanent /meetings/Meeting-06-2019/ https://www.oscar-system.org/meetings/2019-06/
+Redirect permanent /meetings/Meeting-11-2018/ https://www.oscar-system.org/meetings/2018-11/
+Redirect permanent /meetings/Meeting-5-2018/ https://www.oscar-system.org/meetings/2018-05/
+Redirect permanent /meetings/Meeting-1-2018/ https://www.oscar-system.org/meetings/2018-01/
+
+# redirect to external services: must be temp
+Redirect temp /slack https://join.slack.com/t/oscar-system/shared_invite/zt-1i2mu14ef-EAo9EYOlBQ1zk3_RGbMUaA
+Redirect temp /zoom https://uni-kl-de.zoom.us/j/63727262906?pwd=NExvcU9JaXpiMUJaMnVxbG5mMWxqdz09
+
+# redirects after website revamp in PR #415
+RedirectMatch permanent /meetings/(.*) https://www.oscar-system.org/events/meetings/$1
