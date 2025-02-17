@@ -14,5 +14,5 @@ RedirectMatch temp ^/install/(.*) https://www.oscar-system.org/getting-started/i
 RedirectMatch temp ^/tutorials/(.*) https://www.oscar-system.org/getting-started/tutorials/$1
 RedirectMatch temp ^/documentation/(.*) https://www.oscar-system.org/getting-started/documentation/$1
 RedirectMatch temp ^/community/(.*) https://www.oscar-system.org/contact-and-support/$1
-RedirectMatch permanent ^/credits/(.*) https://www.oscar-system.org/credits/software-credits/$1
-RedirectMatch permanent ^/contributors/(.*) https://www.oscar-system.org/credits/contributors/$1
+RedirectMatch permanent ^/credits/$ https://www.oscar-system.org/credits/software-credits/
+RedirectMatch permanent ^/contributors/$ https://www.oscar-system.org/credits/contributors/
