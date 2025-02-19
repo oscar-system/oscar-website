@@ -3,6 +3,8 @@ layout: page
 title: Publications citing OSCAR
 ---
 
+Below is an incomplete list of publications citing OSCAR. A more complete list is avaiable [here](https://zbmath.org/?q=si:36845).
+
 <ul>
   {% for p in site.data.OSCAR-credits %}
   <li>

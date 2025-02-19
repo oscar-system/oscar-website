@@ -1,3 +1,8 @@
+- name: K3 surfaces of any Artin-Mazur height over F5 and F7 via Quasi-F-split singularities and gpu acceleration
+  url: https://arxiv.org/pdf/2502.12428
+  authors: Ryan Batubara, Jack J. Garzella, Alex Pan
+  month: Feb.
+  year: 2025
 - name: On birational automorphisms of double EPW-cubes
   url: https://arxiv.org/abs/2405.15510
   authors: Simone Billi, Stevell Muller, Tomasz Wawak
