@@ -317,13 +317,6 @@
   github: Sami-Halaseh
   status: active
 
-- name: Sreevatsa Sasisekar
-  affiliation: University of Kaiserslautern-Landau
-  email: sasiseka@mathematik.uni-kl.de
-  github: Sreevatsa2k
-  status: active
-  comment: Master student of Claus Fieker as of 2024
-
 - name: Julien Schanz
   affiliation: Saarland University
   email: schanz@math.uni-sb.de
@@ -602,6 +595,13 @@
   github: martinra
   website: https://www.raum-brothers.eu/martin/
   status: retired
+
+- name: Sreevatsa Sasisekar
+  affiliation: University of Kaiserslautern-Landau
+  email: sasiseka@mathematik.uni-kl.de
+  github: Sreevatsa2k
+  status: retired
+  comment: Master student of Claus Fieker as of 2024
 
 - name: Benjamin Schröter
   affiliation: KTH Stochkholm
