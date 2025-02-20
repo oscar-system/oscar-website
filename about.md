@@ -68,6 +68,8 @@ interpreted user language.
 Singular is integrated into OSCAR via the [Singular.jl](https://github.com/oscar-system/Singular.jl) Julia package.
 
 
+#### 📙 For More Info See The [OSCAR Book](http://book.oscar-system.org)
+
 ## The role of Julia
 
 [Julia](https://www.julialang.org) is a an actively developed

@@ -39,12 +39,16 @@ Currently no upcoming events.
 Getting started with OSCAR is easy. [**Start your journey now!**]({{site.baseurl}}/getting-started/)
 
 ---
+## 📙 The OSCAR Book
+
+The [OSCAR Book](https://book.oscar-system.org/) – A detailed guide to version 1.0, featuring code snippets and in-depth explanations.
+
+---
 
 ## 📚 Documentation & Tutorials
 
 - Comprehensive [Documentation]({{site.baseurl }}/getting-started/documentation/).
 - Hands-on [Tutorials]({{site.baseurl }}/getting-started/tutorials/).
-- The [OSCAR Book](https://book.oscar-system.org/) – A detailed guide to version 1.0, featuring code snippets and in-depth explanations.
 
 ---
 
