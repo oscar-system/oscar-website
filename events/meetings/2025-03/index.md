@@ -23,6 +23,10 @@ If you have questions or suggestions, please contact the organizers:
 - [Claus Fieker](mailto:claus.fieker@rptu.de),
 - [Max Horn](mailto:max.horn@rptu.de).
 
+## Participants
+
+- Christian Eder, RPTU Kaiserslautern-Landau
+
 ## Sponsors
 
 This summer school is supported by [SFB-TRR 195](https://www.computeralgebra.de/sfb/) -- Symbolic
