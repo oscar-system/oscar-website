@@ -21,4 +21,6 @@ To report a bug or issue, submit it to our [GitHub issue tracker](https://github
 
 ### Mailing list
 
-If you prefer email over GitHub and Slack, you can also join our mailing list [OSCAR-dev](mailto:oscar-dev@mathematik.uni-kl.de), by visiting <https://mail.mathematik.uni-kl.de/mailman/listinfo/oscar-dev> and following the instructions there. This mailing list is low-traffic, and mainly is used for announcments of OSCAR events and the occassional technical discussion.
+For announcements of OSCAR events and the occasional technical discussion, we also have a low-traffic mailing list `oscar-dev`.
+
+To join it, visit <https://mail.mathematik.uni-kl.de/mailman/listinfo/oscar-dev> and follow the instructions there. Afterwards you can send messages to it by writing an email to <oscar-dev@mathematik.uni-kl.de>.
