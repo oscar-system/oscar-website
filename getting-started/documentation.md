@@ -38,7 +38,7 @@ docs:
 
 ---
 
-<div class="message message-big">
+<div class="message-big">
 <a href="https://docs.oscar-system.org/stable/">Click here for the latest OSCAR manual.</a>
 </div>
 Expert users may also wish to use the [manual for the latest development version](https://docs.oscar-system.org/dev/).
