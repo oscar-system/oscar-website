@@ -11,6 +11,8 @@ people:
     - {name: Christian Eder, affiliation: RPTU Kaiserslautern-Landau}
 
     - {name: Thomas Breuer, affiliation: RWTH Aachen}
+
+    - {name: Martin Wagner, affiliation: RPTU Kaiserslautern-Landau}
 ---
 
 {% include participants.html participants=page.people %}
