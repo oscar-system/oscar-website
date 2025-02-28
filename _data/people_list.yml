@@ -401,6 +401,10 @@
   website: https://math.rptu.de/ags/agag/personen/mitglieder
   status: active
 
+- name: wfsteiner
+  github: wfsteiner
+  status: active
+
 ######################
 # Retired contributors
 ######################
