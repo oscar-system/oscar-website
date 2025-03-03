@@ -384,7 +384,9 @@
 
 - name: Torben Wiedemann
   affiliation: University of Kaiserslautern-Landau
+  email: torben.wiedemann@rptu.de
   github: TWiedemann
+  website: https://math.rptu.de/ags/agag/personen/mitglieder
   status: active
 
 - name: Yichao Yu
