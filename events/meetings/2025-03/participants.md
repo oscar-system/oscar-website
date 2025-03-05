@@ -6,6 +6,8 @@ meeting_nr: 202503
 people:
     - {name: Albin Ahlbäck, affiliation: LIX, CNRS, École Polytechnique}
 
+    - {name: Martin Bies, affiliation: RPTU Kaiserslautern-Landau}
+
     - {name: Christian Eder, affiliation: RPTU Kaiserslautern-Landau}
 
     - {name: Claus Fieker, affiliation: RPTU Kaiserslautern-Landau}
