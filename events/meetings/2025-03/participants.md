@@ -19,6 +19,8 @@ people:
     - {name: Oliver Clarke, affiliation: Durham University}
 
     - {name: Thomas Breuer, affiliation: RWTH Aachen}
+
+    - {name: Miķelis Emīls Miķelsons, affiliation: RPTU Kaiserslautern-Landau}
 ---
 
 {% include participants.html participants=page.people %}
