@@ -1,6 +1,6 @@
 ---
-layout: tutorial
-title: FTheoryTools
+layout: page
+title: Tutorials
 component: FTheoryTools.png
 ---
 

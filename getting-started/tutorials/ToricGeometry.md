@@ -1,6 +1,6 @@
 ---
-layout: tutorial
-title: ToricGeometry
+layout: page
+title: Tutorials
 component: ToricGeometry.png
 ---
 

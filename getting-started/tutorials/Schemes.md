@@ -1,6 +1,6 @@
 ---
-layout: tutorial
-title: Schemes
+layout: page
+title: Tutorials
 component: Schemes.png
 ---
 

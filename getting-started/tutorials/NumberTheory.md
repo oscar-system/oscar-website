@@ -1,6 +1,6 @@
 ---
-layout: tutorial
-title: NumberTheory
+layout: page
+title: Tutorials
 component: NumberTheory.png
 ---
 
