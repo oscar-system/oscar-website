@@ -3,19 +3,20 @@ layout: page
 title: Citing OSCAR
 ---
 
-If you have used OSCAR in the preparation of a paper please cite it as described below:
+If you have used **OSCAR** in your research, please cite it using the following format:
 
 ```md
 [OSCAR]
     OSCAR -- Open Source Computer Algebra Research system, Version 1.0.0,
     The OSCAR Team, 2024. (https://www.oscar-system.org)
+
 [OSCAR-book]
     Wolfram Decker, Christian Eder, Claus Fieker, Max Horn, Michael Joswig, eds.
     The Computer Algebra System OSCAR: Algorithms and Examples,
     Algorithms and Computation in Mathematics, Springer, 2025. (https://link.springer.com/book/9783031621260)
 ```
 
-If you are using BibTeX, you can use the following BibTeX entries:
+If you are using **BibTeX**, you can use the following BibTeX entries:
 
 ```bibtex
 @misc{OSCAR,
