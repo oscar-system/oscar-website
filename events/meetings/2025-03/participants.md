@@ -8,19 +8,19 @@ people:
 
     - {name: Martin Bies, affiliation: RPTU Kaiserslautern-Landau}
 
-    - {name: Thomas Breuer, affiliation: RWTH Aachen}
-
-    - {name: Oliver Clarke, affiliation: Durham University}
-
     - {name: Christian Eder, affiliation: RPTU Kaiserslautern-Landau}
 
     - {name: Claus Fieker, affiliation: RPTU Kaiserslautern-Landau}
 
     - {name: Max Horn, affiliation: RPTU Kaiserslautern-Landau}
 
-    - {name: Miķelis Emīls Miķelsons, affiliation: RPTU Kaiserslautern-Landau}
-
     - {name: Martin Wagner, affiliation: RPTU Kaiserslautern-Landau}
+
+    - {name: Oliver Clarke, affiliation: Durham University}
+
+    - {name: Thomas Breuer, affiliation: RWTH Aachen}
+
+    - {name: Miķelis Emīls Miķelsons, affiliation: RPTU Kaiserslautern-Landau}
 ---
 
 {% include participants.html participants=page.people %}
@@ -30,3 +30,4 @@ to [Max](mailto:mhorn@rptu.de) or by
 [submitting a pull request](https://github.com/oscar-system/oscar-website/edit/gh-pages/{{ page.path }})
 adding yourself to this page.
 This also applies to locals from Kaiserslautern!
+
