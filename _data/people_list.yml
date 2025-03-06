@@ -403,6 +403,11 @@
   website: https://math.rptu.de/ags/agag/personen/mitglieder
   status: active
 
+- name: Wiken Steiner
+  affiliation: University of Siegen
+  github: wfsteiner
+  status: active
+
 ######################
 # Retired contributors
 ######################
