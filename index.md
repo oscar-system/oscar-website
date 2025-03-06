@@ -34,9 +34,9 @@ Currently no upcoming events.
 
 ---
 
-## 🚀 Get OSCAR Now!
+## 🚀 Get OSCAR {{ site.data.oscar_version.latest_release }}
 
-Getting started with OSCAR is easy. [**Start your journey now!**]({{site.baseurl}}/getting-started/)
+The latest stable release of OSCAR is **v{{ site.data.oscar_version.latest_release }}**. Getting started is easy – [**follow our guide here!**]({{site.baseurl}}/getting-started/)
 
 ---
 ## 📙 The OSCAR Book

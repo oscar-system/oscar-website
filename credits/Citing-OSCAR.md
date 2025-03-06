@@ -3,12 +3,12 @@ layout: page
 title: Citing OSCAR
 ---
 
-If you have used **OSCAR** in your research, please cite it using the following format:
+If you have used **OSCAR v{{ site.data.oscar_version.latest_release }}** in your research, please cite it using the following format:
 
 ```md
 [OSCAR]
-    OSCAR -- Open Source Computer Algebra Research system, Version 1.0.0,
-    The OSCAR Team, 2024. (https://www.oscar-system.org)
+    OSCAR -- Open Source Computer Algebra Research system, Version {{ site.data.oscar_version.latest_release }},
+    The OSCAR Team, {{ site.data.oscar_version.latest_release_date | split: " " | last }}. (https://www.oscar-system.org)
 
 [OSCAR-book]
     Wolfram Decker, Christian Eder, Claus Fieker, Max Horn, Michael Joswig, eds.
@@ -22,11 +22,10 @@ If you are using **BibTeX**, you can use the following BibTeX entries:
 @misc{OSCAR,
   key          = {OSCAR},
   organization = {The OSCAR Team},
-  title        = {OSCAR -- Open Source Computer Algebra Research system,
-                  Version 1.0.0},
-  year         = {2024},
+  title        = {OSCAR -- Open Source Computer Algebra Research system, Version {{ site.data.oscar_version.latest_release }}},
+  year         = { {{ site.data.oscar_version.latest_release_date | split: " " | last }}},
   url          = {https://www.oscar-system.org},
-  }
+}
 
 @book{OSCAR-book,
   editor = {Decker, Wolfram and Eder, Christian and Fieker, Claus and Horn, Max and Joswig, Michael},

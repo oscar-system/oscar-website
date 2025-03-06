@@ -17,8 +17,9 @@ layout: page
 </div>
 
 
-# Installation Instructions for Windows
+# Installing OSCAR {{ site.data.oscar_version.latest_release }} on Windows
 
+You are about to install **OSCAR v{{ site.data.oscar_version.latest_release }}**, the latest stable release. Follow the instructions below to set up OSCAR on your system.
 
 <div class="message">
   <strong>WARNING:</strong>

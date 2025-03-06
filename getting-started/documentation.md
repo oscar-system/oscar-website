@@ -40,7 +40,7 @@ docs:
 ### OSCAR Manual (Stable Release)
 
 <div class="message-big">
-<a href="https://docs.oscar-system.org/stable/">Read the OSCAR manual.</a>
+<a href="https://docs.oscar-system.org/stable/">Read the OSCAR v{{ site.data.oscar_version.latest_release }} manual.</a>
 </div>
 
 
