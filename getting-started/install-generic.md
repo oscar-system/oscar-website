@@ -19,14 +19,14 @@ layout: page
 
 ## Generic Installation Instructions
 
+The latest stable release of **OSCAR** is officially supported on [**Windows**]({{site.baseurl}}/getting-started/install-win/), [**macOS**]({{site.baseurl}}/getting-started/install-mac/), and [**Linux (Debian, Ubuntu, Fedora)**]({{site.baseurl}}/getting-started/install-linux/).
 
-We do not provided support for operating systems other than Windows, macOS, and Linux (Debian, Ubuntu, Fedora).
-
-If you wish to try anyway, you will need to install at least GNU make, and a fairly recent C++ compiler supporting the C++17 standard.
-Suitable compilers include:
-* GNU C/C++ compiler (gcc) version 7 or newer,
-* Clang C/C++ compiler version 5 or newer,
-* Intel C/C++ Compiler (icc) version 19.0 or newer.
+If you are using a **different operating system**, we **do not provide support** and **cannot guarantee compatibility**. However, if you still wish to try installing OSCAR, you will need:
+- **[GNU Make](https://www.gnu.org/software/make/)**
+- **A C++ compiler that supports C++17**, such as:
+  - [GNU C/C++ Compiler (GCC) **v7 or newer**](https://gcc.gnu.org/)
+  - [Clang C/C++ Compiler **v5 or newer**](https://clang.llvm.org/)
+  - [Intel C/C++ Compiler (ICC) **v19.0 or newer**](https://www.intel.com/content/www/us/en/developer/tools/oneapi/dpc-compiler.html)
 
 <div class="message">
   <strong>WARNING:</strong>
