@@ -21,6 +21,8 @@ people:
     - {name: Miķelis Emīls Miķelsons, affiliation: RPTU Kaiserslautern-Landau}
 
     - {name: Martin Wagner, affiliation: RPTU Kaiserslautern-Landau}
+    
+    - {name: Antony Della Vecchia, affiliation: TU Berlin}
 ---
 
 {% include participants.html participants=page.people %}
