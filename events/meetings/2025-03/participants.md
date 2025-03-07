@@ -20,6 +20,8 @@ people:
 
     - {name: Miķelis Emīls Miķelsons, affiliation: RPTU Kaiserslautern-Landau}
 
+    - {name: Yue Ren (remote), affiliation: Durham University}
+
     - {name: Martin Wagner, affiliation: RPTU Kaiserslautern-Landau}
     
     - {name: Antony Della Vecchia, affiliation: TU Berlin}
