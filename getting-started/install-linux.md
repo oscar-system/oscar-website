@@ -17,9 +17,9 @@ layout: page
 </div>
 
 
-# Installing OSCAR {{ site.data.oscar_version.latest_release }} on Linux
+# Installing OSCAR {{ site.data.release.version }} on Linux
 
-You are about to install **OSCAR v{{ site.data.oscar_version.latest_release }}**, the latest stable release. Follow the instructions below to set up OSCAR on your system.
+You are about to install **OSCAR v{{ site.data.release.version }}**, the latest stable release. Follow the instructions below to set up OSCAR on your system.
 
 <div class="message">
   <strong>WARNING:</strong>

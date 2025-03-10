@@ -17,9 +17,9 @@ layout: page
 </div>
 
 
-# Installing OSCAR {{ site.data.oscar_version.latest_release }}
+# Installing OSCAR {{ site.data.release.version }}
 
-The latest stable release, **OSCAR v{{ site.data.oscar_version.latest_release }}**, is officially supported on [**Windows**]({{site.baseurl}}/getting-started/install-win/), [**macOS**]({{site.baseurl}}/getting-started/install-mac/), and [**Linux (Debian, Ubuntu, Fedora)**]({{site.baseurl}}/getting-started/install-linux/).
+The latest stable release, **OSCAR v{{ site.data.release.version }}**, is officially supported on [**Windows**]({{site.baseurl}}/getting-started/install-win/), [**macOS**]({{site.baseurl}}/getting-started/install-mac/), and [**Linux (Debian, Ubuntu, Fedora)**]({{site.baseurl}}/getting-started/install-linux/).
 
 If you are using a **different operating system**, we **do not provide support** and **cannot guarantee compatibility**. However, if you still wish to try installing OSCAR, you will need:
 - **[GNU Make](https://www.gnu.org/software/make/)**
