@@ -23,7 +23,7 @@ If you are using **BibTeX**, you can use the following BibTeX entries:
   key          = {OSCAR},
   organization = {The OSCAR Team},
   title        = {OSCAR -- Open Source Computer Algebra Research system, Version {{ site.data.oscar_version.latest_release }}},
-  year         = { {{ site.data.oscar_version.latest_release_date | split: " " | last }}},
+  year         = { {{- site.data.oscar_version.latest_release_date | split: " " | last }}},
   url          = {https://www.oscar-system.org},
 }
 
