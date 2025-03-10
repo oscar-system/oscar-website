@@ -1,6 +1,6 @@
 ---
-layout: tutorial
-title: CommutativeAlgebra
+layout: page
+title: Tutorials
 component: CommutativeAlgebra.png
 ---
 

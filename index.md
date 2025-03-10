@@ -52,15 +52,15 @@ The [OSCAR Book](https://book.oscar-system.org/) – A detailed guide to version
 
 ---
 
-## 🤖 Contribute to OSCAR
-
-Are you a coder eager to help shape OSCAR? We are always happy to welcome new contributors! Learn how you can get involved on our [Contributing]({{site.baseurl}}/contributing/) page.
-
----
-
 ## 🤝 Contact & Support
 
 Need help or want to connect? Visit our [Contact & Support]({{site.baseurl}}/contact-and-support/) page.
+
+---
+
+## 🤖 Contribute to OSCAR
+
+Are you a coder eager to help shape OSCAR? We are always happy to welcome new contributors! Learn how you can get involved on our [Contributing]({{site.baseurl}}/contributing/) page.
 
 ---
 

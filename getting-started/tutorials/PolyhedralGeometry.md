@@ -1,6 +1,6 @@
 ---
-layout: tutorial
-title: PolyhedralGeometry
+layout: page
+title: Tutorials
 component: PolyhedralGeometry.png
 ---
 

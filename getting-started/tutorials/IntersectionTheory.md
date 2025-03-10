@@ -1,6 +1,6 @@
 ---
-layout: tutorial
-title: IntersectionTheory
+layout: page
+title: Tutorials
 component: IntersectionTheory.png
 ---
 

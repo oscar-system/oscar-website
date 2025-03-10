@@ -1,6 +1,6 @@
 ---
-layout: tutorial
-title: LinearAlgebra
+layout: page
+title: Tutorials
 component: LinearAlgebra.png
 ---
 
