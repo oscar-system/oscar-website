@@ -27,6 +27,8 @@ people:
     - {name: Antony Della Vecchia, affiliation: TU Berlin}
 
     - {name: James Nohilly, affiliation: RPTU Kaiserslautern-Landau}
+
+    - {name: Morgan Rodgers, affiliation: RPTU Kaiserslautern-Landau}
 ---
 
 {% include participants.html participants=page.people %}
