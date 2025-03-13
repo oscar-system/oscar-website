@@ -45,4 +45,4 @@ The latest stable release of OSCAR is **v{{ site.data.release.version }}**. Foll
   }
 </style>
 
-Looking for more? The [OSCAR Book](https://www.oscar-book.org/) offers deeper insights into *OSCAR* beyond the standard documentation.
+Looking for more? The [OSCAR Book](https://book.oscar-system.org/) offers deeper insights into *OSCAR* beyond the standard documentation.
