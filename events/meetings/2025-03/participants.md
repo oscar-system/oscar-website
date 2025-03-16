@@ -29,6 +29,8 @@ people:
     - {name: James Nohilly, affiliation: RPTU Kaiserslautern-Landau}
 
     - {name: Morgan Rodgers, affiliation: RPTU Kaiserslautern-Landau}
+
+    - {name: Berenike Dieterle, affiliation: RPTU Kaiserslautern-Landau}
 ---
 
 {% include participants.html participants=page.people %}
