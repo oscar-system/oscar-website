@@ -21,5 +21,17 @@ curl -SsL --retry 5 $statusurl | jq '.["jobs"][1:] | .[] | .name+":"+.conclusion
 cd etc
 python3 update-dates.py
 cd ..
+# update version info
+curl -SsL https://api.github.com/repos/oscar-system/Oscar.jl/releases/latest > latest.json
+version=$(jq '.["name"]' latest.json | sed 's/v//')
+date=$(jq '.["created_at"]' latest.json | cut -c2-11)
+year=$(echo $date | tr '-' ' ' | awk '{print $1}')
+month=$(echo $date | tr '-' ' ' | awk '{print $2}')
+day=$(echo $date | tr '-' ' ' | awk '{print $3}')
+echo "version: $version" > _data/release.yml
+echo "year: \"$year\"" >> _data/release.yml
+echo "month: \"$month\"" >> _data/release.yml
+echo "day: \"$day\"" >> _data/release.yml
+rm latest.json
 # run jekyll
 bundle exec jekyll build --config _config.yml,_config_production.yml -d /srv/www/www-mathe-oscar/data/http
