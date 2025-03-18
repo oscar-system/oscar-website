@@ -31,6 +31,8 @@ people:
     - {name: Morgan Rodgers, affiliation: RPTU Kaiserslautern-Landau}
 
     - {name: Berenike Dieterle, affiliation: RPTU Kaiserslautern-Landau}
+
+    - {name: Matthias Zach, affiliation: RPTU Kaiserslautern-Landau}
 ---
 
 {% include participants.html participants=page.people %}
