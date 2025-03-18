@@ -8,6 +8,8 @@ people:
 
     - {name: Max Horn, affiliation: RPTU Kaiserslautern-Landau}
 
+    - {name: Lars Göttgens, affiliation: RWTH Aachen}
+
 ---
 
 {% include participants.html participants=page.people %}

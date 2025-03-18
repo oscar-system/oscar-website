@@ -21,7 +21,8 @@ More information will appear on this page shortly.
 If you have questions or suggestions, please contact the organizers:
 
 * [Claus Fieker](mailto:claus.fieker@rptu.de),
-  [Max Horn](mailto:max.horn@rptu.de).
+* [Lars Göttgens](mailto:goettgens@art.rwth-aachen.de),
+* [Max Horn](mailto:max.horn@rptu.de).
 
 ## Sponsors
 
