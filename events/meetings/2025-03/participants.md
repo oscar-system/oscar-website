@@ -4,6 +4,8 @@ title: Participants
 meeting: true
 meeting_nr: 202503
 people:
+    - {name: John Abbott, affiliation: RPTU Kaiserslautern-Landau}
+
     - {name: Albin Ahlbäck, affiliation: "LIX, CNRS, École Polytechnique"}
 
     - {name: Martin Bies, affiliation: RPTU Kaiserslautern-Landau}
