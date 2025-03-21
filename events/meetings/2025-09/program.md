@@ -6,6 +6,8 @@ meeting_nr: 202509
 ---
 
 * Start: Monday, September 15
+  - arrival Monday morning, rooms are open starting 10:00
+  - program will after lunch
 * Finish: Friday, September 19
 
 
