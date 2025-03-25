@@ -69,6 +69,9 @@ for repo in repoList:
         if i[0] == 'dependabot[bot]':
             print("Skipping dependabot!")
             continue
+        if "[bot]" in i[0]:
+            print(f"Skipping suspected bot {i[0]}")
+            continue
         email = i[1]
         process = subprocess.run(['git', 'log', f'--author={email}', '--format=%H', '-n 1'],
                                    capture_output=True)
