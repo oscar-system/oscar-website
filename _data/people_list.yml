@@ -389,6 +389,11 @@
   github: SoongNoonien
   status: active
 
+- name: Karl Wessel
+  email: wessel.karl@googlemail.com
+  github: karlwessel
+  status: active
+
 - name: Torben Wiedemann
   affiliation: University of Kaiserslautern-Landau
   email: torben.wiedemann@rptu.de
@@ -408,11 +413,6 @@
   email: zach@rptu.de
   github: HechtiDerLachs
   website: https://math.rptu.de/ags/agag/personen/mitglieder
-  status: active
-
-- name: Karl Wessel
-  email: wessel.karl@googlemail.com
-  github: karlwessel
   status: active
 
 ######################
