@@ -3,7 +3,7 @@ layout: page
 title: Getting Started with OSCAR
 ---
 
-The latest stable release of OSCAR is **v{{ site.data.release.version }}**. Follow the links below to install it, explore tutorials, and access documentation.
+The latest stable release of OSCAR is **v{{ site.data.release.version }}**. Follow the links below to [install]({{site.baseurl }}/getting-started/install/) it, explore [tutorials]({{site.baseurl }}/getting-started/tutorials/), and access [documentation]({{site.baseurl }}/getting-started/documentation/).
 
 <div style="text-align: center;">
   <svg class="responsive-svg" viewBox="0 0 360 270" preserveAspectRatio="xMidYMid meet">

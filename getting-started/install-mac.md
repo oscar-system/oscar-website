@@ -24,7 +24,7 @@ You are about to install **OSCAR v{{ site.data.release.version }}**, the latest 
 <div class="message">
   <strong>WARNING:</strong>
   The installation process of OSCAR, particularly the precompilation step, requires 
-  <strong>at least 6GB of free memory</strong>. For optimal performance with OSCAR, we recommend having <strong>at least 16GB of free memory</strong>.
+  <strong>at least 6GB of free memory</strong>. For optimal performance with OSCAR, we recommend having <strong>at least 16GB of RAM</strong>.
 </div>
 
 The following instructions assume that you are at least somewhat familiar with using a terminal interface.
@@ -44,31 +44,23 @@ If you are using macOS 10.12 or newer, you need to install the Xcode command lin
 
 ## Step 2: Install Julia
 
-<div class="message">
-   <strong>WARNING:</strong>
-   macOS users should generally <strong>not</strong> install the Julia version
-   provided by their package manager (e.g., `apt`, `pac`, `dnf`, `homebrew`, ...), as in many cases,
-   these Julia version are either outdated, or crippled, or both.
-</div>
-
-1. *OSCAR* requires [Julia](https://julialang.org) 1.6.0 or higher. We recommend using the latest stable release of Julia.
-2. We suggest installing Julia via [juliaup](https://github.com/JuliaLang/juliaup) for easy updates and version management. *juliaup* will automatically install the latest stable release of Julia and allows you to manage multiple Julia versions if needed.
-3. To install Julia via *juliaup*, run the following command in your terminal:
-   ```sh
-   curl -fsSL https://install.julialang.org | sh
-   ```
-4. Alternatively, you can [download Julia directly from the official website](https://julialang.org/downloads/) and follow the [installation instructions for macOS](https://julialang.org/downloads/platform/).
+*OSCAR* requires [Julia](https://julialang.org) 1.6.0 or higher. We recommend using the latest stable release of Julia as follows:
+```sh
+curl -fsSL https://install.julialang.org | sh
+```
 
 
 ## Step 3: Install OSCAR
 
 1. Open the Julia REPL in your terminal.
-2. Install OSCAR by running the following commands:
+   ```bash
+   julia
+   ```
+2. Install OSCAR by running the following commands. This may take a while to complete, as it will download and install OSCAR and its dependencies.
    ```julia
    using Pkg
    Pkg.add("Oscar")
    ```
-   This process will take a few minutes to complete, as it will install OSCAR and its dependencies. Internet access is required.
 
 
 ## Step 4: Start OSCAR

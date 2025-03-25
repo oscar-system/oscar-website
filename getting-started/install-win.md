@@ -24,7 +24,7 @@ You are about to install **OSCAR v{{ site.data.release.version }}**, the latest 
 <div class="message">
   <strong>WARNING:</strong>
   The installation process of OSCAR, particularly the precompilation step, requires 
-  <strong>at least 6GB of free memory</strong>. For optimal performance with OSCAR, we recommend having <strong>at least 16GB of free memory</strong>.
+  <strong>at least 6GB of free memory</strong>. For optimal performance with OSCAR, we recommend having <strong>at least 16GB of RAM</strong>.
 </div>
 
 The following instructions assume that you are at least somewhat familiar with using a terminal interface.
@@ -47,24 +47,23 @@ Having trouble? Visit our [Contact & Support]({{site.baseurl}}/contact-and-suppo
 </div>
 
 1. Open the *Ubuntu* app from your start menu (installed in Step 1).
-2. *OSCAR* requires [Julia](https://julialang.org) 1.6.0 or higher. We recommend using the latest stable release of Julia.
-3. We suggest installing Julia via [juliaup](https://github.com/JuliaLang/juliaup) for easy updates and version management. *juliaup* will automatically install the latest stable release of Julia and allows you to manage multiple Julia versions if needed.
-4. To install Julia via *juliaup*, run the following command in your WSL terminal:
-   ```sh
-   curl -fsSL https://install.julialang.org | sh
-   ```
-5. Alternatively, you can [download Julia directly from the official website](https://julialang.org/downloads/) and follow the [installation instructions for Linux Ubuntu](https://julialang.org/downloads/platform/).
+2. *OSCAR* requires [Julia](https://julialang.org) 1.6.0 or higher. We recommend using the latest stable release of Julia as follows:
+```sh
+curl -fsSL https://install.julialang.org | sh
+```
 
 
 ## Step 3: Install OSCAR
 
-1. Open the Julia REPL in your WSL terminal.
-2. Install OSCAR by running the following commands:
+1. Open the Julia REPL in your terminal.
+   ```bash
+   julia
+   ```
+2. Install OSCAR by running the following commands. This may take a while to complete, as it will download and install OSCAR and its dependencies.
    ```julia
    using Pkg
    Pkg.add("Oscar")
    ```
-   This process will take a few minutes to complete, as it will install OSCAR and its dependencies. Internet access is required.
 
 
 ## Step 4: Start OSCAR
