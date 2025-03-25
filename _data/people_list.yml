@@ -104,13 +104,6 @@
   paid_by_dfg: true
   status: active
 
-- name: Janko Böhm
-  affiliation: University of Kaiserslautern-Landau
-  email: boehm@mathematik.uni-kl.de
-  github: jankoboehm
-  website: https://agag-jboehm.math.rptu.de/~boehm/
-  status: active
-
 - name: Alexander Demin
   affiliation: HSE University
   email: asdemin_2@edu.hse.ru
@@ -124,6 +117,11 @@
   github: BD-00
   status: active
   comment: Master student of Claus Fieker as of 2024
+
+- name: Mohab Safey El Din
+  email: mohab.safey@lip6.fr
+  github: mohabsafey
+  status: active
 
 - name: Christian Eder
   affiliation: University of Kaiserslautern-Landau
@@ -346,9 +344,18 @@
   website: https://math.rptu.de/ags/agag/personen/mitglieder
   status: active
 
+- name: Linus Sommer
+  github: linus-md
+  status: active
+
+- name: Wiken Steiner
+  affiliation: University of Siegen
+  github: wfsteiner
+  status: active
+
 - name: Andrew P. Turner
-  affiliation: University of Pennsylvania
-  email: turnerap@sas.upenn.edu
+  affiliation: Virginia Tech
+  email: apturner@vt.edu
   github: apturner
   website: https://apturner.net/
   status: active
@@ -403,9 +410,9 @@
   website: https://math.rptu.de/ags/agag/personen/mitglieder
   status: active
 
-- name: Wiken Steiner
-  affiliation: University of Siegen
-  github: wfsteiner
+- name: Karl Wessel
+  email: wessel.karl@googlemail.com
+  github: karlwessel
   status: active
 
 ######################
@@ -437,6 +444,13 @@
   email: tbrysiew@uwo.ca
   github: tbrysiewicz
   website: https://sites.google.com/view/taylorbrysiewicz/home
+  status: retired
+
+- name: Janko Böhm
+  affiliation: University of Kaiserslautern-Landau
+  email: boehm@mathematik.uni-kl.de
+  github: jankoboehm
+  website: https://agag-jboehm.math.rptu.de/~boehm/
   status: retired
 
 - name: Andrei Comaneci
