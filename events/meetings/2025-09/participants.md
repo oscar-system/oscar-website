@@ -10,6 +10,8 @@ people:
 
     - {name: Lars Göttgens, affiliation: RWTH Aachen}
 
+    - {name: Anne Frühbis-Krüger, affiliation: Uni Oldenburg}
+
 ---
 
 {% include participants.html participants=page.people %}
