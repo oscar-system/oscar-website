@@ -14,7 +14,7 @@
 - title: "Getting Started"
   url: "/getting-started/"
   submenu:
-    - title: "Install "
+    - title: "Installation"
       url: "/getting-started/install"
     - title: "Tutorials"
       url: "/getting-started/tutorials/"
