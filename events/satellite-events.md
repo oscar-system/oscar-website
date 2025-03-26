@@ -4,7 +4,12 @@ title: Satellite Events
 meeting: true
 ---
 
-SFB-TRR 195 events are listed [here](https://www.computeralgebra.de/sfb/events/). In addition, the following events are relevant to the OSCAR community.
+These events are not organized by OSCAR, but include talks or sessions relevant to the OSCAR user and developer community.
+
+Some of them are organized within the [SFB-TRR 195](https://www.computeralgebra.de/sfb/events/) collaborative research project.  
+For a full list of SFB-TRR 195 meetings and activities, see their [event calendar](https://www.computeralgebra.de/sfb/events/).
+
+---
 
 {% assign events = site.data.events | where: "satellite", "Yes" | group-by: "start-date" | sort: "end-date" | reverse %}
 
