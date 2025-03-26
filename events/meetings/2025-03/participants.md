@@ -35,6 +35,8 @@ people:
     - {name: Berenike Dieterle, affiliation: RPTU Kaiserslautern-Landau}
 
     - {name: Matthias Zach, affiliation: RPTU Kaiserslautern-Landau}
+
+    - {name: Anne Frühbis-Krüger (remote), affiliation: Uni Oldenburg}
 ---
 
 {% include participants.html participants=page.people %}
