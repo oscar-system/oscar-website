@@ -13,8 +13,7 @@ weight: 1
 * Where: [Pfalzakademie](https://www.pfalzakademie.de), Franz-Hartmann-Straße 9, 67466 Lambrecht
 * What: Learning to use and become better at using the OSCAR computer algebra system, for beginners and advanced users.
 * Who: This workshop is primarily intended for Master & PhD students, but everyone is welcome to apply.
-
-More information will appear on this page shortly.
+* How: Register [here]({{ site.baseurl }}/events/meetings/2025-09/registration/) until August 15, 2025.
 
 ## Contact
 
@@ -27,7 +26,3 @@ If you have questions or suggestions, please contact the organizers:
 ## Sponsors
 
 This summer school is supported by [SFB-TRR 195](https://www.computeralgebra.de/sfb/) -- Symbolic Tools in Mathematics and their Application.
-
-## Other meetings
-
-Please visit [the meetings page]({{ site.baseurl }}/meetings) for an overview of the OSCAR meetings.
