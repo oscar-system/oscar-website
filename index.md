@@ -36,19 +36,21 @@ Currently no upcoming events.
 
 ## 🚀 Get OSCAR {{ site.data.release.version }}
 
-The latest stable release of OSCAR is **v{{ site.data.release.version }}**. Getting started is easy – [**follow our guide here!**]({{site.baseurl}}/getting-started/)
+The latest stable release of OSCAR is **v{{ site.data.release.version }}**. Getting started is easy – [**follow our installation guide here!**]({{site.baseurl }}/getting-started/install/)
 
 ---
+
+## 📚 Tutorials & Documentation
+
+- [**Hands-on Tutorials**]({{site.baseurl }}/getting-started/tutorials/).
+- [**Comprehensive Documentation**]({{site.baseurl }}/getting-started/documentation/).
+
+---
+
 ## 📙 The OSCAR Book
 
 The [OSCAR Book](https://book.oscar-system.org/) – A detailed guide to version 1.0, featuring code snippets and in-depth explanations.
 
----
-
-## 📚 Documentation & Tutorials
-
-- Comprehensive [Documentation]({{site.baseurl }}/getting-started/documentation/).
-- Hands-on [Tutorials]({{site.baseurl }}/getting-started/tutorials/).
 
 ---
 
