@@ -19,6 +19,7 @@ weight: 1
 
 If you have questions or suggestions, please contact the organizers:
 
+* [Anne Frühbis-Krüger](mailto:anne.fruehbis-krueger@uol.de),
 * [Claus Fieker](mailto:claus.fieker@rptu.de),
 * [Lars Göttgens](mailto:goettgens@art.rwth-aachen.de),
 * [Max Horn](mailto:max.horn@rptu.de).
