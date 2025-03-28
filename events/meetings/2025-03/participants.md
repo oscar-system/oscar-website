@@ -37,6 +37,8 @@ people:
     - {name: Matthias Zach, affiliation: RPTU Kaiserslautern-Landau}
 
     - {name: Anne Frühbis-Krüger (remote), affiliation: Uni Oldenburg}
+
+    - {name: Janko Böhm, affiliation: RPTU Kaiserslautern-Landau}
 ---
 
 {% include participants.html participants=page.people %}
