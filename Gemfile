@@ -29,3 +29,10 @@ end
 gem "webrick", "~> 1.7"
 gem "sassc", "2.1.0"
 gem "logger", "1.4.2"
+
+# Some gems that are getting removed from the standard library, but are not declared as a
+# dependency of jekyll, yet without them ruby throws errors (at least on some system)
+gem "base64"
+gem "csv"
+gem "erb"
+gem "ostruct"
