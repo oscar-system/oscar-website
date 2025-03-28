@@ -15,7 +15,7 @@ A notification of acceptance/non-acceptance will be issued to applicants shortly
 after the deadline.
 
 To apply, please send an email with the following information to
-[Barbara Ermisch](mailto:ermisch@mathematik.uni-kl.de):
+[register@oscar-system.org](mailto:register@oscar-system.org):
   - Name
   - Affiliation
   - Name of Adviser
