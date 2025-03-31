@@ -11,7 +11,7 @@ weight: 1
 
 * When: March 31 - April 04, 2025.
 * Where: [RPTU Kaiserslautern](https://math.rptu.de/en/home), Gottlieb-Daimler-Straße 48, 67663
-Kaiserslautern
+Kaiserslautern, rooms 48-436 and 48-419 (as well as 48-438 in the mornings)
 * What: A general coding sprint for OSCAR and OSCAR adjacent projects (GAP, Singular, ...)
 * Who: OSCAR developers
 
