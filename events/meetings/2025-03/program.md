@@ -20,12 +20,12 @@ If you have suggestions or wishes, please contact the organisers.
 ### Tuesday
 
 - 09:00 Morning standup
-- 09:30 Group photo
 - 15:45 Status reports
 
 ### Wednesday
 
 - 09:00 Morning standup
+- 11:30 Group photo
 - 15:45 Status reports
 - 19:00 Dinner (TBD)
 
