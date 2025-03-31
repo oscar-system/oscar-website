@@ -20,6 +20,8 @@ people:
 
     - {name: Max Horn, affiliation: RPTU Kaiserslautern-Landau}
 
+    - {name: Tommy Hofmann, affiliation: University of Siegen}
+
     - {name: Miķelis Emīls Miķelsons, affiliation: RPTU Kaiserslautern-Landau}
 
     - {name: Yue Ren (remote), affiliation: Durham University}
