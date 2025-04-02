@@ -29,7 +29,6 @@ We are primarily in room 48-436, but we also have 48-419 and before lunch time a
 - 09:00 Morning standup
 - 11:30 Group photo
 - 15:45 Status reports
-- 19:00 Dinner (TBD)
 
 ### Thursday
 
