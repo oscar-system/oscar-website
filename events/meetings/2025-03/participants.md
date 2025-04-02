@@ -45,8 +45,4 @@ people:
 
 {% include participants.html participants=page.people %}
 
-If you plan to attend, please register by sending an email
-to [Max](mailto:mhorn@rptu.de) or by
-[submitting a pull request](https://github.com/oscar-system/oscar-website/edit/gh-pages/{{ page.path }})
-adding yourself to this page.
-This also applies to locals from Kaiserslautern!
+[<img src="../groupphoto.jpg" />](../groupphoto.jpg)
