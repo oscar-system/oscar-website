@@ -11,8 +11,9 @@ and other young researchers are also welcome, but internal applications have pre
 
 - Deadline for applications: August 15, 2025.
 
-A notification of acceptance/non-acceptance will be issued to applicants shortly
-after the deadline.
+Internal applications will usually be handled immediately, on a first-come-first-served
+basis. For everyone else, a notification of acceptance/non-acceptance will be issued to
+applicants shortly after the deadline.
 
 To apply, please send an email with the following information to
 [register@oscar-system.org](mailto:register@oscar-system.org):
