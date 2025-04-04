@@ -45,34 +45,31 @@ Through deep integration via Julia, OSCAR allows mathematical objects from diffe
 
 At the heart of OSCAR are four powerful, domain-specific computer algebra systems. Each contributes unique strengths, and their deep integration within Julia makes OSCAR a unified platform for advanced mathematical computation.
 
+### ANTIC (Hecke) — Exact Arithmetic, Algebra and Number Theory
+
+The ANTIC cornerstone is comprised of various Julia-based packages, providing comprehensive support for exact arithmetic and linear algebra as well as algebraic number theory.
+
+- [**Hecke.jl**](https://github.com/thofma/Hecke.jl) implements high-level number theory algorithms, including computations in algebraic number fields and function fields.
+- [**Nemo.jl**](https://github.com/Nemocas/Nemo.jl) serves as a wrapper for the highly optimized [FLINT](http://flintlib.org) library, which provides fast implementations for polynomials, matrices, and other fundamental structures.
+- [**AbstractAlgebra.jl**](https://github.com/Nemocas/AbstractAlgebra.jl) defines the generic interface layer for rings, fields, groups, and modules in Julia, complementing FLINT with a flexible, abstract foundation.
+
+Together, these packages provide the computational backbone for OSCAR’s number-theoretic and algebraic capabilities — from basic arithmetic to advanced structures in algebraic number theory and arithmetic geometry.
+
 
 ### GAP — Discrete Algebra and Group Theory
 
 [GAP](https://www.gap-system.org) specializes in group theory and discrete algebra. It offers a high-level language, a rich library of functions, and over 120 contributed packages. Through [GAP.jl](https://github.com/oscar-system/GAP.jl), GAP is seamlessly available in Julia and thus forms the foundation for OSCAR’s algebraic capabilities.
 
 
+### Polymake — Polyhedral and Combinatorial Geometry
+
+[Polymake](https://polymake.org) is a software system for computations in polyhedral geometry, convex polytopes, polyhedral fans, toric and tropical geometry, and related combinatorial structures. With a hybrid architecture (C++ and Perl) and a rule-based evaluation system, polymake is highly extensible and efficient. Its full functionality is available in OSCAR via [Polymake.jl](https://github.com/oscar-system/Polymake.jl), offering seamless access from Julia.
+
 ### Singular — Polynomial Systems and Algebraic Geometry
 
 [Singular](https://www.singular.uni-kl.de) specializes in computations with polynomial rings, particularly in commutative algebra, algebraic geometry, and singularity theory. It features advanced Gröbner basis algorithms and supports non-commutative extensions through [PLURAL](https://www.singular.uni-kl.de/Manual/4-1-2/sing_423.htm#SEC463) and [LETTERPLACE](https://www.singular.uni-kl.de/Manual/4-1-2/sing_789.htm#SEC841). Singular is embedded into OSCAR via [Singular.jl](https://github.com/oscar-system/Singular.jl), exposing its powerful capabilities within Julia.
 
 The functionality of Singular is complemented by [AlgebraicSolving.jl](https://github.com/algebraic-solving/AlgebraicSolving.jl), a package that adds robust support for solving multivariate polynomial systems using symbolic methods. Informally, it enables users to model and work with points on algebraic varieties; more formally, it provides tools for symbolic algebraic solving.
-
-
-### Polymake — Polyhedral and Combinatorial Geometry
-
-[Polymake](https://polymake.org) is a software system for computations in polyhedral geometry, convex polytopes, polyhedral fans, toric and tropical geometry, and related combinatorial structures. With a hybrid architecture (C++ and Perl) and a rule-based evaluation system, polymake is highly extensible and efficient. Its full functionality is available in OSCAR via [Polymake.jl](https://github.com/oscar-system/Polymake.jl), offering seamless access from Julia.
-
-
-### ANTIC and the Number Theory Stack — Exact Arithmetic and Algebra
-
-The term [ANTIC](https://github.com/flintlib/antic) originally referred to a C-based system for algebraic number theory. Today, its functionality has evolved and is spread across a stack of Julia-based packages that together provide comprehensive support for exact arithmetic, number fields, and linear algebra over rings.
-
-- [**Hecke.jl**](https://github.com/thofma/Hecke.jl) implements high-level number theory algorithms, including computations in algebraic number fields. It is based on *Nemo.jl*.
-- [**Nemo.jl**](https://github.com/Nemocas/Nemo.jl) serves as a wrapper for the highly optimized [FLINT](http://flintlib.org) library, which provides fast implementations for polynomials, matrices, and other fundamental structures.
-- [**AbstractAlgebra.jl**](https://github.com/Nemocas/AbstractAlgebra.jl) defines the generic interface layer for rings, fields, groups, and modules in Julia, complementing FLINT with a flexible, abstract foundation.
-
-Together, these packages provide the computational backbone for OSCAR’s number-theoretic and algebraic capabilities — from basic arithmetic to advanced structures in algebraic number theory and arithmetic geometry.
-
 
 
 # Learn More and Get Involved
