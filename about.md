@@ -3,11 +3,16 @@ layout: page
 title: What is OSCAR?
 ---
 
-**OSCAR (Open Source Computer Algebra Resource)** is an open-source computer algebra system written in the [Julia programming language](https://julialang.org). It provides a unified, high-performance framework for computations in algebra, geometry, number theory, and polyhedral geometry. OSCAR builds on the capabilities of four major systems—[GAP](https://www.gap-system.org), [Singular](https://www.singular.uni-kl.de), [Polymake](https://polymake.org), and the now-retired [ANTIC](https://github.com/flintlib/antic), whose functionality lives on through [Hecke](https://github.com/thofma/Hecke.jl), [Nemo](https://github.com/Nemocas/Nemo.jl), and [AbstractAlgebra](https://github.com/Nemocas/AbstractAlgebra.jl). By combining these specialized tools under one umbrella, OSCAR enables workflows and mathematical functionality that go far beyond what each system offers on its own.
+**OSCAR** (**O**pen **S**ource **C**omputer **A**lgebra **R**esearch System) is an open-source computer algebra system written in the [Julia programming language](https://julialang.org). It provides a unified, high-performance framework for computations in algebra, geometry, number theory, and polyhedral geometry. OSCAR builds on the capabilities of four major systems—[GAP](https://www.gap-system.org), [Singular](https://www.singular.uni-kl.de), [Polymake](https://polymake.org), and the now-retired [ANTIC](https://github.com/flintlib/antic), whose functionality lives on through [Hecke](https://github.com/thofma/Hecke.jl), [Nemo](https://github.com/Nemocas/Nemo.jl), and [AbstractAlgebra](https://github.com/Nemocas/AbstractAlgebra.jl). By combining these specialized tools under one umbrella, OSCAR enables workflows and mathematical functionality that go far beyond what each system offers on its own. *We elaborate on these cornerstones below.*
 
 Through deep integration via Julia, OSCAR allows mathematical objects from different domains to interoperate seamlessly. This empowers researchers, developers, and students to construct, manipulate, and compute with sophisticated algebraic and geometric structures in a modular, extensible, and expressive environment.
 
 <img src="{{ site.baseurl }}/public/OSCAR-overview.png" alt="OSCAR Overview" width="70%" style="margin-left:13%;" align="center">
+
+<p style="text-align: center; font-size: 90%; margin-top: 1em;">
+  <em>The OSCAR system connects advanced mathematical computations with the power of multiple domain-specific tools. At the top, sample applications—ranging from Galois cohomology to quantum groups of matroids—illustrate the breadth of OSCAR's capabilities, symbolized by an idea of clouds surrounding "OSCAR". Beneath this, five core disciplines—number theory, group theory, polyhedral geometry, algebraic geometry, and non-commutative algebra—form the mathematical focus of the system. These domains are linked via arrows to the underlying software packages that serve as computational backbones, reflecting OSCAR’s design as a deeply integrated and extensible research system. While the current focus is on these five mathematical domains, OSCAR is built to grow and evolve with the mathematical community.</em>
+</p>
+
 
 
 
@@ -88,4 +93,4 @@ Together, these packages provide the computational backbone for OSCAR’s number
 
 🤝 **[Contact & Support]({{site.baseurl}}/contact-and-support/)** – Find ways to connect, ask questions, or get help.
 
-🏛️ **Funding** – OSCAR is supported by the [German Research Foundation (DFG)](https://www.dfg.de/en) through the [Collaborative Research Center TRR 195](https://www.computeralgebra.de/sfb/).
+🏛️ **Funding** – OSCAR is supported by the [German Research Foundation (DFG)](https://www.dfg.de/en) through the [Collaborative Research Center TRR 195](https://www.computeralgebra.de/sfb/)."
