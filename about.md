@@ -3,7 +3,22 @@ layout: page
 title: What is OSCAR?
 ---
 
-**OSCAR** (**O**pen **S**ource **C**omputer **A**lgebra **R**esearch System) is an open-source computer algebra system written in the [Julia programming language](https://julialang.org). It provides a unified, high-performance framework for computations in algebra, geometry, number theory, and polyhedral geometry. OSCAR builds on the capabilities of four major systems—[GAP](https://www.gap-system.org), [Singular](https://www.singular.uni-kl.de), [Polymake](https://polymake.org), and the now-retired [ANTIC](https://github.com/flintlib/antic), whose functionality lives on through [Hecke](https://github.com/thofma/Hecke.jl), [Nemo](https://github.com/Nemocas/Nemo.jl), and [AbstractAlgebra](https://github.com/Nemocas/AbstractAlgebra.jl). By combining these specialized tools under one umbrella, OSCAR enables workflows and mathematical functionality that go far beyond what each system offers on its own. *We elaborate on these cornerstones below.*
+**OSCAR** is an **O**pen **S**ource **C**omputer **A**lgebra **R**esearch System
+written in the [Julia programming language](https://julialang.org). It
+provides a unified, high-performance framework for computations in
+algebra, geometry, number theory, and polyhedral geometry. OSCAR builds
+on the capabilities of four major systems:
+  [GAP](https://www.gap-system.org),
+  [Singular](https://www.singular.uni-kl.de),
+  [Polymake](https://polymake.org), and the now-retired
+  [ANTIC](https://github.com/flintlib/antic),
+whose functionality lives on through
+  [Hecke](https://github.com/thofma/Hecke.jl),
+  [Nemo](https://github.com/Nemocas/Nemo.jl), and
+  [AbstractAlgebra](https://github.com/Nemocas/AbstractAlgebra.jl).
+By combining these specialized tools under one umbrella, OSCAR enables
+workflows and mathematical functionality that go far beyond what each system
+offers on its own. *We elaborate on these cornerstones below.*
 
 Through deep integration via Julia, OSCAR allows mathematical objects from different domains to interoperate seamlessly. This empowers researchers, developers, and students to construct, manipulate, and compute with sophisticated algebraic and geometric structures in a modular, extensible, and expressive environment.
 
