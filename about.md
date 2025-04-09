@@ -9,11 +9,18 @@ Through deep integration via Julia, OSCAR allows mathematical objects from diffe
 
 <img src="{{ site.baseurl }}/public/OSCAR-overview.png" alt="OSCAR Overview" width="70%" style="margin-left:13%;" align="center">
 
-<p style="text-align: center; font-size: 90%; margin-top: 1em;">
-  <em>The OSCAR system connects advanced mathematical computations with the power of multiple domain-specific tools. At the top, sample applications—ranging from Galois cohomology to quantum groups of matroids—illustrate the breadth of OSCAR's capabilities, symbolized by an idea of clouds surrounding "OSCAR". Beneath this, five core disciplines—number theory, group theory, polyhedral geometry, algebraic geometry, and non-commutative algebra—form the mathematical focus of the system. These domains are linked via arrows to the underlying software packages that serve as computational backbones, reflecting OSCAR’s design as a deeply integrated and extensible research system. While the current focus is on these five mathematical domains, OSCAR is built to grow and evolve with the mathematical community.</em>
-</p>
-
-
+{: .caption }
+The OSCAR system connects advanced mathematical computations with the power of
+multiple domain-specific tools. At the top, sample applications—ranging from
+Galois cohomology to quantum groups of matroids—illustrate the breadth of
+OSCAR's capabilities, symbolized by an idea of clouds surrounding "OSCAR".
+Beneath this, five core disciplines—number theory, group theory, polyhedral
+geometry, algebraic geometry, and non-commutative algebra—form the
+mathematical focus of the system. These domains are linked via arrows to the
+underlying software packages that serve as computational backbones, reflecting
+OSCAR’s design as a deeply integrated and extensible research system. While
+the current focus is on these five mathematical domains, OSCAR is built to
+grow and evolve with the mathematical community.
 
 
 # What Makes OSCAR Unique?
