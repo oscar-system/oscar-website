@@ -10,9 +10,9 @@ algebra, geometry, number theory, and polyhedral geometry. OSCAR builds
 on the capabilities of four major systems:
   [GAP](https://www.gap-system.org),
   [Singular](https://www.singular.uni-kl.de),
-  [Polymake](https://polymake.org), and the now-retired
-  [ANTIC](https://github.com/flintlib/antic),
-whose functionality lives on through
+  [Polymake](https://polymake.org), and
+  ANTIC,
+whose functionality is provided by
   [Hecke](https://github.com/thofma/Hecke.jl),
   [Nemo](https://github.com/Nemocas/Nemo.jl), and
   [AbstractAlgebra](https://github.com/Nemocas/AbstractAlgebra.jl).
