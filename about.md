@@ -28,6 +28,21 @@ expressive environment.
 
 <img src="{{ site.baseurl }}/public/OSCAR-overview.png" alt="OSCAR Overview" width="70%" style="margin-left:13%;" align="center">
 
+<!--
+To update OSCAR-overview.png, run the following shell script:
+
+    /etc/build-overview.sh
+
+This script compiles _data/OSCAR-overview.tex, converts the resulting PDF into a web-optimized PNG,
+and places the final image in the /public folder.
+
+Dependencies:
+  - pdflatex
+  - ImageMagick (for the 'convert' command)
+
+The LaTeX source is located in: _data/OSCAR-overview.tex
+-->
+
 {: .caption }
 The OSCAR system connects advanced mathematical computations with the power of
 multiple domain-specific tools. At the top, sample applications—ranging from
