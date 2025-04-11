@@ -353,6 +353,10 @@
   github: wfsteiner
   status: active
 
+- name: Ulrich Thiel
+  github: ulthiel
+  status: active
+
 - name: Andrew P. Turner
   affiliation: Virginia Tech
   email: apturner@vt.edu
