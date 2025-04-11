@@ -76,4 +76,4 @@ If you use OSCAR in your work, please cite us! Details can be found on the [Citi
 
 ## 💡 Funding
 
-The development of OSCAR is supported by the German Research Foundation (DFG) through the [Collaborative Research Center TRR 195](https://www.computeralgebra.de/sfb/).
+The development of OSCAR is supported by the [German Research Foundation (DFG)](https://www.dfg.de/en) through the [Collaborative Research Center TRR 195](https://www.computeralgebra.de/sfb/).
