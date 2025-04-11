@@ -353,6 +353,12 @@
   github: wfsteiner
   status: active
 
+- name: Ulrich Thiel
+  affiliation: University of Kaiserslautern-Landau
+  github: ulthiel
+  website: https://ulthiel.com/math/
+  status: active
+
 - name: Andrew P. Turner
   affiliation: Virginia Tech
   email: apturner@vt.edu
