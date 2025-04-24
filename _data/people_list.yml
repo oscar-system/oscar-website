@@ -258,6 +258,13 @@
   github: janikapeters
   status: active
 
+- name: Rémi Prébet
+  affiliation: KU Leuven
+  email: remi.prebet@kuleuven.be
+  github: rprebet
+  website: https://rprebet.github.io/
+  status: active
+
 - name: Lakshmi Ramesh
   affiliation: University of Kaiserslautern-Landau
   email: ramesh@mathematik.uni-kl.de
