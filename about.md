@@ -158,11 +158,11 @@ algebraic solving.
 
 # Learn More and Get Involved
 
-🚀 **[Installation Guide]({{site.baseurl}}/getting-started/install/)** – Everything you need to install OSCAR {{ site.data.release.version }} (released on {{ site.data.release.date | date_to_string }}).
+🚀 **[Installation Guide]({{site.baseurl}}/install/)** – Everything you need to install OSCAR {{ site.data.release.version }} (released on {{ site.data.release.date | date_to_string }}).
 
-🎓 **[Tutorials]({{site.baseurl}}/getting-started/tutorials/)** – Interactive [Jupyter notebooks](https://nbviewer.jupyter.org/) to help you get started.
+🎓 **[Tutorials]({{site.baseurl}}/tutorials/)** – Interactive [Jupyter notebooks](https://nbviewer.jupyter.org/) to help you get started.
 
-📚 **[Documentation]({{site.baseurl}}/getting-started/documentation/)** – In-depth documentation and examples.
+📚 **[Documentation]({{site.baseurl}}/documentation/)** – In-depth documentation and examples.
 
 📙 **[OSCAR Book](http://book.oscar-system.org)** – A detailed guide to OSCAR 1.0, featuring code snippets and in-depth explanations.
 

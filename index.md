@@ -38,15 +38,15 @@ Currently no upcoming events.
 
 _Released on {{ site.data.release.date | date_to_string }}_ -- [View release notes.](https://github.com/oscar-system/Oscar.jl/releases/tag/v{{ site.data.release.version }})
 
-- Getting started is easy - [follow our installation guide here!]({{site.baseurl }}/getting-started/install/)
-- Already using OSCAR? [Click here to upgrade to the latest version.]({{ site.baseurl }}/getting-started/upgrade/)
+- Getting started is easy - [follow our installation guide here!]({{site.baseurl }}/install/)
+- Already using OSCAR? [Click here to upgrade to the latest version.]({{ site.baseurl }}/upgrade/)
 
 ---
 
 ## 📚 Tutorials & Documentation
 
-- [Hands-on Tutorials]({{site.baseurl }}/getting-started/tutorials/).
-- [Comprehensive Documentation]({{site.baseurl }}/getting-started/documentation/).
+- [Hands-on Tutorials]({{site.baseurl }}/tutorials/).
+- [Comprehensive Documentation]({{site.baseurl }}/documentation/).
 - [Frequently Asked Questions (FAQ)](https://docs.oscar-system.org/stable/General/faq/).
 
 ---
