@@ -3,9 +3,11 @@ layout: page
 title: Contact and Support
 ---
 
+If you have a question or run into an issue, you might find a quick answer in our [Frequently Asked Questions](https://docs.oscar-system.org/stable/General/faq/).
+
 We offer several ways to ask questions, discuss OSCAR, and report issues. Choose the method that works best for you.  
 
-### Slack  
+### Slack
 
 [Join our Slack workspace](https://oscar-system.org/slack). You can access it via a web browser or through native apps for phones, tablets, and computers.  
 

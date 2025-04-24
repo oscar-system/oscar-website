@@ -46,6 +46,7 @@ Getting started is easy - [**follow our installation guide here!**]({{site.baseu
 
 - [**Hands-on Tutorials**]({{site.baseurl }}/getting-started/tutorials/).
 - [**Comprehensive Documentation**]({{site.baseurl }}/getting-started/documentation/).
+- [**Frequently Asked Questions (FAQ)**](https://docs.oscar-system.org/stable/General/faq/).
 
 ---
 
@@ -74,6 +75,6 @@ If you use OSCAR in your work, please cite us! Details can be found on the [Citi
 
 ---
 
-## 💡 Funding
+## 🏛️ Funding
 
 The development of OSCAR is supported by the [German Research Foundation (DFG)](https://www.dfg.de/en) through the [Collaborative Research Center TRR 195](https://www.computeralgebra.de/sfb/).
