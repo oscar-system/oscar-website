@@ -11,8 +11,11 @@
     </div>
 
     <nav class="sidebar-nav">
+
       {% for item in site.data.sidebar %}
-        {% if item.submenu %}
+        {% if item.spacer %}
+          <div style="margin-top: 0.7em;"></div>
+        {% elsif item.submenu %}
         <div class="sidebar-nav-item {% if page.url == item.url %}active{% endif %}">
           <details {% if page.url contains item.url %}open{% endif %}>
             <summary class="nav">

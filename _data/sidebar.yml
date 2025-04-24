@@ -1,5 +1,9 @@
 - title: "Home"
   url: "/"
+
+# SPACER
+- spacer: true
+
 - title: "About"
   url: "/about/"
 - title: "Events"
@@ -9,21 +13,30 @@
       url: "/events/meetings/"
     - title: "Satellite"
       url: "/events/satellite-events/"
-- title: "Getting Started"
-  url: "/getting-started/"
-  submenu:
-    - title: "Installation"
-      url: "/getting-started/install"
-    - title: "Upgrading"
-      url: "/getting-started/upgrade"
-    - title: "Tutorials"
-      url: "/getting-started/tutorials/"
-    - title: "Documentation"
-      url: "/getting-started/documentation/"
+
+# SPACER
+- spacer: true
+
+- title: "Installation"
+  url: "/install/"
+- title: "Upgrading"
+  url: "/upgrade/"
+- title: "Tutorials"
+  url: "/tutorials/"
+- title: "Documentation"
+  url: "/documentation/"
+
+# SPACER
+- spacer: true
+
 - title: "Contact & Support"
   url: "/contact-and-support/"
 - title: "Contributing"
   url: "/contributing/"
+
+# SPACER
+- spacer: true
+
 - title: "Credits"
   url: "/credits/"
   submenu:
