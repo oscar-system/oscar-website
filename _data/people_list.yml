@@ -75,13 +75,6 @@
   website: https://martinbies.github.io
   status: active
 
-- name: Tobias Boege
-  affiliation: KTH Stockholm
-  email: post@taboege.de
-  github: taboege
-  website: https://taboege.de/
-  status: active
-
 - name: Jens Brandt
   affiliation: RWTH Aachen University
   email: jens.brandt@rwth-aachen.de
@@ -407,13 +400,6 @@
   website: https://math.rptu.de/ags/agag/personen/mitglieder
   status: active
 
-- name: Yichao Yu
-  affiliation: Duke University
-  email: yyc1992@gmail.com
-  github: yuyichao
-  status: active
-  comment: Who ?
-
 - name: Matthias Zach
   affiliation: University of Kaiserslautern-Landau
   email: zach@rptu.de
@@ -443,6 +429,13 @@
   email: alex.j.best@gmail.com
   github: alexjbest
   website: https://alexjbest.github.io/
+  status: retired
+
+- name: Tobias Boege
+  affiliation: KTH Stockholm
+  email: post@taboege.de
+  github: taboege
+  website: https://taboege.de/
   status: retired
 
 - name: Taylor Brysiewicz
@@ -704,6 +697,13 @@
   github: lenweis
   website: https://page.math.tu-berlin.de/~weis/
   status: retired
+
+- name: Yichao Yu
+  affiliation: Duke University
+  email: yyc1992@gmail.com
+  github: yuyichao
+  status: retired
+  comment: Who ?
 
 - name: Oguzhan Yürük
   affiliation: TU Berlin
