@@ -29,7 +29,7 @@ You are about to install **OSCAR v{{ site.data.release.version }}**, the latest 
 
 The following instructions assume that you are at least somewhat familiar with using a terminal interface.
 
-Having trouble? Visit our [Contact & Support]({{site.baseurl}}/contact-and-support/) page to get in touch.
+Having trouble? You can visit our [Contact & Support]({{site.baseurl}}/contact-and-support/) page to get in touch — or check out the [Frequently Asked Questions](https://docs.oscar-system.org/stable/General/faq/) for quick tips and troubleshooting guidance.
 
 
 ## Step 1: Install prerequisites
