@@ -14,6 +14,8 @@
   submenu:
     - title: "Installation"
       url: "/getting-started/install"
+    - title: "Upgrading"
+      url: "/getting-started/upgrade"
     - title: "Tutorials"
       url: "/getting-started/tutorials/"
     - title: "Documentation"

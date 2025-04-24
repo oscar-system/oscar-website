@@ -19,7 +19,9 @@ layout: page
 
 # Installing OSCAR {{ site.data.release.version }} on Windows
 
-You are about to install **OSCAR v{{ site.data.release.version }}**, the latest stable release. Follow the instructions below to set up OSCAR on your system.
+> 🛠️ **Already have OSCAR installed?** [Upgrade to the latest version here.]({{ site.baseurl }}/getting-started/upgrade/)
+
+To install **OSCAR v{{ site.data.release.version }}**, the latest stable release, follow the steps below.
 
 <div class="message">
   <strong>WARNING:</strong>
