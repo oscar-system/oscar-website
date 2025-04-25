@@ -20,7 +20,7 @@ If you already have OSCAR installed (cf. [installation guide]({{site.baseurl}}/i
    Pkg.update("Oscar")
    ```
 
-3. Verify the installed version -- it should report **OSCAR v{{ site.data.release.version }}** -- as follows:
+3. Verify the installed version -- it should report OSCAR v{{ site.data.release.version }} -- as follows:
 ```julia
 using Oscar
 Oscar.versioninfo()
@@ -34,10 +34,10 @@ OSCAR depends on several actively developed packages. To ensure full compatibili
 ```julia
 Pkg.update()
 ```
-Then restart Julia and check the OSCAR version (it should be **OSCAR v{{ site.data.release.version }}**):
+Then restart Julia and check the OSCAR version (it should be OSCAR v{{ site.data.release.version }}):
 ```julia
 using Oscar
-versioninfo()
+Oscar.versioninfo()
 ```
 If the version is not updated or you encounter any failures during the upgrade, please [contact us]({{site.baseurl}}/contact-and-support/) for assistance.
 
