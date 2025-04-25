@@ -4,22 +4,22 @@ layout: page
 
 <div class="platform-tabs">
   <input type="radio" id="mac" name="platform">
-  <label for="mac" onclick="window.location.href='{{site.baseurl}}/getting-started/install-mac/'">Mac</label>
+  <label for="mac" onclick="window.location.href='{{site.baseurl}}/install-mac/'">Mac</label>
 
   <input type="radio" id="windows" name="platform">
-  <label for="windows" onclick="window.location.href='{{site.baseurl}}/getting-started/install-win/'">Windows</label>
+  <label for="windows" onclick="window.location.href='{{site.baseurl}}/install-win/'">Windows</label>
 
   <input type="radio" id="linux" name="platform" checked>
-  <label for="linux" onclick="window.location.href='{{site.baseurl}}/getting-started/install-linux/'">Linux</label>
+  <label for="linux" onclick="window.location.href='{{site.baseurl}}/install-linux/'">Linux</label>
 
   <input type="radio" id="other" name="platform">
-  <label for="other" onclick="window.location.href='{{site.baseurl}}/getting-started/install-generic/'">Other</label>
+  <label for="other" onclick="window.location.href='{{site.baseurl}}/install-generic/'">Other</label>
 </div>
 
 
 # Installing OSCAR {{ site.data.release.version }} on Linux
 
-> 🛠️ **Already have OSCAR installed?** [Upgrade to the latest version here.]({{ site.baseurl }}/getting-started/upgrade/)
+> 🛠️ **Already have OSCAR installed?** [Upgrade to the latest version here.]({{ site.baseurl }}/upgrade/)
 
 To install **OSCAR v{{ site.data.release.version }}**, the latest stable release, follow the steps below.
 
@@ -99,7 +99,7 @@ julia> using Oscar
 using Pkg; Pkg.add("IJulia")
 ```
 For more details, refer to the [installation guide](https://julialang.github.io/IJulia.jl/stable/manual/installation/). If you encounter issues, you may need to explicitly build IJulia. Troubleshooting info can be found on the [IJulia troubleshooting page](https://julialang.github.io/IJulia.jl/stable/manual/troubleshooting/).
-2. Download the tutorial of your interested from the [list of available OSCAR tutorials]({{site.baseurl }}/getting-started/tutorials).
+2. Download the tutorial of your interested from the [list of available OSCAR tutorials]({{site.baseurl }}/tutorials).
 3. Start Jupyter by running the following in your Julia REPL:
 ```julia
 using IJulia; notebook()
