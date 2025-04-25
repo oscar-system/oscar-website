@@ -160,7 +160,7 @@ algebraic solving.
 
 🚀 **[Installation Guide]({{site.baseurl}}/install/)** – Everything you need to install OSCAR {{ site.data.release.version }} (released on {{ site.data.release.date | date_to_string }}).
 
-🛠️ **[Upgrade Instructions]({{ site.baseurl }}/getting-started/upgrade/)** – Already using OSCAR? Learn how to upgrade to version {{ site.data.release.version }}.
+🛠️ **[Upgrade Instructions]({{ site.baseurl }}/upgrade/)** – Already using OSCAR? Learn how to upgrade to version {{ site.data.release.version }}.
 
 🎓 **[Tutorials]({{site.baseurl}}/tutorials/)** – Interactive [Jupyter notebooks](https://nbviewer.jupyter.org/) to help you get started.
 

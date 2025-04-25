@@ -4,22 +4,22 @@ layout: page
 
 <div class="platform-tabs">
   <input type="radio" id="mac" name="platform">
-  <label for="mac" onclick="window.location.href='{{site.baseurl}}/getting-started/install-mac/'">Mac</label>
+  <label for="mac" onclick="window.location.href='{{site.baseurl}}/install-mac/'">Mac</label>
 
   <input type="radio" id="windows" name="platform">
-  <label for="windows" onclick="window.location.href='{{site.baseurl}}/getting-started/install-win/'">Windows</label>
+  <label for="windows" onclick="window.location.href='{{site.baseurl}}/install-win/'">Windows</label>
 
   <input type="radio" id="linux" name="platform">
-  <label for="linux" onclick="window.location.href='{{site.baseurl}}/getting-started/install-linux/'">Linux</label>
+  <label for="linux" onclick="window.location.href='{{site.baseurl}}/install-linux/'">Linux</label>
 
   <input type="radio" id="other" name="platform" checked>
-  <label for="other" onclick="window.location.href='{{site.baseurl}}/getting-started/install-generic/'">Other</label>
+  <label for="other" onclick="window.location.href='{{site.baseurl}}/install-generic/'">Other</label>
 </div>
 
 
 # Installing OSCAR {{ site.data.release.version }}
 
-The latest stable release, **OSCAR v{{ site.data.release.version }}**, is officially supported on [**Windows**]({{site.baseurl}}/getting-started/install-win/), [**macOS**]({{site.baseurl}}/getting-started/install-mac/), and [**Linux (Debian, Ubuntu, Fedora)**]({{site.baseurl}}/getting-started/install-linux/).
+The latest stable release, **OSCAR v{{ site.data.release.version }}**, is officially supported on [**Windows**]({{site.baseurl}}/install-win/), [**macOS**]({{site.baseurl}}/install-mac/), and [**Linux (Debian, Ubuntu, Fedora)**]({{site.baseurl}}/install-linux/).
 
 If you are using a **different operating system**, we **do not provide support** and **cannot guarantee compatibility**. However, if you still wish to try installing OSCAR, you will need:
 - **[GNU Make](https://www.gnu.org/software/make/)**

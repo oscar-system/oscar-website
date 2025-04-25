@@ -4,22 +4,22 @@ layout: page
 
 <div class="platform-tabs">
   <input type="radio" id="mac" name="platform">
-  <label for="mac" onclick="window.location.href='{{site.baseurl}}/getting-started/install-mac/'">Mac</label>
+  <label for="mac" onclick="window.location.href='{{site.baseurl}}/install-mac/'">Mac</label>
 
   <input type="radio" id="windows" name="platform" checked>
-  <label for="windows" onclick="window.location.href='{{site.baseurl}}/getting-started/install-win/'">Windows</label>
+  <label for="windows" onclick="window.location.href='{{site.baseurl}}/install-win/'">Windows</label>
 
   <input type="radio" id="linux" name="platform">
-  <label for="linux" onclick="window.location.href='{{site.baseurl}}/getting-started/install-linux/'">Linux</label>
+  <label for="linux" onclick="window.location.href='{{site.baseurl}}/install-linux/'">Linux</label>
 
   <input type="radio" id="other" name="platform">
-  <label for="other" onclick="window.location.href='{{site.baseurl}}/getting-started/install-generic/'">Other</label>
+  <label for="other" onclick="window.location.href='{{site.baseurl}}/install-generic/'">Other</label>
 </div>
 
 
 # Installing OSCAR {{ site.data.release.version }} on Windows
 
-> 🛠️ **Already have OSCAR installed?** [Upgrade to the latest version here.]({{ site.baseurl }}/getting-started/upgrade/)
+> 🛠️ **Already have OSCAR installed?** [Upgrade to the latest version here.]({{ site.baseurl }}/upgrade/)
 
 To install **OSCAR v{{ site.data.release.version }}**, the latest stable release, follow the steps below.
 
@@ -98,7 +98,7 @@ For more details, refer to the [installation guide](https://julialang.github.io/
 
    > **Note:** As reported by [Oliver Clarke](https://github.com/ollieclarke8787), on **Windows 11 with WSL version 2**, this installation step may no longer be necessary. If you have a browser (e.g., Chrome) set as your default on Windows, Jupyter may automatically launch in that browser.
 
-3. Download the tutorial of your interest from the [list of available OSCAR tutorials]({{site.baseurl }}/getting-started/tutorials).
+3. Download the tutorial of your interest from the [list of available OSCAR tutorials]({{site.baseurl }}/tutorials).
 4. Start Jupyter by running the following in your Julia REPL (within your [WSL](https://learn.microsoft.com/en-us/windows/wsl) environment):
 ```julia
 using IJulia; notebook()
