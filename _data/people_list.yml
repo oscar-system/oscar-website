@@ -258,6 +258,13 @@
   github: janikapeters
   status: active
 
+- name: Rémi Prébet
+  affiliation: Inria
+  email: remi.prebet@inria.fr
+  github: rprebet
+  website: https://rprebet.github.io/
+  status: active
+
 - name: Lakshmi Ramesh
   affiliation: University of Kaiserslautern-Landau
   email: ramesh@mathematik.uni-kl.de
@@ -608,13 +615,6 @@
   github: delphinepol
   status: retired
   comment: Used to be a postdoc at Kaiserslautern, until ~2020
-
-- name: Rémi Prébet
-  affiliation: Inria
-  email: remi.prebet@inria.fr
-  github: rprebet
-  website: https://rprebet.github.io/
-  status: retired
 
 - name: Martin Raum
   affiliation: Chalmers University
