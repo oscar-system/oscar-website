@@ -22,7 +22,7 @@ for i in range(len(ogfile)):
         #auth API usage has limit of 5,000 requests per hour.
         r = requests.get(url)
         if r.status_code != 200:
-            raise ValueError(f"Reponse must have code 200, we got {r.status_code}")
+            raise ValueError(f"Response must have code 200, we got {r.status_code}")
         r = json.loads(r.content)
         dt = datetime.strptime(r[0]['commit']['author']['date'], "%Y-%m-%dT%H:%M:%SZ")    
     except Exception as e:
