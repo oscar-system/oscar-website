@@ -17,7 +17,7 @@ plugins:
 
 # for SEO plugin
 tagline:          'OSCAR Computer Algebra System'
-logo:             /public/OSCAR_logo.png
+logo:             /public/OSCAR-Logo.svg
 
 exclude:
   - _config_production.yml
