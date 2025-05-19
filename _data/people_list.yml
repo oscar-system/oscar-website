@@ -330,13 +330,6 @@
   paid_by_dfg: false
   status: active
 
-- name: Björn Schäfer
-  affiliation: Saarland University
-  email: bschaefer@math.uni-sb.de
-  github: BjSchaefer
-  website: https://www.uni-saarland.de/lehrstuhl/weber-moritz/team.html
-  status: active
-
 - name: Hans Schönemann
   affiliation: University of Kaiserslautern-Landau
   email: hans.schoenemann@math.rptu.de
@@ -642,6 +635,13 @@
   github: tthsqe12
   status: retired
   comment: who ?
+
+- name: Björn Schäfer
+  affiliation: Saarland University
+  email: bschaefer@math.uni-sb.de
+  github: BjSchaefer
+  website: https://www.uni-saarland.de/lehrstuhl/weber-moritz/team.html
+  status: retired
 
 - name: Carlo Sircana
   affiliation: University of Kaiserslautern-Landau
