@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 import os
-import sys
 
 from datetime import datetime
 from github import Github, Auth
@@ -25,7 +24,7 @@ except Exception as e:
     print(e)
     print("Network access failed!")
     print("Leaving the release file unchanged!")
-    sys.exit(1)
+    os.exit()
 
 if not failed:
     dt = release.created_at
