@@ -1,11 +1,17 @@
 #!/usr/bin/env python3
 
 import os
+import sys
 
 from datetime import datetime
 from github import Github, Auth
 
 API_KEY = os.getenv("API_KEY")
+if API_KEY == None:
+    print("API key was not found! Authentication will fail!\nSet the environment variable API_KEY "
+          "to a github access token and try again!\n")
+
+assert API_KEY != None
 
 auth = Auth.Token(API_KEY)
 
@@ -17,10 +23,9 @@ try:
     release = repo.get_latest_release()
 except Exception as e:
     print(e)
-    print("Network access failed! Falling back to default date and version!")
-    failed = True
-    dt = datetime(1970, 1, 1)
-    version = '0.0.0'
+    print("Network access failed!")
+    print("Leaving the release file unchanged!")
+    sys.exit(1)
 
 if not failed:
     dt = release.created_at

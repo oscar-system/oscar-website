@@ -7,6 +7,11 @@ from datetime import datetime
 from github import Github, Auth
 
 API_KEY = os.getenv("API_KEY")
+if API_KEY == None:
+    print("API key was not found! Authentication will fail!\nSet the environment variable API_KEY "
+          "to a github access token and try again!\n")
+
+assert API_KEY != None
 
 auth = Auth.Token(API_KEY)
 
@@ -30,7 +35,7 @@ for i in range(len(ogfile)):
         dt = commit.stats.last_modified_datetime
     except Exception as e:
         print(e)
-        print("Network access failed. Using fallback default date.")
+        print("Network access failed. Using fallback default date for the tutorial.")
         dt = datetime(1970, 1, 1)
 
     #update times

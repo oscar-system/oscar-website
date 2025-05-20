@@ -23,7 +23,7 @@ echo "Getting tutorial last modified dates......."
 ./etc/update-dates.py
 echo "Done!"
 # update version info
-echo "Getting version info......."
+echo "Getting OSCAR version info......."
 ./etc/update-latest-release.py
 echo "Done!"
 # run jekyll
