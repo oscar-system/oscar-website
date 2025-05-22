@@ -50,12 +50,13 @@ and requires that you have permissions to administer your computer):
 sudo dnf install gcc-c++ make
 ```
 
+
 ## Step 2: Install Julia
 
 <div class="message">
    <strong>WARNING:</strong>
    Linux users should generally <strong>not</strong> install the Julia version
-   provided by their package manager (e.g., `apt`, `pacman`, `dnf`, `homebrew`, ...), as in many cases,
+   provided by their package manager (e.g., `apt`, `pacman`, `dnf`, ...), as in many cases,
    these Julia version are either outdated, or crippled, or both.
 </div>
 
@@ -76,7 +77,6 @@ curl -fsSL https://install.julialang.org | sh
    using Pkg
    Pkg.add("Oscar")
    ```
-
 
 
 ## Step 4: Start OSCAR

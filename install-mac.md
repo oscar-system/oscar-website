@@ -46,7 +46,7 @@ If you are using macOS 10.12 or newer, you need to install the Xcode command lin
 
 ## Step 2: Install Julia
 
-*OSCAR* requires [Julia](https://julialang.org) 1.6.0 or higher. We recommend using the latest stable release of Julia as follows:
+*OSCAR* requires [Julia](https://julialang.org) 1.6.0 or higher. We recommend installing the latest stable release of Julia by entering the following in a terminal and following the instructions:
 ```sh
 curl -fsSL https://install.julialang.org | sh
 ```
