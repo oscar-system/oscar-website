@@ -258,9 +258,11 @@
   website: https://rprebet.github.io/
   status: active
 
-- name: RPaegelow
-  email: raphael.paegelow@umontpellier.fr
+- name: Raphaël Paegelow
+  affiliation: University of Lille
+  email: raphael.paegelow@univ-lille.fr
   github: RaphaelPaegelow
+  website: https://paegelow.fr/en/
   status: active
 
 - name: Lakshmi Ramesh
