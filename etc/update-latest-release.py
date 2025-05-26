@@ -9,8 +9,7 @@ API_KEY = os.getenv("API_KEY")
 if API_KEY == None:
     print("API key was not found! Authentication will fail!\nSet the environment variable API_KEY "
           "to a github access token and try again!\n")
-
-assert API_KEY != None
+    exit()
 
 auth = Auth.Token(API_KEY)
 
@@ -24,7 +23,7 @@ except Exception as e:
     print(e)
     print("Network access failed!")
     print("Leaving the release file unchanged!")
-    os.exit()
+    exit()
 
 if not failed:
     dt = release.created_at
