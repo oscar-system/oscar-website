@@ -15,3 +15,6 @@ _data/examples_status.yml
 _data/autogen_people_list.yml
 etc/repos/*
 summary.txt
+
+#python venv
+.venv

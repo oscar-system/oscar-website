@@ -14,6 +14,15 @@ cat /srv/www/www-mathe-oscar/data/webhook.secret >> .htaccess
 bundle config set --local path 'vendor/bundle'
 bundle install
 
+# use the venv defined in .venv
+# set this up before running this script!
+echo "Activating venv..."
+source .venv/bin/activate
+
+# install requirements for the python scripts
+echo "Installing python pre requisites..."
+python3 -m pip install -r etc/requirements.txt
+
 # get tutorial status
 echo "Getting tutorial status....."
 ./etc/tutorial_status.py
