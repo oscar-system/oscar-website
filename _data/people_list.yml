@@ -231,6 +231,13 @@
   github: jamesnohilly
   status: active
 
+- name: Raphaël Paegelow
+  affiliation: University of Lille
+  email: raphael.paegelow@univ-lille.fr
+  github: RaphaelPaegelow
+  website: https://paegelow.fr/en/
+  status: active
+
 - name: Erik Paemurru
   affiliation: Saarland University
   email: paemurru@math.uni-sb.de
@@ -256,13 +263,6 @@
   email: remi.prebet@inria.fr
   github: rprebet
   website: https://rprebet.github.io/
-  status: active
-
-- name: Raphaël Paegelow
-  affiliation: University of Lille
-  email: raphael.paegelow@univ-lille.fr
-  github: RaphaelPaegelow
-  website: https://paegelow.fr/en/
   status: active
 
 - name: Lakshmi Ramesh
