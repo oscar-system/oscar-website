@@ -137,13 +137,6 @@
   website: https://uol.de/en/mathematik/persons/profs/prof-dr-anne-fruehbis-krueger
   status: active
 
-- name: Zoe Geiselmann
-  affiliation: TU Berlin
-  email: geiselmann@math.tu-berlin.de
-  github: zkgeiselmann
-  website: https://www.tu.berlin/dmg/ueber-uns/team
-  status: active
-
 - name: Lars Göttgens
   affiliation: RWTH Aachen University
   email: goettgens@art.rwth-aachen.de
@@ -263,6 +256,13 @@
   email: remi.prebet@inria.fr
   github: rprebet
   website: https://rprebet.github.io/
+  status: active
+
+- name: Raphaël Paegelow
+  affiliation: University of Lille
+  email: raphael.paegelow@univ-lille.fr
+  github: RaphaelPaegelow
+  website: https://paegelow.fr/en/
   status: active
 
 - name: Lakshmi Ramesh
@@ -499,6 +499,13 @@
   github: GDeFranceschi
   status: retired
   comment: Was PostDoc in Kaiserslautern around 2021
+
+- name: Zoe Geiselmann
+  affiliation: TU Berlin
+  email: geiselmann@math.tu-berlin.de
+  github: zkgeiselmann
+  website: https://www.tu.berlin/dmg/ueber-uns/team
+  status: retired
 
 - name: Fabian Gundlach
   affiliation: Paderborn University
