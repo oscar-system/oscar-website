@@ -28,4 +28,4 @@ echo "Getting OSCAR version info......."
 echo "Done!"
 # run jekyll
 echo "Running jekyl......."
-bundle exec jekyll build --config _config.yml,_config_production.yml # -d /srv/www/www-mathe-oscar/data/http
+bundle exec jekyll build --config _config.yml,_config_production.yml -d /srv/www/www-mathe-oscar/data/http
