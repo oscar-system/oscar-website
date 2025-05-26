@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import os
+import sys
 import yaml
 
 from datetime import datetime
@@ -41,10 +42,8 @@ for i in range(len(ogfile)):
     d = dt.date().strftime("%B %d, %Y")
     ogfile[i]['date'] = d
 
-if os.getcwd().split('/')[-1] == 'etc':
-    outfilepath = '../_data/examples_with_updated_last_modified.yml'
-else:
-    outfilepath = "_data/examples_with_updated_last_modified.yml"
+datapath = '/'.join(os.path.abspath(sys.argv[0]).split('/')[0:-2])+'/_data'
+outfilepath = f"{datapath}/examples_with_updated_last_modified.yml"
 
 with open(outfilepath, 'w') as outfile:
     outfile.write(yaml.dump(ogfile))

@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 
 import os
+import sys
+
 from github import Github, Auth
 
 API_KEY = os.getenv("API_KEY")
@@ -39,10 +41,8 @@ if not failed:
 else:
     print("Network access failed, resulting file will be unchanged!")
 
-if os.getcwd().split('/')[-1] == 'etc':
-    statusfilepath = "../_data/examples_status.yml"
-else:
-    statusfilepath = "_data/examples_status.yml"
+datapath = '/'.join(os.path.abspath(sys.argv[0]).split('/')[0:-2])+'/_data'
+statusfilepath = f"{datapath}/examples_status.yml"
 
 if resultstring=="":
     # if resultstring is empty, just use the old data

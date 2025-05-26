@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import os
+import sys
 
 from datetime import datetime
 from github import Github, Auth
@@ -31,10 +32,10 @@ if not failed:
 
 releasestring = f"version: '{version}'\nyear: '{dt.year}'\nmonth: '{dt.month}'\nday: '{dt.day}'\ndate: {dt.date()}\n"
 
-if os.getcwd().split('/')[-1] == 'etc':
-    releasefilepath = '../_data/release.yml'
-else:
-    releasefilepath = "_data/release.yml"
+datapath = '/'.join(os.path.abspath(sys.argv[0]).split('/')[0:-2])+'/_data'
+releasefilepath = f"{datapath}/release.yml"
+
+print(f"releasefilepath is {releasefilepath}")
 
 with open(releasefilepath, 'w') as releasefile:
     releasefile.write(releasestring)
