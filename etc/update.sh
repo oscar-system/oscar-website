@@ -15,7 +15,11 @@ bundle config set --local path 'vendor/bundle'
 bundle install
 
 # use the venv defined in .venv
-# set this up before running this script!
+if [ ! -d ".venv" ]; then
+    echo "venv directory not found, initializing..."
+    python3 -m venv .venv
+    echo "done!"
+fi
 echo "Activating venv..."
 source .venv/bin/activate
 
