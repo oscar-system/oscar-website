@@ -14,7 +14,6 @@ if API_KEY == None:
 auth = Auth.Token(API_KEY)
 
 g = Github(auth=auth)
-failed=False
 
 try:
     print("Trying to get jobs.......")
@@ -26,25 +25,23 @@ try:
     print("Done!")
 except Exception as e:
     print(e)
-    falied = True
+    print("\nNetwork access failed, resulting file will be unchanged!")
+    exit()
 
 resultstring = ""
 
-if not failed:
-    for i in jobs:
-        if i.name == "Prepare Tests":
-            continue
-        print(f"Fetched {i.name}!")
-        name = i.name.split()[-1][0:-1]
-        status = i.conclusion
-        resultstring += f"{name}: {status}\n"
-else:
-    print("Network access failed, resulting file will be unchanged!")
+for i in jobs:
+    if i.name == "Prepare Tests":
+        continue
+    print(f"Processing {i.name}.....")
+    name = i.name.split()[-1][0:-1]
+    status = i.conclusion
+    resultstring += f"{name}: {status}\n"
 
 datapath = '/'.join(os.path.abspath(sys.argv[0]).split('/')[0:-2])+'/_data'
 statusfilepath = f"{datapath}/examples_status.yml"
 
-if resultstring=="":
-    # if resultstring is empty, just use the old data
+if len(resultstring) > 0:
+    # only update the file if resultstring is not empty
     with open(statusfilepath, 'w') as statusfile:
         statusfile.write(resultstring)
