@@ -36,20 +36,24 @@ Currently no upcoming events.
 
 ## 🚀 Get OSCAR {{ site.data.release.version }}
 
-The latest stable release of OSCAR is **v{{ site.data.release.version }}**. Getting started is easy – [**follow our installation guide here!**]({{site.baseurl }}/getting-started/install/)
+_Released on {{ site.data.release.date | date_to_string }}_ -- [View release notes.](https://github.com/oscar-system/Oscar.jl/releases/tag/v{{ site.data.release.version }})
+
+- Getting started is easy - [follow our installation guide here!]({{site.baseurl }}/install/)
+- Already using OSCAR? [Click here to upgrade to the latest version.]({{ site.baseurl }}/upgrade/)
 
 ---
 
 ## 📚 Tutorials & Documentation
 
-- [**Hands-on Tutorials**]({{site.baseurl }}/getting-started/tutorials/).
-- [**Comprehensive Documentation**]({{site.baseurl }}/getting-started/documentation/).
+- [Hands-on Tutorials]({{site.baseurl }}/tutorials/).
+- [Comprehensive Documentation]({{site.baseurl }}/documentation/).
+- [Frequently Asked Questions (FAQ)](https://docs.oscar-system.org/stable/General/faq/).
 
 ---
 
 ## 📙 The OSCAR Book
 
-The [OSCAR Book](https://book.oscar-system.org/) – A detailed guide to version 1.0, featuring code snippets and in-depth explanations.
+The [OSCAR Book](https://book.oscar-system.org/) - A detailed guide to version 1.0, featuring code snippets and in-depth explanations.
 
 
 ---
@@ -72,6 +76,6 @@ If you use OSCAR in your work, please cite us! Details can be found on the [Citi
 
 ---
 
-## 💡 Funding
+## 🏛️ Funding
 
-The development of OSCAR is supported by the German Research Foundation (DFG) through the [Collaborative Research Center TRR 195](https://www.computeralgebra.de/sfb/).
+The development of OSCAR is supported by the [German Research Foundation (DFG)](https://www.dfg.de/en) through the [Collaborative Research Center TRR 195](https://www.computeralgebra.de/sfb/).

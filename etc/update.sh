@@ -32,6 +32,7 @@ echo "version: $version" > _data/release.yml
 echo "year: \"$year\"" >> _data/release.yml
 echo "month: \"$month\"" >> _data/release.yml
 echo "day: \"$day\"" >> _data/release.yml
+echo "date: \"$year-$month-$day\"" >> _data/release.yml
 rm latest.json
 # run jekyll
 bundle exec jekyll build --config _config.yml,_config_production.yml -d /srv/www/www-mathe-oscar/data/http

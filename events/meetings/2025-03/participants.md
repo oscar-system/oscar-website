@@ -20,6 +20,8 @@ people:
 
     - {name: Max Horn, affiliation: RPTU Kaiserslautern-Landau}
 
+    - {name: Tommy Hofmann, affiliation: University of Siegen}
+
     - {name: Miķelis Emīls Miķelsons, affiliation: RPTU Kaiserslautern-Landau}
 
     - {name: Yue Ren (remote), affiliation: Durham University}
@@ -35,12 +37,12 @@ people:
     - {name: Berenike Dieterle, affiliation: RPTU Kaiserslautern-Landau}
 
     - {name: Matthias Zach, affiliation: RPTU Kaiserslautern-Landau}
+
+    - {name: Anne Frühbis-Krüger (remote), affiliation: Uni Oldenburg}
+
+    - {name: Janko Böhm, affiliation: RPTU Kaiserslautern-Landau}
 ---
 
 {% include participants.html participants=page.people %}
 
-If you plan to attend, please register by sending an email
-to [Max](mailto:mhorn@rptu.de) or by
-[submitting a pull request](https://github.com/oscar-system/oscar-website/edit/gh-pages/{{ page.path }})
-adding yourself to this page.
-This also applies to locals from Kaiserslautern!
+[<img src="../groupphoto.jpg" />](../groupphoto.jpg)

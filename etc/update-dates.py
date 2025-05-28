@@ -12,6 +12,9 @@ for i in range(len(ogfile)):
     filepath = f"{ogfile[i]['filename']}.ipynb"
     url = f'https://api.github.com/repos/{repo}/commits?path={filepath}'
 
+    # fallback default date
+    dt = datetime(1970, 1, 1)
+
     try:
         #make request
         #unauth API is rate limited at 60 per hour
@@ -19,15 +22,14 @@ for i in range(len(ogfile)):
         #auth API usage has limit of 5,000 requests per hour.
         r = requests.get(url)
         if r.status_code != 200:
-            raise ValueError(f"Reponse must have code 200, we got {r.status_code}")
+            raise ValueError(f"Response must have code 200, we got {r.status_code}")
         r = json.loads(r.content)
+        dt = datetime.strptime(r[0]['commit']['author']['date'], "%Y-%m-%dT%H:%M:%SZ")    
     except Exception as e:
         print(e)
-        print(f"Got an error {e}.\nContinuing without updating time for {ogfile[i]['filename']}...")
-        continue
+        print(f"Got an error {e}.\nUsing default date for {ogfile[i]['filename']}...")
 
     #update times
-    dt = datetime.strptime(r[0]['commit']['author']['date'], "%Y-%m-%dT%H:%M:%SZ")
     d = dt.date().strftime("%B %d, %Y")
     ogfile[i]['date'] = d
 

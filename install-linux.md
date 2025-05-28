@@ -1,0 +1,107 @@
+---
+layout: page
+---
+
+<div class="platform-tabs">
+  <input type="radio" id="mac" name="platform">
+  <label for="mac" onclick="window.location.href='{{site.baseurl}}/install-mac/'">Mac</label>
+
+  <input type="radio" id="windows" name="platform">
+  <label for="windows" onclick="window.location.href='{{site.baseurl}}/install-win/'">Windows</label>
+
+  <input type="radio" id="linux" name="platform" checked>
+  <label for="linux" onclick="window.location.href='{{site.baseurl}}/install-linux/'">Linux</label>
+
+  <input type="radio" id="other" name="platform">
+  <label for="other" onclick="window.location.href='{{site.baseurl}}/install-generic/'">Other</label>
+</div>
+
+
+# Installing OSCAR {{ site.data.release.version }} on Linux
+
+> 🛠️ **Already have OSCAR installed?** [Upgrade to the latest version here.]({{ site.baseurl }}/upgrade/)
+
+To install **OSCAR v{{ site.data.release.version }}**, the latest stable release, follow the steps below.
+
+<div class="message">
+  <strong>WARNING:</strong>
+  The installation process of OSCAR, particularly the precompilation step, requires 
+  <strong>at least 6GB of free memory</strong>. For optimal performance with OSCAR, we recommend having <strong>at least 16GB of RAM</strong>.
+</div>
+
+The following instructions assume that you are at least somewhat familiar with using a terminal interface.
+
+Having trouble? You can visit our [Contact & Support]({{site.baseurl}}/contact-and-support/) page to get in touch — or check out the [Frequently Asked Questions](https://docs.oscar-system.org/stable/General/faq/) for quick tips and troubleshooting guidance.
+
+
+## Step 1: Install prerequisites
+
+If you are using Ubuntu 20.04 "Focal" or newer, or Debian 11 "Bullseye" or newer, proceed as follows:
+Enter these commands into a terminal (this will prompt for your root password and requires that you
+have permissions to administer your computer):
+```sh
+sudo apt update
+sudo apt install build-essential
+```
+
+If you are using Fedora 40 or newer, enter the following commands into a terminal (this will prompt for your password
+and requires that you have permissions to administer your computer):
+```sh
+sudo dnf install gcc-c++ make
+```
+
+
+## Step 2: Install Julia
+
+<div class="message">
+   <strong>WARNING:</strong>
+   Linux users should generally <strong>not</strong> install the Julia version
+   provided by their package manager (e.g., `apt`, `pacman`, `dnf`, ...), as in many cases,
+   these Julia version are either outdated, or crippled, or both.
+</div>
+
+*OSCAR* requires [Julia](https://julialang.org) 1.6.0 or higher. We recommend installing the latest stable release of Julia by entering the following in a terminal and heeding the instructions it shows:
+```sh
+curl -fsSL https://install.julialang.org | sh
+```
+
+
+## Step 3: Install OSCAR
+
+1. Open the Julia REPL in your terminal by typing the following:
+   ```bash
+   julia
+   ```
+2. Install OSCAR by running the following commands. This may take a while to complete, as it will download and install OSCAR and its dependencies.
+   ```julia
+   using Pkg
+   Pkg.add("Oscar")
+   ```
+
+
+## Step 4: Start OSCAR
+
+After the installation is complete, you can start using OSCAR by running `using Oscar` in the Julia REPL:
+```console?lang=julia
+julia> using Oscar
+  ___   ____   ____    _    ____
+ / _ \ / ___| / ___|  / \  |  _ \   |  Combining ANTIC, GAP, Polymake, Singular
+| | | |\___ \| |     / _ \ | |_) |  |  Type "?Oscar" for more information
+| |_| | ___) | |___ / ___ \|  _ <   |  Manual: https://docs.oscar-system.org
+ \___/ |____/ \____/_/   \_\_| \_\  |  Version 1.0.0
+```
+
+
+## Step 5: Running Tutorials Locally with IJulia
+
+1. Install *IJulia* (and Jupyter) by running the following command inside your Julia REPL:
+```julia
+using Pkg; Pkg.add("IJulia")
+```
+For more details, refer to the [installation guide](https://julialang.github.io/IJulia.jl/stable/manual/installation/). If you encounter issues, you may need to explicitly build IJulia. Troubleshooting info can be found on the [IJulia troubleshooting page](https://julialang.github.io/IJulia.jl/stable/manual/troubleshooting/).
+2. Download the tutorial of your interest from the [list of available OSCAR tutorials]({{site.baseurl }}/tutorials).
+3. Start Jupyter by running the following in your Julia REPL:
+```julia
+using IJulia; notebook()
+```
+4. Your web browser should open with the Jupyter interface, where "Jupyter" is displayed in the upper-left corner, and a file explorer appears below. Locate and open the tutorial notebook of your interest. <br>You might see a pop-up with the message "Kernel not found" or "Kernel error". You can resolve this by selecting a different Julia kernel from the notebook's kernel menu.

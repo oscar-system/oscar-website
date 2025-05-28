@@ -1,5 +1,8 @@
 <p>
-  Explore <a href="https://jupyter.org/">Jupyter notebooks</a> demonstrating OSCAR’s capabilities. These tutorials are for <strong>OSCAR v{{ site.data.release.version }}</strong>, the latest stable release. To avoid compatibility issues, make sure you are using this version.
+  Explore <a href="https://jupyter.org/">Jupyter notebooks</a> demonstrating OSCAR’s capabilities.
+  These tutorials are for <strong>OSCAR v{{ site.data.release.version }}</strong>,
+  the latest stable release. To avoid compatibility issues, make sure you're using this version
+  (<a href="{{ site.baseurl }}/upgrade">upgrade instructions</a>).
 </p>
 
 <p>
@@ -10,25 +13,31 @@
   <li>Open the tutorial in <a href="https://nbviewer.jupyter.org/"><em>nbviewer</em></a> (or view it directly on <a href="https://github.com/">GitHub</a>).</li>
   <li>Right-click (or Ctrl-click on macOS) the download icon at the top-right.</li>
   <li>Select <em>Save As...</em> and save the file to your computer.</li>
-  <li>If you haven't installed OSCAR yet, follow the <a href="{{site.baseurl}}/getting-started/install">installation instructions</a> to set up OSCAR v{{ site.data.release.version }}.</li>
-  <li>Complete <a href="{{site.baseurl}}/getting-started/install#step-5-running-tutorials-locally-with-ijulia">Step 5</a> of the installation guide to ensure your system is set up to run the tutorials.</li>
+  <li>If OSCAR is not yet installed, follow the <a href="{{site.baseurl}}/install">installation guide</a>.
+    If it's already installed, ensure you're using version <strong>OSCAR v{{ site.data.release.version }}</strong>
+    by checking the <a href="{{site.baseurl}}/upgrade">upgrade instructions</a>.</li>
+  <li>Complete <a href="{{site.baseurl}}/install#step-5-running-tutorials-locally-with-ijulia">Step 5</a>
+    of the installation guide to ensure your system is set up to run the tutorials.</li>
 </ol>
 
 <p>
-  Looking for more examples? Check out the <a href="https://github.com/micjoswig/oscar-notebooks">polymake examples</a> and <a href="https://github.com/thofma/HeckeTutorials.jl">Hecke examples</a>.
+  Looking for more examples? Check out the
+  <a href="https://github.com/micjoswig/oscar-notebooks">polymake examples</a> and
+  <a href="https://github.com/thofma/HeckeTutorials.jl">Hecke examples</a>.
 </p>
 
 <p>
-  Want to improve or add a tutorial? See our <a href="{{site.baseurl}}/contributing#contributing-tutorials">contribution guidelines</a>.
+  Want to improve or add a tutorial? See our
+  <a href="{{site.baseurl}}/contributing#contributing-tutorials">contribution guidelines</a>.
 </p>
 
 <div class="example_box">
   {%- for component in site.data.examples_components -%}
-  {%- assign component_url = "/getting-started/tutorials/" | append: component.name | replace: " ", "" | append: "/" %}
+  {%- assign component_url = "/tutorials/" | append: component.name | replace: " ", "" | append: "/" %}
   <div class="example">
     <a style="display: block; text-align: center;"
        {% if page.url == component_url %}
-           href="{{ site.baseurl }}/getting-started/tutorials/"
+           href="{{ site.baseurl }}/tutorials/"
            style="font-weight: bold;"
        {% else %}
            href="{{ site.baseurl }}{{component_url}}#main-content"
@@ -108,4 +117,4 @@ the example, powered by <a href="https://mybinder.org">mybinder</a>.
 </div>
 </div>
 </details>
-<span class="date">Last updated on {{ site.time | date: '%d-%m-%Y' }}</span>
+<span class="date">Tutorial grid last updated on {{ site.time | date: '%B %d %Y' }}</span>

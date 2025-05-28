@@ -12,6 +12,20 @@ people:
 
     - {name: Anne Frühbis-Krüger, affiliation: Uni Oldenburg}
 
+    - {name: Tobias Schnieders, affiliation: Uni Tübingen / Saarland University}
+
+    - {name: Marco Albert, affiliation: RPTU Kaiserslautern-Landau}
+
+    - {name: Veronika Körber, affiliation: Uni Tübingen}
+
+    - {name: Stefan Lippert, affiliation: Uni Siegen}
+
+    - {name: David Schlang, affiliation: RWTH Aachen}
+
+    - {name: Ibrahim Ahmad, affiliation: RWTH Aachen}
+
+    - {name: Till Müller, affiliation: RPTU Kaiserslautern-Landau}
+
 ---
 
 {% include participants.html participants=page.people %}
