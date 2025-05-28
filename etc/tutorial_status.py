@@ -36,7 +36,7 @@ for i in jobs:
     print(f"Processing {i.name}.....")
     name = i.name.split()[-1][0:-1]
     status = i.conclusion
-    resultstring += f"{name}: {status}\n"
+    resultstring += f"'{name}': '{status}'\n"
 
 datapath = '/'.join(os.path.abspath(sys.argv[0]).split('/')[0:-2])+'/_data'
 statusfilepath = f"{datapath}/examples_status.yml"
