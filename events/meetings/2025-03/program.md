@@ -12,6 +12,8 @@ weight: 2
 The program is just a scaffold; more concrete plans may be added later or during the workshop.
 If you have suggestions or wishes, please contact the organisers.
 
+We are primarily in room 48-436, but we also have 48-419 and before lunch time also room 48-438.
+
 ### Monday
 
 - 09:00 Begin of official program, program planning
@@ -20,18 +22,18 @@ If you have suggestions or wishes, please contact the organisers.
 ### Tuesday
 
 - 09:00 Morning standup
-- 09:30 Group photo
 - 15:45 Status reports
 
 ### Wednesday
 
 - 09:00 Morning standup
+- 11:30 Group photo
 - 15:45 Status reports
-- 19:00 Dinner (TBD)
 
 ### Thursday
 
 - 09:00 Morning standup
+- 14:00 Talk: Till Müller, *"Proportions of Elements in Finite Linear Groups Moving Certain Subspaces"*
 - 15:45 Status reports
 
 ### Friday

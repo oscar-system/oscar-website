@@ -14,8 +14,9 @@ Beyond that here are a bunch of things we strongly recommend you do *before* tra
 - [Join the Oscar **slack**](https://oscar-system.org/slack)
   (a multi user chat system), familiarize yourself with it,
   and there join the `#summerschool` channel
+- Install [**git**](https://git-scm.com/downloads)
 - [Register a **GitHub** account](https://github.com/signup)
-- Install **Oscar** [via our install instruction]({{site.baseurl}}/install/)
+- Install **Oscar** [via our install instruction]({{site.baseurl}}/install/), or if you have it already installed, update to the latest **Oscar** version [via our upgrade instruction]({{site.baseurl}}/upgrade/).
 - If you do *not* have a favorite programming editor with Julia syntax highlighting:
     - install [**Visual Studio Code**](https://code.visualstudio.com)
     - install the ["Julia" plugin](https://marketplace.visualstudio.com/items?itemName=julialang.language-julia)

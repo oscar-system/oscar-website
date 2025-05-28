@@ -24,8 +24,8 @@ To contribute source code, fork the relevant repository from the list below and 
 
 ## Contributing Tutorials
 
-1. Create a jupyter notebook with the desired content.
+1. Create a Jupyter notebook with the desired content.
 2. Place this notebook in a github repository of your choice.
-3. Send the link to this jupyter notebook to [Martin Bies](https://martinbies.github.io/).
+3. Send the link to this Jupyter notebook to [Martin Bies](https://martinbies.github.io/).
 
 Tutorial authors are responsible for keeping their tutorials compatible with the latest stable OSCAR release.

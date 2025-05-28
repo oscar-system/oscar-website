@@ -4,15 +4,16 @@
   <div class="container">
     <div class="sidebar-about">
       <a href="{{ site.baseurl }}/">
-        <img class="sidebar-image" src="{{ site.baseurl }}/public/OSCAR_logo.png" alt="OSCAR Symbolic Tools" />
+        <img class="sidebar-image" src="{{ site.baseurl }}/public/OSCAR-Logo.svg" alt="OSCAR Symbolic Tools" />
       </a>
-      <p class="lead">The OSCAR Project</p>
-      <hr>
     </div>
 
     <nav class="sidebar-nav">
+
       {% for item in site.data.sidebar %}
-        {% if item.submenu %}
+        {% if item.spacer %}
+          <div style="margin-top: 0.7em;"></div>
+        {% elsif item.submenu %}
         <div class="sidebar-nav-item {% if page.url == item.url %}active{% endif %}">
           <details {% if page.url contains item.url %}open{% endif %}>
             <summary class="nav">

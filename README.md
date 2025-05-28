@@ -12,11 +12,27 @@
 ## How to contribute
 
 Fork this repository on GitHub, and provide a Pull Request to it.
-To test your changes locally, run
-```
-jekyll serve
-```
-in the main directory.
+
+
+## Testing the website locally
+
+For larger changes, it is useful to build a local version of the GAP
+website first. This requires use of [Jekyll](https://jekyllrb.com). We
+recommend using Ruby's `bundler`. This can be installed on Debian or
+Ubuntu via `apt-get install bundler`. Then as a one-time setup, run
+
+    bundle config set --local path 'vendor/bundle'
+    bundle install
+
+Afterwards, you can build a version of the website and open a local
+webserver to test it by entering
+
+    bundle exec jekyll serve
+
+after which you can open <http://localhost:4000> in a web browser to see
+a preview of the page. For more information on using Jekyll, please
+consult the [Jekyll documentation](https://jekyllrb.com/docs/).
+
 
 ## How to contribute a News post
 

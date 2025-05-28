@@ -14,9 +14,9 @@ Redirect temp /school https://www.oscar-system.org/events/meetings/2025-09/
 
 # redirects after website revamp in PR #415
 RedirectMatch permanent ^/meetings/(.*) https://www.oscar-system.org/events/meetings/$1
-RedirectMatch temp ^/install/(.*) https://www.oscar-system.org/getting-started/install/$1
-RedirectMatch temp ^/tutorials/(.*) https://www.oscar-system.org/getting-started/tutorials/$1
-RedirectMatch temp ^/documentation/(.*) https://www.oscar-system.org/getting-started/documentation/$1
+RedirectMatch temp ^/getting-started/install/(.*) https://www.oscar-system.org/install/$1
+RedirectMatch temp ^/getting-started/tutorials/(.*) https://www.oscar-system.org/tutorials/$1
+RedirectMatch temp ^/getting-started/documentation/(.*) https://www.oscar-system.org/documentation/$1
 RedirectMatch temp ^/community/(.*) https://www.oscar-system.org/contact-and-support/$1
 RedirectMatch permanent ^/credits/$ https://www.oscar-system.org/credits/software-credits/
 RedirectMatch permanent ^/contributors/$ https://www.oscar-system.org/credits/contributors/
