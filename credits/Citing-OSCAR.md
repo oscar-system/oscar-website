@@ -22,7 +22,7 @@ If you are using **BibTeX**, you can use the following BibTeX entries:
 @misc{OSCAR,
   key          = {OSCAR},
   organization = {The OSCAR Team},
-  title        = {{OSCAR} -- {O}pen {S}ource {C}omputer {A}lgebra {R}esearch system, {V}ersion {{ site.data.release.version }}},
+  title        = {O{SCAR} -- {O}pen {S}ource {C}omputer {A}lgebra {R}esearch system, {V}ersion {{ site.data.release.version }}},
   year         = { {{- site.data.release.year }}},
   url          = {https://www.oscar-system.org},
 }
