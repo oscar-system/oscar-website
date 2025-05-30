@@ -15,6 +15,10 @@ auth = Auth.Token(API_KEY)
 
 g = Github(auth=auth)
 
+ownpath = os.path.abspath(sys.argv[0])
+repopath = os.path.dirname(os.path.dirname(ownpath))
+datapath = repopath +'/_data'
+
 try:
     print("Trying to get jobs.......")
     # anything that calls out to a network, and might face a transient error
@@ -38,7 +42,6 @@ for i in jobs:
     status = i.conclusion
     resultstring += f"'{name}': '{status}'\n"
 
-datapath = '/'.join(os.path.abspath(sys.argv[0]).split('/')[0:-2])+'/_data'
 statusfilepath = f"{datapath}/examples_status.yml"
 
 if len(resultstring) > 0:

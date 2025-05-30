@@ -17,10 +17,11 @@ auth = Auth.Token(API_KEY)
 
 g = Github(auth=auth)
 
-if os.getcwd().split('/')[-1] == 'etc':
-    ogfile = yaml.safe_load(open("../_data/examples.yml"))
-else:
-    ogfile = yaml.safe_load(open("_data/examples.yml"))
+ownpath = os.path.abspath(sys.argv[0])
+repopath = os.path.dirname(os.path.dirname(ownpath))
+datapath = repopath +'/_data'
+
+ogfile = yaml.safe_load(open(f"{datapath}/examples.yml"))
 
 for i in range(len(ogfile)):
 
@@ -41,7 +42,6 @@ for i in range(len(ogfile)):
     d = dt.date().strftime("%B %d, %Y")
     ogfile[i]['date'] = d
 
-datapath = '/'.join(os.path.abspath(sys.argv[0]).split('/')[0:-2])+'/_data'
 outfilepath = f"{datapath}/examples_with_updated_last_modified.yml"
 
 with open(outfilepath, 'w') as outfile:
