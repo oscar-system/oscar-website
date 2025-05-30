@@ -8,7 +8,7 @@ people who need to troubleshoot it or migrate it to a new host.
 To ensure the required software is installed on the server, run this
 (assuming a Debian or Ubuntu based environment):
 
-    apt install git bundler curl jq
+    apt install git bundler python3
 
 
 ## Where it is
@@ -52,6 +52,12 @@ with the actual secret key taking the place of `MY_SECRET`. The same value
 must be entered in the GitHub settings at
 <https://github.com/oscar-system/oscar-website/settings/hooks>.
 
+
+## Github API
+
+Python scripts use the github API, and require an API key for authentication. This API key is
+fetched at runtime from the environment variable `API_KEY`. This variable is set in the unit file
+at `~/.config/systemd/user/oscar-website.service`.
 
 ## Troubleshooting
 
