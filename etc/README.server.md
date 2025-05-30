@@ -59,6 +59,11 @@ The Python scripts in `etc/` use the Github API, and require an API key for auth
 fetched at runtime from the environment variable `API_KEY`. This variable is set in the unit file
 at `~/.config/systemd/user/oscar-website.service`.
 
+These API keys are Github Fine-Grained Personal Access Tokens. These can be generated at
+https://github.com/settings/personal-access-tokens .
+
+TODO : which exact permissions are required in the fine grained tokens ?
+
 ## Troubleshooting
 
 The following assumes you are logged in as root (resp. used `sudo` to become root)
