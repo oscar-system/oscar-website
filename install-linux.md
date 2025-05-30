@@ -50,16 +50,17 @@ and requires that you have permissions to administer your computer):
 sudo dnf install gcc-c++ make
 ```
 
+
 ## Step 2: Install Julia
 
 <div class="message">
    <strong>WARNING:</strong>
    Linux users should generally <strong>not</strong> install the Julia version
-   provided by their package manager (e.g., `apt`, `pacman`, `dnf`, `homebrew`, ...), as in many cases,
+   provided by their package manager (e.g., `apt`, `pacman`, `dnf`, ...), as in many cases,
    these Julia version are either outdated, or crippled, or both.
 </div>
 
-*OSCAR* requires [Julia](https://julialang.org) 1.6.0 or higher. We recommend using the latest stable release of Julia as follows:
+*OSCAR* requires [Julia](https://julialang.org) 1.6.0 or higher. We recommend installing the latest stable release of Julia by entering the following in a terminal and heeding the instructions it shows:
 ```sh
 curl -fsSL https://install.julialang.org | sh
 ```
@@ -67,7 +68,7 @@ curl -fsSL https://install.julialang.org | sh
 
 ## Step 3: Install OSCAR
 
-1. Open the Julia REPL in your terminal.
+1. Open the Julia REPL in your terminal by typing the following:
    ```bash
    julia
    ```
@@ -76,7 +77,6 @@ curl -fsSL https://install.julialang.org | sh
    using Pkg
    Pkg.add("Oscar")
    ```
-
 
 
 ## Step 4: Start OSCAR
@@ -94,12 +94,12 @@ julia> using Oscar
 
 ## Step 5: Running Tutorials Locally with IJulia
 
-1. Install *IJulia* (and jupyter) by running the following command inside your Julia REPL:
+1. Install *IJulia* (and Jupyter) by running the following command inside your Julia REPL:
 ```julia
 using Pkg; Pkg.add("IJulia")
 ```
 For more details, refer to the [installation guide](https://julialang.github.io/IJulia.jl/stable/manual/installation/). If you encounter issues, you may need to explicitly build IJulia. Troubleshooting info can be found on the [IJulia troubleshooting page](https://julialang.github.io/IJulia.jl/stable/manual/troubleshooting/).
-2. Download the tutorial of your interested from the [list of available OSCAR tutorials]({{site.baseurl }}/tutorials).
+2. Download the tutorial of your interest from the [list of available OSCAR tutorials]({{site.baseurl }}/tutorials).
 3. Start Jupyter by running the following in your Julia REPL:
 ```julia
 using IJulia; notebook()
