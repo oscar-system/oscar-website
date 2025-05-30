@@ -16,7 +16,6 @@ if API_KEY == None:
 auth = Auth.Token(API_KEY)
 
 g = Github(auth=auth)
-failed=False
 
 if os.getcwd().split('/')[-1] == 'etc':
     ogfile = yaml.safe_load(open("../_data/examples.yml"))

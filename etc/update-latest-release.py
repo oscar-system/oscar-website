@@ -15,7 +15,6 @@ if API_KEY == None:
 auth = Auth.Token(API_KEY)
 
 g = Github(auth=auth)
-failed=False
 
 try:
     repo = g.get_repo("oscar-system/Oscar.jl")
@@ -26,9 +25,8 @@ except Exception as e:
     print("Leaving the release file unchanged!")
     exit()
 
-if not failed:
-    dt = release.created_at
-    version = release.title[1:]
+dt = release.created_at
+version = release.title[1:]
 
 releasestring = f"version: '{version}'\nyear: '{dt.year}'\nmonth: '{dt.month}'\nday: '{dt.day}'\ndate: {dt.date()}\n"
 

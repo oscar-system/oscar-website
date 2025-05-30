@@ -1,5 +1,5 @@
 #!/bin/sh
-set -e
+set -ex
 
 # fetch latest changes
 cd /srv/www/www-mathe-oscar/data/oscar-website/
@@ -16,29 +16,17 @@ bundle install
 
 # use the venv defined in .venv
 if [ ! -d ".venv" ]; then
-    echo "venv directory not found, initializing..."
     python3 -m venv .venv
-    echo "done!"
 fi
-echo "Activating venv..."
 source .venv/bin/activate
 
 # install requirements for the python scripts
-echo "Installing python pre requisites..."
 python3 -m pip install -r etc/requirements.txt
 
 # get tutorial status
-echo "Getting tutorial status....."
-./etc/tutorial_status.py
-echo "Done!"
-# get tutorial last modified dates
-echo "Getting tutorial last modified dates......."
-./etc/update-dates.py
-echo "Done!"
-# update version info
-echo "Getting OSCAR version info......."
-./etc/update-latest-release.py
-echo "Done!"
+./etc/tutorial_status.py || :
+./etc/update-dates.py || :
+./etc/update-latest-release.py || :
+
 # run jekyll
-echo "Running jekyl......."
 bundle exec jekyll build --config _config.yml,_config_production.yml -d /srv/www/www-mathe-oscar/data/http
