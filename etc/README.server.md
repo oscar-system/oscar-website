@@ -55,14 +55,15 @@ must be entered in the GitHub settings at
 
 ## Github API
 
-The Python scripts in `etc/` use the Github API, and require an API key for authentication. This API key is
-fetched at runtime from the environment variable `API_KEY`. This variable is set in the unit file
-at `~/.config/systemd/user/oscar-website.service`.
+The Python scripts in `etc/` use the Github API, and require an API key for
+authentication. This API key is fetched at runtime from the environment
+variable `API_KEY`. This variable is set in the unit file at
+`~/.config/systemd/user/oscar-website.service`.
 
-These API keys are Github Fine-Grained Personal Access Tokens. These can be generated at
-https://github.com/settings/personal-access-tokens .
+These API keys are Github fine-grained personal access tokens. These can be
+generated at <https://github.com/settings/personal-access-tokens>.
 
-TODO : which exact permissions are required in the fine grained tokens ?
+TODO: which exact permissions are required in the fine grained tokens?
 
 ## Troubleshooting
 
