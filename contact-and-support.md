@@ -24,6 +24,8 @@ To report a bug or issue, submit it to our [GitHub issue tracker](https://github
 For public and permanent discussions, use our [GitHub discussion forum](https://github.com/oscar-system/Oscar.jl/discussions). This is a great place for general questions and in-depth discussions. A free [GitHub account](https://github.com) is required to participate.  
 
 
-### Mailing List
+### Mailing Lists
 
-OSCAR events -- and seldomly technical developments -- are announced via a low-traffic mailing list `oscar-dev`. To join this mailing list, visit <https://mail.mathematik.uni-kl.de/mailman/listinfo/oscar-dev> and follow the instructions there.
+* Newsletter: To receive updates about OSCAR, including new releases and important announcements, subscribe to our [newsletter](https://oscar-system.org/newsletter). This is a low-traffic mailing list.
+
+* OSCAR events -- and seldomly technical developments -- are announced via a low-traffic mailing list `oscar-dev`. To join this mailing list, visit <https://mail.mathematik.uni-kl.de/mailman/listinfo/oscar-dev> and follow the instructions there.
