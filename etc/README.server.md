@@ -55,7 +55,7 @@ must be entered in the GitHub settings at
 
 ## Github API
 
-Python scripts use the github API, and require an API key for authentication. This API key is
+The Python scripts in `etc/` use the Github API, and require an API key for authentication. This API key is
 fetched at runtime from the environment variable `API_KEY`. This variable is set in the unit file
 at `~/.config/systemd/user/oscar-website.service`.
 
