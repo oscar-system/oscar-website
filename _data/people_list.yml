@@ -97,6 +97,13 @@
   paid_by_dfg: true
   status: active
 
+- name: Janko Böhm
+  affiliation: University of Kaiserslautern-Landau
+  email: boehm@mathematik.uni-kl.de
+  github: jankoboehm
+  website: https://agag-jboehm.math.rptu.de/~boehm/
+  status: active
+
 - name: Alexander Demin
   affiliation: HSE University
   email: asdemin_2@edu.hse.ru
@@ -161,6 +168,11 @@
   email: jordan@math.tu-berlin.de
   github: alexej-jordan
   website: https://www.tu.berlin/dmg/ueber-uns/team
+  status: active
+
+- name: Thomas Kahle
+  email: thomas.kahle@jpberlin.de
+  github: tom111
   status: active
 
 - name: Lars Kastner
@@ -443,13 +455,6 @@
   email: tbrysiew@uwo.ca
   github: tbrysiewicz
   website: https://sites.google.com/view/taylorbrysiewicz/home
-  status: retired
-
-- name: Janko Böhm
-  affiliation: University of Kaiserslautern-Landau
-  email: boehm@mathematik.uni-kl.de
-  github: jankoboehm
-  website: https://agag-jboehm.math.rptu.de/~boehm/
   status: retired
 
 - name: Andrei Comaneci
