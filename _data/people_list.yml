@@ -104,13 +104,6 @@
   website: https://agag-jboehm.math.rptu.de/~boehm/
   status: active
 
-- name: Alexander Demin
-  affiliation: HSE University
-  email: asdemin_2@edu.hse.ru
-  github: sumiya11
-  website: https://sumiya11.github.io/
-  status: active
-
 - name: Berenike Dieterle
   affiliation: University of Kaiserslautern-Landau
   email: dieterle@mathematik.uni-kl.de
@@ -462,6 +455,13 @@
   email: comenaci@math.tu-berlin.de
   github: andreicomaneci
   website: https://page.math.tu-berlin.de/~comaneci/
+  status: retired
+
+- name: Alexander Demin
+  affiliation: HSE University
+  email: asdemin_2@edu.hse.ru
+  github: sumiya11
+  website: https://sumiya11.github.io/
   status: retired
 
 - name: Alexander Dinges
