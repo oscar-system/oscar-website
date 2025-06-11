@@ -20,3 +20,4 @@ RedirectMatch temp ^/getting-started/documentation/(.*) https://www.oscar-system
 RedirectMatch temp ^/community/(.*) https://www.oscar-system.org/contact-and-support/$1
 RedirectMatch permanent ^/credits/$ https://www.oscar-system.org/credits/software-credits/
 RedirectMatch permanent ^/contributors/$ https://www.oscar-system.org/credits/contributors/
+RedirectMatch permanent ^/contributors$ https://www.oscar-system.org/credits/contributors/
