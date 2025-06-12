@@ -37,10 +37,10 @@
 - title: "Credits"
   url: "/credits/"
   submenu:
+    - title: "Software"
+      url: "/credits/software-credits/"  
     - title: "People"
       url: "/credits/contributors/"
-    - title: "Software"
-      url: "/credits/software-credits/"
     - title: "Bibliography"
       url: "/credits/bibliography/"
     - title: "Citing OSCAR"
