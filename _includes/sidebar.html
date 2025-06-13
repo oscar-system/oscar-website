@@ -9,12 +9,16 @@
     </div>
 
     <nav class="sidebar-nav">
-
+      <div class="sidebar-nav-item {% if page.url == '/' %}active{% endif %}">
+        <a href="{{site.baseurl}}/" class="sidebar-nav-link">
+          Home
+        </a>
+    </div>
       {% for item in site.data.sidebar %}
         {% if item.spacer %}
           <div style="margin-top: 0.7em;"></div>
         {% elsif item.submenu %}
-        <div class="sidebar-nav-item {% if page.url == item.url %}active{% endif %}">
+        <div class="sidebar-nav-item {% if page.url contains item.url %}active{% endif %}">
           <details {% if page.url contains item.url %}open{% endif %}>
             <summary class="nav">
               <a href="{{ site.baseurl}}{{ item.url }}" class="sidebar-nav-link">
@@ -34,7 +38,7 @@
           </details>
         </div>
           {% else %}
-          <div class="sidebar-nav-item {% if page.url == item.url %}active{% endif %}">
+          <div class="sidebar-nav-item {% if page.url contains item.url %}active{% endif %}">
           <a href="{{ site.baseurl}}{{ item.url }}" class="sidebar-nav-link">
             {{ item.title }}
           </a>

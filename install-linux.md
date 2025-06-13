@@ -1,19 +1,20 @@
 ---
 layout: page
+permalink: /install/linux/
 ---
 
 <div class="platform-tabs">
   <input type="radio" id="mac" name="platform">
-  <label for="mac" onclick="window.location.href='{{site.baseurl}}/install-mac/'">Mac</label>
+  <label for="mac" onclick="window.location.href='{{site.baseurl}}/install/mac/'">Mac</label>
 
   <input type="radio" id="windows" name="platform">
-  <label for="windows" onclick="window.location.href='{{site.baseurl}}/install-win/'">Windows</label>
+  <label for="windows" onclick="window.location.href='{{site.baseurl}}/install/win/'">Windows</label>
 
   <input type="radio" id="linux" name="platform" checked>
-  <label for="linux" onclick="window.location.href='{{site.baseurl}}/install-linux/'">Linux</label>
+  <label for="linux" onclick="window.location.href='{{site.baseurl}}/install/linux/'">Linux</label>
 
   <input type="radio" id="other" name="platform">
-  <label for="other" onclick="window.location.href='{{site.baseurl}}/install-generic/'">Other</label>
+  <label for="other" onclick="window.location.href='{{site.baseurl}}/install/generic/'">Other</label>
 </div>
 
 
