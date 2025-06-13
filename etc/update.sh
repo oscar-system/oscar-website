@@ -21,7 +21,7 @@ fi
 . .venv/bin/activate
 
 # install requirements for the python scripts
-python3 -m pip install -r etc/requirements.txt
+python3 -m pip install --upgrade -r etc/requirements.txt
 
 # get tutorial status
 ./etc/tutorial_status.py || :
