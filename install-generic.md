@@ -1,6 +1,6 @@
 ---
 layout: page
-permalink: /install/generic
+permalink: /install/generic/
 ---
 
 <div class="platform-tabs">
