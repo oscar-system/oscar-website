@@ -1,6 +1,6 @@
 ---
 layout: page
-permalink: /install/win
+permalink: /install/win/
 ---
 
 <div class="platform-tabs">
