@@ -1,3 +1,8 @@
+- name: FTheoryTools: Advancing Computational Capabilities for F-Theory Research
+  url: https://arxiv.org/abs/2506.13849
+  authors: Martin Bies,  Miķelis E. Miķelsons, Andrew P. Turner
+  month: June
+  year: 2025
 - name: K3 surfaces of any Artin-Mazur height over F5 and F7 via Quasi-F-split singularities and gpu acceleration
   url: https://arxiv.org/pdf/2502.12428
   authors: Ryan Batubara, Jack J. Garzella, Alex Pan
