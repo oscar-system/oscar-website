@@ -342,10 +342,6 @@
   website: https://math.rptu.de/ags/agag/personen/mitglieder
   status: active
 
-- name: Linus Sommer
-  github: linus-md
-  status: active
-
 - name: Wiken Steiner
   affiliation: University of Siegen
   github: wfsteiner
@@ -660,6 +656,10 @@
   github: CarloSircana
   status: retired
   comment: PhD student of Claus Fieker
+
+- name: Linus Sommer
+  github: linus-md
+  status: retired
 
 - name: Justus Springer
   affiliation: Universität Tübingen
