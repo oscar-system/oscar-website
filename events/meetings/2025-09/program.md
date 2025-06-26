@@ -5,6 +5,9 @@ meeting: true
 meeting_nr: 202509
 ---
 
+* Preparation:
+  - please follow the [preparation instructions](../prepare) before your arrive
+  - Virtual office hour: Thursday, September 11, starting 10:00
 * Start: Monday, September 15
   - arrival Monday morning, rooms are open starting 10:00
   - program will after lunch
