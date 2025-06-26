@@ -21,6 +21,12 @@ Beyond that here are a bunch of things we strongly recommend you do *before* tra
     - install [**Visual Studio Code**](https://code.visualstudio.com)
     - install the ["Julia" plugin](https://marketplace.visualstudio.com/items?itemName=julialang.language-julia)
 
+On **Thursday, 11 September 2025**, we will offer a "virtual office
+hour" starting at 10:00. There we will be available to help you with any
+problems you may have with the above preparations. Details will be made
+available shortly before.
+
+
 <!-- 
 
 Optionally, also do this:
