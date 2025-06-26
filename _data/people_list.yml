@@ -149,13 +149,6 @@
   github: oskarhenriksson
   status: active
 
-- name: Ben Hollering
-  affiliation: TU Munich
-  email: benhollering@gmail.com
-  github: bkholler
-  website: https://sites.google.com/view/benhollering
-  status: active
-
 - name: Alexej Jordan
   affiliation: TU Berlin
   email: jordan@math.tu-berlin.de
@@ -538,6 +531,13 @@
   affiliation: University of Siegen
   github: heiderich
   website: https://www.heiderich.org/math/
+  status: retired
+
+- name: Ben Hollering
+  affiliation: TU Munich
+  email: benhollering@gmail.com
+  github: bkholler
+  website: https://sites.google.com/view/benhollering
   status: retired
 
 - name: Fredrik Johansson
