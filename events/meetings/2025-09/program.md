@@ -16,36 +16,72 @@ meeting_nr: 202509
 
 ## Schedule
 
-The schedule is not yet ready.
+The schedule will be adjusted as we go along during the week. The idea is
+to be flexible, and adjust to your actual needs and interests as we go.
+Exercises can also be used to work on your personal OSCAR specific
+interests with support by the organizers.
 
-<!--
+<style>
+ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+</style>
 
-The schedule will be adjusted as we go along, so please watch out for changes.
+### Monday, September 15
+- 12:00 Lunch
+- 13:30 Getting started with Julia/Oscar/Editors etc.
+- 14:00 Guided session: **First steps with OSCAR** (with a focus on mathematical problems)
+- 15:30 Coffee break
+- 16:00 Exercises
+- 18:00 Dinner
+- 19:30 ⚡ Lightning️ Round of Introductions
+   - *be ready to state your name, affiliation, math interests
+       and why you need OSCAR in under 30 seconds 😁*
 
-### Monday, September 6
-  - 09:00 Time to install stuff, try Gather.town, socialize, ...
-  - 12:30 Lunch break
-  - 16:30 Evening standup
+### Tuesday, September 16
+- 08:00 Breakfast
+- 09:00 Guided session: **Exploring more of OSCAR's functionality (structure/subsystems)**
+- 10:30 Coffee break
+- 11:00 Exercises
+- 12:00 Lunch
+- 14:00 Guided session: **Introduction to version control with Git**
+- 15:30 Coffee break
+- 16:00 Exercises
+- 18:00 Dinner
 
-### Tuesday, September 7
-  - 09:00 Morning standup
-  - 12:30 Lunch break
-  - 16:30 Evening standup
+### Wednesday, September 17
+- 08:00 Breakfast
+- 09:00 Guided session: **Development workflows with Julia**
+- 10:30 Coffee break
+- 11:00 Exercises
+- 12:00 Lunch
+- 14:00 Guided session: **First steps to writing your own OSCAR functions**
+- 15:30 Coffee break
+- 16:00 Exercises
+- 18:00 Dinner
 
-### Wednesday, September 8
-  - 09:00 Morning standup
-  - 12:30 Lunch break
-  - 16:30 Evening standup
+### Thursday, September 18
+- 08:00 Breakfast
+- 09:00 Unguided Session: **Getting familiar with *your* mathematics in OSCAR**
+  - free or along e.g. tutorials
+  - will be planned with you earlier during the week
+- 10:30 Coffee break
+- 11:00 **Effective online communication**
+    - Asking questions via Slack or GitHub
+    - [How To Ask Questions The Smart Way](http://www.catb.org/~esr/faqs/smart-questions.html),
+      avoiding the [XY-problem](https://xyproblem.info)
+- 12:00 Lunch
+- 14:00 Guided session: **Advanced development skills**
+    - How to not write bad code
+    - Julia optimization techniques / Profiling
+- 15:30 Coffee break
+- 16:00 Exercises
+- 18:00 Dinner
 
-### Thursday, September 9
-  - 09:00 Morning standup
-  - 12:30 Lunch break
-  - 16:30 Evening standup
-
-### Friday, September 10
-  - 09:00 Morning standup
-  - 09:30 Exercises
-  - 12:00 Final standup, summary, feedback round
-  - 13:00 End of the summer school
-
--->
+### Friday, September 19
+- 08:00 Breakfast
+- 09:00 Unguided Session: **It's your turn: Apply what you learned & ask questions**
+- 12:00 Lunch
+- 14:00 Summer School Wrap Up
+- 15:00 The End
