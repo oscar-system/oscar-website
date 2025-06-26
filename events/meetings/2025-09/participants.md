@@ -26,6 +26,12 @@ people:
 
     - {name: Till Müller, affiliation: RPTU Kaiserslautern-Landau}
 
+    - {name: Janika Peters, affiliation: RWTH Aachen}
+
+    - {name: Mattia Puddu, affiliation: RWTH Aachen}
+
+    - {name: Leon Pernak, affiliation: Universität des Saarlandes}
+
 ---
 
 {% include participants.html participants=page.people %}
