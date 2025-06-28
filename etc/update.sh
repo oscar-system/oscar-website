@@ -24,7 +24,7 @@ fi
 OUTDATED_PACKAGES_LIST=$(pip list --outdated --format json | jq -r '.[].name')
 if [ -n "$OUTDATED_PACKAGES_LIST" ]
 then
-	python3 -m pip install --upgrade "$OUTDATED_PACKAGES_LIST"
+        python3 -m pip install --upgrade $OUTDATED_PACKAGES_LIST
 fi
 python3 -m pip install --upgrade -r etc/requirements.txt
 
