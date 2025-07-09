@@ -8,7 +8,7 @@ import subprocess
 def custom_sort_function(item):
     name, _ = item
     sortweight = {"name": 0, "affiliation": 1, "email": 2, "github": 3, "website": 4,
-                  "paid_by_dfg": 5,"status": 6, "comment": 7}
+                  "paid_by_dfg": 5,"status": 6, "comment": 7, "aka": 8, "aka_email": 9}
     return sortweight[name]
 
 # Hack copied from https://github.com/yaml/pyyaml/issues/127#issuecomment-525800484
@@ -32,7 +32,7 @@ repoList = ["thofma/Hecke.jl", "oscar-system/Oscar.jl", "Nemocas/Nemo.jl",
 newcount = 0
 newList = []
 namelist = []
-newguylist = []
+newpersonlist = []
 github_newusers = []
 github_userlist = []
 API_KEY = os.getenv("API_KEY") # TODO: rename to whatever is the right env var
@@ -87,15 +87,31 @@ for repo in repoList:
                 # so github can't find a github user for the author, only for committed
                 # so we go through our list entire people list and see if we know the combination of
                 # name and email already
+                # or if the name exists in an aka
+                # or if the email exists in aka_email
                 flag = False
-                for guy in peopleList:
-                    if 'email' in guy.keys() and 'name' in guy.keys():
-                        if i[0] == guy['name'] and i[1] == guy['email']:
-                            # we know the guy, check if we know the github ID
-                            if 'github' in guy.keys() and guy['github'] != '':
-                                # we know the guy and the github, just mark guy as active
-                                github_username = guy['github']
+                for person in peopleList:
+                    if 'email' in person.keys() and 'name' in person.keys():
+                        if i[0] == person['name'] and i[1] == person['email']:
+                            # we know the person, check if we know the github ID
+                            if 'github' in person.keys() and person['github'] != '':
+                                # we know the person and the github, just mark person as active
+                                github_username = person['github']
                                 flag = True
+                        elif "aka" in person:
+                            # the person has an alias
+                            if i[0] in person["aka"]:
+                                if 'github' in person.keys() and person['github'] != '':
+                                    # we know the person and the github, just mark person as active
+                                    github_username = person['github']
+                                    flag = True
+                        elif "aka_email" in person:
+                            # the person has an alias email
+                            if i[1] in person["aka_email"]:
+                                if 'github' in person.keys() and person['github'] != '':
+                                    # we know the person and the github, just mark person as active
+                                    github_username = person['github']
+                                    flag = True
                 if not flag:
                     summarystring += f"- Github username not found for {i[0]} with email {i[1]}. Excluding from people_list.yml\n"
                     continue
@@ -114,7 +130,7 @@ for repo in repoList:
         if github_username not in names and github_username not in github_newusers:
             print("A new contributor!")
             newcount += 1
-            newguylist.append(i[0])
+            newpersonlist.append(i[0])
             print(f"{i[0]}\t{i[1]}\t{github_username}")
             github_newusers.append(github_username)
             newList.append([i[0], i[1], github_username])
@@ -128,8 +144,8 @@ github_userlist = list(set(github_userlist))
 os.chdir("..")
 retcount = 0
 revcount = 0
-retguylist = []
-revguylist = []
+retpersonlist = []
+revpersonlist = []
 for i in peopleList:
     if i['status']=='pi':
         continue
@@ -137,12 +153,12 @@ for i in peopleList:
     elif i['github'] in github_userlist:
         if i['status'] == 'retired':
             revcount += 1
-            revguylist.append(i['name'])
+            revpersonlist.append(i['name'])
         i['status'] = 'active'
     else:
         if i['status'] == 'active':
             retcount += 1
-            retguylist.append(i['name'])
+            retpersonlist.append(i['name'])
         i['status'] = 'retired'
 
 np = []
@@ -170,9 +186,9 @@ with open('../_data/people_list.yml', 'w') as outfile:
     yaml.dump(retiredlist, outfile, Dumper=MyDumper, sort_keys=False, allow_unicode=True)
 
 summarystring = f"""This PR updates the contributors list based on the latest changes.
-New contributors : {newcount} | {newguylist}
-Revived contributors : {revcount} | {revguylist}
-Newly retired contributors : {retcount} | {retguylist}
+New contributors : {newcount} | {newpersonlist}
+Revived contributors : {revcount} | {revpersonlist}
+Newly retired contributors : {retcount} | {retpersonlist}
 \nSummary Notes:\n\n"""+ summarystring
 
 with open("../summary.txt", 'w') as summaryfile:
