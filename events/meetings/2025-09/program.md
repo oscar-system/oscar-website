@@ -45,7 +45,7 @@ ul {
 - 10:30 Coffee break
 - 11:00 Exercises
 - 12:00 Lunch
-- 14:00 Guided session: **Introduction to version control with Git**
+- 14:00 Guided session: **Introduction to version control with Git and GitHub**
 - 15:30 Coffee break
 - 16:00 Exercises
 - 18:00 Dinner
