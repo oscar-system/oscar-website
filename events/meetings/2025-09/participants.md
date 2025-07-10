@@ -24,13 +24,22 @@ people:
 
     - {name: Ibrahim Ahmad, affiliation: RWTH Aachen}
 
+    - {name: Lena Hocke, affiliation: Hannover}
+
     - {name: Till Müller, affiliation: RPTU Kaiserslautern-Landau}
 
     - {name: Janika Peters, affiliation: RWTH Aachen}
 
     - {name: Mattia Puddu, affiliation: RWTH Aachen}
 
+    - {name: Silvia Properzi, affiliation: Vrije Universiteit Brussel}
+
+    - {name: TODO, affiliation: TODO}
+
     - {name: Leon Pernak, affiliation: Universität des Saarlandes}
+
+    - {name: Aaruni Kaushik, affiliation: RPTU Kaiserslautern-Landau}
+
 
 ---
 
