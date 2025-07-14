@@ -315,13 +315,6 @@
   github: Sami-Halaseh
   status: active
 
-- name: Julien Schanz
-  affiliation: Saarland University
-  email: schanz@math.uni-sb.de
-  github: julien-schanz
-  website: https://www.uni-saarland.de/lehrstuhl/weber-moritz/team/julien-schanz.html
-  status: active
-
 - name: Johannes Schmitt
   affiliation: Ruhr-Universität Bochum
   email: johannes.schmitt@ruhr-uni-bochum.de
@@ -632,6 +625,13 @@
   github: Sreevatsa2k
   status: retired
   comment: Master student of Claus Fieker as of 2024
+
+- name: Julien Schanz
+  affiliation: Saarland University
+  email: schanz@math.uni-sb.de
+  github: julien-schanz
+  website: https://www.uni-saarland.de/lehrstuhl/weber-moritz/team/julien-schanz.html
+  status: retired
 
 - name: Benjamin Schröter
   affiliation: KTH Stochkholm
