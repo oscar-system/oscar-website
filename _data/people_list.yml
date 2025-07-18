@@ -243,13 +243,6 @@
   website: https://www.math.uni-sb.de/ag/brandhorst/index.php?option=com_content&view=article&id=49:paemurru-en&catid=18&lang=en&Itemid=114
   status: active
 
-- name: Andreas Paffenholz
-  affiliation: TU Darmstadt
-  email: paffenholz@opt.tu-darmstadt.de
-  github: apaffenholz
-  website: https://www2.mathematik.tu-darmstadt.de/~paffenholz/
-  status: active
-
 - name: Janika Peters
   affiliation: RWTH Aachen University
   email: janika.peters@rwth-aachen.de
@@ -599,6 +592,13 @@
   email: muratore.g.e@gmail.com
   github: mgemath
   website: https://sites.google.com/view/giosue-muratore
+  status: retired
+
+- name: Andreas Paffenholz
+  affiliation: TU Darmstadt
+  email: paffenholz@opt.tu-darmstadt.de
+  github: apaffenholz
+  website: https://www2.mathematik.tu-darmstadt.de/~paffenholz/
   status: retired
 
 - name: Markus Pfeiffer
