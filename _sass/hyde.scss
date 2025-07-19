@@ -584,10 +584,10 @@ li.active > a {
   top: 15px;
   left: 15px;
   z-index: 1001;
-  background: #202020;
-  color: white;
-  padding: 10px 15px;
+  padding: 4px 10px;
   border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  line-height: 1;
 }
 
 .sidebar {
@@ -628,11 +628,6 @@ li.active > a {
     top: 5px;
     left: 15px;
     z-index: 1100;
-    background: #202020;
-    color: white;
-    padding: 4px 10px;
-    border-radius: 5px;
-    line-height: 1;
   }
 
   hr {
