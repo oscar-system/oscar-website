@@ -34,8 +34,6 @@ people:
 
     - {name: Silvia Properzi, affiliation: Vrije Universiteit Brussel}
 
-    - {name: TODO, affiliation: TODO}
-
     - {name: Leon Pernak, affiliation: Universität des Saarlandes}
 
     - {name: Aaruni Kaushik, affiliation: RPTU Kaiserslautern-Landau}
