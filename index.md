@@ -3,7 +3,7 @@ layout: default
 title: Home
 ---
 
-# {{ site.title }}
+<h1 class="frontpage-headline">{{ site.title }}</h1>
 
 Welcome to **OSCAR**, an innovative **Open Source Computer Algebra Research** system that powers cutting-edge computations in algebra, geometry, and number theory. Written in [Julia](https://julialang.org), OSCAR brings together powerful tools from diverse mathematical areas to tackle even the most complex computations.
 

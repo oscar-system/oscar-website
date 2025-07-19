@@ -171,3 +171,33 @@ div.borked > div.gallery_example_cards > div.item_example_card > div.item_exampl
   margin-top: 1em;
   font-style: italic;
 }
+
+
+// OSCAR logo on front page in "smartphone mode"
+.topcontent-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1em;
+  margin-bottom: 0em;
+  height: 5em;
+}
+
+.frontpage-headline {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .topcontent-image {
+    display: none;
+  }
+
+  .frontpage-headline {
+    display: block;
+  }
+
+  .content {
+    padding-top:    2rem;
+    padding-bottom: 2rem;
+  }
+}
