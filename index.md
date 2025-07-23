@@ -3,10 +3,6 @@ layout: default
 title: Home
 ---
 
-<div class="github-ribbon">
-  <a target="_blank" href="https://github.com/oscar-system/Oscar.jl/">Go to the code repository</a>
-</div>
-
 # {{ site.title }}
 
 Welcome to **OSCAR**, an innovative **Open Source Computer Algebra Research** system that powers cutting-edge computations in algebra, geometry, and number theory. Written in [Julia](https://julialang.org), OSCAR brings together powerful tools from diverse mathematical areas to tackle even the most complex computations.
