@@ -200,6 +200,13 @@
   website: https://sites.google.com/view/dantelubermath/home
   status: active
 
+- name: Eoin Mackall
+  affiliation: University of California, Santa Cruz
+  email: eoinmackall@gmail.com
+  github: eoinmackall
+  website: https://eoinmackall.github.io/
+  status: active
+
 - name: MarieKaltoft
   github: MarieKaltoft
   status: active
@@ -387,13 +394,6 @@
   email: zach@rptu.de
   github: HechtiDerLachs
   website: https://math.rptu.de/ags/agag/personen/mitglieder
-  status: active
-
-- name: Eoin Mackall
-  affiliation: University of California, Santa Cruz
-  email: eoinmackall@gmail.com
-  github: eoinmackall
-  website: https://eoinmackall.github.io/
   status: active
 
 ######################
