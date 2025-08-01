@@ -389,9 +389,11 @@
   website: https://math.rptu.de/ags/agag/personen/mitglieder
   status: active
 
-- name: eoinmackall
+- name: Eoin Mackall
+  affiliation: University of California, Santa Cruz
   email: eoinmackall@gmail.com
   github: eoinmackall
+  website:  https://eoinmackall.github.io/
   status: active
 
 ######################
