@@ -1,9 +1,10 @@
 ---
 layout: page
-title: Publications citing OSCAR
+title: Bibliography
 ---
 
-Below is an incomplete list of publications citing OSCAR. A more complete list is avaiable [here](https://zbmath.org/?q=si:36845).
+> This is a curated selection of OSCAR-related publications, not a complete list.
+> If you know of an important work that should be included, please see the [Contributing Publications]({{site.baseurl}}/contributing/#contributing-publications) section for details.
 
 <ul>
   {% for p in site.data.OSCAR-credits %}
