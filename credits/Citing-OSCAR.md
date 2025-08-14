@@ -3,7 +3,7 @@ layout: page
 title: Citing OSCAR
 ---
 
-If you have used **OSCAR v{{ site.data.release.version }}** in your research, please cite it using the following format:
+If you have used **OSCAR v{{ site.data.release.version }}** in your research, please cite it using the following format, preferably including both citations:
 
 ```md
 [OSCAR]
