@@ -186,6 +186,13 @@
   status: active
   comment: Former master student of Max Horn
 
+- name: Lukas Kühne
+  affiliation: Bielefeld University
+  email: lukas.kuehne@math.uni-bielefeld.de
+  github: LukasKuehne
+  website: https://www.math.uni-bielefeld.de/~lkuehne/
+  status: active
+
 - name: Benjamin Lorenz
   affiliation: TU Berlin
   email: lorenz@math.tu-berlin.de
@@ -558,13 +565,6 @@
   website: https://math.dartmouth.edu/~akulkarn/index.html
   status: retired
   comment: Who ?
-
-- name: Lukas Kühne
-  affiliation: Bielefeld University
-  email: lukas.kuehne@math.uni-bielefeld.de
-  github: LukasKuehne
-  website: https://www.math.uni-bielefeld.de/~lkuehne/
-  status: retired
 
 - name: Nando Leijenhorst
   affiliation: Delft University of Technology
