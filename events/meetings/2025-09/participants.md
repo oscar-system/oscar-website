@@ -38,6 +38,13 @@ people:
 
     - {name: Aaruni Kaushik, affiliation: RPTU Kaiserslautern-Landau}
 
+    - {name: Hannah Wagmann, affiliation: Saarland University}
+    - {name: Leo Emmerich, affiliation: Universität des Saarlandes}
+    - {name: Yichen Tong, affiliation: RPTU Kaiserslautern-Landau}
+    - {name: Leonie Scheeren, affiliation: RWTH Aachen}
+    - {name: Yannic Rohde, affiliation: RWTH Aachen}
+    - {name: Sebastian Engelhardt, affiliation: Universität des Saarlandes}
+    - {name: Luca Remke, affiliation: Universität Stuttgart}
 
 ---
 
