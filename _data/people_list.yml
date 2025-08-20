@@ -317,11 +317,6 @@
   status: active
   comment: Associated with Anne Fruhbig Kruger as of 2024
 
-- name: Sami-Halaseh
-  email: samihalaseh14@pm.me
-  github: Sami-Halaseh
-  status: active
-
 - name: Johannes Schmitt
   affiliation: Ruhr-Universität Bochum
   email: johannes.schmitt@ruhr-uni-bochum.de
@@ -624,6 +619,11 @@
   email: raum@chalmers.se
   github: martinra
   website: https://www.raum-brothers.eu/martin/
+  status: retired
+
+- name: Sami-Halaseh
+  email: samihalaseh14@pm.me
+  github: Sami-Halaseh
   status: retired
 
 - name: Sreevatsa Sasisekar
