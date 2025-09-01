@@ -45,6 +45,7 @@ people:
     - {name: Yannic Rohde, affiliation: RWTH Aachen}
     - {name: Sebastian Engelhardt, affiliation: Universität des Saarlandes}
     - {name: Luca Remke, affiliation: Universität Stuttgart}
+    - {name: Reinder Meinsma, affiliation: Universität des Saarlandes}
 
 ---
 
