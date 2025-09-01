@@ -179,13 +179,6 @@
   github: KilianBruns
   status: active
 
-- name: Markus Kurtz
-  affiliation: University of Kaiserslautern-Landau
-  email: kurtz@mathematik.uni-kl.de
-  github: mgkurtz
-  status: active
-  comment: Former master student of Max Horn
-
 - name: Lukas Kühne
   affiliation: Bielefeld University
   email: lukas.kuehne@math.uni-bielefeld.de
@@ -360,10 +353,6 @@
   email: vecchia@math.tu-berlin.de
   github: antonydellavecchia
   website: https://antonydellavecchia.github.io/
-  status: active
-
-- name: Sebastian Volz
-  github: sebvz777
   status: active
 
 - name: Marcel Wack
@@ -561,6 +550,13 @@
   status: retired
   comment: Who ?
 
+- name: Markus Kurtz
+  affiliation: University of Kaiserslautern-Landau
+  email: kurtz@mathematik.uni-kl.de
+  github: mgkurtz
+  status: retired
+  comment: Former master student of Max Horn
+
 - name: Nando Leijenhorst
   affiliation: Delft University of Technology
   email: n.m.leijenhorst@tudelft.nl
@@ -717,6 +713,10 @@
 - name: Laura Voggesberger
   affiliation: Ruhr-Universität Bochum
   github: voggesbe
+  status: retired
+
+- name: Sebastian Volz
+  github: sebvz777
   status: retired
 
 - name: Lena Weis
