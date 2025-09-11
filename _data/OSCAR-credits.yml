@@ -1,8 +1,13 @@
+- name: Computations in equivariant Gromov-Witten theory of GKM spaces
+  url: https://arxiv.org/abs/2509.07562
+  authors: Daniel Holmes, Giosuè Muratore
+  month: Sep.
+  year: 2025
 - name: Finite groups of symplectic birational transformations of IHS manifolds of OG10 type
   url: https://doi.org/10.1017/fms.2025.10077
   authors: Lisa Marquand, Stevell Muller
   journal: Forum of Mathematics, Sigma
-  volue: 13
+  volume: 13
   month: July
   year: 2025
 - name: FTheoryTools Advancing Computational Capabilities for F-Theory Research
@@ -47,10 +52,12 @@
   month: June
   year: 2024
 - name: An arithmetic count of osculating lines
-  url: https://arxiv.org/pdf/2312.12129
+  url: https://nyjm.albany.edu/j/2024/30-72.html
   authors: Giosuè Muratore
-  month: Dec.
-  year: 2023
+  journal: New York Journal of Mathematics
+  volume: 30
+  month: Nov.
+  year: 2024
 - name: Algebraic and geometric computations in OSCAR
   url: https://sinews.siam.org/Details-Page/algebraic-and-geometric-computations-in-oscar
   authors: Mara Belotti, Michael Joswig, Chiara Meroni, Victoria Schleis, Johannes Schmitt
@@ -59,10 +66,12 @@
   month: Sept.
   year: 2023
 - name: Computations of Gromov-Witten invariants of toric varieties
-  url: https://arxiv.org/abs/2309.03741
+  url: https://doi.org/10.1016/j.jsc.2024.102330
   authors: Giosuè Muratore
-  month: Sept.
-  year: 2023
+  journal: Journal of Symbolic Computation
+  volume: 125
+  month: Apr.
+  year: 2024
 - name: On $\mathbb{Q}$-factorial terminalizations of symplectic linear quotient singularities
   url: https://doi.org/10.26204/KLUEDO/7351
   authors: Johannes Schmitt
