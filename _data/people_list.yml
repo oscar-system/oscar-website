@@ -207,10 +207,6 @@
   website: https://eoinmackall.github.io/
   status: active
 
-- name: MarieKaltoft
-  github: MarieKaltoft
-  status: active
-
 - name: Mikelis Emils Mikelsons
   affiliation: University of Kaiserslautern-Landau
   email: mikelis.emils.mikelsons@gmail.com
@@ -562,6 +558,10 @@
   email: n.m.leijenhorst@tudelft.nl
   github: nanleij
   website: https://nanleij.github.io/
+  status: retired
+
+- name: MarieKaltoft
+  github: MarieKaltoft
   status: retired
 
 - name: Alexander Mattes
