@@ -142,6 +142,15 @@
   language: julia
   date: January 1, 1970
 
+- title: How to solve multivariate polynomial systems of equations in Oscar
+  repository: oscar-system/OSCARBinder
+  branch: master
+  filename: polynomial_system_solving
+  author: Christian Eder
+  thumbnail: CommutativeAlgebra.png
+  language: julia
+  date: January 1, 1970
+
 #- title: "Homology of VR complexes"
 #  repository: oscar-system/OSCARBinder
 #  filename: homology_of_vr_complexes
