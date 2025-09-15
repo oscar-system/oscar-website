@@ -4,48 +4,80 @@ title: Participants
 meeting: true
 meeting_nr: 202509
 people:
-    - {name: Claus Fieker, affiliation: RPTU Kaiserslautern-Landau}
+    - name: Claus Fieker
+      affiliation: RPTU Kaiserslautern-Landau
 
-    - {name: Max Horn, affiliation: RPTU Kaiserslautern-Landau}
+    - name: Max Horn
+      affiliation: RPTU Kaiserslautern-Landau
 
-    - {name: Lars Göttgens, affiliation: RWTH Aachen}
+    - name: Lars Göttgens
+      affiliation: RWTH Aachen
 
-    - {name: Anne Frühbis-Krüger, affiliation: Uni Oldenburg}
+    - name: Anne Frühbis-Krüger
+      affiliation: Uni Oldenburg
 
-    - {name: Tobias Schnieders, affiliation: Uni Tübingen / Saarland University}
+    - name: Tobias Schnieders
+      affiliation: Uni Tübingen / Saarland University
 
-    - {name: Marco Albert, affiliation: RPTU Kaiserslautern-Landau}
+    - name: Marco Albert
+      affiliation: RPTU Kaiserslautern-Landau
 
-    - {name: Veronika Körber, affiliation: Uni Tübingen}
+    - name: Veronika Körber
+      affiliation: Uni Tübingen
 
-    - {name: Stefan Lippert, affiliation: Uni Siegen}
+    - name: Stefan Lippert
+      affiliation: Uni Siegen
 
-    - {name: David Schlang, affiliation: RWTH Aachen}
+    - name: David Schlang
+      affiliation: RWTH Aachen
 
-    - {name: Ibrahim Ahmad, affiliation: RWTH Aachen}
+    - name: Ibrahim Ahmad
+      affiliation: RWTH Aachen
 
-    - {name: Lena Hocke, affiliation: Hannover}
+    - name: Lena Hocke
+      affiliation: Hannover
 
-    - {name: Till Müller, affiliation: RPTU Kaiserslautern-Landau}
+    - name: Till Müller
+      affiliation: RPTU Kaiserslautern-Landau
 
-    - {name: Janika Peters, affiliation: RWTH Aachen}
+    - name: Janika Peters
+      affiliation: RWTH Aachen
 
-    - {name: Mattia Puddu, affiliation: RWTH Aachen}
+    - name: Mattia Puddu
+      affiliation: RWTH Aachen
 
-    - {name: Silvia Properzi, affiliation: Vrije Universiteit Brussel}
+    - name: Silvia Properzi
+      affiliation: Vrije Universiteit Brussel
 
-    - {name: Leon Pernak, affiliation: Universität des Saarlandes}
+    - name: Leon Pernak
+      affiliation: Universität des Saarlandes
 
-    - {name: Aaruni Kaushik, affiliation: RPTU Kaiserslautern-Landau}
+    - name: Aaruni Kaushik
+      affiliation: RPTU Kaiserslautern-Landau
 
-    - {name: Hannah Wagmann, affiliation: Saarland University}
-    - {name: Leo Emmerich, affiliation: Universität des Saarlandes}
-    - {name: Yichen Tong, affiliation: RPTU Kaiserslautern-Landau}
-    - {name: Leonie Scheeren, affiliation: RWTH Aachen}
-    - {name: Yannic Rohde, affiliation: RWTH Aachen}
-    - {name: Sebastian Engelhardt, affiliation: Universität des Saarlandes}
-    - {name: Luca Remke, affiliation: Universität Stuttgart}
-    - {name: Reinder Meinsma, affiliation: Universität des Saarlandes}
+    - name: Hannah Wagmann
+      affiliation: Saarland University
+
+    - name: Leo Emmerich
+      affiliation: Universität des Saarlandes
+
+    - name: Yichen Tong
+      affiliation: RPTU Kaiserslautern-Landau
+
+    - name: Leonie Scheeren
+      affiliation: RWTH Aachen
+
+    - name: Yannic Rohde
+      affiliation: RWTH Aachen
+
+    - name: Sebastian Engelhardt
+      affiliation: Universität des Saarlandes
+
+    - name: Luca Remke
+      affiliation: Universität Stuttgart
+
+    - name: Reinder Meinsma
+      affiliation: Universität des Saarlandes
 
 ---
 
