@@ -47,7 +47,7 @@ How many can you call?
 
 
 #### Galois Theory
-Let $K$ be $Q[t]/f$ for f = $t^4-2$. This field is not normal.
+Let $K$ be $\mathbb{Q}[t]/f$ for f = $t^4-2$. This field is not normal.
  - Find the normal closure
  - Find the Galois group
  - Compare the Galois group to the automorphism group
@@ -60,7 +60,7 @@ Let $K$ be $Q[t]/f$ for f = $t^4-2$. This field is not normal.
 #### Group Extensions
 Construct all group extensions of $C_2$ by $C_2$.
 
-What are the possible Galois groups for a field $K/Q$ of degree 4
+What are the possible Galois groups for a field $K/\mathbb{Q}$ of degree 4
 that has a subfield of degre 2 as well? Can you match this to the
 group extensions?
 
@@ -94,7 +94,7 @@ Let $G$ be dihedral of order $20$. Create $G$ as
 
 Find all irreducible representations of $G$.
 
-Harder: Create $G$ as a group of 2x2 matrices over a suitable number field (or over the algebraic closure of QQ).
+Harder: Create $G$ as a group of 2x2 matrices over a suitable number field (or over the algebraic closure of $\mathbb{Q}$).
 <details>Hint: Find transformation of the real plane that are automorphisms of a regular decagon.</details>
 
 
@@ -116,7 +116,7 @@ Hint/comment: draw the lattice on paper and label the groups by some id
 
 
 #### Curves
-Let $C = k[x, y]/ y^2-x^3+3x+2$ be a curve. For different fields $k\in\{Q, F_2, F_3, F_7\}$
+Let $C = k[x, y]/ y^2-x^3+3x+2$ be a curve. For different fields $k\in\{\mathbb{Q}, F_2, F_3, F_7\}$
  - Find its genus.
  - Is it smooth?
  - Is it irreducible?
@@ -151,7 +151,7 @@ Compute the intersection of 2 (non-parallel) lines in the affine plane
 
 
 #### Intersection of affine lines (2)
-Compute the intersection of 2 pairs of parallel lines in the affine plane QQ^2
+Compute the intersection of 2 pairs of parallel lines in the affine plane $\mathbb{Q}^2$
  - create each pair of parallel lines (either as algebraic set or using an ideal)
   Q: Why not as variety?
  - create the intersection
@@ -159,7 +159,7 @@ Compute the intersection of 2 pairs of parallel lines in the affine plane QQ^2
 
 
 #### Intersection of circles
-Compute the intersection of 2 circles in QQ^2
+Compute the intersection of 2 circles in $\mathbb{Q}^2$
  - create ideals describing the circles
  - create the ideal for the intersection
  - create the algebraic sets
@@ -167,8 +167,8 @@ Compute the intersection of 2 circles in QQ^2
 
 
 #### Intersection of a circle and an ellipse
-Compute the intersection of a circle and an ellipse in QQ^2.
-Find an example, where you see all points (Bezout theorem) already as points in QQ^2
+Compute the intersection of a circle and an ellipse in $\mathbb{Q}^2$.
+Find an example, where you see all points (Bezout theorem) already as points in $\mathbb{Q}^2$
 
 
 ## General exercises (harder)
@@ -198,7 +198,7 @@ Write functions that given some ideal $I$ in a multivariate polynomial ring do t
 #### Number theory
 Find an approximation for, and the minimal polynomial, $m$, of
 $\alpha = root(2,2) + root(3,3) + ... + root(9,9)$
-[Hint: use the algebraic closure of $QQ$]
+[Hint: use the algebraic closure of $\mathbb{Q}$]
 1. What is the degree of $m$?
 2. Find an odd prime number, $p$, such that $m$ splits into linear factors $mod p$
     [Hint: there is no such prime below 3000000, three million]
