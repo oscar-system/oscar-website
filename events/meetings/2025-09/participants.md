@@ -5,15 +5,19 @@ meeting: true
 meeting_nr: 202509
 people:
     - name: Claus Fieker
+      github: fieker
       affiliation: RPTU Kaiserslautern-Landau
 
     - name: Max Horn
+      github: fingolfin
       affiliation: RPTU Kaiserslautern-Landau
 
     - name: Lars Göttgens
+      github: lgoettgens
       affiliation: RWTH Aachen
 
     - name: Anne Frühbis-Krüger
+      github: afkafkafk13
       affiliation: Uni Oldenburg
 
     - name: Tobias Schnieders
