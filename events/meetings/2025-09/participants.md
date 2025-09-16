@@ -77,6 +77,7 @@ people:
       affiliation: RPTU Kaiserslautern-Landau
 
     - name: Leonie Scheeren
+      github: leoniescheeren
       affiliation: RWTH Aachen
 
     - name: Yannic Rohde
