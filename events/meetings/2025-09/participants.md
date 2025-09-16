@@ -36,6 +36,7 @@ people:
       affiliation: RWTH Aachen
 
     - name: Ibrahim Ahmad
+      github: ibrahim-ahm
       affiliation: RWTH Aachen
 
     - name: Lena Hocke
