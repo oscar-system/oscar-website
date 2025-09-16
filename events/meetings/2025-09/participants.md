@@ -40,6 +40,7 @@ people:
       affiliation: RWTH Aachen
 
     - name: Lena Hocke
+      github: GitHocke
       affiliation: Hannover
 
     - name: Till Müller
@@ -52,6 +53,7 @@ people:
       affiliation: RWTH Aachen
 
     - name: Silvia Properzi
+      github: Properzi
       affiliation: Vrije Universiteit Brussel
 
     - name: Leon Pernak
