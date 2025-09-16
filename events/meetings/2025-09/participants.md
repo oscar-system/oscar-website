@@ -49,10 +49,11 @@ people:
       affiliation: RWTH Aachen
 
     - name: Mattia Puddu
+      github: MattiaPuddu25
       affiliation: RWTH Aachen
 
     - name: Silvia Properzi
-      github: Properzi    
+      github: Properzi
       affiliation: Vrije Universiteit Brussel
 
     - name: Leon Pernak
