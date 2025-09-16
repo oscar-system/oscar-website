@@ -106,7 +106,7 @@ at the README and manual of [GAP.jl](https://github.com/oscar-system/GAP.jl).
 
 - Locate an interesting package on <https://www.gap-system.org/packages/>
   (e.g. `fr` if you are Leon)
-  and try loading it in Julia (via GAP's `LoadPackage` command).
+  and try loading it in Julia (via GAP.jl's `GAP.Packages.load` command).
 - Look at its manual and try to replicate some of the examples there in Julia
 - Pick some kind of object defined by the package or GAP which is not yet
   covered in OSCAR, and create a little Julia wrapper struct encapsulating
