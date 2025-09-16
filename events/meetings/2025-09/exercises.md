@@ -115,6 +115,31 @@ at the README and manual of [GAP.jl](https://github.com/oscar-system/GAP.jl).
 ### Introduction to version control with Git and GitHub
 
 
+#### Learning more git
+
+This are not exercises but references.
+
+- Software Carpentry lessons on "Version Control with Git", <https://swcarpentry.github.io/git-novice/>
+- [An open source game about learning Git!](https://ohmygit.org)
+- <https://onlywei.github.io/explain-git-with-d3/>
+- <https://marklodato.github.io/visual-git-guide/index-en.html>
+
+Maybe a bit more advanced
+- [Pro Git book](https://git-scm.com/book/en/v2)
+
+Additional info:
+- [Official git reference manual](https://git-scm.com/docs) (good for looking up details, not so much for learning)
+- Some interesting insights into git: <https://jvns.ca/#git>
+
+#### Troubleshooting git
+
+This are not exercises but references.
+
+- [Dangit, Git!?!](https://dangitgit.com/) -- recovering from git errors
+- [How to undo (almost) anything with Git](https://github.blog/2015-06-08-how-to-undo-almost-anything-with-git/)
+- <https://archaeogeek.github.io/gettingstartedwithgit/extras/disaster.html>
+
+
 ### Development workflows with Julia
 
 
