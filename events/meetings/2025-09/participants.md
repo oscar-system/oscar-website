@@ -42,6 +42,7 @@ people:
       affiliation: Hannover
 
     - name: Till Müller
+    Github username: Till-Eisen
       affiliation: RPTU Kaiserslautern-Landau
 
     - name: Janika Peters
@@ -51,7 +52,6 @@ people:
       affiliation: RWTH Aachen
 
     - name: Silvia Properzi
-      github: Properzi    
       affiliation: Vrije Universiteit Brussel
 
     - name: Leon Pernak
@@ -59,7 +59,6 @@ people:
 
     - name: Aaruni Kaushik
       affiliation: RPTU Kaiserslautern-Landau
-      github: aaruni96
 
     - name: Hannah Wagmann
       affiliation: Saarland University
