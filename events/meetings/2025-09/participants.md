@@ -45,6 +45,7 @@ people:
       affiliation: RPTU Kaiserslautern-Landau
 
     - name: Janika Peters
+      github: janikapeters
       affiliation: RWTH Aachen
 
     - name: Mattia Puddu
@@ -58,7 +59,6 @@ people:
 
     - name: Aaruni Kaushik
       affiliation: RPTU Kaiserslautern-Landau
-      github: aaruni96
 
     - name: Hannah Wagmann
       affiliation: Saarland University
