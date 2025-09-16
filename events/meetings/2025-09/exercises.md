@@ -105,6 +105,7 @@ You can call any GAP function from OSCAR and vice versa. Have a look
 at the README and manual of [GAP.jl](https://github.com/oscar-system/GAP.jl).
 
 - Locate an interesting package on <https://www.gap-system.org/packages/>
+  (e.g. `fr` if you are Leon)
   and try loading it in Julia (via GAP's `LoadPackage` command).
 - Look at its manual and try to replicate some of the examples there in Julia
 - Pick some kind of object defined by the package or GAP which is not yet
