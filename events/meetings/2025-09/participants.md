@@ -24,6 +24,7 @@ people:
       affiliation: Uni Tübingen / Saarland University
 
     - name: Marco Albert
+      github: MarcoAlbert
       affiliation: RPTU Kaiserslautern-Landau
 
     - name: Veronika Körber
