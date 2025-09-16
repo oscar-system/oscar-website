@@ -78,6 +78,7 @@ people:
       affiliation: Universität des Saarlandes
 
     - name: Yichen Tong
+      github: yichentong16
       affiliation: RPTU Kaiserslautern-Landau
 
     - name: Leonie Scheeren
