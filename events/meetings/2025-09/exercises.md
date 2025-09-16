@@ -276,9 +276,11 @@ Let $G = \mathrm{SL}_5(\mathbb{F}_3)$.
 
 #### Surfaces
 Write functions that given some mystery surface $V(....)$ do the following:
-- Find the following numerical invariants: dimension, degree, geometric genus.
+- Find the following numerical invariants: dimension, degree.
 - Find its singular locus.
 - Blow up at the singular locus.
+
+Test your functions on $V(x^3+y^3+z^3+x*y*z,v^4+w^4+x*v*z*w)$ in $\mathbb{P}^4$.
 
 
 #### Schemes
@@ -287,12 +289,16 @@ Write function that given some mystery scheme $X=V(...)$ do the following:
 - Which components of the singular locus arise from intersections of components of $X$?
 - Which components of the singular locus arise from singularities of components of $X$?
 
+Test your functions on $X = V((x^2-y^2*z)*((x-1)^2+y^2+z^2))$.
+
 
 #### Syzygies and free resolutions
 Write functions that given some ideal $I$ in a multivariate polynomial ring do the following:
 - Find the first syzygy module of the given generating set of $I$.
 - Find a minimal free resolution of $I$.
 - Find the Castelnuovo-Mumford regularity of $I$.
+
+Test your functions on $(xy,xz,xw,yz,yw,zw)$.
 
 
 #### Number theory
