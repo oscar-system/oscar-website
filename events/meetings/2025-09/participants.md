@@ -39,6 +39,7 @@ people:
       affiliation: RWTH Aachen
 
     - name: Lena Hocke
+      github: GitHocke
       affiliation: Hannover
 
     - name: Till Müller
