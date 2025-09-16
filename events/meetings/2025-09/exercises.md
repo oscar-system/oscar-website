@@ -9,6 +9,12 @@ meeting_nr: 202509
 This is a live document and will be updated during the week.
 </p>
 
+## Helpful links
+- [julia syntax overview](https://learnxinyminutes.com/julia/)
+- [julia documentation](https://docs.julialang.org/en/v1/)
+- [OSCAR documentation](https://docs.oscar-system.org/stable/)
+
+
 ## Session-specific exercises
 
 ### First steps with OSCAR
