@@ -58,7 +58,6 @@ people:
 
     - name: Aaruni Kaushik
       affiliation: RPTU Kaiserslautern-Landau
-      github: aaruni96
 
     - name: Hannah Wagmann
       affiliation: Saarland University
@@ -76,6 +75,7 @@ people:
       affiliation: RWTH Aachen
 
     - name: Sebastian Engelhardt
+      github: Sebas777-gif
       affiliation: Universität des Saarlandes
 
     - name: Luca Remke
