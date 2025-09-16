@@ -58,12 +58,12 @@ people:
 
     - name: Aaruni Kaushik
       affiliation: RPTU Kaiserslautern-Landau
-      github: aaruni96
 
     - name: Hannah Wagmann
       affiliation: Saarland University
 
     - name: Leo Emmerich
+      github: leo-emmerich
       affiliation: Universität des Saarlandes
 
     - name: Yichen Tong
