@@ -392,7 +392,7 @@ You now have enough information to start searching!
 
 <details><summary>Hint</summary>the condition "$X$ must be non-zero" can be expressed by the polynomial
 equation $X*dummy-1 = 0$ where "dummy" is a new "dummy" variable;
-if both $X_1$ and $X_2$ must be non-zero use $X_1*dummy1-1$ and $X_2*dummy2-1$ or
+if both $X_1$ and $X_2$ must be non-zero use $X_1*dummy_1-1$ and $X_2*dummy_2-1$ or
 the single polynomial $X_1*X_2*dummy-1$.</details>
 
 
