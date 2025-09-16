@@ -46,6 +46,7 @@ people:
       affiliation: RPTU Kaiserslautern-Landau
 
     - name: Janika Peters
+      github: janikapeters
       affiliation: RWTH Aachen
 
     - name: Mattia Puddu
