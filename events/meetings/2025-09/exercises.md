@@ -143,6 +143,7 @@ This are not exercises but references.
 - [Dangit, Git!?!](https://dangitgit.com/) -- recovering from git errors
 - [How to undo (almost) anything with Git](https://github.blog/2015-06-08-how-to-undo-almost-anything-with-git/)
 - <https://archaeogeek.github.io/gettingstartedwithgit/extras/disaster.html>
+- [On undoing, fixing, or removing commits in git, A git choose-your-own-adventure](https://sethrobertson.github.io/GitFixUm/fixup.html)
 
 --------------------------------------------------------------
 
