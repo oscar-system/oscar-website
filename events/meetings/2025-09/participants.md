@@ -28,6 +28,7 @@ people:
       affiliation: RPTU Kaiserslautern-Landau
 
     - name: Veronika Körber
+      github: Oink1248
       affiliation: Uni Tübingen
 
     - name: Stefan Lippert
