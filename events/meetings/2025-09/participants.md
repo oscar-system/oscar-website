@@ -45,7 +45,7 @@ people:
       affiliation: Hannover
 
     - name: Till Müller
-    Github username: Till-Eisen
+    github: Till-Eisen
       affiliation: RPTU Kaiserslautern-Landau
 
     - name: Janika Peters
