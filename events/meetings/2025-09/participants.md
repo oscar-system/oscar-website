@@ -35,6 +35,7 @@ people:
       affiliation: Uni Siegen
 
     - name: David Schlang
+      github: DavidSchlang
       affiliation: RWTH Aachen
 
     - name: Ibrahim Ahmad
