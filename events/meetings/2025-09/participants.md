@@ -48,10 +48,10 @@ people:
       affiliation: RWTH Aachen
 
     - name: Mattia Puddu
+      github: MattiaPuddu25
       affiliation: RWTH Aachen
 
     - name: Silvia Properzi
-      github: Properzi    
       affiliation: Vrije Universiteit Brussel
 
     - name: Leon Pernak
@@ -59,7 +59,6 @@ people:
 
     - name: Aaruni Kaushik
       affiliation: RPTU Kaiserslautern-Landau
-      github: aaruni96
 
     - name: Hannah Wagmann
       affiliation: Saarland University
