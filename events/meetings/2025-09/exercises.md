@@ -5,6 +5,9 @@ meeting: true
 meeting_nr: 202509
 ---
 
+* This will become a table of contents (this text will be scrapped).
+{:toc}
+
 <p class="message">
 This is a live document and will be updated during the week.
 </p>
@@ -14,11 +17,11 @@ This is a live document and will be updated during the week.
 - [julia documentation](https://docs.julialang.org/en/v1/)
 - [OSCAR documentation](https://docs.oscar-system.org/stable/)
 
+--------------------------------------------------------------
 
 ## Session-specific exercises
 
-### First steps with OSCAR
-
+--------------------------------------------------------------
 
 ### Exploring more of OSCAR’s functionality (structure/subsystems)
 
@@ -112,6 +115,8 @@ at the README and manual of [GAP.jl](https://github.com/oscar-system/GAP.jl).
   covered in OSCAR, and create a little Julia wrapper struct encapsulating
   these objects and providing a Julia-ish / OSCAR-ish interface to them.
 
+--------------------------------------------------------------
+
 ### Introduction to version control with Git and GitHub
 
 
@@ -140,14 +145,19 @@ This are not exercises but references.
 - <https://archaeogeek.github.io/gettingstartedwithgit/extras/disaster.html>
 - [On undoing, fixing, or removing commits in git, A git choose-your-own-adventure](https://sethrobertson.github.io/GitFixUm/fixup.html)
 
+--------------------------------------------------------------
+
 ### Development workflows with Julia
 
+--------------------------------------------------------------
 
 ### First steps to writing your own OSCAR functions
 
+--------------------------------------------------------------
 
 ### Advanced development skills
 
+--------------------------------------------------------------
 
 ## General exercises (easy)
 
@@ -308,6 +318,7 @@ Let $G = \mathrm{SL}_5(\mathbb{F}_3)$.
 4. Evaluate each $f_i$ at the matrix, and compute the eigenvalues and eigenspaces of
    the resulting matrices over $\mathbb{F}_3$.
 
+--------------------------------------------------------------
 
 ## General exercises (harder)
 
