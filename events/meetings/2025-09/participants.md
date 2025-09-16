@@ -69,6 +69,7 @@ people:
 
     - name: Aaruni Kaushik
       affiliation: RPTU Kaiserslautern-Landau
+      github: aaruni96
 
     - name: Hannah Wagmann
       affiliation: Saarland University
