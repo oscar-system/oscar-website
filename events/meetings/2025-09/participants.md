@@ -58,7 +58,6 @@ people:
 
     - name: Aaruni Kaushik
       affiliation: RPTU Kaiserslautern-Landau
-      github: aaruni96
 
     - name: Hannah Wagmann
       affiliation: Saarland University
@@ -74,6 +73,7 @@ people:
 
     - name: Yannic Rohde
       affiliation: RWTH Aachen
+      GitHub username: yrohde
 
     - name: Sebastian Engelhardt
       affiliation: Universität des Saarlandes
