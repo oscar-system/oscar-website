@@ -70,6 +70,7 @@ people:
       affiliation: Saarland University
 
     - name: Leo Emmerich
+      github: leo-emmerich
       affiliation: Universität des Saarlandes
 
     - name: Yichen Tong
