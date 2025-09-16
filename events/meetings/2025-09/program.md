@@ -46,7 +46,7 @@ ul {
 - 11:00 Exercises
 - 12:00 Lunch
 - 13:50 Group photo
-- 14:00 Guided session: **Introduction to version control with Git and GitHub**
+- 14:00 Guided session: [**Introduction to version control with Git and GitHub**](../material/git-and-github/intro-git-and-github.html) (Max Horn)
 - 15:30 Coffee break
 - 16:00 Exercises
 - 18:00 Dinner
