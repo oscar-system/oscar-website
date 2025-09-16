@@ -16,6 +16,82 @@ This is a live document and will be updated during the week.
 
 ### Exploring more of OSCAR’s functionality (structure/subsystems)
 
+#### Representations and G-Modules
+
+Create the (relative) Brauer group over QQ and build a central
+simple algebra with given Schur-indices/ local invariants.
+
+Find groups and characters with Schur index 3, 4, 5 and 6.
+
+Explore the connection between `gmodule`s and `matrix_group`s.
+Start easy, say with some dihedral group.
+
+#### Number Theory
+
+Find a normal extension `K` of degree 4 over Q. For some primes (including
+ramified and (if possible) inert ones define the completions at
+those primes.
+
+For a local field, study the structure of the multiplicative group, in 
+particular at varying precision. Compare this to the theoretical structure.
+
+Verify that the `H^1(K_p^*)` is indeed trivial and the `H^2` is cyclic.
+
+Let `f = x^3 + x^2 - 2x - 1`. For which primes `p` does
+   `f` have 3 roots mod `p`? Can you spot the pattern? Can you
+   explain the pattern?
+
+#### Linear algebra/ abelian groups
+
+For `R = Z/8Z` and the matrix `m = matrix(R, 2, 2, [4, 2, 0, 0])`
+explain the difference bewteen `hnf(m)` and `howel_form(m)`.
+
+Find all automorphisms of the unit group of `Z/12Z` and `Z/120Z`. What is
+the structure?
+
+Find all endomorphisms of `Z/12Z` and `Z/120Z`
+
+Let `A = matrix(ZZ, rand(-10:10, 1000, 1000))` and 
+`b = matrix(ZZ, rand(-10:10, 1, 1000))`. What is the best method in Oscar
+to solve `xA = b` for rational `x`? (Maybe start with smaller matrices)
+
+How many ways are there to compute determinants of matrices of univariate 
+polynomials?
+
+Find all integer solutions to `Ax = b` and `Cx >= 0`
+
+Solve `Ax = b` for `A`, `b` and `x` integral.
+
+Find all integral solutions of `2x+3y = 7`
+
+#### Cohomology
+
+Create some (natural) G-modules:
+ - natrual G-module for a matrix group
+ - permutation modules
+ - natural modules
+ - trivial modules
+ - tensor products
+and see if you can compute `H^i` for i=0,1,2
+
+How many constructors for G-modules are there?
+
+#### General
+
+Compare
+ - `@time prod(i for i=1:10000)` (and note the result here)
+ - `@time prod(ZZ(i) for i=1:10000);`
+ - `@time prod(BigInt(i) for i=1:10000);`
+ - `@time prod([ZZ(i) for i=1:10000]);`
+ - `@time prod([ZZ(i) for i=1:100000]);`
+ - `@time prod([BigInt(i) for i=1:100000]);`
+and explain the differences. Can you improve it further?
+
+Everyone(?) knows that in `Z[\sqrt -5]` we have non-unique factorisation
+   (of 6 e.g.). Find more examples?
+
+For a given integer `n` there is a function that find the largest
+   exponent $e$ s.th. `n = a^e`. Write s.th. similar for polynomials.
 
 ### Introduction to version control with Git and GitHub
 
