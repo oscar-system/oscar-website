@@ -30,6 +30,7 @@ people:
       affiliation: Uni Tübingen
 
     - name: Stefan Lippert
+      github: stelip42
       affiliation: Uni Siegen
 
     - name: David Schlang
