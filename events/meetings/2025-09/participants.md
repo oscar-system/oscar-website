@@ -72,8 +72,8 @@ people:
       affiliation: RWTH Aachen
 
     - name: Yannic Rohde
+      github: yrohde
       affiliation: RWTH Aachen
-      GitHub username: yrohde
 
     - name: Sebastian Engelhardt
       affiliation: Universität des Saarlandes
