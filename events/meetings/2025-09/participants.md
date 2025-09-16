@@ -21,7 +21,8 @@ people:
       affiliation: Uni Oldenburg
 
     - name: Tobias Schnieders
-      affiliation: Uni Tübingen / Saarland University
+      github: Tobias271828
+      affiliation: University of Tübingen / Saarland University
 
     - name: Marco Albert
       github: MarcoAlbert
