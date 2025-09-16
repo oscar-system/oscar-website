@@ -30,6 +30,7 @@ people:
       affiliation: Uni Tübingen
 
     - name: Stefan Lippert
+      github: fieker
       affiliation: Uni Siegen
 
     - name: David Schlang
@@ -58,7 +59,6 @@ people:
 
     - name: Aaruni Kaushik
       affiliation: RPTU Kaiserslautern-Landau
-      github: aaruni96
 
     - name: Hannah Wagmann
       affiliation: Saarland University
