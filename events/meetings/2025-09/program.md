@@ -31,7 +31,7 @@ ul {
 ### Monday, September 15
 - 12:00 Lunch
 - 13:30 Getting started with Julia/Oscar/Editors etc.
-- 14:00 Guided session: **First steps with OSCAR** (with a focus on mathematical problems)
+- 14:00 Guided session: [**First steps with OSCAR** (with a focus on mathematical problems)](../material/GettingStarted.pdf) (Anne Frühbis-Krüger)
 - 15:30 Coffee break
 - 16:00 Exercises
 - 18:00 Dinner
@@ -41,7 +41,7 @@ ul {
 
 ### Tuesday, September 16
 - 08:00 Breakfast
-- 09:00 Guided session: **Exploring more of OSCAR's functionality (structure/subsystems)**
+- 09:00 Guided session: [**Exploring more of OSCAR's functionality (structure/subsystems)**](../material/OscarStructure.pdf) (Claus Fieker)
 - 10:30 Coffee break
 - 11:00 Exercises
 - 12:00 Lunch
