@@ -106,3 +106,5 @@ people:
 ---
 
 {% include participants.html participants=page.people %}
+
+[![](../group.jpg)](../group_full.jpg)
