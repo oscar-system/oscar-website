@@ -82,6 +82,7 @@ people:
       affiliation: Universität des Saarlandes
 
     - name: Luca Remke
+      github: LucaRemke
       affiliation: Universität Stuttgart
 
     - name: Reinder Meinsma
