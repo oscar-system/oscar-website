@@ -27,6 +27,7 @@ people:
       affiliation: RPTU Kaiserslautern-Landau
 
     - name: Veronika Körber
+    github: Oink1248
       affiliation: Uni Tübingen
 
     - name: Stefan Lippert
@@ -51,7 +52,6 @@ people:
       affiliation: RWTH Aachen
 
     - name: Silvia Properzi
-      github: Properzi    
       affiliation: Vrije Universiteit Brussel
 
     - name: Leon Pernak
