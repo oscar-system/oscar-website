@@ -34,17 +34,17 @@ Start easy, say with some dihedral group.
 
 #### Number Theory
 
-Find a normal extension `K` of degree 4 over $\mathbb{Q}$. For some primes (including
+Find a normal extension $K$ of degree 4 over $\mathbb{Q}$. For some primes (including
 ramified and (if possible) inert ones define the completions at
 those primes.
 
 For a local field, study the structure of the multiplicative group, in 
 particular at varying precision. Compare this to the theoretical structure.
 
-Verify that the `H^1(K_p^*)` is indeed trivial and the `H^2` is cyclic.
+Verify that the $H^1(K_p^*)$ is indeed trivial and the $H^2$ is cyclic.
 
-Let `f = x^3 + x^2 - 2x - 1`. For which primes `p` does
-   `f` have 3 roots mod `p`? Can you spot the pattern? Can you
+Let $f = x^3 + x^2 - 2x - 1$. For which primes $p$ does
+   $f$ have 3 roots mod $p$? Can you spot the pattern? Can you
    explain the pattern?
 
 #### Linear algebra/ abelian groups
