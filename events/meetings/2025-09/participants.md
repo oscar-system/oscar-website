@@ -58,7 +58,6 @@ people:
 
     - name: Aaruni Kaushik
       affiliation: RPTU Kaiserslautern-Landau
-      github: aaruni96
 
     - name: Hannah Wagmann
       affiliation: Saarland University
@@ -79,6 +78,7 @@ people:
       affiliation: Universität des Saarlandes
 
     - name: Luca Remke
+      github: LucaRemke
       affiliation: Universität Stuttgart
 
     - name: Reinder Meinsma
