@@ -65,6 +65,7 @@ people:
       affiliation: Vrije Universiteit Brussel
 
     - name: Leon Pernak
+      github: HoopsNmath
       affiliation: Universität des Saarlandes
 
     - name: Aaruni Kaushik
