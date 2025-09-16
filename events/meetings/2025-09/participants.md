@@ -83,6 +83,7 @@ people:
       affiliation: RWTH Aachen
 
     - name: Sebastian Engelhardt
+      github: Sebas777-gif
       affiliation: Universität des Saarlandes
 
     - name: Luca Remke
