@@ -99,6 +99,18 @@ Everyone(?) knows that in `Z[\sqrt -5]` we have non-unique factorisation
 For a given integer `n` there is a function that find the largest
    exponent $e$ s.th. `n = a^e`. Write s.th. similar for polynomials.
 
+#### Calling into GAP
+
+You can call any GAP function from OSCAR and vice versa. Have a look
+at the README and manual of [GAP.jl](https://github.com/oscar-system/GAP.jl).
+
+- Locate an interesting package on <https://www.gap-system.org/packages/>
+  and try loading it in Julia (via GAP's `LoadPackage` command).
+- Look at its manual and try to replicate some of the examples there in Julia
+- Pick some kind of object defined by the package or GAP which is not yet
+  covered in OSCAR, and create a little Julia wrapper struct encapsulating
+  these objects and providing a Julia-ish / OSCAR-ish interface to them.
+
 ### Introduction to version control with Git and GitHub
 
 
@@ -383,6 +395,8 @@ equation $X*dummy-1 = 0$ where "dummy" is a new "dummy" variable;
 if both $X_1$ and $X_2$ must be non-zero use $X_1*dummy1-1$ and $X_2*dummy2-1$ or
 the single polynomial $X_1*X_2*dummy-1$.</details>
 
+
+---
 
 <p class="message">
 You can also have a look at
