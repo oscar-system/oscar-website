@@ -24,6 +24,7 @@ people:
       affiliation: Uni Tübingen / Saarland University
 
     - name: Marco Albert
+      github: MarcoAlbert
       affiliation: RPTU Kaiserslautern-Landau
 
     - name: Veronika Körber
@@ -36,9 +37,11 @@ people:
       affiliation: RWTH Aachen
 
     - name: Ibrahim Ahmad
+      github: ibrahim-ahm
       affiliation: RWTH Aachen
 
     - name: Lena Hocke
+      github: GitHocke
       affiliation: Hannover
 
     - name: Till Müller
@@ -46,12 +49,15 @@ people:
       affiliation: RPTU Kaiserslautern-Landau
 
     - name: Janika Peters
+      github: janikapeters
       affiliation: RWTH Aachen
 
     - name: Mattia Puddu
+      github: MattiaPuddu25
       affiliation: RWTH Aachen
 
     - name: Silvia Properzi
+      github: Properzi
       affiliation: Vrije Universiteit Brussel
 
     - name: Leon Pernak
@@ -79,6 +85,7 @@ people:
       affiliation: Universität des Saarlandes
 
     - name: Luca Remke
+      github: LucaRemke
       affiliation: Universität Stuttgart
 
     - name: Reinder Meinsma
