@@ -36,6 +36,7 @@ people:
       affiliation: RWTH Aachen
 
     - name: Ibrahim Ahmad
+      github: ibrahim-ahm
       affiliation: RWTH Aachen
 
     - name: Lena Hocke
@@ -58,7 +59,6 @@ people:
 
     - name: Aaruni Kaushik
       affiliation: RPTU Kaiserslautern-Landau
-      github: aaruni96
 
     - name: Hannah Wagmann
       affiliation: Saarland University
