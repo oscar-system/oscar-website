@@ -53,7 +53,7 @@ ul {
 
 ### Wednesday, September 17
 - 08:00 Breakfast
-- 09:00 Guided session: **Development workflows with Julia**
+- 09:00 Guided session: [**Development workflows with Julia**](../material/DevelopmentWorkflows.txt) (Lars Göttgens)
 - 10:30 Coffee break
 - 11:00 Exercises
 - 12:00 Lunch

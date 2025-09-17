@@ -149,6 +149,21 @@ This are not exercises but references.
 
 ### Development workflows with Julia
 
+#### 1. Clean up your global environments
+Remove all packages from your global environment, except development tools.
+Install the development tools you just learned about in your global environment.
+(`Revise`, `Documenter`, `Test`, ...)
+
+
+#### 2. OSCAR development setup
+Fork and clone the OSCAR repository from GitHub, if you haven't done so already.
+Create a new function (in the `src/Oscar.jl` file) that returns your favorite number.
+Start a REPL with the OSCAR environment (i.e. in the folder where you cloned OSCAR, `julia --project`).
+Make sure that you can use OSCAR and your new function, and that changes to your function
+are reflected without restarting julia (i.e. using `Revise`).
+Once you are done, use `git` to remove your changes again.
+
+
 --------------------------------------------------------------
 
 ### First steps to writing your own OSCAR functions
