@@ -163,7 +163,7 @@ Make sure that you can use OSCAR and your new function, and that changes to your
 are reflected without restarting julia (i.e. using `Revise`).
 Once you are done, use `git` to remove your changes again.
 
-### 3. Create a new global environment
+#### 3. Create a new global environment
 Global environments' names start with `@`, and are stored in `~/.julia/environments/`.
 
 Create a new global environment called `@OSCAR` that contains only `Oscar`.
@@ -174,7 +174,7 @@ Verify that:
 2. you can use OSCAR in this environment (e.g. creating some symmetric group works)
 3. there are no other packages installed in this environment (i.e. `] status` shows only `Oscar`)
 
-### 4. Interactive method reflection
+#### 4. Interactive method reflection
 
 Read <https://docs.julialang.org/en/v1/base/reflection/>, you can skip the sections on "Expansion and Lowering" and the ones talking about `code_*` and `@code_*` functions.
 You may also find some of the functionality mentioned in <https://docs.julialang.org/en/v1/stdlib/InteractiveUtils/> helpful.
