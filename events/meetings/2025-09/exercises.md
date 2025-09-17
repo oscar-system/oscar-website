@@ -189,7 +189,7 @@ You may also find some of the functionality mentioned in <https://docs.julialang
 
 5. Find the source code for the method computing the fraction `ZZ(2)//ZZ(3)`.  <details> Hint for using `@less`: "q" stands for "quit".</details>
 
-## 5. Create an environment for the previous exercises
+#### 5. Create an environment for the previous exercises
 Yesterday and this morning, you solved some exercises using OSCAR.
 Since we removed all packages from your global environment, you cannot run your code for these exercises anymore.
 Create a new environment in a new folder that only contains the packages you need to run your code for these exercises,
@@ -197,7 +197,7 @@ copy your code there, and verify that it works.
 If you work on any further of these exercises later, do it in this environment.
 
 
-## 6. Write a doctest
+#### 6. Write a doctest
 Fork and clone <https://github.com/Nemocas/AbstractAlgebra.jl> (one of OSCAR's dependencies).
 Find a method that has a docstring, but no example in the docstring.
 Further requirement: You need to understand what the method does, so that you can write a meaningful example.
