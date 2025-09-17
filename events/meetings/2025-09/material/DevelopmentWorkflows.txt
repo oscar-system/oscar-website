@@ -80,3 +80,62 @@ Remarks to importing and exporting:
 
 
 ## Break for exercises 1 and 2
+
+
+## Tests
+- tests are important...
+    - to verify that your code works as intended
+    - to verify that future changes do not break existing functionality
+- more details: <https://docs.julialang.org/en/v1/stdlib/Test/>
+- usually in the `test/` folder of a package, and then separated into multiple files/folders similar to the `src/` folder
+- Running tests:
+    - in the REPL, `] test` runs (all) the tests of the current package
+    - in OSCAR we have `Oscar.test_module("foldername"; new=false)` and `Oscar.test_experimental_module("experimentalfoldername"; new=false)` to run just the tests of one folder inside `test/`, with `new=true` it will test in a new temporary session
+- Testing framework: `Test` (part of the standard library)
+- `@test expr` where `expr` evaluates to a boolean checks if `expr` is true
+- `@test_throws ExceptionType expr` checks if evaluating `expr` throws an exception of type `ExceptionType`
+- `@testset "name" begin ... end` groups multiple tests together
+- In OSCAR, all tests are run on GitHub Actions for each pull request (continuous integration, CI)
+
+## Documentation
+- Documentation is important...
+    - to make your code usable by others (and yourself in the future)
+    - to explain design decisions
+- more details: <https://documenter.juliadocs.org/stable/>
+- Documentation consists of two parts:
+    1. docstrings in the code
+    2. markdown pages with more extensive documentation, that include the docstrings
+- Docstrings:
+    - attached to methods, types, modules, constants, ...
+    - written in markdown
+    - placed immediately before the item they document
+    - the first line is indented by exactly 4 spaces, and usuall contains the method signature
+    - accessed with `?` in the REPL, e.g. `?functionname`
+    - can be multi-line, and can use markdown formatting
+    - can contain code examples, see *doctests* below
+- Documentation pages:
+    - in the `docs/src/` folder of a package
+    - written in markdown
+    - can include docstrings with `@docs`
+- build documentation locally:
+    - in general with `julia --project=docs/ -e 'using Pkg; Pkg.develop(PackageSpec(path=pwd())); Pkg.instantiate(); include("docs/make.jl")'` in the package folder
+    - for OSCAR with `Oscar.build_doc()` in the REPL
+
+## Docstrings
+- examples in docstrings that are also executed as part of the tests
+- output is checked one to one, so it must match exactly (including types, formatting, ...)
+    - no randomness, no system-dependent output (e.g. memory addresses)!
+    - but there are ways to deal with this, see <https://documenter.juliadocs.org/stable/man/doctests/#Filtering-Doctests>
+- implemented as a markdown code block starting with `jldoctest` and then a REPL-like example
+    ```jldoctest
+    julia> f(x) = x^2;
+
+    julia> f(3)
+    9
+    ```
+- CI will run all doctests for you automatically and report errors (on every pull request in OSCAR)
+- locally, you can run all doctests with `using Documenter; Documenter.doctest(Oscar)` in the REPL
+- to automatically repair all doctests use `using Documenter; Documenter.doctest(Oscar; fix=true)` in the REPL
+    - this will change your files!
+    - check the changes, and only commit them if they are correct
+    - to only repair few specific docstrings (in OSCAR), use `Oscar.doctest_fix("path/to/file.jl")` instead

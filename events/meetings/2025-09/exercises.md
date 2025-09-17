@@ -163,6 +163,52 @@ Make sure that you can use OSCAR and your new function, and that changes to your
 are reflected without restarting julia (i.e. using `Revise`).
 Once you are done, use `git` to remove your changes again.
 
+### 3. Create a new global environment
+Global environments' names start with `@`, and are stored in `~/.julia/environments/`.
+
+Create a new global environment called `@OSCAR` that contains only `Oscar`.
+This allows you to use OSCAR without affecting your other projects.
+
+Verify that:
+1. you are actually using the new environment (i.e. `Base.active_project()` returns `[...]/.julia/environments/OSCAR/Project.toml`)
+2. you can use OSCAR in this environment (e.g. creating some symmetric group works)
+3. there are no other packages installed in this environment (i.e. `] status` shows only `Oscar`)
+
+### 4. Interactive method reflection
+
+Read <https://docs.julialang.org/en/v1/base/reflection/>, you can skip the sections on "Expansion and Lowering" and the ones talking about `code_*` and `@code_*` functions.
+You may also find some of the functionality mentioned in <https://docs.julialang.org/en/v1/stdlib/InteractiveUtils/> helpful.
+
+1. What arguments does `pushfirst!` expect?
+
+2. Without `using Oscar`, list all methods that accept a `Vector` argument.
+
+3. After `using Oscar`, list all methods that accept an `ZZPolyRing`.  <details> Hint: If you find <100 methods, you didn't find all of them.</details>
+
+4. List all methods that accept both a `ZZMatrix` and a `ZZRingElem`.  <details> Hint: Use the previous exercise part twice.</details>
+
+5. Find the source code for the method computing the fraction `ZZ(2)//ZZ(3)`.  <details> Hint for using `@less`: "q" stands for "quit".</details>
+
+## 5. Create an environment for the previous exercises
+Yesterday and this morning, you solved some exercises using OSCAR.
+Since we removed all packages from your global environment, you cannot run your code for these exercises anymore.
+Create a new environment in a new folder that only contains the packages you need to run your code for these exercises,
+copy your code there, and verify that it works.
+If you work on any further of these exercises later, do it in this environment.
+
+
+## 6. Write a doctest
+Fork and clone <https://github.com/Nemocas/AbstractAlgebra.jl> (one of OSCAR's dependencies).
+Find a method that has a docstring, but no example in the docstring.
+Further requirement: You need to understand what the method does, so that you can write a meaningful example.
+Add an example to the docstring of this method, following the style of other examples in AbstractAlgebra.jl.
+Make sure that your example is run as a doctest when running the tests.
+Once you are done, create a pull request on GitHub with your changes.
+
+Remark: You should only use the environment of AbstractAlgebra.jl for this exercise, not one with OSCAR.
+
+Remark: You will have the best success in finding a suitable method in files that are named after algebraic structures,
+e.g. `Poly.jl`, `MPoly.jl`, `Matrix.jl`, both in `src/` and in `src/generic/`.
 
 --------------------------------------------------------------
 
