@@ -218,6 +218,18 @@ e.g. `Poly.jl`, `MPoly.jl`, `Matrix.jl`, both in `src/` and in `src/generic/`.
 
 ### Advanced development skills
 
+#### `is_square_with_squareroot`
+1. Write a function `is_square_with_squareroot(::ZZRingElem)` that checks whether a given integer is a perfect square, and if so, returns a tuple `(true, sqrt)` where `sqrt` is the square root of the integer, and `false` otherwise. (You may use the pre-defined functions `is_square` and `sqrt`.)
+2. Is your function type stable? If not, make it type stable.
+3. Extend your function to work with `QQFieldElem` as well. Is it still type stable for both input types? If not, make it type stable.
+4. Extend your function to work with all `RingElem` types in OSCAR (at least for those that implement `is_square` and `sqrt`), while keeping it type stable.
+
+#### Revisit previous exercises and optimize
+In some of the previous exercises, you wrote functions that use OSCAR.
+Go back to some of them, and check that they are type stable and do not allocate unnecessarily.
+If you find any issues, fix them.
+
+
 --------------------------------------------------------------
 
 ## General exercises (easy)
