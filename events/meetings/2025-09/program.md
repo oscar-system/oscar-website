@@ -73,7 +73,7 @@ ul {
     - [How To Ask Questions The Smart Way](http://www.catb.org/~esr/faqs/smart-questions.html),
       avoiding the [XY-problem](https://xyproblem.info)
 - 12:00 Lunch
-- 14:00 Guided session: **Advanced development skills**
+- 14:00 Guided session: [**Advanced development skills**](../material/AdvancedDevelopment.slides.html) (Lars Göttgens)
     - How to not write bad code
     - Julia optimization techniques / Profiling
 - 15:30 Coffee break
