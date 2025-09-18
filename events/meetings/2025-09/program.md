@@ -57,7 +57,7 @@ ul {
 - 10:30 Coffee break
 - 11:00 Exercises
 - 12:00 Lunch
-- 14:00 Guided session: **First steps to writing your own OSCAR functions**
+- 14:00 Guided session: [**First steps to writing your own OSCAR functions**](../material/OscarFunctions.pdf) (Claus Fieker)
 - 15:30 Coffee break
 - 16:00 Exercises
 - 18:00 Dinner
@@ -68,7 +68,7 @@ ul {
   - free or along e.g. tutorials
   - will be planned with you earlier during the week
 - 10:30 Coffee break
-- 11:00 Guided session: **Effective online communication**
+- 11:00 Guided session: **Effective online communication** (Anne Frühbis-Krüger)
     - Asking questions via Slack or GitHub
     - [How To Ask Questions The Smart Way](http://www.catb.org/~esr/faqs/smart-questions.html),
       avoiding the [XY-problem](https://xyproblem.info)
