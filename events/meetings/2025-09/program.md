@@ -81,8 +81,9 @@ ul {
 - 18:00 Dinner
 
 ### Friday, September 19
-- 08:00 Breakfast
+- 08:00 Breakfast (**make sure to clean out your rooms before 9:00 and return keys at reception**)
 - 09:00 Unguided Session: **It's your turn: Apply what you learned & ask questions**
+- 11:45 Summer School Wrap Up
 - 12:00 Lunch
-- 14:00 Summer School Wrap Up
+- 13:30 **Open room** you can stay and work (we are there to help if needed) or leave any time after lunch.
 - 15:00 The End
