@@ -122,12 +122,13 @@ at the README and manual of [GAP.jl](https://github.com/oscar-system/GAP.jl).
 
 #### Learning more git
 
-This are not exercises but references.
+These are not exercises but references.
 
 - Software Carpentry lessons on "Version Control with Git", <https://swcarpentry.github.io/git-novice/>
 - [An open source game about learning Git!](https://ohmygit.org)
-- <https://onlywei.github.io/explain-git-with-d3/>
-- <https://marklodato.github.io/visual-git-guide/index-en.html>
+- [Git Cheat Sheet](https://git-scm.com/cheat-sheet)
+- [Visualizing Git Concepts with D3](https://onlywei.github.io/explain-git-with-d3/)
+- [A Visual Git Reference](https://marklodato.github.io/visual-git-guide/index-en.html)
 
 Maybe a bit more advanced
 - [Pro Git book](https://git-scm.com/book/en/v2)
