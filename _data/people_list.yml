@@ -261,13 +261,6 @@
   aka:
   - Remi Prebet
 
-- name: Lakshmi Ramesh
-  affiliation: University of Kaiserslautern-Landau
-  email: ramesh@mathematik.uni-kl.de
-  github: Lax202
-  website: https://Lax202.github.io
-  status: active
-
 - name: Hendrik Ranocha
   affiliation: University of Mainz
   email: hendrik.ranocha@uni-mainz.de.
@@ -609,6 +602,13 @@
   github: delphinepol
   status: retired
   comment: Used to be a postdoc at Kaiserslautern, until ~2020
+
+- name: Lakshmi Ramesh
+  affiliation: University of Kaiserslautern-Landau
+  email: ramesh@mathematik.uni-kl.de
+  github: Lax202
+  website: https://Lax202.github.io
+  status: retired
 
 - name: Martin Raum
   affiliation: Chalmers University
