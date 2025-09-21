@@ -25,17 +25,17 @@ Beyond that here are a bunch of things we strongly recommend you do *before* tra
    - and there join the `#summerschool` channel
 1. [Register a **GitHub** account](https://github.com/signup)
 1. Install [**git**](https://git-scm.com/downloads)
+1. Install **Oscar** [via our install instruction]({{site.baseurl}}/install/)
+   - if you already have it, please [update to the latest version]({{site.baseurl}}/upgrade/)
 1. If you do *not* have a favorite programming editor with Julia syntax highlighting:
     - install [**Visual Studio Code**](https://code.visualstudio.com)
     - install the ["Julia" plugin](https://marketplace.visualstudio.com/items?itemName=julialang.language-julia)
     - **Windows** users should also install the [WSL extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl).
       This is [explained here](https://code.visualstudio.com/docs/remote/wsl) in more detail.
       <!-- See also [this tutorial](https://code.visualstudio.com/docs/remote/wsl-tutorial). -->
-1. Install **Oscar** [via our install instruction]({{site.baseurl}}/install/)
-   - if you already have it, please [update to the latest version]({{site.baseurl}}/upgrade/)
 1. Install [**gh**](https://cli.github.com) (a command line tool for controlling GitHub)
    - and once it is installed, run `gh auth login` in a Unix Terminal and follow the instructions
-1. Familiarize yourself with the very basics of Julia
+1. Familiarize yourself with the very basics of Julia.
    - We will not be teaching about Julia but we also won't require deep knowledge.
    - You should be able to write a simple function or a loop.
    - Have a look at the [Julia cheatsheet](https://cheatsheet.juliadocs.org)
