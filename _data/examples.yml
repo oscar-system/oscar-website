@@ -88,6 +88,15 @@
 
 # Tutorials hosted at oscar-system/OSCARBinder
 
+- title: "A question of Pham Huu Tiep about a group of symplectic type"
+  repository: oscar-system/OSCARBinder
+  branch: master
+  filename: symplectic_type
+  author: Thomas Breuer
+  thumbnail: GroupTheory.png
+  language: julia
+  date: January 1, 1970
+
 - title: "Generation of sporadic simple groups by 𝜋- and 𝜋'-subgroups"
   repository: oscar-system/OSCARBinder
   branch: master
