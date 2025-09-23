@@ -60,14 +60,15 @@ the example, powered by <a href="https://mybinder.org">mybinder</a>.
 -->
 
 
-<div class="gallery_example_cards" id="main-content">
   {%- if page.main -%}
   {%-     assign someexamples = site.data.examples_with_updated_last_modified -%}
   {%- else -%}
   {%-     assign someexamples = site.data.examples_with_updated_last_modified | where:"thumbnail",page.component -%}
   {%- endif -%}
-  {% assign someexamples = someexamples | where_exp: "item", "site.data.examples_status[item.filename] == 'success'" %}
-  {%- for post in someexamples  -%}
+
+<div class="gallery_example_cards" id="main-content">
+  {% assign examples = someexamples | where_exp: "item", "site.data.examples_status[item.filename] == 'success'" %}
+  {%- for post in examples  -%}
 
   <div class="item_example_card {{site.data.examples_status[post.filename]}}">
     <div class="item_example_left">
@@ -88,18 +89,13 @@ the example, powered by <a href="https://mybinder.org">mybinder</a>.
   {% endfor %}
 </div>
 
-  {%- if page.main -%}
-  {%-     assign someexamples = site.data.examples_with_updated_last_modified -%}
-  {%- else -%}
-  {%-     assign someexamples = site.data.examples_with_updated_last_modified | where:"thumbnail",page.component -%}
-  {%- endif -%}
-  {% assign someexamples = someexamples | where_exp: "item", "site.data.examples_status[item.filename] == 'failure'" %}
-  {% if someexamples.size > 0 %}
+  {% assign borked = someexamples | where_exp: "item", "site.data.examples_status[item.filename] == 'failure'" %}
+  {% if borked.size > 0 %}
 <details style="padding-bottom: 2em;">
   <summary>Out of Date Tutorials</summary>
 <div class="borked">
 <div class="gallery_example_cards">
-  {%- for post in someexamples  -%}
+  {%- for post in borked  -%}
   <div class="item_example_card {{site.data.examples_status[post.filename]}}">
     <div class="item_example_left">
         <img class="item_example-image"
