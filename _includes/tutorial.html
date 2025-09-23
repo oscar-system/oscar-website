@@ -32,7 +32,8 @@
 </p>
 
 <div class="example_box">
-  {%- for component in site.data.examples_components -%}
+  {% assign sorted_components = site.data.examples_components | sort: "name"  %}
+  {%- for component in sorted_components -%}
   {%- assign component_url = "/tutorials/" | append: component.name | replace: " ", "" | append: "/" %}
   <div class="example">
     <a style="display: block; text-align: center;"
@@ -62,9 +63,17 @@ the example, powered by <a href="https://mybinder.org">mybinder</a>.
 
 <div class="gallery_example_cards" id="main-content">
   {%- if page.main -%}
-  {%-     assign someexamples = site.data.examples_with_updated_last_modified -%}
+  {%-     assign someexamplesgrouped = site.data.examples_with_updated_last_modified | group_by: 'thumbnail' | sort: 'name' -%}
+  {% for item in someexamplesgrouped %}
+    {% assign sorted = item['items'] | sort: 'title' %}
+    {% if forloop.first %}
+      {% assign someexamples = sorted %}
+    {% else %}
+      {% assign someexamples = someexamples | concat: sorted %}
+    {% endif %}
+  {% endfor %}
   {%- else -%}
-  {%-     assign someexamples = site.data.examples_with_updated_last_modified | where:"thumbnail",page.component -%}
+  {%-     assign someexamples = site.data.examples_with_updated_last_modified | where:"thumbnail",page.component | sort: 'title' -%}
   {%- endif -%}
   {%- for post in someexamples  -%}
 
