@@ -229,10 +229,13 @@
   status: active
 
 - name: Till Müller
+  affiliation: University of Kaiserslautern-Landau
   github: Till-Eisen
+  website: https://math.rptu.de/ags/agag/personen/mitglieder
   status: active
 
 - name: James Nohilly
+  affiliation: University of Kaiserslautern-Landau
   github: jamesnohilly
   status: active
 
