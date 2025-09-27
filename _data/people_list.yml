@@ -228,7 +228,14 @@
   website: https://www.math.uni-sb.de/ag/brandhorst/index.php?option=com_content&view=article&id=26:muller-en-1&catid=18&lang=en&Itemid=114
   status: active
 
+- name: Till Müller
+  affiliation: University of Kaiserslautern-Landau
+  github: Till-Eisen
+  website: https://math.rptu.de/ags/agag/personen/mitglieder
+  status: active
+
 - name: James Nohilly
+  affiliation: University of Kaiserslautern-Landau
   github: jamesnohilly
   status: active
 
