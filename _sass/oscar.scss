@@ -137,19 +137,6 @@ details.spoiler [open] summary::after {
   font-size:2em;
 }
 
-.failure{
-  display: none;
-}
-
-
-div.borked > div.gallery_example_cards > div.item_example_card.failure{
-  display: block;
-}
-
-div.borked > div.gallery_example_cards > div.item_example_card{
-  display: none;
-}
-
 .borked{
   background: #e4e4e7;
 }

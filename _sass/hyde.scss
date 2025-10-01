@@ -526,6 +526,7 @@ li.active > a {
     display: grid;
     grid-gap: 1rem;
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); /* use 16rem for 3 lines per card */
+    padding-bottom: 2em;
 }
 
 .item_example_card {
