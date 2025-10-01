@@ -74,6 +74,7 @@ for repo in repoList:
             name = name_email.split("<")[0].strip()
             email = name_email.split("<")[1].split(">")[0].strip()
             dnamelist.append([name, email])
+    print(dnamelist)
 
     namelist.extend(dnamelist)
     count = 0
@@ -92,6 +93,7 @@ for repo in repoList:
                                    capture_output=True)
         hash = process.stdout.decode().strip()
         github_commit_url = f"https://api.github.com/repos/{repo}/commits/{hash}"
+        print(github_commit_url)
         #ask github API for username
         r = requests.get(github_commit_url, headers={"Authorization":f"Bearer {API_KEY}"})
         if r.status_code == 200:
