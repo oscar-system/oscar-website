@@ -144,6 +144,13 @@
   website: https://www.art.rwth-aachen.de/cms/~bbxbwx/
   status: active
 
+- name: Jeroen Hanselmann
+  affiliation: University of Kaiserslautern-Landau
+  email: hanselman@mathematik.uni-kl.de
+  github: JHanselman
+  website: https://hanselmanj.eu/
+  status: active
+
 - name: Oskar Henriksson
   email: oskar.david.henriksson@gmail.com
   github: oskarhenriksson
@@ -496,13 +503,6 @@
   affiliation: University of Kaiserslautern-Landau
   github: sebasguts
   website: https://sebasguts.github.io/
-  status: retired
-
-- name: Jeroen Hanselmann
-  affiliation: University of Kaiserslautern-Landau
-  email: hanselman@mathematik.uni-kl.de
-  github: JHanselman
-  website: https://hanselmanj.eu/
   status: retired
 
 - name: William Hart
