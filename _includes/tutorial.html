@@ -31,6 +31,7 @@
   <a href="{{site.baseurl}}/contributing#contributing-tutorials">contribution guidelines</a>.
 </p>
 
+<!--This section creates the selector grid of tutorial topic.-->
 <div class="example_box">
   {% assign sorted_components = site.data.examples_components | sort: "name"  %}
   {%- for component in sorted_components -%}
@@ -54,13 +55,7 @@
   {%- endfor -%}
 </div>
 
-<!--
-<br/>
-Clicking on the launch binder button will open an interactive version of
-the example, powered by <a href="https://mybinder.org">mybinder</a>.
--->
-
-
+<!-- here we make a list of tutorials and filter it to the topic if we are in a topic page-->
   {%- if page.main -%}
   {%-     assign someexamplesgrouped = site.data.examples_with_updated_last_modified | group_by: 'thumbnail' | sort: 'name' -%}
   {% for item in someexamplesgrouped %}
@@ -75,9 +70,10 @@ the example, powered by <a href="https://mybinder.org">mybinder</a>.
   {%-     assign someexamples = site.data.examples_with_updated_last_modified | where:"thumbnail",page.component | sort: 'title' -%}
   {%- endif -%}
 
+<!-- This section now populates the list of tutorials -->
 <div class="gallery_example_cards" id="main-content">
   {% assign examples = someexamples | where_exp: "item", "site.data.examples_status[item.filename] == 'success'" %}
-  {%- for post in examples  -%}
+  {%- for post in examples -%}
 
   <div class="item_example_card {{site.data.examples_status[post.filename]}}">
     <div class="item_example_left">
@@ -98,13 +94,14 @@ the example, powered by <a href="https://mybinder.org">mybinder</a>.
   {% endfor %}
 </div>
 
+<!-- Here are the out of date tutorials, which are only visible if the list of out of date tutorials is not empty -->
   {% assign borked = someexamples | where_exp: "item", "site.data.examples_status[item.filename] == 'failure'" %}
   {% if borked.size > 0 %}
 <details style="padding-bottom: 2em;">
   <summary>Out of Date Tutorials</summary>
 <div class="borked">
 <div class="gallery_example_cards">
-  {%- for post in borked  -%}
+  {%- for post in borked -%}
   <div class="item_example_card {{site.data.examples_status[post.filename]}}">
     <div class="item_example_left">
         <img class="item_example-image"
@@ -126,4 +123,4 @@ the example, powered by <a href="https://mybinder.org">mybinder</a>.
 </div>
 </details>
 {% endif %}
-<span class="date">Tutorial grid last updated on {{ site.time | date: '%B %d %Y' }}</span>
+<span class="date">Tutorial grid last updated on {{ site.time | date: '%B %d %Y' }}.</span>
