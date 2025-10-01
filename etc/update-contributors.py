@@ -59,13 +59,22 @@ for repo in repoList:
     else:
         subprocess.run(["git", "clone", f"https://github.com/{repo}"], check=True)
         os.chdir(repo.split('/')[-1])
+
     print("Generating list of authors active in past year...")
-    gitlog = subprocess.Popen(['git', 'log', '--since="1 year ago"', '--format=%aN, %aE'],
-                            stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-    output = subprocess.check_output(['sort', '-u'], stdin=gitlog.stdout)
-    gitlog.wait()
-    dnamelist = [[i.split(',')[0], i.split(',')[-1].lstrip().rstrip()]
-                 for i in output.decode().strip().split('\n')]
+    gitlog = subprocess.Popen(['git', 'shortlog', '-se', '--since=1 year ago', '--group=author', '--group=trailer:co-authored-by'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    output, _ = gitlog.communicate()
+    dnamelist = []
+    for line in output.decode().strip().split("\n"):
+        # line format: "  42  My Name <mymail@example.com>"
+        parts = line.strip().split("\t")
+        if len(parts) < 2:
+            continue
+        name_email = parts[-1]
+        if "<" in name_email and ">" in name_email:
+            name = name_email.split("<")[0].strip()
+            email = name_email.split("<")[1].split(">")[0].strip()
+            dnamelist.append([name, email])
+
     namelist.extend(dnamelist)
     count = 0
     for i in dnamelist:
