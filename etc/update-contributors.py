@@ -37,6 +37,7 @@ repoList = ["thofma/Hecke.jl", "oscar-system/Oscar.jl", "Nemocas/Nemo.jl",
 
 newcount = 0
 newList = []
+newList2 = []
 namelist = []
 newpersonlist = []
 github_newusers = []
@@ -115,6 +116,7 @@ for repo in repoList:
                                 # we know the person and the github, just mark person as active
                                 github_username = person['github']
                                 flag = True
+                                break
                         elif "aka" in person:
                             # the person has an alias
                             if i[0] in person["aka"]:
@@ -122,6 +124,7 @@ for repo in repoList:
                                     # we know the person and the github, just mark person as active
                                     github_username = person['github']
                                     flag = True
+                                    break
                         elif "aka_email" in person:
                             # the person has an alias email
                             if i[1] in person["aka_email"]:
@@ -129,6 +132,7 @@ for repo in repoList:
                                     # we know the person and the github, just mark person as active
                                     github_username = person['github']
                                     flag = True
+                                    break
                 if not flag:
                     summarystring += f"- Github username not found for {i[0]} with email {i[1]}. Excluding from people_list.yml\n"
                     continue
@@ -143,8 +147,24 @@ for repo in repoList:
             print(email)
             print(github_commit_url)
             github_username = "__notfound__"
-        assert github_username != "__notfound__"
-        if github_username not in names and github_username not in github_newusers:
+            flag = False
+            for person in peopleList:
+                if i[0] == person['name'] and i[1] == person['email']:
+                    flag = True
+                    break
+                elif "aka" in person:
+                    if i[0] in person["aka"]:
+                        flag = True
+                        break
+                elif "aka_email" in person:
+                    if i[1] in person["aka_email"]:
+                        flag = True
+                        break
+            if flag == False:
+                newList2.append([i[0], i[1]])
+
+        #assert github_username != "__notfound__"
+        if github_username not in names and github_username not in github_newusers and github_username != "__notfound__":
             print("A new contributor!")
             newcount += 1
             newpersonlist.append(i[0])
@@ -218,3 +238,9 @@ Newly retired contributors : {retcount} | {retpersonlist}
 
 with open("../summary.txt", 'w') as summaryfile:
     summaryfile.write(summarystring)
+
+
+print("\n")
+print("\n")
+
+print(newList2)
