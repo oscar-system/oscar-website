@@ -1,3 +1,31 @@
+- title:  Effective Methods in Algebraic Geometry 2026 
+  start-date: "2026-07-6"
+  end-date: "2026-07-10"
+  location: Durham, UK
+  website: https://maths.dur.ac.uk/mega2026/
+  satellite: "Yes"
+
+- title: JuliaCon 2026
+  start-date: "2026-08-10"
+  end-date: "2026-08-15"
+  location: Mainz
+  website: https://juliacon.org/2026/
+  satellite: "Yes"
+
+- title: ICMS 2026
+  start-date: "2026-07-20"
+  end-date: "2026-07-23"
+  location: Waterloo, Canada
+  website: https://cargo.wlu.ca/ICMS2026/
+  satellite: "Yes"
+
+- title: MaRDI Annual Meeting 2025
+  start-date: "2025-10-08"
+  end-date: "2025-10-10"
+  location: Munich
+  website: https://www.math.cit.tum.de/math/aktuelles/article/mardi-annual-meeting-2025/
+  satellite: "Yes"
+
 - title: Algebraic methods in dynamics and particle physics
   start-date: "2025-10-15"
   end-date: "2025-10-17"
