@@ -165,6 +165,8 @@
 - name: Berenike Dieterle
   affiliation: University of Kaiserslautern-Landau
   email: dieterle@mathematik.uni-kl.de
+  aka_email:
+  - 94169337+BD-00@users.noreply.github.com
   github: BD-00
   status: active
   comment: Master student of Claus Fieker as of 2024
@@ -295,6 +297,8 @@
   github: lgoettgens
   website: https://www.art.rwth-aachen.de/cms/~bbxbwx/
   status: active
+  aka_email:
+  - lars.goettgen@rwth-aachen.de
   repos:
   - thofma/Hecke.jl
   - oscar-system/Oscar.jl
