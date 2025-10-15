@@ -193,7 +193,7 @@ activelist = [dict(sorted(i.items(), key=custom_sort_function)) for i in sortedP
 retiredlist = [dict(sorted(i.items(), key=custom_sort_function)) for i in sortedPeopleList if i['status'] == "retired"]
 with open('../_data/people_list.yml', 'w') as outfile:
     outfile.write("# It is possible that people marked as 'retired' may have the repo key as an "
-                  "empty array.\n# This is because people as marked as retired if the update "
+                  "empty array.\n# This is because people are marked as retired if the update "
                   "script could not find them in any repo.\n# Retired people only have repo "
                   "information if repo information about them was known when they were\n# active "
                   "(or manually added) by a maintainer.\n\n")
