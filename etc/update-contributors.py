@@ -142,17 +142,16 @@ for repo in repoList:
             newList.append([i[0], i[1], github_username, [repo]])
         elif github_username in names:
             user = [item for item in peopleList if item['github'] == github_username][0]
-            user['repos'].append(repo)
-            user['repos'] = list(set(user['repos']))
+            if repo not in user['repos']:
+                user['repos'].append(repo)
         else:
             # github_username in github_newusers
             user = [item for item in newList if item[2] == github_username][0]
-            user[3].append(repo)
-            user[3] = list(set(user[3]))
-        github_userlist.append(github_username)
+            if repo not in user[3]:
+                user.append(repo)
+        if github_username not in github_userlist:
+            github_userlist.append(github_username)
     os.chdir("..")
-
-github_userlist = list(set(github_userlist))
 
 # mark active / retired
 # if PI, don't touch them
