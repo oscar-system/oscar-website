@@ -148,7 +148,7 @@ for repo in repoList:
             # github_username in github_newusers
             user = [item for item in newList if item[2] == github_username][0]
             if repo not in user[3]:
-                user.append(repo)
+                user[3].append(repo)
         if github_username not in github_userlist:
             github_userlist.append(github_username)
     os.chdir("..")
