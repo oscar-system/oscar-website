@@ -30,18 +30,18 @@ for i in peopleList:
     if 'repos' not in i.keys():
         i['repos'] = []
 
-names = [i['github'] for i in peopleList]
+names = [i['github'] for i in peopleList if 'github' in i]
 repoList = ["thofma/Hecke.jl", "oscar-system/Oscar.jl", "Nemocas/Nemo.jl",
             "Nemocas/AbstractAlgebra.jl", "oscar-system/GAP.jl", "oscar-system/Polymake.jl",
             "oscar-system/Singular.jl", "algebraic-solving/AlgebraicSolving.jl"]
 
-newcount = 0
 newList = []
-newList2 = []
+newCoauthorList = []
 namelist = []
 newpersonlist = []
 github_newusers = []
 github_userlist = []
+github_username = '__notfound__'
 API_KEY = os.getenv("API_KEY") # TODO: rename to whatever is the right env var
 summarystring = ""
 # grab currently active devs
@@ -99,7 +99,7 @@ for repo in repoList:
         r = requests.get(github_commit_url, headers={"Authorization":f"Bearer {API_KEY}"})
         if r.status_code == 200:
             j = json.loads(r.text)
-            github_username = ''
+            github_username = '__notfound__'
             if j['author'] == None:
                 # this commit was authored by someone and committed by someone else
                 # so github can't find a github user for the author, only for committed
@@ -136,8 +136,43 @@ for repo in repoList:
                 if not flag:
                     summarystring += f"- Github username not found for {i[0]} with email {i[1]}. Excluding from people_list.yml\n"
                     continue
-            if github_username == '':
+            if github_username == '__notfound__':
                 github_username = j['author']['login']
+        elif github_commit_url == f"https://api.github.com/repos/{repo}/commits/":
+            # this is a case of a co-author
+            flag = False
+            for person in peopleList:
+                if 'email' in person.keys() and 'name' in person.keys():
+                    if i[0] == person['name'] and i[1] == person['email']:
+                            flag = True
+                            break
+                    elif "aka" in person:
+                        # the person has an alias
+                        if i[0] in person["aka"]:
+                            if 'github' in person.keys() and person['github'] != '':
+                                # we know the person and the github, just mark person as active
+                                github_username = person['github']
+                                flag = True
+                                break
+                    elif "aka_email" in person:
+                        # the person has an alias email
+                        if i[1] in person["aka_email"]:
+                            if 'github' in person.keys() and person['github'] != '':
+                                # we know the person and the github, just mark person as active
+                                github_username = person['github']
+                                flag = True
+                                break
+                    elif i[0] == person['name'] or i[1] == person['email']:
+                        github_username = person['github']
+                        flag = True
+                        break
+            if not flag:
+                # a co author we don't know about at all
+                gitlog = subprocess.Popen(['git', 'shortlog', '--format="%h %s %(trailers:key=Co-authored-by)"'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+                gitcommit = subprocess.Popen(['grep', i[0]], stdin=gitlog.stdout, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+                output = gitcommit.communicate()[0].decode()
+                output = output.strip().strip('"').split()[0]
+                newCoauthorList.append([i[0], i[1], repo, output])
         else:
             # this will never happen, except if the API lies to you
             # or blocks access
@@ -148,31 +183,16 @@ for repo in repoList:
             print(github_commit_url)
             github_username = "__notfound__"
             flag = False
-            for person in peopleList:
-                if i[0] == person['name'] and i[1] == person['email']:
-                    flag = True
-                    break
-                elif "aka" in person:
-                    if i[0] in person["aka"]:
-                        flag = True
-                        break
-                elif "aka_email" in person:
-                    if i[1] in person["aka_email"]:
-                        flag = True
-                        break
-            if flag == False:
-                newList2.append([i[0], i[1]])
 
-        #assert github_username != "__notfound__"
+        assert github_username != "__notfound__"
         if github_username not in names and github_username not in github_newusers and github_username != "__notfound__":
             print("A new contributor!")
-            newcount += 1
             newpersonlist.append(i[0])
             print(f"{i[0]}\t{i[1]}\t{github_username}")
             github_newusers.append(github_username)
             newList.append([i[0], i[1], github_username, [repo]])
         elif github_username in names:
-            user = [item for item in peopleList if item['github'] == github_username][0]
+            user = [item for item in peopleList if 'github' in item and item['github'] == github_username][0]
             if repo not in user['repos']:
                 user['repos'].append(repo)
         else:
@@ -192,6 +212,9 @@ revcount = 0
 retpersonlist = []
 revpersonlist = []
 for i in peopleList:
+    if 'github' not in i:
+        #co authors
+        continue
     if i['status']=='pi':
         continue
         #don't touch a thing!
@@ -215,6 +238,11 @@ for i in newList:
         np.append({"name": i[0], "email": i[1], "github": i[2], "status": "active", "repos": i[3]})
 peopleList.extend(np)
 
+np = []
+for i in newCoauthorList:
+    np.append({"name": i[0], "email": i[1], "status": "active", "comment": f"Co-author of commit {i[3]}","repos": [i[2]]})
+peopleList.extend(np)
+
 sortedPeopleList = sorted(peopleList, key= lambda d: d['name'].split()[-1])
 
 # save yml to *NEW* file
@@ -231,16 +259,11 @@ with open('../_data/people_list.yml', 'w') as outfile:
     yaml.dump(sortedPeopleList, outfile, Dumper=MyDumper, sort_keys = False, allow_unicode=True)
 
 summarystring = f"""This PR updates the contributors list based on the latest changes.
-New contributors : {newcount} | {newpersonlist}
+New contributors : {len(newpersonlist)} | {newpersonlist}
 Revived contributors : {revcount} | {revpersonlist}
 Newly retired contributors : {retcount} | {retpersonlist}
+New co-authors : {len(newCoauthorList)} | {newCoauthorList}
 \nSummary Notes:\n\n"""+ summarystring
 
 with open("../summary.txt", 'w') as summaryfile:
     summaryfile.write(summarystring)
-
-
-print("\n")
-print("\n")
-
-print(newList2)
