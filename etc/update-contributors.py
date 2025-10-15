@@ -8,7 +8,8 @@ import subprocess
 def custom_sort_function(item):
     name, _ = item
     sortweight = {"name": 0, "affiliation": 1, "email": 2, "github": 3, "website": 4,
-                  "paid_by_dfg": 5,"status": 6, "comment": 7, "aka": 8, "aka_email": 9}
+                  "paid_by_dfg": 5,"status": 6, "comment": 7, "aka": 8, "aka_email": 9,
+                  "repos": 10}
     return sortweight[name]
 
 # Hack copied from https://github.com/yaml/pyyaml/issues/127#issuecomment-525800484
@@ -24,6 +25,11 @@ class MyDumper(yaml.SafeDumper):
 infile = "../_data/people_list.yml"
 with open(infile, "r") as ymlfile:
     peopleList = yaml.safe_load(ymlfile)
+
+for i in peopleList:
+    if 'repos' not in i.keys():
+        i['repos'] = []
+
 names = [i['github'] for i in peopleList]
 repoList = ["thofma/Hecke.jl", "oscar-system/Oscar.jl", "Nemocas/Nemo.jl",
             "Nemocas/AbstractAlgebra.jl", "oscar-system/GAP.jl", "oscar-system/Polymake.jl",
@@ -133,7 +139,17 @@ for repo in repoList:
             newpersonlist.append(i[0])
             print(f"{i[0]}\t{i[1]}\t{github_username}")
             github_newusers.append(github_username)
-            newList.append([i[0], i[1], github_username])
+            newList.append([i[0], i[1], github_username, [repo]])
+        elif github_username in names:
+            print(github_username)
+            user = [item for item in peopleList if item['github'] == github_username][0]
+            user['repos'].append(repo)
+            user['repos'] = list(set(user['repos']))
+        else:
+            # github_username in github_newusers
+            user = [item for item in newList if item[2] == github_username][0]
+            user[3].append(repo)
+            user[3] = list(set(user[3]))
         github_userlist.append(github_username)
     os.chdir("..")
 
@@ -164,10 +180,10 @@ for i in peopleList:
 np = []
 for i in newList:
     if "users.noreply.github.com" in i[1]:
-        np.append({"name": i[0], "github": i[2], "status": "active"})
+        np.append({"name": i[0], "github": i[2], "status": "active", "repos": i[3]})
         summarystring += f"- Email not found for {i[0]} ({i[2]})..!\n"
     else:
-        np.append({"name": i[0], "email": i[1], "github": i[2], "status": "active"})
+        np.append({"name": i[0], "email": i[1], "github": i[2], "status": "active", "repos": i[3]})
 peopleList.extend(np)
 
 sortedPeopleList = sorted(peopleList, key= lambda d: d['name'].split()[-1])
