@@ -141,7 +141,6 @@ for repo in repoList:
             github_newusers.append(github_username)
             newList.append([i[0], i[1], github_username, [repo]])
         elif github_username in names:
-            print(github_username)
             user = [item for item in peopleList if item['github'] == github_username][0]
             user['repos'].append(repo)
             user['repos'] = list(set(user['repos']))
