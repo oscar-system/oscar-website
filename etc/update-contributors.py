@@ -94,7 +94,6 @@ for repo in repoList:
                                    capture_output=True)
         hash = process.stdout.decode().strip()
         github_commit_url = f"https://api.github.com/repos/{repo}/commits/{hash}"
-        print(github_commit_url)
         #ask github API for username
         r = requests.get(github_commit_url, headers={"Authorization":f"Bearer {API_KEY}"})
         if r.status_code == 200:
