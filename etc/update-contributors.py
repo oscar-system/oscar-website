@@ -192,12 +192,12 @@ pilist = [dict(sorted(i.items(), key=custom_sort_function)) for i in sortedPeopl
 activelist = [dict(sorted(i.items(), key=custom_sort_function)) for i in sortedPeopleList if i['status'] == "active"]
 retiredlist = [dict(sorted(i.items(), key=custom_sort_function)) for i in sortedPeopleList if i['status'] == "retired"]
 with open('../_data/people_list.yml', 'w') as outfile:
-    outfile.write("######################\n# Project leads\n######################\n\n")
-    yaml.dump(pilist, outfile, Dumper=MyDumper, sort_keys=False, allow_unicode=True)
-    outfile.write("\n######################\n# Active contributors\n######################\n\n")
-    yaml.dump(activelist, outfile, Dumper=MyDumper, sort_keys=False, allow_unicode=True)
-    outfile.write("\n######################\n# Retired contributors\n######################\n\n")
-    yaml.dump(retiredlist, outfile, Dumper=MyDumper, sort_keys=False, allow_unicode=True)
+    outfile.write("# It is possible that people marked as 'retired' may have the repo key as an "
+                  "empty array.\n# This is because people as marked as retired if the update "
+                  "script could not find them in any repo.\n# Retired people only have repo "
+                  "information if repo information about them was known when they were\n# active "
+                  "(or manually added) by a maintainer.\n\n")
+    yaml.dump(sortedPeopleList, outfile, Dumper=MyDumper, sort_keys = False, allow_unicode=True)
 
 summarystring = f"""This PR updates the contributors list based on the latest changes.
 New contributors : {newcount} | {newpersonlist}
