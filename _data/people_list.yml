@@ -8,6 +8,10 @@
   github: simonbrandhorst
   website: https://www.math.uni-sb.de/ag/brandhorst/index.php
   status: pi
+  repos:
+  - thofma/Hecke.jl
+  - oscar-system/Oscar.jl
+  - Nemocas/Nemo.jl
 
 - name: Wolfram Decker
   affiliation: University of Kaiserslautern-Landau
@@ -15,6 +19,8 @@
   github: wdecker
   website: https://math.rptu.de/en/wgs/agag/people/head/decker
   status: pi
+  repos:
+  - oscar-system/Oscar.jl
 
 - name: Claus Fieker
   affiliation: University of Kaiserslautern-Landau
@@ -22,6 +28,11 @@
   github: fieker
   website: https://math.rptu.de/en/wgs/agag/people/head/fieker
   status: pi
+  repos:
+  - thofma/Hecke.jl
+  - oscar-system/Oscar.jl
+  - Nemocas/Nemo.jl
+  - Nemocas/AbstractAlgebra.jl
 
 - name: Tommy Hofmann
   affiliation: University of Siegen
@@ -29,6 +40,14 @@
   github: thofma
   website: https://www.thofma.com
   status: pi
+  repos:
+  - thofma/Hecke.jl
+  - oscar-system/Oscar.jl
+  - Nemocas/Nemo.jl
+  - Nemocas/AbstractAlgebra.jl
+  - oscar-system/GAP.jl
+  - oscar-system/Singular.jl
+  - algebraic-solving/AlgebraicSolving.jl
 
 - name: Max Horn
   affiliation: University of Kaiserslautern-Landau
@@ -36,6 +55,14 @@
   github: fingolfin
   website: https://www.quendi.de/math
   status: pi
+  repos:
+  - thofma/Hecke.jl
+  - oscar-system/Oscar.jl
+  - Nemocas/Nemo.jl
+  - Nemocas/AbstractAlgebra.jl
+  - oscar-system/GAP.jl
+  - oscar-system/Polymake.jl
+  - oscar-system/Singular.jl
 
 - name: Michael Joswig
   affiliation: TU Berlin
@@ -43,6 +70,8 @@
   github: micjoswig
   website: https://page.math.tu-berlin.de/~joswig/
   status: pi
+  repos:
+  - oscar-system/Oscar.jl
 
 ######################
 # Active contributors
@@ -55,6 +84,11 @@
   website: https://math.rptu.de/ags/agag/personen/mitglieder
   paid_by_dfg: true
   status: active
+  repos:
+  - thofma/Hecke.jl
+  - oscar-system/Oscar.jl
+  - Nemocas/Nemo.jl
+  - Nemocas/AbstractAlgebra.jl
 
 - name: Albin Ahlbäck
   affiliation: Chalmers University
@@ -62,11 +96,18 @@
   github: albinahlback
   website: https://albinahlback.gitlab.io/
   status: active
+  repos:
+  - Nemocas/Nemo.jl
+  - Nemocas/AbstractAlgebra.jl
 
 - name: Feroz Ahmad
   email: feroz.ahmad.email@gmail.com
   github: Fe-r-oz
   status: active
+  repos:
+  - thofma/Hecke.jl
+  - oscar-system/Oscar.jl
+  - Nemocas/AbstractAlgebra.jl
 
 - name: Martin Bies
   affiliation: University of Kaiserslautern-Landau
@@ -74,6 +115,8 @@
   github: HereAround
   website: https://martinbies.github.io
   status: active
+  repos:
+  - oscar-system/Oscar.jl
 
 - name: Jens Brandt
   affiliation: RWTH Aachen University
@@ -81,6 +124,8 @@
   github: flyingapfopenguin
   website: https://www.math.rwth-aachen.de/~Jens.Brandt/
   status: active
+  repos:
+  - thofma/Hecke.jl
 
 - name: Tobias Braun
   affiliation: RWTH Aachen University
@@ -88,6 +133,10 @@
   github: SirToby25
   website: https://www.math.rwth-aachen.de/~Tobias.Braun/
   status: active
+  repos:
+  - thofma/Hecke.jl
+  - oscar-system/Oscar.jl
+  - Nemocas/AbstractAlgebra.jl
 
 - name: Thomas Breuer
   affiliation: RWTH Aachen University
@@ -96,6 +145,12 @@
   website: http://www.math.rwth-aachen.de/~Thomas.Breuer/
   paid_by_dfg: true
   status: active
+  repos:
+  - thofma/Hecke.jl
+  - oscar-system/Oscar.jl
+  - Nemocas/Nemo.jl
+  - Nemocas/AbstractAlgebra.jl
+  - oscar-system/GAP.jl
 
 - name: Janko Böhm
   affiliation: University of Kaiserslautern-Landau
@@ -103,6 +158,8 @@
   github: jankoboehm
   website: https://agag-jboehm.math.rptu.de/~boehm/
   status: active
+  repos:
+  - oscar-system/Oscar.jl
 
 - name: Berenike Dieterle
   affiliation: University of Kaiserslautern-Landau
@@ -110,11 +167,15 @@
   github: BD-00
   status: active
   comment: Master student of Claus Fieker as of 2024
+  repos:
+  - thofma/Hecke.jl
 
 - name: Mohab Safey El Din
   email: mohab.safey@lip6.fr
   github: mohabsafey
   status: active
+  repos:
+  - algebraic-solving/AlgebraicSolving.jl
 
 - name: Christian Eder
   affiliation: University of Kaiserslautern-Landau
@@ -122,6 +183,9 @@
   github: ederc
   website: https://www.mathematik.uni-kl.de/~ederc/index.html
   status: active
+  repos:
+  - oscar-system/Oscar.jl
+  - algebraic-solving/AlgebraicSolving.jl
 
 - name: Kamillo Ferry
   affiliation: TU Berlin
@@ -129,6 +193,8 @@
   github: ooinaruhugh
   website: https://kafe.dev/
   status: active
+  repos:
+  - oscar-system/Oscar.jl
 
 - name: Anne Frühbis-Krüger
   affiliation: Universität Oldenburg
@@ -136,6 +202,9 @@
   github: afkafkafk13
   website: https://uol.de/en/mathematik/persons/profs/prof-dr-anne-fruehbis-krueger
   status: active
+  repos:
+  - oscar-system/Oscar.jl
+  - Nemocas/AbstractAlgebra.jl
 
 - name: Lars Göttgens
   affiliation: RWTH Aachen University
@@ -143,6 +212,15 @@
   github: lgoettgens
   website: https://www.art.rwth-aachen.de/cms/~bbxbwx/
   status: active
+  repos:
+  - thofma/Hecke.jl
+  - oscar-system/Oscar.jl
+  - Nemocas/Nemo.jl
+  - Nemocas/AbstractAlgebra.jl
+  - oscar-system/GAP.jl
+  - oscar-system/Polymake.jl
+  - oscar-system/Singular.jl
+  - algebraic-solving/AlgebraicSolving.jl
 
 - name: Jeroen Hanselmann
   affiliation: University of Kaiserslautern-Landau
@@ -150,11 +228,8 @@
   github: JHanselman
   website: https://hanselmanj.eu/
   status: active
-
-- name: Oskar Henriksson
-  email: oskar.david.henriksson@gmail.com
-  github: oskarhenriksson
-  status: active
+  repos:
+  - thofma/Hecke.jl
 
 - name: Alexej Jordan
   affiliation: TU Berlin
@@ -162,11 +237,15 @@
   github: alexej-jordan
   website: https://www.tu.berlin/dmg/ueber-uns/team
   status: active
+  repos:
+  - oscar-system/Oscar.jl
 
 - name: Thomas Kahle
   email: thomas.kahle@jpberlin.de
   github: tom111
   status: active
+  repos:
+  - oscar-system/Oscar.jl
 
 - name: Lars Kastner
   affiliation: TU Berlin
@@ -174,6 +253,8 @@
   github: lkastner
   website: https://lkastner.github.io/
   status: active
+  repos:
+  - oscar-system/Oscar.jl
 
 - name: Aaruni Kaushik
   affiliation: University of Kaiserslautern-Landau
@@ -181,10 +262,17 @@
   github: aaruni96
   website: https://akaushik.edufor.me
   status: active
+  repos:
+  - oscar-system/Oscar.jl
+  - Nemocas/Nemo.jl
+  - Nemocas/AbstractAlgebra.jl
+  - oscar-system/GAP.jl
 
 - name: KilianBruns
   github: KilianBruns
   status: active
+  repos:
+  - oscar-system/Oscar.jl
 
 - name: Lukas Kühne
   affiliation: Bielefeld University
@@ -192,6 +280,8 @@
   github: LukasKuehne
   website: https://www.math.uni-bielefeld.de/~lkuehne/
   status: active
+  repos:
+  - oscar-system/Oscar.jl
 
 - name: Benjamin Lorenz
   affiliation: TU Berlin
@@ -199,6 +289,13 @@
   github: benlorenz
   website: https://www.tu.berlin/dmg/ueber-uns/systemadministration
   status: active
+  repos:
+  - thofma/Hecke.jl
+  - oscar-system/Oscar.jl
+  - Nemocas/Nemo.jl
+  - Nemocas/AbstractAlgebra.jl
+  - oscar-system/GAP.jl
+  - oscar-system/Polymake.jl
 
 - name: Dante Luber
   affiliation: TU Berlin
@@ -206,6 +303,8 @@
   github: danteluber
   website: https://sites.google.com/view/dantelubermath/home
   status: active
+  repos:
+  - oscar-system/Oscar.jl
 
 - name: Eoin Mackall
   affiliation: University of California, Santa Cruz
@@ -215,6 +314,8 @@
   status: active
   aka_email:
   - eoinmackall@pop-os.lan
+  repos:
+  - thofma/Hecke.jl
 
 - name: Mikelis Emils Mikelsons
   affiliation: University of Kaiserslautern-Landau
@@ -222,6 +323,11 @@
   github: emikelsons
   website: https://github.com/emikelsons
   status: active
+  repos:
+  - thofma/Hecke.jl
+  - oscar-system/Oscar.jl
+  - Nemocas/Nemo.jl
+  - Nemocas/AbstractAlgebra.jl
 
 - name: Rafael Mohr
   affiliation: Sorbonne University and University of Kaiserslautern-Landau
@@ -229,6 +335,8 @@
   github: RafaelDavidMohr
   website: https://mathexp.eu/mohr/
   status: active
+  repos:
+  - algebraic-solving/AlgebraicSolving.jl
 
 - name: Stevell Muller
   affiliation: Saarland University
@@ -236,17 +344,27 @@
   github: StevellM
   website: https://www.math.uni-sb.de/ag/brandhorst/index.php?option=com_content&view=article&id=26:muller-en-1&catid=18&lang=en&Itemid=114
   status: active
+  repos:
+  - thofma/Hecke.jl
+  - oscar-system/Oscar.jl
 
 - name: Till Müller
   affiliation: University of Kaiserslautern-Landau
   github: Till-Eisen
   website: https://math.rptu.de/ags/agag/personen/mitglieder
   status: active
+  repos:
+  - Nemocas/Nemo.jl
 
 - name: James Nohilly
   affiliation: University of Kaiserslautern-Landau
   github: jamesnohilly
   status: active
+  repos:
+  - thofma/Hecke.jl
+  - oscar-system/Oscar.jl
+  - Nemocas/Nemo.jl
+  - Nemocas/AbstractAlgebra.jl
 
 - name: Raphaël Paegelow
   affiliation: University of Lille
@@ -254,6 +372,8 @@
   github: RaphaelPaegelow
   website: https://paegelow.fr/en/
   status: active
+  repos:
+  - oscar-system/Oscar.jl
 
 - name: Erik Paemurru
   affiliation: Saarland University
@@ -261,12 +381,18 @@
   github: paemurru
   website: https://www.math.uni-sb.de/ag/brandhorst/index.php?option=com_content&view=article&id=49:paemurru-en&catid=18&lang=en&Itemid=114
   status: active
+  repos:
+  - thofma/Hecke.jl
+  - oscar-system/Oscar.jl
+  - Nemocas/Nemo.jl
 
 - name: Janika Peters
   affiliation: RWTH Aachen University
   email: janika.peters@rwth-aachen.de
   github: janikapeters
   status: active
+  repos:
+  - oscar-system/Oscar.jl
 
 - name: Rémi Prébet
   affiliation: Inria
@@ -276,12 +402,23 @@
   status: active
   aka:
   - Remi Prebet
+  repos:
+  - Nemocas/Nemo.jl
+  - algebraic-solving/AlgebraicSolving.jl
 
 - name: Hendrik Ranocha
   affiliation: University of Mainz
   email: hendrik.ranocha@uni-mainz.de.
   github: ranocha
   status: active
+  repos:
+  - thofma/Hecke.jl
+  - oscar-system/Oscar.jl
+  - Nemocas/Nemo.jl
+  - Nemocas/AbstractAlgebra.jl
+  - oscar-system/GAP.jl
+  - oscar-system/Polymake.jl
+  - oscar-system/Singular.jl
 
 - name: Yue Ren
   affiliation: Durham University
@@ -289,6 +426,8 @@
   github: YueRen
   website: https://www.yueren.de/
   status: active
+  repos:
+  - oscar-system/Oscar.jl
 
 - name: Morgan Rodgers
   affiliation: University of Kaiserslautern-Landau
@@ -296,6 +435,8 @@
   github: mjrodgers
   website: https://math.rptu.de/ags/agag/personen/mitglieder
   status: active
+  repos:
+  - oscar-system/Oscar.jl
 
 - name: Felix Röhrich
   affiliation: RWTH Aachen University
@@ -303,17 +444,26 @@
   github: felix-roehrich
   website: https://www.art.rwth-aachen.de/cms/~xlgua/
   status: active
+  repos:
+  - oscar-system/Oscar.jl
+  - Nemocas/Nemo.jl
+  - Nemocas/AbstractAlgebra.jl
+  - oscar-system/Singular.jl
 
 - name: Neven Sajko
   email: s@purelymail.com
   github: nsajko
   status: active
+  repos:
+  - Nemocas/AbstractAlgebra.jl
 
 - name: Marcel Salmon
   affiliation: Universität Oldenburg
   github: Syz-MS
   status: active
   comment: Associated with Anne Fruhbig Kruger as of 2024
+  repos:
+  - oscar-system/Oscar.jl
 
 - name: Johannes Schmitt
   affiliation: Ruhr-Universität Bochum
@@ -322,6 +472,11 @@
   website: https://joschmitt.eu
   paid_by_dfg: false
   status: active
+  repos:
+  - thofma/Hecke.jl
+  - oscar-system/Oscar.jl
+  - Nemocas/Nemo.jl
+  - Nemocas/AbstractAlgebra.jl
 
 - name: Hans Schönemann
   affiliation: University of Kaiserslautern-Landau
@@ -329,17 +484,24 @@
   github: hannes14
   website: https://math.rptu.de/ags/agag/personen/mitglieder
   status: active
+  repos:
+  - oscar-system/Oscar.jl
+  - oscar-system/Singular.jl
 
 - name: Wiken Steiner
   affiliation: University of Siegen
   github: wfsteiner
   status: active
+  repos:
+  - thofma/Hecke.jl
 
 - name: Ulrich Thiel
   affiliation: University of Kaiserslautern-Landau
   github: ulthiel
   website: https://ulthiel.com/math/
   status: active
+  repos:
+  - oscar-system/Oscar.jl
 
 - name: Andrew P. Turner
   affiliation: Virginia Tech
@@ -347,11 +509,15 @@
   github: apturner
   website: https://apturner.net/
   status: active
+  repos:
+  - oscar-system/Oscar.jl
 
 - name: Grégory Vanuxem
   github: gvanuxem
   status: active
   comment: Who ?
+  repos:
+  - Nemocas/Nemo.jl
 
 - name: Antony Della Vecchia
   affiliation: TU Berlin
@@ -359,6 +525,9 @@
   github: antonydellavecchia
   website: https://antonydellavecchia.github.io/
   status: active
+  repos:
+  - oscar-system/Oscar.jl
+  - oscar-system/Polymake.jl
 
 - name: Marcel Wack
   affiliation: TU Berlin
@@ -366,17 +535,27 @@
   github: Sequenzer
   website: https://page.math.tu-berlin.de/~wack/
   status: active
+  repos:
+  - oscar-system/Oscar.jl
+  - Nemocas/AbstractAlgebra.jl
 
 - name: Martin Wagner
   affiliation: University of Kaiserslautern-Landau
   email: martin.wagner.dev@gmail.com
   github: SoongNoonien
   status: active
+  repos:
+  - thofma/Hecke.jl
+  - oscar-system/Oscar.jl
+  - Nemocas/Nemo.jl
+  - Nemocas/AbstractAlgebra.jl
 
 - name: Karl Wessel
   email: wessel.karl@googlemail.com
   github: karlwessel
   status: active
+  repos:
+  - Nemocas/Nemo.jl
 
 - name: Torben Wiedemann
   affiliation: University of Kaiserslautern-Landau
@@ -384,6 +563,8 @@
   github: TWiedemann
   website: https://math.rptu.de/ags/agag/personen/mitglieder
   status: active
+  repos:
+  - oscar-system/Oscar.jl
 
 - name: Matthias Zach
   affiliation: University of Kaiserslautern-Landau
@@ -391,6 +572,18 @@
   github: HechtiDerLachs
   website: https://math.rptu.de/ags/agag/personen/mitglieder
   status: active
+  repos:
+  - thofma/Hecke.jl
+  - oscar-system/Oscar.jl
+  - Nemocas/AbstractAlgebra.jl
+
+- name: Varun Trehan
+  email: varuntrehan7@gmail.com
+  comment: MSc. student of Max Horn and Claus Fieker
+  github: varuntrehan7
+  status: active
+  repos:
+  - oscar-system/Oscar.jl
 
 ######################
 # Retired contributors
@@ -402,12 +595,14 @@
   github: mohamed-barakat
   website: https://mohamed-barakat.github.io/
   status: retired
+  repos: []
 
 - name: Reimer Behrends
   affiliation: University of Kaiserslautern-Landau
   github: rbehrends
   status: retired
   comment: Parallelization, GAP garbage collector interface
+  repos: []
 
 - name: Alex J. Best
   affiliation: King's College London
@@ -415,6 +610,7 @@
   github: alexjbest
   website: https://alexjbest.github.io/
   status: retired
+  repos: []
 
 - name: Tobias Boege
   affiliation: KTH Stockholm
@@ -422,6 +618,7 @@
   github: taboege
   website: https://taboege.de/
   status: retired
+  repos: []
 
 - name: Taylor Brysiewicz
   affiliation: University of Western Ontario
@@ -429,6 +626,7 @@
   github: tbrysiewicz
   website: https://sites.google.com/view/taylorbrysiewicz/home
   status: retired
+  repos: []
 
 - name: Andrei Comaneci
   affiliation: TU Berlin
@@ -436,6 +634,7 @@
   github: andreicomaneci
   website: https://page.math.tu-berlin.de/~comaneci/
   status: retired
+  repos: []
 
 - name: Alexander Demin
   affiliation: HSE University
@@ -443,6 +642,7 @@
   github: sumiya11
   website: https://sumiya11.github.io/
   status: retired
+  repos: []
 
 - name: Alexander Dinges
   affiliation: University of Kaiserslautern-Landau
@@ -451,12 +651,14 @@
   website: https://pl.cs.uni-kl.de/homepage/de/staff/AlexanderDinges/
   status: retired
   comment: Worked for Janko on modules
+  repos: []
 
 - name: Raul Epure
   affiliation: University of Kaiserslautern-Landau
   github: raulepure
   status: retired
   comment: PhD Student of Mathias Schulze until ~2021.
+  repos: []
 
 - name: Nicolas Faross
   affiliation: Saarland University
@@ -465,6 +667,7 @@
   website: https://www.uni-saarland.de/lehrstuhl/weber-moritz/team/nicolas-faross.html
   status: retired
   comment: PhD student of Moritz Weber in Saarbruecken, as of 2024
+  repos: []
 
 - name: Ghislain Fourier
   affiliation: RWTH Aachen University
@@ -472,18 +675,21 @@
   github: gfourier
   website: https://www.art.rwth-aachen.de/cms/~rnko/
   status: retired
+  repos: []
 
 - name: Rafael Fourquet
   affiliation: University of Kaiserslautern-Landau
   github: rfourquet
   status: retired
   comment: General infrastructure who ?
+  repos: []
 
 - name: Giovanni De Franceschi
   affiliation: University of Kaiserslautern-Landau
   github: GDeFranceschi
   status: retired
   comment: Was PostDoc in Kaiserslautern around 2021
+  repos: []
 
 - name: Zoe Geiselmann
   affiliation: TU Berlin
@@ -491,6 +697,7 @@
   github: zkgeiselmann
   website: https://www.tu.berlin/dmg/ueber-uns/team
   status: retired
+  repos: []
 
 - name: Fabian Gundlach
   affiliation: Paderborn University
@@ -498,24 +705,34 @@
   github: fagu
   website: https://fabiangundlach.org/
   status: retired
+  repos: []
 
 - name: Sebastian Gutsche
   affiliation: University of Kaiserslautern-Landau
   github: sebasguts
   website: https://sebasguts.github.io/
   status: retired
+  repos: []
 
 - name: William Hart
   affiliation: University of Kaiserslautern-Landau
   github: wbhart
   status: retired
   comment: Initial contributor to Oscar.
+  repos: []
 
 - name: Florian Heiderich
   affiliation: University of Siegen
   github: heiderich
   website: https://www.heiderich.org/math/
   status: retired
+  repos: []
+
+- name: Oskar Henriksson
+  email: oskar.david.henriksson@gmail.com
+  github: oskarhenriksson
+  status: retired
+  repos: []
 
 - name: Ben Hollering
   affiliation: TU Munich
@@ -523,6 +740,7 @@
   github: bkholler
   website: https://sites.google.com/view/benhollering
   status: retired
+  repos: []
 
 - name: Fredrik Johansson
   affiliation: Institut de Mathématiques de Bordeaux
@@ -531,6 +749,7 @@
   website: http://fredrikj.net/
   status: retired
   comment: The FLINT guy.
+  repos: []
 
 - name: Marek Kaluba
   affiliation: KIT Karlsruhe
@@ -539,6 +758,7 @@
   website: https://kalmarek.github.io/
   status: retired
   comment: Freelance mathematician, formerly at KIT
+  repos: []
 
 - name: Avinash (Avi) Kulkarni
   affiliation: Dartmouth College
@@ -547,6 +767,7 @@
   website: https://math.dartmouth.edu/~akulkarn/index.html
   status: retired
   comment: Who ?
+  repos: []
 
 - name: Markus Kurtz
   affiliation: University of Kaiserslautern-Landau
@@ -554,6 +775,7 @@
   github: mgkurtz
   status: retired
   comment: Former master student of Max Horn
+  repos: []
 
 - name: Nando Leijenhorst
   affiliation: Delft University of Technology
@@ -561,10 +783,12 @@
   github: nanleij
   website: https://nanleij.github.io/
   status: retired
+  repos: []
 
 - name: MarieKaltoft
   github: MarieKaltoft
   status: retired
+  repos: []
 
 - name: Alexander Mattes
   affiliation: University of Kaiserslautern-Landau
@@ -572,6 +796,7 @@
   website: https://github.com/alexandermattes
   status: retired
   comment: Masters student of Claus Fieker
+  repos: []
 
 - name: Sachin Mohan
   affiliation: University of Kaiserslautern-Landau
@@ -580,12 +805,14 @@
   website: https://sachinkmohan.github.io/
   status: retired
   comment: Who ?
+  repos: []
 
 - name: Oleksandr Motsak
   affiliation: IMAGINARY
   github: malex984
   status: retired
   comment: Postdoc in Kaiserslautern ~2010.
+  repos: []
 
 - name: Giosuè Muratore
   affiliation: Universidade de Lisboa
@@ -593,6 +820,7 @@
   github: mgemath
   website: https://sites.google.com/view/giosue-muratore
   status: retired
+  repos: []
 
 - name: Andreas Paffenholz
   affiliation: TU Darmstadt
@@ -600,17 +828,20 @@
   github: apaffenholz
   website: https://www2.mathematik.tu-darmstadt.de/~paffenholz/
   status: retired
+  repos: []
 
 - name: Markus Pfeiffer
   affiliation: St Andrews
   github: markuspf
   status: retired
+  repos: []
 
 - name: Delphine Pol
   affiliation: University of Kaiserslautern-Landau
   github: delphinepol
   status: retired
   comment: Used to be a postdoc at Kaiserslautern, until ~2020
+  repos: []
 
 - name: Lakshmi Ramesh
   affiliation: University of Kaiserslautern-Landau
@@ -618,6 +849,7 @@
   github: Lax202
   website: https://Lax202.github.io
   status: retired
+  repos: []
 
 - name: Martin Raum
   affiliation: Chalmers University
@@ -625,11 +857,13 @@
   github: martinra
   website: https://www.raum-brothers.eu/martin/
   status: retired
+  repos: []
 
 - name: Sami-Halaseh
   email: samihalaseh14@pm.me
   github: Sami-Halaseh
   status: retired
+  repos: []
 
 - name: Sreevatsa Sasisekar
   affiliation: University of Kaiserslautern-Landau
@@ -637,6 +871,7 @@
   github: Sreevatsa2k
   status: retired
   comment: Master student of Claus Fieker as of 2024
+  repos: []
 
 - name: Julien Schanz
   affiliation: Saarland University
@@ -644,6 +879,7 @@
   github: julien-schanz
   website: https://www.uni-saarland.de/lehrstuhl/weber-moritz/team/julien-schanz.html
   status: retired
+  repos: []
 
 - name: Benjamin Schröter
   affiliation: KTH Stochkholm
@@ -651,12 +887,14 @@
   github: bschroter
   website: https://people.kth.se/~schrot
   status: retired
+  repos: []
 
 - name: Daniel Schultz
   affiliation: University of Kaiserslautern-Landau
   github: tthsqe12
   status: retired
   comment: who ?
+  repos: []
 
 - name: Björn Schäfer
   affiliation: Saarland University
@@ -664,16 +902,19 @@
   github: BjSchaefer
   website: https://www.uni-saarland.de/lehrstuhl/weber-moritz/team.html
   status: retired
+  repos: []
 
 - name: Carlo Sircana
   affiliation: University of Kaiserslautern-Landau
   github: CarloSircana
   status: retired
   comment: PhD student of Claus Fieker
+  repos: []
 
 - name: Linus Sommer
   github: linus-md
   status: retired
+  repos: []
 
 - name: Justus Springer
   affiliation: Universität Tübingen
@@ -681,12 +922,14 @@
   github: justus-springer
   website: https://www.math.uni-tuebingen.de/de/forschung/algebra/personen/justus-springer
   status: retired
+  repos: []
 
 - name: Andreas Steenpaß
   affiliation: University of Kaiserslautern-Landau
   github: steenpass
   status: retired
   comment: Commutative algebra
+  repos: []
 
 - name: Jayantha Suranimalee
   affiliation: University of Colombo
@@ -695,6 +938,7 @@
   website: https://www.res.cmb.ac.lk/mathematics/mhmj-suranimalee/
   status: retired
   comment: Completed her PhD with Claus Fieker in about 2020
+  repos: []
 
 - name: Jan Philipp Thiele
   affiliation: WIAS Berlin
@@ -702,6 +946,7 @@
   github: jpthiele
   website: https://wias-berlin.de/~thiele/
   status: retired
+  repos: []
 
 - name: Erec Thorn
   affiliation: University of Kaiserslautern-Landau
@@ -710,6 +955,7 @@
   website: https://math.rptu.de/ags/agag/personen/mitglieder
   status: retired
   comment: PhD student of Ulrich Thiel
+  repos: []
 
 - name: Sascha Timme
   affiliation: TU Berlin
@@ -718,15 +964,18 @@
   website: https://www.saschatimme.com/
   status: retired
   comment: Homotopy continuation people
+  repos: []
 
 - name: Laura Voggesberger
   affiliation: Ruhr-Universität Bochum
   github: voggesbe
   status: retired
+  repos: []
 
 - name: Sebastian Volz
   github: sebvz777
   status: retired
+  repos: []
 
 - name: Lena Weis
   affiliation: TU Berlin
@@ -734,6 +983,7 @@
   github: lenweis
   website: https://page.math.tu-berlin.de/~weis/
   status: retired
+  repos: []
 
 - name: Yichao Yu
   affiliation: Duke University
@@ -741,6 +991,7 @@
   github: yuyichao
   status: retired
   comment: Who ?
+  repos: []
 
 - name: Oguzhan Yürük
   affiliation: TU Berlin
@@ -749,3 +1000,4 @@
   website: http://www.iaa.tu-bs.de/oguzhanyueruek/index.html
   status: retired
   comment: Postdoc of Michael Joswig in Berlin
+  repos: []
