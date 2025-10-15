@@ -297,6 +297,8 @@
   github: lgoettgens
   website: https://www.art.rwth-aachen.de/cms/~bbxbwx/
   status: active
+  aka_email:
+  - lars.goettgen@rwth-aachen.de
   repos:
   - thofma/Hecke.jl
   - oscar-system/Oscar.jl
