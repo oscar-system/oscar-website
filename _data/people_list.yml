@@ -444,7 +444,7 @@
   - oscar-system/GAP.jl
   - oscar-system/Singular.jl
 
-- name: KilianBruns
+- name: Kilian Bruns
   github: KilianBruns
   status: active
   repos:
