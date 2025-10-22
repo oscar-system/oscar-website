@@ -62,7 +62,9 @@ Need help or want to connect? Visit our [Contact & Support]({{site.baseurl}}/con
 
 ## 🤖 Contribute to OSCAR
 
-Are you a coder eager to help shape OSCAR? We are always happy to welcome new contributors! Learn how you can get involved on our [Contributing]({{site.baseurl}}/contributing/) page.
+There are many ways to get involved — from reporting problems and suggesting improvements to contributing directly to OSCAR’s codebase. Another option is the [**Friends of OSCAR**](https://github.com/oscar-system/FriendsOfOscar) initiative, which highlights independent software projects that build upon OSCAR.
+
+Learn more about these and other ways to contribute on our [Contributing page]({{site.baseurl}}/contributing/).
 
 ---
 
