@@ -50,6 +50,13 @@
   comment: Parallelization, GAP garbage collector interface
   repos: []
 
+- name: Pieter Belmans
+  email: pieterbelmans@gmail.com
+  github: pbelmans
+  status: active
+  repos:
+  - oscar-system/Oscar.jl
+
 - name: Alex J. Best
   affiliation: King's College London
   email: alex.j.best@gmail.com
@@ -435,8 +442,9 @@
   - Nemocas/Nemo.jl
   - Nemocas/AbstractAlgebra.jl
   - oscar-system/GAP.jl
+  - oscar-system/Singular.jl
 
-- name: KilianBruns
+- name: Kilian Bruns
   github: KilianBruns
   status: active
   repos:
@@ -720,7 +728,7 @@
 - name: Neven Sajko
   email: s@purelymail.com
   github: nsajko
-  status: active
+  status: retired
   repos:
   - Nemocas/AbstractAlgebra.jl
 
@@ -876,6 +884,12 @@
   status: retired
   comment: Homotopy continuation people
   repos: []
+
+- name: Tobias271828
+  github: Tobias271828
+  status: active
+  repos:
+  - thofma/Hecke.jl
 
 - name: Varun Trehan
   email: varuntrehan7@gmail.com
