@@ -84,6 +84,15 @@
   language: julia
   date: January 1, 1970
 
+- title: A computation with multisymmetric polynomials
+  repository: gdanielea/multisymmetricpolynomials
+  branch: main
+  filename: multisymmetric_polynomials
+  author: Daniele Agostini, Jinhyung Park
+  thumbnail: CommutativeAlgebra.png
+  language: julia
+  date: January 1, 1970
+
 
 
 # Tutorials hosted at oscar-system/OSCARBinder
