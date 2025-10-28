@@ -71,3 +71,9 @@ Learn more about these and other ways to contribute on our [Contributing page]({
 ## 📝 Cite OSCAR
 
 If you use OSCAR in your work, please cite us! Details can be found on the [Citing OSCAR]({{site.baseurl}}/credits/Citing-OSCAR/) page.
+
+----
+
+## 🏛 Funding
+
+The development of OSCAR is supported by the [German Research Foundation (DFG)](https://www.dfg.de/en) through the [Collaborative Research Center TRR 195](https://www.computeralgebra.de/sfb/).
