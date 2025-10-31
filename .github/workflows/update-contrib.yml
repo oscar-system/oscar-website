@@ -6,6 +6,7 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '0 0 1 * *'
+  pull_request:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -18,7 +19,7 @@ jobs:
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v5
-      
+
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
@@ -39,21 +40,19 @@ jobs:
         python3 update-contributors.py
         cd ..
 
-    - name: Set up Git
+    - name: Show summary.txt
       run: |
-        git config user.name "contributor-list[bot]"
-        git config user.email "contributor-list[bot]@users.noreply.github.com"
-
-    - name: Commit Changes
-      run: |
-        git add _data/people_list.yml
-        git commit -m "Update contributors on $(date +'%Y-%m-%d')" || echo "Nothing to commit!"
+        echo "::group::summary.txt"
+        sed -n '1,200p' summary.txt || echo "summary.txt not found"
+        echo "::endgroup::"
 
     - name: Create Pull Request
+      if: github.event_name != 'pull_request' && !cancelled()
       uses: peter-evans/create-pull-request@v7
       with:
         commit-message: "Update contributors on $(date +'%Y-%m-%d')"
         branch: update-contributors
+        delete-branch: true
         title: "Update contributors"
         body-path: summary.txt
         base: gh-pages
