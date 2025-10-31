@@ -42,7 +42,7 @@ newpersonlist = []
 github_newusers = []
 github_userlist = []
 github_username = '__notfound__'
-API_KEY = os.getenv("API_KEY") # TODO: rename to whatever is the right env var
+API_KEY = (os.getenv("API_KEY") or os.getenv("GITHUB_TOKEN") or "").strip()
 summarystring = ""
 # grab currently active devs
 if not os.path.isdir("repos"):
