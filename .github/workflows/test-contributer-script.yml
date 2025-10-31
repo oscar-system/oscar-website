@@ -2,6 +2,11 @@ name: Contributors Update Script
 
 on:
   pull_request:
+  push:
+    branches: [gh-pages]
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 1 * *'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -40,3 +45,18 @@ jobs:
         echo "::group::summary.txt"
         sed -n '1,200p' summary.txt || echo "summary.txt not found"
         echo "::endgroup::"
+
+    - name: Compute date
+      if: github.event_name != 'pull_request' && !cancelled()
+      run: echo "TODAY=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
+
+    - name: Create Pull Request
+      if: github.event_name != 'pull_request' && !cancelled()
+      uses: peter-evans/create-pull-request@v7
+      with:
+        commit-message: "Update contributors on ${{ env.TODAY }}"
+        branch: update-contributors
+        delete-branch: true
+        title: "Update contributors"
+        body-path: summary.txt
+        base: gh-pages
