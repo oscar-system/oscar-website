@@ -35,3 +35,8 @@ jobs:
         python3 update-contributors.py
         cd ..
 
+    - name: Show summary.txt
+      run: |
+        echo "::group::summary.txt"
+        sed -n '1,200p' summary.txt
+        echo "::endgroup::"
