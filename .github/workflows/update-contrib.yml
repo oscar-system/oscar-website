@@ -50,7 +50,7 @@ jobs:
       if: github.event_name != 'pull_request' && !cancelled()
       uses: peter-evans/create-pull-request@v7
       with:
-        commit-message: "Update contributors on $(date +'%Y-%m-%d')"
+        commit-message: "Update contributors on ${{ github.run_started_at[0:10] }}"
         branch: update-contributors
         delete-branch: true
         title: "Update contributors"
