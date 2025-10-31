@@ -7,7 +7,7 @@ import yaml
 from datetime import datetime
 from github import Github, Auth
 
-API_KEY = os.getenv("API_KEY")
+API_KEY = (os.getenv("API_KEY") or os.getenv("GITHUB_TOKEN") or "").strip()
 if API_KEY == None:
     print("API key was not found! Authentication will fail!\nSet the environment variable API_KEY "
           "to a github access token and try again!\n")
