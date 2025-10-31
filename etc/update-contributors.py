@@ -62,19 +62,29 @@ for repo in repoList:
         os.chdir(repo.split('/')[-1])
 
     print("Generating list of authors active in past year...")
-    gitlog = subprocess.Popen(['git', 'shortlog', '-se', '--since=1 year ago', '--group=author', '--group=trailer:co-authored-by'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-    output, _ = gitlog.communicate()
-    dnamelist = []
-    for line in output.decode().strip().split("\n"):
-        # line format: "  42  My Name <mymail@example.com>"
-        parts = line.strip().split("\t")
-        if len(parts) < 2:
-            continue
-        name_email = parts[-1]
-        if "<" in name_email and ">" in name_email:
-            name = name_email.split("<")[0].strip()
-            email = name_email.split("<")[1].split(">")[0].strip()
-            dnamelist.append([name, email])
+    log_cmd = ["git", "log", "--since=1 year ago", "--format=%aN <%aE>%n%(trailers:key=Co-authored-by)"]
+    res = subprocess.run(log_cmd, capture_output=True, text=True)
+    if res.returncode != 0:
+        print("DEBUG git log failed; stderr:", res.stderr.strip())
+        exit(-1)
+    else:
+        dset = set()
+        for raw in res.stdout.splitlines():
+            # res.stdout.splitlines() reads as follows:
+            # Cool Author <cool-author-email>
+            # Co-authored-by: Also Cool <another email>
+            # Process each row, so we obtain pairs of author names and their emails
+            line = raw.strip()
+            if line == "":
+                continue
+            if line.lower().startswith("co-authored-by:"):
+                line = line.split(":", 1)[1].strip()
+            if "<" in line and ">" in line:
+                name = line.split("<")[0].strip()
+                email = line.split("<", 1)[1].split(">", 1)[0].strip()
+                if (name != "") and (email != ""):
+                    dset.add((name, email))
+        dnamelist = [[n, e] for (n, e) in sorted(dset)]
     print(dnamelist)
 
     namelist.extend(dnamelist)
@@ -166,12 +176,24 @@ for repo in repoList:
                         flag = True
                         break
             if not flag:
-                # a co author we don't know about at all
-                gitlog = subprocess.Popen(['git', 'shortlog', '--format="%h %s %(trailers:key=Co-authored-by)"'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-                gitcommit = subprocess.Popen(['grep', i[0]], stdin=gitlog.stdout, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-                output = gitcommit.communicate()[0].decode()
-                output = output.strip().strip('"').split()[0]
-                newCoauthorList.append([i[0], i[1], repo, output])
+                # a co-author we don't know about at all - find a commit hash that mentions them
+                res = subprocess.run(["git", "log", "--since=1 year ago", "--format=%H %s %(trailers:key=Co-authored-by)"],capture_output=True, text=True)
+                if res.returncode != 0:
+                    print("ERROR: git log for co-author failed:", res.stderr.strip())
+                    exit(1)
+                commit_hash = None
+                target_lower = {i[0].lower(), i[1].lower()}
+                for line in res.stdout.splitlines():
+                    lower = line.lower()
+                    if any(t in lower for t in target_lower):
+                        parts = line.split()
+                        if parts:
+                            commit_hash = parts[0]
+                            break
+                if commit_hash == None:
+                    print(f"ERROR: Could not find a commit hash for co-author {i[0]} <{i[1]}> in {repo}")
+                    exit(1)
+                newCoauthorList.append([i[0], i[1], repo, commit_hash])
         else:
             # this will never happen, except if the API lies to you
             # or blocks access
