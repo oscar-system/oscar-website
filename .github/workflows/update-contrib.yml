@@ -1,55 +1,54 @@
 name: Update Contributors
 
-# Schedule: Runs at midnight on the first day of each month
 on:
   push:
-    branches:
-      - gh-pages
+    branches: [gh-pages]
   workflow_dispatch:
   schedule:
-    - cron: '0 0 1 * *'  # At 00:00 UTC on the 1st of every month
+    - cron: '0 0 1 * *'
 
-# only run at most one instances of this workflow at a time for each branch
-# resp. tag. Starting a new one cancels previously running ones.
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
   update-contributors:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
 
     steps:
-    # Checkout the repository
     - name: Checkout Repository
       uses: actions/checkout@v5
       
-    # Run the update script
-    - name: Setup venv and install pyyaml
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.11"
+
+    - name: Install Python deps
       run: |
-        pip install pyyaml requests
+        python -m pip install --upgrade pip
+        pip install PyGithub pyyaml requests
 
     - name: Run update-contributors script
       env:
         API_KEY: ${{secrets.API_KEY}}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        PYTHONUNBUFFERED: "1"
       run: |
         cd etc
-        python update-contributors.py
+        python3 update-contributors.py
         cd ..
 
-    # Configure Git for the PR
     - name: Set up Git
       run: |
         git config user.name "contributor-list[bot]"
         git config user.email "contributor-list[bot]@users.noreply.github.com"
 
-    # Commit the changes
     - name: Commit Changes
       run: |
         git add _data/people_list.yml
         git commit -m "Update contributors on $(date +'%Y-%m-%d')" || echo "Nothing to commit!"
 
-    # Create a pull request
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v7
       with:
