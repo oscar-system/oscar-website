@@ -1,24 +1,20 @@
-name: Update Contributors
+name: Contributors Update Script
 
 on:
-  push:
-    branches: [gh-pages]
-  workflow_dispatch:
-  schedule:
-    - cron: '0 0 1 * *'
+  pull_request:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  update-contributors:
+  run-contributors-update-script:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v5
-
+      
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
@@ -39,12 +35,8 @@ jobs:
         python3 update-contributors.py
         cd ..
 
-    - name: Create Pull Request
-      uses: peter-evans/create-pull-request@v7
-      with:
-        commit-message: "Update contributors on ${{ github.run_started_at[0:10] }}"
-        branch: update-contributors
-        delete-branch: true
-        title: "Update contributors"
-        body-path: summary.txt
-        base: gh-pages
+    - name: Show summary.txt
+      run: |
+        echo "::group::summary.txt"
+        sed -n '1,200p' summary.txt || echo "summary.txt not found"
+        echo "::endgroup::"
