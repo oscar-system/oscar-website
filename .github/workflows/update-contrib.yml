@@ -39,10 +39,13 @@ jobs:
         python3 update-contributors.py
         cd ..
 
+    - name: Compute date
+      run: echo "TODAY=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
+
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v7
       with:
-        commit-message: "Update contributors on ${{ github.run_started_at[0:10] }}"
+        commit-message: "Update contributors on ${{ env.TODAY }}"
         branch: update-contributors
         delete-branch: true
         title: "Update contributors"
