@@ -44,10 +44,6 @@ REPO_LIST = [
 
 HASH_RE = re.compile(r"\b[0-9a-f]{40}\b", re.I)
 
-STATUS_PI = "pi" # not used yet
-STATUS_ACTIVE = "active" # not used yet
-STATUS_RETIRED = "retired" # not used yet
-
 SORT_WEIGHT = {
     "name": 0,
     "affiliation": 1,
