@@ -12,9 +12,9 @@ import yaml
 
 
 
-#######################################
+##########################################
 # 1. Constants
-#######################################
+##########################################
 
 API_KEY = (os.getenv("API_KEY") or os.getenv("GITHUB_TOKEN") or "").strip()
 
@@ -62,9 +62,9 @@ def custom_sort_function(item):
 
 
 
-#######################################
-# 2. Read in intel from people_list.yml
-#######################################
+##########################################
+# 2. Read information from people_list.yml
+##########################################
 
 try:
     with open(PEOPLE_LIST_FILE, "r", encoding="utf-8") as ymlfile:
@@ -83,9 +83,9 @@ current_github_usernames = [person["github"] for person in current_contributors 
 
 
 
-#######################################
+##########################################
 # 3. Collect (co)authors for each repo
-#######################################
+##########################################
 
 newList = []
 newCoauthorList = []
@@ -278,9 +278,9 @@ for repo in REPO_LIST:
 
 
 
-#######################################
+##########################################
 # 4. Sort as new, retired, active
-#######################################
+##########################################
 
 # mark active / retired
 # if PI, don't touch them
@@ -325,9 +325,9 @@ sortedcurrent_contributors = sorted(current_contributors, key= lambda d: d['name
 
 
 
-#######################################
+##########################################
 # 5. Save the findings
-#######################################
+##########################################
 
 # save yml to *NEW* file
 # how inefficient is list comprehension ?
