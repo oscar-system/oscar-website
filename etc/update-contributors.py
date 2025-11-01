@@ -140,76 +140,45 @@ def lookup_user(gh, email, name):
 ##########################################
 
 def process_log_into_aggregate(res: str, repo: str) -> None:
-
-    global summarystring, aggregate, email_owner, name_owner
-
+    global summarystring, aggregate  #, email_owner, name_owner
     for raw in res.splitlines():
-
-        # Prepare the line and skip if empty
         line = raw.strip()
-        if not line:
-            continue
+        if not line: continue
 
-        # Identify co-authors
         is_author = True
         if line.lower().startswith("co-authored-by:"):
             line = line.split(":", 1)[1].strip()
             is_author = False
-        
-        # Skip bots and non-address lines
-        lower_line = line.lower()
-        if any(b in lower_line for b in BOT_TOKENS):
+
+        low = line.lower()
+        if any(b in low for b in BOT_TOKENS):
             continue
-        if "[bot]" in lower_line:
+        if "[bot]" in low:
             summarystring += f"- Skipping suspected bot line in {repo}: {line!r}\n"
             continue
         if "<" not in line or ">" not in line:
             summarystring += f"- Skipping non-address line in {repo}: {line!r}\n"
             continue
 
-        # Parse "Name <email>"
         name, email = parseaddr(line)
-        name = " ".join(unicodedata.normalize("NFKC", name).split())
+        name  = " ".join(unicodedata.normalize("NFKC", name).split())
         email = unicodedata.normalize("NFKC", email).strip()
-
-        # Validate
-        if not email and not name:
-            summarystring += f"- Missing name and email in {repo}; line={line!r}; skipping\n"
-            continue
-        if not email:
-            summarystring += f"- Missing email for '{name}' in {repo}; skipping\n"
-            continue
-        if not name:
-            summarystring += f"- Missing name for '{email}' in {repo}; skipping\n"
+        if not email or not name:
+            summarystring += f"- Missing {'email' if not email else 'name'} for {name or email} in {repo}; skipping\n"
             continue
 
-        # Alias resolution from PEOPLE_LIST_FILE (aka/aka_email)
-        owner = email_owner.get(email.lower()) or name_owner.get(_norm_name(name))
+        owner = email_owner.get(email.casefold()) or name_owner.get(_norm_name(name))
         known_github = owner.get("github") if owner else None
+        key = ("gh", known_github.lower()) if known_github else ("email", ((owner and owner.get("email")) or email).casefold())
 
-        # Person key: prefer github if known; else canonical email via owner; else raw email
-        key = ("gh", known_github.lower()) if known_github else ("email", ((owner and owner.get("email")) or email).lower())
-        
-        # Update aggregate (one record per person across all repos)
         rec = aggregate.get(key)
         if rec is None:
-            aggregate[key] = {
-                "name": name,
-                "email": email,
-                "is_author": bool(is_author),
-                "known_github": known_github,
-                "repos": set([repo]),
-            }
+            aggregate[key] = {"name": name, "email": email, "is_author": is_author, "known_github": known_github, "repos": {repo}}
         else:
-            # promote to author if any occurrence is an author
-            if not rec["is_author"] and is_author:
-                rec["is_author"] = True
-            # accumulate repos
+            rec["is_author"] = rec["is_author"] or is_author
             rec["repos"].add(repo)
-            # fill github if we learn it now
             if known_github and not rec["known_github"]:
                 rec["known_github"] = known_github
-            # prefer non-noreply email (often comming with nicely formatted name, which we therefore update)
             if "users.noreply.github.com" in rec["email"] and "users.noreply.github.com" not in email:
                 rec["name"], rec["email"] = name, email
 
@@ -229,7 +198,7 @@ for repo in REPO_LIST:
     if not os.path.isdir(repo_dir):
         subprocess.run(["git", "clone", f"https://github.com/{repo}", repo_dir], check=True)
     else:
-        subprocess.run(["git", "-C", repo_dir, "pull"], check=True)
+        subprocess.run(["git", "-C", repo_dir, "pull", "--ff-only"], check=True)
     res = subprocess.run(
         ["git", "-C", repo_dir, "log", "--use-mailmap", GIT_LOG_SINCE, GIT_LOG_FORMAT_1],
         check=True, capture_output=True, text=True, encoding="utf-8", errors="replace")
