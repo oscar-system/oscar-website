@@ -24,6 +24,8 @@ PEOPLE_LIST_FILE = "../_data/people_list.yml"
 SUMMARY_FILE = "../summary.txt"
 REPOS_DIR = "repos"
 
+BOT_TOKENS = ("github-actions[bot]", "dependabot[bot]", "renovate[bot]", "changelog[bot]")
+
 GIT_LOG_SINCE = "--since=1 year ago"
 GIT_LOG_FORMAT_1 = "--format=%aN <%aE>%n%(trailers:unfold,key=Co-authored-by)"
 GIT_LOG_FORMAT_2 = "--format=%H %s %(trailers:key=Co-authored-by)"
@@ -136,66 +138,57 @@ if not os.path.isdir(REPOS_DIR):
     os.mkdir(REPOS_DIR)
 os.chdir(REPOS_DIR)
 
-# 4.2 Run over repos
+# 4.2 Run over repos to aggreate authors and coauthors
 summarystring = ""
 aggregate = {}      # key -> {'name','email','is_author','known_github','repos': set()}
 for repo in REPO_LIST:
 
-    print("\n")
-    print("-------------------------------")
     print(f"Processing {repo}...")
-    print("-------------------------------")
-    print("\n")
-
-    # 4.3 Clone the repository/fetch the latest updates
-    print("Fetching updates...\n")
     repo_path = repo.split('/')[-1]
     if not os.path.isdir(repo_path):
         subprocess.run(["git", "clone", f"https://github.com/{repo}"], check=True)
     os.chdir(repo_path)
     subprocess.run(["git", "fetch", "--all"], check=True)
     subprocess.run(["git", "pull"], check=True)
-
-    # 4.4 Obtain the log from github
-    print("Generating list of authors active in past year...\n\n")
     log_cmd = ["git", "log", "--use-mailmap", GIT_LOG_SINCE, GIT_LOG_FORMAT_1]
     res = subprocess.run(log_cmd, capture_output=True, text=True, encoding="utf-8", errors="replace")
+    os.chdir("..")
     if res.returncode != 0:
         print("DEBUG git log failed; stderr:", res.stderr.strip())
         sys.exit(1)
     
-    # 4.5 Process the log, so we obtain pairs of author names and their emails
-    # Expected lines include:
-    #   Cool Author <cool-author-email>
-    #   Co-authored-by: Also Cool <another email>
-    by_email = {}        # email_lower -> (name, email, is_author)
+    # 4.5 Process the log and update aggregate accordingly
     for raw in res.stdout.splitlines():
 
-        # Initial processing of the line and skipping if needed
+        # Prepare the line and skip if empty
         line = raw.strip()
+        if not line:
+            continue
+
+        # Identify co-authors
         is_author = True
         if line.lower().startswith("co-authored-by:"):
             line = line.split(":", 1)[1].strip()
             is_author = False
-        if not line:
-            continue
+
+        # Skip bots and non-address lines
         lower_line = line.lower()
-        if any(b in lower_line for b in ("github-actions[bot]", "dependabot[bot]", "renovate[bot]", "changelog[bot]")):
+        if any(b in lower_line for b in BOT_TOKENS):
             continue
         if "[bot]" in lower_line:
-            summarystring += f"- Skipping expected bot line in {repo}: {line!r}\n"
+            summarystring += f"- Skipping suspected bot line in {repo}: {line!r}\n"
             continue
         if "<" not in line or ">" not in line:
             summarystring += f"- Skipping non-address line in {repo}: {line!r}\n"
             continue
-        
-        # Parse to obtain name and email
+
+        # Parse "Name <email>"
         name, email = parseaddr(line)
         name = " ".join(unicodedata.normalize("NFKC", name).split())
         email = unicodedata.normalize("NFKC", email).strip()
-        
+
         # Validate
-        if (not email) and (not name):
+        if not email and not name:
             summarystring += f"- Missing name and email in {repo}; line={line!r}; skipping\n"
             continue
         if not email:
@@ -205,47 +198,14 @@ for repo in REPO_LIST:
             summarystring += f"- Missing name for '{email}' in {repo}; skipping\n"
             continue
 
-        # Dedupe
-        key = email.lower()
-        prev = by_email.get(key)
-        if prev is None:
-            by_email[key] = (name, email, is_author)
-        else:
-            # upgrade to author if any occurrence is an author
-            if is_author and not prev[2]:
-                by_email[key] = (name, email, True)
-    
-    # Stable, human-friendly order: by name (case-insensitive), then email, finally is_author
-    triples = set(by_email.values())
-    dnamelist = [[n, e, is_a] for (n, e, is_a) in sorted(triples, key=lambda t: (t[0].lower(), t[1], not t[2]))]
-    
-    # 4.6 dnamelist has items like [name, email, is_author]
-    # Collapse duplicates / aliases into a single record per person
-    by_person = {}  # key -> [name, email, is_author, known_github]
-    for name, email, is_author in dnamelist:
+        # Alias resolution from PEOPLE_LIST_FILE (aka/aka_email)
         owner = email_owner.get(email.lower()) or name_owner.get(_norm_name(name))
-        known_gh = owner.get("github") if owner else None
-        key = _person_key(name, email)
-        prev = by_person.get(key)
-        if prev is None:
-            by_person[key] = [name, email, bool(is_author), known_gh]
-        else:
-            # prefer non-noreply emails for display (and such "better" emails often come with better formatted name)
-            if "users.noreply.github.com" in prev[1] and "users.noreply.github.com" not in email:
-                prev[0], prev[1] = name, email
-            # prefer author if any occurrence is author
-            if not prev[2] and is_author:
-                prev[2] = True
-            # prefer known github if we discover it
-            if known_gh and not prev[3]:
-                prev[3] = known_gh
+        known_github = owner.get("github") if owner else None
 
-    # This replaces dnamelist with the consolidated one
-    dnamelist = [[n, e, is_a, gh] for (n, e, is_a, gh) in by_person.values()]
-
-    # 4.7 Aggregate across repos (no API calls here)
-    for name, email, is_author, known_github in dnamelist:
+        # Person key: prefer github if known; else canonical email via owner; else raw email
         key = _person_key(name, email)
+
+        # Update aggregate (one record per person across all repos)
         rec = aggregate.get(key)
         if rec is None:
             aggregate[key] = {
@@ -256,18 +216,17 @@ for repo in REPO_LIST:
                 "repos": set([repo]),
             }
         else:
-            # merge flags and better data
-            if not rec["is_author"] and bool(is_author):
+            # promote to author if any occurrence is an author
+            if not rec["is_author"] and is_author:
                 rec["is_author"] = True
+            # accumulate repos
             rec["repos"].add(repo)
+            # fill github if we learn it now
             if known_github and not rec["known_github"]:
                 rec["known_github"] = known_github
-            # prefer non-noreply email (and the name that came with it)
+            # prefer non-noreply email (often comming with nicely formatted name, which we therefore update)
             if "users.noreply.github.com" in rec["email"] and "users.noreply.github.com" not in email:
                 rec["name"], rec["email"] = name, email
-    
-    # 4.8 Go one step up, to prepare the scan in the next repository
-    os.chdir("..")
 
 
 
