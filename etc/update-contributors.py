@@ -324,7 +324,11 @@ for key, rec in aggregate.items():
     email = rec["email"]
     repos = rec["repos"]
     gh    = rec.get("known_github") or resolve_github_via_commit(email, repos)
-    user = (name_owner.get(gh) or (email and email_owner.get(email.lower())) or name_owner.get(_norm_name(name)))
+    user = (
+        (gh and name_owner.get(_norm_name(gh)))
+        or (email and email_owner.get(email.lower()))
+        or name_owner.get(_norm_name(name))
+    )
 
     # Existing contributor
     if user:
