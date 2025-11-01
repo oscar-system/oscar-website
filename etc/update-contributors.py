@@ -16,22 +16,26 @@ import yaml
 
 
 ##########################################
-# 1. Constants
+# 1. Constants (static configuration)
 ##########################################
 
+# Derive absolute paths once so chdir() doesn’t bite us later.
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.abspath(os.path.join(BASE_DIR, ".."))
+REPOS_DIR = os.path.join(PROJECT_ROOT, "repos")
+PEOPLE_LIST_FILE = os.path.join(PROJECT_ROOT, "_data", "people_list.yml")
+SUMMARY_FILE = os.path.join(PROJECT_ROOT, "summary.txt")
+
+# Auth
 API_KEY = (os.getenv("API_KEY") or os.getenv("GITHUB_TOKEN") or "").strip()
 
-PEOPLE_LIST_FILE = "../_data/people_list.yml"
-SUMMARY_FILE = "../summary.txt"
-REPOS_DIR = "repos"
-
-BOT_TOKENS = ("github-actions[bot]", "dependabot[bot]", "renovate[bot]", "changelog[bot]")
-
+# Git config
 GIT_LOG_SINCE = "--since=1 year ago"
 GIT_LOG_FORMAT_1 = "--format=%aN <%aE>%n%(trailers:unfold,key=Co-authored-by)"
 GIT_LOG_FORMAT_2 = "--format=%H %(trailers:only,unfold,separator=|,key=Co-authored-by) %s"
 
-REPO_LIST = [
+# Repositories to scan (tuple to emphasize immutability)
+REPO_LIST = (
     "Nemocas/AbstractAlgebra.jl",
     "algebraic-solving/AlgebraicSolving.jl",
     "oscar-system/GAP.jl",
@@ -40,10 +44,20 @@ REPO_LIST = [
     "oscar-system/Oscar.jl",
     "oscar-system/Polymake.jl",
     "oscar-system/Singular.jl",
-]
+)
 
+# Bots we ignore
+BOT_TOKENS = (
+    "github-actions[bot]",
+    "dependabot[bot]",
+    "renovate[bot]",
+    "changelog[bot]",
+)
+
+# Regexes
 HASH_RE = re.compile(r"\b[0-9a-f]{40}\b", re.I)
 
+# Display/sort preferences
 SORT_WEIGHT = {
     "name": 0,
     "affiliation": 1,
@@ -58,30 +72,23 @@ SORT_WEIGHT = {
     "repos": 10,
 }
 
-def custom_sort_function(item):
-    name, _ = item
-    sortweight = SORT_WEIGHT
-    return sortweight[name]
-
 
 
 ##########################################
-# 2. Global variables
+# 2. Globals (runtime state; mutated)
 ##########################################
 
-# Step 3: The information on contributors, that is currently saved in PEOPLE_LIST_FILE.
-#current_contributors
+# Loaded from PEOPLE_LIST_FILE
+current_contributors = []  # list[dict]
 
-# Step 4: People come with alias emails. This dict will tell us the owner of a given email, provided our PEOPLE_LIST_FILE knows about this
-email_owner = {}  # lowercased email -> person dict
+# Alias indices built from current_contributors
+email_owner = {}   # lowercased email -> person dict
+name_owner  = {}   # normalized name  -> person dict
 
-# Step 4: Same as email_owner, but with name alias instead
-name_owner  = {}  # normalized name -> person dict
+# Aggregate across repos: key -> {'name','email','is_author','known_github','repos': set()}
+aggregate = {}
 
-# Step 5: A dict, in which we store information about the current authors and coauthors
-aggregate = {}      # key -> {'name','email','is_author','known_github','repos': set()}
-
-# Step 5: This string will collect warnings encountered during execution
+# Collected notes (maybe use a list to avoid 'global' rebinding of strings)
 summarystring = ""
 
 
@@ -427,6 +434,12 @@ sortedcurrent_contributors = sorted(
 # 9. Save the findings
 ##########################################
 
+# custom sort function
+def custom_sort_function(item):
+    name, _ = item
+    sortweight = SORT_WEIGHT
+    return sortweight[name]
+
 # dump YAML with your custom sort
 pilist = [dict(sorted(i.items(), key=custom_sort_function)) for i in sortedcurrent_contributors if i.get('status') == "pi"]
 activelist = [dict(sorted(i.items(), key=custom_sort_function)) for i in sortedcurrent_contributors if i.get('status') == "active"]
@@ -438,8 +451,7 @@ class MyDumper(yaml.SafeDumper):
         if len(self.indents) == 1:
             super().write_line_break()
 
-os.chdir("..")
-with open('../_data/people_list.yml', 'w', encoding='utf-8') as outfile:
+with open(PEOPLE_LIST_FILE, 'w', encoding='utf-8') as outfile:
     outfile.write("# It is possible that people marked as 'retired' may have the repo key as an "
                   "empty array.\n# This is because people are marked as retired if the update "
                   "script could not find them in any repo.\n# Retired people only have repo "
