@@ -86,15 +86,57 @@ current_github_usernames = [person["github"] for person in current_contributors 
 
 
 ##########################################
-# 3. Collect (co)authors for each repo
+# 3. Build fast alias lookup
 ##########################################
 
-# 3.1 Change into REPOS_DIR
+email_owner = {}  # lowercased email -> person dict
+name_owner  = {}  # normalized name -> person dict
+
+def _norm_name(s: str) -> str:
+    return " ".join((s or "").split()).lower()
+
+for p in current_contributors:
+    # index primary + aka emails
+    emails = []
+    if p.get("email"):
+        emails.append(p["email"])
+    if p.get("aka_email"):
+        emails.extend(p["aka_email"] or [])
+    for e in emails:
+        email_owner[e.lower()] = p
+
+    # index primary + aka names
+    names = []
+    if p.get("name"):
+        names.append(p["name"])
+    if p.get("aka"):
+        names.extend(p["aka"] or [])
+    for n in names:
+        name_owner[_norm_name(n)] = p
+
+# Helper function to be used below
+def _person_key(name: str, email: str):
+    owner = email_owner.get(email.lower()) or name_owner.get(_norm_name(name))
+    if owner and owner.get("github"):
+        return ("gh", owner["github"])
+    if owner and (owner.get("email") or email):
+        # canonicalize to the owner's primary email if present
+        base = (owner.get("email") or email).lower()
+        return ("email", base)
+    return ("email", email.lower())
+
+
+
+##########################################
+# 4. Collect (co)authors for each repo
+##########################################
+
+# 4.1 Change into REPOS_DIR
 if not os.path.isdir(REPOS_DIR):
     os.mkdir(REPOS_DIR)
 os.chdir(REPOS_DIR)
 
-# 3.2 Initialize variables
+# 4.2 Initialize variables
 newList = []
 newCoauthorList = []
 namelist = []
@@ -104,7 +146,7 @@ github_userlist = []
 github_username = '__notfound__'
 summarystring = ""
 
-# 3.3 Run over repos
+# 4.3 Run over repos
 for repo in REPO_LIST:
 
     print("\n")
@@ -113,7 +155,7 @@ for repo in REPO_LIST:
     print("-------------------------------")
     print("\n")
 
-    # 3.4 Clone the repository/fetch the latest updates
+    # 4.4 Clone the repository/fetch the latest updates
     print("Fetching updates...\n")
     repo_path = repo.split('/')[-1]
     if not os.path.isdir(repo_path):
@@ -122,7 +164,7 @@ for repo in REPO_LIST:
     subprocess.run(["git", "fetch", "--all"], check=True)
     subprocess.run(["git", "pull"], check=True)
 
-    # 3.5 Obtain the log from github
+    # 4.5 Obtain the log from github
     print("Generating list of authors active in past year...\n\n")
     log_cmd = ["git", "log", "--use-mailmap", GIT_LOG_SINCE, GIT_LOG_FORMAT_1]
     res = subprocess.run(log_cmd, capture_output=True, text=True, encoding="utf-8", errors="replace")
@@ -130,7 +172,7 @@ for repo in REPO_LIST:
         print("DEBUG git log failed; stderr:", res.stderr.strip())
         sys.exit(1)
     
-    # 3.6 Process the log, so we obtain pairs of author names and their emails
+    # 4.6 Process the log, so we obtain pairs of author names and their emails
     # Expected lines include:
     #   Cool Author <cool-author-email>
     #   Co-authored-by: Also Cool <another email>
@@ -181,20 +223,45 @@ for repo in REPO_LIST:
             if is_author and not prev[2]:
                 by_email[key] = (name, email, True)
     
-    # Stable, human-friendly order: by name (case-insensitive), then email
+    # Stable, human-friendly order: by name (case-insensitive), then email, finally is_author
     triples = set(by_email.values())
     dnamelist = [[n, e, is_a] for (n, e, is_a) in sorted(triples, key=lambda t: (t[0].lower(), t[1], not t[2]))]
     namelist.extend(dnamelist)
     
-    # 3.7 Process dnamelist further - somehow...
+    # 4.7 dnamelist has items like [name, email, is_author]
+    # Collapse duplicates / aliases into a single record per person
+    by_person = {}  # key -> [name, email, is_author, known_github]
+    for name, email, is_author in dnamelist:
+        owner = email_owner.get(email.lower()) or name_owner.get(_norm_name(name))
+        known_gh = owner.get("github") if owner else None
+        key = _person_key(name, email)
+        prev = by_person.get(key)
+        if prev is None:
+            by_person[key] = [name, email, bool(is_author), known_gh]
+        else:
+            # prefer non-noreply emails for display (and such "better" emails often come with better formatted name)
+            if "users.noreply.github.com" in prev[1] and "users.noreply.github.com" not in email:
+                prev[0], prev[1] = name, email
+            # prefer author if any occurrence is author
+            if not prev[2] and is_author:
+                prev[2] = True
+            # prefer known github if we discover it
+            if known_gh and not prev[3]:
+                prev[3] = known_gh
+
+    # This replaces dnamelist with the consolidated one
+    dnamelist = [[n, e, is_a, gh] for (n, e, is_a, gh) in by_person.values()]
+
+    # 3.8 Process dnamelist further - somehow...
     count = 0
     for i in dnamelist:
         count = count+1
         print(f"Item {count} of {len(dnamelist)}...")
         print(i)
         email = i[1]
-        process = subprocess.run(['git', 'log', f'--author={email}', '--format=%H', '-n 1'],
-                                   capture_output=True)
+        is_author = bool(i[2])
+        known_github = i[3] if len(i) > 3 else None
+        process = subprocess.run(['git', 'log', f'--author={email}', '--format=%H', '-n 1'], capture_output=True)
         hash = process.stdout.decode().strip()
         github_commit_url = f"https://api.github.com/repos/{repo}/commits/{hash}"
         #ask github API for username
