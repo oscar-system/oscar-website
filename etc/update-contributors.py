@@ -136,17 +136,8 @@ if not os.path.isdir(REPOS_DIR):
     os.mkdir(REPOS_DIR)
 os.chdir(REPOS_DIR)
 
-# 4.2 Initialize variables
-newList = []
-newCoauthorList = []
-namelist = []
-newpersonlist = []
-github_newusers = []
-github_userlist = []
-github_username = '__notfound__'
+# 4.2 Run over repos
 summarystring = ""
-
-# 4.3 Run over repos
 aggregate = {}      # key -> {'name','email','is_author','known_github','repos': set()}
 for repo in REPO_LIST:
 
@@ -156,7 +147,7 @@ for repo in REPO_LIST:
     print("-------------------------------")
     print("\n")
 
-    # 4.4 Clone the repository/fetch the latest updates
+    # 4.3 Clone the repository/fetch the latest updates
     print("Fetching updates...\n")
     repo_path = repo.split('/')[-1]
     if not os.path.isdir(repo_path):
@@ -165,7 +156,7 @@ for repo in REPO_LIST:
     subprocess.run(["git", "fetch", "--all"], check=True)
     subprocess.run(["git", "pull"], check=True)
 
-    # 4.5 Obtain the log from github
+    # 4.4 Obtain the log from github
     print("Generating list of authors active in past year...\n\n")
     log_cmd = ["git", "log", "--use-mailmap", GIT_LOG_SINCE, GIT_LOG_FORMAT_1]
     res = subprocess.run(log_cmd, capture_output=True, text=True, encoding="utf-8", errors="replace")
@@ -173,7 +164,7 @@ for repo in REPO_LIST:
         print("DEBUG git log failed; stderr:", res.stderr.strip())
         sys.exit(1)
     
-    # 4.6 Process the log, so we obtain pairs of author names and their emails
+    # 4.5 Process the log, so we obtain pairs of author names and their emails
     # Expected lines include:
     #   Cool Author <cool-author-email>
     #   Co-authored-by: Also Cool <another email>
@@ -227,9 +218,8 @@ for repo in REPO_LIST:
     # Stable, human-friendly order: by name (case-insensitive), then email, finally is_author
     triples = set(by_email.values())
     dnamelist = [[n, e, is_a] for (n, e, is_a) in sorted(triples, key=lambda t: (t[0].lower(), t[1], not t[2]))]
-    namelist.extend(dnamelist)
     
-    # 4.7 dnamelist has items like [name, email, is_author]
+    # 4.6 dnamelist has items like [name, email, is_author]
     # Collapse duplicates / aliases into a single record per person
     by_person = {}  # key -> [name, email, is_author, known_github]
     for name, email, is_author in dnamelist:
@@ -253,7 +243,7 @@ for repo in REPO_LIST:
     # This replaces dnamelist with the consolidated one
     dnamelist = [[n, e, is_a, gh] for (n, e, is_a, gh) in by_person.values()]
 
-    # 4.8 Aggregate across repos (no API calls here)
+    # 4.7 Aggregate across repos (no API calls here)
     for name, email, is_author, known_github in dnamelist:
         key = _person_key(name, email)
         rec = aggregate.get(key)
@@ -276,12 +266,15 @@ for repo in REPO_LIST:
             if "users.noreply.github.com" in rec["email"] and "users.noreply.github.com" not in email:
                 rec["name"], rec["email"] = name, email
     
-    # 4.9 Go one step up, to prepare the scan in the next repository
+    # 4.8 Go one step up, to prepare the scan in the next repository
     os.chdir("..")
 
-# 4.10 Enrich once across the consolidated people (skip API for now)
+# 4.9 Enrich once across the consolidated people (skip API for now)
 unresolved = []
-
+newList = []
+newpersonlist = []
+github_newusers = []
+github_userlist = []
 for key, rec in aggregate.items():
     name = rec["name"]
     email = rec["email"]
@@ -318,8 +311,10 @@ for rec in unresolved:
 
 
 ##########################################
-# 4. Sort as new, retired, active
+# 5. Sort as new, retired, active
 ##########################################
+
+newCoauthorList = []
 
 # mark active / retired
 # if PI, don't touch them
@@ -365,7 +360,7 @@ sortedcurrent_contributors = sorted(current_contributors, key= lambda d: d['name
 
 
 ##########################################
-# 5. Save the findings
+# 6. Save the findings
 ##########################################
 
 # save yml to *NEW* file
