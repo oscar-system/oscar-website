@@ -1,3 +1,7 @@
+#######################################
+# 1. Imports
+#######################################
+
 #!/usr/bin/env python3
 import os
 import json
@@ -5,22 +9,23 @@ import yaml
 import requests
 import subprocess
 
-def custom_sort_function(item):
-    name, _ = item
-    sortweight = {"name": 0, "affiliation": 1, "email": 2, "github": 3, "website": 4,
-                  "paid_by_dfg": 5,"status": 6, "comment": 7, "aka": 8, "aka_email": 9,
-                  "repos": 10}
-    return sortweight[name]
 
-# Hack copied from https://github.com/yaml/pyyaml/issues/127#issuecomment-525800484
-class MyDumper(yaml.SafeDumper):
-    # HACK: insert blank lines between top-level objects
-    # inspired by https://stackoverflow.com/a/44284819/3786245
-    def write_line_break(self, data=None):
-        super().write_line_break(data)
 
-        if len(self.indents) == 1:
-            super().write_line_break()
+#######################################
+# 2. Constants
+#######################################
+
+repoList = ["thofma/Hecke.jl", "oscar-system/Oscar.jl", "Nemocas/Nemo.jl",
+            "Nemocas/AbstractAlgebra.jl", "oscar-system/GAP.jl", "oscar-system/Polymake.jl",
+            "oscar-system/Singular.jl", "algebraic-solving/AlgebraicSolving.jl"]
+
+API_KEY = (os.getenv("API_KEY") or os.getenv("GITHUB_TOKEN") or "").strip()
+
+
+
+#######################################
+# 3. Read in intel from people_list.yml
+#######################################
 
 infile = "../_data/people_list.yml"
 with open(infile, "r") as ymlfile:
@@ -31,9 +36,25 @@ for i in peopleList:
         i['repos'] = []
 
 names = [i['github'] for i in peopleList if 'github' in i]
-repoList = ["thofma/Hecke.jl", "oscar-system/Oscar.jl", "Nemocas/Nemo.jl",
-            "Nemocas/AbstractAlgebra.jl", "oscar-system/GAP.jl", "oscar-system/Polymake.jl",
-            "oscar-system/Singular.jl", "algebraic-solving/AlgebraicSolving.jl"]
+
+
+
+#######################################
+# 4. Custom sort function
+#######################################
+
+def custom_sort_function(item):
+    name, _ = item
+    sortweight = {"name": 0, "affiliation": 1, "email": 2, "github": 3, "website": 4,
+                  "paid_by_dfg": 5,"status": 6, "comment": 7, "aka": 8, "aka_email": 9,
+                  "repos": 10}
+    return sortweight[name]
+
+
+
+#######################################
+# 5. Collect (co)authors for each repo
+#######################################
 
 newList = []
 newCoauthorList = []
@@ -42,7 +63,6 @@ newpersonlist = []
 github_newusers = []
 github_userlist = []
 github_username = '__notfound__'
-API_KEY = (os.getenv("API_KEY") or os.getenv("GITHUB_TOKEN") or "").strip()
 summarystring = ""
 # grab currently active devs
 if not os.path.isdir("repos"):
@@ -225,6 +245,12 @@ for repo in repoList:
             github_userlist.append(github_username)
     os.chdir("..")
 
+
+
+#######################################
+# 6. Sort as new, retired, active
+#######################################
+
 # mark active / retired
 # if PI, don't touch them
 os.chdir("..")
@@ -266,11 +292,29 @@ peopleList.extend(np)
 
 sortedPeopleList = sorted(peopleList, key= lambda d: d['name'].split()[-1])
 
+
+
+#######################################
+# 7. Save the findings
+#######################################
+
 # save yml to *NEW* file
 # how inefficient is list comprehension ?
 pilist = [dict(sorted(i.items(), key=custom_sort_function)) for i in sortedPeopleList if i['status'] == "pi"]
 activelist = [dict(sorted(i.items(), key=custom_sort_function)) for i in sortedPeopleList if i['status'] == "active"]
 retiredlist = [dict(sorted(i.items(), key=custom_sort_function)) for i in sortedPeopleList if i['status'] == "retired"]
+
+# Hack copied from https://github.com/yaml/pyyaml/issues/127#issuecomment-525800484
+class MyDumper(yaml.SafeDumper):
+    # HACK: insert blank lines between top-level objects
+    # inspired by https://stackoverflow.com/a/44284819/3786245
+    def write_line_break(self, data=None):
+        super().write_line_break(data)
+
+        if len(self.indents) == 1:
+            super().write_line_break()
+
+# Write people_list.yml
 with open('../_data/people_list.yml', 'w') as outfile:
     outfile.write("# It is possible that people marked as 'retired' may have the repo key as an "
                   "empty array.\n# This is because people are marked as retired if the update "
@@ -279,12 +323,12 @@ with open('../_data/people_list.yml', 'w') as outfile:
                   "(or manually added) by a maintainer.\n\n")
     yaml.dump(sortedPeopleList, outfile, Dumper=MyDumper, sort_keys = False, allow_unicode=True)
 
+# Produce summary
 summarystring = f"""This PR updates the contributors list based on the latest changes.
 New contributors : {len(newpersonlist)} | {newpersonlist}
 Revived contributors : {revcount} | {revpersonlist}
 Newly retired contributors : {retcount} | {retpersonlist}
 New co-authors : {len(newCoauthorList)} | {newCoauthorList}
 \nSummary Notes:\n\n"""+ summarystring
-
 with open("../summary.txt", 'w') as summaryfile:
     summaryfile.write(summarystring)
