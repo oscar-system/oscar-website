@@ -3,8 +3,10 @@
 # Standard library
 import json
 import os
+from email.utils import parseaddr
 import subprocess
 import sys
+import unicodedata
 
 # Third-party
 import requests
@@ -23,7 +25,7 @@ SUMMARY_FILE = "../summary.txt"
 REPOS_DIR = "repos"
 
 GIT_LOG_SINCE = "--since=1 year ago"
-GIT_LOG_FORMAT_1 = "--format=%aN <%aE>%n%(trailers:key=Co-authored-by)"
+GIT_LOG_FORMAT_1 = "--format=%aN <%aE>%n%(trailers:unfold,key=Co-authored-by)"
 GIT_LOG_FORMAT_2 = "--format=%H %s %(trailers:key=Co-authored-by)"
 
 REPO_LIST = [
@@ -87,6 +89,12 @@ current_github_usernames = [person["github"] for person in current_contributors 
 # 3. Collect (co)authors for each repo
 ##########################################
 
+# 3.1 Change into REPOS_DIR
+if not os.path.isdir(REPOS_DIR):
+    os.mkdir(REPOS_DIR)
+os.chdir(REPOS_DIR)
+
+# 3.2 Initialize variables
 newList = []
 newCoauthorList = []
 namelist = []
@@ -95,50 +103,90 @@ github_newusers = []
 github_userlist = []
 github_username = '__notfound__'
 summarystring = ""
-# grab currently active devs
-if not os.path.isdir(REPOS_DIR):
-    os.mkdir(REPOS_DIR)
-os.chdir(REPOS_DIR)
-for repo in REPO_LIST:
-    print(f"-------------------------------\nProcessing {repo}...\n-------------------------------")
-    print("Fetching updates...")
-    # if directory already exists
-    if os.path.isdir(repo.split('/')[-1]):
-        os.chdir(repo.split('/')[-1])
-        subprocess.run(["git", "fetch", "--all"], check=True)
-        subprocess.run(["git", "pull"], check=True)
-    # if directory needs to be freshly cloned
-    else:
-        subprocess.run(["git", "clone", f"https://github.com/{repo}"], check=True)
-        os.chdir(repo.split('/')[-1])
 
-    print("Generating list of authors active in past year...")
-    log_cmd = ["git", "log", GIT_LOG_SINCE, GIT_LOG_FORMAT_1]
-    res = subprocess.run(log_cmd, capture_output=True, text=True)
+# 3.3 Run over repos
+for repo in REPO_LIST:
+
+    print("\n")
+    print("-------------------------------")
+    print(f"Processing {repo}...")
+    print("-------------------------------")
+    print("\n")
+
+    # 3.4 Clone the repository/fetch the latest updates
+    print("Fetching updates...\n")
+    repo_path = repo.split('/')[-1]
+    if not os.path.isdir(repo_path):
+        subprocess.run(["git", "clone", f"https://github.com/{repo}"], check=True)
+    os.chdir(repo_path)
+    subprocess.run(["git", "fetch", "--all"], check=True)
+    subprocess.run(["git", "pull"], check=True)
+
+    # 3.5 Obtain the log from github
+    print("Generating list of authors active in past year...\n\n")
+    log_cmd = ["git", "log", "--use-mailmap", GIT_LOG_SINCE, GIT_LOG_FORMAT_1]
+    res = subprocess.run(log_cmd, capture_output=True, text=True, encoding="utf-8", errors="replace")
     if res.returncode != 0:
         print("DEBUG git log failed; stderr:", res.stderr.strip())
-        exit(-1)
-    else:
-        dset = set()
-        for raw in res.stdout.splitlines():
-            # res.stdout.splitlines() reads as follows:
-            # Cool Author <cool-author-email>
-            # Co-authored-by: Also Cool <another email>
-            # Process each row, so we obtain pairs of author names and their emails
-            line = raw.strip()
-            if line == "":
-                continue
-            if line.lower().startswith("co-authored-by:"):
-                line = line.split(":", 1)[1].strip()
-            if "<" in line and ">" in line:
-                name = line.split("<")[0].strip()
-                email = line.split("<", 1)[1].split(">", 1)[0].strip()
-                if (name != "") and (email != ""):
-                    dset.add((name, email))
-        dnamelist = [[n, e] for (n, e) in sorted(dset)]
-    print(dnamelist)
+        sys.exit(1)
+    
+    # 3.6 Process the log, so we obtain pairs of author names and their emails
+    # Expected lines include:
+    #   Cool Author <cool-author-email>
+    #   Co-authored-by: Also Cool <another email>
+    by_email = {}        # email_lower -> (name, email, is_author)
+    for raw in res.stdout.splitlines():
 
+        # Initial processing of the line and skipping if needed
+        line = raw.strip()
+        is_author = True
+        if line.lower().startswith("co-authored-by:"):
+            line = line.split(":", 1)[1].strip()
+            is_author = False
+        if not line:
+            continue
+        lower_line = line.lower()
+        if any(b in lower_line for b in ("github-actions[bot]", "dependabot[bot]", "renovate[bot]", "changelog[bot]")):
+            continue
+        if "[bot]" in lower_line:
+            summarystring += f"- Skipping expected bot line in {repo}: {line!r}\n"
+            continue
+        if "<" not in line or ">" not in line:
+            summarystring += f"- Skipping non-address line in {repo}: {line!r}\n"
+            continue
+        
+        # Parse to obtain name and email
+        name, email = parseaddr(line)
+        name = " ".join(unicodedata.normalize("NFKC", name).split())
+        email = unicodedata.normalize("NFKC", email).strip()
+        
+        # Validate
+        if (not email) and (not name):
+            summarystring += f"- Missing name and email in {repo}; line={line!r}; skipping\n"
+            continue
+        if not email:
+            summarystring += f"- Missing email for '{name}' in {repo}; skipping\n"
+            continue
+        if not name:
+            summarystring += f"- Missing name for '{email}' in {repo}; skipping\n"
+            continue
+
+        # Dedupe
+        key = email.lower()
+        prev = by_email.get(key)
+        if prev is None:
+            by_email[key] = (name, email, is_author)
+        else:
+            # upgrade to author if any occurrence is an author
+            if is_author and not prev[2]:
+                by_email[key] = (name, email, True)
+    
+    # Stable, human-friendly order: by name (case-insensitive), then email
+    triples = set(by_email.values())
+    dnamelist = [[n, e, is_a] for (n, e, is_a) in sorted(triples, key=lambda t: (t[0].lower(), t[1], not t[2]))]
     namelist.extend(dnamelist)
+    
+    # 3.7 Process dnamelist further - somehow...
     count = 0
     for i in dnamelist:
         count = count+1
