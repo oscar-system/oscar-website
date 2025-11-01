@@ -1,18 +1,18 @@
-#######################################
-# 1. Imports
-#######################################
-
 #!/usr/bin/env python3
-import os
+
+# Standard library
 import json
-import yaml
-import requests
+import os
 import subprocess
 
+# Third-party
+import requests
+import yaml
+
 
 
 #######################################
-# 2. Constants
+# 1. Constants
 #######################################
 
 repoList = ["thofma/Hecke.jl", "oscar-system/Oscar.jl", "Nemocas/Nemo.jl",
@@ -24,7 +24,7 @@ API_KEY = (os.getenv("API_KEY") or os.getenv("GITHUB_TOKEN") or "").strip()
 
 
 #######################################
-# 3. Read in intel from people_list.yml
+# 2. Read in intel from people_list.yml
 #######################################
 
 infile = "../_data/people_list.yml"
@@ -40,7 +40,7 @@ names = [i['github'] for i in peopleList if 'github' in i]
 
 
 #######################################
-# 4. Custom sort function
+# 3. Custom sort function
 #######################################
 
 def custom_sort_function(item):
@@ -53,7 +53,7 @@ def custom_sort_function(item):
 
 
 #######################################
-# 5. Collect (co)authors for each repo
+# 4. Collect (co)authors for each repo
 #######################################
 
 newList = []
@@ -248,7 +248,7 @@ for repo in repoList:
 
 
 #######################################
-# 6. Sort as new, retired, active
+# 5. Sort as new, retired, active
 #######################################
 
 # mark active / retired
@@ -295,7 +295,7 @@ sortedPeopleList = sorted(peopleList, key= lambda d: d['name'].split()[-1])
 
 
 #######################################
-# 7. Save the findings
+# 6. Save the findings
 #######################################
 
 # save yml to *NEW* file
