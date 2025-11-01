@@ -352,68 +352,97 @@ retired_contributors = [p for p in current_contributors if id(p) not in _seen_cu
 
 
 
-"""
 ##########################################
-# 9. Compute active/retired/revived and update YAML structure
+# 9. Update YAML structure (add new, set statuses)
 ##########################################
 
-# Add new contributors to YAML (prefer non-noreply emails, as before)
-np = []
-for name, email, gh, repos in newList:
-    if "users.noreply.github.com" in (email or ""):
-        np.append({"name": name, "github": gh, "status": "active", "repos": repos})
-        summarystring += f"- Email not found for {name} ({gh})..!\n"
+# Snapshot previous statuses to compute revive/retire counts
+_prev_status = {id(p): p.get("status") for p in current_contributors}
+
+# Add new contributors to YAML
+# - Authors: include email unless it’s a GH noreply
+# - Coauthors: no github, add a comment with the representative hash
+added_names = []
+added_coauthors = 0
+
+for rec in new_contributors:
+    name   = rec["name"]
+    email  = rec["email"]
+    repos  = sorted(set(rec["repos"]))  # deterministic output
+    gh     = rec["github"]
+    chash  = rec["commit_hash"]
+
+    if gh:
+        # New author
+        if "users.noreply.github.com" in (email or ""):
+            newp = {"name": name, "github": gh, "status": "active", "repos": repos}
+            summarystring += f"- Email not found for {name} ({gh}).\n"
+        else:
+            newp = {"name": name, "email": email, "github": gh, "status": "active", "repos": repos}
+        current_contributors.append(newp)
+        added_names.append(name)
     else:
-        np.append({"name": name, "email": email, "github": gh, "status": "active", "repos": repos})
-current_contributors.extend(np)
+        # New coauthor
+        newp = {
+            "name": name,
+            "email": email,
+            "status": "active",
+            "comment": f"Co-author of commit {chash}",
+            "repos": repos,
+        }
+        current_contributors.append(newp)
+        added_coauthors += 1
+        added_names.append(name)
 
-# Add new co-authors (no github) with a commit reference
-np = []
-for name, email, repo, commit_hash in newCoauthorList:
-    np.append({
-        "name": name,
-        "email": email,
-        "status": "active",
-        "comment": f"Co-author of commit {commit_hash}",
-        "repos": [repo],
-    })
-current_contributors.extend(np)
+# Build a quick lookup for "active this run" using a stable key (github or email)
+def _person_key_for_status(p: dict) -> str:
+    gh = p.get("github")
+    if gh:
+        return f"gh:{gh}"
+    em = p.get("email")
+    return f"email:{(em or '').lower()}"
 
-# Determine revive/retire based on github_userlist
-retcount = 0
+_active_keys = {_person_key_for_status(p) for p in active_contributors}
+
+# Update statuses for existing people (PIs untouched, coauthors-without-github untouched)
 revcount = 0
-retpersonlist = []
+retcount = 0
 revpersonlist = []
+retpersonlist = []
 
 for person in current_contributors:
-    if 'github' not in person:
-        # co-authors without github — leave status alone (treated as active)
-        continue
-    if person.get('status') == 'pi':
+    if person.get("status") == "pi":
         continue  # never touch PIs
-    gh = person.get('github')
-    if gh in github_userlist:
+
+    # Co-authors (no github) keep their status (treat as active-ish), as in the prior logic
+    if not person.get("github"):
+        continue
+
+    key = _person_key_for_status(person)
+    was = person.get("status")
+
+    if key in _active_keys:
         # Active this period
-        if person.get('status') == 'retired':
+        if was == "retired":
             revcount += 1
-            revpersonlist.append(person.get('name'))
-        person['status'] = 'active'
+            revpersonlist.append(person.get("name"))
+        person["status"] = "active"
     else:
-        # Not active this period
-        if person.get('status') == 'active':
+        # Not seen this period → retired
+        if was == "active":
             retcount += 1
-            retpersonlist.append(person.get('name'))
-        person['status'] = 'retired'
+            retpersonlist.append(person.get("name"))
+        person["status"] = "retired"
 
 # Normalize & sort repos per person for deterministic output
 for person in current_contributors:
-    if 'repos' in person and isinstance(person['repos'], list):
-        person['repos'] = sorted(set(person['repos']))
+    if isinstance(person.get("repos"), list):
+        person["repos"] = sorted(set(person["repos"]))
 
 # Final order by surname
 sortedcurrent_contributors = sorted(
     current_contributors,
-    key=lambda d: (d.get('name', '').split()[-1], d.get('name', ''))
+    key=lambda d: (d.get("name", "").split()[-1], d.get("name", ""))
 )
 
 
@@ -427,11 +456,6 @@ def custom_sort_function(item):
     name, _ = item
     sortweight = SORT_WEIGHT
     return sortweight[name]
-
-# dump YAML with your custom sort
-pilist = [dict(sorted(i.items(), key=custom_sort_function)) for i in sortedcurrent_contributors if i.get('status') == "pi"]
-activelist = [dict(sorted(i.items(), key=custom_sort_function)) for i in sortedcurrent_contributors if i.get('status') == "active"]
-retiredlist = [dict(sorted(i.items(), key=custom_sort_function)) for i in sortedcurrent_contributors if i.get('status') == "retired"]
 
 class MyDumper(yaml.SafeDumper):
     def write_line_break(self, data=None):
@@ -447,15 +471,19 @@ with open(PEOPLE_LIST_FILE, 'w', encoding='utf-8') as outfile:
                   "(or manually added) by a maintainer.\n\n")
     yaml.dump(sortedcurrent_contributors, outfile, Dumper=MyDumper, sort_keys=False, allow_unicode=True)
 
+# Build the summary text
+newpersonlist = added_names
+newCoauthorList = [c for c in new_contributors if not c["github"]]
+
 summarystring = (
-    f"This PR updates the contributors list based on the latest changes.\n"
+    "This PR updates the contributors list based on the latest changes.\n"
     f"New contributors : {len(newpersonlist)} | {newpersonlist}\n"
     f"Revived contributors : {revcount} | {revpersonlist}\n"
     f"Newly retired contributors : {retcount} | {retpersonlist}\n"
-    f"New co-authors : {len(newCoauthorList)} | {newCoauthorList}\n\n"
+    f"New co-authors : {len(newCoauthorList)} | "
+    f"{[(c['name'], c['email'], c['commit_hash']) for c in newCoauthorList]}\n\n"
     "Summary Notes:\n\n"
 ) + summarystring
 
 with open(SUMMARY_FILE, 'w', encoding='utf-8') as summaryfile:
     summaryfile.write(summarystring)
-"""
