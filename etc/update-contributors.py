@@ -78,7 +78,7 @@ SORT_WEIGHT = {
 # 2. Globals (runtime state; mutated)
 ##########################################
 
-# Loaded from PEOPLE_LIST_FILE
+# Contributor lists
 current_contributors = []  # list[dict]
 
 # Alias indices built from current_contributors
@@ -90,6 +90,12 @@ aggregate = {}
 
 # Collected notes (maybe use a list to avoid 'global' rebinding of strings)
 summarystring = ""
+
+# Once we aggregated the current contributors, we fill them into the following buckets
+active_contributors = []   # references to active current_contributors entries
+new_contributors = []      # data of new (co)authors in unified schema: {"name","email","repos","github|None","commit_hash|None"}
+_seen_current = set()      # track object identity for computation of retired contributors
+retired_contributors = []  # references to retired current_contributors entries
 
 
 
@@ -300,43 +306,27 @@ def find_coauthor_commit(name: str, email: str, repos: list[str]) -> tuple[str |
                 continue
             m = HASH_RE.search(line)
             if m:
-                return r, m.group(0)
-    return None, None
+                return m.group(0)
+    return "(no hash found)"
+
 
 
 ##########################################
 # 8. Post-aggregation enrichment & updates
 ##########################################
 
-active_contributors = []   # references to current_contributors entries
-new_contributors = []      # unified schema: {"name","email","repos","github|None","commit_hash|None"}
-_seen_current = set()      # track object identity for retired computation
-
 for key, rec in aggregate.items():
     name  = rec["name"]
     email = rec["email"]
-    repos = list(dict.fromkeys(sorted(rec["repos"])))  # de-dup + stable order
+    repos = rec["repos"]
     gh    = rec.get("known_github") or resolve_github_via_commit(email, repos)
+    user = (name_owner.get(gh) or (email and email_owner.get(email.lower())) or name_owner.get(_norm_name(name)))
 
-    # Try GitHub match first (fast), then fall back to email/name indices you already built
-    user = None
-    if gh and gh in name_owner:
-        user = name_owner[gh]
-    elif email and email.lower() in email_owner:
-        user = email_owner[email.lower()]
-    else:
-        # As a last resort, try normalized name (already in name_owner)
-        owner_by_name = name_owner.get(_norm_name(name))
-        if owner_by_name:
-            user = owner_by_name
-
+    # Existing contributor
     if user:
         # Merge repos into existing user (preserve order, avoid dups)
-        have = set(user.get("repos", []))
-        for r in repos:
-            if r not in have:
-                user["repos"].append(r)
-                have.add(r)
+        have = set(user["repos"])
+        user["repos"].extend(r for r in repos if r not in have)
 
         # If we just learned their GitHub, store it and index it
         if gh and not user.get("github"):
@@ -349,29 +339,13 @@ for key, rec in aggregate.items():
             _seen_current.add(uid)
             active_contributors.append(user)
 
+    # Brand-new person; authors & coauthors treated uniformly
     else:
-        # Brand-new person; authors & coauthors treated uniformly
-        if gh:
-            # New "author"
-            new_contributors.append({
-                "name": name,
-                "email": email,
-                "repos": repos,
-                "github": gh,
-                "commit_hash": None,
-            })
-        else:
-            # New "coauthor" — resolve a representative commit immediately
-            rrepo, rhash = find_coauthor_commit(name, email, repos)
-            if not rhash:
-                rhash = "(no hash found)"
-            new_contributors.append({
-                "name": name,
-                "email": email,
-                "repos": repos,
-                "github": None,
-                "commit_hash": rhash,
-            })
+        if gh:  # New "author"
+            new_contributors.append({"name": name, "email": email, "repos": repos, "github": gh, "commit_hash": None})
+        else:   # New "coauthor" — resolve a representative commit immediately
+            commit_hash = find_coauthor_commit(name, email, repos)
+            new_contributors.append({"name": name, "email": email, "repos": repos, "github": None, "commit_hash": commit_hash})
 
 # Retired = in current_contributors but not seen in this run
 retired_contributors = [p for p in current_contributors if id(p) not in _seen_current]
