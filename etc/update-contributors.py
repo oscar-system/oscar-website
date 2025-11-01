@@ -308,65 +308,77 @@ def find_coauthor_commit(name: str, email: str, repos: list[str]) -> tuple[str |
 # 8. Post-aggregation enrichment & updates
 ##########################################
 
-# Precompute current known GitHub usernames
-current_github_usernames = [p["github"] for p in current_contributors if "github" in p]
+active_contributors = []   # references to current_contributors entries
+new_contributors = []      # unified schema: {"name","email","repos","github|None","commit_hash|None"}
+_seen_current = set()      # track object identity for retired computation
 
-# Buckets
-newList = []            # list of new contributors: [name, email, github, repos]
-newpersonlist = []      # names for summary
-github_newusers = []    # github handles of new people
-github_userlist = []    # everyone seen as active this run (by github)
-newCoauthorList = []    # [name, email, repo, commit_hash] for unmapped co-authors
-unresolved = []         # aggregate recs without github after all attempts
-
-# 8.1 Resolve GitHub handles where missing, update contributors & build 'newList'
-for rec in aggregate.values():
-    name = rec["name"]
+for key, rec in aggregate.items():
+    name  = rec["name"]
     email = rec["email"]
-    repos = sorted(rec["repos"])
-    gh = rec["known_github"]
+    repos = list(dict.fromkeys(sorted(rec["repos"])))  # de-dup + stable order
+    gh    = rec.get("known_github") or resolve_github_via_commit(email, repos)
 
-    # Try to resolve missing GitHub once, across their repos
-    if not gh:
-        gh = resolve_github_via_commit(email, repos)
+    # Try GitHub match first (fast), then fall back to email/name indices you already built
+    user = None
+    if gh and gh in name_owner:
+        user = name_owner[gh]
+    elif email and email.lower() in email_owner:
+        user = email_owner[email.lower()]
+    else:
+        # As a last resort, try normalized name (already in name_owner)
+        owner_by_name = name_owner.get(_norm_name(name))
+        if owner_by_name:
+            user = owner_by_name
 
-    if gh:
-        # Mark active set
-        if gh not in github_userlist:
-            github_userlist.append(gh)
+    if user:
+        # Merge repos into existing user (preserve order, avoid dups)
+        have = set(user.get("repos", []))
+        for r in repos:
+            if r not in have:
+                user["repos"].append(r)
+                have.add(r)
 
-        if gh in current_github_usernames:
-            # Existing contributor: append repos
-            user = next((it for it in current_contributors if it.get("github") == gh), None)
-            for r in repos:
-                if r not in user["repos"]:
-                    user["repos"].append(r)
+        # If we just learned their GitHub, store it and index it
+        if gh and not user.get("github"):
+            user["github"] = gh
+            name_owner[gh] = user
+
+        # Mark active once
+        uid = id(user)
+        if uid not in _seen_current:
+            _seen_current.add(uid)
+            active_contributors.append(user)
+
+    else:
+        # Brand-new person; authors & coauthors treated uniformly
+        if gh:
+            # New "author"
+            new_contributors.append({
+                "name": name,
+                "email": email,
+                "repos": repos,
+                "github": gh,
+                "commit_hash": None,
+            })
         else:
-            # New contributor
-            newpersonlist.append(name)
-            github_newusers.append(gh)
-            newList.append([name, email, gh, repos])
-    else:
-        # Still unresolved — likely co-author
-        unresolved.append(rec)
+            # New "coauthor" — resolve a representative commit immediately
+            rrepo, rhash = find_coauthor_commit(name, email, repos)
+            if not rhash:
+                rhash = "(no hash found)"
+            new_contributors.append({
+                "name": name,
+                "email": email,
+                "repos": repos,
+                "github": None,
+                "commit_hash": rhash,
+            })
 
-# 8.2 For truly unresolved people, create co-author entries with a representative commit hash (optional but helpful)
-for rec in unresolved:
-    # If they already exist in YAML (co-author entries without github), we won't add dupes now.
-    # We'll just record one commit hash for context.
-    rrepo, rhash = find_coauthor_commit(rec["name"], rec["email"], sorted(rec["repos"]))
-    if rrepo and rhash:
-        newCoauthorList.append([rec["name"], rec["email"], rrepo, rhash])
-    else:
-        # Breadcrumb in summary so they don't vanish silently
-        newCoauthorList.append([rec["name"], rec["email"], list(sorted(rec["repos"]))[0], "(no hash found)"])
-        summarystring += (
-            f"- No GitHub and no commit hash found for {rec['name']} <{rec['email']}>; "
-            f"repos={sorted(rec['repos'])}. Skipping for now.\n"
-        )
+# Retired = in current_contributors but not seen in this run
+retired_contributors = [p for p in current_contributors if id(p) not in _seen_current]
 
 
 
+"""
 ##########################################
 # 9. Compute active/retired/revived and update YAML structure
 ##########################################
@@ -472,3 +484,4 @@ summarystring = (
 
 with open(SUMMARY_FILE, 'w', encoding='utf-8') as summaryfile:
     summaryfile.write(summarystring)
+"""
