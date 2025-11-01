@@ -96,6 +96,8 @@ active_contributors = []            # references to active current_contributors 
 new_contributors = []               # data of new (co)authors in unified schema: {"name","email","repos","github|None","commit_hash|None"}
 _seen_current = set()               # track object identity for computation of retired contributors
 retired_contributors = []           # references to retired current_contributors entries
+_prev_status = {}                   # Status of people before we match them against aggregate and thus update their status
+newly_retired_names = []            # The list of the names of people who retired recently
 sorted_current_contributors = []    # the current contributors - new active, retired, PI sorted by name
 ordered_people = []                 # final list of sorted current contributors, with each field sorted by our custom design in SORT_WEIGHT
 
@@ -359,6 +361,7 @@ retired_contributors = [p for p in current_contributors if id(p) not in _seen_cu
 ##########################################
 
 _prev_status = {id(p): p.get("status") for p in current_contributors}
+newly_retired_names = [p.get("name") for p in retired_contributors if _prev_status.get(id(p)) == "active"]
 
 for rec in new_contributors:
     newp = {"name": rec["name"], "email": rec["email"], "repos": sorted(set(rec["repos"])), "status": "active"}
@@ -388,6 +391,7 @@ ordered_people = [dict(sorted(person.items(), key=custom_sort_function)) for per
 
 
 
+
 ##########################################
 # 10. Save the findings to YML file
 ##########################################
@@ -413,12 +417,9 @@ with open(PEOPLE_LIST_FILE, "w", encoding="utf-8") as outfile:
 # 11. Write summary text
 ##########################################
 
-new_names = [rec["name"] for rec in new_contributors]
-newly_retired_names = [p.get("name") for p in retired_contributors if _prev_status.get(id(p)) == "active"]
-
 summarystring = (
     "This PR updates the contributors list based on the latest changes.\n"
-    f"New contributors : {len(new_names)} | {new_names}\n"
+    f"New contributors : {len(new_contributors)} | {[rec["name"] for rec in new_contributors]}\n"
     f"Newly retired contributors : {len(newly_retired_names)} | {newly_retired_names}\n\n"
     "Summary Notes:\n\n"
 ) + summarystring
