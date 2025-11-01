@@ -269,7 +269,12 @@ for repo in REPO_LIST:
     # 4.8 Go one step up, to prepare the scan in the next repository
     os.chdir("..")
 
-# 4.9 Enrich once across the consolidated people (skip API for now)
+
+
+##########################################
+# 5. Processing further
+##########################################
+
 unresolved = []
 newList = []
 newpersonlist = []
@@ -311,7 +316,7 @@ for rec in unresolved:
 
 
 ##########################################
-# 5. Sort as new, retired, active
+# 6. Sort as new, retired, active
 ##########################################
 
 newCoauthorList = []
@@ -360,7 +365,7 @@ sortedcurrent_contributors = sorted(current_contributors, key= lambda d: d['name
 
 
 ##########################################
-# 6. Save the findings
+# 7. Save the findings
 ##########################################
 
 # save yml to *NEW* file
