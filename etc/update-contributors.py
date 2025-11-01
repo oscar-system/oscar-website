@@ -350,12 +350,14 @@ retired_contributors = [p for p in current_contributors if id(p) not in _seen_cu
 
 
 ##########################################
-# 9. Update YAML structure
+# 9. Apply updates and dump output
 ##########################################
 
+# Find the newly retired contributors
 _prev_status = {id(p): p.get("status") for p in current_contributors}
 newly_retired_names = [p.get("name") for p in retired_contributors if _prev_status.get(id(p)) == "active"]
 
+# Apply updates
 for rec in new_contributors:
     newp = {"name": rec["name"], "email": rec["email"], "repos": sorted(set(rec["repos"])), "status": "active"}
     if rec["github"]:
@@ -363,38 +365,29 @@ for rec in new_contributors:
     else:
         newp["comment"] = f"Co-author of commit {rec['commit_hash']}"
     current_contributors.append(newp)
-
 for p in active_contributors:
     p["status"] = "active"
-
 for p in retired_contributors:
     if p.get("status") != "pi":
         p["status"] = "retired"
 
+# Normalize repos list deterministically
 for p in current_contributors:
     p["repos"] = sorted(set(p["repos"]))
 
-sorted_current_contributors = sorted(current_contributors, key=lambda d: (d.get("name", "").split()[-1], d.get("name", "")))
-
+# Final order by surname, then tidy field order
+people_sorted = sorted(current_contributors, key=lambda d: (d.get("name", "").split()[-1], d.get("name", "")))
 def custom_sort_function(item):
     key, _ = item
     return SORT_WEIGHT.get(key, 999)
+ordered_people = [dict(sorted(p.items(), key=custom_sort_function)) for p in people_sorted]
 
-ordered_people = [dict(sorted(person.items(), key=custom_sort_function)) for person in sorted_current_contributors]
-
-
-
-
-##########################################
-# 10. Save the findings to YML file
-##########################################
-
+# Write new content to PEOPLE_LIST_FILE
 class MyDumper(yaml.SafeDumper):
     def write_line_break(self, data=None):
         super().write_line_break(data)
         if len(self.indents) == 1:
             super().write_line_break()
-
 with open(PEOPLE_LIST_FILE, "w", encoding="utf-8") as outfile:
     outfile.write(
         "# It is possible that people marked as 'retired' may have the repo key as an empty array.\n"
@@ -404,18 +397,13 @@ with open(PEOPLE_LIST_FILE, "w", encoding="utf-8") as outfile:
     )
     yaml.dump(ordered_people, outfile, Dumper=MyDumper, sort_keys=False, allow_unicode=True)
 
-
-
-##########################################
-# 11. Write summary text
-##########################################
-
-summarystring = (
+# Create summary in SUMMARY_FILE
+new_names = [rec["name"] for rec in new_contributors]
+summary = (
     "This PR updates the contributors list based on the latest changes.\n"
-    f"New contributors : {len(new_contributors)} | {[rec["name"] for rec in new_contributors]}\n"
+    f"New contributors : {len(new_names)} | {new_names}\n"
     f"Newly retired contributors : {len(newly_retired_names)} | {newly_retired_names}\n\n"
     "Summary Notes:\n\n"
 ) + summarystring
-
 with open(SUMMARY_FILE, "w", encoding="utf-8") as summaryfile:
-    summaryfile.write(summarystring)
+    summaryfile.write(summary)
