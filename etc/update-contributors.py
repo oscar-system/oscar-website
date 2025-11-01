@@ -68,7 +68,7 @@ def custom_sort_function(item):
 
 try:
     with open(PEOPLE_LIST_FILE, "r", encoding="utf-8") as ymlfile:
-        peopleList = yaml.safe_load(ymlfile) or []
+        current_contributors = yaml.safe_load(ymlfile) or []
 except FileNotFoundError:
     print(f"Error: Could not find {PEOPLE_LIST_FILE}")
     sys.exit(1)
@@ -76,10 +76,10 @@ except yaml.YAMLError as e:
     print(f"Error parsing YAML file {PEOPLE_LIST_FILE}: {e}")
     sys.exit(1)
 
-for person in peopleList:
+for person in current_contributors:
     person.setdefault("repos", [])
 
-names = [person["github"] for person in peopleList if "github" in person]
+current_github_usernames = [person["github"] for person in current_contributors if "github" in person]
 
 
 
@@ -168,7 +168,7 @@ for repo in REPO_LIST:
                 # or if the name exists in an aka
                 # or if the email exists in aka_email
                 flag = False
-                for person in peopleList:
+                for person in current_contributors:
                     if 'email' in person.keys() and 'name' in person.keys():
                         if i[0] == person['name'] and i[1] == person['email']:
                             # we know the person, check if we know the github ID
@@ -201,7 +201,7 @@ for repo in REPO_LIST:
         elif github_commit_url == f"https://api.github.com/repos/{repo}/commits/":
             # this is a case of a co-author
             flag = False
-            for person in peopleList:
+            for person in current_contributors:
                 if 'email' in person.keys() and 'name' in person.keys():
                     if i[0] == person['name'] and i[1] == person['email']:
                             flag = True
@@ -257,14 +257,14 @@ for repo in REPO_LIST:
             flag = False
 
         assert github_username != "__notfound__"
-        if github_username not in names and github_username not in github_newusers and github_username != "__notfound__":
+        if github_username not in current_github_usernames and github_username not in github_newusers and github_username != "__notfound__":
             print("A new contributor!")
             newpersonlist.append(i[0])
             print(f"{i[0]}\t{i[1]}\t{github_username}")
             github_newusers.append(github_username)
             newList.append([i[0], i[1], github_username, [repo]])
-        elif github_username in names:
-            user = [item for item in peopleList if 'github' in item and item['github'] == github_username][0]
+        elif github_username in current_github_usernames:
+            user = [item for item in current_contributors if 'github' in item and item['github'] == github_username][0]
             if repo not in user['repos']:
                 user['repos'].append(repo)
         else:
@@ -289,7 +289,7 @@ retcount = 0
 revcount = 0
 retpersonlist = []
 revpersonlist = []
-for i in peopleList:
+for i in current_contributors:
     if 'github' not in i:
         #co authors
         continue
@@ -314,14 +314,14 @@ for i in newList:
         summarystring += f"- Email not found for {i[0]} ({i[2]})..!\n"
     else:
         np.append({"name": i[0], "email": i[1], "github": i[2], "status": "active", "repos": i[3]})
-peopleList.extend(np)
+current_contributors.extend(np)
 
 np = []
 for i in newCoauthorList:
     np.append({"name": i[0], "email": i[1], "status": "active", "comment": f"Co-author of commit {i[3]}","repos": [i[2]]})
-peopleList.extend(np)
+current_contributors.extend(np)
 
-sortedPeopleList = sorted(peopleList, key= lambda d: d['name'].split()[-1])
+sortedcurrent_contributors = sorted(current_contributors, key= lambda d: d['name'].split()[-1])
 
 
 
@@ -331,9 +331,9 @@ sortedPeopleList = sorted(peopleList, key= lambda d: d['name'].split()[-1])
 
 # save yml to *NEW* file
 # how inefficient is list comprehension ?
-pilist = [dict(sorted(i.items(), key=custom_sort_function)) for i in sortedPeopleList if i['status'] == "pi"]
-activelist = [dict(sorted(i.items(), key=custom_sort_function)) for i in sortedPeopleList if i['status'] == "active"]
-retiredlist = [dict(sorted(i.items(), key=custom_sort_function)) for i in sortedPeopleList if i['status'] == "retired"]
+pilist = [dict(sorted(i.items(), key=custom_sort_function)) for i in sortedcurrent_contributors if i['status'] == "pi"]
+activelist = [dict(sorted(i.items(), key=custom_sort_function)) for i in sortedcurrent_contributors if i['status'] == "active"]
+retiredlist = [dict(sorted(i.items(), key=custom_sort_function)) for i in sortedcurrent_contributors if i['status'] == "retired"]
 
 # Hack copied from https://github.com/yaml/pyyaml/issues/127#issuecomment-525800484
 class MyDumper(yaml.SafeDumper):
@@ -352,7 +352,7 @@ with open('../_data/people_list.yml', 'w') as outfile:
                   "script could not find them in any repo.\n# Retired people only have repo "
                   "information if repo information about them was known when they were\n# active "
                   "(or manually added) by a maintainer.\n\n")
-    yaml.dump(sortedPeopleList, outfile, Dumper=MyDumper, sort_keys = False, allow_unicode=True)
+    yaml.dump(sortedcurrent_contributors, outfile, Dumper=MyDumper, sort_keys = False, allow_unicode=True)
 
 # Produce summary
 summarystring = f"""This PR updates the contributors list based on the latest changes.
