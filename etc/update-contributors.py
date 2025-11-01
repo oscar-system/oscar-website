@@ -154,7 +154,7 @@ def _person_key(name: str, email: str):
 
 
 ##########################################
-# 5. Helper: Progress git log
+# 5. Helper: Process git log
 ##########################################
 
 def process_log_into_aggregate(res: str, repo: str) -> None:
@@ -259,41 +259,39 @@ for repo in REPO_LIST:
 
 
 ##########################################
-# 7. Post-aggregation enrichment & updates
+# 7. Helpers to find (co)-author details
 ##########################################
 
+# Try to resolve a GitHub login by finding one authored commit for this email.
 def resolve_github_via_commit(email: str, repos: list[str]) -> str | None:
-    """Try to resolve a GitHub login by finding one authored commit for this email."""
     if not email:
         return None
     for r in repos:
         repo_path = r.split('/')[-1]
         # Find a representative commit authored by this email
-        p = subprocess.run(
-            ["git", "log", f"--author={email}", "--format=%H", "-n", "1"],
-            cwd=repo_path, capture_output=True, text=True, encoding="utf-8"
-        )
-        commit_hash = (p.stdout or "").strip()
+        res = subprocess.run(["git", "log", GIT_LOG_SINCE, f"--author={email}", "--format=%H", "-n", "1"],
+                           cwd=repo_path, capture_output=True, text=True, encoding="utf-8")
+        if res.returncode != 0:
+            continue
+        commit_hash = (res.stdout or "").strip()
         if not commit_hash:
             continue  # no direct authored commit in this repo (could be co-author only)
         url = f"https://api.github.com/repos/{r}/commits/{commit_hash}"
         resp = requests.get(url, headers={"Authorization": f"Bearer {API_KEY}"})
         if resp.status_code != 200:
             continue
-        j = resp.json()
-        author = j.get("author")
+        author = resp.json().get("author")
         if author and author.get("login"):
             return author["login"]
     return None
 
+# Try to resolve a GitHub login by finding one co-authored commit for this email.
 def find_coauthor_commit(name: str, email: str, repos: list[str]) -> tuple[str | None, str | None]:
     targets = {t for t in (name.lower(), email.lower()) if t}
     for r in repos:
         repo_path = r.split('/')[-1]
-        res = subprocess.run(
-            ["git", "log", GIT_LOG_SINCE, GIT_LOG_FORMAT_2],
-            cwd=repo_path, capture_output=True, text=True, encoding="utf-8"
-        )
+        res = subprocess.run(["git", "log", GIT_LOG_SINCE, GIT_LOG_FORMAT_2],
+                             cwd=repo_path, capture_output=True, text=True, encoding="utf-8")
         if res.returncode != 0:
             continue
         for line in res.stdout.splitlines():
@@ -305,18 +303,23 @@ def find_coauthor_commit(name: str, email: str, repos: list[str]) -> tuple[str |
                 return r, m.group(0)
     return None, None
 
+
+##########################################
+# 8. Post-aggregation enrichment & updates
+##########################################
+
 # Precompute current known GitHub usernames
 current_github_usernames = [p["github"] for p in current_contributors if "github" in p]
 
 # Buckets
-newList = []            # [name, email, github, repos]
+newList = []            # list of new contributors: [name, email, github, repos]
 newpersonlist = []      # names for summary
 github_newusers = []    # github handles of new people
 github_userlist = []    # everyone seen as active this run (by github)
 newCoauthorList = []    # [name, email, repo, commit_hash] for unmapped co-authors
 unresolved = []         # aggregate recs without github after all attempts
 
-# 7.1 Resolve GitHub handles where missing, update contributors & build 'newList'
+# 8.1 Resolve GitHub handles where missing, update contributors & build 'newList'
 for rec in aggregate.values():
     name = rec["name"]
     email = rec["email"]
@@ -335,20 +338,19 @@ for rec in aggregate.values():
         if gh in current_github_usernames:
             # Existing contributor: append repos
             user = next((it for it in current_contributors if it.get("github") == gh), None)
-            if user is not None:
-                for r in repos:
-                    if r not in user.setdefault("repos", []):
-                        user["repos"].append(r)
+            for r in repos:
+                if r not in user["repos"]:
+                    user["repos"].append(r)
         else:
             # New contributor
             newpersonlist.append(name)
             github_newusers.append(gh)
             newList.append([name, email, gh, repos])
     else:
-        # Still unresolved — likely co-author or private email
+        # Still unresolved — likely co-author
         unresolved.append(rec)
 
-# 7.2 For truly unresolved people, create co-author entries with a representative commit hash (optional but helpful)
+# 8.2 For truly unresolved people, create co-author entries with a representative commit hash (optional but helpful)
 for rec in unresolved:
     # If they already exist in YAML (co-author entries without github), we won't add dupes now.
     # We'll just record one commit hash for context.
@@ -366,7 +368,7 @@ for rec in unresolved:
 
 
 ##########################################
-# 8. Compute active/retired/revived and update YAML structure
+# 9. Compute active/retired/revived and update YAML structure
 ##########################################
 
 # Add new contributors to YAML (prefer non-noreply emails, as before)
@@ -431,7 +433,7 @@ sortedcurrent_contributors = sorted(
 
 
 ##########################################
-# 9. Save the findings
+# 10. Save the findings
 ##########################################
 
 # custom sort function
