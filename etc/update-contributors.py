@@ -147,6 +147,7 @@ github_username = '__notfound__'
 summarystring = ""
 
 # 4.3 Run over repos
+aggregate = {}      # key -> {'name','email','is_author','known_github','repos': set()}
 for repo in REPO_LIST:
 
     print("\n")
@@ -252,138 +253,67 @@ for repo in REPO_LIST:
     # This replaces dnamelist with the consolidated one
     dnamelist = [[n, e, is_a, gh] for (n, e, is_a, gh) in by_person.values()]
 
-    # 3.8 Process dnamelist further - somehow...
-    count = 0
-    for i in dnamelist:
-        count = count+1
-        print(f"Item {count} of {len(dnamelist)}...")
-        print(i)
-        email = i[1]
-        is_author = bool(i[2])
-        known_github = i[3] if len(i) > 3 else None
-        process = subprocess.run(['git', 'log', f'--author={email}', '--format=%H', '-n 1'], capture_output=True)
-        hash = process.stdout.decode().strip()
-        github_commit_url = f"https://api.github.com/repos/{repo}/commits/{hash}"
-        #ask github API for username
-        r = requests.get(github_commit_url, headers={"Authorization":f"Bearer {API_KEY}"})
-        if r.status_code == 200:
-            j = json.loads(r.text)
-            github_username = '__notfound__'
-            if j['author'] == None:
-                # this commit was authored by someone and committed by someone else
-                # so github can't find a github user for the author, only for committed
-                # so we go through our list entire people list and see if we know the combination of
-                # name and email already
-                # or if the name exists in an aka
-                # or if the email exists in aka_email
-                flag = False
-                for person in current_contributors:
-                    if 'email' in person.keys() and 'name' in person.keys():
-                        if i[0] == person['name'] and i[1] == person['email']:
-                            # we know the person, check if we know the github ID
-                            if 'github' in person.keys() and person['github'] != '':
-                                # we know the person and the github, just mark person as active
-                                github_username = person['github']
-                                flag = True
-                                break
-                        elif "aka" in person:
-                            # the person has an alias
-                            if i[0] in person["aka"]:
-                                if 'github' in person.keys() and person['github'] != '':
-                                    # we know the person and the github, just mark person as active
-                                    github_username = person['github']
-                                    flag = True
-                                    break
-                        elif "aka_email" in person:
-                            # the person has an alias email
-                            if i[1] in person["aka_email"]:
-                                if 'github' in person.keys() and person['github'] != '':
-                                    # we know the person and the github, just mark person as active
-                                    github_username = person['github']
-                                    flag = True
-                                    break
-                if not flag:
-                    summarystring += f"- Github username not found for {i[0]} with email {i[1]}. Excluding from people_list.yml\n"
-                    continue
-            if github_username == '__notfound__':
-                github_username = j['author']['login']
-        elif github_commit_url == f"https://api.github.com/repos/{repo}/commits/":
-            # this is a case of a co-author
-            flag = False
-            for person in current_contributors:
-                if 'email' in person.keys() and 'name' in person.keys():
-                    if i[0] == person['name'] and i[1] == person['email']:
-                            flag = True
-                            break
-                    elif "aka" in person:
-                        # the person has an alias
-                        if i[0] in person["aka"]:
-                            if 'github' in person.keys() and person['github'] != '':
-                                # we know the person and the github, just mark person as active
-                                github_username = person['github']
-                                flag = True
-                                break
-                    elif "aka_email" in person:
-                        # the person has an alias email
-                        if i[1] in person["aka_email"]:
-                            if 'github' in person.keys() and person['github'] != '':
-                                # we know the person and the github, just mark person as active
-                                github_username = person['github']
-                                flag = True
-                                break
-                    elif i[0] == person['name'] or i[1] == person['email']:
-                        github_username = person['github']
-                        flag = True
-                        break
-            if not flag:
-                # a co-author we don't know about at all - find a commit hash that mentions them
-                res = subprocess.run(["git", "log", GIT_LOG_SINCE, GIT_LOG_FORMAT_2],capture_output=True, text=True)
-                if res.returncode != 0:
-                    print("ERROR: git log for co-author failed:", res.stderr.strip())
-                    exit(1)
-                commit_hash = None
-                target_lower = {i[0].lower(), i[1].lower()}
-                for line in res.stdout.splitlines():
-                    lower = line.lower()
-                    if any(t in lower for t in target_lower):
-                        parts = line.split()
-                        if parts:
-                            commit_hash = parts[0]
-                            break
-                if commit_hash == None:
-                    print(f"ERROR: Could not find a commit hash for co-author {i[0]} <{i[1]}> in {repo}")
-                    exit(1)
-                newCoauthorList.append([i[0], i[1], repo, commit_hash])
+    # 4.8 Aggregate across repos (no API calls here)
+    for name, email, is_author, known_github in dnamelist:
+        key = _person_key(name, email)
+        rec = aggregate.get(key)
+        if rec is None:
+            aggregate[key] = {
+                "name": name,
+                "email": email,
+                "is_author": bool(is_author),
+                "known_github": known_github,
+                "repos": set([repo]),
+            }
         else:
-            # this will never happen, except if the API lies to you
-            # or blocks access
-            print(r.status_code)
-            print(r)
-            print(r.text)
-            print(email)
-            print(github_commit_url)
-            github_username = "__notfound__"
-            flag = False
-
-        assert github_username != "__notfound__"
-        if github_username not in current_github_usernames and github_username not in github_newusers and github_username != "__notfound__":
-            print("A new contributor!")
-            newpersonlist.append(i[0])
-            print(f"{i[0]}\t{i[1]}\t{github_username}")
-            github_newusers.append(github_username)
-            newList.append([i[0], i[1], github_username, [repo]])
-        elif github_username in current_github_usernames:
-            user = [item for item in current_contributors if 'github' in item and item['github'] == github_username][0]
-            if repo not in user['repos']:
-                user['repos'].append(repo)
-        else:
-            # github_username in github_newusers
-            user = [item for item in newList if item[2] == github_username][0]
-            if repo not in user[3]:
-                user[3].append(repo)
-        if github_username not in github_userlist:
-            github_userlist.append(github_username)
+            # merge flags and better data
+            if not rec["is_author"] and bool(is_author):
+                rec["is_author"] = True
+            rec["repos"].add(repo)
+            if known_github and not rec["known_github"]:
+                rec["known_github"] = known_github
+            # prefer non-noreply email (and the name that came with it)
+            if "users.noreply.github.com" in rec["email"] and "users.noreply.github.com" not in email:
+                rec["name"], rec["email"] = name, email
+    
+    # 4.9 Go one step up, to prepare the scan in the next repository
     os.chdir("..")
+
+# 4.10 Enrich once across the consolidated people (skip API for now)
+unresolved = []
+
+for key, rec in aggregate.items():
+    name = rec["name"]
+    email = rec["email"]
+    repos = sorted(rec["repos"])
+    gh = rec["known_github"]
+
+    if gh:
+        # Known GitHub from YAML
+        if gh in current_github_usernames:
+            # existing contributor: just append repos
+            user = next((it for it in current_contributors if it.get("github") == gh), None)
+            if user is not None:
+                for r in repos:
+                    if r not in user.setdefault("repos", []):
+                        user["repos"].append(r)
+        else:
+            # new contributor (known gh from aliases)
+            newpersonlist.append(name)
+            github_newusers.append(gh)
+            newList.append([name, email, gh, repos])
+        if gh not in github_userlist:
+            github_userlist.append(gh)
+    else:
+        # No GitHub yet — leave for a later step (or future API pass)
+        unresolved.append(rec)
+
+# Optional: note unresolved folks so they don't silently vanish
+for rec in unresolved:
+    summarystring += (
+        f"- Github username not found for {rec['name']} <{rec['email']}>; "
+        f"repos={sorted(rec['repos'])}. Skipping for now.\n"
+    )
 
 
 
