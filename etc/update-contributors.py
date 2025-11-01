@@ -150,16 +150,9 @@ for p in current_contributors:
     for n in names:
         name_owner[_norm_name(n)] = p
 
-# Helper function to be used below
-def _person_key(name: str, email: str):
-    owner = email_owner.get(email.lower()) or name_owner.get(_norm_name(name))
-    if owner and owner.get("github"):
-        return ("gh", owner["github"])
-    if owner and (owner.get("email") or email):
-        # canonicalize to the owner's primary email if present
-        base = (owner.get("email") or email).lower()
-        return ("email", base)
-    return ("email", email.lower())
+def lookup_user(gh, email, name):
+    global email_owner, name_owner
+    return ((gh and name_owner.get(gh.lower())) or (email and email_owner.get(email.lower())) or name_owner.get(_norm_name(name)))
 
 
 
@@ -216,8 +209,8 @@ def process_log_into_aggregate(res: str, repo: str) -> None:
         known_github = owner.get("github") if owner else None
 
         # Person key: prefer github if known; else canonical email via owner; else raw email
-        key = _person_key(name, email)
-
+        key = ("gh", known_github.lower()) if known_github else ("email", ((owner and owner.get("email")) or email).lower())
+        
         # Update aggregate (one record per person across all repos)
         rec = aggregate.get(key)
         if rec is None:
@@ -324,11 +317,7 @@ for key, rec in aggregate.items():
     email = rec["email"]
     repos = rec["repos"]
     gh    = rec.get("known_github") or resolve_github_via_commit(email, repos)
-    user = (
-        (gh and name_owner.get(_norm_name(gh)))
-        or (email and email_owner.get(email.lower()))
-        or name_owner.get(_norm_name(name))
-    )
+    user = lookup_user(gh, email, name)
 
     # Existing contributor
     if user:
