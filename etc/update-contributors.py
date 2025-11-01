@@ -15,11 +15,49 @@ import yaml
 # 1. Constants
 #######################################
 
-repoList = ["thofma/Hecke.jl", "oscar-system/Oscar.jl", "Nemocas/Nemo.jl",
-            "Nemocas/AbstractAlgebra.jl", "oscar-system/GAP.jl", "oscar-system/Polymake.jl",
-            "oscar-system/Singular.jl", "algebraic-solving/AlgebraicSolving.jl"]
-
 API_KEY = (os.getenv("API_KEY") or os.getenv("GITHUB_TOKEN") or "").strip()
+
+PEOPLE_LIST_FILE = "../_data/people_list.yml"
+SUMMARY_FILE = "../summary.txt"
+REPOS_DIR = "repos"
+
+GIT_LOG_SINCE = "--since=1 year ago"
+GIT_LOG_FORMAT_1 = "--format=%aN <%aE>%n%(trailers:key=Co-authored-by)"
+GIT_LOG_FORMAT_2 = "--format=%H %s %(trailers:key=Co-authored-by)"
+
+REPO_LIST = [
+    "Nemocas/AbstractAlgebra.jl",
+    "algebraic-solving/AlgebraicSolving.jl",
+    "oscar-system/GAP.jl",
+    "thofma/Hecke.jl",
+    "Nemocas/Nemo.jl",
+    "oscar-system/Oscar.jl",
+    "oscar-system/Polymake.jl",
+    "oscar-system/Singular.jl",
+]
+
+STATUS_PI = "pi" # not used yet
+STATUS_ACTIVE = "active" # not used yet
+STATUS_RETIRED = "retired" # not used yet
+
+SORT_WEIGHT = {
+    "name": 0,
+    "affiliation": 1,
+    "email": 2,
+    "github": 3,
+    "website": 4,
+    "paid_by_dfg": 5,
+    "status": 6,
+    "comment": 7,
+    "aka": 8,
+    "aka_email": 9,
+    "repos": 10,
+}
+
+def custom_sort_function(item):
+    name, _ = item
+    sortweight = SORT_WEIGHT
+    return sortweight[name]
 
 
 
@@ -27,7 +65,7 @@ API_KEY = (os.getenv("API_KEY") or os.getenv("GITHUB_TOKEN") or "").strip()
 # 2. Read in intel from people_list.yml
 #######################################
 
-infile = "../_data/people_list.yml"
+infile = PEOPLE_LIST_FILE
 with open(infile, "r") as ymlfile:
     peopleList = yaml.safe_load(ymlfile)
 
@@ -40,20 +78,7 @@ names = [i['github'] for i in peopleList if 'github' in i]
 
 
 #######################################
-# 3. Custom sort function
-#######################################
-
-def custom_sort_function(item):
-    name, _ = item
-    sortweight = {"name": 0, "affiliation": 1, "email": 2, "github": 3, "website": 4,
-                  "paid_by_dfg": 5,"status": 6, "comment": 7, "aka": 8, "aka_email": 9,
-                  "repos": 10}
-    return sortweight[name]
-
-
-
-#######################################
-# 4. Collect (co)authors for each repo
+# 3. Collect (co)authors for each repo
 #######################################
 
 newList = []
@@ -65,10 +90,10 @@ github_userlist = []
 github_username = '__notfound__'
 summarystring = ""
 # grab currently active devs
-if not os.path.isdir("repos"):
-    os.mkdir("repos")
-os.chdir("repos")
-for repo in repoList:
+if not os.path.isdir(REPOS_DIR):
+    os.mkdir(REPOS_DIR)
+os.chdir(REPOS_DIR)
+for repo in REPO_LIST:
     print(f"-------------------------------\nProcessing {repo}...\n-------------------------------")
     print("Fetching updates...")
     # if directory already exists
@@ -82,7 +107,7 @@ for repo in repoList:
         os.chdir(repo.split('/')[-1])
 
     print("Generating list of authors active in past year...")
-    log_cmd = ["git", "log", "--since=1 year ago", "--format=%aN <%aE>%n%(trailers:key=Co-authored-by)"]
+    log_cmd = ["git", "log", GIT_LOG_SINCE, GIT_LOG_FORMAT_1]
     res = subprocess.run(log_cmd, capture_output=True, text=True)
     if res.returncode != 0:
         print("DEBUG git log failed; stderr:", res.stderr.strip())
@@ -197,7 +222,7 @@ for repo in repoList:
                         break
             if not flag:
                 # a co-author we don't know about at all - find a commit hash that mentions them
-                res = subprocess.run(["git", "log", "--since=1 year ago", "--format=%H %s %(trailers:key=Co-authored-by)"],capture_output=True, text=True)
+                res = subprocess.run(["git", "log", GIT_LOG_SINCE, GIT_LOG_FORMAT_2],capture_output=True, text=True)
                 if res.returncode != 0:
                     print("ERROR: git log for co-author failed:", res.stderr.strip())
                     exit(1)
@@ -248,7 +273,7 @@ for repo in repoList:
 
 
 #######################################
-# 5. Sort as new, retired, active
+# 4. Sort as new, retired, active
 #######################################
 
 # mark active / retired
@@ -295,7 +320,7 @@ sortedPeopleList = sorted(peopleList, key= lambda d: d['name'].split()[-1])
 
 
 #######################################
-# 6. Save the findings
+# 5. Save the findings
 #######################################
 
 # save yml to *NEW* file
@@ -330,5 +355,5 @@ Revived contributors : {revcount} | {revpersonlist}
 Newly retired contributors : {retcount} | {retpersonlist}
 New co-authors : {len(newCoauthorList)} | {newCoauthorList}
 \nSummary Notes:\n\n"""+ summarystring
-with open("../summary.txt", 'w') as summaryfile:
+with open(SUMMARY_FILE, 'w') as summaryfile:
     summaryfile.write(summarystring)
