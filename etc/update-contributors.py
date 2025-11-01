@@ -229,22 +229,22 @@ def process_log_into_aggregate(res: str, repo: str) -> None:
 # 6. Find (co)authors of all repos
 ##########################################
 
-if not os.path.isdir(REPOS_DIR):
-    os.mkdir(REPOS_DIR)
-os.chdir(REPOS_DIR)
+def _repo_dir(repo_full: str) -> str:
+    return os.path.join(REPOS_DIR, repo_full.split('/')[-1])
+
+os.makedirs(REPOS_DIR, exist_ok=True)
 for repo in REPO_LIST:
     print(f"Processing {repo}...")
-    repo_path = repo.split('/')[-1]
-    if not os.path.isdir(repo_path):
-        subprocess.run(["git", "clone", f"https://github.com/{repo}"], check=True)
-    os.chdir(repo_path)
-    subprocess.run(["git", "fetch", "--all"], check=True)
-    subprocess.run(["git", "pull"], check=True)
-    log_cmd = ["git", "log", "--use-mailmap", GIT_LOG_SINCE, GIT_LOG_FORMAT_1]
-    res = subprocess.run(log_cmd, capture_output=True, text=True, encoding="utf-8", errors="replace")
-    os.chdir("..")
+    repo_dir = _repo_dir(repo)
+    if not os.path.isdir(repo_dir):
+        subprocess.run(["git", "clone", f"https://github.com/{repo}", repo_dir], check=True)
+    else:
+        subprocess.run(["git", "-C", repo_dir, "pull"], check=True)
+    res = subprocess.run(
+        ["git", "-C", repo_dir, "log", "--use-mailmap", GIT_LOG_SINCE, GIT_LOG_FORMAT_1],
+        capture_output=True, text=True, encoding="utf-8", errors="replace")
     if res.returncode != 0:
-        print("DEBUG git log failed; stderr:", res.stderr.strip())
+        print("git log failed; stderr:", res.stderr.strip())
         sys.exit(1)
     process_log_into_aggregate(res.stdout, repo)
 
@@ -259,10 +259,9 @@ def resolve_github_via_commit(email: str, repos: list[str]) -> str | None:
     if not email:
         return None
     for r in repos:
-        repo_path = r.split('/')[-1]
-        # Find a representative commit authored by this email
-        res = subprocess.run(["git", "log", GIT_LOG_SINCE, f"--author={email}", "--format=%H", "-n", "1"],
-                           cwd=repo_path, capture_output=True, text=True, encoding="utf-8")
+        res = subprocess.run(
+            ["git", "-C", _repo_dir(r), "log", GIT_LOG_SINCE, f"--author={email}", "--format=%H", "-n", "1"],
+            capture_output=True, text=True, encoding="utf-8")
         if res.returncode != 0:
             continue
         commit_hash = (res.stdout or "").strip()
@@ -281,9 +280,9 @@ def resolve_github_via_commit(email: str, repos: list[str]) -> str | None:
 def find_coauthor_commit(name: str, email: str, repos: list[str]) -> str:
     targets = {t for t in (name.lower(), email.lower()) if t}
     for r in repos:
-        repo_path = r.split('/')[-1]
-        res = subprocess.run(["git", "log", GIT_LOG_SINCE, GIT_LOG_FORMAT_2],
-                             cwd=repo_path, capture_output=True, text=True, encoding="utf-8")
+        res = subprocess.run(
+            ["git", "-C", _repo_dir(r), "log", GIT_LOG_SINCE, GIT_LOG_FORMAT_2],
+            capture_output=True, text=True, encoding="utf-8")
         if res.returncode != 0:
             continue
         for line in res.stdout.splitlines():
