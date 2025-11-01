@@ -67,7 +67,28 @@ def custom_sort_function(item):
 
 
 ##########################################
-# 2. Read information from people_list.yml
+# 2. Global variables
+##########################################
+
+# Step 3: The information on contributors, that is currently saved in PEOPLE_LIST_FILE.
+#current_contributors
+
+# Step 4: People come with alias emails. This dict will tell us the owner of a given email, provided our PEOPLE_LIST_FILE knows about this
+email_owner = {}  # lowercased email -> person dict
+
+# Step 4: Same as email_owner, but with name alias instead
+name_owner  = {}  # normalized name -> person dict
+
+# Step 5: A dict, in which we store information about the current authors and coauthors
+aggregate = {}      # key -> {'name','email','is_author','known_github','repos': set()}
+
+# Step 5: This string will collect warnings encountered during execution
+summarystring = ""
+
+
+
+##########################################
+# 3. Read information from people_list.yml
 ##########################################
 
 try:
@@ -83,16 +104,11 @@ except yaml.YAMLError as e:
 for person in current_contributors:
     person.setdefault("repos", [])
 
-current_github_usernames = [person["github"] for person in current_contributors if "github" in person]
-
 
 
 ##########################################
-# 3. Build fast alias lookup
+# 4. Build fast alias lookup
 ##########################################
-
-email_owner = {}  # lowercased email -> person dict
-name_owner  = {}  # normalized name -> person dict
 
 def _norm_name(s: str) -> str:
     return " ".join((s or "").split()).lower()
@@ -130,35 +146,14 @@ def _person_key(name: str, email: str):
 
 
 ##########################################
-# 4. Collect (co)authors for each repo
+# 5. Helper: Progress git log
 ##########################################
 
-# 4.1 Change into REPOS_DIR
-if not os.path.isdir(REPOS_DIR):
-    os.mkdir(REPOS_DIR)
-os.chdir(REPOS_DIR)
+def process_log_into_aggregate(res: str, repo: str) -> None:
 
-# 4.2 Run over repos to aggreate authors and coauthors
-summarystring = ""
-aggregate = {}      # key -> {'name','email','is_author','known_github','repos': set()}
-for repo in REPO_LIST:
+    global summarystring, aggregate, email_owner, name_owner
 
-    print(f"Processing {repo}...")
-    repo_path = repo.split('/')[-1]
-    if not os.path.isdir(repo_path):
-        subprocess.run(["git", "clone", f"https://github.com/{repo}"], check=True)
-    os.chdir(repo_path)
-    subprocess.run(["git", "fetch", "--all"], check=True)
-    subprocess.run(["git", "pull"], check=True)
-    log_cmd = ["git", "log", "--use-mailmap", GIT_LOG_SINCE, GIT_LOG_FORMAT_1]
-    res = subprocess.run(log_cmd, capture_output=True, text=True, encoding="utf-8", errors="replace")
-    os.chdir("..")
-    if res.returncode != 0:
-        print("DEBUG git log failed; stderr:", res.stderr.strip())
-        sys.exit(1)
-    
-    # 4.5 Process the log and update aggregate accordingly
-    for raw in res.stdout.splitlines():
+    for raw in res.splitlines():
 
         # Prepare the line and skip if empty
         line = raw.strip()
@@ -170,7 +165,7 @@ for repo in REPO_LIST:
         if line.lower().startswith("co-authored-by:"):
             line = line.split(":", 1)[1].strip()
             is_author = False
-
+        
         # Skip bots and non-address lines
         lower_line = line.lower()
         if any(b in lower_line for b in BOT_TOKENS):
@@ -231,7 +226,32 @@ for repo in REPO_LIST:
 
 
 ##########################################
-# 5. Processing further
+# 6. Find (co)authors of all repos
+##########################################
+
+if not os.path.isdir(REPOS_DIR):
+    os.mkdir(REPOS_DIR)
+os.chdir(REPOS_DIR)
+for repo in REPO_LIST:
+    print(f"Processing {repo}...")
+    repo_path = repo.split('/')[-1]
+    if not os.path.isdir(repo_path):
+        subprocess.run(["git", "clone", f"https://github.com/{repo}"], check=True)
+    os.chdir(repo_path)
+    subprocess.run(["git", "fetch", "--all"], check=True)
+    subprocess.run(["git", "pull"], check=True)
+    log_cmd = ["git", "log", "--use-mailmap", GIT_LOG_SINCE, GIT_LOG_FORMAT_1]
+    res = subprocess.run(log_cmd, capture_output=True, text=True, encoding="utf-8", errors="replace")
+    os.chdir("..")
+    if res.returncode != 0:
+        print("DEBUG git log failed; stderr:", res.stderr.strip())
+        sys.exit(1)
+    process_log_into_aggregate(res.stdout, repo)
+
+
+
+##########################################
+# 7. Processing further
 ##########################################
 
 unresolved = []
@@ -239,6 +259,7 @@ newList = []
 newpersonlist = []
 github_newusers = []
 github_userlist = []
+current_github_usernames = [person["github"] for person in current_contributors if "github" in person]
 for key, rec in aggregate.items():
     name = rec["name"]
     email = rec["email"]
@@ -275,7 +296,7 @@ for rec in unresolved:
 
 
 ##########################################
-# 6. Sort as new, retired, active
+# 8. Sort as new, retired, active
 ##########################################
 
 newCoauthorList = []
@@ -324,7 +345,7 @@ sortedcurrent_contributors = sorted(current_contributors, key= lambda d: d['name
 
 
 ##########################################
-# 7. Save the findings
+# 9. Save the findings
 ##########################################
 
 # save yml to *NEW* file
