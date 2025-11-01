@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 # Standard library
-import json
 import os
 from email.utils import parseaddr
 import re
@@ -127,32 +126,22 @@ for person in current_contributors:
 ##########################################
 
 def _norm_name(s: str) -> str:
-    return " ".join((s or "").split()).lower()
+    return " ".join((s or "").split()).casefold()
 
 for p in current_contributors:
-    # index primary + aka emails
-    emails = []
     if p.get("email"):
-        emails.append(p["email"])
-    if p.get("aka_email"):
-        emails.extend(p["aka_email"])
-    for e in emails:
-        email_owner[e.lower()] = p
-
-    # index primary + aka names
-    names = []
+        email_owner[p.get("email").casefold()] = p
+    for ae in (p.get("aka_email") or ()):
+        email_owner[ae.casefold()] = p
     if p.get("name"):
-        names.append(p["name"])
-    if p.get("aka"):
-        names.extend(p["aka"])
+        name_owner[_norm_name(p.get("name"))] = p
+    for an in (p.get("aka") or ()):
+        name_owner[_norm_name(an)] = p
     if p.get("github"):
-        names.append(p["github"])
-    for n in names:
-        name_owner[_norm_name(n)] = p
+        name_owner[_norm_name(p.get("github"))] = p
 
 def lookup_user(gh, email, name):
-    global email_owner, name_owner
-    return ((gh and name_owner.get(gh.lower())) or (email and email_owner.get(email.lower())) or name_owner.get(_norm_name(name)))
+    return ((gh and name_owner.get(_norm_name(gh))) or (email and email_owner.get(email.casefold())) or name_owner.get(_norm_name(name)))
 
 
 
@@ -289,7 +278,7 @@ def resolve_github_via_commit(email: str, repos: list[str]) -> str | None:
     return None
 
 # Try to resolve a GitHub login by finding one co-authored commit for this email.
-def find_coauthor_commit(name: str, email: str, repos: list[str]) -> tuple[str | None, str | None]:
+def find_coauthor_commit(name: str, email: str, repos: list[str]) -> str:
     targets = {t for t in (name.lower(), email.lower()) if t}
     for r in repos:
         repo_path = r.split('/')[-1]
