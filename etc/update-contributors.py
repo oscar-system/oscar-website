@@ -77,28 +77,18 @@ SORT_WEIGHT = {
 # 2. Globals (runtime state; mutated)
 ##########################################
 
-# Contributor lists
-current_contributors = []  # list[dict]
+# Contributor lists and index structures
+current_contributors = []  # loaded from YAML
+email_owner = {}           # lowercased email → person dict
+name_owner = {}            # normalized name → person dict
 
-# Alias indices built from current_contributors
-email_owner = {}   # lowercased email -> person dict
-name_owner  = {}   # normalized name  -> person dict
-
-# Aggregate across repos: key -> {'name','email','is_author','known_github','repos': set()}
+# Aggregation state
 aggregate = {}
-
-# Collected notes (maybe use a list to avoid 'global' rebinding of strings)
 summarystring = ""
 
-# Once we aggregated the current contributors, we fill them into the following buckets
-active_contributors = []            # references to active current_contributors entries
-new_contributors = []               # data of new (co)authors in unified schema: {"name","email","repos","github|None","commit_hash|None"}
-_seen_current = set()               # track object identity for computation of retired contributors
-retired_contributors = []           # references to retired current_contributors entries
-_prev_status = {}                   # Status of people before we match them against aggregate and thus update their status
-newly_retired_names = []            # The list of the names of people who retired recently
-sorted_current_contributors = []    # the current contributors - new active, retired, PI sorted by name
-ordered_people = []                 # final list of sorted current contributors, with each field sorted by our custom design in SORT_WEIGHT
+# Classification buckets
+active_contributors, new_contributors, retired_contributors = [], [], []
+_seen_current = set()
 
 
 
@@ -242,10 +232,7 @@ for repo in REPO_LIST:
         subprocess.run(["git", "-C", repo_dir, "pull"], check=True)
     res = subprocess.run(
         ["git", "-C", repo_dir, "log", "--use-mailmap", GIT_LOG_SINCE, GIT_LOG_FORMAT_1],
-        capture_output=True, text=True, encoding="utf-8", errors="replace")
-    if res.returncode != 0:
-        print("git log failed; stderr:", res.stderr.strip())
-        sys.exit(1)
+        check=True, capture_output=True, text=True, encoding="utf-8", errors="replace")
     process_log_into_aggregate(res.stdout, repo)
 
 
@@ -261,9 +248,7 @@ def resolve_github_via_commit(email: str, repos: list[str]) -> str | None:
     for r in repos:
         res = subprocess.run(
             ["git", "-C", _repo_dir(r), "log", GIT_LOG_SINCE, f"--author={email}", "--format=%H", "-n", "1"],
-            capture_output=True, text=True, encoding="utf-8")
-        if res.returncode != 0:
-            continue
+            check=True, capture_output=True, text=True, encoding="utf-8")
         commit_hash = (res.stdout or "").strip()
         if not commit_hash:
             continue  # no direct authored commit in this repo (could be co-author only)
@@ -282,9 +267,7 @@ def find_coauthor_commit(name: str, email: str, repos: list[str]) -> str:
     for r in repos:
         res = subprocess.run(
             ["git", "-C", _repo_dir(r), "log", GIT_LOG_SINCE, GIT_LOG_FORMAT_2],
-            capture_output=True, text=True, encoding="utf-8")
-        if res.returncode != 0:
-            continue
+            check=True, capture_output=True, text=True, encoding="utf-8")
         for line in res.stdout.splitlines():
             low = line.lower()
             if not any(t in low for t in targets):
@@ -311,7 +294,7 @@ for key, rec in aggregate.items():
     if user:
         # Merge repos into existing user (preserve order, avoid dups)
         have = set(user["repos"])
-        user["repos"].extend(r for r in repos if r not in have)
+        user["repos"].extend([r for r in repos if r not in have])
 
         # If we just learned their GitHub, store it and index it
         if gh and not user.get("github"):
@@ -365,10 +348,7 @@ for p in current_contributors:
 
 # Final order by surname, then tidy field order
 people_sorted = sorted(current_contributors, key=lambda d: (d.get("name", "").split()[-1], d.get("name", "")))
-def custom_sort_function(item):
-    key, _ = item
-    return SORT_WEIGHT.get(key, 999)
-ordered_people = [dict(sorted(p.items(), key=custom_sort_function)) for p in people_sorted]
+ordered_people = [dict(sorted(p.items(), key=lambda kv: SORT_WEIGHT.get(kv[0], 999))) for p in people_sorted]
 
 # Write new content to PEOPLE_LIST_FILE
 class MyDumper(yaml.SafeDumper):
