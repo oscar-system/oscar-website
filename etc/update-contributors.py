@@ -4,6 +4,7 @@
 import json
 import os
 import subprocess
+import sys
 
 # Third-party
 import requests
@@ -65,15 +66,20 @@ def custom_sort_function(item):
 # 2. Read in intel from people_list.yml
 #######################################
 
-infile = PEOPLE_LIST_FILE
-with open(infile, "r") as ymlfile:
-    peopleList = yaml.safe_load(ymlfile)
+try:
+    with open(PEOPLE_LIST_FILE, "r", encoding="utf-8") as ymlfile:
+        peopleList = yaml.safe_load(ymlfile) or []
+except FileNotFoundError:
+    print(f"Error: Could not find {PEOPLE_LIST_FILE}")
+    sys.exit(1)
+except yaml.YAMLError as e:
+    print(f"Error parsing YAML file {PEOPLE_LIST_FILE}: {e}")
+    sys.exit(1)
 
-for i in peopleList:
-    if 'repos' not in i.keys():
-        i['repos'] = []
+for person in peopleList:
+    person.setdefault("repos", [])
 
-names = [i['github'] for i in peopleList if 'github' in i]
+names = [person["github"] for person in peopleList if "github" in person]
 
 
 
