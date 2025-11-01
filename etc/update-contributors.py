@@ -4,6 +4,7 @@
 import json
 import os
 from email.utils import parseaddr
+import re
 import subprocess
 import sys
 import unicodedata
@@ -28,7 +29,7 @@ BOT_TOKENS = ("github-actions[bot]", "dependabot[bot]", "renovate[bot]", "change
 
 GIT_LOG_SINCE = "--since=1 year ago"
 GIT_LOG_FORMAT_1 = "--format=%aN <%aE>%n%(trailers:unfold,key=Co-authored-by)"
-GIT_LOG_FORMAT_2 = "--format=%H %s %(trailers:key=Co-authored-by)"
+GIT_LOG_FORMAT_2 = "--format=%H %(trailers:only,unfold,separator=|,key=Co-authored-by) %s"
 
 REPO_LIST = [
     "Nemocas/AbstractAlgebra.jl",
@@ -40,6 +41,8 @@ REPO_LIST = [
     "oscar-system/Polymake.jl",
     "oscar-system/Singular.jl",
 ]
+
+HASH_RE = re.compile(r"\b[0-9a-f]{40}\b", re.I)
 
 STATUS_PI = "pi" # not used yet
 STATUS_ACTIVE = "active" # not used yet
@@ -281,7 +284,6 @@ def resolve_github_via_commit(email: str, repos: list[str]) -> str | None:
     return None
 
 def find_coauthor_commit(name: str, email: str, repos: list[str]) -> tuple[str | None, str | None]:
-    """Find any commit that mentions this person in subject or trailers, return (repo, hash)."""
     targets = {t for t in (name.lower(), email.lower()) if t}
     for r in repos:
         repo_path = r.split('/')[-1]
@@ -293,10 +295,11 @@ def find_coauthor_commit(name: str, email: str, repos: list[str]) -> tuple[str |
             continue
         for line in res.stdout.splitlines():
             low = line.lower()
-            if any(t in low for t in targets):
-                parts = line.split()
-                if parts:
-                    return r, parts[0]
+            if not any(t in low for t in targets):
+                continue
+            m = HASH_RE.search(line)
+            if m:
+                return r, m.group(0)
     return None, None
 
 # Precompute current known GitHub usernames
@@ -351,6 +354,7 @@ for rec in unresolved:
         newCoauthorList.append([rec["name"], rec["email"], rrepo, rhash])
     else:
         # Breadcrumb in summary so they don't vanish silently
+        newCoauthorList.append([rec["name"], rec["email"], list(sorted(rec["repos"]))[0], "(no hash found)"])
         summarystring += (
             f"- No GitHub and no commit hash found for {rec['name']} <{rec['email']}>; "
             f"repos={sorted(rec['repos'])}. Skipping for now.\n"
