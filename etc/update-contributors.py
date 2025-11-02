@@ -1,290 +1,260 @@
 #!/usr/bin/env python3
+
+# Standard library
 import os
-import json
-import yaml
-import requests
+from email.utils import parseaddr
+import re
 import subprocess
+import sys
+import unicodedata
 
-def custom_sort_function(item):
-    name, _ = item
-    sortweight = {"name": 0, "affiliation": 1, "email": 2, "github": 3, "website": 4,
-                  "paid_by_dfg": 5,"status": 6, "comment": 7, "aka": 8, "aka_email": 9,
-                  "repos": 10}
-    return sortweight[name]
+# Third-party
+import requests
+import yaml
 
-# Hack copied from https://github.com/yaml/pyyaml/issues/127#issuecomment-525800484
-class MyDumper(yaml.SafeDumper):
-    # HACK: insert blank lines between top-level objects
-    # inspired by https://stackoverflow.com/a/44284819/3786245
-    def write_line_break(self, data=None):
-        super().write_line_break(data)
 
-        if len(self.indents) == 1:
-            super().write_line_break()
+##########################################
+# 1. Constants (static configuration)
+##########################################
 
-infile = "../_data/people_list.yml"
-with open(infile, "r") as ymlfile:
-    peopleList = yaml.safe_load(ymlfile)
+# Paths
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.dirname(BASE_DIR)
+REPOS_DIR = os.path.join(PROJECT_ROOT, "repos")
+PEOPLE_LIST_FILE = os.path.join(PROJECT_ROOT, "_data", "people_list.yml")
+SUMMARY_FILE = os.path.join(PROJECT_ROOT, "summary.txt")
 
-for i in peopleList:
-    if 'repos' not in i.keys():
-        i['repos'] = []
-
-names = [i['github'] for i in peopleList if 'github' in i]
-repoList = ["thofma/Hecke.jl", "oscar-system/Oscar.jl", "Nemocas/Nemo.jl",
-            "Nemocas/AbstractAlgebra.jl", "oscar-system/GAP.jl", "oscar-system/Polymake.jl",
-            "oscar-system/Singular.jl", "algebraic-solving/AlgebraicSolving.jl"]
-
-newList = []
-newCoauthorList = []
-namelist = []
-newpersonlist = []
-github_newusers = []
-github_userlist = []
-github_username = '__notfound__'
+# Auth
 API_KEY = (os.getenv("API_KEY") or os.getenv("GITHUB_TOKEN") or "").strip()
-summarystring = ""
-# grab currently active devs
-if not os.path.isdir("repos"):
-    os.mkdir("repos")
-os.chdir("repos")
-for repo in repoList:
-    print(f"-------------------------------\nProcessing {repo}...\n-------------------------------")
-    print("Fetching updates...")
-    # if directory already exists
-    if os.path.isdir(repo.split('/')[-1]):
-        os.chdir(repo.split('/')[-1])
-        subprocess.run(["git", "fetch", "--all"], check=True)
-        subprocess.run(["git", "pull"], check=True)
-    # if directory needs to be freshly cloned
-    else:
-        subprocess.run(["git", "clone", f"https://github.com/{repo}"], check=True)
-        os.chdir(repo.split('/')[-1])
 
-    print("Generating list of authors active in past year...")
-    log_cmd = ["git", "log", "--since=1 year ago", "--format=%aN <%aE>%n%(trailers:key=Co-authored-by)"]
-    res = subprocess.run(log_cmd, capture_output=True, text=True)
-    if res.returncode != 0:
-        print("DEBUG git log failed; stderr:", res.stderr.strip())
-        exit(-1)
+# Git config
+GIT_LOG_SINCE = "--since=1 year ago"
+GIT_LOG_FORMAT_1 = "--format=%aN <%aE>%n%(trailers:unfold,key=Co-authored-by)"
+GIT_LOG_FORMAT_2 = "--format=%H %(trailers:only,unfold,separator=|,key=Co-authored-by) %s"
+
+# Repositories to scan (tuple to emphasize immutability)
+REPO_LIST = ("Nemocas/AbstractAlgebra.jl", "algebraic-solving/AlgebraicSolving.jl", "oscar-system/GAP.jl", "thofma/Hecke.jl",
+             "Nemocas/Nemo.jl", "oscar-system/Oscar.jl", "oscar-system/Polymake.jl", "oscar-system/Singular.jl")
+
+# Bots we ignore
+BOT_TOKENS = ("github-actions[bot]", "dependabot[bot]", "renovate[bot]", "changelog[bot]")
+
+# Regexes
+HASH_RE = re.compile(r"\b[0-9a-f]{40}\b", re.I)
+
+# Display/sort preferences
+SORT_WEIGHT = {"name": 0, "affiliation": 1, "email": 2, "github": 3, "website": 4, "paid_by_dfg": 5,
+               "status": 6, "comment": 7, "aka": 8, "aka_email": 9, "repos": 10}
+
+YAML_HEADER = (
+    "# It is possible that people marked as 'retired' may have the repo key as an empty array.\n"
+    "# This is because people are marked as retired if the update script could not find them in any repo.\n"
+    "# Retired people only have repo information if repo information about them was known when they were\n"
+    "# active (or manually added) by a maintainer.\n\n")
+
+
+##########################################
+# 2. Globals (runtime state; mutated)
+##########################################
+
+current_contributors = []   # loaded from YAML
+email_owner = {}            # dict: lowercased email to person dict
+name_owner = {}             # dict: normalized name to person dict
+aggregate = {}              # list of dicts for all contributors at the time of running this script
+summarystring = ""          # intermediate output for information and debugging
+
+
+##########################################
+# 3. Read information from people_list.yml
+##########################################
+
+try:
+    with open(PEOPLE_LIST_FILE, "r", encoding="utf-8") as ymlfile:
+        current_contributors = yaml.safe_load(ymlfile) or []
+except FileNotFoundError:
+    print(f"Error: Could not find {PEOPLE_LIST_FILE}")
+    sys.exit(1)
+except yaml.YAMLError as e:
+    print(f"Error parsing YAML file {PEOPLE_LIST_FILE}: {e}")
+    sys.exit(1)
+
+for person in current_contributors:
+    person.setdefault("repos", [])
+
+
+##########################################
+# 4. Build fast alias lookup
+##########################################
+
+def _norm_name(s: str) -> str:
+    return " ".join((s or "").split()).casefold()
+
+for p in current_contributors:
+    if p.get("email"):
+        email_owner[p.get("email").casefold()] = p
+    for ae in (p.get("aka_email") or ()):
+        email_owner[ae.casefold()] = p
+    if p.get("name"):
+        name_owner[_norm_name(p.get("name"))] = p
+    for an in (p.get("aka") or ()):
+        name_owner[_norm_name(an)] = p
+    if p.get("github"):
+        name_owner[_norm_name(p.get("github"))] = p
+
+def lookup_user(gh, email, name):
+    return ((gh and name_owner.get(_norm_name(gh))) or (email and email_owner.get(email.casefold())) or name_owner.get(_norm_name(name)))
+
+
+##########################################
+# 5. Find (co)authors of all repos
+##########################################
+
+def process_log_into_aggregate(res: str, repo: str) -> None:
+    global summarystring, aggregate  #, email_owner, name_owner
+    for raw in res.splitlines():
+        line = raw.strip()
+        if not line: continue
+
+        if line.casefold().startswith("co-authored-by:"):
+            line = line.split(":", 1)[1].strip()
+
+        low = line.casefold()
+        if any(b in low for b in BOT_TOKENS):
+            continue
+        if "[bot]" in low:
+            summarystring += f"- Skipping suspected bot line in {repo}: {line!r}\n"
+            continue
+        if "<" not in line or ">" not in line:
+            summarystring += f"- Skipping non-address line in {repo}: {line!r}\n"
+            continue
+
+        name, email = parseaddr(line)
+        name  = " ".join(unicodedata.normalize("NFKC", name).split())
+        email = unicodedata.normalize("NFKC", email).strip()
+        if not email or not name:
+            summarystring += f"- Missing {'email' if not email else 'name'} for {name or email} in {repo}; skipping\n"
+            continue
+
+        owner = email_owner.get(email.casefold()) or name_owner.get(_norm_name(name))
+        known_github = owner.get("github") if owner else None
+        key = ("gh", known_github.casefold()) if known_github else ("email", ((owner and owner.get("email")) or email).casefold())
+
+        rec = aggregate.setdefault(key, {"name": name, "email": email, "known_github": known_github, "repos": set()})
+        rec["repos"].add(repo)
+        if known_github and not rec["known_github"]:
+            rec["known_github"] = known_github
+        if "users.noreply.github.com" in rec["email"] and "users.noreply.github.com" not in email:
+            rec["name"], rec["email"] = name, email
+
+def _repo_dir(repo_full: str) -> str:
+    return os.path.join(REPOS_DIR, repo_full.split('/')[-1])
+
+def git_out(repo_dir: str, *args: str) -> str:
+    res = subprocess.run(["git", "-C", repo_dir, *args], check=True, capture_output=True, text=True, encoding="utf-8", errors="replace")
+    return res.stdout
+
+os.makedirs(REPOS_DIR, exist_ok=True)
+for repo in REPO_LIST:
+    print(f"Processing {repo}...")
+    repo_dir = _repo_dir(repo)
+    if not os.path.isdir(repo_dir):
+        subprocess.run(["git", "clone", f"https://github.com/{repo}", repo_dir], check=True)
     else:
-        dset = set()
-        for raw in res.stdout.splitlines():
-            # res.stdout.splitlines() reads as follows:
-            # Cool Author <cool-author-email>
-            # Co-authored-by: Also Cool <another email>
-            # Process each row, so we obtain pairs of author names and their emails
-            line = raw.strip()
-            if line == "":
+        subprocess.run(["git", "-C", repo_dir, "pull", "--ff-only"], check=True)
+    res_stdout = git_out(repo_dir, "log", "--use-mailmap", GIT_LOG_SINCE, GIT_LOG_FORMAT_1)
+    process_log_into_aggregate(res_stdout, repo)
+
+
+##########################################
+# 6. Helpers to find (co)-author details
+##########################################
+
+def find_author_github_nick(email: str, repos: list[str]) -> str | None:
+    if not email:
+        return None
+    for r in repos:
+        commit_hash = git_out(_repo_dir(r), "log", GIT_LOG_SINCE, f"--author={email}", "--format=%H", "-n", "1").strip()
+        if not commit_hash:
+            continue
+        url = f"https://api.github.com/repos/{r}/commits/{commit_hash}"
+        resp = requests.get(url, headers={"Authorization": f"Bearer {API_KEY}"})
+        if resp.status_code != 200:
+            continue
+        author = resp.json().get("author")
+        if author and author.get("login"):
+            return author["login"]
+    return None
+
+def find_coauthor_commit(name: str, email: str, repos: list[str]) -> str:
+    targets = {t for t in (name.casefold(), email.casefold()) if t}
+    for r in repos:
+        out = git_out(_repo_dir(r), "log", GIT_LOG_SINCE, GIT_LOG_FORMAT_2)
+        for line in out.splitlines():
+            low = line.casefold()
+            if not any(t in low for t in targets):
                 continue
-            if line.lower().startswith("co-authored-by:"):
-                line = line.split(":", 1)[1].strip()
-            if "<" in line and ">" in line:
-                name = line.split("<")[0].strip()
-                email = line.split("<", 1)[1].split(">", 1)[0].strip()
-                if (name != "") and (email != ""):
-                    dset.add((name, email))
-        dnamelist = [[n, e] for (n, e) in sorted(dset)]
-    print(dnamelist)
+            m = HASH_RE.search(line)
+            if m:
+                return m.group(0)
+    return "(no hash found)"
 
-    namelist.extend(dnamelist)
-    count = 0
-    for i in dnamelist:
-        count = count+1
-        print(f"Item {count} of {len(dnamelist)}...")
-        print(i)
-        if i[0] == 'dependabot[bot]':
-            print("Skipping dependabot!")
-            continue
-        if "[bot]" in i[0]:
-            print(f"Skipping suspected bot {i[0]}")
-            continue
-        email = i[1]
-        process = subprocess.run(['git', 'log', f'--author={email}', '--format=%H', '-n 1'],
-                                   capture_output=True)
-        hash = process.stdout.decode().strip()
-        github_commit_url = f"https://api.github.com/repos/{repo}/commits/{hash}"
-        #ask github API for username
-        r = requests.get(github_commit_url, headers={"Authorization":f"Bearer {API_KEY}"})
-        if r.status_code == 200:
-            j = json.loads(r.text)
-            github_username = '__notfound__'
-            if j['author'] == None:
-                # this commit was authored by someone and committed by someone else
-                # so github can't find a github user for the author, only for committed
-                # so we go through our list entire people list and see if we know the combination of
-                # name and email already
-                # or if the name exists in an aka
-                # or if the email exists in aka_email
-                flag = False
-                for person in peopleList:
-                    if 'email' in person.keys() and 'name' in person.keys():
-                        if i[0] == person['name'] and i[1] == person['email']:
-                            # we know the person, check if we know the github ID
-                            if 'github' in person.keys() and person['github'] != '':
-                                # we know the person and the github, just mark person as active
-                                github_username = person['github']
-                                flag = True
-                                break
-                        elif "aka" in person:
-                            # the person has an alias
-                            if i[0] in person["aka"]:
-                                if 'github' in person.keys() and person['github'] != '':
-                                    # we know the person and the github, just mark person as active
-                                    github_username = person['github']
-                                    flag = True
-                                    break
-                        elif "aka_email" in person:
-                            # the person has an alias email
-                            if i[1] in person["aka_email"]:
-                                if 'github' in person.keys() and person['github'] != '':
-                                    # we know the person and the github, just mark person as active
-                                    github_username = person['github']
-                                    flag = True
-                                    break
-                if not flag:
-                    summarystring += f"- Github username not found for {i[0]} with email {i[1]}. Excluding from people_list.yml\n"
-                    continue
-            if github_username == '__notfound__':
-                github_username = j['author']['login']
-        elif github_commit_url == f"https://api.github.com/repos/{repo}/commits/":
-            # this is a case of a co-author
-            flag = False
-            for person in peopleList:
-                if 'email' in person.keys() and 'name' in person.keys():
-                    if i[0] == person['name'] and i[1] == person['email']:
-                            flag = True
-                            break
-                    elif "aka" in person:
-                        # the person has an alias
-                        if i[0] in person["aka"]:
-                            if 'github' in person.keys() and person['github'] != '':
-                                # we know the person and the github, just mark person as active
-                                github_username = person['github']
-                                flag = True
-                                break
-                    elif "aka_email" in person:
-                        # the person has an alias email
-                        if i[1] in person["aka_email"]:
-                            if 'github' in person.keys() and person['github'] != '':
-                                # we know the person and the github, just mark person as active
-                                github_username = person['github']
-                                flag = True
-                                break
-                    elif i[0] == person['name'] or i[1] == person['email']:
-                        github_username = person['github']
-                        flag = True
-                        break
-            if not flag:
-                # a co-author we don't know about at all - find a commit hash that mentions them
-                res = subprocess.run(["git", "log", "--since=1 year ago", "--format=%H %s %(trailers:key=Co-authored-by)"],capture_output=True, text=True)
-                if res.returncode != 0:
-                    print("ERROR: git log for co-author failed:", res.stderr.strip())
-                    exit(1)
-                commit_hash = None
-                target_lower = {i[0].lower(), i[1].lower()}
-                for line in res.stdout.splitlines():
-                    lower = line.lower()
-                    if any(t in lower for t in target_lower):
-                        parts = line.split()
-                        if parts:
-                            commit_hash = parts[0]
-                            break
-                if commit_hash == None:
-                    print(f"ERROR: Could not find a commit hash for co-author {i[0]} <{i[1]}> in {repo}")
-                    exit(1)
-                newCoauthorList.append([i[0], i[1], repo, commit_hash])
+
+##########################################
+# 7. Post-aggregation enrichment & updates
+##########################################
+
+_prev_status = {id(p): p.get("status") for p in current_contributors}
+_seen_current = set()
+new_names = []
+for key, rec in aggregate.items():
+    name, email, repos = rec["name"], rec["email"], rec["repos"]
+    gh = rec.get("known_github") or find_author_github_nick(email, repos)
+    user = lookup_user(gh, email, name)
+    if user:    # Existing contributor
+        have = set(user["repos"])
+        user["repos"].extend(r for r in repos if r not in have)
+        if gh and not user.get("github"):
+            user["github"] = gh
+            name_owner[_norm_name(gh)] = user
+        _seen_current.add(id(user))
+    else:   # Brand-new person: add immediately, mark seen, collect name for summary
+        newp = {"name": name, "email": email, "repos": sorted(set(repos)), "status": "active"}
+        if gh:
+            newp["github"] = gh
+            name_owner[_norm_name(gh)] = newp
         else:
-            # this will never happen, except if the API lies to you
-            # or blocks access
-            print(r.status_code)
-            print(r)
-            print(r.text)
-            print(email)
-            print(github_commit_url)
-            github_username = "__notfound__"
-            flag = False
+            newp["comment"] = f"Co-author of commit {find_coauthor_commit(name, email, repos)}"
+        current_contributors.append(newp)
+        _seen_current.add(id(newp))
+        new_names.append(name)
 
-        assert github_username != "__notfound__"
-        if github_username not in names and github_username not in github_newusers and github_username != "__notfound__":
-            print("A new contributor!")
-            newpersonlist.append(i[0])
-            print(f"{i[0]}\t{i[1]}\t{github_username}")
-            github_newusers.append(github_username)
-            newList.append([i[0], i[1], github_username, [repo]])
-        elif github_username in names:
-            user = [item for item in peopleList if 'github' in item and item['github'] == github_username][0]
-            if repo not in user['repos']:
-                user['repos'].append(repo)
-        else:
-            # github_username in github_newusers
-            user = [item for item in newList if item[2] == github_username][0]
-            if repo not in user[3]:
-                user[3].append(repo)
-        if github_username not in github_userlist:
-            github_userlist.append(github_username)
-    os.chdir("..")
-
-# mark active / retired
-# if PI, don't touch them
-os.chdir("..")
-retcount = 0
-revcount = 0
-retpersonlist = []
-revpersonlist = []
-for i in peopleList:
-    if 'github' not in i:
-        #co authors
+for p in current_contributors:
+    if p.get("status") == "pi":
         continue
-    if i['status']=='pi':
-        continue
-        #don't touch a thing!
-    elif i['github'] in github_userlist:
-        if i['status'] == 'retired':
-            revcount += 1
-            revpersonlist.append(i['name'])
-        i['status'] = 'active'
-    else:
-        if i['status'] == 'active':
-            retcount += 1
-            retpersonlist.append(i['name'])
-        i['status'] = 'retired'
+    p["status"] = "active" if id(p) in _seen_current else "retired"
+    p["repos"] = sorted(set(p["repos"]))
 
-np = []
-for i in newList:
-    if "users.noreply.github.com" in i[1]:
-        np.append({"name": i[0], "github": i[2], "status": "active", "repos": i[3]})
-        summarystring += f"- Email not found for {i[0]} ({i[2]})..!\n"
-    else:
-        np.append({"name": i[0], "email": i[1], "github": i[2], "status": "active", "repos": i[3]})
-peopleList.extend(np)
 
-np = []
-for i in newCoauthorList:
-    np.append({"name": i[0], "email": i[1], "status": "active", "comment": f"Co-author of commit {i[3]}","repos": [i[2]]})
-peopleList.extend(np)
+##########################################
+# 8. Dump output
+##########################################
 
-sortedPeopleList = sorted(peopleList, key= lambda d: d['name'].split()[-1])
+# Write new content to PEOPLE_LIST_FILE
+people_sorted = sorted(current_contributors, key=lambda d: (d.get("name", "").split()[-1], d.get("name", "")))
+ordered_people = [dict(sorted(p.items(), key=lambda kv: SORT_WEIGHT.get(kv[0], 999))) for p in people_sorted]
+with open(PEOPLE_LIST_FILE, "w", encoding="utf-8") as f:
+    f.write(YAML_HEADER)
+    yaml.dump(ordered_people, f, sort_keys=False, allow_unicode=True)
 
-# save yml to *NEW* file
-# how inefficient is list comprehension ?
-pilist = [dict(sorted(i.items(), key=custom_sort_function)) for i in sortedPeopleList if i['status'] == "pi"]
-activelist = [dict(sorted(i.items(), key=custom_sort_function)) for i in sortedPeopleList if i['status'] == "active"]
-retiredlist = [dict(sorted(i.items(), key=custom_sort_function)) for i in sortedPeopleList if i['status'] == "retired"]
-with open('../_data/people_list.yml', 'w') as outfile:
-    outfile.write("# It is possible that people marked as 'retired' may have the repo key as an "
-                  "empty array.\n# This is because people are marked as retired if the update "
-                  "script could not find them in any repo.\n# Retired people only have repo "
-                  "information if repo information about them was known when they were\n# active "
-                  "(or manually added) by a maintainer.\n\n")
-    yaml.dump(sortedPeopleList, outfile, Dumper=MyDumper, sort_keys = False, allow_unicode=True)
-
-summarystring = f"""This PR updates the contributors list based on the latest changes.
-New contributors : {len(newpersonlist)} | {newpersonlist}
-Revived contributors : {revcount} | {revpersonlist}
-Newly retired contributors : {retcount} | {retpersonlist}
-New co-authors : {len(newCoauthorList)} | {newCoauthorList}
-\nSummary Notes:\n\n"""+ summarystring
-
-with open("../summary.txt", 'w') as summaryfile:
-    summaryfile.write(summarystring)
+# Write summary
+revived_names = [p.get("name") for p in current_contributors if id(p) in _seen_current and id(p) in _prev_status and _prev_status[id(p)] == "retired"]
+newly_retired_names = [p.get("name") for p in current_contributors if p.get("status") == "retired" and _prev_status.get(id(p)) == "active"]
+summary = (
+    "This PR updates the contributors list based on the latest changes.\n"
+    f"New contributors : {len(new_names)} | {new_names}\n"
+    f"Revived contributors : {len(revived_names)} | {revived_names}\n"
+    f"Newly retired contributors : {len(newly_retired_names)} | {newly_retired_names}\n\n"
+    "Summary Notes:\n\n"
+) + summarystring
+with open(SUMMARY_FILE, "w", encoding="utf-8") as summaryfile:
+    summaryfile.write(summary)
