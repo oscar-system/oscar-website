@@ -146,15 +146,12 @@ def process_log_into_aggregate(res: str, repo: str) -> None:
         known_github = owner.get("github") if owner else None
         key = ("gh", known_github.casefold()) if known_github else ("email", ((owner and owner.get("email")) or email).casefold())
 
-        rec = aggregate.get(key)
-        if rec is None:
-            aggregate[key] = {"name": name, "email": email, "known_github": known_github, "repos": {repo}}
-        else:
-            rec["repos"].add(repo)
-            if known_github and not rec["known_github"]:
-                rec["known_github"] = known_github
-            if "users.noreply.github.com" in rec["email"] and "users.noreply.github.com" not in email:
-                rec["name"], rec["email"] = name, email
+        rec = aggregate.setdefault(key, {"name": name, "email": email, "known_github": known_github, "repos": set()})
+        rec["repos"].add(repo)
+        if known_github and not rec["known_github"]:
+            rec["known_github"] = known_github
+        if "users.noreply.github.com" in rec["email"] and "users.noreply.github.com" not in email:
+            rec["name"], rec["email"] = name, email
 
 def _repo_dir(repo_full: str) -> str:
     return os.path.join(REPOS_DIR, repo_full.split('/')[-1])
