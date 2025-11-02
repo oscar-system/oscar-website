@@ -33,13 +33,14 @@ def gh_output(**kvs):
 def format_issue(version: str, published_iso: str) -> tuple[str, str]:
     title = f"{ISSUE_PREFIX} v{version} release checklist"
     body = "\n".join([
-        f"# {ISSUE_PREFIX} {version} release detected — website & comms checklist",
+        f"# {ISSUE_PREFIX} {version} release detected",
         "",
         f"A new {ISSUE_PREFIX} release **{version}** was published on **{published_iso}** (UTC).",
         "",
         f"Please Send email to the OSCAR mailing list (<oscar-dev@mathematik.uni-kl.de>) to inform about this update.",
         "You can use the following template:"
-        "```",
+        "",
+        "```text",
         f"Subject: [OSCAR] New OSCAR release v{version}",
         "",
         "Dear all,",
