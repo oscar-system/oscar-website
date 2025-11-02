@@ -55,8 +55,8 @@ SORT_WEIGHT = {"name": 0, "affiliation": 1, "email": 2, "github": 3, "website": 
 
 # Contributor lists and index structures
 current_contributors = []  # loaded from YAML
-email_owner = {}           # lowercased email → person dict
-name_owner = {}            # normalized name → person dict
+email_owner = {}           # lowercased email to person dict
+name_owner = {}            # normalized name to person dict
 
 # Aggregation state
 aggregate = {}
@@ -158,6 +158,10 @@ def process_log_into_aggregate(res: str, repo: str) -> None:
 def _repo_dir(repo_full: str) -> str:
     return os.path.join(REPOS_DIR, repo_full.split('/')[-1])
 
+def git_out(repo_dir: str, *args: str) -> str:
+    res = subprocess.run(["git", "-C", repo_dir, *args], check=True, capture_output=True, text=True, encoding="utf-8", errors="replace")
+    return res.stdout
+
 os.makedirs(REPOS_DIR, exist_ok=True)
 for repo in REPO_LIST:
     print(f"Processing {repo}...")
@@ -166,10 +170,8 @@ for repo in REPO_LIST:
         subprocess.run(["git", "clone", f"https://github.com/{repo}", repo_dir], check=True)
     else:
         subprocess.run(["git", "-C", repo_dir, "pull", "--ff-only"], check=True)
-    res = subprocess.run(
-        ["git", "-C", repo_dir, "log", "--use-mailmap", GIT_LOG_SINCE, GIT_LOG_FORMAT_1],
-        check=True, capture_output=True, text=True, encoding="utf-8", errors="replace")
-    process_log_into_aggregate(res.stdout, repo)
+    res_stdout = git_out(repo_dir, "log", "--use-mailmap", GIT_LOG_SINCE, GIT_LOG_FORMAT_1)
+    process_log_into_aggregate(res_stdout, repo)
 
 
 
@@ -177,17 +179,13 @@ for repo in REPO_LIST:
 # 6. Helpers to find (co)-author details
 ##########################################
 
-# Try to resolve a GitHub login by finding one authored commit for this email.
-def resolve_github_via_commit(email: str, repos: list[str]) -> str | None:
+def find_author_github_nick(email: str, repos: list[str]) -> str | None:
     if not email:
         return None
     for r in repos:
-        res = subprocess.run(
-            ["git", "-C", _repo_dir(r), "log", GIT_LOG_SINCE, f"--author={email}", "--format=%H", "-n", "1"],
-            check=True, capture_output=True, text=True, encoding="utf-8")
-        commit_hash = (res.stdout or "").strip()
+        commit_hash = git_out(_repo_dir(r), "log", GIT_LOG_SINCE, f"--author={email}", "--format=%H", "-n", "1").strip()
         if not commit_hash:
-            continue  # no direct authored commit in this repo (could be co-author only)
+            continue
         url = f"https://api.github.com/repos/{r}/commits/{commit_hash}"
         resp = requests.get(url, headers={"Authorization": f"Bearer {API_KEY}"})
         if resp.status_code != 200:
@@ -197,14 +195,11 @@ def resolve_github_via_commit(email: str, repos: list[str]) -> str | None:
             return author["login"]
     return None
 
-# Try to resolve a GitHub login by finding one co-authored commit for this email.
 def find_coauthor_commit(name: str, email: str, repos: list[str]) -> str:
     targets = {t for t in (name.lower(), email.lower()) if t}
     for r in repos:
-        res = subprocess.run(
-            ["git", "-C", _repo_dir(r), "log", GIT_LOG_SINCE, GIT_LOG_FORMAT_2],
-            check=True, capture_output=True, text=True, encoding="utf-8")
-        for line in res.stdout.splitlines():
+        out = git_out(_repo_dir(r), "log", GIT_LOG_SINCE, GIT_LOG_FORMAT_2)
+        for line in out.splitlines():
             low = line.lower()
             if not any(t in low for t in targets):
                 continue
@@ -223,7 +218,7 @@ for key, rec in aggregate.items():
     name  = rec["name"]
     email = rec["email"]
     repos = rec["repos"]
-    gh    = rec.get("known_github") or resolve_github_via_commit(email, repos)
+    gh    = rec.get("known_github") or find_author_github_nick(email, repos)
     user = lookup_user(gh, email, name)
 
     # Existing contributor
