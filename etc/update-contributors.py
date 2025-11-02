@@ -249,7 +249,7 @@ for key, rec in aggregate.items():
 # Snapshot previous statuses for "newly retired" reporting
 _prev_status = {id(p): p.get("status") for p in current_contributors}
 
-# Add new contributors
+# Add new contributors - feels this doubles the effort from lines 238 to 240. Maybe we can avoid this, so new_contributors is no longer needed...
 for rec in new_contributors:
     newp = {"name": rec["name"], "email": rec["email"], "repos": sorted(set(rec["repos"])), "status": "active"}
     if rec["github"]:
@@ -257,6 +257,7 @@ for rec in new_contributors:
     else:
         newp["comment"] = f"Co-author of commit {rec['commit_hash']}"
     current_contributors.append(newp)
+    _seen_current.add(id(newp))
 
 # Set statuses for everyone (PIs untouched)
 for p in current_contributors:
