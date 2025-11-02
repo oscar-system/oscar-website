@@ -69,7 +69,7 @@ aggregate = {}
 summarystring = ""
 
 # Classification buckets
-active_contributors, new_contributors, retired_contributors = [], [], []
+new_contributors = []
 _seen_current = set()
 
 
@@ -242,7 +242,6 @@ for key, rec in aggregate.items():
         uid = id(user)
         if uid not in _seen_current:
             _seen_current.add(uid)
-            active_contributors.append(user)
 
     # Brand-new person; authors & coauthors treated uniformly
     else:
@@ -252,42 +251,52 @@ for key, rec in aggregate.items():
             commit_hash = find_coauthor_commit(name, email, repos)
             new_contributors.append({"name": name, "email": email, "repos": repos, "github": None, "commit_hash": commit_hash})
 
-# Retired = in current_contributors but not seen in this run
-retired_contributors = [p for p in current_contributors if id(p) not in _seen_current]
-
 
 
 ##########################################
 # 8. Apply updates and dump output
 ##########################################
 
-# Find the newly retired contributors
-_prev_status = {id(p): p.get("status") for p in current_contributors}
-newly_retired_names = [p.get("name") for p in retired_contributors if _prev_status.get(id(p)) == "active"]
+##########################################
+# 8. Apply updates and dump output
+##########################################
 
-# Apply updates
+# Snapshot previous statuses for "newly retired" reporting
+_prev_status = {id(p): p.get("status") for p in current_contributors}
+
+# Add new contributors
 for rec in new_contributors:
-    newp = {"name": rec["name"], "email": rec["email"], "repos": sorted(set(rec["repos"])), "status": "active"}
+    newp = {
+        "name": rec["name"],
+        "email": rec["email"],
+        "repos": sorted(set(rec["repos"])),
+        "status": "active",
+    }
     if rec["github"]:
         newp["github"] = rec["github"]
     else:
         newp["comment"] = f"Co-author of commit {rec['commit_hash']}"
     current_contributors.append(newp)
-for p in active_contributors:
-    p["status"] = "active"
-for p in retired_contributors:
-    if p.get("status") != "pi":
+
+# Set statuses for everyone (PIs untouched)
+for p in current_contributors:
+    if p.get("status") == "pi":
+        continue
+    if id(p) in _seen_current:
+        p["status"] = "active"
+    else:
         p["status"] = "retired"
+
+# Compute newly retired contributors for the summary
+newly_retired_names = [p.get("name") for p in current_contributors if p.get("status") == "retired" and _prev_status.get(id(p)) == "active"]
 
 # Normalize repos list deterministically
 for p in current_contributors:
     p["repos"] = sorted(set(p["repos"]))
 
-# Final order by surname, then tidy field order
+# Write new content to PEOPLE_LIST_FILE
 people_sorted = sorted(current_contributors, key=lambda d: (d.get("name", "").split()[-1], d.get("name", "")))
 ordered_people = [dict(sorted(p.items(), key=lambda kv: SORT_WEIGHT.get(kv[0], 999))) for p in people_sorted]
-
-# Write new content to PEOPLE_LIST_FILE
 with open(PEOPLE_LIST_FILE, "w", encoding="utf-8") as f:
     f.write(YAML_HEADER)
     yaml.dump(ordered_people, f, sort_keys=False, allow_unicode=True)
