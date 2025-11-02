@@ -47,6 +47,12 @@ HASH_RE = re.compile(r"\b[0-9a-f]{40}\b", re.I)
 SORT_WEIGHT = {"name": 0, "affiliation": 1, "email": 2, "github": 3, "website": 4, "paid_by_dfg": 5,
                "status": 6, "comment": 7, "aka": 8, "aka_email": 9, "repos": 10}
 
+YAML_HEADER = (
+    "# It is possible that people marked as 'retired' may have the repo key as an empty array.\n"
+    "# This is because people are marked as retired if the update script could not find them in any repo.\n"
+    "# Retired people only have repo information if repo information about them was known when they were\n"
+    "# active (or manually added) by a maintainer.\n\n")
+
 
 
 ##########################################
@@ -287,14 +293,9 @@ class MyDumper(yaml.SafeDumper):
         super().write_line_break(data)
         if len(self.indents) == 1:
             super().write_line_break()
-with open(PEOPLE_LIST_FILE, "w", encoding="utf-8") as outfile:
-    outfile.write(
-        "# It is possible that people marked as 'retired' may have the repo key as an empty array.\n"
-        "# This is because people are marked as retired if the update script could not find them in any repo.\n"
-        "# Retired people only have repo information if repo information about them was known when they were\n"
-        "# active (or manually added) by a maintainer.\n\n"
-    )
-    yaml.dump(ordered_people, outfile, Dumper=MyDumper, sort_keys=False, allow_unicode=True)
+with open(PEOPLE_LIST_FILE, "w", encoding="utf-8") as f:
+    f.write(YAML_HEADER)
+    yaml.dump(ordered_people, f, Dumper=MyDumper, sort_keys=False, allow_unicode=True)
 
 # Create summary in SUMMARY_FILE
 new_names = [rec["name"] for rec in new_contributors]
