@@ -13,7 +13,6 @@ import requests
 import yaml
 
 
-
 ##########################################
 # 1. Constants (static configuration)
 ##########################################
@@ -54,7 +53,6 @@ YAML_HEADER = (
     "# active (or manually added) by a maintainer.\n\n")
 
 
-
 ##########################################
 # 2. Globals (runtime state; mutated)
 ##########################################
@@ -73,7 +71,6 @@ new_contributors = []
 _seen_current = set()
 
 
-
 ##########################################
 # 3. Read information from people_list.yml
 ##########################################
@@ -90,7 +87,6 @@ except yaml.YAMLError as e:
 
 for person in current_contributors:
     person.setdefault("repos", [])
-
 
 
 ##########################################
@@ -114,7 +110,6 @@ for p in current_contributors:
 
 def lookup_user(gh, email, name):
     return ((gh and name_owner.get(_norm_name(gh))) or (email and email_owner.get(email.casefold())) or name_owner.get(_norm_name(name)))
-
 
 
 ##########################################
@@ -180,7 +175,6 @@ for repo in REPO_LIST:
     process_log_into_aggregate(res_stdout, repo)
 
 
-
 ##########################################
 # 6. Helpers to find (co)-author details
 ##########################################
@@ -213,7 +207,6 @@ def find_coauthor_commit(name: str, email: str, repos: list[str]) -> str:
             if m:
                 return m.group(0)
     return "(no hash found)"
-
 
 
 ##########################################
@@ -250,7 +243,6 @@ for key, rec in aggregate.items():
         else:   # New "coauthor" — resolve a representative commit immediately
             commit_hash = find_coauthor_commit(name, email, repos)
             new_contributors.append({"name": name, "email": email, "repos": repos, "github": None, "commit_hash": commit_hash})
-
 
 
 ##########################################
