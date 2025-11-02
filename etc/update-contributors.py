@@ -127,10 +127,10 @@ def process_log_into_aggregate(res: str, repo: str) -> None:
         line = raw.strip()
         if not line: continue
 
-        if line.lower().startswith("co-authored-by:"):
+        if line.casefold().startswith("co-authored-by:"):
             line = line.split(":", 1)[1].strip()
 
-        low = line.lower()
+        low = line.casefold()
         if any(b in low for b in BOT_TOKENS):
             continue
         if "[bot]" in low:
@@ -149,7 +149,7 @@ def process_log_into_aggregate(res: str, repo: str) -> None:
 
         owner = email_owner.get(email.casefold()) or name_owner.get(_norm_name(name))
         known_github = owner.get("github") if owner else None
-        key = ("gh", known_github.lower()) if known_github else ("email", ((owner and owner.get("email")) or email).casefold())
+        key = ("gh", known_github.casefold()) if known_github else ("email", ((owner and owner.get("email")) or email).casefold())
 
         rec = aggregate.get(key)
         if rec is None:
@@ -202,11 +202,11 @@ def find_author_github_nick(email: str, repos: list[str]) -> str | None:
     return None
 
 def find_coauthor_commit(name: str, email: str, repos: list[str]) -> str:
-    targets = {t for t in (name.lower(), email.lower()) if t}
+    targets = {t for t in (name.casefold(), email.casefold()) if t}
     for r in repos:
         out = git_out(_repo_dir(r), "log", GIT_LOG_SINCE, GIT_LOG_FORMAT_2)
         for line in out.splitlines():
-            low = line.lower()
+            low = line.casefold()
             if not any(t in low for t in targets):
                 continue
             m = HASH_RE.search(line)
