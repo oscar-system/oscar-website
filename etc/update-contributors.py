@@ -18,9 +18,9 @@ import yaml
 # 1. Constants (static configuration)
 ##########################################
 
-# Derive absolute paths once so chdir() doesn’t bite us later.
+# Paths
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-PROJECT_ROOT = os.path.abspath(os.path.join(BASE_DIR, ".."))
+PROJECT_ROOT = os.path.dirname(BASE_DIR)
 REPOS_DIR = os.path.join(PROJECT_ROOT, "repos")
 PEOPLE_LIST_FILE = os.path.join(PROJECT_ROOT, "_data", "people_list.yml")
 SUMMARY_FILE = os.path.join(PROJECT_ROOT, "summary.txt")
@@ -34,42 +34,18 @@ GIT_LOG_FORMAT_1 = "--format=%aN <%aE>%n%(trailers:unfold,key=Co-authored-by)"
 GIT_LOG_FORMAT_2 = "--format=%H %(trailers:only,unfold,separator=|,key=Co-authored-by) %s"
 
 # Repositories to scan (tuple to emphasize immutability)
-REPO_LIST = (
-    "Nemocas/AbstractAlgebra.jl",
-    "algebraic-solving/AlgebraicSolving.jl",
-    "oscar-system/GAP.jl",
-    "thofma/Hecke.jl",
-    "Nemocas/Nemo.jl",
-    "oscar-system/Oscar.jl",
-    "oscar-system/Polymake.jl",
-    "oscar-system/Singular.jl",
-)
+REPO_LIST = ("Nemocas/AbstractAlgebra.jl", "algebraic-solving/AlgebraicSolving.jl", "oscar-system/GAP.jl", "thofma/Hecke.jl",
+             "Nemocas/Nemo.jl", "oscar-system/Oscar.jl", "oscar-system/Polymake.jl", "oscar-system/Singular.jl")
 
 # Bots we ignore
-BOT_TOKENS = (
-    "github-actions[bot]",
-    "dependabot[bot]",
-    "renovate[bot]",
-    "changelog[bot]",
-)
+BOT_TOKENS = ("github-actions[bot]", "dependabot[bot]", "renovate[bot]", "changelog[bot]")
 
 # Regexes
 HASH_RE = re.compile(r"\b[0-9a-f]{40}\b", re.I)
 
 # Display/sort preferences
-SORT_WEIGHT = {
-    "name": 0,
-    "affiliation": 1,
-    "email": 2,
-    "github": 3,
-    "website": 4,
-    "paid_by_dfg": 5,
-    "status": 6,
-    "comment": 7,
-    "aka": 8,
-    "aka_email": 9,
-    "repos": 10,
-}
+SORT_WEIGHT = {"name": 0, "affiliation": 1, "email": 2, "github": 3, "website": 4, "paid_by_dfg": 5,
+               "status": 6, "comment": 7, "aka": 8, "aka_email": 9, "repos": 10}
 
 
 
