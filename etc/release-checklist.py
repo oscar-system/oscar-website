@@ -32,38 +32,36 @@ def gh_output(**kvs):
 
 def format_issue(version: str, published_iso: str) -> tuple[str, str]:
     title = f"{ISSUE_PREFIX} v{version} release checklist"
-    body = f"""# {ISSUE_PREFIX} {version} release detected – execute checklist
-
-A new {ISSUE_PREFIX} release **{version}** was published on **{published_iso}** (UTC).
-
-Please complete the following steps:
-
-- [ ] Send email to the OSCAR mailing list (<oscar-dev@mathematik.uni-kl.de>) to inform about this update.  
-    You can use the following template (copy it into your mail client and adjust highlights as needed):
-
-    ```
-    Subject: [OSCAR] New OSCAR release v{version}
-
-    Dear all,
-
-    We are happy to announce that OSCAR version {version} has been released
-    on {published_iso} (UTC).
-
-    Highlights of this release:
-    - (Add 2-3 bullet points summarizing major changes or improvements)
-
-    The new version is available from GitHub and via the usual installation
-    methods.  Full release notes can be found here:
-    https://github.com/oscar-system/Oscar.jl/releases/tag/v{version}
-
-    Best regards,
-    The OSCAR Team
-    ```
-
-{PING_LINE}
-
-_Opened automatically by a scheduled workflow._
-"""
+    body = "\n".join([
+        f"# {ISSUE_PREFIX} {version} release detected — website & comms checklist",
+        "",
+        f"A new {ISSUE_PREFIX} release **{version}** was published on **{published_iso}** (UTC).",
+        "",
+        "Please Send email to the OSCAR mailing list (<oscar-dev@mathematik.uni-kl.de>) to inform about this update.",
+        "You can use the following template:"
+        "```",
+        "Subject: [OSCAR] New OSCAR release v{version}",
+        "",
+        "Dear all,",
+        "",
+        "We are happy to announce that OSCAR version {version} has been released",
+        "on {published_iso} (UTC).",
+        "",
+        "Highlights of this release:",
+        "- (Add 2-3 bullet points summarizing major changes or improvements)",
+        "",
+        "The new version is available from GitHub and via the usual installation",
+        "methods.  Full release notes can be found here:",
+        "https://github.com/oscar-system/Oscar.jl/releases/tag/v{version}",
+        "",
+        "Best regards,",
+        "The OSCAR Team",
+        "```",
+        "",
+        PING_LINE,
+        "",
+        "_Opened automatically by a scheduled workflow._",
+    ])
     return title, body
 
 def main():
