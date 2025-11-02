@@ -57,18 +57,11 @@ YAML_HEADER = (
 # 2. Globals (runtime state; mutated)
 ##########################################
 
-# Contributor lists and index structures
-current_contributors = []  # loaded from YAML
-email_owner = {}           # lowercased email to person dict
-name_owner = {}            # normalized name to person dict
-
-# Aggregation state
-aggregate = {}
-summarystring = ""
-
-# Classification buckets
-new_contributors = []
-_seen_current = set()
+current_contributors = []   # loaded from YAML
+email_owner = {}            # dict: lowercased email to person dict
+name_owner = {}             # dict: normalized name to person dict
+aggregate = {}              # list of dicts for all contributors at the time of running this script
+summarystring = ""          # intermediate output for information and debugging
 
 
 ##########################################
@@ -210,67 +203,41 @@ def find_coauthor_commit(name: str, email: str, repos: list[str]) -> str:
 # 7. Post-aggregation enrichment & updates
 ##########################################
 
+_prev_status = {id(p): p.get("status") for p in current_contributors}
+_seen_current = set()
+new_names = []
 for key, rec in aggregate.items():
-    name  = rec["name"]
-    email = rec["email"]
-    repos = rec["repos"]
-    gh    = rec.get("known_github") or find_author_github_nick(email, repos)
+    name, email, repos = rec["name"], rec["email"], rec["repos"]
+    gh = rec.get("known_github") or find_author_github_nick(email, repos)
     user = lookup_user(gh, email, name)
-
-    # Existing contributor
-    if user:
-        # Merge repos into existing user (preserve order, avoid dups)
+    if user:    # Existing contributor
         have = set(user["repos"])
-        user["repos"].extend([r for r in repos if r not in have])
-
-        # If we just learned their GitHub, store it and index it
+        user["repos"].extend(r for r in repos if r not in have)
         if gh and not user.get("github"):
             user["github"] = gh
-            name_owner[gh] = user
+            name_owner[_norm_name(gh)] = user
+        _seen_current.add(id(user))
+    else:   # Brand-new person: add immediately, mark seen, collect name for summary
+        newp = {"name": name, "email": email, "repos": sorted(set(repos)), "status": "active"}
+        if gh:
+            newp["github"] = gh
+            name_owner[_norm_name(gh)] = newp
+        else:
+            newp["comment"] = f"Co-author of commit {find_coauthor_commit(name, email, repos)}"
+        current_contributors.append(newp)
+        _seen_current.add(id(newp))
+        new_names.append(name)
 
-        # Mark active once
-        uid = id(user)
-        if uid not in _seen_current:
-            _seen_current.add(uid)
-
-    # Brand-new person; authors & coauthors treated uniformly
-    else:
-        if gh:  # New "author"
-            new_contributors.append({"name": name, "email": email, "repos": repos, "github": gh, "commit_hash": None})
-        else:   # New "coauthor" — resolve a representative commit immediately
-            commit_hash = find_coauthor_commit(name, email, repos)
-            new_contributors.append({"name": name, "email": email, "repos": repos, "github": None, "commit_hash": commit_hash})
-
-
-##########################################
-# 8. Apply updates and dump output
-##########################################
-
-# Snapshot previous statuses for "newly retired" reporting
-_prev_status = {id(p): p.get("status") for p in current_contributors}
-
-# Add new contributors - feels this doubles the effort from lines 238 to 240. Maybe we can avoid this, so new_contributors is no longer needed...
-for rec in new_contributors:
-    newp = {"name": rec["name"], "email": rec["email"], "repos": sorted(set(rec["repos"])), "status": "active"}
-    if rec["github"]:
-        newp["github"] = rec["github"]
-    else:
-        newp["comment"] = f"Co-author of commit {rec['commit_hash']}"
-    current_contributors.append(newp)
-    _seen_current.add(id(newp))
-
-# Set statuses for everyone (PIs untouched)
 for p in current_contributors:
     if p.get("status") == "pi":
         continue
-    if id(p) in _seen_current:
-        p["status"] = "active"
-    else:
-        p["status"] = "retired"
-
-# Normalize repos list deterministically
-for p in current_contributors:
+    p["status"] = "active" if id(p) in _seen_current else "retired"
     p["repos"] = sorted(set(p["repos"]))
+
+
+##########################################
+# 8. Dump output
+##########################################
 
 # Write new content to PEOPLE_LIST_FILE
 people_sorted = sorted(current_contributors, key=lambda d: (d.get("name", "").split()[-1], d.get("name", "")))
@@ -279,11 +246,11 @@ with open(PEOPLE_LIST_FILE, "w", encoding="utf-8") as f:
     f.write(YAML_HEADER)
     yaml.dump(ordered_people, f, sort_keys=False, allow_unicode=True)
 
-# Create summary in SUMMARY_FILE
+# Write summary
 newly_retired_names = [p.get("name") for p in current_contributors if p.get("status") == "retired" and _prev_status.get(id(p)) == "active"]
 summary = (
     "This PR updates the contributors list based on the latest changes.\n"
-    f"New contributors : {len(new_contributors)} | {[rec["name"] for rec in new_contributors]}\n"
+    f"New contributors : {len(new_names)} | {new_names}\n"
     f"Newly retired contributors : {len(newly_retired_names)} | {newly_retired_names}\n\n"
     "Summary Notes:\n\n"
 ) + summarystring
