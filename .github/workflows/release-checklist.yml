@@ -38,7 +38,7 @@ jobs:
         env:
           API_KEY: ${{ secrets.GITHUB_TOKEN }}  # sufficient for public reads + opening issues in this repo
           TARGET_REPO: oscar-system/Oscar.jl
-          RECENCY_DAYS: "999"                     # tune as desired (e.g., 2)
+          RECENCY_DAYS: "199"                     # tune as desired (e.g., 2)
           ISSUE_PREFIX: "OSCAR"
           ISSUE_LABELS: "release-process"
           PING_LINE: "CC: @your-team-handle"
