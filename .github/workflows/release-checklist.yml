@@ -36,12 +36,11 @@ jobs:
       - name: Check latest OSCAR release (GitHub-only)
         id: probe
         env:
-          API_KEY: ${{ secrets.GITHUB_TOKEN }}  # sufficient for public reads + opening issues in this repo
+          API_KEY: ${{ secrets.GITHUB_TOKEN }}
           TARGET_REPO: oscar-system/Oscar.jl
-          RECENCY_DAYS: "999"                     # tune as desired (e.g., 2)
+          RECENCY_DAYS: "999"
           ISSUE_PREFIX: "OSCAR"
           ISSUE_LABELS: "release-process"
-          PING_LINE: "CC: @your-team-handle"
         run: |
           python3 etc/release-checklist.py
 
