@@ -136,7 +136,7 @@ def lookup_user(gh, email, name):
 
 
 ##########################################
-# 5. Helper: Process git log
+# 5. Find (co)authors of all repos
 ##########################################
 
 def process_log_into_aggregate(res: str, repo: str) -> None:
@@ -179,12 +179,6 @@ def process_log_into_aggregate(res: str, repo: str) -> None:
             if "users.noreply.github.com" in rec["email"] and "users.noreply.github.com" not in email:
                 rec["name"], rec["email"] = name, email
 
-
-
-##########################################
-# 6. Find (co)authors of all repos
-##########################################
-
 def _repo_dir(repo_full: str) -> str:
     return os.path.join(REPOS_DIR, repo_full.split('/')[-1])
 
@@ -204,7 +198,7 @@ for repo in REPO_LIST:
 
 
 ##########################################
-# 7. Helpers to find (co)-author details
+# 6. Helpers to find (co)-author details
 ##########################################
 
 # Try to resolve a GitHub login by finding one authored commit for this email.
@@ -246,7 +240,7 @@ def find_coauthor_commit(name: str, email: str, repos: list[str]) -> str:
 
 
 ##########################################
-# 8. Post-aggregation enrichment & updates
+# 7. Post-aggregation enrichment & updates
 ##########################################
 
 for key, rec in aggregate.items():
@@ -287,7 +281,7 @@ retired_contributors = [p for p in current_contributors if id(p) not in _seen_cu
 
 
 ##########################################
-# 9. Apply updates and dump output
+# 8. Apply updates and dump output
 ##########################################
 
 # Find the newly retired contributors
