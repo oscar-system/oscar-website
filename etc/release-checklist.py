@@ -31,9 +31,9 @@ def gh_output(**kvs):
             f.write(f"{k}<<__EOF__\n{v}\n__EOF__\n")
 
 def format_issue(version: str, published_iso: str) -> tuple[str, str]:
-    title = f"{ISSUE_PREFIX} v{version} release checklist"
+    title = f"{ISSUE_PREFIX} v{version} release requires follow-up"
     body = "\n".join([
-        f"# {ISSUE_PREFIX} {version} release detected",
+        f"# {ISSUE_PREFIX} {version} release requires follow-up",
         "",
         f"A new {ISSUE_PREFIX} release **{version}** was published on **{published_iso}** (UTC).",
         "",
@@ -52,7 +52,7 @@ def format_issue(version: str, published_iso: str) -> tuple[str, str]:
         "- (Add 2-3 bullet points summarizing major changes or improvements)",
         "",
         "The new version is available from GitHub and via the usual installation",
-        "methods.  Full release notes can be found here:",
+        "methods. Full release notes can be found here:",
         f"https://github.com/oscar-system/Oscar.jl/releases/tag/v{version}",
         "",
         "Best regards,",
