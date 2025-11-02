@@ -49,26 +49,15 @@ jobs:
         if: steps.probe.outputs.new == 'true'
         uses: actions/github-script@v7
         with:
-            github-token: ${{ secrets.GITHUB_TOKEN }}
-            script: |
-              const title = `${{ toJson(steps.probe.outputs.issue_title) }}`.slice(1, -1);
-              const body  = `${{ toJson(steps.probe.outputs.issue_body) }}`.slice(1, -1);
-              const labels = `${{ toJson(steps.probe.outputs.issue_labels || 'release-process') }}`.slice(1, -1)
-                .split(',')
-                .map(s => s.trim())
-                .filter(Boolean);
-
-              await github.rest.issues.create({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                title,
-                body,
-                labels
-              });
-
-      - name: Log decision
-        run: |
-          echo "new=${{ steps.probe.outputs.new }}"
-          echo "version=${{ steps.probe.outputs.version }}"
-          echo "published_utc=${{ steps.probe.outputs.published_utc }}"
-          echo "reason=${{ steps.probe.outputs.reason }}"
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const title = JSON.parse(${{toJson(steps.probe.outputs.issue_title)}});
+            const body  = JSON.parse(${{toJson(steps.probe.outputs.issue_body)}});
+            const labels = ['release-process'];
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title,
+              body,
+              labels
+            });
