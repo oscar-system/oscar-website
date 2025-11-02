@@ -1,0 +1,74 @@
+name: OSCAR Release Watcher (Issue only)
+
+on:
+  push:
+    branches: [gh-pages]
+  schedule:
+    - cron: "30 6 * * *"
+  workflow_dispatch: {}
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  release-checlist:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.x"
+
+      - name: Install deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install PyGithub
+
+      - name: Check latest OSCAR release (GitHub-only)
+        id: probe
+        env:
+          API_KEY: ${{ secrets.GITHUB_TOKEN }}  # sufficient for public reads + opening issues in this repo
+          TARGET_REPO: oscar-system/Oscar.jl
+          RECENCY_DAYS: "999"                     # tune as desired (e.g., 2)
+          ISSUE_PREFIX: "OSCAR"
+          ISSUE_LABELS: "release-process"
+          PING_LINE: "CC: @your-team-handle"
+        run: |
+          python3 etc/release-checklist.py
+
+      - name: Create checklist issue
+        if: steps.probe.outputs.new == 'true'
+        uses: actions/github-script@v7
+        with:
+            github-token: ${{ secrets.GITHUB_TOKEN }}
+            script: |
+              const title = `${{ toJson(steps.probe.outputs.issue_title) }}`.slice(1, -1);
+              const body  = `${{ toJson(steps.probe.outputs.issue_body) }}`.slice(1, -1);
+              const labels = `${{ toJson(steps.probe.outputs.issue_labels || 'release-process') }}`.slice(1, -1)
+                .split(',')
+                .map(s => s.trim())
+                .filter(Boolean);
+
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title,
+                body,
+                labels
+              });
+
+      - name: Log decision
+        run: |
+          echo "new=${{ steps.probe.outputs.new }}"
+          echo "version=${{ steps.probe.outputs.version }}"
+          echo "published_utc=${{ steps.probe.outputs.published_utc }}"
+          echo "reason=${{ steps.probe.outputs.reason }}"
