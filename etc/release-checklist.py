@@ -9,7 +9,8 @@ TARGET_REPO = os.getenv("TARGET_REPO", "oscar-system/Oscar.jl")
 RECENCY_DAYS = int(os.getenv("RECENCY_DAYS", "7"))   # consider a release "new" if within the last N days
 ISSUE_PREFIX  = os.getenv("ISSUE_PREFIX", "OSCAR")   # title will be like "OSCAR vX.Y.Z release checklist"
 ISSUE_LABELS  = [s.strip() for s in os.getenv("ISSUE_LABELS", "release-process").split(",") if s.strip()]
-PING_LINE     = os.getenv("PING_LINE", "CC: @your-team-handle")  # customize mentions
+PING_LINE     = os.getenv("PING_LINE", "CC: @HereAround")
+#PING_LINE     = os.getenv("PING_LINE", "CC: @aaruni96 @HereAround @simonbrandhorst @fieker @thofma @fingolfin @micjoswig ")
 
 # This token must allow reading TARGET_REPO releases and creating issues in *this* repo
 API_KEY = (os.getenv("API_KEY") or os.getenv("GITHUB_TOKEN") or "").strip()
@@ -20,9 +21,6 @@ if not API_KEY:
 gh = Github(auth=Auth.Token(API_KEY))
 
 def gh_output(**kvs):
-    """
-    Write GitHub step outputs; avoids any file writes to the repo.
-    """
     path = os.getenv("GITHUB_OUTPUT")
     if not path:
         return
@@ -34,23 +32,38 @@ def gh_output(**kvs):
 
 def format_issue(version: str, published_iso: str) -> tuple[str, str]:
     title = f"{ISSUE_PREFIX} v{version} release checklist"
-    body = "\n".join([
-        f"# {ISSUE_PREFIX} {version} release detected — website & comms checklist",
-        "",
-        f"A new {ISSUE_PREFIX} release **{version}** was published on **{published_iso}** (UTC).",
-        "",
-        "Please complete the following steps:",
-        "",
-        "- [ ] Update docs landing page badges/version strings",
-        "- [ ] Publish blog/news post for the release",
-        "- [ ] Verify API docs links and release notes",
-        "- [ ] Announce on Twitter/Mastodon/Discourse/Slack",
-        "- [ ] Check downstream integrations (conda, Homebrew, etc.)",
-        "",
-        PING_LINE,
-        "",
-        "_Opened automatically by a scheduled workflow._",
-    ])
+    body = f"""# {ISSUE_PREFIX} {version} release detected – execute checklist
+
+A new {ISSUE_PREFIX} release **{version}** was published on **{published_iso}** (UTC).
+
+Please complete the following steps:
+
+- [ ] Send email to the OSCAR mailing list (<oscar-dev@mathematik.uni-kl.de>) to inform about this update.  
+    You can use the following template (copy it into your mail client and adjust highlights as needed):
+
+    ```
+    Subject: [OSCAR] New OSCAR release v{version}
+
+    Dear all,
+
+    We are happy to announce that OSCAR version {version} has been released
+    on {published_iso} (UTC).
+
+    Highlights of this release:
+    - (Add 2-3 bullet points summarizing major changes or improvements)
+
+    The new version is available from GitHub and via the usual installation
+    methods.  Full release notes can be found here:
+    https://github.com/oscar-system/Oscar.jl/releases/tag/v{version}
+
+    Best regards,
+    The OSCAR Team
+    ```
+
+{PING_LINE}
+
+_Opened automatically by a scheduled workflow._
+"""
     return title, body
 
 def main():
