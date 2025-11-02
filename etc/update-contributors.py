@@ -145,10 +145,8 @@ def process_log_into_aggregate(res: str, repo: str) -> None:
         line = raw.strip()
         if not line: continue
 
-        is_author = True
         if line.lower().startswith("co-authored-by:"):
             line = line.split(":", 1)[1].strip()
-            is_author = False
 
         low = line.lower()
         if any(b in low for b in BOT_TOKENS):
@@ -173,9 +171,8 @@ def process_log_into_aggregate(res: str, repo: str) -> None:
 
         rec = aggregate.get(key)
         if rec is None:
-            aggregate[key] = {"name": name, "email": email, "is_author": is_author, "known_github": known_github, "repos": {repo}}
+            aggregate[key] = {"name": name, "email": email, "known_github": known_github, "repos": {repo}}
         else:
-            rec["is_author"] = rec["is_author"] or is_author
             rec["repos"].add(repo)
             if known_github and not rec["known_github"]:
                 rec["known_github"] = known_github
