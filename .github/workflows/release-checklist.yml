@@ -51,8 +51,8 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const title = JSON.parse(${{toJson(steps.probe.outputs.issue_title)}});
-            const body  = JSON.parse(${{toJson(steps.probe.outputs.issue_body)}});
+            const title = ${{ toJson(steps.probe.outputs.issue_title) }};
+            const body  = ${{ toJson(steps.probe.outputs.issue_body) }};
             const labels = ['release-process'];
             await github.rest.issues.create({
               owner: context.repo.owner,
