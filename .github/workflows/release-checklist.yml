@@ -51,8 +51,8 @@ jobs:
         with:
             github-token: ${{ secrets.GITHUB_TOKEN }}
             script: |
-              const title = `${{ toJson(steps.probe.outputs.issue_title) }}`.slice(1, -1);
-              const body  = `${{ toJson(steps.probe.outputs.issue_body) }}`.slice(1, -1);
+              const title = JSON.parse(`${{ toJson(steps.probe.outputs.issue_title) }}`);
+              const body  = JSON.parse(`${{ toJson(steps.probe.outputs.issue_body) }}`);
               const labels = `${{ toJson(steps.probe.outputs.issue_labels || 'release-process') }}`.slice(1, -1)
                 .split(',')
                 .map(s => s.trim())
