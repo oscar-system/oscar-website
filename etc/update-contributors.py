@@ -257,21 +257,12 @@ for key, rec in aggregate.items():
 # 8. Apply updates and dump output
 ##########################################
 
-##########################################
-# 8. Apply updates and dump output
-##########################################
-
 # Snapshot previous statuses for "newly retired" reporting
 _prev_status = {id(p): p.get("status") for p in current_contributors}
 
 # Add new contributors
 for rec in new_contributors:
-    newp = {
-        "name": rec["name"],
-        "email": rec["email"],
-        "repos": sorted(set(rec["repos"])),
-        "status": "active",
-    }
+    newp = {"name": rec["name"], "email": rec["email"], "repos": sorted(set(rec["repos"])), "status": "active"}
     if rec["github"]:
         newp["github"] = rec["github"]
     else:
@@ -287,9 +278,6 @@ for p in current_contributors:
     else:
         p["status"] = "retired"
 
-# Compute newly retired contributors for the summary
-newly_retired_names = [p.get("name") for p in current_contributors if p.get("status") == "retired" and _prev_status.get(id(p)) == "active"]
-
 # Normalize repos list deterministically
 for p in current_contributors:
     p["repos"] = sorted(set(p["repos"]))
@@ -302,10 +290,10 @@ with open(PEOPLE_LIST_FILE, "w", encoding="utf-8") as f:
     yaml.dump(ordered_people, f, sort_keys=False, allow_unicode=True)
 
 # Create summary in SUMMARY_FILE
-new_names = [rec["name"] for rec in new_contributors]
+newly_retired_names = [p.get("name") for p in current_contributors if p.get("status") == "retired" and _prev_status.get(id(p)) == "active"]
 summary = (
     "This PR updates the contributors list based on the latest changes.\n"
-    f"New contributors : {len(new_names)} | {new_names}\n"
+    f"New contributors : {len(new_contributors)} | {[rec["name"] for rec in new_contributors]}\n"
     f"Newly retired contributors : {len(newly_retired_names)} | {newly_retired_names}\n\n"
     "Summary Notes:\n\n"
 ) + summarystring
