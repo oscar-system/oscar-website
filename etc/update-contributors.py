@@ -247,10 +247,12 @@ with open(PEOPLE_LIST_FILE, "w", encoding="utf-8") as f:
     yaml.dump(ordered_people, f, sort_keys=False, allow_unicode=True)
 
 # Write summary
+revived_names = [p.get("name") for p in current_contributors if id(p) in _seen_current and id(p) in _prev_status and _prev_status[id(p)] == "retired"]
 newly_retired_names = [p.get("name") for p in current_contributors if p.get("status") == "retired" and _prev_status.get(id(p)) == "active"]
 summary = (
     "This PR updates the contributors list based on the latest changes.\n"
     f"New contributors : {len(new_names)} | {new_names}\n"
+    f"Revived contributors : {len(revived_names)} | {revived_names}\n"
     f"Newly retired contributors : {len(newly_retired_names)} | {newly_retired_names}\n\n"
     "Summary Notes:\n\n"
 ) + summarystring
