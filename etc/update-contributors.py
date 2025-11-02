@@ -288,14 +288,9 @@ people_sorted = sorted(current_contributors, key=lambda d: (d.get("name", "").sp
 ordered_people = [dict(sorted(p.items(), key=lambda kv: SORT_WEIGHT.get(kv[0], 999))) for p in people_sorted]
 
 # Write new content to PEOPLE_LIST_FILE
-class MyDumper(yaml.SafeDumper):
-    def write_line_break(self, data=None):
-        super().write_line_break(data)
-        if len(self.indents) == 1:
-            super().write_line_break()
 with open(PEOPLE_LIST_FILE, "w", encoding="utf-8") as f:
     f.write(YAML_HEADER)
-    yaml.dump(ordered_people, f, Dumper=MyDumper, sort_keys=False, allow_unicode=True)
+    yaml.dump(ordered_people, f, sort_keys=False, allow_unicode=True)
 
 # Create summary in SUMMARY_FILE
 new_names = [rec["name"] for rec in new_contributors]
