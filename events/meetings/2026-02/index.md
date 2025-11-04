@@ -10,7 +10,7 @@ weight: 1
 # OSCAR Coding Sprint
 
 * When: February 23 - February 27, 2026.
-* Where: TU Berlin, E-N Building (Einsteinufer 17)
+* Where: TU Berlin, [E-N Building (Einsteinufer 17)](https://maps.app.goo.gl/najYFhEHoJfoQWB1A)
 * What: A general coding sprint for OSCAR and OSCAR adjacent projects (polymake, Singular, ...)
 * Who: OSCAR developers and enthusiasts
 
