@@ -1,8 +1,8 @@
 ---
 layout: meeting
-title: OSCAR Coding Sprint 03/2025
+title: OSCAR Coding Sprint 02/2026
 meeting: true
-meeting_nr: 202503
+meeting_nr: 202602
 is_meeting_index: true
 weight: 1
 ---
