@@ -37,8 +37,7 @@ def format_issue(version: str, published_iso: str) -> tuple[str, str]:
         "",
         f"A new {ISSUE_PREFIX} release **{version}** was published on **{published_iso}** (UTC).",
         "",
-        f"Please Send email to the OSCAR mailing list (<oscar-dev@mathematik.uni-kl.de>) to inform about this update.",
-        "You can use the following template:"
+        f"Pllorem ipsum dolor set itse:"
         "",
         "```text",
         f"Subject: [OSCAR] New OSCAR release v{version}",

@@ -5,7 +5,7 @@ on:
     branches: [gh-pages]
   schedule:
     - cron: "30 6 * * *"
-  workflow_dispatch: {}
+  workflow_dispatch:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
