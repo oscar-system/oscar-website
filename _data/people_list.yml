@@ -679,7 +679,7 @@
 - name: Marcel Salmon
   affiliation: Universität Oldenburg
   github: Syz-MS
-  status: active
+  status: retired
   comment: Associated with Anne Fruhbig Kruger as of 2024
   repos:
   - oscar-system/Oscar.jl
