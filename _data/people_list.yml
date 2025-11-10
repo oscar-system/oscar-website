@@ -196,8 +196,11 @@
   status: retired
   comment: PhD Student of Mathias Schulze until ~2021.
   repos: []
-- name: Erroxe
-  email: you@example.com
+- name: Erroxe Etxabarri Alberdi
+  affiliation: Mondragon Unibertsitatea
+  email: eetxabarri@mondragon.edu
+  github: Erroxe
+  website: https://sites.google.com/view/erroxe-etxabarri-alberdi/home
   status: active
   comment: Co-author of commit 6b2cef5a53b095f3998ba3444cf192ce4fadf797
   repos:
