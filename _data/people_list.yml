@@ -320,7 +320,9 @@
   status: retired
   repos: []
 - name: Anna Hofer
+  affiliation: Otto-von-Guericke University
   email: anna.hofer@ovgu.de
+  github: annahofer00
   status: active
   comment: Co-author of commit fbc743b6a976c2338c4a09f647088e29791b2cbd
   repos:
