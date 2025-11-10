@@ -21,7 +21,7 @@ Discover more about our project and vision on our [About]({{site.baseurl}}/about
   {% if event.end-date >= today %}
     {% assign has_upcoming_events = true %}
     {% if event.website %}
-* [{{ event.title }} ({{ event.location }}, {{ event.start-date | date: "%d %b %Y" }} to {{ event.end-date | date: "%d %b %Y" }})]({{ event.website | replace: "https://www.oscar-system.org", site.baseurl }})
+* [{{ event.title }} ({{ event.location }}, {{ event.start-date | date: "%d %B %Y" }} to {{ event.end-date | date: "%d %B %Y" }})]({{ event.website | replace: "https://www.oscar-system.org", site.baseurl }})
     {% else %}
 * {{ event.title }} ({{ event.location }}, {{ event.start-date }} to {{ event.end-date }})
     {% endif %}
