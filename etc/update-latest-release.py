@@ -30,7 +30,7 @@ except Exception as e:
     exit()
 
 dt = release.created_at
-version = release.title[1:]
+version = release.name[1:]
 
 releasestring = f"version: '{version}'\nyear: '{dt.year}'\nmonth: '{dt.month}'\nday: '{dt.day}'\ndate: {dt.date()}\n"
 
