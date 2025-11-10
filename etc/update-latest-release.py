@@ -32,7 +32,14 @@ except Exception as e:
 dt = release.created_at
 version = release.name[1:]
 
-releasestring = f"version: '{version}'\nyear: '{dt.year}'\nmonth: '{dt.month}'\nday: '{dt.day}'\ndate: {dt.date()}\n"
+releasestring = f"""\
+version: "{version}"
+year: "{dt.year}"
+month: "{dt.month}"
+day: "{dt.day}"
+date: "{dt.date()}"
+julia-min: "1.10"
+"""
 
 releasefilepath = f"{datapath}/release.yml"
 
