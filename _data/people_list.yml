@@ -765,8 +765,11 @@
   website: https://www.math.uni-tuebingen.de/de/forschung/algebra/personen/justus-springer
   status: retired
   repos: []
-- name: StardustMath
-  email: zh112028@gmail.com
+- name: Jinghao Chen
+  affiliation: University of Science and Technology of China
+  email: chenjinghao@mail.ustc.edu.cn
+  github: StardustMath
+  website: https://stardust-math.github.io/
   status: active
   comment: Co-author of commit 6b2cef5a53b095f3998ba3444cf192ce4fadf797
   repos:
