@@ -11,7 +11,7 @@ weight: 1
 This Winter School takes place at the University of Galway, Ireland, from 01 December 2025 to 12 December 2025.
 [For more information visit its website](https://www.cogent-network.eu/en/COGENT-WinterSchool).
 
-This page here provides additional material related to the OSCAR portion of the Winters School, which is organized by
+This page here provides additional material related to the OSCAR portion of the Winter School, which is organized by
 [Thomas Breuer](mailto:sam@math.rwth-aachen.de) and  [Max Horn](mailto:max.horn@rptu.de).
 
 ## Things to do before the Winter School
