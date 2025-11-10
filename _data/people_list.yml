@@ -455,7 +455,10 @@
   status: retired
   repos: []
 - name: Fabian Lenzen
+  affiliation: TU Berlin
   email: fabian.lenzen@tu-berlin.de
+  github: flenzen
+  website: https://page.math.tu-berlin.de/~lenzen/
   status: active
   comment: Co-author of commit fbc743b6a976c2338c4a09f647088e29791b2cbd
   repos:
