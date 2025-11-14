@@ -1,3 +1,43 @@
+- title: Women in Algebra and Symbolic Computation 2026
+  start-date: "2026-12-07"
+  end-date: "2026-12-09"
+  location: Kurparkhotel, Bad Dürkheim, Germany
+  satellite: "Yes"
+
+- title: DMV Annual Meeting 2026
+  start-date: "2026-09-07"
+  end-date: "2026-09-10"
+  location: University of Konstanz, Konstanz, Germany
+  website: https://www.dmv-jahrestagung.de/
+  satellite: "Yes"
+
+- title: 2026 SIAM Annual Meeting
+  start-date: "2026-07-06"
+  end-date: "2026-07-10"
+  location: Huntington Convention Center of Cleveland, Cleveland, Ohio, USA
+  website: https://www.siam.org/conferences-events/siam-conferences/an26/
+  satellite: "Yes"
+
+- title: Foundations of Computational Mathematics 2026
+  start-date: "2026-07-08"
+  end-date: "2026-07-18"
+  location: Faculty of Mathematics, University of Vienna, Austria
+  website: https://focm2026.univie.ac.at/
+  satellite: "Yes"
+
+- title: Seventeenth Algorithmic Number Theory Symposium
+  start-date: "2026-07-06"
+  end-date: "2026-07-10"
+  location: Rijksuniversiteit Groningen, Netherlands
+  website: https://www.antsxvii.org/
+  satellite: "Yes"
+
+- title: ISSAC 2026
+  start-date: "2026-07-13"
+  end-date: "2026-07-17"
+  location: Oldenburg, Germany
+  satellite: "Yes"
+
 - title: Developments in algorithmic, discrete and tropical geometry
   start-date: "2026-02-02"
   end-date: "2026-02-04"
