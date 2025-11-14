@@ -32,6 +32,15 @@
   - Nemocas/AbstractAlgebra.jl
   - oscar-system/Oscar.jl
   - thofma/Hecke.jl
+- name: Erroxe Etxabarri Alberdi
+  affiliation: Mondragon Unibertsitatea
+  email: eetxabarri@mondragon.edu
+  github: Erroxe
+  website: https://sites.google.com/view/erroxe-etxabarri-alberdi/home
+  status: active
+  comment: Co-author of commit 6b2cef5a53b095f3998ba3444cf192ce4fadf797
+  repos:
+  - oscar-system/Oscar.jl
 - name: Mohamed Barakat
   affiliation: University of Siegen
   email: mohamed.barakat@uni-siegen.de
@@ -134,6 +143,15 @@
   status: active
   repos:
   - oscar-system/Oscar.jl
+- name: Jinghao Chen
+  affiliation: University of Science and Technology of China
+  email: chenjinghao@mail.ustc.edu.cn
+  github: StardustMath
+  website: https://stardust-math.github.io/
+  status: active
+  comment: Co-author of commit 6b2cef5a53b095f3998ba3444cf192ce4fadf797
+  repos:
+  - oscar-system/Oscar.jl
 - name: Andrei Comaneci
   affiliation: TU Berlin
   email: comenaci@math.tu-berlin.de
@@ -196,15 +214,6 @@
   status: retired
   comment: PhD Student of Mathias Schulze until ~2021.
   repos: []
-- name: Erroxe Etxabarri Alberdi
-  affiliation: Mondragon Unibertsitatea
-  email: eetxabarri@mondragon.edu
-  github: Erroxe
-  website: https://sites.google.com/view/erroxe-etxabarri-alberdi/home
-  status: active
-  comment: Co-author of commit 6b2cef5a53b095f3998ba3444cf192ce4fadf797
-  repos:
-  - oscar-system/Oscar.jl
 - name: Nicolas Faross
   affiliation: Saarland University
   email: faross@math.uni-sb.de
@@ -768,15 +777,6 @@
   website: https://www.math.uni-tuebingen.de/de/forschung/algebra/personen/justus-springer
   status: retired
   repos: []
-- name: Jinghao Chen
-  affiliation: University of Science and Technology of China
-  email: chenjinghao@mail.ustc.edu.cn
-  github: StardustMath
-  website: https://stardust-math.github.io/
-  status: active
-  comment: Co-author of commit 6b2cef5a53b095f3998ba3444cf192ce4fadf797
-  repos:
-  - oscar-system/Oscar.jl
 - name: Andreas Steenpaß
   affiliation: University of Kaiserslautern-Landau
   github: steenpass
