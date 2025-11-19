@@ -125,7 +125,7 @@
   - thofma/Hecke.jl
 - name: Kilian Bruns
   github: KilianBruns
-  status: active
+  status: retired
   repos:
   - oscar-system/Oscar.jl
 - name: Taylor Brysiewicz
