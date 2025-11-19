@@ -86,6 +86,7 @@
       </div>
       <div class="item_example-author">Author(s): {{ post.author }}</div>
       <div class="item_last_modified">Last modified: {{ post.date }} </div>
+      <div class="item_example-category">Topic: {{ post.thumbnail | replace: ".png", "" }}</div>
       <div><a href="https://nbviewer.jupyter.org/github/{{ post.repository }}/blob/{{ post.branch }}/{{ post.filename }}.ipynb">nbviewer</a> </div>
       <a href="https://github.com/{{ post.repository }}/blob/master/{{ post.filename }}.ipynb">Github</a>
 
