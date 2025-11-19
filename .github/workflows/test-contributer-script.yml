@@ -60,3 +60,5 @@ jobs:
         title: "Update contributors"
         body-path: summary.txt
         base: gh-pages
+        author: "update_contributors[bot] <update_contributors[bot]@users.noreply.github.com>"
+        committer: "update_contributors[bot] <update_contributors[bot]@users.noreply.github.com>"
