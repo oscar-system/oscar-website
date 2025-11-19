@@ -15,22 +15,23 @@ Discover more about our project and vision on our [About]({{site.baseurl}}/about
 
 {% assign sorted_conferences = site.data.events | group-by: "start-date" | sort: "end-date" %}
 {% assign today = "now" | date: "%Y-%m-%d" %}
-{% assign has_upcoming_events = false %}
+{% assign upcoming_conferences = sorted_conferences | where_exp: "event", "event['end-date'] >= today" %}
+{% assign max_events = site.data.config.number_of_displayed_events_on_index_page %}
 
-{% for event in sorted_conferences %}
-  {% if event.end-date >= today %}
-    {% assign has_upcoming_events = true %}
+{% if upcoming_conferences.size > 0 %}
+  {% for event in upcoming_conferences limit:max_events %}
     {% if event.website %}
-* [{{ event.title }} ({{ event.location }}, {{ event.start-date | date: "%d %B %Y" }} to {{ event.end-date | date: "%d %B %Y" }})]({{ event.website | replace: "https://www.oscar-system.org", site.baseurl }})
+  * [{{ event.title }} ({{ event.location }}, {{ event.start-date | date: "%d %B %Y" }} to {{ event.end-date | date: "%d %B %Y" }})]({{ event.website | replace: "https://www.oscar-system.org", site.baseurl }})
     {% else %}
-* {{ event.title }} ({{ event.location }}, {{ event.start-date }} to {{ event.end-date }})
+  * {{ event.title }} ({{ event.location }}, {{ event.start-date }} to {{ event.end-date }})
     {% endif %}
-  {% endif %}
-{% endfor %}
-
-{% unless has_upcoming_events %}
-Currently no upcoming events.
-{% endunless %}
+  {% endfor %}
+  {% if upcoming_conferences.size > max_events %}
+More upcoming events are available [here]({{ site.baseurl }}/events/).
+  {% endif %}  
+{% else %}
+  Currently no upcoming events.
+{% endif %}
 
 ---
 
