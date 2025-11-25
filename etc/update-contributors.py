@@ -37,7 +37,7 @@ REPO_LIST = ("Nemocas/AbstractAlgebra.jl", "algebraic-solving/AlgebraicSolving.j
              "Nemocas/Nemo.jl", "oscar-system/Oscar.jl", "oscar-system/Polymake.jl", "oscar-system/Singular.jl")
 
 # Bots we ignore
-BOT_TOKENS = ("github-actions[bot]", "dependabot[bot]", "renovate[bot]", "changelog[bot]", "update_contributors[bot]")
+BOT_TOKENS = ("github-actions[bot]", "dependabot[bot]", "renovate[bot]", "changelog[bot]", "update_contributors[bot]", "update_release[bot]")
 
 # Regexes
 HASH_RE = re.compile(r"\b[0-9a-f]{40}\b", re.I)
