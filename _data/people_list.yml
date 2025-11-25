@@ -80,8 +80,9 @@
   email: post@taboege.de
   github: taboege
   website: https://taboege.de/
-  status: retired
-  repos: []
+  status: active
+  repos:
+  - oscar-system/Oscar.jl
 - name: Simon Brandhorst
   affiliation: Saarland University
   email: brandhorst@math.uni-sb.de
@@ -97,7 +98,7 @@
   email: jens.brandt@rwth-aachen.de
   github: flyingapfopenguin
   website: https://www.math.rwth-aachen.de/~Jens.Brandt/
-  status: active
+  status: retired
   repos:
   - thofma/Hecke.jl
 - name: Tobias Braun
@@ -208,6 +209,7 @@
   repos:
   - algebraic-solving/AlgebraicSolving.jl
   - oscar-system/Oscar.jl
+  - oscar-system/Singular.jl
 - name: Raul Epure
   affiliation: University of Kaiserslautern-Landau
   github: raulepure
@@ -484,6 +486,7 @@
   - oscar-system/GAP.jl
   - oscar-system/Oscar.jl
   - oscar-system/Polymake.jl
+  - oscar-system/Singular.jl
   - thofma/Hecke.jl
 - name: Dante Luber
   affiliation: TU Berlin
@@ -668,6 +671,7 @@
   status: active
   repos:
   - oscar-system/Oscar.jl
+  - thofma/Hecke.jl
 - name: Morgan Rodgers
   affiliation: University of Kaiserslautern-Landau
   email: morgan.rodgers@rptu.de
@@ -936,3 +940,10 @@
   - Nemocas/AbstractAlgebra.jl
   - oscar-system/Oscar.jl
   - thofma/Hecke.jl
+- name: Marina Garrote
+  email: marina.garrote@mis.mpg.de
+  github: garrote
+  status: active
+  comment: Co-author of commit ad7e39a9abb981d0873a67477d50d3664b720e00
+  repos:
+  - oscar-system/Oscar.jl
