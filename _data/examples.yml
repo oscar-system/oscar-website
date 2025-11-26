@@ -218,7 +218,7 @@
 - title: "Cox rings of blow-ups of points"
   repository: micjoswig/oscar-notebooks
   branch: master
-  filename: Cox_rings_of_blow_ups_of_points
+  filename: SIAM-News/Cox_rings_of_blow_ups_of_points
   author: Mara Belotti
   thumbnail: ToricGeometry.png
   language: julia
@@ -227,7 +227,7 @@
 - title: "Computing Cox rings of linear quotients"
   repository: micjoswig/oscar-notebooks
   branch: master
-  filename: Cox_rings_of_linear_quotients
+  filename: SIAM-News/Cox_rings_of_linear_quotients
   author: Johannes Schmitt
   thumbnail: ToricGeometry.png
   language: julia
@@ -236,7 +236,7 @@
 - title: "Combinatorics of Hurwitz numbers"
   repository: micjoswig/oscar-notebooks
   branch: master
-  filename: Hurwitz_Combinatorics
+  filename: SIAM-News/Hurwitz_Combinatorics
   author: Victoria Schleis
   thumbnail: IntersectionTheory.png
   language: julia
@@ -245,7 +245,7 @@
 - title: "Parametrize the volume of slices"
   repository: micjoswig/oscar-notebooks
   branch: master
-  filename: Parametrized_volume_of_slices
+  filename: SIAM-News/Parametrized_volume_of_slices
   author: Chiara Meloni
   thumbnail: PolyhedralGeometry.png
   language: julia
