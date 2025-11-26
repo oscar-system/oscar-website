@@ -45,57 +45,17 @@ jobs:
 
       - name: Open release checklist issue
         if: steps.release.outputs.changed == 'true'
-        uses: actions/github-script@v7
+        uses: JasonEtco/create-an-issue@v2
+        # marketplace action : https://github.com/marketplace/actions/create-an-issue
         env:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          filename: .github/release-checklist-template.md
+          assignees: HereAround, aaruni96
+          update_existing: true
+          search_existing: open
           VERSION: ${{ steps.release.outputs.version }}
           PUBLISHED_UTC: ${{ steps.release.outputs.published_utc }}
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            const version = process.env.VERSION;
-            const published = process.env.PUBLISHED_UTC;
-
-            const title = `OSCAR v${version} release requires follow-up`;
-
-            const body = [
-              `# OSCAR v${version} release requires follow-up`,
-              '',
-              `A new OSCAR release **v${version}** was published on **${published}** (UTC).`,
-              '',
-              'Please send an email to the OSCAR mailing list (<oscar-dev@mathematik.uni-kl.de>) to inform about this update.',
-              'You can use the following template:',
-              '',
-              '```text',
-              `Subject: [OSCAR] New OSCAR release v${version}`,
-              '',
-              'Dear all,',
-              '',
-              `We are happy to announce that OSCAR version v${version} has been released`,
-              `on ${published} (UTC).`,
-              '',
-              'Highlights of this release:',
-              '- (Add 2-3 bullet points summarizing major changes or improvements)',
-              '',
-              'The new version is available from GitHub and via the usual installation',
-              'methods. Full release notes can be found here:',
-              `https://github.com/oscar-system/Oscar.jl/releases/tag/v${version}`,
-              '',
-              'Best regards,',
-              'The OSCAR Team',
-              '```',
-              '',
-              'CC: @HereAround',
-              '',
-              '_Opened automatically by a scheduled workflow._',
-            ].join('\n');
-
-            await github.rest.issues.create({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              title,
-              body,
-              labels: ['release-process'],
-            });
 
       - name: Create PR updating latest release
         if: steps.release.outputs.changed == 'true'

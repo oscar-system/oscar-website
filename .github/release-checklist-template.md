@@ -1,0 +1,34 @@
+---
+title: OSCAR v${version} release requires follow-up
+labels: release-process
+---
+
+# OSCAR v${version} release requires follow-up
+
+
+A new OSCAR release **v${version}** was published on **${published}** (UTC)
+
+Please send an email to the OSCAR mailing list (<oscar-dev@mathematik.uni-kl.de>) to inform about
+this update. You can use the following template:
+
+
+> Subject: [OSCAR] New OSCAR release v${version}
+> 
+> Dear all,
+> 
+> We are happy to announce that OSCAR version v${version} has been released on ${published} (UTC).
+> 
+> Highlights of this release:
+> - (Add 2-3 bullet points summarizing major changes or improvements)
+> 
+> The new version is available from GitHub and via the usual installation'
+> methods. Full release notes can be found here:
+> https://github.com/oscar-system/Oscar.jl/releases/tag/v${version}
+>
+> Best regards,  
+> The OSCAR Team
+
+
+CC: @HereAround, @aaruni96
+
+_Opened automatically by a scheduled workflow._
