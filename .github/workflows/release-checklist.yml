@@ -48,14 +48,14 @@ jobs:
         uses: JasonEtco/create-an-issue@v2
         # marketplace action : https://github.com/marketplace/actions/create-an-issue
         env:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VERSION: ${{ steps.release.outputs.version }}
+          PUBLISHED_UTC: ${{ steps.release.outputs.published_utc }}
         with:
           filename: .github/release-checklist-template.md
           assignees: HereAround, aaruni96
           update_existing: true
-          search_existing: open
-          VERSION: ${{ steps.release.outputs.version }}
-          PUBLISHED_UTC: ${{ steps.release.outputs.published_utc }}
+          search_existing: open          
 
       - name: Create PR updating latest release
         if: steps.release.outputs.changed == 'true'
