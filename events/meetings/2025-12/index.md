@@ -14,6 +14,10 @@ This Winter School takes place at the University of Galway, Ireland, from 01 Dec
 This page here provides additional material related to the OSCAR portion of the Winter School, which is organized by
 [Thomas Breuer](mailto:sam@math.rwth-aachen.de) and  [Max Horn](mailto:max.horn@rptu.de).
 
+## Exercises
+
+There are some [exercises](https://www.math.rwth-aachen.de/homes/Thomas.Breuer/COGENT/exercises/) available for the OSCAR and GAP courses.
+
 ## Things to do before the Winter School
 
 1. Install OSCAR by carefully following the instructions on the [OSCAR install page]({{ site.baseurl }}/install).
@@ -28,11 +32,12 @@ This page here provides additional material related to the OSCAR portion of the 
 4. Work through an [OSCAR tutorial](https://www.oscar-system.org/tutorials/).
    We recommend the [Linear Algebra tutorial](https://github.com/oscar-system/OSCARBinder/blob/master/LinearAlgebraInOSCAR.ipynb)
 
-
+<!-- 
 ## Office hour
 
 We will offer an "office hour" before the actual meeting, where you can ask
 questions or get help with any trouble you may have with the above points.
+ -->
 
 
 ## Additional resources
