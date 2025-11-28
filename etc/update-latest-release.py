@@ -27,6 +27,7 @@ def gh_output(**kvs):
             v = "" if v is None else str(v)
             f.write(f"{k}={v}\n")
 
+
 # 4. Get/set API key or raise error
 API_KEY = (os.getenv("API_KEY") or os.getenv("GITHUB_TOKEN") or "").strip()
 if not API_KEY:
