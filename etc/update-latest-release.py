@@ -51,7 +51,7 @@ except Exception as e:
 
 # 6. Process release version
 tag = release.tag_name
-version = (tag or "").lstrip("v").strip()
+version = (tag or "").strip().lstrip("v")
 if not version:
     print("Could not determine version from latest release.")
     gh_output(changed="false", reason="no-version")
