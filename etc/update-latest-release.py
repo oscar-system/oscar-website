@@ -73,6 +73,10 @@ if os.path.exists(releasefilepath):
     with open(releasefilepath, "r") as yamlfile:
         data = yaml.safe_load(yamlfile)
         old_version = data['version']
+else:
+    print(f"Release file not found: {releasefilepath}")
+    gh_output(changed="false", reason="release-file-missing")
+    sys.exit(1)
 
 
 # 9. Early exist in case old version and new version agree
