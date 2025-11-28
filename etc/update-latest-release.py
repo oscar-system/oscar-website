@@ -51,8 +51,6 @@ except Exception as e:
 
 # 6. Process release version
 tag = release.tag_name
-if not tag: # Safety fallbacks (rarely needed but harmless)
-    tag = release.name or release.title
 version = (tag or "").lstrip("v").strip()
 if not version:
     print("Could not determine version from latest release.")
