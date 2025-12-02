@@ -37,7 +37,7 @@
   email: eetxabarri@mondragon.edu
   github: Erroxe
   website: https://sites.google.com/view/erroxe-etxabarri-alberdi/home
-  status: active
+  status: retired
   comment: Co-author of commit 6b2cef5a53b095f3998ba3444cf192ce4fadf797
   repos:
   - oscar-system/Oscar.jl
@@ -98,8 +98,9 @@
   email: jens.brandt@rwth-aachen.de
   github: flyingapfopenguin
   website: https://www.math.rwth-aachen.de/~Jens.Brandt/
-  status: retired
+  status: active
   repos:
+  - oscar-system/Oscar.jl
   - thofma/Hecke.jl
 - name: Tobias Braun
   affiliation: RWTH Aachen University
@@ -149,7 +150,7 @@
   email: chenjinghao@mail.ustc.edu.cn
   github: StardustMath
   website: https://stardust-math.github.io/
-  status: active
+  status: retired
   comment: Co-author of commit 6b2cef5a53b095f3998ba3444cf192ce4fadf797
   repos:
   - oscar-system/Oscar.jl
@@ -270,6 +271,13 @@
   status: active
   repos:
   - Nemocas/AbstractAlgebra.jl
+  - oscar-system/Oscar.jl
+- name: Marina Garrote
+  email: marina.garrote@upf.edu
+  github: marinagarrote
+  status: active
+  comment: Co-author of commit ad7e39a9abb981d0873a67477d50d3664b720e00
+  repos:
   - oscar-system/Oscar.jl
 - name: Zoe Geiselmann
   affiliation: TU Berlin
@@ -835,6 +843,7 @@
   github: Tobias271828
   status: active
   repos:
+  - oscar-system/Oscar.jl
   - thofma/Hecke.jl
 - name: Varun Trehan
   email: varuntrehan7@gmail.com
@@ -853,7 +862,7 @@
   - oscar-system/Oscar.jl
 - name: Grégory Vanuxem
   github: gvanuxem
-  status: active
+  status: retired
   comment: Who ?
   repos:
   - Nemocas/Nemo.jl
@@ -940,10 +949,3 @@
   - Nemocas/AbstractAlgebra.jl
   - oscar-system/Oscar.jl
   - thofma/Hecke.jl
-- name: Marina Garrote
-  email: marina.garrote@mis.mpg.de
-  github: garrote
-  status: active
-  comment: Co-author of commit ad7e39a9abb981d0873a67477d50d3664b720e00
-  repos:
-  - oscar-system/Oscar.jl
