@@ -20,6 +20,10 @@ There are some [exercises](https://www.math.rwth-aachen.de/homes/Thomas.Breuer/C
 
 Also some solutions [in OSCAR](solutions.jl) and [in GAP](solutions.g) for these exercise.
 
+## Slides
+
+Slides for the talks: [part 1](galway2025-part1.pdf), [part 3](galway2025-part3.pdf).
+
 ## Things to do before the Winter School
 
 1. Install OSCAR by carefully following the instructions on the [OSCAR install page]({{ site.baseurl }}/install).
