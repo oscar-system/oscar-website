@@ -18,6 +18,8 @@ This page here provides additional material related to the OSCAR portion of the 
 
 There are some [exercises](https://www.math.rwth-aachen.de/homes/Thomas.Breuer/COGENT/exercises/) available for the OSCAR and GAP courses.
 
+Also some solutions [in OSCAR](solutions.jl) and [in GAP](solutions.g) for these exercise.
+
 ## Things to do before the Winter School
 
 1. Install OSCAR by carefully following the instructions on the [OSCAR install page]({{ site.baseurl }}/install).
