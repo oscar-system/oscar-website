@@ -273,8 +273,8 @@
   - Nemocas/AbstractAlgebra.jl
   - oscar-system/Oscar.jl
 - name: Marina Garrote
-  email: marina.garrote@mis.mpg.de
-  github: garrote
+  email: marina.garrote@upf.edu
+  github: marinagarrote
   status: active
   comment: Co-author of commit ad7e39a9abb981d0873a67477d50d3664b720e00
   repos:
