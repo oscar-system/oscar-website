@@ -31,7 +31,6 @@ python3 -m pip install --upgrade -r etc/requirements.txt
 # get tutorial status
 ./etc/tutorial_status.py || :
 ./etc/update-dates.py || :
-./etc/update-latest-release.py || :
 
 # run jekyll
 bundle exec jekyll build --config _config.yml,_config_production.yml -d /srv/www/www-mathe-oscar/data/http
