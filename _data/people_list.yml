@@ -275,7 +275,7 @@
 - name: Marina Garrote
   email: marina.garrote@upf.edu
   github: marinagarrote
-  status: active
+  status: retired
   comment: Co-author of commit ad7e39a9abb981d0873a67477d50d3664b720e00
   repos:
   - oscar-system/Oscar.jl
@@ -949,3 +949,9 @@
   - Nemocas/AbstractAlgebra.jl
   - oscar-system/Oscar.jl
   - thofma/Hecke.jl
+- name: garrote
+  email: marina.garrote@mis.mpg.de
+  status: active
+  comment: Co-author of commit ad7e39a9abb981d0873a67477d50d3664b720e00
+  repos:
+  - oscar-system/Oscar.jl
