@@ -22,7 +22,7 @@ Also some solutions [in OSCAR](solutions.jl) and [in GAP](solutions.g) for these
 
 ## Slides
 
-Slides for the talks: [part 1](galway2025-part1.pdf), [part 3](galway2025-part3.pdf).
+Slides for the talks: [part 1](galway2025-part1.pdf), [part 2](galway2025-part2.pdf), [part 3](galway2025-part3.pdf), [part 4](galway2025-part4.pdf).
 
 ## Things to do before the Winter School
 
