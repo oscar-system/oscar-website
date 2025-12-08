@@ -91,7 +91,7 @@ PROJECT_TOML_URL = \
 try:
     r = requests.get(url=PROJECT_TOML_URL, timeout=60)
     t = tomli.loads(r.content.decode())
-    julia_min = t["julia"]
+    julia_min = t["compat"]["julia"]
 except Exception as e:
     print(e)
     print(
