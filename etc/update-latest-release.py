@@ -6,6 +6,8 @@ import sys
 from datetime import timezone
 from github import Github, Auth
 import yaml
+import tomli
+import requests
 
 # Constants
 TARGET_REPO = os.getenv("TARGET_REPO", "oscar-system/Oscar.jl")
@@ -85,6 +87,21 @@ if old_version == version:
     )
     sys.exit(0)
 
+# Grab julia-min version from Project.toml
+PROJECT_TOML_URL = \
+    f"https://raw.githubusercontent.com/oscar-system/Oscar.jl/refs/tags/v{version}/Project.toml"
+
+try:
+    r = requests.get(url=PROJECT_TOML_URL, timeout=60)
+    t = tomli.loads(r.content.decode())
+    julia_min = t["julia"]
+except Exception as e:
+    print(e)
+    print(
+        "Unable to fetch Oscar.jl's Project.toml. Using a default julia-min value of ",
+        JULIA_MIN_DEFAULT
+    )
+    julia_min = JULIA_MIN_DEFAULT
 
 # Write new release information and signal changes to github workflow
 RELEASESTRING = f"""version: "{version}"
@@ -92,7 +109,7 @@ year: "{dt.year}"
 month: "{dt.month}"
 day: "{dt.day}"
 date: "{dt.date()}"
-julia-min: "{JULIA_MIN}"
+julia-min: "{julia_min}"
 """
 
 print(f"RELEASEFILEPATH is {RELEASEFILEPATH}")
