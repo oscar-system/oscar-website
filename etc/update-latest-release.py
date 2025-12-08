@@ -77,10 +77,7 @@ if old_version == version:
     print(f"{RELEASEFILEPATH} already has latest version {version}. Nothing to do.")
     gh_output(
         changed="false",
-        reason="up-to-date",
         version=version,
-        old_version=old_version or "",
-        target_repo=TARGET_REPO,
     )
     sys.exit(0)
 
@@ -118,9 +115,6 @@ print(f"Updated {RELEASEFILEPATH} to version {version} (was {old_version or 'non
 
 gh_output(
     changed="true",
-    reason="updated",
     version=version,
-    old_version=old_version or "",
     published_utc=dt.isoformat(timespec="seconds"),
-    target_repo=TARGET_REPO,
 )
