@@ -44,8 +44,7 @@ try:
     release = repo.get_latest_release()
 except Exception as e:
     print(e)
-    print("Network access failed! Leaving the release file unchanged!")
-    gh_output(changed="false", reason="fetch-failed")
+    print("Failed to fetch latest release info! Leaving the release file unchanged!")
     sys.exit(1)
 
 # Process release version
@@ -53,17 +52,15 @@ tag = release.tag_name
 version = (tag or "").strip().lstrip("v")
 if not version:
     print("Could not determine version from latest release.")
-    gh_output(changed="false", reason="no-version")
     sys.exit(1)
 
 # Fetch release date/time
 dt = release.published_at
 if not dt:
     print("Could not determine release date.")
-    gh_output(changed="false", reason="no-date")
     sys.exit(1)
-dt = dt.replace(tzinfo=timezone.utc)
 
+dt = dt.replace(tzinfo=timezone.utc)
 
 # Read old version
 old_version = None
