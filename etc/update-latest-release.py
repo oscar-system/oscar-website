@@ -1,14 +1,13 @@
 #!/usr/bin/env python3
 
-# 1. Imports
+# Imports
 import os
 import sys
 from datetime import timezone
 from github import Github, Auth
 import yaml
 
-
-# 2. Constants
+# Constants
 TARGET_REPO = os.getenv("TARGET_REPO", "oscar-system/Oscar.jl")
 JULIA_MIN_DEFAULT = "1.10"
 OWNPATH = os.path.abspath(sys.argv[0])
@@ -47,8 +46,7 @@ except Exception as e:
     gh_output(changed="false", reason="fetch-failed")
     sys.exit(1)
 
-
-# 6. Process release version
+# Process release version
 tag = release.tag_name
 version = (tag or "").strip().lstrip("v")
 if not version:
@@ -56,8 +54,7 @@ if not version:
     gh_output(changed="false", reason="no-version")
     sys.exit(1)
 
-
-# 7. Fetch release date/time
+# Fetch release date/time
 dt = release.published_at
 if not dt:
     print("Could not determine release date.")
@@ -66,7 +63,7 @@ if not dt:
 dt = dt.replace(tzinfo=timezone.utc)
 
 
-# 8. Read old version
+# Read old version
 old_version = None
 if os.path.exists(RELEASEFILEPATH):
     with open(RELEASEFILEPATH, "r", encoding="utf-8") as yamlfile:
@@ -76,8 +73,7 @@ else:
     print(f"Release file not found: {RELEASEFILEPATH}")
     sys.exit(1)
 
-
-# 9. Early exist in case old version and new version agree
+# Early exit in case version hasn't changed
 if old_version == version:
     print(f"{RELEASEFILEPATH} already has latest version {version}. Nothing to do.")
     gh_output(
