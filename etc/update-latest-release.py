@@ -15,7 +15,17 @@ REPOPATH = os.path.dirname(os.path.dirname(OWNPATH))
 DATAPATH = os.path.join(REPOPATH, "_data")
 RELEASEFILEPATH = os.path.join(DATAPATH, "release.yml")
 
-# 3. Function to write simple key=value outputs for GitHub Actions.
+# Get/set API key or raise error
+API_KEY = (os.getenv("API_KEY") or os.getenv("GITHUB_TOKEN") or "").strip()
+if not API_KEY:
+    print("API key was not found! Set API_KEY or GITHUB_TOKEN to a GitHub token.")
+    sys.exit(1)
+
+auth = Auth.Token(API_KEY)
+g = Github(auth=auth)
+
+
+# Function to write simple key=value outputs for GitHub Actions.
 def gh_output(**kvs):
     path = os.getenv("GITHUB_OUTPUT")
     if not path:
@@ -26,17 +36,7 @@ def gh_output(**kvs):
             f.write(f"{k}={v}\n")
 
 
-# 4. Get/set API key or raise error
-API_KEY = (os.getenv("API_KEY") or os.getenv("GITHUB_TOKEN") or "").strip()
-if not API_KEY:
-    print("API key was not found! Set API_KEY or GITHUB_TOKEN to a GitHub token.")
-    gh_output(changed="false", reason="no-token")
-    sys.exit(1)
-auth = Auth.Token(API_KEY)
-g = Github(auth=auth)
-
-
-# 5. Fetch release
+# Fetch release
 try:
     repo = g.get_repo(TARGET_REPO)
     release = repo.get_latest_release()
