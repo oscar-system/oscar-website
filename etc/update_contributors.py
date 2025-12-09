@@ -89,27 +89,8 @@ summarystring = ""  # intermediate output for information and debugging
 
 
 ##########################################
-# 3. Read information from contributors.yml
+# All function definitions live here now
 ##########################################
-
-try:
-    with open(CONTRIBUTORS_FILE, "r", encoding="utf-8") as ymlfile:
-        current_contributors = yaml.safe_load(ymlfile) or []
-except FileNotFoundError:
-    print(f"Error: Could not find {CONTRIBUTORS_FILE}")
-    sys.exit(1)
-except yaml.YAMLError as e:
-    print(f"Error parsing YAML file {CONTRIBUTORS_FILE}: {e}")
-    sys.exit(1)
-
-for person in current_contributors:
-    person.setdefault("repos", [])
-
-
-##########################################
-# 4. Build fast alias lookup
-##########################################
-
 
 def _norm_name(s: str) -> str:
     return " ".join((s or "").split()).casefold()
@@ -136,10 +117,50 @@ def lookup_user(gh, email, name):
     )
     return user
 
+##########################################
+# 6. Helpers to find (co)-author details
+##########################################
 
-##########################################
-# 5. Find (co)authors of all repos
-##########################################
+def find_author_github_nick(email: str, repos: list[str]) -> str | None:
+    if not email:
+        return None
+    for r in repos:
+        commit_hash = git_out(
+            _repo_dir(r),
+            "log",
+            GIT_LOG_SINCE,
+            f"--author={email}",
+            "--format=%H",
+            "-n",
+            "1",
+        ).strip()
+        if not commit_hash:
+            continue
+        url = f"https://api.github.com/repos/{r}/commits/{commit_hash}"
+        resp = requests.get(url, headers={"Authorization": f"Bearer {API_KEY}"})
+        if resp.status_code != 200:
+            continue
+        author = resp.json().get("author")
+        if author and author.get("login"):
+            return author["login"]
+    return None
+
+
+def find_coauthor_commit(name: str, email: str, repos: list[str]) -> str:
+    targets = {t for t in (name.casefold(), email.casefold()) if t}
+    for r in repos:
+        out = git_out(_repo_dir(r), "log", GIT_LOG_SINCE, GIT_LOG_FORMAT_2)
+        for line in out.splitlines():
+            low = line.casefold()
+            if not any(t in low for t in targets):
+                continue
+            m = HASH_RE.search(line)
+            if m:
+                return m.group(0)
+    return "(no hash found)"
+
+# find co-authors
+
 
 suspected_bots = set([])
 
@@ -219,6 +240,45 @@ def git_out(repo_dir: str, *args: str) -> str:
     return res.stdout
 
 
+
+##########################################
+# 3. Read information from contributors.yml
+##########################################
+
+try:
+    with open(CONTRIBUTORS_FILE, "r", encoding="utf-8") as ymlfile:
+        current_contributors = yaml.safe_load(ymlfile) or []
+except FileNotFoundError:
+    print(f"Error: Could not find {CONTRIBUTORS_FILE}")
+    sys.exit(1)
+except yaml.YAMLError as e:
+    print(f"Error parsing YAML file {CONTRIBUTORS_FILE}: {e}")
+    sys.exit(1)
+
+for person in current_contributors:
+    person.setdefault("repos", [])
+
+
+##########################################
+# 4. Build fast alias lookup
+##########################################
+
+for p in current_contributors:
+    if p.get("email"):
+        email_owner[p.get("email").casefold()] = p
+    for ae in (p.get("aka_email") or ()):
+        email_owner[ae.casefold()] = p
+    if p.get("name"):
+        name_owner[_norm_name(p.get("name"))] = p
+    for an in (p.get("aka") or ()):
+        name_owner[_norm_name(an)] = p
+    if p.get("github"):
+        name_owner[_norm_name(p.get("github"))] = p
+
+##########################################
+# 5. Find (co)authors of all repos
+##########################################
+
 os.makedirs(REPOS_DIR, exist_ok=True)
 for repo in REPO_LIST:
     print(f"Processing {repo}...")
@@ -233,50 +293,6 @@ for repo in REPO_LIST:
         repo_dir, "log", "--use-mailmap", GIT_LOG_SINCE, GIT_LOG_FORMAT_1
     )
     process_log_into_aggregate(res_stdout, repo)
-
-
-##########################################
-# 6. Helpers to find (co)-author details
-##########################################
-
-
-def find_author_github_nick(email: str, repos: list[str]) -> str | None:
-    if not email:
-        return None
-    for r in repos:
-        commit_hash = git_out(
-            _repo_dir(r),
-            "log",
-            GIT_LOG_SINCE,
-            f"--author={email}",
-            "--format=%H",
-            "-n",
-            "1",
-        ).strip()
-        if not commit_hash:
-            continue
-        url = f"https://api.github.com/repos/{r}/commits/{commit_hash}"
-        resp = requests.get(url, headers={"Authorization": f"Bearer {API_KEY}"})
-        if resp.status_code != 200:
-            continue
-        author = resp.json().get("author")
-        if author and author.get("login"):
-            return author["login"]
-    return None
-
-
-def find_coauthor_commit(name: str, email: str, repos: list[str]) -> str:
-    targets = {t for t in (name.casefold(), email.casefold()) if t}
-    for r in repos:
-        out = git_out(_repo_dir(r), "log", GIT_LOG_SINCE, GIT_LOG_FORMAT_2)
-        for line in out.splitlines():
-            low = line.casefold()
-            if not any(t in low for t in targets):
-                continue
-            m = HASH_RE.search(line)
-            if m:
-                return m.group(0)
-    return "(no hash found)"
 
 
 ##########################################
