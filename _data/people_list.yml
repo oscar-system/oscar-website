@@ -279,6 +279,8 @@
   comment: Co-author of commit ad7e39a9abb981d0873a67477d50d3664b720e00
   repos:
   - oscar-system/Oscar.jl
+  aka:
+  - garrote
 - name: Zoe Geiselmann
   affiliation: TU Berlin
   email: geiselmann@math.tu-berlin.de
@@ -949,3 +951,4 @@
   - Nemocas/AbstractAlgebra.jl
   - oscar-system/Oscar.jl
   - thofma/Hecke.jl
+
