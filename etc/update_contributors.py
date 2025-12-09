@@ -93,7 +93,13 @@ summarystring = ""  # intermediate output for information and debugging
 ##########################################
 
 def norm_name(s: str) -> str:
-    return " ".join((s or "").split()).casefold()
+    # return " ".join((s or "").split()).casefold()
+    # if s is empty string, use s as empty string (why the need for this if?)
+    # split s into thing separated by space
+    # join the separated parts of s by spaces
+    # casefold the resulting thing
+    # that just means we can s.casefold(), right?
+    return s.casefold()
 
 
 for p in current_contributors:
