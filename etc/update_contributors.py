@@ -341,7 +341,7 @@ for p in current_contributors:
 # Write new content to CONTRIBUTORS_FILE
 people_sorted = sorted(
     current_contributors,
-    key=lambda d: (d.get("name", "").split()[-1], d.get("name", "")),
+    key=lambda d: (d.get("name", "").split()[-1].lower())
 )
 ordered_people = [
     dict(sorted(p.items(), key=lambda kv: SORT_WEIGHT.get(kv[0], 999)))
