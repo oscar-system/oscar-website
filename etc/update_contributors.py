@@ -92,7 +92,7 @@ summarystring = ""  # intermediate output for information and debugging
 # All function definitions live here now
 ##########################################
 
-def _norm_name(s: str) -> str:
+def norm_name(s: str) -> str:
     return " ".join((s or "").split()).casefold()
 
 
@@ -102,18 +102,18 @@ for p in current_contributors:
     for ae in p.get("aka_email") or ():
         email_owner[ae.casefold()] = p
     if p.get("name"):
-        name_owner[_norm_name(p.get("name"))] = p
+        name_owner[norm_name(p.get("name"))] = p
     for an in p.get("aka") or ():
-        name_owner[_norm_name(an)] = p
+        name_owner[norm_name(an)] = p
     if p.get("github"):
-        name_owner[_norm_name(p.get("github"))] = p
+        name_owner[norm_name(p.get("github"))] = p
 
 
 def lookup_user(gh, email, name):
     user = (
-        (gh and name_owner.get(_norm_name(gh)))
+        (gh and name_owner.get(norm_name(gh)))
         or (email and email_owner.get(email.casefold()))
-        or name_owner.get(_norm_name(name))
+        or name_owner.get(norm_name(name))
     )
     return user
 
@@ -121,12 +121,13 @@ def lookup_user(gh, email, name):
 # 6. Helpers to find (co)-author details
 ##########################################
 
+
 def find_author_github_nick(email: str, repos: list[str]) -> str | None:
     if not email:
         return None
     for r in repos:
         commit_hash = git_out(
-            _repo_dir(r),
+            full_repo_dir(r),
             "log",
             GIT_LOG_SINCE,
             f"--author={email}",
@@ -149,7 +150,7 @@ def find_author_github_nick(email: str, repos: list[str]) -> str | None:
 def find_coauthor_commit(name: str, email: str, repos: list[str]) -> str:
     targets = {t for t in (name.casefold(), email.casefold()) if t}
     for r in repos:
-        out = git_out(_repo_dir(r), "log", GIT_LOG_SINCE, GIT_LOG_FORMAT_2)
+        out = git_out(full_repo_dir(r), "log", GIT_LOG_SINCE, GIT_LOG_FORMAT_2)
         for line in out.splitlines():
             low = line.casefold()
             if not any(t in low for t in targets):
@@ -166,7 +167,8 @@ suspected_bots = set([])
 
 
 def process_log_into_aggregate(res: str, repo: str) -> None:
-    global summarystring, aggregate, suspected_bots
+    global summarystring  # , aggregate, suspected_bots # linter complains about aggregate and
+                                                        # suspected_bots
     for raw in res.splitlines():
         line = raw.strip()
         if not line:
@@ -193,11 +195,11 @@ def process_log_into_aggregate(res: str, repo: str) -> None:
             )
             continue
 
-        if email.casefold() in KNOWN_BOT_EMAILS or _norm_name(name) in KNOWN_BOT_NAMES:
+        if email.casefold() in KNOWN_BOT_EMAILS or norm_name(name) in KNOWN_BOT_NAMES:
             suspected_bots.add((repo, line))
             continue
 
-        owner = email_owner.get(email.casefold()) or name_owner.get(_norm_name(name))
+        owner = email_owner.get(email.casefold()) or name_owner.get(norm_name(name))
         known_github = owner.get("github") if owner else None
 
         if known_github:
@@ -224,7 +226,7 @@ def process_log_into_aggregate(res: str, repo: str) -> None:
             rec["name"], rec["email"] = name, email
 
 
-def _repo_dir(repo_full: str) -> str:
+def full_repo_dir(repo_full: str) -> str:
     return os.path.join(REPOS_DIR, repo_full.split("/")[-1])
 
 
@@ -240,10 +242,10 @@ def git_out(repo_dir: str, *args: str) -> str:
     return res.stdout
 
 
-
 ##########################################
 # 3. Read information from contributors.yml
 ##########################################
+
 
 try:
     with open(CONTRIBUTORS_FILE, "r", encoding="utf-8") as ymlfile:
@@ -269,11 +271,11 @@ for p in current_contributors:
     for ae in (p.get("aka_email") or ()):
         email_owner[ae.casefold()] = p
     if p.get("name"):
-        name_owner[_norm_name(p.get("name"))] = p
+        name_owner[norm_name(p.get("name"))] = p
     for an in (p.get("aka") or ()):
-        name_owner[_norm_name(an)] = p
+        name_owner[norm_name(an)] = p
     if p.get("github"):
-        name_owner[_norm_name(p.get("github"))] = p
+        name_owner[norm_name(p.get("github"))] = p
 
 ##########################################
 # 5. Find (co)authors of all repos
@@ -282,7 +284,7 @@ for p in current_contributors:
 os.makedirs(REPOS_DIR, exist_ok=True)
 for repo in REPO_LIST:
     print(f"Processing {repo}...")
-    repo_dir = _repo_dir(repo)
+    repo_dir = full_repo_dir(repo)
     if not os.path.isdir(repo_dir):
         subprocess.run(
             ["git", "clone", f"https://github.com/{repo}", repo_dir], check=True
@@ -299,8 +301,8 @@ for repo in REPO_LIST:
 # 7. Post-aggregation enrichment & updates
 ##########################################
 
-_prev_status = {id(p): p.get("status") for p in current_contributors}
-_seen_current = set()
+prev_status = {id(p): p.get("status") for p in current_contributors}
+seen_current = set()
 new_names = []
 for key, rec in aggregate.items():
     name, email, repos = rec["name"], rec["email"], rec["repos"]
@@ -311,8 +313,8 @@ for key, rec in aggregate.items():
         user["repos"].extend(r for r in repos if r not in have)
         if gh and not user.get("github"):
             user["github"] = gh
-            name_owner[_norm_name(gh)] = user
-        _seen_current.add(id(user))
+            name_owner[norm_name(gh)] = user
+        seen_current.add(id(user))
     else:  # Brand-new person: add immediately, mark seen, collect name for summary
         newp = {
             "name": name,
@@ -322,19 +324,19 @@ for key, rec in aggregate.items():
         }
         if gh:
             newp["github"] = gh
-            name_owner[_norm_name(gh)] = newp
+            name_owner[norm_name(gh)] = newp
         else:
             newp["comment"] = (
                 f"Co-author of commit {find_coauthor_commit(name, email, repos)}"
             )
         current_contributors.append(newp)
-        _seen_current.add(id(newp))
+        seen_current.add(id(newp))
         new_names.append(name)
 
 for p in current_contributors:
     if p.get("status") == "pi":
         continue
-    p["status"] = "active" if id(p) in _seen_current else "retired"
+    p["status"] = "active" if id(p) in seen_current else "retired"
     p["repos"] = sorted(set(p["repos"]))
 
 
@@ -366,14 +368,14 @@ if len(suspected_bots) > 0:
 revived_names = [
     p.get("name")
     for p in current_contributors
-    if id(p) in _seen_current
-    and id(p) in _prev_status
-    and _prev_status[id(p)] == "retired"
+    if id(p) in seen_current
+    and id(p) in prev_status
+    and prev_status[id(p)] == "retired"
 ]
 newly_retired_names = [
     p.get("name")
     for p in current_contributors
-    if p.get("status") == "retired" and _prev_status.get(id(p)) == "active"
+    if p.get("status") == "retired" and prev_status.get(id(p)) == "active"
 ]
 summary = (
     "This PR updates the contributors list based on the latest changes.\n"
