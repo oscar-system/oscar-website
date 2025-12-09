@@ -102,25 +102,13 @@ def norm_name(s: str) -> str:
     return s.casefold()
 
 
-for p in current_contributors:
-    if p.get("email"):
-        email_owner[p.get("email").casefold()] = p
-    for ae in p.get("aka_email") or ():
-        email_owner[ae.casefold()] = p
-    if p.get("name"):
-        name_owner[norm_name(p.get("name"))] = p
-    for an in p.get("aka") or ():
-        name_owner[norm_name(an)] = p
-    if p.get("github"):
-        name_owner[norm_name(p.get("github"))] = p
-
-
-def lookup_user(gh, email, name):
-    user = (
-        (gh and name_owner.get(norm_name(gh)))
-        or (email and email_owner.get(email.casefold()))
-        or name_owner.get(norm_name(name))
-    )
+def lookup_user(gh_username: str, email: str, name: str) -> dict | None:
+    if gh_username:
+        user = name_owner.get(norm_name(gh_username))
+    elif email:
+        user = email_owner.get(email.casefold())
+    else:
+        user = name_owner.get(norm_name(name))
     return user
 
 ##########################################
@@ -128,9 +116,9 @@ def lookup_user(gh, email, name):
 ##########################################
 
 
-def find_author_github_nick(email: str, repos: list[str]) -> str | None:
+def find_author_github_nick(email: str, repos: list[str]) -> str:
     if not email:
-        return None
+        return ""
     for r in repos:
         commit_hash = git_out(
             full_repo_dir(r),
@@ -150,7 +138,7 @@ def find_author_github_nick(email: str, repos: list[str]) -> str | None:
         author = resp.json().get("author")
         if author and author.get("login"):
             return author["login"]
-    return None
+    return ""
 
 
 def find_coauthor_commit(name: str, email: str, repos: list[str]) -> str:
@@ -274,11 +262,11 @@ for person in current_contributors:
 for p in current_contributors:
     if p.get("email"):
         email_owner[p.get("email").casefold()] = p
-    for ae in (p.get("aka_email") or ()):
+    for ae in p.get("aka_email") or ():
         email_owner[ae.casefold()] = p
     if p.get("name"):
         name_owner[norm_name(p.get("name"))] = p
-    for an in (p.get("aka") or ()):
+    for an in p.get("aka") or ():
         name_owner[norm_name(an)] = p
     if p.get("github"):
         name_owner[norm_name(p.get("github"))] = p
