@@ -15,15 +15,26 @@ If you have suggestions or wishes, please contact the organisers.
 ### Monday
 
 - 14:00 Begin of official program, program planning
+- 16:00 Status reports
 
 ### Tuesday
 
+- 12:15 Status reports
+- 16:00 Status reports
+
 ### Wednesday
 
+- 12:15 Status reports
+- 14:00–16:30 Research talks
+- 17:30 Dinner (self-paid)
+
 ### Thursday
+- 12:15 Status reports
+- 16:00 Status reports
 
 ### Friday
 
+- 12:00 Final status reports
 - 12:30 End of Coding Sprint
 
 
