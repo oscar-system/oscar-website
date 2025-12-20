@@ -15,7 +15,7 @@ If you have suggestions or wishes, please contact the organisers.
 ### Monday
 
 - 14:00 Begin of official program, program planning
-- 16:30 Status reports
+- 17:00 Status reports
 
 ### Tuesday
 
