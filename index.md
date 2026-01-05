@@ -9,6 +9,19 @@ Welcome to **OSCAR**, an innovative **Open Source Computer Algebra Research** sy
 
 Discover more about our project and vision on our [About]({{site.baseurl}}/about) page.
 
+<div style="background: #f4f4f4;
+  border: 2px solid #aaa;
+  padding: 1em 1.2em;
+  margin: 1.5em 0;
+  font-size: 0.95em;
+  line-height: 1.5;">
+  <strong>In memoriam:</strong>
+  Hans Schönemann passed away on December 28, 2025.
+  A founding member of the OSCAR team and a central contributor to
+  Singular, Hans was a respected expert in computer algebra
+  and a valued colleague and friend. He will be deeply missed.
+</div>
+
 ---
 
 ## 📅 Upcoming Events
