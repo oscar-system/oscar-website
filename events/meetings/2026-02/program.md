@@ -45,5 +45,4 @@ If you have suggestions or wishes, please contact the organisers.
 
 ## Ideas
 
-Here are some ideas for topics we *could* tackle.
-What we actually will do will depend on who participates.
+Please add your ideas to our hackmd.
