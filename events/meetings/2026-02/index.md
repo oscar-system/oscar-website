@@ -27,6 +27,11 @@ weight: 1
 {% endfor %}
 </ul>
 
+Hotel suggestions: 
+ - [B&B HOTEL Berlin-Tiergarten](https://www.hotel-bb.com/en/hotel/berlin-tiergarten?arrival_date=02%2F23%2F2026&departure_date=02%2F27%2F2026&destination=Berlin-Tiergarten)
+ - [Holiday Inn - the niu, Flash Berlin Charlottenburg](https://www.ihg.com/hotels/us/en/find-hotels/select-roomrate?qDest=Franklinstraße%2025,%20Berlin,%20DE&qPt=CASH&qCiD=23&qCoD=27&qCiMy=012026&qCoMy=012026&qAdlt=1&qChld=0&qRms=1&qIta=99618783&qRtP=6CBARC&qSlH=BERFB)
+ - [Garner Hotel Berlin - Charlottenburg](https://www.ihg.com/hotels/us/en/find-hotels/select-roomrate?qDest=Franklinstra%C3%9Fe%2022,%20Berlin,%20DE&qPt=CASH&qCiD=23&qCoD=27&qCiMy=012026&qCoMy=012026&qAdlt=1&qChld=0&qRms=1&qIta=99618783&qRtP=6CBARC&qSlH=BERSY&qRmFltr=)
+
 ## Contact
 
 If you have questions or suggestions, please contact the organizers,
