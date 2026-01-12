@@ -45,4 +45,4 @@ If you have suggestions or wishes, please contact the organisers.
 
 ## Ideas
 
-Please add your ideas to our hackmd.
+Please add your ideas to our hackmd!
