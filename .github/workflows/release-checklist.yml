@@ -1,8 +1,6 @@
-name: OSCAR Release Watcher (Issue only)
+name: OSCAR Release Watcher
 
 on:
-  push:
-    branches: [gh-pages]
   schedule:
     - cron: "30 6 * * *"
   workflow_dispatch: {}
@@ -12,51 +10,64 @@ concurrency:
   cancel-in-progress: true
 
 permissions:
-  contents: read
+  contents: write
   issues: write
+  pull-requests: write
 
 jobs:
-  release-checlist:
+  release-check:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v6
         with:
           python-version: "3.x"
 
-      - name: Install deps
+      - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install PyGithub
+          python -m pip install -r etc/requirements.txt
 
-      - name: Check latest OSCAR release (GitHub-only)
-        id: probe
+      - name: Update latest release file
+        id: release
         env:
           API_KEY: ${{ secrets.GITHUB_TOKEN }}
           TARGET_REPO: oscar-system/Oscar.jl
-          RECENCY_DAYS: "999"
-          ISSUE_PREFIX: "OSCAR"
-          ISSUE_LABELS: "release-process"
         run: |
-          python3 etc/release-checklist.py
+          python3 etc/update-latest-release.py
 
-      - name: Create checklist issue
-        if: steps.probe.outputs.new == 'true'
-        uses: actions/github-script@v7
+      - name: Open release checklist issue
+        if: steps.release.outputs.changed == 'true'
+        uses: JasonEtco/create-an-issue@v2
+        # marketplace action : https://github.com/marketplace/actions/create-an-issue
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VERSION: ${{ steps.release.outputs.version }}
+          PUBLISHED_UTC: ${{ steps.release.outputs.published_utc }}
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            const title = ${{ toJson(steps.probe.outputs.issue_title) }};
-            const body  = ${{ toJson(steps.probe.outputs.issue_body) }};
-            const labels = ['release-process'];
-            await github.rest.issues.create({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              title,
-              body,
-              labels
-            });
+          filename: .github/release-checklist-template.md
+          assignees: HereAround, aaruni96
+          update_existing: true
+          search_existing: open          
+
+      - name: Create PR updating latest release
+        if: steps.release.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v7
+        with:
+          commit-message: "Update latest OSCAR release to v${{ steps.release.outputs.version }}"
+          title: "Update latest OSCAR release to v${{ steps.release.outputs.version }}"
+          body: |
+            This PR updates `_data/release.yml` to the latest OSCAR release `v${{ steps.release.outputs.version }}`.
+
+            _Opened automatically by a scheduled workflow._
+          branch: "bot/update-latest-release-v${{ steps.release.outputs.version }}"
+          base: gh-pages
+          labels: "release-process"
+          author: "update_release[bot] <update_release[bot]@users.noreply.github.com>"
+          committer: "update_release[bot] <update_release[bot]@users.noreply.github.com>"

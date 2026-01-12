@@ -1,208 +1,264 @@
-- title: COGENT Winter School
+- title: "Women in Algebra and Symbolic Computation 2026"
+  start-date: "2026-12-07"
+  end-date: "2026-12-09"
+  location: "Kurparkhotel, Bad Dürkheim, Germany"
+  satellite: "Yes"
+
+- title: "DMV Annual Meeting 2026"
+  start-date: "2026-09-07"
+  end-date: "2026-09-10"
+  location: "University of Konstanz, Konstanz, Germany"
+  website: "https://www.dmv-jahrestagung.de/"
+  satellite: "Yes"
+
+- title: "2026 SIAM Annual Meeting"
+  start-date: "2026-07-06"
+  end-date: "2026-07-10"
+  location: "Huntington Convention Center of Cleveland, Cleveland, Ohio, USA"
+  website: "https://www.siam.org/conferences-events/siam-conferences/an26/"
+  satellite: "Yes"
+
+- title: "Foundations of Computational Mathematics 2026"
+  start-date: "2026-07-08"
+  end-date: "2026-07-18"
+  location: "Faculty of Mathematics, University of Vienna, Austria"
+  website: "https://focm2026.univie.ac.at/"
+  satellite: "Yes"
+
+- title: "Seventeenth Algorithmic Number Theory Symposium"
+  start-date: "2026-07-06"
+  end-date: "2026-07-10"
+  location: "Rijksuniversiteit Groningen, Netherlands"
+  website: "https://www.antsxvii.org/"
+  satellite: "Yes"
+
+- title: "ISSAC 2026"
+  start-date: "2026-07-13"
+  end-date: "2026-07-17"
+  location: "Oldenburg, Germany"
+  website: "https://www.issac-conference.org/2026/"
+  satellite: "Yes"
+
+- title: "Developments in algorithmic, discrete and tropical geometry"
+  start-date: "2026-02-02"
+  end-date: "2026-02-04"
+  location: "Zuse Institute Berlin, Berlin, Germany"
+  website: "https://mathconf.eu/adtg-2026/"
+  satellite: "Yes"
+
+- title: "albatross-2026: ALgeBrAic meThods foR pOlynomial System Solving 2026"
+  start-date: "2026-09-01"
+  end-date: "2026-09-04"
+  location: "Sorbonne University, Paris, France"
+  website: "https://albatross-2026.sciencesconf.org"
+  satellite: "Yes"
+
+- title: "COGENT Winter School"
   start-date: "2025-12-01"
   end-date: "2025-12-12"
-  location: University of Galway, Ireland
-  website: https://www.cogent-network.eu/en/COGENT-WinterSchool
+  location: "University of Galway, Galway, Ireland"
+  website: "https://www.cogent-network.eu/en/COGENT-WinterSchool"
   satellite: "Yes"
 
-- title: GAP Days Spring 2026
+- title: "GAP Days Spring 2026"
   start-date: "2026-05-04"
   end-date: "2026-05-08"
-  location: University of Porto, Portugal
-  website: https://www.gapdays.de/gapdays2026-spring/
+  location: "University of Porto, Porto, Portugal"
+  website: "https://www.gapdays.de/gapdays2026-spring/"
   satellite: "Yes"
 
-- title: OSCAR Coding Sprint
+- title: "OSCAR Coding Sprint"
   start-date: "2026-02-23"
   end-date: "2026-02-27"
-  location: Berlin
+  location: "TU Berlin, Berlin, Germany"
+  website: "https://www.oscar-system.org/events/meetings/2026-02/"
   satellite: "No"
 
-- title: Effective Methods in Algebraic Geometry 2026 
+- title: "Effective Methods in Algebraic Geometry 2026"
   start-date: "2026-07-6"
   end-date: "2026-07-10"
-  location: Durham, UK
-  website: https://maths.dur.ac.uk/mega2026/
+  location: "Durham University, Durham, UK"
+  website: "https://maths.dur.ac.uk/mega2026/"
   satellite: "Yes"
 
-- title: JuliaCon 2026
+- title: "JuliaCon 2026"
   start-date: "2026-08-10"
   end-date: "2026-08-15"
-  location: Mainz
-  website: https://juliacon.org/2026/
+  location: "Mainz, Germany"
+  website: "https://juliacon.org/2026/"
   satellite: "Yes"
 
-- title: ICMS 2026
+- title: "ICMS 2026"
   start-date: "2026-07-20"
   end-date: "2026-07-23"
-  location: Waterloo, Canada
-  website: https://cargo.wlu.ca/ICMS2026/
+  location: "Wilfrid Laurier University and University of Waterloo, Waterloo, Canada"
+  website: "https://cargo.wlu.ca/ICMS2026/"
   satellite: "Yes"
 
-- title: MaRDI Annual Meeting 2025
+- title: "MaRDI Annual Meeting 2025"
   start-date: "2025-10-08"
   end-date: "2025-10-10"
-  location: Munich
-  website: https://www.math.cit.tum.de/math/aktuelles/article/mardi-annual-meeting-2025/
+  location: "TU Munich, Munich, Germany"
+  website: "https://www.math.cit.tum.de/math/aktuelles/article/mardi-annual-meeting-2025/"
   satellite: "Yes"
 
-- title: Algebraic methods in dynamics and particle physics
+- title: "Algebraic methods in dynamics and particle physics"
   start-date: "2025-10-15"
   end-date: "2025-10-17"
-  location: Saarbrücken
-  website: https://wp.mpi-sws.org/dynaverse2025/
+  location: "MPI-SWS, Saarbrücken, Germany"
+  website: "https://wp.mpi-sws.org/dynaverse2025/"
   satellite: "Yes"
 
-- title: Annual meeting of SFB-TRR 195
+- title: "Annual meeting of SFB-TRR 195"
   start-date: "2025-09-22"
   end-date: "2025-09-25"
-  location: Tübingen
-  website: https://www.math.uni-tuebingen.de/de/forschung/kombinatorische-algebraische-geometrie/sfb-trr-195/annual-meeting-2025
+  location: "Tübingen University, Tübingen, Germany"
+  website: "https://www.math.uni-tuebingen.de/de/forschung/kombinatorische-algebraische-geometrie/sfb-trr-195/annual-meeting-2025"
   satellite: "Yes"
 
-- title: 11th Conference of the Fachgruppe Computeralgebra
+- title: "11th Conference of the Fachgruppe Computeralgebra"
   start-date: "2025-06-02"
   end-date: "2025-06-04"
-  location: MPI Leipzig
-  website: https://www.mis.mpg.de/de/events/series/the-11th-conference-of-the-fachgruppe-computeralgebra
+  location: "MPI Leipzig, Leipzig, Germany"
+  website: "https://www.mis.mpg.de/de/events/series/the-11th-conference-of-the-fachgruppe-computeralgebra"
   satellite: "Yes"
 
-- title: OSCAR Coding Sprint
+- title: "OSCAR Coding Sprint"
   start-date: "2025-03-31"
   end-date: "2025-04-04"
-  location: RPTU Kaiserslautern
-  website: https://www.oscar-system.org/events/meetings/2025-03/
+  location: "RPTU Kaiserslautern-Landau, Kaiserslautern, Germany"
+  website: "https://www.oscar-system.org/events/meetings/2025-03/"
   satellite: "No"
 
-- title: Summer School 2025 “Computer Algebra with OSCAR”
+- title: "Summer School 2025 “Computer Algebra with OSCAR”"
   end-date: "2025-09-19"
   start-date: "2025-09-15"
-  location: Pfalzakademie, Lambrecht
-  website: https://www.oscar-system.org/events/meetings/2025-09/
+  location: "Pfalzakademie, Lambrecht, Germany"
+  website: "https://www.oscar-system.org/events/meetings/2025-09/"
   satellite: "No"
 
-- title: Macaulay2 in the Sciences 
+- title: "Macaulay2 in the Sciences"
   end-date: "2024-11-28"
   start-date: "2024-11-25"
-  location: MPI Leipzig
-  website: https://www.mis.mpg.de/events/series/macaulay2-in-the-sciences
+  location: "MPI Leipzig, Leipzig, Germany"
+  website: "https://www.mis.mpg.de/events/series/macaulay2-in-the-sciences"
   satellite: "Yes"
 
-- title: LEAN meets MaRDI and OSCAR
+- title: "LEAN meets MaRDI and OSCAR"
   end-date: "2024-12-06"
   start-date: "2024-12-05"
-  location: TU Berlin
-  website: https://polymake.org/doku.php/workshops/lean_workshop1224
+  location: "TU Berlin, Berlin, Germany"
+  website: "https://polymake.org/doku.php/workshops/lean_workshop1224"
   satellite: "Yes"
 
-- title: Computational Algebraic Geometry Workshop
+- title: "Computational Algebraic Geometry Workshop"
   end-date: "2024-11-22"
   start-date: "2024-11-18"
-  location: Durham University
-  website: https://sites.google.com/view/durhamcompalggeom/home
+  location: "Durham University, Durham, UK"
+  website: "https://sites.google.com/view/durhamcompalggeom/home"
   satellite: "Yes"
 
-- title: MaRDI Annual Meeting 2024
+- title: "MaRDI Annual Meeting 2024"
   end-date: "2024-11-20"
   start-date: "2024-11-18"
-  location: Fraunhofer ITWM Kaiserslautern
-  website: https://www.itwm.fraunhofer.de/de/messen-veranstaltungen/2024/2024_11_18_mardi-annual-meeting.html
+  location: "Fraunhofer ITWM, Kaiserslautern, Germany"
+  website: "https://www.itwm.fraunhofer.de/de/messen-veranstaltungen/2024/2024_11_18_mardi-annual-meeting.html"
   satellite: "Yes"
 
-- title: OSCAR Workshop
+- title: "OSCAR Workshop"
   end-date: "2024-09-20"
   start-date: "2024-09-16"
-  location: RPTU Kaiserslautern
-  website: https://www.oscar-system.org/events/meetings/2024-09/
+  location: "RPTU Kaiserslautern-Landau, Kaiserslautern, Germany"
+  website: "https://www.oscar-system.org/events/meetings/2024-09/"
   satellite: "No"
 
-- title: SFB-TRR 195+358 Coactive, collaborative, coprime.
+- title: "SFB-TRR 195+358 Coactive, collaborative, coprime."
   end-date: "2023-09-21"
   start-date: "2023-09-20"
-  location: Paderborn University
-  website: https://www.oscar-system.org/events/meetings/2023-09/
+  location: "Paderborn University, Paderborn, Germany"
+  website: "https://www.oscar-system.org/events/meetings/2023-09/"
   satellite: "No"
 
-- title: OSCAR developer meeting
+- title: "OSCAR developer meeting"
   end-date: "2023-02-23"
   start-date: "2023-02-21"
-  location: RPTU Kaiserslautern-Landau
-  website: https://www.oscar-system.org/events/meetings/2023-02/
+  location: "RPTU Kaiserslautern-Landau, Kaiserslautern, Germany"
+  website: "https://www.oscar-system.org/events/meetings/2023-02/"
   satellite: "No"
 
-- title: OSCAR Workshop
+- title: "OSCAR Workshop"
   end-date: "2022-10-14"
   start-date: "2022-10-10"
-  location: Uni Saarbrücken
-  website: https://www.oscar-system.org/events/meetings/2022-10/
+  location: "Saarbrücken University, Saarbrücken, Germany"
+  website: "https://www.oscar-system.org/events/meetings/2022-10/"
   satellite: "No"
 
-- title: OSCAR developer meeting - Gröbner Base and Orderings in Oscar
+- title: "OSCAR developer meeting - Gröbner Base and Orderings in Oscar"
   end-date: "2021-10-08"
   start-date: "2021-10-04"
-  location: TU Kaiserslautern / Virtual
-  website: https://www.oscar-system.org/events/meetings/2021-10/
+  location: "TU Kaiserslautern, Kaiserslautern, Germany / Virtual Reality"
+  website: "https://www.oscar-system.org/events/meetings/2021-10/"
   satellite: "No"
 
-- title: Summer School "Computer algebra"
+- title: "Summer School ”Computer algebra”"
   end-date: "2021-09-10"
   start-date: "2021-09-06"
-  location: Virtual Reality
-  website: https://www.oscar-system.org/events/meetings/2021-09/
+  location: "Virtual Reality"
+  website: "https://www.oscar-system.org/events/meetings/2021-09/"
   satellite: "No"
 
-- title: OSCAR documentation sprint
+- title: "OSCAR documentation sprint"
   end-date: "2021-07-28"
   start-date: "2021-07-26"
-  location: TU Kaiserslautern / Virtual Reality
-  website: https://www.oscar-system.org/events/meetings/2021-07/
+  location: "TU Kaiserslautern, Kaiserslautern, Germany / Virtual Reality"
+  website: "https://www.oscar-system.org/events/meetings/2021-07/"
   satellite: "No"
 
-- title: OSCAR developer meeting
+- title: "OSCAR developer meeting"
   end-date: "2021-03-05"
   start-date: "2021-03-01"
-  location: TU Kaiserslautern / Virtual Reality
-  website: https://www.oscar-system.org/events/meetings/2021-03/
+  location: "TU Kaiserslautern, Kaiserslautern, Germany / Virtual Reality"
+  website: "https://www.oscar-system.org/events/meetings/2021-03/"
   satellite: "No"
 
-- title: Sage/Oscar Days for Combinatorial Algebraic Geometry (ICERM)
+- title: "Sage/Oscar Days for Combinatorial Algebraic Geometry (ICERM)"
   end-date: "2021-02-19"
   start-date: "2021-02-15"
-  location: Virtual Only
-  website: https://www.oscar-system.org/events/meetings/2021-03/
+  location: "Virtual Reality"
+  website: "https://www.oscar-system.org/events/meetings/2021-03/"
   satellite: "No"
 
-- title: OSCAR developer meeting
+- title: "OSCAR developer meeting"
   end-date: "2020-03-06"
   start-date: "2020-03-02"
-  location: TU Kaiserslautern
-  website: https://www.oscar-system.org/events/meetings/2020-03/
+  location: "TU Kaiserslautern, Kaiserslautern, Germany"
+  website: "https://www.oscar-system.org/events/meetings/2020-03/"
   satellite: "No"
 
-- title: OSCAR developer meeting
+- title: "OSCAR developer meeting"
   end-date: "2019-06-14"
   start-date: "2019-06-11"
-  location: TU Kaiserslautern
-  website: https://www.oscar-system.org/events/meetings/2019-06/
+  location: "TU Kaiserslautern, Kaiserslautern, Germany"
+  website: "https://www.oscar-system.org/events/meetings/2019-06/"
   satellite: "No"
 
-- title: OSCAR developer meeting
+- title: "OSCAR developer meeting"
   end-date: "2018-11-30"
   start-date: "2018-11-26"
-  location: TU Berlin
-  website: https://www.oscar-system.org/events/meetings/2018-11/
+  location: "TU Berlin, Berlin, Germany"
+  website: "https://www.oscar-system.org/events/meetings/2018-11/"
   satellite: "No"
 
-- title: OSCAR developer meeting
+- title: "OSCAR developer meeting"
   end-date: "2018-05-18"
   start-date: "2018-05-14"
-  location: Siegen University
-  website: https://www.oscar-system.org/events/meetings/2018-05/
+  location: "Siegen University, Siegen, Germany"
+  website: "https://www.oscar-system.org/events/meetings/2018-05/"
   satellite: "No"
 
-- title: OSCAR developer meeting
+- title: "OSCAR developer meeting"
   end-date: "2018-01-19"
   start-date: "2018-01-15"
-  location: RWTH Aachen University
-  website: https://www.oscar-system.org/events/meetings/2018-01/
+  location: "RWTH Aachen University, Aachen, Germany"
+  website: "https://www.oscar-system.org/events/meetings/2018-01/"
   satellite: "No"

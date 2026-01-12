@@ -47,7 +47,7 @@ If you are using macOS 10.12 or newer, you need to install the Xcode command lin
 
 ## Step 2: Install Julia
 
-*OSCAR* requires [Julia](https://julialang.org) 1.6.0 or higher. We recommend installing the latest stable release of Julia by entering the following in a terminal and heeding the instructions it shows:
+*OSCAR* requires [Julia](https://julialang.org) {{ site.data.release.julia-min }} or higher. We recommend installing the latest stable release of Julia by entering the following in a terminal and heeding the instructions it shows:
 ```sh
 curl -fsSL https://install.julialang.org | sh
 ```
@@ -76,7 +76,7 @@ julia> using Oscar
 | |_| |\__ \| |__  / ^ \ |  ´ /  | Polymake and Singular
  \___/ \___/ \___//_/ \_\|_|\_\  | Type "?Oscar" for more information
 o--------o-----o-----o--------o  | Documentation: https://docs.oscar-system.org
-  S Y M B O L I C   T O O L S    | Version 1.4.0
+  S Y M B O L I C   T O O L S    | Version {{ site.data.release.version }}
 ```
 
 
