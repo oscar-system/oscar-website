@@ -1,4 +1,4 @@
-name: Tutorial Status Script
+name: Validate Tutorials
 
 on:
   pull_request:
@@ -26,10 +26,10 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install -r etc/requirements.txt
 
-      - name: Run Tutorial Status Script
+      - name: Tutorial validation
         env:
           API_KEY: ${{ secrets.API_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PYTHONUNBUFFERED: "1"
         run: |
-          python3 etc/tutorial_status.py
+          python3 etc/tutorial_validation.py
