@@ -42,6 +42,19 @@ jobs:
         run: |
           python3 etc/update-latest-release.py
 
+      - name: Validate _data/release.yml structure
+        uses: mikefarah/yq@v4
+        with:
+          cmd: |
+            yq -e '
+              has("version")    and (.version    | type == "!!str" and length > 0) and
+              has("year")       and (.year       | type == "!!str" and length > 0) and
+              has("month")      and (.month      | type == "!!str" and length > 0) and
+              has("day")        and (.day        | type == "!!str" and length > 0) and
+              has("date")       and (.date       | type == "!!str" and length > 0) and
+              has("julia-min")  and (."julia-min"| type == "!!str" and length > 0)
+            ' _data/release.yml
+
       - name: Create issue with release checklist
         if: steps.release.outputs.changed == 'true'
         uses: JasonEtco/create-an-issue@v2
