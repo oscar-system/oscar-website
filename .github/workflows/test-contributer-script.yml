@@ -54,7 +54,7 @@ jobs:
         sed -n '1,200p' summary.txt
         echo "::endgroup::"
 
-    - name: Validate _data/people_list.yml structure
+    - name: Validate overall structure of _data/people_list.yml
       uses: mikefarah/yq@v4
       with:
         cmd: |
@@ -73,7 +73,15 @@ jobs:
               | length == 0
             )
           ' _data/people_list.yml
-      
+
+    - name: Validate GitHub handles of contributors (in _data/people_list.yml) are unique
+      uses: mikefarah/yq@v4
+      with:
+        cmd: |
+          yq -e '
+            (map(.github) | length) == (map(.github) | unique | length)
+          ' _data/people_list.yml
+
     - name: Compute date
       if: github.event_name != 'pull_request' && !cancelled()
       run: echo "TODAY=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
