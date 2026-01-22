@@ -44,9 +44,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         PYTHONUNBUFFERED: "1"
       run: |
-        cd etc
-        python3 update-contributors.py
-        cd ..
+        python3 etc/update_contributors.py
 
     - name: Ensure summary.txt exists
       run: |
