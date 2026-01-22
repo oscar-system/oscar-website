@@ -62,6 +62,17 @@ jobs:
         cat summary.txt
         echo "::endgroup::"
 
+    - name: Ensure _data/people_list.yml exists
+      run: |
+        test -s _data/people_list.yml
+
+    - name: Show _data/people_list.yml
+      if: always()
+      run: |
+        echo "::group::_data/people_list.yml"
+        cat _data/people_list.yml
+        echo "::endgroup::"
+
     - name: Validate overall structure of _data/people_list.yml
       uses: mikefarah/yq@v4
       with:
