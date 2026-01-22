@@ -42,7 +42,7 @@ jobs:
         if: always()
         run: |
           echo "::group::_data/examples_with_updated_last_modified.yml exists"
-          cat _data/examples_with_updated_last_modifieRd.yml
+          cat _data/examples_with_updated_last_modified.yml
           echo "::endgroup::"
 
       - name: Validate overall structure of examples_with_updated_last_modified.yml
