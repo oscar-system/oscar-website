@@ -33,3 +33,26 @@ jobs:
           PYTHONUNBUFFERED: "1"
         run: |
           python3 etc/tutorial_validation.py
+
+      - name: Ensure examples_status.yml exists
+        run: |
+          test -s _data/examples_status.yml
+
+      - name: Show examples_status.yml
+        if: always()
+        run: |
+          echo "::group::_data/examples_status.yml"
+          cat _data/examples_status.yml
+          echo "::endgroup::"
+
+      - name: Validate _data/examples_status.yml schema (yq)
+        uses: mikefarah/yq@v4
+        with:
+          cmd: |
+            test -s _data/examples_status.yml
+            yq -e '
+              type == "!!map" and length > 0 and
+              (to_entries
+               | map(.value == "success" or .value == "fail" or .value == "cancelled")
+               | all)
+            ' _data/examples_status.yml
