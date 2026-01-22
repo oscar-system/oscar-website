@@ -40,12 +40,40 @@ jobs:
         python3 update-contributors.py
         cd ..
 
+    - name: Ensure summary.txt exists
+      run: |
+        if [ ! -s summary.txt ]; then
+          echo "ERROR: summary.txt was not created (or is empty). Failing."
+          ls -la
+          exit 1
+        fi
+
     - name: Show summary.txt
       run: |
         echo "::group::summary.txt"
-        sed -n '1,200p' summary.txt || echo "summary.txt not found"
+        sed -n '1,200p' summary.txt
         echo "::endgroup::"
 
+    - name: Validate _data/people_list.yml structure
+      uses: mikefarah/yq@v4
+      with:
+        cmd: |
+          yq -e '
+            type == "!!seq" and length > 0
+            and
+            (
+              map(
+                select(
+                  (type != "!!map")
+                  or (has("name")   | not) or (.name   | type != "!!str" or length == 0)
+                  or (has("status") | not) or (.status | type != "!!str" or length == 0)
+                  or (has("github") | not) or (.github | type != "!!str" or length == 0)
+                )
+              )
+              | length == 0
+            )
+          ' _data/people_list.yml
+      
     - name: Compute date
       if: github.event_name != 'pull_request' && !cancelled()
       run: echo "TODAY=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
