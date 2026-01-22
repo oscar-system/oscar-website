@@ -34,11 +34,11 @@ jobs:
         run: |
           python3 etc/tutorial_validation.py
 
-      - name: Ensure examples_status.yml exists
+      - name: Ensure _data/examples_status.yml exists
         run: |
           test -s _data/examples_status.yml
 
-      - name: Show examples_status.yml
+      - name: Show _data/examples_status.yml
         if: always()
         run: |
           echo "::group::_data/examples_status.yml"
