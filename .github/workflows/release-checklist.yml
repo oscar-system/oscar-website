@@ -35,13 +35,13 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install -r etc/requirements.txt
 
-      - name: Detect new OSCAR release
+      - name: Sync OSCAR release information
         id: release
         env:
           API_KEY: ${{ secrets.GITHUB_TOKEN }}
           TARGET_REPO: oscar-system/Oscar.jl
         run: |
-          python3 etc/update-latest-release.py
+          python3 etc/sync_oscar_release_information.py
 
       - name: Ensure _data/release.yml exists
         run: |
