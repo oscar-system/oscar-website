@@ -28,8 +28,7 @@ jobs:
 
       - name: Update Last-Modified Dates for Tutorials
         env:
-          API_KEY: ${{ secrets.API_KEY }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          API_KEY: ${{ secrets.GITHUB_TOKEN }}
           PYTHONUNBUFFERED: "1"
         run: |
           python3 etc/update_last_modified_dates_for_tutorials.py

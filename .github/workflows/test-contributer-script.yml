@@ -40,8 +40,7 @@ jobs:
 
     - name: Run update-contributors script
       env:
-        API_KEY: ${{secrets.API_KEY}}
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        API_KEY: ${{ secrets.GITHUB_TOKEN }}
         PYTHONUNBUFFERED: "1"
       run: |
         python3 etc/update_contributors.py
