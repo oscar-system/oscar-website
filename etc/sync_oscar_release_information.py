@@ -26,18 +26,6 @@ if not API_KEY:
 auth = Auth.Token(API_KEY)
 g = Github(auth=auth)
 
-
-# Function to write simple key=value outputs for GitHub Actions.
-def gh_output(**kvs):
-    path = os.getenv("GITHUB_OUTPUT")
-    if not path:
-        return
-    with open(path, "a", encoding="utf-8") as f:
-        for k, v in kvs.items():
-            v = "" if v is None else str(v)
-            f.write(f"{k}={v}\n")
-
-
 # Fetch release
 try:
     repo = g.get_repo(TARGET_REPO)
@@ -75,10 +63,6 @@ else:
 # Early exit in case version hasn't changed
 if old_version == version:
     print(f"{RELEASEFILEPATH} already has latest version {version}. Nothing to do.")
-    gh_output(
-        changed="false",
-        version=version,
-    )
     sys.exit(0)
 
 # Grab julia-min version from Project.toml
@@ -112,9 +96,3 @@ with open(RELEASEFILEPATH, "w", encoding="utf-8") as releasefile:
     releasefile.write(RELEASESTRING)
 
 print(f"Updated {RELEASEFILEPATH} to version {version} (was {old_version or 'none'}).")
-
-gh_output(
-    changed="true",
-    version=version,
-    published_utc=dt.isoformat(timespec="seconds"),
-)
