@@ -33,3 +33,51 @@ jobs:
           PYTHONUNBUFFERED: "1"
         run: |
           python3 etc/update_tutorial_metadata.py
+
+      - name: Ensure _data/examples_with_updated_last_modified.yml exists
+        run: |
+          test -s _data/examples_with_updated_last_modified.yml
+
+      - name: Show _data/examples_with_updated_last_modified.yml exists
+        if: always()
+        run: |
+          echo "::group::_data/examples_with_updated_last_modified.yml exists"
+          cat _data/examples_with_updated_last_modified.yml
+          echo "::endgroup::"
+
+      - name: Validate overall structure of examples_with_updated_last_modified.yml
+        uses: mikefarah/yq@v4
+        with:
+          cmd: |
+            yq -e '
+              type == "!!seq" and length > 0 and
+              (
+                map(
+                  (type == "!!map") and
+                  has("author")     and (.author     | type == "!!str" and length > 0) and
+                  has("branch")     and (.branch     | type == "!!str" and length > 0) and
+                  has("date")       and (.date       | type == "!!str" and length > 0) and
+                  has("filename")   and (.filename   | type == "!!str" and length > 0) and
+                  has("language")   and (.language   | type == "!!str" and length > 0) and
+                  has("repository") and (.repository | type == "!!str" and length > 0) and
+                  has("thumbnail")  and (.thumbnail  | type == "!!str" and length > 0) and
+                  has("title")      and (.title      | type == "!!str" and length > 0)
+                ) | all
+              )
+            ' _data/examples_with_updated_last_modified.yml
+
+      - name: Validate language is julia for all entries in examples_with_updated_last_modified.yml
+        uses: mikefarah/yq@v4
+        with:
+          cmd: |
+            yq -e '
+              map(.language == "julia") | all
+            ' _data/examples_with_updated_last_modified.yml
+
+      - name: Validate date is not 1970 fallback for any entry in examples_with_updated_last_modified.yml
+        uses: mikefarah/yq@v4
+        with:
+          cmd: |
+            yq -e '
+              (map(.date) | map(select(. == "January 1, 1970" or . == "January 01, 1970")) | length) == 0
+            ' _data/examples_with_updated_last_modified.yml
