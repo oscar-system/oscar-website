@@ -43,6 +43,10 @@ jobs:
         run: |
           python3 etc/update-latest-release.py
 
+      - name: Ensure _data/release.yml exists
+        run: |
+          test -s _data/release.yml
+
       - name: Validate _data/release.yml structure
         uses: mikefarah/yq@v4
         with:
