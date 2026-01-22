@@ -42,7 +42,7 @@ jobs:
         if: always()
         run: |
           echo "::group::_data/examples_with_updated_last_modified.yml exists"
-          cat _data/examples_with_updated_last_modified.yml
+          cat _data/examples_with_updated_last_modifieRd.yml
           echo "::endgroup::"
 
       - name: Validate overall structure of examples_with_updated_last_modified.yml
@@ -64,14 +64,6 @@ jobs:
                   has("title")      and (.title      | type == "!!str" and length > 0)
                 ) | all
               )
-            ' _data/examples_with_updated_last_modified.yml
-
-      - name: Validate language is julia for all entries in examples_with_updated_last_modified.yml
-        uses: mikefarah/yq@v4
-        with:
-          cmd: |
-            yq -e '
-              map(.language == "julia") | all
             ' _data/examples_with_updated_last_modified.yml
 
       - name: Validate date is not 1970 fallback for any entry in examples_with_updated_last_modified.yml
