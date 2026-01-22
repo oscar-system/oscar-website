@@ -50,11 +50,7 @@ jobs:
 
     - name: Ensure summary.txt exists
       run: |
-        if [ ! -s summary.txt ]; then
-          echo "ERROR: summary.txt was not created (or is empty). Failing."
-          ls -la
-          exit 1
-        fi
+        test -s summary.txt
 
     - name: Show summary.txt
       run: |
