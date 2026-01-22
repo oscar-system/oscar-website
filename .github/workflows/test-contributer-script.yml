@@ -30,6 +30,14 @@ jobs:
         python -m pip install --upgrade pip
         python -m pip install -r etc/requirements.txt
 
+    - name: Record current number of contributors (listed in people_list.yml)
+      uses: mikefarah/yq@v4
+      with:
+        cmd: |
+          test -f _data/people_list.yml
+          yq -e 'type == "!!seq"' _data/people_list.yml >/dev/null
+          echo "PEOPLE_COUNT_BEFORE=$(yq -r 'length' _data/people_list.yml)" >> $GITHUB_ENV
+
     - name: Run update-contributors script
       env:
         API_KEY: ${{secrets.API_KEY}}
@@ -81,6 +89,15 @@ jobs:
           yq -e '
             (map(.github) | length) == (map(.github) | unique | length)
           ' _data/people_list.yml
+
+    - name: Ensure that the number of contributors (in _data/people_list.yml) did not shrink
+      uses: mikefarah/yq@v4
+      with:
+        cmd: |
+          PEOPLE_COUNT_AFTER=$(yq -r 'length' _data/people_list.yml)
+          echo "Counts:"
+          echo "_data/people_list.yml entries: before=${PEOPLE_COUNT_BEFORE} after=${PEOPLE_COUNT_AFTER}"
+          test "$PEOPLE_COUNT_AFTER" -ge "${{ env.PEOPLE_COUNT_BEFORE }}"
 
     - name: Compute date
       if: github.event_name != 'pull_request' && !cancelled()
