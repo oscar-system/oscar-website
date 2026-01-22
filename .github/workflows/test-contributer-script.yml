@@ -1,4 +1,4 @@
-name: Contributors Update Script
+name: Update Contributors
 
 on:
   pull_request:

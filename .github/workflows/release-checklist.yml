@@ -1,4 +1,4 @@
-name: OSCAR Release Watcher
+name: Sync OSCAR Release Information
 
 on:
   schedule:
