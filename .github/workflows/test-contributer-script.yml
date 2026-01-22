@@ -51,7 +51,7 @@ jobs:
     - name: Show summary.txt
       run: |
         echo "::group::summary.txt"
-        sed -n '1,200p' summary.txt
+        cat summary.txt
         echo "::endgroup::"
 
     - name: Validate overall structure of _data/people_list.yml
