@@ -47,20 +47,17 @@ jobs:
           test -s _data/release.yml
 
       - name: Validate _data/release.yml structure
-        uses: mikefarah/yq@v4
-        with:
-          cmd: |
-            yq -e '
-              has("version")    and (.version    | type == "!!str" and length > 0) and
-              has("year")       and (.year       | type == "!!str" and length > 0) and
-              has("month")      and (.month      | type == "!!str" and length > 0) and
-              has("day")        and (.day        | type == "!!str" and length > 0) and
-              has("date")       and (.date       | type == "!!str" and length > 0) and
-              has("julia-min")  and (."julia-min"| type == "!!str" and length > 0)
-            ' _data/release.yml
+        run:
+          yq -e '
+            has("version")    and (.version    | type == "!!str" and length > 0) and
+            has("year")       and (.year       | type == "!!str" and length > 0) and
+            has("month")      and (.month      | type == "!!str" and length > 0) and
+            has("day")        and (.day        | type == "!!str" and length > 0) and
+            has("date")       and (.date       | type == "!!str" and length > 0) and
+            has("julia-min")  and (."julia-min"| type == "!!str" and length > 0)
+          ' _data/release.yml
 
       - name: Determine whether _data/release.yml changed
-        if: github.event_name != 'pull_request' && !cancelled()
         id: release
         run: |
           if git diff-index --quiet HEAD -- _data/release.yml; then

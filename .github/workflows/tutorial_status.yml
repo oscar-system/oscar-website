@@ -44,14 +44,11 @@ jobs:
           cat _data/examples_status.yml
           echo "::endgroup::"
 
-      - name: Validate _data/examples_status.yml schema (yq)
-        uses: mikefarah/yq@v4
-        with:
-          cmd: |
-            test -s _data/examples_status.yml
-            yq -e '
-              type == "!!map" and length > 0 and
-              (to_entries
-               | map(.value == "success" or .value == "fail" or .value == "cancelled")
-               | all)
-            ' _data/examples_status.yml
+      - name: Validate overall structure of _data/examples_status.yml
+        run:
+          yq -e '
+            type == "!!map" and length > 0 and
+            (to_entries
+              | map(.value == "success" or .value == "fail" or .value == "cancelled")
+              | all)
+          ' _data/examples_status.yml

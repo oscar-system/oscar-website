@@ -31,12 +31,10 @@ jobs:
         python -m pip install -r etc/requirements.txt
 
     - name: Record current number of contributors (listed in people_list.yml)
-      uses: mikefarah/yq@v4
-      with:
-        cmd: |
-          test -f _data/people_list.yml
-          yq -e 'type == "!!seq"' _data/people_list.yml >/dev/null
-          echo "PEOPLE_COUNT_BEFORE=$(yq -r 'length' _data/people_list.yml)" >> $GITHUB_ENV
+      run:      
+        test -f _data/people_list.yml
+        yq -e 'type == "!!seq"' _data/people_list.yml >/dev/null
+        echo "PEOPLE_COUNT_BEFORE=$(yq -r 'length' _data/people_list.yml)" >> $GITHUB_ENV
 
     - name: Run update-contributors script
       env:
@@ -67,39 +65,33 @@ jobs:
         echo "::endgroup::"
 
     - name: Validate overall structure of _data/people_list.yml
-      uses: mikefarah/yq@v4
-      with:
-        cmd: |
-          yq -e '
-            type == "!!seq" and length > 0
-            and
-            (
-              map(
-                select(
-                  (type != "!!map")
-                  or (has("name")   | not) or (.name   | type != "!!str" or length == 0)
-                  or (has("status") | not) or (.status | type != "!!str" or length == 0)
-                  or (has("github") | not) or (.github | type != "!!str" or length == 0)
-                )
+      run:
+        yq -e '
+          type == "!!seq" and length > 0
+          and
+          (
+            map(
+              select(
+                (type != "!!map")
+                or (has("name")   | not) or (.name   | type != "!!str" or length == 0)
+                or (has("status") | not) or (.status | type != "!!str" or length == 0)
+                or (has("github") | not) or (.github | type != "!!str" or length == 0)
               )
-              | length == 0
             )
-          ' _data/people_list.yml
+            | length == 0
+          )
+        ' _data/people_list.yml
 
     - name: Validate GitHub handles of contributors (in _data/people_list.yml) are unique
-      uses: mikefarah/yq@v4
-      with:
-        cmd: |
-          yq -e '
-            (map(.github) | length) == (map(.github) | unique | length)
-          ' _data/people_list.yml
+      run:
+        yq -e '
+          (map(.github) | length) == (map(.github) | unique | length)
+        ' _data/people_list.yml
 
     - name: Ensure that the number of contributors (in _data/people_list.yml) did not shrink
-      uses: mikefarah/yq@v4
-      with:
-        cmd: |
-          PEOPLE_COUNT_AFTER=$(yq -r 'length' _data/people_list.yml)
-          test "$PEOPLE_COUNT_AFTER" -ge "${{ env.PEOPLE_COUNT_BEFORE }}"
+      run:
+        PEOPLE_COUNT_AFTER=$(yq -r 'length' _data/people_list.yml)
+        test "$PEOPLE_COUNT_AFTER" -ge "${{ env.PEOPLE_COUNT_BEFORE }}"
 
     - name: Compute date
       if: github.event_name != 'pull_request' && !cancelled()
