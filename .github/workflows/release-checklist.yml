@@ -37,14 +37,8 @@ jobs:
 
       - name: Backup release.yml and reset to sentinel version
         run: |
-          cp -f _data/release.yml _data/old_release.yml
           cat > _data/release.yml <<'YAML'
           version: "0"
-          year: "1900"
-          month: "01"
-          day: "01"
-          date: "1900-01-01"
-          julia-min: "0.0"
           YAML
 
       - name: Sync OSCAR release information
