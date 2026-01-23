@@ -33,14 +33,14 @@ jobs:
         run: |
           python3 etc/update_last_modified_dates_for_tutorials.py
 
-      - name: Ensure _data/examples_with_updated_last_modified.yml exists
+      - name: Ensure _data/examples_with_updated_last_modified.yml exists and is non-empty
         run: |
           test -s _data/examples_with_updated_last_modified.yml
 
-      - name: Show _data/examples_with_updated_last_modified.yml exists
+      - name: Show _data/examples_with_updated_last_modified.yml
         if: always()
         run: |
-          echo "::group::_data/examples_with_updated_last_modified.yml exists"
+          echo "::group::_data/examples_with_updated_last_modified.yml"
           cat _data/examples_with_updated_last_modified.yml
           echo "::endgroup::"
 

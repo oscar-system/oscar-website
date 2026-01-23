@@ -42,7 +42,7 @@ jobs:
         run: |
           python3 etc/fetch_oscar_release_information.py
 
-      - name: Ensure _data/release.yml exists
+      - name: Ensure _data/release.yml exists and is non-empty
         run: |
           test -s _data/release.yml
 

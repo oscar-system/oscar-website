@@ -33,7 +33,7 @@ jobs:
         run: |
           python3 etc/update_tutorial_status.py
 
-      - name: Ensure _data/examples_status.yml exists
+      - name: Ensure _data/examples_status.yml exists and is non-empty
         run: |
           test -s _data/examples_status.yml
 

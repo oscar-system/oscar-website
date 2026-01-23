@@ -45,7 +45,7 @@ jobs:
       run: |
         python3 etc/update_contributors.py
 
-    - name: Ensure summary.txt exists
+    - name: Ensure summary.txt exists and is non-empty
       run: |
         test -s summary.txt
 
@@ -55,7 +55,7 @@ jobs:
         cat summary.txt
         echo "::endgroup::"
 
-    - name: Ensure _data/people_list.yml exists
+    - name: Ensure _data/people_list.yml exists and is non-empty
       run: |
         test -s _data/people_list.yml
 
