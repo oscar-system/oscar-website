@@ -35,18 +35,12 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install -r etc/requirements.txt
 
-      - name: Backup release.yml and reset to sentinel version
-        run: |
-          cat > _data/release.yml <<'YAML'
-          version: "0"
-          YAML
-
-      - name: Sync OSCAR release information
+      - name: Delete and then re-create release file
         env:
           API_KEY: ${{ secrets.GITHUB_TOKEN }}
           TARGET_REPO: oscar-system/Oscar.jl
         run: |
-          python3 etc/sync_oscar_release_information.py
+          python3 etc/fetch_oscar_release_information.py
 
       - name: Ensure _data/release.yml exists
         run: |
@@ -65,21 +59,17 @@ jobs:
               has("julia-min")  and (."julia-min"| type == "!!str" and length > 0)
             ' _data/release.yml
 
-      - name: Determine whether release is newer than previous
+      - name: Determine whether _data/release.yml changed
+        if: github.event_name != 'pull_request' && !cancelled()
         id: release
         run: |
-          new="$(yq -r '.version' _data/release.yml)"
-          old="$(yq -r '.version' _data/old_release.yml)"
-          if dpkg --compare-versions "$new" gt "$old"; then
-            echo "changed=true" >> "$GITHUB_OUTPUT"
-          else
+          if git diff-index --quiet HEAD -- _data/release.yml; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
-
-      - name: Cleanup temporary release backup
-        if: always()
-        run: |
-          rm -f _data/old_release.yml
+          version="$(yq -r '.version' _data/release.yml)"
+          echo "version=$version" >> "$GITHUB_OUTPUT"
 
       - name: Create issue with release checklist
         if: github.event_name != 'pull_request' && !cancelled() && steps.release.outputs.changed == 'true'
