@@ -9,6 +9,9 @@ Redirect temp /newsletter https://lists.uni-kl.de/oscar/subscribe/news
 Redirect temp /slack https://join.slack.com/t/oscar-system/shared_invite/zt-1i2mu14ef-EAo9EYOlBQ1zk3_RGbMUaA
 Redirect temp /zoom https://uni-kl-de.zoom.us/j/63727262906?pwd=NExvcU9JaXpiMUJaMnVxbG5mMWxqdz09
 Redirect temp /meet https://play.workadventu.re/@/oscar/oscar/start-up
+Redirect temp /lists/devel https://lists.uni-kl.de/oscar/info/devel
+Redirect temp /lists/users https://lists.uni-kl.de/oscar/info/users
+
 
 # redirect for summer school
 Redirect temp /school https://www.oscar-system.org/events/meetings/2025-09/
