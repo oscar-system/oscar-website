@@ -17,6 +17,13 @@ REPOPATH = os.path.dirname(os.path.dirname(OWNPATH))
 DATAPATH = os.path.join(REPOPATH, "_data")
 RELEASEFILEPATH = os.path.join(DATAPATH, "release.yml")
 
+# Delete the release file should it exist
+try:
+    os.remove(RELEASEFILEPATH)
+    print(f"Deleted existing release file: {RELEASEFILEPATH}")
+except FileNotFoundError:
+    print(f"{RELEASEFILEPATH} was not found! This may indicate a weird bug of some sort. The script will still continue, but you should double check that everything works as expected.")
+
 # Get/set API key or raise error
 API_KEY = (os.getenv("API_KEY") or os.getenv("GITHUB_TOKEN") or "").strip()
 if not API_KEY:
@@ -25,18 +32,6 @@ if not API_KEY:
 
 auth = Auth.Token(API_KEY)
 g = Github(auth=auth)
-
-
-# Function to write simple key=value outputs for GitHub Actions.
-def gh_output(**kvs):
-    path = os.getenv("GITHUB_OUTPUT")
-    if not path:
-        return
-    with open(path, "a", encoding="utf-8") as f:
-        for k, v in kvs.items():
-            v = "" if v is None else str(v)
-            f.write(f"{k}={v}\n")
-
 
 # Fetch release
 try:
@@ -61,25 +56,6 @@ if not dt:
     sys.exit(1)
 
 dt = dt.replace(tzinfo=timezone.utc)
-
-# Read old version
-old_version = None
-if os.path.exists(RELEASEFILEPATH):
-    with open(RELEASEFILEPATH, "r", encoding="utf-8") as yamlfile:
-        data = yaml.safe_load(yamlfile)
-        old_version = data['version']
-else:
-    print(f"Release file not found: {RELEASEFILEPATH}")
-    sys.exit(1)
-
-# Early exit in case version hasn't changed
-if old_version == version:
-    print(f"{RELEASEFILEPATH} already has latest version {version}. Nothing to do.")
-    gh_output(
-        changed="false",
-        version=version,
-    )
-    sys.exit(0)
 
 # Grab julia-min version from Project.toml
 PROJECT_TOML_URL = \
@@ -110,11 +86,3 @@ print(f"RELEASEFILEPATH is {RELEASEFILEPATH}")
 
 with open(RELEASEFILEPATH, "w", encoding="utf-8") as releasefile:
     releasefile.write(RELEASESTRING)
-
-print(f"Updated {RELEASEFILEPATH} to version {version} (was {old_version or 'none'}).")
-
-gh_output(
-    changed="true",
-    version=version,
-    published_utc=dt.isoformat(timespec="seconds"),
-)
