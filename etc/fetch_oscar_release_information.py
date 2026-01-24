@@ -22,7 +22,7 @@ try:
     os.remove(RELEASEFILEPATH)
     print(f"Deleted existing release file: {RELEASEFILEPATH}")
 except FileNotFoundError:
-    pass
+    print(f"{RELEASEFILEPATH} was not found! This may indicate a weird bug of some sort. The script will still continue, but you should double check that everything works as expected.")
 
 # Get/set API key or raise error
 API_KEY = (os.getenv("API_KEY") or os.getenv("GITHUB_TOKEN") or "").strip()
