@@ -8,7 +8,7 @@ labels: release-process
 
 A new OSCAR release **v{{ env.VERSION }}** was published on **{{ env.PUBLISHED_UTC }}** (UTC)
 
-Please send an email to the OSCAR mailing list (<oscar-dev@mathematik.uni-kl.de>) to inform about
+Please send an email to the OSCAR mailing list (<devel@oscar-system.org>) to inform about
 this update. You can use the following template:
 
 
