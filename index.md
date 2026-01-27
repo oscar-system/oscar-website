@@ -36,7 +36,7 @@ Discover more about our project and vision on our [About]({{site.baseurl}}/about
     {% if event.website %}
   * [{{ event.title }} ({{ event.location }}, {{ event.start-date | date: "%d %b %Y" }} to {{ event.end-date | date: "%d %b %Y" }})]({{ event.website | replace: "https://www.oscar-system.org", site.baseurl }})
     {% else %}
-  * {{ event.title }} ({{ event.location }}, {{ event.start-date }} to {{ event.end-date }})
+  * {{ event.title }} ({{ event.location }}, {{ event.start-date | date: "%d %b %Y" }} to {{ event.end-date | date: "%d %b %Y" }})
     {% endif %}
   {% endfor %}
   {% if upcoming_conferences.size > max_events %}
