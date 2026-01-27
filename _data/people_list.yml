@@ -83,6 +83,7 @@
   status: active
   repos:
   - oscar-system/Oscar.jl
+  - oscar-system/Polymake.jl
 - name: Simon Brandhorst
   affiliation: Saarland University
   email: brandhorst@math.uni-sb.de
@@ -277,10 +278,10 @@
   github: marinagarrote
   status: active
   comment: Co-author of commit ad7e39a9abb981d0873a67477d50d3664b720e00
-  repos:
-  - oscar-system/Oscar.jl
   aka:
   - garrote
+  repos:
+  - oscar-system/Oscar.jl
 - name: Zoe Geiselmann
   affiliation: TU Berlin
   email: geiselmann@math.tu-berlin.de
@@ -332,6 +333,12 @@
   status: retired
   comment: Initial contributor to Oscar.
   repos: []
+- name: Atahan Haznedar
+  email: atahanahaznedar@gmail.com
+  github: atahan2000
+  status: active
+  repos:
+  - oscar-system/Oscar.jl
 - name: Florian Heiderich
   affiliation: University of Siegen
   github: heiderich
@@ -445,6 +452,13 @@
   - oscar-system/GAP.jl
   - oscar-system/Oscar.jl
   - oscar-system/Singular.jl
+  - thofma/Hecke.jl
+- name: Kazak-11
+  email: 38222127+Kazak-11@users.noreply.github.com
+  github: Kazak-11
+  status: active
+  repos:
+  - oscar-system/Oscar.jl
 - name: Avinash (Avi) Kulkarni
   affiliation: Dartmouth College
   email: avinash.a.kulkarni@dartmouth.edu
@@ -484,6 +498,12 @@
   comment: Co-author of commit fbc743b6a976c2338c4a09f647088e29791b2cbd
   repos:
   - oscar-system/Oscar.jl
+- name: Stefan Lippert
+  email: st-li@online.de
+  github: stelip42
+  status: active
+  repos:
+  - Nemocas/AbstractAlgebra.jl
 - name: Benjamin Lorenz
   affiliation: TU Berlin
   email: lorenz@math.tu-berlin.de
@@ -623,6 +643,7 @@
   github: janikapeters
   status: active
   repos:
+  - Nemocas/AbstractAlgebra.jl
   - oscar-system/Oscar.jl
 - name: Markus Pfeiffer
   affiliation: St Andrews
@@ -710,7 +731,7 @@
 - name: Marcel Salmon
   affiliation: Universität Oldenburg
   github: Syz-MS
-  status: retired
+  status: active
   comment: Associated with Anne Fruhbig Kruger as of 2024
   repos:
   - oscar-system/Oscar.jl
@@ -845,6 +866,7 @@
   github: Tobias271828
   status: active
   repos:
+  - Nemocas/Nemo.jl
   - oscar-system/Oscar.jl
   - thofma/Hecke.jl
 - name: Varun Trehan
@@ -853,6 +875,8 @@
   status: active
   comment: MSc. student of Max Horn and Claus Fieker
   repos:
+  - Nemocas/AbstractAlgebra.jl
+  - Nemocas/Nemo.jl
   - oscar-system/Oscar.jl
 - name: Andrew P. Turner
   affiliation: Virginia Tech
@@ -951,4 +975,15 @@
   - Nemocas/AbstractAlgebra.jl
   - oscar-system/Oscar.jl
   - thofma/Hecke.jl
-
+- name: alexey-orlov-math
+  email: 95360939+alexey-orlov-math@users.noreply.github.com
+  github: alexey-orlov-math
+  status: active
+  repos:
+  - thofma/Hecke.jl
+- name: matthias314
+  email: 56549971+matthias314@users.noreply.github.com
+  github: matthias314
+  status: active
+  repos:
+  - oscar-system/Singular.jl
