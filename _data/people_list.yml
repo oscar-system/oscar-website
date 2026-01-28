@@ -337,6 +337,7 @@
   email: atahanahaznedar@gmail.com
   github: atahan2000
   status: active
+  affiliation: University of Copenhagen
   repos:
   - oscar-system/Oscar.jl
 - name: Florian Heiderich
@@ -454,7 +455,6 @@
   - oscar-system/Singular.jl
   - thofma/Hecke.jl
 - name: Kazak-11
-  email: 38222127+Kazak-11@users.noreply.github.com
   github: Kazak-11
   status: active
   repos:
@@ -501,6 +501,7 @@
 - name: Stefan Lippert
   email: st-li@online.de
   github: stelip42
+  affiliation: University of Siegen
   status: active
   repos:
   - Nemocas/AbstractAlgebra.jl
@@ -976,7 +977,6 @@
   - oscar-system/Oscar.jl
   - thofma/Hecke.jl
 - name: alexey-orlov-math
-  email: 95360939+alexey-orlov-math@users.noreply.github.com
   github: alexey-orlov-math
   status: active
   repos:
