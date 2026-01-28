@@ -1,4 +1,4 @@
-name: Tutorial Last Modified Date Script
+name: Update Last-Modified Dates for Tutorials
 
 on:
   pull_request:
@@ -26,10 +26,45 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install -r etc/requirements.txt
 
-      - name: Run Tutorial Last Modified Date Script
+      - name: Update Last-Modified Dates for Tutorials
         env:
-          API_KEY: ${{ secrets.API_KEY }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          API_KEY: ${{ secrets.GITHUB_TOKEN }}
           PYTHONUNBUFFERED: "1"
         run: |
-          python3 etc/update-dates.py
+          python3 etc/update_last_modified_dates_for_tutorials.py
+
+      - name: Ensure _data/examples_with_updated_last_modified.yml exists and is non-empty
+        run: |
+          test -s _data/examples_with_updated_last_modified.yml
+
+      - name: Show _data/examples_with_updated_last_modified.yml
+        if: always()
+        run: |
+          echo "::group::_data/examples_with_updated_last_modified.yml"
+          cat _data/examples_with_updated_last_modified.yml
+          echo "::endgroup::"
+
+      - name: Validate overall structure of examples_with_updated_last_modified.yml
+        run:
+          yq -e '
+            type == "!!seq" and length > 0 and
+            (
+              map(
+                (type == "!!map") and
+                has("author")     and (.author     | type == "!!str" and length > 0) and
+                has("branch")     and (.branch     | type == "!!str" and length > 0) and
+                has("date")       and (.date       | type == "!!str" and length > 0) and
+                has("filename")   and (.filename   | type == "!!str" and length > 0) and
+                has("language")   and (.language   | type == "!!str" and length > 0) and
+                has("repository") and (.repository | type == "!!str" and length > 0) and
+                has("thumbnail")  and (.thumbnail  | type == "!!str" and length > 0) and
+                has("title")      and (.title      | type == "!!str" and length > 0)
+              ) | all
+            )
+          ' _data/examples_with_updated_last_modified.yml
+
+      - name: Validate date is not 1970 fallback for any entry in examples_with_updated_last_modified.yml
+        run:
+          yq -e '
+            (map(.date) | map(select(. == "January 1, 1970" or . == "January 01, 1970")) | length) == 0
+          ' _data/examples_with_updated_last_modified.yml

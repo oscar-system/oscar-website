@@ -106,8 +106,10 @@ def lookup_user(gh, email, name):
 # 5. Find (co)authors of all repos
 ##########################################
 
+suspected_bots = set([])
+
 def process_log_into_aggregate(res: str, repo: str) -> None:
-    global summarystring, aggregate  #, email_owner, name_owner
+    global summarystring, aggregate, suspected_bots  #, email_owner, name_owner
     for raw in res.splitlines():
         line = raw.strip()
         if not line: continue
@@ -117,7 +119,7 @@ def process_log_into_aggregate(res: str, repo: str) -> None:
 
         low = line.casefold()
         if "[bot]" in low:
-            summarystring += f"- Skipping suspected bot line in {repo}: {line!r}\n"
+            suspected_bots.add((repo, line))
             continue
         if "<" not in line or ">" not in line:
             summarystring += f"- Skipping non-address line in {repo}: {line!r}\n"
@@ -242,6 +244,8 @@ with open(PEOPLE_LIST_FILE, "w", encoding="utf-8") as f:
     yaml.dump(ordered_people, f, sort_keys=False, allow_unicode=True)
 
 # Write summary
+for i in suspected_bots:
+    summarystring += f"- Skipping suspected bot: {i[1]} in repo {i[0]}\n"
 revived_names = [p.get("name") for p in current_contributors if id(p) in _seen_current and id(p) in _prev_status and _prev_status[id(p)] == "retired"]
 newly_retired_names = [p.get("name") for p in current_contributors if p.get("status") == "retired" and _prev_status.get(id(p)) == "active"]
 summary = (

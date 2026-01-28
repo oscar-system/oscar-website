@@ -1,9 +1,10 @@
-name: OSCAR Release Watcher
+name: Sync OSCAR Release Information
 
 on:
   schedule:
     - cron: "30 6 * * *"
   workflow_dispatch: {}
+  pull_request: {}
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -34,16 +35,41 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install -r etc/requirements.txt
 
-      - name: Update latest release file
-        id: release
+      - name: Delete and then re-create release file
         env:
           API_KEY: ${{ secrets.GITHUB_TOKEN }}
           TARGET_REPO: oscar-system/Oscar.jl
         run: |
-          python3 etc/update-latest-release.py
+          python3 etc/fetch_oscar_release_information.py
 
-      - name: Open release checklist issue
-        if: steps.release.outputs.changed == 'true'
+      - name: Ensure _data/release.yml exists and is non-empty
+        run: |
+          test -s _data/release.yml
+
+      - name: Validate _data/release.yml structure
+        run:
+          yq -e '
+            has("version")    and (.version    | type == "!!str" and length > 0) and
+            has("year")       and (.year       | type == "!!str" and length > 0) and
+            has("month")      and (.month      | type == "!!str" and length > 0) and
+            has("day")        and (.day        | type == "!!str" and length > 0) and
+            has("date")       and (.date       | type == "!!str" and length > 0) and
+            has("julia-min")  and (."julia-min"| type == "!!str" and length > 0)
+          ' _data/release.yml
+
+      - name: Determine whether _data/release.yml changed
+        id: release
+        run: |
+          if git diff-index --quiet HEAD -- _data/release.yml; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+          version="$(yq -r '.version' _data/release.yml)"
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+
+      - name: Create issue with release checklist
+        if: github.event_name != 'pull_request' && !cancelled() && steps.release.outputs.changed == 'true'
         uses: JasonEtco/create-an-issue@v2
         # marketplace action : https://github.com/marketplace/actions/create-an-issue
         env:
@@ -56,8 +82,8 @@ jobs:
           update_existing: true
           search_existing: open          
 
-      - name: Create PR updating latest release
-        if: steps.release.outputs.changed == 'true'
+      - name: Create pull request which updates _data/release.yml
+        if: github.event_name != 'pull_request' && !cancelled()
         uses: peter-evans/create-pull-request@v7
         with:
           commit-message: "Update latest OSCAR release to v${{ steps.release.outputs.version }}"

@@ -42,5 +42,3 @@ And please add your project ideas for the coding sprint to our [HackMD](https://
 - 09:30 Morning standup
 - 12:00 Final status reports
 - 12:30 End of Coding Sprint
-
-
