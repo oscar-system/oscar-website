@@ -4,7 +4,11 @@ title: Participants
 meeting: true
 meeting_nr: 202602
 people:
-    - {name: Thomas Breuer, affiliation: RWTH Aachen}
+    - {name: John Abbott, affiliation: RPTU}
+    
+    - {name: Thomas Breuer, affiliation: RWTH}
+    
+    - {name: Shelby Cox, affiliation: MPI MiS}
     
     - {name: Antony Della Vecchia, affiliation: TU Berlin}
 
@@ -13,6 +17,14 @@ people:
     - {name: Claus Fieker, affiliation: RPTU}
 
     - {name: Zoe Geiselmann, affiliation: TU Berlin}
+
+    - {name: Lars Göttgens, affiliation: RWTH}
+
+    - {name: Friedemann Groh}
+
+    - {name: Jeroen Hanselman, affiliation: RPTU}
+
+    - {name: Max Horn, affiliation: RPTU}
 
     - {name: Michael Joswig, affiliation: TU Berlin}
 
@@ -28,9 +40,13 @@ people:
 
     - {name: Stef Nomden, affiliation: Leiden University}
 
+    - {name: Yue Ren, affiliation: Durham University}
+
     - {name: Emre Sertöz, affiliation: Leiden University}
 
     - {name: Marcel Wack, affiliation: TU Berlin}
+
+    - {name: Martin Wagner, affiliation: TU Berlin}
 
     - {name: Matthias Zach, affiliation: RPTU}
 
