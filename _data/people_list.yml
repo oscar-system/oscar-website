@@ -334,10 +334,10 @@
   comment: Initial contributor to Oscar.
   repos: []
 - name: Atahan Haznedar
+  affiliation: University of Copenhagen
   email: atahanahaznedar@gmail.com
   github: atahan2000
   status: active
-  affiliation: University of Copenhagen
   repos:
   - oscar-system/Oscar.jl
 - name: Florian Heiderich
@@ -499,9 +499,9 @@
   repos:
   - oscar-system/Oscar.jl
 - name: Stefan Lippert
+  affiliation: University of Siegen
   email: st-li@online.de
   github: stelip42
-  affiliation: University of Siegen
   status: active
   repos:
   - Nemocas/AbstractAlgebra.jl
