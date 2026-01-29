@@ -14,6 +14,9 @@ weight: 1
 * What: A general coding sprint for OSCAR and OSCAR adjacent projects (polymake, Singular, ...)
 * Who: OSCAR developers and enthusiasts
 
+If you wish to particpate, **please register** by sending an email to both [Kevin Kühn](mailto:kuehn@math.tu-berlin.de) and
+[Igor Makhlin](mailto:iymakhlin@gmail.com).
+
 ## Information
 
 {% assign subpages = site.pages | where: "meeting_nr", page.meeting_nr | sort: "name" %}

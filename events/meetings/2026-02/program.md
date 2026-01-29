@@ -11,6 +11,7 @@ weight: 2
 
 The program is just a scaffold; more concrete plans may be added later or during the workshop.
 If you have suggestions or wishes, please contact the organisers.
+And please add your project ideas for the coding sprint to our [HackMD](https://hackmd.io/5ArrX4BZTXqQGwlN99kDNw)!
 
 ### Monday
 
@@ -41,8 +42,3 @@ If you have suggestions or wishes, please contact the organisers.
 - 09:30 Morning standup
 - 12:00 Final status reports
 - 12:30 End of Coding Sprint
-
-
-## Ideas
-
-Please add your ideas to our hackmd!
