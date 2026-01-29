@@ -46,7 +46,7 @@ people:
 
     - {name: Marcel Wack, affiliation: TU Berlin}
 
-    - {name: Martin Wagner, affiliation: TU Berlin}
+    - {name: Martin Wagner, affiliation: RPTU}
 
     - {name: Matthias Zach, affiliation: RPTU}
 
