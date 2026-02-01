@@ -84,7 +84,7 @@ jobs:
 
       - name: Create pull request which updates _data/release.yml
         if: github.event_name != 'pull_request' && !cancelled()
-        uses: peter-evans/create-pull-request@v7
+        uses: peter-evans/create-pull-request@v8
         with:
           commit-message: "Update latest OSCAR release to v${{ steps.release.outputs.version }}"
           title: "Update latest OSCAR release to v${{ steps.release.outputs.version }}"
