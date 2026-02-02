@@ -86,6 +86,7 @@ jobs:
         if: github.event_name != 'pull_request' && !cancelled()
         uses: peter-evans/create-pull-request@v7
         with:
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           commit-message: "Update latest OSCAR release to v${{ steps.release.outputs.version }}"
           title: "Update latest OSCAR release to v${{ steps.release.outputs.version }}"
           body: |
