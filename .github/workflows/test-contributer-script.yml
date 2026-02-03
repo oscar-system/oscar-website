@@ -96,14 +96,13 @@ jobs:
         test "$PEOPLE_COUNT_AFTER" -ge "${{ env.PEOPLE_COUNT_BEFORE }}"
 
     - name: Compute date
-      if: github.event_name != 'pull_request' && !cancelled()
+      if: github.event_name != 'pull_request' && success()
       run: echo "TODAY=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
 
     - name: Create Pull Request
       if: github.event_name != 'pull_request' && success()
       uses: peter-evans/create-pull-request@v8
       with:
-
         commit-message: "Update contributors on ${{ env.TODAY }}"
         branch: update-contributors
         delete-branch: true
