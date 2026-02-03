@@ -117,6 +117,7 @@ jobs:
             _Opened automatically by a scheduled workflow._
           branch: "bot/update-latest-release-v${{ steps.release.outputs.version }}"
           base: gh-pages
+          delete-branch: true
           labels: "release-process"
           author: "update_release[bot] <update_release[bot]@users.noreply.github.com>"
           committer: "update_release[bot] <update_release[bot]@users.noreply.github.com>"
