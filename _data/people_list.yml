@@ -41,14 +41,6 @@
   comment: Co-author of commit 6b2cef5a53b095f3998ba3444cf192ce4fadf797
   repos:
   - oscar-system/Oscar.jl
-- name: Alheydis Geiger
-  affiliation: Max Planck Institute for Mathematics in the Sciences, Leipzig
-  email: Alheydis.Geiger@mis.mpg.de
-  github: AlheydisGeiger
-  website: https://www.mis.mpg.de/de/people/alheydis-geiger
-  status: active
-  repos:
-  - oscar-system/Oscar.jl
 - name: Mohamed Barakat
   affiliation: University of Siegen
   email: mohamed.barakat@uni-siegen.de
@@ -288,6 +280,14 @@
   comment: Co-author of commit ad7e39a9abb981d0873a67477d50d3664b720e00
   aka:
   - garrote
+  repos:
+  - oscar-system/Oscar.jl
+- name: Alheydis Geiger
+  affiliation: Max Planck Institute for Mathematics in the Sciences, Leipzig
+  email: Alheydis.Geiger@mis.mpg.de
+  github: AlheydisGeiger
+  website: https://www.mis.mpg.de/de/people/alheydis-geiger
+  status: active
   repos:
   - oscar-system/Oscar.jl
 - name: Zoe Geiselmann
@@ -551,9 +551,9 @@
   github: imkhln
   website: https://page.math.tu-berlin.de/~makhlin/
   status: active
+  comment: Co-author of commit af7cb7f6675714000774610a5ea8d7abaeed6728
   repos:
   - oscar-system/Oscar.jl
-  comment: Co-author of commit af7cb7f6675714000774610a5ea8d7abaeed6728
 - name: MarieKaltoft
   github: MarieKaltoft
   status: retired
