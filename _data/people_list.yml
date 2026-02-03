@@ -41,9 +41,11 @@
   comment: Co-author of commit 6b2cef5a53b095f3998ba3444cf192ce4fadf797
   repos:
   - oscar-system/Oscar.jl
-- name: AlheydisGeiger
-  email: 90004042+AlheydisGeiger@users.noreply.github.com
+- name: Alheydis Geiger
+  affiliation: Max Planck Institute for Mathematics in the Sciences, Leipzig
+  email: Alheydis.Geiger@mis.mpg.de
   github: AlheydisGeiger
+  website: https://www.mis.mpg.de/de/people/alheydis-geiger
   status: active
   repos:
   - oscar-system/Oscar.jl
@@ -544,17 +546,14 @@
   repos:
   - thofma/Hecke.jl
 - name: Igor Makhlin
-  email: 150450239+imkhln@users.noreply.github.com
-  github: imkhln
-  status: active
-  repos:
-  - oscar-system/Oscar.jl
-- name: Igor Makhlin
+  affiliation: TU Berlin
   email: makhlin@artin.math.tu-berlin.de
+  github: imkhln
+  website: https://page.math.tu-berlin.de/~makhlin/
   status: active
-  comment: Co-author of commit af7cb7f6675714000774610a5ea8d7abaeed6728
   repos:
   - oscar-system/Oscar.jl
+  comment: Co-author of commit af7cb7f6675714000774610a5ea8d7abaeed6728
 - name: MarieKaltoft
   github: MarieKaltoft
   status: retired
