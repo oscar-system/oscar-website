@@ -60,9 +60,9 @@ jobs:
       - name: Determine whether _data/release.yml changed
         id: release
         run: |
-          set -euo pipefail
+          set -uo pipefail
 
-          set +e
+
           git diff --quiet HEAD -- _data/release.yml
           ec=$?
           set -e
@@ -72,8 +72,8 @@ jobs:
           elif [ $ec -eq 1 ]; then
             echo "changed=true" >> "$GITHUB_OUTPUT"
           else
-            echo "git diff failed with exit code $ec" >&2
-            git status --porcelain=v1 >&2 || true
+            echo "git diff failed with exit code $ec"
+            git status --porcelain=v1 || true
             exit $ec
           fi
 
