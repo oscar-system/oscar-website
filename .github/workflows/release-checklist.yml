@@ -115,7 +115,7 @@ jobs:
           filename: .github/release-checklist-template.md
           assignees: HereAround, aaruni96
           update_existing: true
-          search_existing: all
+          search_existing: open
 
       - name: Create pull request which updates _data/release.yml
         if: github.event_name != 'pull_request' && !cancelled()
