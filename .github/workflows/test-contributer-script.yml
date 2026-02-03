@@ -100,10 +100,10 @@ jobs:
       run: echo "TODAY=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
 
     - name: Create Pull Request
-      if: github.event_name != 'pull_request' && !cancelled()
+      if: github.event_name != 'pull_request' && success()
       uses: peter-evans/create-pull-request@v8
       with:
-        token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+
         commit-message: "Update contributors on ${{ env.TODAY }}"
         branch: update-contributors
         delete-branch: true
