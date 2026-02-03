@@ -60,15 +60,46 @@ jobs:
       - name: Determine whether _data/release.yml changed
         id: release
         run: |
-          if git diff-index --quiet HEAD -- _data/release.yml; then
+          set -uo pipefail
+
+          git diff --quiet HEAD -- _data/release.yml
+          ec=$?
+
+          if [ $ec -eq 0 ]; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
-          else
+          elif [ $ec -eq 1 ]; then
             echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "git diff failed with exit code $ec"
+            git status --porcelain=v1 || true
+            exit $ec
           fi
+
           version="$(yq -r '.version' _data/release.yml)"
           echo "version=$version" >> "$GITHUB_OUTPUT"
           published="$(yq -r '.date' _data/release.yml)"
           echo "published=$published" >> "$GITHUB_OUTPUT"
+
+      - name: Debug changed/version and diff
+        if: always()
+        run: |
+          echo "event_name:             ${{ github.event_name }}"
+          echo "ref:                    ${{ github.ref }}"
+          echo "sha:                    ${{ github.sha }}"
+          echo "new release?:           ${{ steps.release.outputs.changed }}"
+          echo "latest OSCAR version:   ${{ steps.release.outputs.version }}"
+
+          echo ""
+          echo "== git status =="
+          git status --porcelain=v1
+
+          echo ""
+          echo "== git diff for _data/release.yml (if any) =="
+          git --no-pager diff -- _data/release.yml || true
+
+          echo ""
+          echo "== content of created _data/release.yml =="
+          yq -P _data/release.yml || true
 
       - name: Create issue with release checklist
         if: github.event_name != 'pull_request' && success() && steps.release.outputs.changed == 'true'
@@ -82,7 +113,7 @@ jobs:
           filename: .github/release-checklist-template.md
           assignees: HereAround, aaruni96
           update_existing: true
-          search_existing: open          
+          search_existing: open
 
       - name: Create pull request which updates _data/release.yml
         if: github.event_name != 'pull_request' && success()
@@ -96,6 +127,7 @@ jobs:
             _Opened automatically by a scheduled workflow._
           branch: "bot/update-latest-release-v${{ steps.release.outputs.version }}"
           base: gh-pages
+          delete-branch: true
           labels: "release-process"
           author: "update_release[bot] <update_release[bot]@users.noreply.github.com>"
           committer: "update_release[bot] <update_release[bot]@users.noreply.github.com>"
