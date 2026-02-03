@@ -6,7 +6,7 @@ labels: release-process
 # OSCAR v{{ env.VERSION }} release requires follow-up
 
 
-A new OSCAR release **v{{ env.VERSION }}** was published on **{{ env.PUBLISHED_UTC }}** (UTC)
+A new OSCAR release **v{{ env.VERSION }}** was published on **{{ env.PUBLISHED }}**
 
 Please send an email to the OSCAR mailing list (<devel@oscar-system.org>) to inform about
 this update. You can use the following template:
@@ -17,7 +17,7 @@ this update. You can use the following template:
 > Dear all,
 > 
 > We are happy to announce that OSCAR version v{{ env.VERSION }} has been released on
-> {{ env.PUBLISHED }} (UTC).
+> {{ env.PUBLISHED }}.
 > 
 > Highlights of this release:
 > - (Add 2-3 bullet points summarizing major changes or improvements)

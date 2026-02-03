@@ -282,6 +282,14 @@
   - garrote
   repos:
   - oscar-system/Oscar.jl
+- name: Alheydis Geiger
+  affiliation: Max Planck Institute for Mathematics in the Sciences, Leipzig
+  email: Alheydis.Geiger@mis.mpg.de
+  github: AlheydisGeiger
+  website: https://www.mis.mpg.de/de/people/alheydis-geiger
+  status: active
+  repos:
+  - oscar-system/Oscar.jl
 - name: Zoe Geiselmann
   affiliation: TU Berlin
   email: geiselmann@math.tu-berlin.de
@@ -537,6 +545,15 @@
   - eoinmackall@pop-os.lan
   repos:
   - thofma/Hecke.jl
+- name: Igor Makhlin
+  affiliation: TU Berlin
+  email: makhlin@artin.math.tu-berlin.de
+  github: imkhln
+  website: https://page.math.tu-berlin.de/~makhlin/
+  status: active
+  comment: Co-author of commit af7cb7f6675714000774610a5ea8d7abaeed6728
+  repos:
+  - oscar-system/Oscar.jl
 - name: MarieKaltoft
   github: MarieKaltoft
   status: retired

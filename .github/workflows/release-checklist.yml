@@ -67,6 +67,8 @@ jobs:
           fi
           version="$(yq -r '.version' _data/release.yml)"
           echo "version=$version" >> "$GITHUB_OUTPUT"
+          published="$(yq -r '.date' _data/release.yml)"
+          echo "published=$published" >> "$GITHUB_OUTPUT"
 
       - name: Create issue with release checklist
         if: github.event_name != 'pull_request' && !cancelled() && steps.release.outputs.changed == 'true'
@@ -75,7 +77,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VERSION: ${{ steps.release.outputs.version }}
-          PUBLISHED_UTC: ${{ steps.release.outputs.published_utc }}
+          PUBLISHED: ${{ steps.release.outputs.published }}
         with:
           filename: .github/release-checklist-template.md
           assignees: HereAround, aaruni96
@@ -83,8 +85,8 @@ jobs:
           search_existing: open          
 
       - name: Create pull request which updates _data/release.yml
-        if: github.event_name != 'pull_request' && success()
-        uses: peter-evans/create-pull-request@v7
+        if: github.event_name != 'pull_request' && !cancelled()
+        uses: peter-evans/create-pull-request@v8
         with:
 
           commit-message: "Update latest OSCAR release to v${{ steps.release.outputs.version }}"
