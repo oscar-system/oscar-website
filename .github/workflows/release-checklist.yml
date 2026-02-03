@@ -71,7 +71,7 @@ jobs:
           echo "published=$published" >> "$GITHUB_OUTPUT"
 
       - name: Create issue with release checklist
-        if: github.event_name != 'pull_request' && !cancelled() && steps.release.outputs.changed == 'true'
+        if: github.event_name != 'pull_request' && success() && steps.release.outputs.changed == 'true'
         uses: JasonEtco/create-an-issue@v2
         # marketplace action : https://github.com/marketplace/actions/create-an-issue
         env:
