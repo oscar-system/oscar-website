@@ -82,10 +82,10 @@ jobs:
           filename: .github/release-checklist-template.md
           assignees: HereAround, aaruni96
           update_existing: true
-          search_existing: open          
+          search_existing: all
 
       - name: Create pull request which updates _data/release.yml
-        if: github.event_name != 'pull_request' && !cancelled()
+        if: github.event_name != 'pull_request' && !cancelled() && steps.release.outputs.changed == 'true'
         uses: peter-evans/create-pull-request@v8
         with:
           commit-message: "Update latest OSCAR release to v${{ steps.release.outputs.version }}"
