@@ -41,6 +41,12 @@
   comment: Co-author of commit 6b2cef5a53b095f3998ba3444cf192ce4fadf797
   repos:
   - oscar-system/Oscar.jl
+- name: AlheydisGeiger
+  email: 90004042+AlheydisGeiger@users.noreply.github.com
+  github: AlheydisGeiger
+  status: active
+  repos:
+  - oscar-system/Oscar.jl
 - name: Mohamed Barakat
   affiliation: University of Siegen
   email: mohamed.barakat@uni-siegen.de
@@ -537,6 +543,18 @@
   - eoinmackall@pop-os.lan
   repos:
   - thofma/Hecke.jl
+- name: Igor Makhlin
+  email: 150450239+imkhln@users.noreply.github.com
+  github: imkhln
+  status: active
+  repos:
+  - oscar-system/Oscar.jl
+- name: Igor Makhlin
+  email: makhlin@artin.math.tu-berlin.de
+  status: active
+  comment: Co-author of commit af7cb7f6675714000774610a5ea8d7abaeed6728
+  repos:
+  - oscar-system/Oscar.jl
 - name: MarieKaltoft
   github: MarieKaltoft
   status: retired
