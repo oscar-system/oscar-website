@@ -62,10 +62,8 @@ jobs:
         run: |
           set -uo pipefail
 
-
           git diff --quiet HEAD -- _data/release.yml
           ec=$?
-          set -e
 
           if [ $ec -eq 0 ]; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
