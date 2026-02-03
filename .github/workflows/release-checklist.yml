@@ -85,22 +85,22 @@ jobs:
       - name: Debug changed/version and diff
         if: always()
         run: |
-          echo "event_name: ${{ github.event_name }}"
-          echo "ref:       ${{ github.ref }}"
-          echo "sha:       ${{ github.sha }}"
-          echo "changed:   ${{ steps.release.outputs.changed }}"
-          echo "version:   ${{ steps.release.outputs.version }}"
+          echo "event_name:             ${{ github.event_name }}"
+          echo "ref:                    ${{ github.ref }}"
+          echo "sha:                    ${{ github.sha }}"
+          echo "new release?:           ${{ steps.release.outputs.changed }}"
+          echo "latest OSCAR version:   ${{ steps.release.outputs.version }}"
 
           echo ""
           echo "== git status =="
           git status --porcelain=v1
 
           echo ""
-          echo "== diff for _data/release.yml (if any) =="
+          echo "== git diff for _data/release.yml (if any) =="
           git --no-pager diff -- _data/release.yml || true
 
           echo ""
-          echo "== yq output (normalized) =="
+          echo "== content of created _data/release.yml =="
           yq -P _data/release.yml || true
 
       - name: Create issue with release checklist
