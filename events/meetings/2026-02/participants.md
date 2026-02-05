@@ -20,7 +20,7 @@ people:
 
     - {name: Lars Göttgens, affiliation: RWTH}
 
-    - {name: Friedemann Groh}
+    - {name: Friedemann Groh, affiliation: ISG}
 
     - {name: Jeroen Hanselman, affiliation: RPTU}
 
@@ -50,6 +50,16 @@ people:
 
     - {name: Matthias Zach, affiliation: RPTU}
 
+    - {name: Roan Talbut, affiliation: Durham}
+
+    - {name: Oliver Clarke, affiliation: Durham}
+
+    - {name: Gabriel Riffo Jara, affiliation: TU Berlin}
+
+    - {name: Aaruni Kaushik, affiliation: RPTU}
+
+    - {name: Dante Luber, affiliation: Paderborn}
+    
 ---
 
 {% include participants.html participants=page.people %}
