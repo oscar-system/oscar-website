@@ -36,7 +36,7 @@ And please add your project ideas for the coding sprint to our [HackMD](https://
 - 16:30 Emre Sertöz (Leiden): Algorithms for Univariate Period Integrals
   <details>
   <summary>Abstract</summary>
-   <p>While computing with arbitrary real or complex numbers is algorithmically impossible, many numbers arising in mathematics and physics belong to a countable and conjecturally computable subset: the periods. These values are of algebro-geometric origin and encompass examples from π to values appearing in Feynman diagrams with rational momenta.</p>
+   <p>While computing with arbitrary real or complex numbers is algorithmically impossible, many numbers arising in mathematics and physics belong to a countable and conjecturally computable subset: the periods. These values are of algebro-geometric origin and encompass examples from π to values appearing in Feynman diagrams with rational momenta.</p> 
 
    Conjectures of Grothendieck, Kontsevich, and Zagier suggest that identities involving periods must themselves have geometric origins, placing significant portions of transcendental number theory within the scope of algebraic geometry. Recently, Huber and Wüstholz (2022) proved that linear relations between univariate periods (1-periods) do indeed fall within the purview of algebraic geometry.
 
