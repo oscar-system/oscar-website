@@ -20,7 +20,7 @@ people:
 
     - {name: Lars Göttgens, affiliation: RWTH}
 
-    - {name: Friedemann Groh}
+    - {name: Friedemann Groh, affiliation: ISG}
 
     - {name: Jeroen Hanselman, affiliation: RPTU}
 
@@ -38,11 +38,11 @@ people:
 
     - {name: Igor Makhlin, affiliation: TU Berlin}
 
-    - {name: Stef Nomden, affiliation: Leiden University}
+    - {name: Stef Nomden, affiliation: Leiden}
 
     - {name: Yue Ren, affiliation: Durham University}
 
-    - {name: Emre Sertöz, affiliation: Leiden University}
+    - {name: Emre Sertöz, affiliation: Leiden}
 
     - {name: Marcel Wack, affiliation: TU Berlin}
 
@@ -50,6 +50,16 @@ people:
 
     - {name: Matthias Zach, affiliation: RPTU}
 
+    - {name: Roan Talbut, affiliation: Durham}
+
+    - {name: Oliver Clarke, affiliation: Durham}
+
+    - {name: Gabriel Riffo Jara, affiliation: TU Berlin}
+
+    - {name: Aaruni Kaushik, affiliation: RPTU}
+
+    - {name: Dante Luber, affiliation: Paderborn}
+    
 ---
 
 {% include participants.html participants=page.people %}
