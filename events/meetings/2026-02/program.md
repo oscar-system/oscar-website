@@ -28,12 +28,12 @@ And please add your project ideas for the coding sprint to our [HackMD](https://
 
 - 09:30 Morning standup
 - 12:15 Status reports
-- 14:00 Matthias Zach (RPTU): Practical computation in the derived category of coherent sheaves
+- 15:00 Matthias Zach (RPTU): Practical computation in the derived category of coherent sheaves
   <details>
   <summary>Abstract</summary>
   Coherent sheaves and their derived category form a backbone of modern Algebraic Geometry. For example, the cohomology groups $H^p(X,\Omega^q_X)$ of the algebraic $q$-forms on a projective variety $X$ form a fundamental set of invariants for $X$. While the theory is well developed and understood, an effective implementation is facing numerous challenges. In this talk I will report on recent developments in OSCAR for the computation of spectral sequences and direct images of (complexes of) coherent sheaves of modules, with several applications in Singularity Theory and Algebraic Geometry. 
   </details>
-- 15:30 Emre Sertöz (Leiden): Algorithms for Univariate Period Integrals
+- 16:30 Emre Sertöz (Leiden): Algorithms for Univariate Period Integrals
   <details>
   <summary>Abstract</summary>
    <p>While computing with arbitrary real or complex numbers is algorithmically impossible, many numbers arising in mathematics and physics belong to a countable and conjecturally computable subset: the periods. These values are of algebro-geometric origin and encompass examples from π to values appearing in Feynman diagrams with rational momenta.</p>
@@ -42,7 +42,7 @@ And please add your project ideas for the coding sprint to our [HackMD](https://
 
    In joint work with Joël Ouaknine (MPI-SWS) and James Worrell (Oxford), we give an algorithm that makes this geometric characterization effective: it determines all linear relations over the algebraic numbers among any given finite tuple of 1-periods and decides whether individual periods are transcendental. The algorithmic approach interweaves computational techniques across multiple domains, combining symbolic and rigorous numerical methods in ways that demand robust mathematical software infrastructure. 
   </details>
-- 17:30 Dinner (self-paid)
+- 18:00 Dinner (self-paid)
 
 ### Thursday
 
