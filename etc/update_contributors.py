@@ -244,8 +244,13 @@ with open(PEOPLE_LIST_FILE, "w", encoding="utf-8") as f:
     yaml.dump(ordered_people, f, sort_keys=False, allow_unicode=True)
 
 # Write summary
-for i in suspected_bots:
-    summarystring += f"- Skipping suspected bot: {i[1]} in repo {i[0]}\n"
+if len(suspected_bots) > 0:
+    bots = sorted({line for _, line in suspected_bots})
+    repos = sorted({repo for repo, _ in suspected_bots})
+    summarystring += (
+        f"- Skipped {len(bots)} bot accounts across {len(repos)} repos:\n"
+        + "".join(f"  - {b}\n" for b in bots)
+    )
 revived_names = [p.get("name") for p in current_contributors if id(p) in _seen_current and id(p) in _prev_status and _prev_status[id(p)] == "retired"]
 newly_retired_names = [p.get("name") for p in current_contributors if p.get("status") == "retired" and _prev_status.get(id(p)) == "active"]
 summary = (

@@ -38,11 +38,11 @@ people:
 
     - {name: Igor Makhlin, affiliation: TU Berlin}
 
-    - {name: Stef Nomden, affiliation: Leiden University}
+    - {name: Stef Nomden, affiliation: Leiden}
 
     - {name: Yue Ren, affiliation: Durham University}
 
-    - {name: Emre Sertöz, affiliation: Leiden University}
+    - {name: Emre Sertöz, affiliation: Leiden}
 
     - {name: Marcel Wack, affiliation: TU Berlin}
 
