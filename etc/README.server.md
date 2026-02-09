@@ -3,19 +3,11 @@
 This document describes how the OSCAR website hosting is set up, to help
 people who need to troubleshoot it or migrate it to a new host.
 
-## Required software on the server
-
-To ensure the required software is installed on the server, run this
-(assuming a Debian or Ubuntu based environment):
-
-    apt install git bundler python3
-
-
-## Where it is
+## Where it is hosted
 
 The server can be reached via SSH:
 
-    ssh www-mathe-oscar@www-admin11.uni-kl.de
+    ssh www-mathe-oscar@www-admin13.rz.rptu.de
 
 The website is update from a git clone of the website repository at
 
@@ -103,10 +95,10 @@ following as root:
 ### Requirements
 
 - Ubuntu or Debian VM
+- Python 3 with pip (`apt install python3 python3-pip`)
 - Apache 2 (`apt install apache2`)
 - Ruby 2.7 or newer, including development headers, and bundler (`apt-get install bundler`)
 - PHP (only for the webhook) (`apt install libapache2-mod-php ; a2enmod php7.4`)
-- Jekyll (installed via `gem` and `bundler`, see below)
 
 
 ## Further steps as `root`
