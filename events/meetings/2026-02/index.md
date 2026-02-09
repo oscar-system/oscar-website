@@ -16,8 +16,8 @@ weight: 1
 
 ## Registration
 
-If you wish to particpate, **please register** by sending an email to both [Kevin Kühn](mailto:kuehn@math.tu-berlin.de) and
-[Igor Makhlin](mailto:iymakhlin@gmail.com) until **February 15**. Please also indicate whether you would like to join the self-paid dinner on Wednesday.
+If you wish to particpate, **please register until February 15** by sending an email to both [Kevin Kühn](mailto:kuehn@math.tu-berlin.de) and
+[Igor Makhlin](mailto:iymakhlin@gmail.com). Please also indicate whether you would like to join the self-paid dinner on Wednesday.
 
 ## Information
 
