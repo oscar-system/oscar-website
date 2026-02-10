@@ -16,7 +16,7 @@ redirect_from:
   - 12:00: Meeting at Lehrstuhl D, lunch
   - 13:30: Discussion of a TODO list for the Oscar project and of organisational issues
   - 18:00: PI Meeting
-  - ca. 19:00: Dinner at Labyrinth 
+  - ca. 19:00: Dinner at Labyrinth
 
 - Tuesday to Friday:
   - 09:00 Coding Sprint

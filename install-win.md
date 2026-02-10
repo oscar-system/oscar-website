@@ -26,7 +26,7 @@ To install **OSCAR v{{ site.data.release.version }}**, the latest stable release
 
 <div class="message">
   <strong>WARNING:</strong>
-  The installation process of OSCAR, particularly the precompilation step, requires 
+  The installation process of OSCAR, particularly the precompilation step, requires
   <strong>at least 6GB of free memory</strong>. For optimal performance with OSCAR, we recommend having <strong>at least 16GB of RAM</strong>.
 </div>
 
@@ -49,7 +49,7 @@ Having trouble? You can visit our [Contact & Support]({{site.baseurl}}/contact-a
 ## Step 2: Install Julia
 
 <div class="message">
-   <strong>WARNING:</strong> 
+   <strong>WARNING:</strong>
    Do <strong>not</strong> install the Windows version of Julia. Instead, install the Linux version of Julia inside <a href="https://learn.microsoft.com/en-us/windows/wsl">WSL</a>, following the steps below.
 </div>
 

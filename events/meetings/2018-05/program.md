@@ -54,5 +54,5 @@ redirect_from:
   - Integration of Nemo matrices in LinearAlgebraForCAP via JuliaInterface
   - Using GAP and Hecke in second cohomology computations
 
-- Julia 
+- Julia
   - Exploration of further possibilities of linking Julia and C++

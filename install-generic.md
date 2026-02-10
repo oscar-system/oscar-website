@@ -31,7 +31,7 @@ If you are using a **different operating system**, we **do not provide support**
 
 <div class="message">
   <strong>WARNING:</strong>
-  The installation process of OSCAR, particularly the precompilation step, requires 
+  The installation process of OSCAR, particularly the precompilation step, requires
   <strong>at least 6GB of free memory</strong>. For optimal performance with OSCAR, we recommend having <strong>at least 16GB of RAM</strong>.
 </div>
 
