@@ -696,7 +696,7 @@
   affiliation: University of Mainz
   email: hendrik.ranocha@uni-mainz.de.
   github: ranocha
-  status: active
+  status: retired
   repos:
   - Nemocas/AbstractAlgebra.jl
   - Nemocas/Nemo.jl
