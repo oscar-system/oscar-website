@@ -62,7 +62,7 @@ julia> @btime ngens(S);
 #### Some OSCAR case studies
 
 
-```
+```txt
 @ experimental/FTheoryTools/test/literature_models.jl:1 @
 # runs 400 seconds, allocates 80 GB
 

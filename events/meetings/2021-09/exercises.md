@@ -85,7 +85,8 @@ You may wish to consult the [Julia documentation](https://docs.julialang.org/en/
 
   Implement a function `pascal_triangle(n)` which prints the first $n$ rows of Pascal's triangle.
   For example, `pascal_triangle(5)` should print
-  ```
+
+  ```txt
       1
      1 1
     1 2 1
