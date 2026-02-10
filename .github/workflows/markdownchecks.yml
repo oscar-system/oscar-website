@@ -1,0 +1,29 @@
+name: Markdown checks
+
+on:
+  pull_request:
+  push:
+    branches: [gh-pages]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  markdownchecks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Lint Markdown
+        uses: DavidAnson/markdownlint-cli2-action@v22
+        with:
+          globs: |
+            **/*.md
+            !vendor/**
+            !_site/**
+            !.github/**
+            !etc/**
+            !README.hyde.md
+            !_sass/hyde.scss

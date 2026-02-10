@@ -1,0 +1,31 @@
+# Markdown rules for CI
+#
+# We intentionally enable only a small set of rules that catch
+# likely mistakes or readability issues, not stylistic preferences.
+#
+# Rule documentation:
+#   https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md
+#
+config:
+  # Start from a clean slate: no rules enabled unless explicitly listed
+  default: false
+
+  # MD009 — no trailing spaces at end of lines
+  # (allows exactly two spaces for an intentional Markdown line break)
+  MD009:
+    br_spaces: 2
+    strict: false
+
+  # MD010 — disallow hard tabs (can render inconsistently)
+  MD010: true
+
+  # MD040 — fenced code blocks should specify a language
+  # (improves readability and syntax highlighting)
+  MD040: true
+
+  # MD047 — files should end with a single newline character
+  # (POSIX text file convention; avoids diff noise)
+  MD047: true
+
+  # Optional / currently disabled:
+  # MD031 — fenced code blocks should be surrounded by blank lines
