@@ -9,13 +9,15 @@ weight: 1
 
 # OSCAR Coding Sprint
 
-* When: February 23 - February 27, 2026.
-* Where: TU Berlin, [E-N Building (Einsteinufer 17)](https://maps.app.goo.gl/najYFhEHoJfoQWB1A)
+* When: February 23 - February 27, 2026
+* Where: TU Berlin, [E-N Building (Einsteinufer 17)](https://maps.app.goo.gl/najYFhEHoJfoQWB1A), rooms EN 056, 057, 058
 * What: A general coding sprint for OSCAR and OSCAR adjacent projects (polymake, Singular, ...)
 * Who: OSCAR developers and enthusiasts
 
-If you wish to particpate, **please register** by sending an email to both [Kevin Kühn](mailto:kuehn@math.tu-berlin.de) and
-[Igor Makhlin](mailto:iymakhlin@gmail.com).
+## Registration
+
+If you wish to particpate, **please register until February 15** by sending an email to both [Kevin Kühn](mailto:kuehn@math.tu-berlin.de) and
+[Igor Makhlin](mailto:iymakhlin@gmail.com). Please also indicate whether you would like to join the self-paid dinner on Wednesday.
 
 ## Information
 

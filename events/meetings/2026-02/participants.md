@@ -59,6 +59,8 @@ people:
     - {name: Aaruni Kaushik, affiliation: RPTU}
 
     - {name: Dante Luber, affiliation: Paderborn}
+
+    - {name: Victoria Schleis, affiliation: Durham}
     
 ---
 
