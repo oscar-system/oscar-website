@@ -41,7 +41,7 @@ Discover more about our project and vision on our [About]({{site.baseurl}}/about
   {% endfor %}
   {% if upcoming_conferences.size > max_events %}
 More upcoming events are available [here]({{ site.baseurl }}/events/).
-  {% endif %}  
+  {% endif %}
 {% else %}
   Currently no upcoming events.
 {% endif %}

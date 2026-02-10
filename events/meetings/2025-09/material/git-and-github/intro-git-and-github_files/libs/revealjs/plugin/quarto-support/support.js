@@ -143,7 +143,7 @@ window.QuartoSupport = function () {
   function addFooter(deck) {
     const revealParent = deck.getRevealElement();
     const defaultFooterDiv = document.querySelector(".footer-default");
-    // Set per slide footer if any defined, 
+    // Set per slide footer if any defined,
     // or show default unless data-footer="false" for no footer on this slide
     const setSlideFooter = (ev, defaultFooterDiv) => {
       const currentSlideFooter = ev.currentSlide.querySelector(".footer");
@@ -339,7 +339,7 @@ window.QuartoSupport = function () {
       // remove all whitespace text nodes
       // whitespace nodes cause the columns to be misaligned
       // since they have inline-block layout
-      // 
+      //
       // Quarto emits no whitespace nodes, but third-party tooling
       // has bugs that can cause whitespace nodes to be emitted.
       // See https://github.com/quarto-dev/quarto-cli/issues/8382
@@ -366,7 +366,7 @@ window.QuartoSupport = function () {
       this.deck = deck;
       this.oldScrollActivationWidth = deck.getConfig()['scrollActivationWidth'];
     }
-  
+
     toggleScrollViewWrapper() {
       if (this.deck.isScrollView() === true) {
         this.deck.configure({ scrollActivationWidth: this.oldScrollActivationWidth });

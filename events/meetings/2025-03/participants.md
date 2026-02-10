@@ -27,7 +27,7 @@ people:
     - {name: Yue Ren (remote), affiliation: Durham University}
 
     - {name: Martin Wagner, affiliation: RPTU Kaiserslautern-Landau}
-    
+
     - {name: Antony Della Vecchia, affiliation: TU Berlin}
 
     - {name: James Nohilly, affiliation: RPTU Kaiserslautern-Landau}

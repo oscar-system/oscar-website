@@ -52,14 +52,14 @@ These *Friends* are independent projects that share our goals: advancing open-so
 Examples include experimental packages, research prototypes, and companion libraries developed by individual researchers or groups.
 
 By joining *Friends of OSCAR*, your project will:
-- Be listed and promoted on the [Friends of OSCAR GitHub page](https://github.com/oscar-system/FriendsOfOscar).  
-- Gain visibility within the wider OSCAR ecosystem.  
+- Be listed and promoted on the [Friends of OSCAR GitHub page](https://github.com/oscar-system/FriendsOfOscar).
+- Gain visibility within the wider OSCAR ecosystem.
 - Facilitate collaboration and knowledge exchange with other developers and researchers.
 
 **How to become a Friend of OSCAR:**
-1. Visit [Friends of OSCAR on GitHub](https://github.com/oscar-system/FriendsOfOscar).  
+1. Visit [Friends of OSCAR on GitHub](https://github.com/oscar-system/FriendsOfOscar).
 2. Add your project following the contribution guidelines described there. A key part of this process is providing a small example showing how your project uses OSCAR.
-3. Open a Pull Request to suggest your inclusion.  
+3. Open a Pull Request to suggest your inclusion.
 4. Optionally, [contact us]({{site.baseurl}}/contact-and-support/) to discuss how your project integrates with OSCAR.
 
 Whether you are a student exploring new ideas or a team maintaining a large research codebase, we warmly invite you to become a *Friend of OSCAR*. Your project can inspire others, expand OSCAR’s reach, and help build a stronger open-source mathematics community.

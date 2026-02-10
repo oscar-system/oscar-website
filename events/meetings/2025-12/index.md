@@ -38,7 +38,7 @@ Slides for the talks: [part 1](galway2025-part1.pdf), [part 2](galway2025-part2.
 4. Work through an [OSCAR tutorial](https://www.oscar-system.org/tutorials/).
    We recommend the [Linear Algebra tutorial](https://github.com/oscar-system/OSCARBinder/blob/master/LinearAlgebraInOSCAR.ipynb)
 
-<!-- 
+<!--
 ## Office hour
 
 We will offer an "office hour" before the actual meeting, where you can ask

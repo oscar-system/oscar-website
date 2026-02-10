@@ -38,7 +38,7 @@
   url: "/credits/"
   submenu:
     - title: "Software"
-      url: "/credits/software-credits/"  
+      url: "/credits/software-credits/"
     - title: "People"
       url: "/credits/contributors/"
     - title: "Bibliography"

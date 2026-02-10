@@ -31,7 +31,7 @@ If you are using a **different operating system**, we **do not provide support**
 
 <div class="message">
   <strong>WARNING:</strong>
-  The installation process of OSCAR, particularly the precompilation step, requires 
+  The installation process of OSCAR, particularly the precompilation step, requires
   <strong>at least 6GB of free memory</strong>. For optimal performance with OSCAR, we recommend having <strong>at least 16GB of RAM</strong>.
 </div>
 
@@ -125,4 +125,3 @@ ${julia_for_oscar} $*
   <strong>WARNING:</strong>
   Users of such a system-wide installation may run into Julia errors if they have already installed some dependencies of OSCAR in their <code>~/.julia/packages</code>, or if they <C>add</C> them later on.
 </div>
-

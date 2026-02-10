@@ -36,4 +36,3 @@ weight: 5
 If you plan to attend, please register by sending an email
 to [Max](mailto:mhorn@rptu.de).
 This also applies to locals from Kaiserslautern!
-

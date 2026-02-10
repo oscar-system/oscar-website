@@ -12,4 +12,3 @@ access)
 In addition, we will organize a room at the TU Kaiserslautern so that
 members of [AGAG](https://www.mathematik.uni-kl.de/en/agag/) at the
 TU Kaiserslautern can join "in presence".
-

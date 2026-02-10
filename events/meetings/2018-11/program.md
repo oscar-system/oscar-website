@@ -47,7 +47,7 @@ Use keyword arguments if there are
 
 - [See the Julia manual about documentation](https://docs.julialang.org/en/v1/manual/documentation/index.html)
 - All user functions need to be documented in Julia’s [markdown format](https://docs.julialang.org/en/latest/stdlib/Markdown/). Example:
-```
+```julia
 @doc Markdown.doc"""
     parent(a::AbstractAlgebra.PolyElem)
 > Return the parent of the given polynomial.

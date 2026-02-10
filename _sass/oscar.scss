@@ -1,4 +1,4 @@
-/* 
+/*
 Based on https://codepen.io/jdsteinbach/pen/GYmQjo
 */
 
@@ -12,11 +12,11 @@ Based on https://codepen.io/jdsteinbach/pen/GYmQjo
   background-color: #ECEFF1;
   color: #263238;
   transition: background-color .15s;
-  
+
   > :last-child {
     margin-bottom: 1rem;
   }
-  
+
   &::before {
     width: 100%;
     height: 100%;
@@ -31,10 +31,10 @@ Based on https://codepen.io/jdsteinbach/pen/GYmQjo
     transition: opacity .2s;
     z-index: -1;
   }
-  
+
   &[open] {
     background-color: #FFF;
-    
+
     &::before {
       opacity: .6;
     }
@@ -48,7 +48,7 @@ Based on https://codepen.io/jdsteinbach/pen/GYmQjo
 /*   font-size: 1.33em; */
   font-weight: bold;
   cursor: pointer;
-  
+
   &::before,
   &::after {
     width: .75em;
@@ -62,15 +62,15 @@ Based on https://codepen.io/jdsteinbach/pen/GYmQjo
     transform: translateY(-50%);
     transition: transform .2s ease-in-out;
   }
-  
+
   &::after {
     transform: translateY(-50%) rotate(90deg);
-    
+
     [open] & {
       transform: translateY(-50%) rotate(180deg);
     }
   }
-  
+
   &::-webkit-details-marker {
     display: none;
   }

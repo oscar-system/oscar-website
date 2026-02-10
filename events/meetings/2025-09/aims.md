@@ -9,7 +9,7 @@ This summer school aims to teach participants knowledge
 about computational algebra, both theoretical and practical.
 
 The schedule will encompass:
-- introductory courses by experts on selected topics of computational algebra 
+- introductory courses by experts on selected topics of computational algebra
 - introductory sessions on working with git, Julia, OSCAR
 - hand-on training sessions implementing selected algorithms in Julia and OSCAR
 

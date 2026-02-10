@@ -80,7 +80,7 @@ if any, should be focused on this goal.
 ### Oscar.jl
  - graded sub-quotient modules (free modules, direct sums, hom spaces
    quotients, sub modules, homomorphisms)
- - Polymake applications in number theory (factorisations into irreducibles in 
+ - Polymake applications in number theory (factorisations into irreducibles in
    number fields)
  - support for arbitrary orderings in polynomial rings
 
@@ -91,4 +91,3 @@ if any, should be focused on this goal.
  - documentation has been added
  - better handling of Gap-errors in Julia
  - fixed and extended conversions between Gap and Julia
-

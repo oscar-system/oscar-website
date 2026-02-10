@@ -46,7 +46,7 @@ problems you may have with the above preparations. Details will be made
 available shortly before.
 
 
-<!-- 
+<!--
 
 Optionally, also do this:
 - [Register a **gather.town** account](https://gather.town/signin)

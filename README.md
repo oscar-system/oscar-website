@@ -42,7 +42,7 @@ To contribute a new News post, please follow these steps
    must be of the format `YYYY-MM-DD-title-of-post.md`.
 
 2. At the beginning of your `.md` file, put
-```
+```yaml
 ---
 layout: post
 title: Title of your post
@@ -56,7 +56,7 @@ author: Your name
 ## How to contribute a talk
 
 Please add a new entry to the file `_data/talks.yml`, following this template
-```
+```yaml
 - title: First things
   author: Sebastian Gutsche
   location: Aachen, Germany
@@ -67,18 +67,18 @@ Please add a new entry to the file `_data/talks.yml`, following this template
 
 To add a link to the PDF to your talk, you can either provide full
 URL to the pdf, via
-```
+```yaml
   pdf_url: http://my.url.de/my.pdf
 ```
 or you can copy the pdf, say `my.pdf` to the `public` subfolder of the website and add
-```
+```yaml
   pdf: my.pdf
 ```
 to the entry in the `talks.yml` file.
 
 If your talk happens to be in a year that previously was not listed on the
 website, then please add the new year in the line
-```
+```liquid
 {% assign years = "2022,2021,2020,2019,2018,2017" | split: "," %}
 ```
 of `talks.html`. Otherwise your talk will not show up on the website.
@@ -95,7 +95,7 @@ To contribute a new tutorial notebook, please follow these steps
 2. Create a thumbnail for the notebook, say `mythumbnail.png` and store it in `/public/thumbnails`.
 
 3. Create a new entry in the `_data/examples.yml` file, consisting of the following lines:
-```
+```yaml
 - title: "My new notebook"
   repository: myusername/mybinderrepo
   filename: mynotebook
@@ -103,7 +103,6 @@ To contribute a new tutorial notebook, please follow these steps
   thumbnail: mythumbnail.png
   language: julia
   date: Date at which the notebook was last modified
-
 ```
 Please adjust all entries accordingly.
 
@@ -111,7 +110,7 @@ Please adjust all entries accordingly.
 
 You can use Jekylls highlighter to get syntax highlighting.
 For Julia code, do the following
-````
+````markdown
 ```julia
 function foo(x)
   return x
@@ -120,7 +119,7 @@ end
 ````
 
 For code samples involving the Julia REPL mode, use this:
-````
+````markdown
 ```console?lang=julia
 julia> print(2)
 2
@@ -129,7 +128,7 @@ julia> print(2)
 
 Note however that the triple-backtick syntax does not work when nested inside
 HTML elements. In that case, you can also use the following Jekyll syntax:
-```
+```liquid
 {% highlight julia %}
 function foo(x)
   return x

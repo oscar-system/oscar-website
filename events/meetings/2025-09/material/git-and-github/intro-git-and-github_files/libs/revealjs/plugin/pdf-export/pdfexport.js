@@ -51,7 +51,7 @@ var PdfExport = ( function( _Reveal ){
 			}, true );
 		}
 	}
-	
+
 	function isPrintingPDF(){
 		return /print-pdf/gi.test(window.location.search) || /view=print/gi.test(window.location.search);
 	}

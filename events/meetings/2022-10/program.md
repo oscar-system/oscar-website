@@ -16,7 +16,7 @@ This workshop aims at all levels of OSCAR users and developers.
 For beginners, there is an introductory crash course at the start.
 We also invited three experts to give accessible introduction to
 various topics. We then will try together to implement what they covered
-using OSCAR, during live hands-on session. 
+using OSCAR, during live hands-on session.
 
 **Please bring a laptop and [follow the preparation instructions](../prepare)**
 
@@ -40,7 +40,7 @@ and [Max Horn](mailto:horn@mathematik.uni-kl.de).
 - 16:00: More hands-on
     (there is also a [physics colloquium talk](https://www.uni-saarland.de/page/quantum-information.html) for those interested)
 
-<!-- 
+<!--
     Link zum Kolloquium wurde noch angefragt (siehe „Elements of the Focus Semester…“ - „Saarbrücken-Jülich Colloquium…“:
     https://www.uni-saarland.de/page/quantum-information.html
 

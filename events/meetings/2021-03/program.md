@@ -33,7 +33,7 @@ If you have suggestions or wishes, please email [Claus](mailto:fieker@mathematik
 
 
 
-<!-- 
+<!--
 In general, we want to work on making OSCAR more usable, integrating
 the corner stones with each other and into OSCAR.jl, and preparing
 for the software demonstration during the SFB presentation in the Summer.

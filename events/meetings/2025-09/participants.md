@@ -100,7 +100,7 @@ people:
       affiliation: Universität Stuttgart
 
     - name: Reinder Meinsma
-      github: RMeinsma 
+      github: RMeinsma
       affiliation: Universität des Saarlandes
 
 ---

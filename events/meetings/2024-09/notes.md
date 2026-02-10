@@ -62,7 +62,7 @@ julia> @btime ngens(S);
 #### Some OSCAR case studies
 
 
-```
+```julia
 @ experimental/FTheoryTools/test/literature_models.jl:1 @
 # runs 400 seconds, allocates 80 GB
 
@@ -88,7 +88,7 @@ julia> @btime ngens(S);
 - [https://github.com/LilithHafner/Chairmarks.jl](https://github.com/LilithHafner/Chairmarks.jl)
 
 ### Profiling
-- built-in profiling code ([Docs](https://docs.julialang.org/en/v1/stdlib/Profile/)) 
+- built-in profiling code ([Docs](https://docs.julialang.org/en/v1/stdlib/Profile/))
 - [https://github.com/JuliaPerf/PProf.jl](https://github.com/JuliaPerf/PProf.jl)
 - [ProfileView](https://github.com/timholy/ProfileView.jl)
 - [ProfileCanvas](https://github.com/pfitzseb/ProfileCanvas.jl)

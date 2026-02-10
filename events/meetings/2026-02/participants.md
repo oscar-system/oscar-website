@@ -5,15 +5,15 @@ meeting: true
 meeting_nr: 202602
 people:
     - {name: John Abbott, affiliation: RPTU}
-    
+
     - {name: Thomas Breuer, affiliation: RWTH}
-    
+
     - {name: Shelby Cox, affiliation: MPI MiS}
-    
+
     - {name: Antony Della Vecchia, affiliation: TU Berlin}
 
     - {name: Kamillo Ferry, affiliation: TU Berlin}
-    
+
     - {name: Claus Fieker, affiliation: RPTU}
 
     - {name: Zoe Geiselmann, affiliation: TU Berlin}
@@ -59,7 +59,7 @@ people:
     - {name: Aaruni Kaushik, affiliation: RPTU}
 
     - {name: Dante Luber, affiliation: Paderborn}
-    
+
 ---
 
 {% include participants.html participants=page.people %}

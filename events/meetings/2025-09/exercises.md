@@ -41,7 +41,7 @@ Find a normal extension $K$ of degree 4 over $\mathbb{Q}$. For some primes (incl
 ramified and (if possible) inert ones define the completions at
 those primes.
 
-For a local field, study the structure of the multiplicative group, in 
+For a local field, study the structure of the multiplicative group, in
 particular at varying precision. Compare this to the theoretical structure.
 
 Verify that the $H^1(K_p^*)$ is indeed trivial and the $H^2$ is cyclic.
@@ -60,11 +60,11 @@ the structure?
 
 Find all endomorphisms of `Z/12Z` and `Z/120Z`
 
-Let `A = matrix(ZZ, rand(-10:10, 1000, 1000))` and 
+Let `A = matrix(ZZ, rand(-10:10, 1000, 1000))` and
 `b = matrix(ZZ, rand(-10:10, 1, 1000))`. What is the best method in Oscar
 to solve `xA = b` for rational `x`? (Maybe start with smaller matrices)
 
-How many ways are there to compute determinants of matrices of univariate 
+How many ways are there to compute determinants of matrices of univariate
 polynomials?
 
 Find all integer solutions to `Ax = b` and `Cx >= 0`
