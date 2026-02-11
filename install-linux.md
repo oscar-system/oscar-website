@@ -40,6 +40,7 @@ Having trouble? You can visit our [Contact & Support]({{site.baseurl}}/contact-a
 If you are using Ubuntu 20.04 "Focal" or newer, or Debian 11 "Bullseye" or newer, proceed as follows:
 Enter these commands into a terminal (this will prompt for your root password and requires that you
 have permissions to administer your computer):
+
 ```sh
 sudo apt update
 sudo apt install build-essential
@@ -47,6 +48,7 @@ sudo apt install build-essential
 
 If you are using Fedora 40 or newer, enter the following commands into a terminal (this will prompt for your password
 and requires that you have permissions to administer your computer):
+
 ```sh
 sudo dnf install gcc-c++ make
 ```
@@ -62,6 +64,7 @@ sudo dnf install gcc-c++ make
 </div>
 
 *OSCAR* requires [Julia](https://julialang.org) {{ site.data.release.julia-min }} or higher. We recommend installing the latest stable release of Julia by entering the following in a terminal and heeding the instructions it shows:
+
 ```sh
 curl -fsSL https://install.julialang.org | sh
 ```
@@ -70,10 +73,13 @@ curl -fsSL https://install.julialang.org | sh
 ## Step 3: Install OSCAR
 
 1. Open the Julia REPL in your terminal by typing the following:
+
    ```bash
    julia
    ```
+
 2. Install OSCAR by running the following commands. This may take a while to complete, as it will download and install OSCAR and its dependencies.
+
    ```julia
    using Pkg
    Pkg.add("Oscar")
@@ -83,6 +89,7 @@ curl -fsSL https://install.julialang.org | sh
 ## Step 4: Start OSCAR
 
 After the installation is complete, you can start using OSCAR by running `using Oscar` in the Julia REPL:
+
 ```console?lang=julia
 julia> using Oscar
   ___   ___   ___    _    ____
@@ -97,13 +104,17 @@ o--------o-----o-----o--------o  | Documentation: https://docs.oscar-system.org
 ## Step 5: Running Tutorials Locally with IJulia
 
 1. Install *IJulia* (and Jupyter) by running the following command inside your Julia REPL:
+
 ```julia
 using Pkg; Pkg.add("IJulia")
 ```
+
 For more details, refer to the [installation guide](https://julialang.github.io/IJulia.jl/stable/manual/installation/). If you encounter issues, you may need to explicitly build IJulia. Troubleshooting info can be found on the [IJulia troubleshooting page](https://julialang.github.io/IJulia.jl/stable/manual/troubleshooting/).
 2. Download the tutorial of your interest from the [list of available OSCAR tutorials]({{site.baseurl }}/tutorials).
 3. Start Jupyter by running the following in your Julia REPL:
+
 ```julia
 using IJulia; notebook()
 ```
+
 4. Your web browser should open with the Jupyter interface, where "Jupyter" is displayed in the upper-left corner, and a file explorer appears below. Locate and open the tutorial notebook of your interest. <br>You might see a pop-up with the message "Kernel not found" or "Kernel error". You can resolve this by selecting a different Julia kernel from the notebook's kernel menu.

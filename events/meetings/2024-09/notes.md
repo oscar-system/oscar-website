@@ -11,9 +11,11 @@ weight: 3
 - Install Julia (ideally 1.10 or newer)
 - [Install OSCAR](/install/)
 - Install more Julia packages:
+
   ```julia
   ]add Revise BenchmarkTools SnoopCompile SnoopCompileCore JET Cthulhu PProf ProfileView AllocCheck DispatchDoctor
   ```
+
 - I heartily recommend  <https://modernjuliaworkflows.org/>
 - In fact let's start out tour from there!
 

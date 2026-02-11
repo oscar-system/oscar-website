@@ -55,6 +55,7 @@ Having trouble? You can visit our [Contact & Support]({{site.baseurl}}/contact-a
 
 1. Open your WSL environment -- installed in Step 1 -- by clicking the *Ubuntu* app from your start menu.
 2. *OSCAR* requires [Julia](https://julialang.org) {{ site.data.release.julia-min }} or higher. We recommend installing the latest stable release of Julia by entering the following in a terminal and heeding the instructions it shows:
+
 ```sh
 curl -fsSL https://install.julialang.org | sh
 ```
@@ -63,10 +64,13 @@ curl -fsSL https://install.julialang.org | sh
 ## Step 3: Install OSCAR
 
 1. In your WSL environment, open the Julia REPL in your terminal by typing the following:
+
    ```bash
    julia
    ```
+
 2. Install OSCAR by running the following commands. This may take a while to complete, as it will download and install OSCAR and its dependencies.
+
    ```julia
    using Pkg
    Pkg.add("Oscar")
@@ -76,6 +80,7 @@ curl -fsSL https://install.julialang.org | sh
 ## Step 4: Start OSCAR
 
 After the installation is complete, you can start using OSCAR by running `using Oscar` in the Julia REPL:
+
 ```console?lang=julia
 julia> using Oscar
   ___   ___   ___    _    ____
@@ -90,9 +95,11 @@ o--------o-----o-----o--------o  | Documentation: https://docs.oscar-system.org
 ## Step 5: Running Tutorials Locally with IJulia
 
 1. Install *IJulia* (and Jupyter) by running the following command inside your Julia REPL (within your [WSL](https://learn.microsoft.com/en-us/windows/wsl) environment):
+
 ```julia
 using Pkg; Pkg.add("IJulia")
 ```
+
 For more details, refer to the [installation guide](https://julialang.github.io/IJulia.jl/stable/manual/installation/). If you encounter issues, you may need to explicitly build IJulia. Troubleshooting info can be found on the [IJulia troubleshooting page](https://julialang.github.io/IJulia.jl/stable/manual/troubleshooting/).
 2. To run tutorial Jupyter notebooks locally, you will need a web browser available inside your [WSL](https://learn.microsoft.com/en-us/windows/wsl) environment, which runs Linux Ubuntu.
 
@@ -102,7 +109,9 @@ For more details, refer to the [installation guide](https://julialang.github.io/
 
 3. Download the tutorial of your interest from the [list of available OSCAR tutorials]({{site.baseurl }}/tutorials).
 4. Start Jupyter by running the following in your Julia REPL (within your [WSL](https://learn.microsoft.com/en-us/windows/wsl) environment):
+
 ```julia
 using IJulia; notebook()
 ```
+
 5. Your web browser should open with the Jupyter interface, where "Jupyter" is displayed in the upper-left corner, and a file explorer appears below. Locate and open the tutorial notebook of your interest. <br>You might see a pop-up with the message "Kernel not found" or "Kernel error". You can resolve this by selecting a different Julia kernel from the notebook's kernel menu.

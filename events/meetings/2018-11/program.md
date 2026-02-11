@@ -55,6 +55,7 @@ Use keyword arguments if there are
 """
 parent(a::PolynomialElem) = a.parent
 ```
+
 - Documentation of a function can also include:
   * Example of usage
   * Explanation of algorithms (including reference to literature)

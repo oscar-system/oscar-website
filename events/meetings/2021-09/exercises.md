@@ -93,6 +93,7 @@ You may wish to consult the [Julia documentation](https://docs.julialang.org/en/
    1 3 3 1
   1 4 6 4 1
   ```
+
   At the start, you might consider ignoring the proper layout of the triangle.
 
 ### 4. My permutation
@@ -141,6 +142,7 @@ You may wish to consult the [Julia documentation](https://docs.julialang.org/en/
       ```
 
       Test your function
+
       ```julia
       p = Permutation([2, 3, 4, 5, 1])
       println(apply(p, (1, 5)) == (2, 1))
@@ -550,6 +552,7 @@ You may wish to consult the [Oscar documentation](https://docs.oscar-system.org/
 
 ### 2. Shuffle groups
   Inspect the groups returned by the following function, for small positive values of `n`.
+
   ```julia
   function shuffle_group(n::Int)
     out_perm = zeros(Int, 2*n)
