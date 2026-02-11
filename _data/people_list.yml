@@ -880,9 +880,11 @@
   status: retired
   comment: Homotopy continuation people
   repos: []
-- name: Tobias271828
+- name: Tobias Schnieders
   github: Tobias271828
   status: active
+  website: https://tobimath.de/en
+  comment: PhD student of Simon Brandhorst
   repos:
   - Nemocas/Nemo.jl
   - oscar-system/Oscar.jl
