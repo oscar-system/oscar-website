@@ -29,3 +29,4 @@ config:
 
   # Optional / currently disabled:
   # MD031 — fenced code blocks should be surrounded by blank lines
+  MD031: true

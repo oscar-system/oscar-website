@@ -25,7 +25,7 @@ jobs:
             !_site/**
             !.github/**
             !etc/**
-            !README.hyde.md
+            !README*
             !LICENSE.hyde.md
             !README.md
             !_sass/hyde.scss
