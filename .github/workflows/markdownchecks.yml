@@ -21,11 +21,8 @@ jobs:
         with:
           globs: |
             **/*.md
-            !vendor/**
             !_site/**
             !.github/**
             !etc/**
             !README*
             !LICENSE.hyde.md
-            !README.md
-            !_sass/hyde.scss
