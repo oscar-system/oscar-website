@@ -784,6 +784,15 @@
   - Nemocas/Nemo.jl
   - oscar-system/Oscar.jl
   - thofma/Hecke.jl
+- name: Tobias Schnieders
+  github: Tobias271828
+  website: https://tobimath.de/en
+  status: active
+  comment: PhD student of Simon Brandhorst
+  repos:
+  - Nemocas/Nemo.jl
+  - oscar-system/Oscar.jl
+  - thofma/Hecke.jl
 - name: Benjamin Schröter
   affiliation: KTH Stochkholm
   email: schrot@kth.se
@@ -880,15 +889,6 @@
   status: retired
   comment: Homotopy continuation people
   repos: []
-- name: Tobias Schnieders
-  github: Tobias271828
-  status: active
-  website: https://tobimath.de/en
-  comment: PhD student of Simon Brandhorst
-  repos:
-  - Nemocas/Nemo.jl
-  - oscar-system/Oscar.jl
-  - thofma/Hecke.jl
 - name: Varun Trehan
   email: varuntrehan7@gmail.com
   github: varuntrehan7
