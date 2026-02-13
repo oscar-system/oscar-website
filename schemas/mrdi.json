@@ -6,17 +6,13 @@
           "type": "string"
         },
         {
-          "not": {
-            "required": [
-              "_ns"
-            ]
-          },
           "patternProperties": {
             "^[a-zA-Z0-9_]*": {
               "$ref": "#/$defs/data"
             }
           },
-          "type": "object"
+          "type": "object",
+          "not": { "required": [ "_ns" ] }
         },
         {
           "items": {
@@ -26,6 +22,9 @@
         },
         {
           "$ref": "https://polymake.org/schemas/data.json"
+        },
+        {
+          "type": "null"
         }
       ]
     }
