@@ -61,6 +61,7 @@ jobs:
         id: release
         run: |
           set -xuo pipefail
+          set +e
 
           git diff --quiet HEAD -- _data/release.yml
           ec=$?
