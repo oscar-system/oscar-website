@@ -60,7 +60,8 @@ jobs:
       - name: Determine whether _data/release.yml changed
         id: release
         run: |
-          set -uo pipefail
+          set -xuo pipefail
+          set +e
 
           git diff --quiet HEAD -- _data/release.yml
           ec=$?
