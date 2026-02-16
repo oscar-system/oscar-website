@@ -61,6 +61,15 @@ people:
     - {name: Dante Luber, affiliation: Paderborn}
 
     - {name: Victoria Schleis, affiliation: Durham}
+
+    - {name: Madhavan Venkatesh, affiliation: MPI SWS}
+
+    - {name: Gabriel Ong, affiliation: Bonn}
+
+    - {name: Christian Eder, affiliation: RPTU}
+
+    - {name: Leonard Schmitz, affiliation: TU Berlin}
+    
     
 ---
 

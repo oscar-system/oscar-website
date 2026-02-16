@@ -9,9 +9,7 @@ weight: 2
 * Start: Monday, February 23, at 14:00 in room EN 058
 * Finish: Friday, February 27, at 12:30
 
-The program is just a scaffold; more concrete plans may be added later or during the workshop.
-If you have suggestions or wishes, please contact the organisers.
-And please add your project ideas for the coding sprint to our [HackMD](https://hackmd.io/5ArrX4BZTXqQGwlN99kDNw)!
+Please add your project ideas for the coding sprint to our [HackMD](https://hackmd.io/5ArrX4BZTXqQGwlN99kDNw)! If you have suggestions or wishes, please contact the organisers.
 
 ### Monday
 
@@ -42,7 +40,7 @@ And please add your project ideas for the coding sprint to our [HackMD](https://
 
    In joint work with Joël Ouaknine (MPI-SWS) and James Worrell (Oxford), we give an algorithm that makes this geometric characterization effective: it determines all linear relations over the algebraic numbers among any given finite tuple of 1-periods and decides whether individual periods are transcendental. The algorithmic approach interweaves computational techniques across multiple domains, combining symbolic and rigorous numerical methods in ways that demand robust mathematical software infrastructure. 
   </details>
-- 18:00 Dinner (self-paid)
+- 18:30 Dinner at [Café Hardenberg](https://cafe-hardenberg.com/) (self-paid)
 
 ### Thursday
 
