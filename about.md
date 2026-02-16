@@ -174,6 +174,8 @@ algebraic solving.
 
 🤖 **[Contributing Guide]({{site.baseurl}}/contributing/)** – Learn how to contribute code, documentation, or ideas.
 
+🧮 **[OSCAR Merchandise](https://oscar-system.myspreadshop.de/)** – OSCAR-branded items to support and represent the project.
+
 🤝 **[Contact & Support]({{site.baseurl}}/contact-and-support/)** – Find ways to connect, ask questions, or get help.
 
 🏛️ **Funding** – OSCAR is supported by the [German Research Foundation (DFG)](https://www.dfg.de/en) through the [Collaborative Research Center TRR 195](https://www.computeralgebra.de/sfb/)."
