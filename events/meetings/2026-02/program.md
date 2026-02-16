@@ -9,9 +9,7 @@ weight: 2
 * Start: Monday, February 23, at 14:00 in room EN 058
 * Finish: Friday, February 27, at 12:30
 
-The program is just a scaffold; more concrete plans may be added later or during the workshop.
-If you have suggestions or wishes, please contact the organisers.
-And please add your project ideas for the coding sprint to our [HackMD](https://hackmd.io/5ArrX4BZTXqQGwlN99kDNw)!
+Please add your project ideas for the coding sprint to our [HackMD](https://hackmd.io/5ArrX4BZTXqQGwlN99kDNw)! If you have suggestions or wishes, please contact the organisers.
 
 ### Monday
 
