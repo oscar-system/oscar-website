@@ -40,7 +40,7 @@ Please add your project ideas for the coding sprint to our [HackMD](https://hack
 
    In joint work with Joël Ouaknine (MPI-SWS) and James Worrell (Oxford), we give an algorithm that makes this geometric characterization effective: it determines all linear relations over the algebraic numbers among any given finite tuple of 1-periods and decides whether individual periods are transcendental. The algorithmic approach interweaves computational techniques across multiple domains, combining symbolic and rigorous numerical methods in ways that demand robust mathematical software infrastructure. 
   </details>
-- 18:00 Dinner (self-paid)
+- 18:30 Dinner at [Café Hardenberg](https://cafe-hardenberg.com/) (self-paid)
 
 ### Thursday
 
