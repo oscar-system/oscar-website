@@ -696,7 +696,7 @@
   affiliation: University of Mainz
   email: hendrik.ranocha@uni-mainz.de.
   github: ranocha
-  status: active
+  status: retired
   repos:
   - Nemocas/AbstractAlgebra.jl
   - Nemocas/Nemo.jl
@@ -781,6 +781,15 @@
   status: active
   repos:
   - Nemocas/AbstractAlgebra.jl
+  - Nemocas/Nemo.jl
+  - oscar-system/Oscar.jl
+  - thofma/Hecke.jl
+- name: Tobias Schnieders
+  github: Tobias271828
+  website: https://tobimath.de/en
+  status: active
+  comment: PhD student of Simon Brandhorst
+  repos:
   - Nemocas/Nemo.jl
   - oscar-system/Oscar.jl
   - thofma/Hecke.jl
@@ -880,13 +889,6 @@
   status: retired
   comment: Homotopy continuation people
   repos: []
-- name: Tobias271828
-  github: Tobias271828
-  status: active
-  repos:
-  - Nemocas/Nemo.jl
-  - oscar-system/Oscar.jl
-  - thofma/Hecke.jl
 - name: Varun Trehan
   email: varuntrehan7@gmail.com
   github: varuntrehan7
