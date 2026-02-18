@@ -467,6 +467,7 @@
   status: active
   repos:
   - oscar-system/Oscar.jl
+  - thofma/Hecke.jl
 - name: Avinash (Avi) Kulkarni
   affiliation: Dartmouth College
   email: avinash.a.kulkarni@dartmouth.edu
