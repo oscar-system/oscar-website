@@ -16,7 +16,7 @@ This page here provides additional material related to the OSCAR portion of the 
 
 ## Exercises
 
-There are some [exercises](https://www.math.rwth-aachen.de/homes/Thomas.Breuer/COGENT/exercises/) available for the OSCAR and GAP courses.
+There are [exercises](exercises/index.html) available for the OSCAR and GAP courses.
 
 Also some solutions [in OSCAR](solutions.jl) and [in GAP](solutions.g) for these exercise.
 
