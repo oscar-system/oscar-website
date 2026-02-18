@@ -22,7 +22,7 @@ Please send an email to the OSCAR mailing list (<devel@oscar-system.org>) to inf
 > 
 > The new version is available from GitHub and via the usual installation' methods. Full release notes can be found at https://github.com/oscar-system/Oscar.jl/releases/tag/v{{ env.VERSION }}
 >
-> Best regards,  
+> Best regards,
 > The OSCAR Team
 
 
