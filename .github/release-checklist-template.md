@@ -11,7 +11,7 @@ A new OSCAR release **v{{ env.VERSION }}** was published on **{{ env.PUBLISHED }
 Please send an email to the OSCAR mailing list (<devel@oscar-system.org>) to inform about this update. You can use the following template:
 
 
-> Subject: [OSCAR] New OSCAR release v{{ env.VERSION }}
+> Subject: New OSCAR release v{{ env.VERSION }}
 > 
 > Dear all,
 > 
