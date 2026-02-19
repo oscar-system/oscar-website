@@ -950,6 +950,12 @@
   - Nemocas/Nemo.jl
   - oscar-system/Oscar.jl
   - thofma/Hecke.jl
+- name: Weijia Wang
+  email: 9713184+wegank@users.noreply.github.com
+  github: wegank
+  status: active
+  repos:
+  - Nemocas/Nemo.jl
 - name: Lena Weis
   affiliation: TU Berlin
   email: weis@math.tu-berlin.de
