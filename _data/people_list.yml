@@ -950,6 +950,14 @@
   - Nemocas/Nemo.jl
   - oscar-system/Oscar.jl
   - thofma/Hecke.jl
+- name: Weijia Wang
+  email: weijia.wang@lip6.fr
+  github: wegank
+  status: active
+  website: https://weijia.perso.lip6.fr
+  affiliation: Sorbonne Université
+  repos:
+  - Nemocas/Nemo.jl
 - name: Lena Weis
   affiliation: TU Berlin
   email: weis@math.tu-berlin.de
