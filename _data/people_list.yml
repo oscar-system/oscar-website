@@ -955,7 +955,7 @@
   github: wegank
   status: active
   website: https://weijia.perso.lip6.fr
-  affiliation:  Sorbonne Université
+  affiliation: Sorbonne Université
   repos:
   - Nemocas/Nemo.jl
 - name: Lena Weis
