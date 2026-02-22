@@ -590,7 +590,7 @@
   email: rafael.mohr@inria.fr
   github: RafaelDavidMohr
   website: https://mathexp.eu/mohr/
-  status: active
+  status: retired
   repos:
   - algebraic-solving/AlgebraicSolving.jl
 - name: Oleksandr Motsak
@@ -951,11 +951,11 @@
   - oscar-system/Oscar.jl
   - thofma/Hecke.jl
 - name: Weijia Wang
+  affiliation: Sorbonne Université
   email: weijia.wang@lip6.fr
   github: wegank
-  status: active
   website: https://weijia.perso.lip6.fr
-  affiliation: Sorbonne Université
+  status: active
   repos:
   - Nemocas/Nemo.jl
 - name: Lena Weis
