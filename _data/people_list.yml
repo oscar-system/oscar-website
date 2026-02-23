@@ -155,6 +155,12 @@
   comment: Co-author of commit 6b2cef5a53b095f3998ba3444cf192ce4fadf797
   repos:
   - oscar-system/Oscar.jl
+- name: Codex
+  email: codex@openai.com
+  status: active
+  comment: Co-author of commit a9705c9fb5d77757f289ca5e07283cf1e932beef
+  repos:
+  - Nemocas/Nemo.jl
 - name: Andrei Comaneci
   affiliation: TU Berlin
   email: comenaci@math.tu-berlin.de
