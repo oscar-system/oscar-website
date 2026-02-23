@@ -36,6 +36,10 @@ GIT_LOG_FORMAT_2 = "--format=%H %(trailers:only,unfold,separator=|,key=Co-author
 REPO_LIST = ("Nemocas/AbstractAlgebra.jl", "algebraic-solving/AlgebraicSolving.jl", "oscar-system/GAP.jl", "thofma/Hecke.jl",
              "Nemocas/Nemo.jl", "oscar-system/Oscar.jl", "oscar-system/Polymake.jl", "oscar-system/Singular.jl")
 
+# Known bot identities that we want to exclude even if they don't have [bot] in name.
+KNOWN_BOT_EMAILS = {"codex@openai.com"}
+KNOWN_BOT_NAMES = {"codex"}
+
 # Regexes
 HASH_RE = re.compile(r"\b[0-9a-f]{40}\b", re.I)
 
@@ -130,6 +134,10 @@ def process_log_into_aggregate(res: str, repo: str) -> None:
         email = unicodedata.normalize("NFKC", email).strip()
         if not email or not name:
             summarystring += f"- Missing {'email' if not email else 'name'} for {name or email} in {repo}; skipping\n"
+            continue
+        
+        if email.casefold() in KNOWN_BOT_EMAILS or _norm_name(name) in KNOWN_BOT_NAMES:
+            suspected_bots.add((repo, line))
             continue
 
         owner = email_owner.get(email.casefold()) or name_owner.get(_norm_name(name))
