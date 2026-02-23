@@ -14,7 +14,7 @@ Please add your project ideas for the coding sprint to our [HackMD](https://hack
 ### Monday
 
 - 14:00 Begin of official program, program planning
-- 17:00 Status reports
+- 17:30 Status reports
 
 ### Tuesday
 
