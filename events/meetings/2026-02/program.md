@@ -19,8 +19,8 @@ Please add your project ideas for the coding sprint to our [HackMD](https://hack
 ### Tuesday
 
 - 09:30 Morning standup
-- 12:15 Status reports
-- 16:00 Status reports
+- 13:00 Status reports
+- 17:00 Status reports
 
 ### Wednesday
 
