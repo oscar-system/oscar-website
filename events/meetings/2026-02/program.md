@@ -25,7 +25,7 @@ Please add your project ideas for the coding sprint to our [HackMD](https://hack
 ### Wednesday
 
 - 09:30 Morning standup
-- 12:15 Status reports
+- 12:00 Status reports
 - 15:00 Matthias Zach (RPTU): Practical computation in the derived category of coherent sheaves
   <details>
   <summary>Abstract</summary>
