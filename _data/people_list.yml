@@ -468,6 +468,13 @@
   repos:
   - oscar-system/Oscar.jl
   - thofma/Hecke.jl
+- name: KevinKuehn
+  email: kuehn@math.tu-berlin.de
+  github: KevinKuehn
+  status: active
+  repos:
+  - Nemocas/AbstractAlgebra.jl
+  - oscar-system/Oscar.jl
 - name: Avinash (Avi) Kulkarni
   affiliation: Dartmouth College
   email: avinash.a.kulkarni@dartmouth.edu
