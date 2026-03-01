@@ -468,7 +468,7 @@
   repos:
   - oscar-system/Oscar.jl
   - thofma/Hecke.jl
-- name: KevinKuehn
+- name: Kevin Kuehn
   email: kuehn@math.tu-berlin.de
   github: KevinKuehn
   status: active
