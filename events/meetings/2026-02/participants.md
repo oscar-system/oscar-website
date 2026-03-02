@@ -75,4 +75,4 @@ people:
 
 {% include participants.html participants=page.people %}
 
-<!-- [<img src="../groupphoto.jpg" />](../groupphoto.jpg) -->
+[![](../group.jpg)](../group_full.jpg)
