@@ -8,6 +8,8 @@ labels: release-process
 
 A new OSCAR release **v{{ env.VERSION }}** was published on **{{ env.PUBLISHED }}**.
 
+Verify that all tutorials work with the latest OSCAR release and update them if needed. Tutorials are tested daily by the automated tutorial tester.
+
 Please send an email to the OSCAR mailing list (<devel@oscar-system.org>) to inform about this update. You can use the following template:
 
 
