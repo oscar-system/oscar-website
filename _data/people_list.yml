@@ -295,8 +295,9 @@
   email: geiselmann@math.tu-berlin.de
   github: zkgeiselmann
   website: https://www.tu.berlin/dmg/ueber-uns/team
-  status: retired
-  repos: []
+  status: active
+  repos:
+  - oscar-system/Oscar.jl
 - name: Fabian Gundlach
   affiliation: Paderborn University
   email: fabian.gundlach@uni-paderborn.de
@@ -970,12 +971,13 @@
   email: weis@math.tu-berlin.de
   github: lenweis
   website: https://page.math.tu-berlin.de/~weis/
-  status: retired
-  repos: []
+  status: active
+  repos:
+  - oscar-system/Oscar.jl
 - name: Karl Wessel
   email: wessel.karl@googlemail.com
   github: karlwessel
-  status: active
+  status: retired
   repos:
   - Nemocas/Nemo.jl
 - name: Torben Wiedemann
