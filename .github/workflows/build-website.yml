@@ -1,4 +1,4 @@
-name: Site CI (Jekyll build)
+name: Build Website with Jeykll
 
 on:
   workflow_dispatch: {}
