@@ -32,63 +32,46 @@
 </p>
 
 <!--This section creates the selector grid of tutorial topic.-->
+{% assign components = site.data.tutorials | map: "thumbnail" | uniq | sort %}
 <div class="example_box">
-  {% assign sorted_components = site.data.examples_components | sort: "name"  %}
-  {%- for component in sorted_components -%}
-  {%- assign component_url = "/tutorials/" | append: component.name | replace: " ", "" | append: "/" %}
+{% for component in components %}
+  {% assign component_name = component | replace: ".png", "" %}
+  {% assign topic_example = site.data.tutorials | where: "thumbnail", component | first %}
+  {% assign component_url = "/tutorials/" | append: component_name | append: "/" %}
   <div class="example">
-    <a style="display: block; text-align: center;"
-       {% if page.url == component_url %}
-           href="{{ site.baseurl }}/tutorials/"
-           style="font-weight: bold;"
-       {% else %}
-           href="{{ site.baseurl }}{{component_url}}#main-content"
-       {% endif %}
-       >
+    <a href="{{ site.baseurl }}{{ component_url }}#main-content">
       <img class="item_example-image-link"
-           src="{{ site.baseurl }}/public/thumbnails/{{ component.logo }}">
-      <div style="word-break: break-word;">
-        {{ component.name }}
-      </div>
+           src="{{ site.baseurl }}/public/thumbnails/{{ component }}">
+      <div> {{ topic_example.topic }} </div>
     </a>
   </div>
-  {%- endfor -%}
+{% endfor %}
 </div>
 
 <!-- here we make a list of tutorials and filter it to the topic if we are in a topic page-->
-  {%- if page.main -%}
-  {%-     assign someexamplesgrouped = site.data.examples_with_updated_last_modified | group_by: 'thumbnail' | sort: 'name' -%}
-  {% for item in someexamplesgrouped %}
-    {% assign sorted = item['items'] | sort: 'title' %}
-    {% if forloop.first %}
-      {% assign someexamples = sorted %}
-    {% else %}
-      {% assign someexamples = someexamples | concat: sorted %}
-    {% endif %}
-  {% endfor %}
-  {%- else -%}
-  {%-     assign someexamples = site.data.examples_with_updated_last_modified | where:"thumbnail",page.component | sort: 'title' -%}
-  {%- endif -%}
+{% if page.main %}
+  {% assign someexamples = site.data.tutorials | sort: "title" %}
+{% else %}
+  {% assign someexamples = site.data.tutorials | where: "thumbnail", page.component | sort: 'title' %}
+{% endif %}
 
 <!-- This section now populates the list of tutorials -->
 <div class="gallery_example_cards" id="main-content">
-  {% assign examples = someexamples | where_exp: "item", "site.data.examples_status[item.filename] == 'success'" %}
-  {%- for post in examples -%}
+  {% assign examples = someexamples | where: "test_status", "success" %}
+  {% for post in examples %}
 
-  <div class="item_example_card {{site.data.examples_status[post.filename]}}">
+  <div class="item_example_card {{post.test_status}}">
     <div class="item_example_left">
         <img class="item_example-image"
              src="{{ site.baseurl }}/public/thumbnails/{{ post.thumbnail }}">
     </div>
     <div class="item_example_right">
-      <div class="item_example-title">
-          {{ post.title }}
-      </div>
+      <div class="item_example-title">{{ post.title }}</div>
       <div class="item_example-author">Author(s): {{ post.author }}</div>
-      <div class="item_last_modified">Last modified: {{ post.date }} </div>
-      <div class="item_example-category">Topic: {{ post.thumbnail | replace: ".png", "" }}</div>
+      <div class="item_last_modified">Last modified: {{ post.last_modified }} </div>
+      <div class="item_example-category">Topic: {{ post.topic }}</div>
       <div><a href="https://nbviewer.jupyter.org/github/{{ post.repository }}/blob/{{ post.branch }}/{{ post.filename }}.ipynb">nbviewer</a> </div>
-      <a href="https://github.com/{{ post.repository }}/blob/master/{{ post.filename }}.ipynb">Github</a>
+      <a href="https://github.com/{{ post.repository }}/blob/{{ post.branch }}/{{ post.filename }}.ipynb">Github</a>
 
     </div>
   </div>
@@ -96,26 +79,24 @@
 </div>
 
 <!-- Here are the out of date tutorials, which are only visible if the list of out of date tutorials is not empty -->
-  {% assign borked = someexamples | where_exp: "item", "site.data.examples_status[item.filename] == 'failure'" %}
-  {% if borked.size > 0 %}
+{% assign borked = someexamples | where: "test_status", "failure" %}
+{% if borked.size > 0 %}
 <details style="padding-bottom: 2em;">
   <summary>Out of Date Tutorials</summary>
 <div class="borked">
 <div class="gallery_example_cards">
-  {%- for post in borked -%}
-  <div class="item_example_card {{site.data.examples_status[post.filename]}}">
+  {% for post in borked %}
+  <div class="item_example_card {{post.test_status}}">
     <div class="item_example_left">
         <img class="item_example-image"
              src="{{ site.baseurl }}/public/thumbnails/{{ post.thumbnail }}">
     </div>
     <div class="item_example_right">
-      <div class="item_example-title">
-          {{ post.title }}
-      </div>
+      <div class="item_example-title">{{ post.title }}</div>
       <div class="item_example-author">Author(s): {{ post.author }}</div>
-      <div class="item_last_modified">Last modified: {{ post.date }} </div>
+      <div class="item_last_modified">Last modified: {{ post.last_modified }} </div>
       <div><a href="https://nbviewer.jupyter.org/github/{{ post.repository }}/blob/{{ post.branch }}/{{ post.filename }}.ipynb">nbviewer</a> </div>
-      <a href="https://github.com/{{ post.repository }}/blob/master/{{ post.filename }}.ipynb">Github</a>
+      <a href="https://github.com/{{ post.repository }}/blob/{{ post.branch }}/{{ post.filename }}.ipynb">Github</a>
 
     </div>
   </div>

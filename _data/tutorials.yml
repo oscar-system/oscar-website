@@ -1,0 +1,198 @@
+- filename: PolynomialRings
+  title: Polynomial Rings
+  author: "John Abbott, Martin Bies, Luca Remke, Hans Sch\xF6nemann"
+  branch: master
+  last_modified: July 12, 2024
+  repository: HereAround/MartinsOscarTutorials.jl
+  thumbnail: CommutativeAlgebra.png
+  topic: Commutative Algebra
+  test_status: success
+- filename: PolyhedralGeometryInOSCAR
+  author: Martin Bies, Luca Remke
+  branch: master
+  last_modified: July 12, 2024
+  repository: HereAround/MartinsOscarTutorials.jl
+  thumbnail: PolyhedralGeometry.png
+  topic: Polyhedral Geometry
+  title: Polyhedral Geometry
+  test_status: success
+- filename: ToricGeometryInOSCAR
+  author: Martin Bies, Luca Remke
+  branch: master
+  last_modified: March 03, 2025
+  repository: HereAround/MartinsOscarTutorials.jl
+  thumbnail: ToricGeometry.png
+  topic: Toric Geometry
+  title: Toric geometry
+  test_status: success
+- filename: FTheoryToolsInOSCAR
+  author: Martin Bies, Andrew P. Turner
+  branch: master
+  last_modified: July 12, 2024
+  repository: HereAround/MartinsOscarTutorials.jl
+  thumbnail: FTheoryTools.png
+  topic: FTheoryTools
+  title: F-Theory Tools
+  test_status: success
+- filename: FTheoryToolsPaper
+  author: Martin Bies, Andrew P. Turner, Mikelis E. Mikelson
+  branch: master
+  last_modified: September 15, 2025
+  repository: HereAround/MartinsOscarTutorials.jl
+  thumbnail: FTheoryTools.png
+  topic: FTheoryTools
+  title: F-Theory Tools -- Advanced Functionality
+  test_status: success
+- filename: elliptic_fibrations_and_covered_schemes
+  author: Simon Brandhorst, Matthias Zach
+  branch: main
+  last_modified: August 02, 2024
+  repository: HechtiDerLachs/OscarTutorials
+  thumbnail: Schemes.png
+  topic: Schemes
+  title: Elliptic Fibrations and Covered Schemes
+  test_status: success
+- filename: quadratic_forms
+  author: Tommy Hofmann
+  branch: master
+  last_modified: September 15, 2025
+  repository: thofma/HeckeTutorials.jl
+  thumbnail: NumberTheory.png
+  topic: Number Theory
+  title: Quadratic lattices
+  test_status: success
+- filename: Intersection_cartesian_product_curve
+  author: Daniele Agostini, Daniel Plaumann, Rainer Sinn, Yannik Wesner
+  branch: main
+  last_modified: September 19, 2025
+  repository: gdanielea/intersectionproductcurve
+  thumbnail: IntersectionTheory.png
+  topic: Intersection Theory
+  title: Intersection Product on the Cartesian Product of a Curve
+  test_status: success
+- filename: multisymmetric_polynomials
+  author: Daniele Agostini, Jinhyung Park
+  branch: main
+  last_modified: October 28, 2025
+  repository: gdanielea/multisymmetricpolynomials
+  thumbnail: CommutativeAlgebra.png
+  topic: Commutative Algebra
+  title: A computation with multisymmetric polynomials
+  test_status: success
+- filename: abelian_degrees
+  author: Thomas Breuer
+  branch: master
+  last_modified: October 17, 2025
+  repository: oscar-system/OSCARBinder
+  thumbnail: GroupTheory.png
+  topic: Group Theory
+  title: Irreducible representations of a finite abelian group over a finite field
+  test_status: success
+- filename: symplectic_type
+  author: Thomas Breuer
+  branch: master
+  last_modified: September 22, 2025
+  repository: oscar-system/OSCARBinder
+  thumbnail: GroupTheory.png
+  topic: Group Theory
+  title: A question of Pham Huu Tiep about a group of symplectic type
+  test_status: success
+- filename: pi_piprime_generation
+  author: Thomas Breuer
+  branch: master
+  last_modified: April 12, 2024
+  repository: oscar-system/OSCARBinder
+  thumbnail: GroupTheory.png
+  topic: Group Theory
+  title: "Generation of sporadic simple groups by \U0001D70B- and \U0001D70B'-subgroups"
+  test_status: success
+- filename: rubik
+  author: "Martin Sch\xF6nert (translated to OSCAR by Thomas Breuer)"
+  branch: master
+  last_modified: June 24, 2024
+  repository: oscar-system/OSCARBinder
+  thumbnail: GroupTheory.png
+  topic: Group Theory
+  title: Analyzing Rubik's Cube
+  test_status: success
+- filename: Hecke
+  author: Claus Fieker
+  branch: master
+  last_modified: April 04, 2024
+  repository: oscar-system/OSCARBinder
+  thumbnail: NumberTheory.png
+  topic: Number Theory
+  title: 'Introduction to Number Fields: Towers'
+  test_status: success
+- filename: L34_extensions_in_M
+  author: Thomas Breuer
+  branch: master
+  last_modified: April 12, 2024
+  repository: oscar-system/OSCARBinder
+  thumbnail: GroupTheory.png
+  topic: Group Theory
+  title: Perfect central extensions of PSL(3,4) in the Monster group
+  test_status: success
+- filename: BinomialIdeals
+  author: Wolfram Decker, Clara Petroll
+  branch: master
+  last_modified: May 15, 2024
+  repository: oscar-system/OSCARBinder
+  thumbnail: CommutativeAlgebra.png
+  topic: Commutative Algebra
+  title: Computations with Binomial Ideals
+  test_status: success
+- filename: LinearAlgebraInOSCAR
+  author: Martin Bies, Aaruni Kaushik
+  branch: master
+  last_modified: November 19, 2025
+  repository: oscar-system/OSCARBinder
+  thumbnail: LinearAlgebra.png
+  topic: Linear Algebra
+  title: Linear Algebra
+  test_status: success
+- filename: polynomial_system_solving
+  author: Christian Eder
+  branch: master
+  last_modified: September 10, 2025
+  repository: oscar-system/OSCARBinder
+  thumbnail: CommutativeAlgebra.png
+  topic: Commutative Algebra
+  title: How to solve multivariate polynomial systems of equations in Oscar
+  test_status: success
+- filename: SIAM-News/Cox_rings_of_blow_ups_of_points
+  author: Mara Belotti
+  branch: master
+  last_modified: July 05, 2024
+  repository: micjoswig/oscar-notebooks
+  thumbnail: ToricGeometry.png
+  topic: Toric Geometry
+  title: Cox rings of blow-ups of points
+  test_status: success
+- filename: SIAM-News/Cox_rings_of_linear_quotients
+  author: Johannes Schmitt
+  branch: master
+  last_modified: March 15, 2024
+  repository: micjoswig/oscar-notebooks
+  thumbnail: ToricGeometry.png
+  topic: Toric Geometry
+  title: Computing Cox rings of linear quotients
+  test_status: success
+- filename: SIAM-News/Hurwitz_Combinatorics
+  author: Victoria Schleis
+  branch: master
+  last_modified: March 15, 2024
+  repository: micjoswig/oscar-notebooks
+  thumbnail: IntersectionTheory.png
+  topic: Intersection Theory
+  title: Combinatorics of Hurwitz numbers
+  test_status: success
+- filename: SIAM-News/Parametrized_volume_of_slices
+  author: Chiara Meloni
+  branch: master
+  last_modified: March 15, 2024
+  repository: micjoswig/oscar-notebooks
+  thumbnail: PolyhedralGeometry.png
+  topic: Polyhedral Geometry
+  title: Parametrize the volume of slices
+  test_status: success
