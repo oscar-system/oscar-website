@@ -1,6 +1,6 @@
 - filename: PolynomialRings
   title: Polynomial Rings
-  author: "John Abbott, Martin Bies, Luca Remke, Hans Sch\xF6nemann"
+  author: John Abbott, Martin Bies, Luca Remke, Hans Schönemann
   branch: master
   last_modified: July 12, 2024
   repository: HereAround/MartinsOscarTutorials.jl
@@ -104,10 +104,10 @@
   repository: oscar-system/OSCARBinder
   thumbnail: GroupTheory.png
   topic: Group Theory
-  title: "Generation of sporadic simple groups by \U0001D70B- and \U0001D70B'-subgroups"
+  title: Generation of sporadic simple groups by  𝜋- and 𝜋'-subgroups
   test_status: success
 - filename: rubik
-  author: "Martin Sch\xF6nert (translated to OSCAR by Thomas Breuer)"
+  author: Martin Schönert (translated to OSCAR by Thomas Breuer)
   branch: master
   last_modified: June 24, 2024
   repository: oscar-system/OSCARBinder
