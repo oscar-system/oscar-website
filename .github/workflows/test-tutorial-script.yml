@@ -51,6 +51,18 @@ jobs:
         cat _data/tutorials.yml
         echo "::endgroup::"
 
+    - name: Show git diff for _data/tutorials.yml
+      if: always()
+      run: |
+        echo "::group::git diff -- _data/tutorials.yml"
+        git diff -- _data/tutorials.yml
+        echo "::endgroup::"
+
+    - name: Show git status
+      if: always()
+      run: |
+        git status
+
     - name: Validate overall structure of _data/tutorials.yml
       run: |
         yq -e '
