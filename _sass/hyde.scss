@@ -447,13 +447,13 @@ li.active > a {
   color: #e4e4e7;
 }
 
-.item_example-image-link {
+.item_tutorial-image-link {
     height: 55px;
     width: auto;
     display: inline-block; /* for centering */
 }
 
-.example_box {
+.tutorial_box {
   display: flex;
   flex-wrap: wrap;
   border: 1px solid #e5e5e5;
@@ -462,27 +462,27 @@ li.active > a {
 }
 
 /* Four image containers (use 25% for four, and 50% for two, etc) */
-.example {
+.tutorial {
     width: calc(100%/4);
     background-color: #f9f9f9;
     border: inherit;
 }
 
 /* Clear floats after image containers */
-.example_row::after {
+.tutorial_row::after {
   content: "";
   clear: both;
   display: table;
 }
 
-.oscar_detail, .example_row {
+.oscar_detail, .tutorial_row {
   width: 100%;
   padding: 10px;
   background-color: #e4e4e7;
   border-radius: 5px;
 }
 
-.item_example {
+.item_tutorial {
   width: 85%;
   padding: 1rem;
   float: left;
@@ -493,23 +493,23 @@ li.active > a {
   vertical-align: center;
 }
 
-.item_example_left {
+.item_tutorial_left {
   float: left;
 }
 
-.item_example_right {
+.item_tutorial_right {
   text-align: left;
   margin-left: 20%;
 }
 
-.item_example-title {
+.item_tutorial-title {
 }
 
-.item_example-author {
+.item_tutorial-author {
   font-size: 80%;
 }
 
-.item_example-image {
+.item_tutorial-image {
   height: auto;
   width: 50px;
   float: left;
@@ -520,12 +520,12 @@ li.active > a {
   font-size: 80%;
 }
 
-.item_example-category{
+.item_tutorial-category{
   font-size: 80%;
 }
 
 /* cf. https://travishorn.com/responsive-grid-in-2-minutes-with-css-grid-layout-4842a41420fe */
-.gallery_example_cards {
+.gallery_tutorial_cards {
     margin: 0 auto;
     display: grid;
     grid-gap: 1rem;
@@ -533,7 +533,7 @@ li.active > a {
     padding-bottom: 2em;
 }
 
-.item_example_card {
+.item_tutorial_card {
   background-color: #e4e4e7;
   padding: 10px;
   border-radius: 5px;

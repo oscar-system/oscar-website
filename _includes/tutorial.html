@@ -33,16 +33,16 @@
 
 <!--This section creates the selector grid of tutorial topic.-->
 {% assign components = site.data.tutorials | map: "thumbnail" | uniq | sort %}
-<div class="example_box">
+<div class="tutorial_box">
 {% for component in components %}
   {% assign component_name = component | replace: ".png", "" %}
-  {% assign topic_example = site.data.tutorials | where: "thumbnail", component | first %}
+  {% assign topic_tutorial = site.data.tutorials | where: "thumbnail", component | first %}
   {% assign component_url = "/tutorials/" | append: component_name | append: "/" %}
-  <div class="example">
+  <div class="tutorial">
     <a href="{{ site.baseurl }}{{ component_url }}#main-content">
-      <img class="item_example-image-link"
+      <img class="item_tutorial-image-link"
            src="{{ site.baseurl }}/public/thumbnails/{{ component }}">
-      <div> {{ topic_example.topic }} </div>
+      <div> {{ topic_tutorial.topic }} </div>
     </a>
   </div>
 {% endfor %}
@@ -50,26 +50,26 @@
 
 <!-- here we make a list of tutorials and filter it to the topic if we are in a topic page-->
 {% if page.main %}
-  {% assign someexamples = site.data.tutorials | sort: "title" %}
+  {% assign sometutorials = site.data.tutorials | sort: "title" %}
 {% else %}
-  {% assign someexamples = site.data.tutorials | where: "thumbnail", page.component | sort: 'title' %}
+  {% assign sometutorials = site.data.tutorials | where: "thumbnail", page.component | sort: 'title' %}
 {% endif %}
 
 <!-- This section now populates the list of tutorials -->
-<div class="gallery_example_cards" id="main-content">
-  {% assign examples = someexamples | where: "test_status", "success" %}
-  {% for post in examples %}
+<div class="gallery_tutorial_cards" id="main-content">
+  {% assign tutorials = sometutorials | where: "test_status", "success" %}
+  {% for post in tutorials %}
 
-  <div class="item_example_card {{post.test_status}}">
-    <div class="item_example_left">
-        <img class="item_example-image"
+  <div class="item_tutorial_card {{post.test_status}}">
+    <div class="item_tutorial_left">
+        <img class="item_tutorial-image"
              src="{{ site.baseurl }}/public/thumbnails/{{ post.thumbnail }}">
     </div>
-    <div class="item_example_right">
-      <div class="item_example-title">{{ post.title }}</div>
-      <div class="item_example-author">Author(s): {{ post.author }}</div>
+    <div class="item_tutorial_right">
+      <div class="item_tutorial-title">{{ post.title }}</div>
+      <div class="item_tutorial-author">Author(s): {{ post.author }}</div>
       <div class="item_last_modified">Last modified: {{ post.last_modified }} </div>
-      <div class="item_example-category">Topic: {{ post.topic }}</div>
+      <div class="item_tutorial-category">Topic: {{ post.topic }}</div>
       <div><a href="https://nbviewer.jupyter.org/github/{{ post.repository }}/blob/{{ post.branch }}/{{ post.filename }}.ipynb">nbviewer</a> </div>
       <a href="https://github.com/{{ post.repository }}/blob/{{ post.branch }}/{{ post.filename }}.ipynb">Github</a>
 
@@ -79,21 +79,21 @@
 </div>
 
 <!-- Here are the out of date tutorials, which are only visible if the list of out of date tutorials is not empty -->
-{% assign borked = someexamples | where: "test_status", "failure" %}
+{% assign borked = sometutorials | where: "test_status", "failure" %}
 {% if borked.size > 0 %}
 <details style="padding-bottom: 2em;">
   <summary>Out of Date Tutorials</summary>
 <div class="borked">
-<div class="gallery_example_cards">
+<div class="gallery_tutorial_cards">
   {% for post in borked %}
-  <div class="item_example_card {{post.test_status}}">
-    <div class="item_example_left">
-        <img class="item_example-image"
+  <div class="item_tutorial_card {{post.test_status}}">
+    <div class="item_tutorial_left">
+        <img class="item_tutorial-image"
              src="{{ site.baseurl }}/public/thumbnails/{{ post.thumbnail }}">
     </div>
-    <div class="item_example_right">
-      <div class="item_example-title">{{ post.title }}</div>
-      <div class="item_example-author">Author(s): {{ post.author }}</div>
+    <div class="item_tutorial_right">
+      <div class="item_tutorial-title">{{ post.title }}</div>
+      <div class="item_tutorial-author">Author(s): {{ post.author }}</div>
       <div class="item_last_modified">Last modified: {{ post.last_modified }} </div>
       <div><a href="https://nbviewer.jupyter.org/github/{{ post.repository }}/blob/{{ post.branch }}/{{ post.filename }}.ipynb">nbviewer</a> </div>
       <a href="https://github.com/{{ post.repository }}/blob/{{ post.branch }}/{{ post.filename }}.ipynb">Github</a>
