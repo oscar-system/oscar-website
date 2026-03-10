@@ -27,8 +27,6 @@ Use the following steps:
    If this is the first time you are logging in to Helmholtz AAI, there may be additional sign up
    screens. If at any point you get stuck, try starting over by visiting (not using the back button)
    <https://hub.nfdi-jupyter.de/workshops/oscar-latest>.
-   As the Helmholtz specific setup needs to be done only once, this should not get you stuck into an
-   infinite loop!
    ![](pick-github.png){: width="50%" }
 
 4. You should now see a list similar to the one depicted in the screenshow
