@@ -2,6 +2,8 @@ name: Update Tutorials
 
 on:
   pull_request:
+    paths:
+      - "_data/tutorials.yml"
   push:
     branches: [gh-pages]
   workflow_dispatch:
