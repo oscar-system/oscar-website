@@ -3,7 +3,7 @@ name: Update Contributors
 on:
   pull_request:
     paths:
-      - "_data/people_list.yml"
+      - "_data/contributors.yml"
       - ".github/workflows/test-contributor-script.yml"
       - "etc/update_contributors.py"
   push:
@@ -34,14 +34,14 @@ jobs:
         python -m pip install --upgrade pip
         python -m pip install -r etc/requirements.txt
 
-    - name: Ensure _data/people_list.yml exists and is non-empty
+    - name: Ensure _data/contributors.yml exists and is non-empty
       run: |
-        test -s _data/people_list.yml
+        test -s _data/contributors.yml
 
-    - name: Record current number of contributors (listed in people_list.yml)
+    - name: Record current number of contributors (listed in contributors.yml)
       run: |
-        yq -e 'type == "!!seq"' _data/people_list.yml >/dev/null
-        echo "PEOPLE_COUNT_BEFORE=$(yq -r 'length' _data/people_list.yml)" >> "$GITHUB_ENV"
+        yq -e 'type == "!!seq"' _data/contributors.yml >/dev/null
+        echo "PEOPLE_COUNT_BEFORE=$(yq -r 'length' _data/contributors.yml)" >> "$GITHUB_ENV"
 
     - name: Run update-contributors script
       env:
@@ -60,20 +60,20 @@ jobs:
         cat summary.txt
         echo "::endgroup::"
 
-    - name: Ensure _data/people_list.yml exists and is non-empty
+    - name: Ensure _data/contributors.yml exists and is non-empty
       run: |
-        test -s _data/people_list.yml
+        test -s _data/contributors.yml
 
-    - name: Show _data/people_list.yml
+    - name: Show _data/contributors.yml
       if: always()
       run: |
-        echo "::group::_data/people_list.yml"
-        cat _data/people_list.yml
+        echo "::group::_data/contributors.yml"
+        cat _data/contributors.yml
         echo "::endgroup::"
 
-    - name: Validate overall structure of _data/people_list.yml (print offenders)
+    - name: Validate overall structure of _data/contributors.yml (print offenders)
       run: |
-        yq -e 'type == "!!seq" and length > 0' _data/people_list.yml >/dev/null
+        yq -e 'type == "!!seq" and length > 0' _data/contributors.yml >/dev/null
         yq -r '
           to_entries
           | map(
@@ -83,20 +83,20 @@ jobs:
                 or (.value.status? | type != "!!str" or length == 0)
               )
             )
-        ' _data/people_list.yml | tee /tmp/offenders.json
+        ' _data/contributors.yml | tee /tmp/offenders.json
         test "$(cat /tmp/offenders.json)" = "[]"
 
-    - name: Validate GitHub handles of contributors (in _data/people_list.yml) are unique
+    - name: Validate GitHub handles of contributors (in _data/contributors.yml) are unique
       run: |
         yq -e '
           (map(.github? // "") | map(select(length > 0)) | length)
           ==
           (map(.github? // "") | map(select(length > 0)) | unique | length)
-        ' _data/people_list.yml
+        ' _data/contributors.yml
 
-    - name: Ensure that the number of contributors (in _data/people_list.yml) did not shrink
+    - name: Ensure that the number of contributors (in _data/contributors.yml) did not shrink
       run: |
-        PEOPLE_COUNT_AFTER=$(yq -r 'length' _data/people_list.yml)
+        PEOPLE_COUNT_AFTER=$(yq -r 'length' _data/contributors.yml)
         test "$PEOPLE_COUNT_AFTER" -ge "${{ env.PEOPLE_COUNT_BEFORE }}"
 
     - name: Compute date
