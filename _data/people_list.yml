@@ -1024,9 +1024,11 @@
   status: active
   repos:
   - oscar-system/Singular.jl
-- name: stefnomden
-  email: 133787190+stefnomden@users.noreply.github.com
+- name: Stef Nomden
+  email: s.nomden@math.leidenuniv.nl
   github: stefnomden
   status: active
   repos:
   - thofma/Hecke.jl
+aka_email:
+  - 133787190+stefnomden@users.noreply.github.com
