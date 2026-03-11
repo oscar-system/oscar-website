@@ -1024,3 +1024,9 @@
   status: active
   repos:
   - oscar-system/Singular.jl
+- name: stefnomden
+  email: 133787190+stefnomden@users.noreply.github.com
+  github: stefnomden
+  status: active
+  repos:
+  - thofma/Hecke.jl
