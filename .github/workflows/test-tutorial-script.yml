@@ -1,0 +1,105 @@
+name: Update Tutorials
+
+on:
+  pull_request:
+    paths:
+      - "_data/tutorials.yml"
+      - ".github/workflows/test-tutorial-script.yml"
+      - "etc/update_tutorials.py"
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  run-tutorials-update-script:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v6
+
+    - name: Set up Python
+      uses: actions/setup-python@v6
+      with:
+        python-version: "3.x"
+
+    - name: Install Python deps
+      run: |
+        python -m pip install --upgrade pip
+        python -m pip install -r etc/requirements.txt
+
+    - name: Ensure _data/tutorials.yml exists and is non-empty
+      run: |
+        test -s _data/tutorials.yml
+
+    - name: Update tutorials
+      env:
+        API_KEY: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        python3 etc/update_tutorials.py
+
+    - name: Ensure _data/tutorials.yml exists and is non-empty
+      run: |
+        test -s _data/tutorials.yml
+
+    - name: Show _data/tutorials.yml
+      if: always()
+      run: |
+        echo "::group::_data/tutorials.yml"
+        cat _data/tutorials.yml
+        echo "::endgroup::"
+
+    - name: Show git diff for _data/tutorials.yml
+      if: always()
+      run: |
+        echo "::group::git diff -- _data/tutorials.yml"
+        git diff -- _data/tutorials.yml
+        echo "::endgroup::"
+
+    - name: Show git status
+      if: always()
+      run: |
+        git status
+
+    - name: Validate overall structure of _data/tutorials.yml
+      run: |
+        yq -e '
+          type == "!!seq" and length > 0 and
+          (
+            map(
+              (type == "!!map") and
+              has("filename")      and (.filename      | type == "!!str" and length > 0) and
+              has("title")         and (.title         | type == "!!str" and length > 0) and
+              has("author")        and (.author        | type == "!!str" and length > 0) and
+              has("branch")        and (.branch        | type == "!!str" and length > 0) and
+              has("last_modified") and (.last_modified | type == "!!str" and length > 0) and
+              has("repository")    and (.repository    | type == "!!str" and length > 0) and
+              has("thumbnail")     and (.thumbnail     | type == "!!str" and length > 0) and
+              has("topic")         and (.topic         | type == "!!str" and length > 0) and
+              has("test_status")   and (.test_status   == "success" or .test_status == "failure" or .test_status == "cancelled")
+            ) | all
+          )
+        ' _data/tutorials.yml
+
+    - name: Validate date is not 1970 fallback for any entry in _data/tutorials.yml
+      run: |
+        yq -e '
+          (map(.last_modified) | map(select(. == "January 1, 1970" or . == "January 01, 1970")) | length) == 0
+        ' _data/tutorials.yml
+
+    - name: Compute date
+      if: github.event_name != 'pull_request' && success()
+      run: echo "TODAY=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
+
+    - name: Create Pull Request
+      if: github.event_name != 'pull_request' && success()
+      uses: peter-evans/create-pull-request@v8
+      with:
+        commit-message: "Update tutorials on ${{ env.TODAY }}"
+        branch: update-tutorials
+        delete-branch: true
+        title: "Update tutorials"
+        base: gh-pages
+        author: "update_tutorials[bot] <update_tutorials[bot]@users.noreply.github.com>"
+        committer: "update_tutorials[bot] <update_tutorials[bot]@users.noreply.github.com>"
