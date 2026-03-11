@@ -12,10 +12,13 @@
   month: July
   year: 2025
 - name: FTheoryTools Advancing Computational Capabilities for F-Theory Research
+  journal_url: https://onlinelibrary.wiley.com/doi/10.1002/prop.70065
   preprint_url: https://arxiv.org/abs/2506.13849
   authors: Martin Bies, Miķelis E. Miķelsons, Andrew P. Turner
-  month: June
-  year: 2025
+  journal: Fortschritte der Physik
+  month: January
+  year: 2026
+  doi: 10.1002/prop.70065
 - name: On birational automorphisms of double EPW-cubes
   journal_url: https://doi.org/10.1002/mana.12022
   preprint_url: https://arxiv.org/abs/2405.15510
