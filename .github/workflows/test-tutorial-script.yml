@@ -36,7 +36,6 @@ jobs:
     - name: Update tutorials
       env:
         API_KEY: ${{ secrets.GITHUB_TOKEN }}
-        PYTHONUNBUFFERED: "1"
       run: |
         python3 etc/update_tutorials.py
 
