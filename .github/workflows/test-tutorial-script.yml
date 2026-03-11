@@ -4,6 +4,8 @@ on:
   pull_request:
     paths:
       - "_data/tutorials.yml"
+      - ".github/workflows/test-tutorial-script.yml"
+      - "etc/update_tutorials.py"
   push:
     branches: [gh-pages]
   workflow_dispatch:
