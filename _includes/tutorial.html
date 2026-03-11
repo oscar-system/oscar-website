@@ -57,7 +57,7 @@
 
 <!-- here we make a list of tutorials and filter it to the topic if we are in a topic page-->
 {% if page.main %}
-  {% assign sometutorials = site.data.tutorials | sort: "title" %}
+  {% assign sometutorials = site.data.tutorials | group_by: 'topic' | sort: "title" %}
 {% else %}
   {% assign sometutorials = site.data.tutorials | where: "thumbnail", page.component | sort: 'title' %}
 {% endif %}
