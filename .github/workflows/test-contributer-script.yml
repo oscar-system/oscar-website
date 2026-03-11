@@ -2,6 +2,10 @@ name: Update Contributors
 
 on:
   pull_request:
+    paths:
+      - "_data/people_list.yml"
+      - ".github/workflows/test-contributor-script.yml"
+      - "etc/update_contributors.py"
   push:
     branches: [gh-pages]
   workflow_dispatch:
