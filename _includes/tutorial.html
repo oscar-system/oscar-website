@@ -57,7 +57,15 @@
 
 <!-- here we make a list of tutorials and filter it to the topic if we are in a topic page-->
 {% if page.main %}
-  {% assign sometutorials = site.data.tutorials | group_by: 'topic' | sort: "title" %}
+  {% assign sometutorials = site.data.tutorials | group_by: "topic" | sort: "title" %}
+   {% for item in sometutorials %}
+    {% assign sorted = item['items'] | sort: 'title' %}
+    {% if forloop.first %}
+      {% assign sometutorials = sorted %}
+    {% else %}
+      {% assign sometutorials = sometutorials | concat: sorted %}
+    {% endif %}
+  {% endfor %}
 {% else %}
   {% assign sometutorials = site.data.tutorials | where: "thumbnail", page.component | sort: 'title' %}
 {% endif %}
