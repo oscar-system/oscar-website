@@ -21,7 +21,7 @@ import yaml
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.dirname(BASE_DIR)
 REPOS_DIR = os.path.join(PROJECT_ROOT, "repos")
-PEOPLE_LIST_FILE = os.path.join(PROJECT_ROOT, "_data", "people_list.yml")
+CONTRIBUTORS_FILE = os.path.join(PROJECT_ROOT, "_data", "contributors.yml")
 SUMMARY_FILE = os.path.join(PROJECT_ROOT, "summary.txt")
 
 # Auth
@@ -66,17 +66,17 @@ summarystring = ""          # intermediate output for information and debugging
 
 
 ##########################################
-# 3. Read information from people_list.yml
+# 3. Read information from contributors.yml
 ##########################################
 
 try:
-    with open(PEOPLE_LIST_FILE, "r", encoding="utf-8") as ymlfile:
+    with open(CONTRIBUTORS_FILE, "r", encoding="utf-8") as ymlfile:
         current_contributors = yaml.safe_load(ymlfile) or []
 except FileNotFoundError:
-    print(f"Error: Could not find {PEOPLE_LIST_FILE}")
+    print(f"Error: Could not find {CONTRIBUTORS_FILE}")
     sys.exit(1)
 except yaml.YAMLError as e:
-    print(f"Error parsing YAML file {PEOPLE_LIST_FILE}: {e}")
+    print(f"Error parsing YAML file {CONTRIBUTORS_FILE}: {e}")
     sys.exit(1)
 
 for person in current_contributors:
@@ -244,10 +244,10 @@ for p in current_contributors:
 # 8. Dump output
 ##########################################
 
-# Write new content to PEOPLE_LIST_FILE
+# Write new content to CONTRIBUTORS_FILE
 people_sorted = sorted(current_contributors, key=lambda d: (d.get("name", "").split()[-1], d.get("name", "")))
 ordered_people = [dict(sorted(p.items(), key=lambda kv: SORT_WEIGHT.get(kv[0], 999))) for p in people_sorted]
-with open(PEOPLE_LIST_FILE, "w", encoding="utf-8") as f:
+with open(CONTRIBUTORS_FILE, "w", encoding="utf-8") as f:
     f.write(YAML_HEADER)
     yaml.dump(ordered_people, f, sort_keys=False, allow_unicode=True)
 

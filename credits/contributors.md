@@ -2,7 +2,7 @@
 layout: page
 title: Contributors
 
-# The data resides in _data/people_list.yml
+# The data resides in _data/contributors.yml
 # In the datafile, all three entries, `affiliation`, `email`, and
 # `website` are optional. If you provide an `email` and a `website`, the
 # name will link to the website.
@@ -18,7 +18,7 @@ page.
 ## Project leaders
 
 <ul>
-{% for p in site.data.people_list %}
+{% for p in site.data.contributors %}
   {% if p.status == "pi" %}
     <li>
       <a href="{{ p.website }}"><strong>{{ p.name }}</strong></a>, {{ p.affiliation }}
@@ -31,10 +31,10 @@ page.
 </ul>
 
 ## Current Code Contributors
-These {{ site.data.people_list | where: "status", "active" | size }} individuals have contributed source code to the OSCAR project in the past 12 months (as of {{ 'now' | date: "%d %B %Y" }}).
+These {{ site.data.contributors | where: "status", "active" | size }} individuals have contributed source code to the OSCAR project in the past 12 months (as of {{ 'now' | date: "%d %B %Y" }}).
 
 <ul>
-{% for p in site.data.people_list %}
+{% for p in site.data.contributors %}
   {% if p.status == "active" %}
   <li>
     {% if p.website != null %}
@@ -67,10 +67,10 @@ These {{ site.data.people_list | where: "status", "active" | size }} individuals
 
 ## Former Code Contributors
 
-The following {{ site.data.people_list | where: "status", "retired" | size }} individuals contributed to the OSCAR project in the past but have not in the last 12 months (as of {{ 'now' | date: "%d %B %Y" }}).
+The following {{ site.data.contributors | where: "status", "retired" | size }} individuals contributed to the OSCAR project in the past but have not in the last 12 months (as of {{ 'now' | date: "%d %B %Y" }}).
 
 <ul>
-{% for p in site.data.people_list %}
+{% for p in site.data.contributors %}
   {% if p.status == "retired" %}
   <li>
     {% if p.website != null %}
