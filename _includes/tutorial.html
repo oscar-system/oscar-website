@@ -39,7 +39,14 @@
   {% assign topic_tutorial = site.data.tutorials | where: "thumbnail", component | first %}
   {% assign component_url = "/tutorials/" | append: component_name | append: "/" %}
   <div class="tutorial">
-    <a href="{{ site.baseurl }}{{ component_url }}#main-content">
+    <a style="display: block; text-align: center;"
+      {% if page.url == component_url %}
+          href="{{ site.baseurl }}/tutorials/"
+          style="font-weight: bold;"
+      {% else %}
+          href="{{ site.baseurl }}{{component_url}}#main-content"
+      {% endif %}
+      >
       <img class="item_tutorial-image-link"
            src="{{ site.baseurl }}/public/thumbnails/{{ component }}">
       <div> {{ topic_tutorial.topic }} </div>
