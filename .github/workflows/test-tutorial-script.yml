@@ -7,8 +7,6 @@ on:
       - ".github/workflows/test-tutorial-script.yml"
       - "etc/update_tutorials.py"
   workflow_dispatch:
-  schedule:
-    - cron: '0 0 1 * *'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
