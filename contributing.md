@@ -3,6 +3,8 @@ layout: page
 title: Contributing to OSCAR
 ---
 
+---
+
 We welcome contributions of many kinds to the OSCAR project — from improving the source code, to writing tutorials, to suggesting new entries for our curated publication list. No matter your background or level of technical experience, your contribution helps build a vibrant, open, and collaborative ecosystem around OSCAR.
 
 Before starting, we recommend [getting in touch with us]({{site.baseurl}}/contact-and-support) to avoid duplicate efforts and discuss ideas. We are happy to help you find the best way to contribute.

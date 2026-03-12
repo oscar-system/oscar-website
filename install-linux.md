@@ -17,8 +17,9 @@ permalink: /install/linux/
   <label for="other" onclick="window.location.href='{{site.baseurl}}/install/generic/'">Other</label>
 </div>
 
-
 # Installing OSCAR {{ site.data.release.version }} on Linux
+
+---
 
 > 🛠️ **Already have OSCAR installed?** [Upgrade to the latest version here.]({{ site.baseurl }}/upgrade/)
 
@@ -34,6 +35,7 @@ The following instructions assume that you are at least somewhat familiar with u
 
 Having trouble? You can visit our [Contact & Support]({{site.baseurl}}/contact-and-support/) page to get in touch — or check out the [Frequently Asked Questions](https://docs.oscar-system.org/stable/General/faq/) for quick tips and troubleshooting guidance.
 
+---
 
 ## Step 1: Install prerequisites
 
@@ -51,6 +53,7 @@ and requires that you have permissions to administer your computer):
 sudo dnf install gcc-c++ make
 ```
 
+---
 
 ## Step 2: Install Julia
 
@@ -66,6 +69,7 @@ sudo dnf install gcc-c++ make
 curl -fsSL https://install.julialang.org | sh
 ```
 
+---
 
 ## Step 3: Install OSCAR
 
@@ -79,6 +83,7 @@ curl -fsSL https://install.julialang.org | sh
    Pkg.add("Oscar")
    ```
 
+---
 
 ## Step 4: Start OSCAR
 
@@ -93,6 +98,7 @@ o--------o-----o-----o--------o  | Documentation: https://docs.oscar-system.org
   S Y M B O L I C   T O O L S    | Version {{ site.data.release.version }}
 ```
 
+---
 
 ## Step 5: Running Tutorials Locally with IJulia
 

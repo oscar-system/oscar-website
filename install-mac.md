@@ -20,6 +20,8 @@ permalink: /install/mac/
 
 # Installing OSCAR {{ site.data.release.version }} on MacOS
 
+---
+
 > 🛠️ **Already have OSCAR installed?** [Upgrade to the latest version here.]({{ site.baseurl }}/upgrade/)
 
 To install **OSCAR v{{ site.data.release.version }}**, the latest stable release, follow the steps below.
@@ -34,6 +36,7 @@ The following instructions assume that you are at least somewhat familiar with u
 
 Having trouble? You can visit our [Contact & Support]({{site.baseurl}}/contact-and-support/) page to get in touch — or check out the [Frequently Asked Questions](https://docs.oscar-system.org/stable/General/faq/) for quick tips and troubleshooting guidance.
 
+---
 
 ## Step 1: Install prerequisites
 
@@ -44,6 +47,7 @@ If you are using macOS 10.12 or newer, you need to install the Xcode command lin
 3. Wait for this to complete; it needs to download about 130 MB of data.
 4. You can verify that everything worked by verifying that the folder <code>/Library/Developer/CommandLineTools/usr/bin/</code> exists and contains executables such as <code>clang</code> and <code>clang++</code>, the C and C++ compiler.
 
+---
 
 ## Step 2: Install Julia
 
@@ -52,6 +56,7 @@ If you are using macOS 10.12 or newer, you need to install the Xcode command lin
 curl -fsSL https://install.julialang.org | sh
 ```
 
+---
 
 ## Step 3: Install OSCAR
 
@@ -65,6 +70,7 @@ curl -fsSL https://install.julialang.org | sh
    Pkg.add("Oscar")
    ```
 
+---
 
 ## Step 4: Start OSCAR
 
@@ -79,6 +85,7 @@ o--------o-----o-----o--------o  | Documentation: https://docs.oscar-system.org
   S Y M B O L I C   T O O L S    | Version {{ site.data.release.version }}
 ```
 
+---
 
 ## Step 5: Running Tutorials Locally with IJulia
 

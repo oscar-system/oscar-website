@@ -20,6 +20,8 @@ permalink: /install/generic/
 
 # Installing OSCAR {{ site.data.release.version }}
 
+---
+
 The latest stable release, **OSCAR v{{ site.data.release.version }}**, is officially supported on [**Windows**]({{site.baseurl}}/install/win/), [**macOS**]({{site.baseurl}}/install/mac/), and [**Linux (Debian, Ubuntu, Fedora)**]({{site.baseurl}}/install/linux/).
 
 If you are using a **different operating system**, we **do not provide support** and **cannot guarantee compatibility**. However, if you still wish to try installing OSCAR, you will need:
@@ -35,6 +37,7 @@ If you are using a **different operating system**, we **do not provide support**
   <strong>at least 6GB of free memory</strong>. For optimal performance with OSCAR, we recommend having <strong>at least 16GB of RAM</strong>.
 </div>
 
+---
 
 ## Advanced Installation Instructions
 

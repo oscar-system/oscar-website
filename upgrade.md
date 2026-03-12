@@ -3,6 +3,8 @@ layout: page
 title: Upgrading to the Latest OSCAR Release
 ---
 
+---
+
 If you already have OSCAR installed (cf. [installation guide]({{site.baseurl}}/install/)) and wish to upgrade to **OSCAR v{{ site.data.release.version }}**, the latest stable release, follow the instructions below. If you encounter any issues, do not hesitate to [contact us]({{site.baseurl}}/contact-and-support/).
 
 ---

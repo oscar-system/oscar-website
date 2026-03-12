@@ -3,6 +3,8 @@ layout: page
 title: What is OSCAR?
 ---
 
+---
+
 **OSCAR** is an **O**pen **S**ource **C**omputer **A**lgebra **R**esearch System
 written in the [Julia programming language](https://julialang.org). It
 provides a unified, high-performance framework for computations in
@@ -56,8 +58,9 @@ OSCAR’s design as a deeply integrated and extensible research system. While
 the current focus is on these five mathematical domains, OSCAR is built to
 grow and evolve with the mathematical community.
 
+---
 
-# What Makes OSCAR Unique?
+## What Makes OSCAR Unique?
 
 - **Deep Integration:** GAP, Singular, Polymake, and ANTIC are embedded into
 OSCAR at a low level. Their functionality is exposed natively in Julia, and
@@ -79,8 +82,9 @@ for the academic community.
 New packages and algorithms can be added easily, benefiting from existing
 infrastructure and interoperability.
 
+---
 
-# Why Julia?
+## Why Julia?
 
 [Julia](https://www.julialang.org) is a fast, modern, open-source language
 tailored to numerical and symbolic computing. It offers:
@@ -91,8 +95,9 @@ tailored to numerical and symbolic computing. It offers:
 - Direct access to C/C++ libraries used by the underlying systems
 - A wide ecosystem for visualization, data handling, and scientific computing
 
+---
 
-# Cornerstone Systems
+## Cornerstone Systems
 
 At the heart of OSCAR are four powerful, domain-specific computer algebra
 systems. Each contributes unique strengths, and their deep integration within
@@ -155,8 +160,9 @@ using symbolic methods. Informally, it enables users to model and work with
 points on algebraic varieties; more formally, it provides tools for symbolic
 algebraic solving.
 
+---
 
-# Learn More and Get Involved
+## Learn More and Get Involved
 
 🚀 **[Installation Guide]({{site.baseurl}}/install/)** – Everything you need to install OSCAR {{ site.data.release.version }} (released on {{ site.data.release.date | date_to_string }}).
 

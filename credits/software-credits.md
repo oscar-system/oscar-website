@@ -61,6 +61,8 @@ used_software:
       website: https://www.julialang.org
 ---
 
+---
+
 OSCAR relies on many software packages. For a complete and up-to-date list of dependencies, please see the [Project.toml file](https://github.com/oscar-system/Oscar.jl/blob/master/Project.toml) in the OSCAR GitHub repository. The following are some of them:
 
 {% assign entries = page.used_software | sort_natural:"name" %}
@@ -74,9 +76,13 @@ OSCAR relies on many software packages. For a complete and up-to-date list of de
 {% endfor %}
 </ul>
 
+---
+
 ### MaRDI
 
 The [Mathematical Research Data Initiative](https://www.mardi4nfdi.de/about/mission) (MaRDI), is a German consortium dedicated to setting guidelines and developing software for findability, accessibility, interoperability, and reuse of mathematical research data. OSCAR's serialization employs the **mrdi** file format, the specifications of which can be found on [zenodo](https://zenodo.org/records/12723387). More details are available in [this article](https://link.springer.com/chapter/10.1007/978-3-031-64529-7_25) and the [OSCAR documentation](https://docs.oscar-system.org/stable/General/serialization/).
+
+---
 
 ### LEAN meets OSCAR
 

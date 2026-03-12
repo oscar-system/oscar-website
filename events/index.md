@@ -3,6 +3,8 @@ layout: page
 title: Events
 ---
 
+---
+
 ### [OSCAR-organized Events]({{site.baseurl }}/events/meetings/)
 OSCAR regularly organizes workshops, hackathons, and development meetings.
 

@@ -4,6 +4,8 @@ title: Satellite Events
 meeting: true
 ---
 
+---
+
 These events are not organized by OSCAR, but include talks or sessions relevant to the OSCAR user and developer community.
 
 Some of them are organized within the [SFB-TRR 195](https://www.computeralgebra.de/sfb/events/) collaborative research project.  
