@@ -9,11 +9,17 @@ title: Contributors
 
 ---
 
+---
+
 Many wonderful people have contributed to OSCAR in many ways. Our thanks
-extend to all of them! On this page we mention just a subset: those who
+extend to all of them!
+
+On this page we mention just a subset: those who
 contributed code to one of the Julia packages listed on the
 [Contributing to OSCAR]({{site.baseurl}}/contributing/#contributing-source-code)
 page.
+
+---
 
 ## Project leaders
 
@@ -29,6 +35,8 @@ page.
   {% endif %}
 {% endfor %}
 </ul>
+
+---
 
 ## Current Code Contributors
 These {{ site.data.contributors | where: "status", "active" | size }} individuals have contributed source code to the OSCAR project in the past 12 months (as of {{ 'now' | date: "%d %B %Y" }}).
@@ -64,6 +72,7 @@ These {{ site.data.contributors | where: "status", "active" | size }} individual
 {% endfor %}
 </ul>
 
+---
 
 ## Former Code Contributors
 

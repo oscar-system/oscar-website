@@ -20,6 +20,8 @@ permalink: /install/win/
 
 # Installing OSCAR {{ site.data.release.version }} on Windows
 
+---
+
 > 🛠️ **Already have OSCAR installed?** [Upgrade to the latest version here.]({{ site.baseurl }}/upgrade/)
 
 To install **OSCAR v{{ site.data.release.version }}**, the latest stable release, follow the steps below.
@@ -34,6 +36,7 @@ The following instructions assume that you are at least somewhat familiar with u
 
 Having trouble? You can visit our [Contact & Support]({{site.baseurl}}/contact-and-support/) page to get in touch — or check out the [Frequently Asked Questions](https://docs.oscar-system.org/stable/General/faq/) for quick tips and troubleshooting guidance.
 
+---
 
 ## Step 1: Install Windows Subsystem for Linux (WSL)
 
@@ -45,6 +48,7 @@ Having trouble? You can visit our [Contact & Support]({{site.baseurl}}/contact-a
    > 💡 **Tip:** As suggested by [Miķelis Emīls Miķelsons](https://github.com/emikelsons), instead of editing a `.wslconfig` file manually, you can use the **"WSL Settings"** app on Windows. This GUI tool allows you to set the amount of RAM, number of processors, and other resources for WSL more easily.
 3. After installing WSL, you should see the *Ubuntu* app in your start menu.
 
+---
 
 ## Step 2: Install Julia
 
@@ -59,6 +63,7 @@ Having trouble? You can visit our [Contact & Support]({{site.baseurl}}/contact-a
 curl -fsSL https://install.julialang.org | sh
 ```
 
+---
 
 ## Step 3: Install OSCAR
 
@@ -72,6 +77,7 @@ curl -fsSL https://install.julialang.org | sh
    Pkg.add("Oscar")
    ```
 
+---
 
 ## Step 4: Start OSCAR
 
@@ -86,6 +92,7 @@ o--------o-----o-----o--------o  | Documentation: https://docs.oscar-system.org
   S Y M B O L I C   T O O L S    | Version {{ site.data.release.version }}
 ```
 
+---
 
 ## Step 5: Running Tutorials Locally with IJulia
 

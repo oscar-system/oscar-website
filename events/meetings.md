@@ -4,6 +4,8 @@ title: OSCAR Meetings
 meeting: true
 ---
 
+---
+
 {% assign events = site.data.events | where: "satellite", "No" | group-by: "start-date" | sort: "end-date" | reverse %}
 
 <ul>
