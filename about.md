@@ -184,4 +184,6 @@ algebraic solving.
 
 🤝 **[Contact & Support]({{site.baseurl}}/contact-and-support/)** – Find ways to connect, ask questions, or get help.
 
+📰 **[Newsletter]({{ site.baseurl }}/newsletter/)** – Occasional updates about OSCAR releases, papers, events, and community news.
+
 🏛️ **Funding** – OSCAR is supported by the [German Research Foundation (DFG)](https://www.dfg.de/en) through the [Collaborative Research Center TRR 195](https://www.computeralgebra.de/sfb/)."

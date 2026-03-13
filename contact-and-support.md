@@ -31,8 +31,12 @@ For public and permanent discussions, use our [GitHub discussion forum](https://
 
 ---
 
-### Mailing Lists
+### Newsletter
 
-* Newsletter: To receive updates about OSCAR, including new releases and important announcements, subscribe to our [newsletter](https://oscar-system.org/newsletter). This is a low-traffic mailing list. You can also look at [its archive](https://lists.uni-kl.de/oscar/arc/news) to see past issues.
+To receive updates about OSCAR, including new releases, events, papers, and community announcements, subscribe to the [OSCAR Newsletter]({{ site.baseurl }}/newsletter/).
 
-* OSCAR events -- and seldomly technical developments -- are announced via a low-traffic mailing list `devel@oscar-system.org`. To join this mailing list, visit <https://oscar-system.org/lists/devel> and follow the instructions there.
+---
+
+### Technical announcements
+
+OSCAR events — and occasionally technical developments — are also announced via the low-traffic mailing list `devel@oscar-system.org`. To join this mailing list, visit <https://oscar-system.org/lists/devel> and follow the instructions there.
