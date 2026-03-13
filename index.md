@@ -71,12 +71,17 @@ _Released on {{ site.data.release.date | date_to_string }}_ -- [View release not
 
 The [OSCAR Book](https://book.oscar-system.org/) - A detailed guide to version 1.0, featuring code snippets and in-depth explanations.
 
-
 ---
 
 ## 🤝 Contact & Support
 
 Need help or want to connect? Visit our [Contact & Support]({{site.baseurl}}/contact-and-support/) page.
+
+---
+
+## 📰 Newsletter
+
+Stay up to date with OSCAR releases, papers, events, and community news via the [OSCAR Newsletter]({{ site.baseurl }}/newsletter/).
 
 ---
 
