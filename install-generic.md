@@ -22,11 +22,9 @@ permalink: /install/generic/
 
 ---
 
-The latest stable release, **OSCAR v{{ site.data.release.version }}**, is officially supported on [**Windows**]({{site.baseurl}}/install/win/), [**macOS**]({{site.baseurl}}/install/mac/), and [**Linux (Debian, Ubuntu, Fedora)**]({{site.baseurl}}/install/linux/).
-
-If you are using a **different operating system**, we **do not provide support** and **cannot guarantee compatibility**. However, if you still wish to try installing OSCAR, you will need:
+The latest stable release, **OSCAR v{{ site.data.release.version }}**, is officially supported on [**Windows**]({{site.baseurl}}/install/win/), [**macOS**]({{site.baseurl}}/install/mac/), and [**Linux (Debian, Ubuntu, Fedora)**]({{site.baseurl}}/install/linux/). If you are using a **different operating system**, we **do not provide support** and **cannot guarantee compatibility**. However, if you still wish to try installing OSCAR, you will need:
 - **[GNU Make](https://www.gnu.org/software/make/)**
-- **A C++ compiler that supports C++17**, such as:
+- A C++ compiler that supports C++17, such as:
   - [GNU C/C++ Compiler (GCC) **v7 or newer**](https://gcc.gnu.org/)
   - [Clang C/C++ Compiler **v5 or newer**](https://clang.llvm.org/)
   - [Intel C/C++ Compiler (ICC) **v19.0 or newer**](https://www.intel.com/content/www/us/en/developer/tools/oneapi/dpc-compiler.html)
@@ -34,7 +32,7 @@ If you are using a **different operating system**, we **do not provide support**
 <div class="message">
   <strong>WARNING:</strong>
   The installation process of OSCAR, particularly the precompilation step, requires 
-  <strong>at least 6GB of free memory</strong>. For optimal performance with OSCAR, we recommend having <strong>at least 16GB of RAM</strong>.
+  <strong>at least 6GB of free memory</strong>. For optimal performance, we recommend having <strong>at least 16GB of RAM</strong>.
 </div>
 
 ---

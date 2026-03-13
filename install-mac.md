@@ -22,19 +22,21 @@ permalink: /install/mac/
 
 ---
 
-> 🛠️ **Already have OSCAR installed?** [Upgrade to the latest version here.]({{ site.baseurl }}/upgrade/)
+> 🛠️ **Already have OSCAR?** [Upgrade to the latest version here.]({{ site.baseurl }}/upgrade/)
 
-To install **OSCAR v{{ site.data.release.version }}**, the latest stable release, follow the steps below.
+---
+
+Follow the steps below to install OSCAR v{{ site.data.release.version }}. Basic familiarity with using a terminal is assumed.
+
+Having trouble? Visit our [Contact & Support]({{site.baseurl}}/contact-and-support/) page for help.
+
+---
 
 <div class="message">
   <strong>WARNING:</strong>
   The installation process of OSCAR, particularly the precompilation step, requires 
-  <strong>at least 6GB of free memory</strong>. For optimal performance with OSCAR, we recommend having <strong>at least 16GB of RAM</strong>.
+  <strong>at least 6GB of free memory</strong>. For optimal performance, we recommend having <strong>at least 16GB of RAM</strong>.
 </div>
-
-The following instructions assume that you are at least somewhat familiar with using a terminal interface.
-
-Having trouble? You can visit our [Contact & Support]({{site.baseurl}}/contact-and-support/) page to get in touch — or check out the [Frequently Asked Questions](https://docs.oscar-system.org/stable/General/faq/) for quick tips and troubleshooting guidance.
 
 ---
 
@@ -64,7 +66,7 @@ curl -fsSL https://install.julialang.org | sh
    ```bash
    julia
    ```
-2. Install OSCAR by running the following commands. This may take a while to complete, as it will download and install OSCAR and its dependencies.
+2. Install OSCAR by running the following commands. This may take a while, as OSCAR and its dependencies will be downloaded and installed.
    ```julia
    using Pkg
    Pkg.add("Oscar")
@@ -74,7 +76,7 @@ curl -fsSL https://install.julialang.org | sh
 
 ## Step 4: Start OSCAR
 
-After the installation is complete, you can start using OSCAR by running `using Oscar` in the Julia REPL:
+Run `using Oscar` in the Julia REPL:
 ```console?lang=julia
 julia> using Oscar
   ___   ___   ___    _    ____
@@ -87,16 +89,19 @@ o--------o-----o-----o--------o  | Documentation: https://docs.oscar-system.org
 
 ---
 
-## Step 5: Running Tutorials Locally with IJulia
+## Optional: Running Tutorials Locally with IJulia
+
+If you would like to run the [OSCAR tutorials]({{site.baseurl}}/tutorials/) locally, you can do so using
+[IJulia](https://github.com/JuliaLang/IJulia.jl).
 
 1. Install *IJulia* (and Jupyter) by running the following command inside your Julia REPL:
 ```julia
 using Pkg; Pkg.add("IJulia")
 ```
-For more details, refer to the [installation guide](https://julialang.github.io/IJulia.jl/stable/manual/installation/). If you encounter issues, you may need to explicitly build IJulia. Troubleshooting info can be found on the [IJulia troubleshooting page](https://julialang.github.io/IJulia.jl/stable/manual/troubleshooting/).
-2. Download the tutorial of your interest from the [list of available OSCAR tutorials]({{site.baseurl }}/tutorials).
+For more details, see the [IJulia installation guide](https://julialang.github.io/IJulia.jl/stable/manual/installation/). If you encounter issues, you may need to explicitly build IJulia. Troubleshooting information is available on the [IJulia troubleshooting page](https://julialang.github.io/IJulia.jl/stable/manual/troubleshooting/).
+2. Download one of the [OSCAR tutorials]({{site.baseurl }}/tutorials).
 3. Start Jupyter by running the following in your Julia REPL:
 ```julia
 using IJulia; notebook()
 ```
-4. Your web browser should open with the Jupyter interface, where "Jupyter" is displayed in the upper-left corner, and a file explorer appears below. Locate and open the tutorial notebook of your interest. <br>You might see a pop-up with the message "Kernel not found" or "Kernel error". You can resolve this by selecting a different Julia kernel from the notebook's kernel menu.
+4. Your web browser should open the Jupyter interface. In the upper-left corner you should see "Jupyter"; the file explorer appears below it. Locate and open the tutorial notebook you downloaded. If you see a message such as `Kernel not found` or `Kernel error`, select a different Julia kernel in the top-right corner of the notebook.
