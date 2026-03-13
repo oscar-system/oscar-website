@@ -22,38 +22,14 @@ Follow the instructions at <https://lists.uni-kl.de/oscar/info/news>.
 
 ### Past Issues
 
-<style>
-ul.newsletters {
-  list-style: none;
-  padding-left: 0;
-}
-
-ul.newsletters li {
-  margin: 0 0 1rem 0;
-  padding: .6rem .75rem;
-  border: 1px solid #dbd2d2;
-  border-radius: .5rem;
-}
-
-.newsletter-meta {
-  color: #555;
-  margin-top: .15rem;
-  font-size: .95em;
-}
-</style>
-
 {% assign newsletters = site.data.newsletters | sort: "date" | reverse %}
 
-<ul class="newsletters">
+<ul>
   {% for n in newsletters %}
   <li>
-    <a href="{{ n.url }}">
-      {{ n.date | date: "%B %Y" }} Newsletter
+    <a href="{{ site.baseurl }}{{ n.url }}">
+      Newsletter #{{ forloop.rindex }} — {{ n.date | date: "%b %-d %Y" }}
     </a>
-    <span class="newsletter-meta">
-      — released on {{ n.date | date: "%Y-%m-%d" }}
-    </span>
   </li>
   {% endfor %}
 </ul>
-
