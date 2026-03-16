@@ -16,13 +16,9 @@ The OSCAR Newsletter is a low-traffic mailing list. It provides occasional updat
 
 ### Subscribe
 
-You can join the OSCAR newsletter in two ways:
+Enter your email address [here](https://lists.uni-kl.de/oscar/subscribe/news), click **Submit** and follow the on-screen instructions.
 
-1. **Web subscription:**
-  Enter your email address [here](https://lists.uni-kl.de/oscar/subscribe/news), click **Subscribe** and follow the on-screen instructions to confirm your subscription.
-
-2. **Email subscription:**
-  From the email address that you want to receive the newsletter at, send an email to `sympa@oscar-system.org`. In the subject line, write: `subscribe news Firstname Lastname` (use your own first and last name). Leave the email body blank.
+Alternatively, send a message from the email address that should receive the newsletter to [sympa@oscar-system.org](mailto:sympa@oscar-system.org?subject=subscribe%20news%20Firstname%20Lastname). In the subject line, write `subscribe news Firstname Lastname` (use your own first and last name). Leave the email body blank.
 
 ---
 
