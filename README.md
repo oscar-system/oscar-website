@@ -3,6 +3,7 @@
 - [How to contribute](#how-to-contribute)
 - [How to test the website locally](#how-to-test-the-website-locally)
 - [How to contribute a tutorial notebook](#how-to-contribute-a-tutorial-notebook)
+- [How to contribute a newsletter](#how-to-contribute-a-newsletter)
 - [How to use syntax highlighting in Markdown files](#how-to-use-syntax-highlighting-in-markdown-files)
 
 
@@ -68,6 +69,28 @@ Add an entry to `_data/tutorials.yml` describing your tutorial. The entry should
   last_modified: Date at which the notebook was last modified
   test_status: success
 ```
+
+## How to contribute a newsletter
+
+* Place the original HTML code in the `/newsletters` folder. Name the file according to its issue number (first newsletter `1.html`, second `2.html`, etc.).
+* Wrap the header of the HTML code in a link to [the newsletter overview](https://www.oscar-system.org/newsletter/), unless already done. For example, in the first newsletter:
+```html
+    <div style="background-color: #004aad; padding: 20px 0; text-align: center;">
+      <img src="https://www.oscar-system.org/public/OSCAR-Logo-dark.svg" alt="OSCAR Logo" style="max-width: 180px; height: auto;" />
+      <h1 style="color: #ffffff; margin: 15px 0 0; font-size: 26px;">OSCAR Newsletter – November 2025</h1>
+    </div>
+```
+was changed to
+```html
+    <a href="https://www.oscar-system.org/newsletter/" style="text-decoration:none; color:inherit;">
+    <div style="background-color: #004aad; padding: 20px 0; text-align: center;">
+      <img src="https://www.oscar-system.org/public/OSCAR-Logo-dark.svg" alt="OSCAR Logo" style="max-width: 180px; height: auto;" />
+      <h1 style="color: #ffffff; margin: 15px 0 0; font-size: 26px;">OSCAR Newsletter – November 2025</h1>
+    </div>
+    </a>
+```
+* Update `_data/newsletters.yml` accordingly.
+* Open a pull request with your changes. Once merged, you are done.
 
 
 ## How to use syntax highlighting in Markdown files
