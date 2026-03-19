@@ -632,6 +632,8 @@
   repos:
   - Nemocas/Nemo.jl
 - name: Niranjan Nagumalli
+  affiliation: CyberLabs IIIT Hyderabad
+  email: niranjan.nagumalli@research.iiit.ac.in
   github: niranjannagumalli
   status: active
   repos:
