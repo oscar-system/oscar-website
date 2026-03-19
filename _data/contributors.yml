@@ -658,12 +658,8 @@
   email: gabriel_ong@ieee.org
   status: active
   comment: Co-author of commit 2391d9bd23c7bf92be3f2344e1c9887218cc1dc0
-  repos:
-  - oscar-system/Oscar.jl
-- name: Gabriel Ong
-  email: gabrielong2312@gmail.com
-  status: active
-  comment: Co-author of commit 2391d9bd23c7bf92be3f2344e1c9887218cc1dc0
+  aka_email:
+  - gabrielong2312@gmail.com
   repos:
   - oscar-system/Oscar.jl
 - name: Raphaël Paegelow
