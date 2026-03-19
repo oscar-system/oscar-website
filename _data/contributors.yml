@@ -24,6 +24,7 @@
   repos:
   - Nemocas/AbstractAlgebra.jl
   - Nemocas/Nemo.jl
+  - algebraic-solving/AlgebraicSolving.jl
 - name: Feroz Ahmad
   email: feroz.ahmad.email@gmail.com
   github: Fe-r-oz
@@ -630,6 +631,13 @@
   status: active
   repos:
   - Nemocas/Nemo.jl
+- name: Niranjan Nagumalli
+  affiliation: CyberLabs IIIT Hyderabad
+  email: niranjan.nagumalli@research.iiit.ac.in
+  github: niranjannagumalli
+  status: active
+  repos:
+  - oscar-system/Oscar.jl
 - name: James Nohilly
   affiliation: University of Kaiserslautern-Landau
   github: jamesnohilly
@@ -647,6 +655,17 @@
   - 133787190+stefnomden@users.noreply.github.com
   repos:
   - thofma/Hecke.jl
+- name: Gabriel Ong
+  affiliation: Bonn university
+  github: wgabrielong
+  website: http://wgabrielong.github.io/
+  email: gabriel_ong@ieee.org
+  status: active
+  comment: Co-author of commit 2391d9bd23c7bf92be3f2344e1c9887218cc1dc0
+  aka_email:
+  - gabrielong2312@gmail.com
+  repos:
+  - oscar-system/Oscar.jl
 - name: Raphaël Paegelow
   affiliation: University of Lille
   email: raphael.paegelow@univ-lille.fr
@@ -974,6 +993,7 @@
   status: active
   repos:
   - Nemocas/Nemo.jl
+  - algebraic-solving/AlgebraicSolving.jl
 - name: Lena Weis
   affiliation: TU Berlin
   email: weis@math.tu-berlin.de
