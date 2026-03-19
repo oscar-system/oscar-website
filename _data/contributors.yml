@@ -654,6 +654,9 @@
   repos:
   - thofma/Hecke.jl
 - name: Gabriel Ong
+  affiliation: Bonn university
+  github: wgabrielong
+  website: http://wgabrielong.github.io/
   email: gabriel_ong@ieee.org
   status: active
   comment: Co-author of commit 2391d9bd23c7bf92be3f2344e1c9887218cc1dc0
