@@ -36,9 +36,9 @@ GIT_LOG_FORMAT_2 = "--format=%H %(trailers:only,unfold,separator=|,key=Co-author
 REPO_LIST = ("Nemocas/AbstractAlgebra.jl", "algebraic-solving/AlgebraicSolving.jl", "oscar-system/GAP.jl", "thofma/Hecke.jl",
              "Nemocas/Nemo.jl", "oscar-system/Oscar.jl", "oscar-system/Polymake.jl", "oscar-system/Singular.jl")
 
-# Known bot identities that we want to exclude even if they don't have [bot] in name.
-KNOWN_BOT_EMAILS = {"codex@openai.com"}
-KNOWN_BOT_NAMES = {"codex"}
+# Known bot identities that we want to exclude, even if they don't have [bot] in name.
+KNOWN_BOT_EMAILS = {"codex@openai.com", "noreply@anthropic.com"}
+KNOWN_BOT_NAMES = {"codex", "claude"}
 
 # Regexes
 HASH_RE = re.compile(r"\b[0-9a-f]{40}\b", re.I)
