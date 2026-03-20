@@ -178,6 +178,11 @@
   website: https://sumiya11.github.io/
   status: retired
   repos: []
+- name: Andy Dienes
+  github: adienes
+  status: active
+  repos:
+  - oscar-system/Oscar.jl
 - name: Berenike Dieterle
   affiliation: University of Kaiserslautern-Landau
   email: dieterle@mathematik.uni-kl.de
