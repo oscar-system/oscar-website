@@ -1,0 +1,8 @@
+[Unit]
+Description=Daily rebuilding of the website
+
+[Timer]
+OnCalendar=*-*-* 3:00:00    # every day at 3 AM localtime
+
+[Install]
+WantedBy=timers.target

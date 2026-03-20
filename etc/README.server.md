@@ -139,8 +139,8 @@ Next install and activate the systemd units:
 
     mkdir -p ~/.config/systemd/user/
     cp ~/data/oscar-website/etc/oscar-website.* ~/.config/systemd/user/
-    systemctl --user enable oscar-website.service oscar-website.path
-    systemctl --user start oscar-website.service oscar-website.path
+    systemctl --user enable oscar-website.service oscar-website.path oscar-website.timer
+    systemctl --user start oscar-website.service oscar-website.path oscar-website.timer
 
 
 ## On GitHub
