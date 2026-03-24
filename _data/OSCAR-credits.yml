@@ -1,3 +1,13 @@
+- name: "Geometric approach to the modular isomorphism problem: groups of order 64"
+  preprint_url: https://arxiv.org/abs/2603.18220
+  authors: Leo Margolis, Taro Sakurai
+  month: March
+  year: 2026
+- name: Computing the Zariski closure of a finitely generated matrix group
+  preprint_url: https://arxiv.org/abs/2505.02577
+  authors: Willem A. de Graaf
+  month: May
+  year: 2025
 - name: Computations in equivariant Gromov-Witten theory of GKM spaces
   preprint_url: https://arxiv.org/abs/2509.07562
   authors: Daniel Holmes, Giosuè Muratore
