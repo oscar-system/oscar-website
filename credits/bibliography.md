@@ -5,8 +5,9 @@ title: Bibliography
 
 ---
 
-> This is a curated selection of OSCAR-related publications, not a complete list.
-> If you know of an important work that should be included, please see the [Contributing Publications]({{site.baseurl}}/contributing/#contributing-publications) section for details.
+> Below is a curated selection of OSCAR-related publications. For a more comprehensive list, you may also visit [zbMATH](https://zbmath.org/?q=si%3A36845).
+>
+> If you are aware of an important work that should be included, please refer to the [Contributing Publications]({{site.baseurl}}/contributing/#contributing-publications) section for details.
 
 <style>
   ul.pubs { list-style: none; padding-left: 0; }
