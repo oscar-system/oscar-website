@@ -183,6 +183,7 @@
   status: active
   repos:
   - oscar-system/Oscar.jl
+  - thofma/Hecke.jl
 - name: Berenike Dieterle
   affiliation: University of Kaiserslautern-Landau
   email: dieterle@mathematik.uni-kl.de
