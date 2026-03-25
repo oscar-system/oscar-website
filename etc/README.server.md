@@ -45,6 +45,13 @@ must be entered in the GitHub settings at
 <https://github.com/oscar-system/oscar-website/settings/hooks>.
 
 
+## Automatic daily rebuilds
+
+We also rebuild the website every day at around 3 AM. This fetches the latest
+testing status of the Tutorials by running the script `update_tutorials.py`. We
+do this via systemd timers, and the `oscar-website.timer` file in the `etc`
+directory.
+
 ## Github API
 
 The Python scripts in `etc/` use the Github API, and require an API key for
@@ -64,14 +71,14 @@ on the webserver.
 
 If updates stop working, a good first place to look at is this output of this:
 
-    systemctl --user status oscar-website.service oscar-website.path
+    systemctl --user status oscar-website.service oscar-website.path oscar-website.timer
 
 This prints a log with extra info. However, it might also say "service not
-found". In that case, make sure that `oscar-website.service` and
-`oscar-website.path` are installed and enabled:
+found". In that case, make sure that `oscar-website.service`,
+`oscar-website.path`, and `oscar-website.timer` are installed and enabled:
 
     cp ~/data/oscar-website/etc/oscar-website.* ~/.config/systemd/user
-    systemctl --user enable oscar-website.service oscar-website.path
+    systemctl --user enable oscar-website.service oscar-website.path oscar-website.timer
 
 Also helpful is to study the log for the relevant systemd units
 
@@ -139,8 +146,8 @@ Next install and activate the systemd units:
 
     mkdir -p ~/.config/systemd/user/
     cp ~/data/oscar-website/etc/oscar-website.* ~/.config/systemd/user/
-    systemctl --user enable oscar-website.service oscar-website.path
-    systemctl --user start oscar-website.service oscar-website.path
+    systemctl --user enable oscar-website.service oscar-website.path oscar-website.timer
+    systemctl --user start oscar-website.service oscar-website.path oscar-website.timer
 
 
 ## On GitHub
