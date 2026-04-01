@@ -14,7 +14,7 @@ Verify that the OSCAR book website displays and allows to select code in this la
 
 Please send an email to the OSCAR mailing list (<devel@oscar-system.org>) to inform about this update. You can use the following template.
 
-Major releases (2.0.0, 3.0.0 etc.) should also be announced to the SFB mailing lists (like <trr195-members@mathematik.uni-kl.de> and <trr195-grad@mathematik.uni-kl.de>).
+Major releases (1.x.0) should also be announced to the SFB mailing lists (like <trr195-members@mathematik.uni-kl.de> and <trr195-grad@mathematik.uni-kl.de>).
 
 > Subject: New OSCAR release v{{ env.VERSION }}
 > 
