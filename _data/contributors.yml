@@ -548,7 +548,7 @@
   email: luber@math.tu-berlin.de
   github: danteluber
   website: https://sites.google.com/view/dantelubermath/home
-  status: active
+  status: retired
   repos:
   - oscar-system/Oscar.jl
 - name: Eoin Mackall
@@ -788,6 +788,12 @@
   status: retired
   repos:
   - Nemocas/AbstractAlgebra.jl
+- name: Kamal Saleh
+  email: kamal.saleh@web.de
+  github: kamalsaleh
+  status: active
+  repos:
+  - oscar-system/Singular.jl
 - name: Marcel Salmon
   affiliation: Universität Oldenburg
   github: Syz-MS
@@ -998,6 +1004,7 @@
   website: https://weijia.perso.lip6.fr
   status: active
   repos:
+  - Nemocas/AbstractAlgebra.jl
   - Nemocas/Nemo.jl
   - algebraic-solving/AlgebraicSolving.jl
 - name: Lena Weis
@@ -1011,8 +1018,9 @@
 - name: Karl Wessel
   email: wessel.karl@googlemail.com
   github: karlwessel
-  status: retired
+  status: active
   repos:
+  - Nemocas/AbstractAlgebra.jl
   - Nemocas/Nemo.jl
 - name: Torben Wiedemann
   affiliation: University of Kaiserslautern-Landau
