@@ -10,8 +10,11 @@ A new OSCAR release **v{{ env.VERSION }}** was published on **{{ env.PUBLISHED }
 
 Verify that all tutorials work with the latest OSCAR release and update them if needed. Tutorials are tested daily by the automated tutorial tester.
 
-Please send an email to the OSCAR mailing list (<devel@oscar-system.org>) to inform about this update. You can use the following template:
+Verify that the OSCAR book website displays and allows to select code in this latest version as well as all earlier versions of OSCAR.
 
+Please send an email to the OSCAR mailing list (<devel@oscar-system.org>) to inform about this update. You can use the following template.
+
+Major releases (1.x.0) should also be announced to the SFB mailing lists (like <trr195-members@mathematik.uni-kl.de> and <trr195-grad@mathematik.uni-kl.de>).
 
 > Subject: New OSCAR release v{{ env.VERSION }}
 > 
