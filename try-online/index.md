@@ -39,8 +39,12 @@ Use the following steps:
 5. Select the option in the notebook section which says "Oscar".
    ![Oscar selection in notebook section](oscar-notebook.png){: width="50%" }
 
-6. Try to execute a simple statement to check that the Julia kernel has started and is connected to the
-   notebook, `println(4)`, for example. (This may take multiple minutes as the server finishes
+   If you accidentally started the OSCAR entry in the "console" section (instead of the "notebook"
+   section), or any other of the listed entries, don't worry: you can just close the jupyter tab to
+   get back to the launcher page.
+
+6. Try to execute a simple statement to check that the Julia kernel has started and is connected to
+   the notebook, `println(4)`, for example. (This may take multiple minutes as the server finishes
    setting up things in the background.)
 
 7. You can now use OSCAR as per normal instructions. Maybe try out the [Linear Algebra
