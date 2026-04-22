@@ -5,7 +5,7 @@ permalink: /try-online/
 
 # Try OSCAR Online
 
-OSCAR can be tried online without installation, on the NFDI jupyter hub.
+OSCAR can be tried online without installation, on the NFDI Jupyter hub.
 
 The NFDI Jupyter hub allows 130 credits worth of usage per user per day. Trying out OSCAR requires
 40 credits per hour. So, OSCAR can be tried out online free of cost for slightly more than 3 hours
@@ -16,7 +16,7 @@ Use the following steps:
 
 1. Go to
    <https://hub.nfdi-jupyter.de/workshops/oscar-latest>,
-   and login. Select "Helmholtz AAI" if no other choice applies to you.
+   and log in. Select "Helmholtz AAI" if no other choice applies to you.
    ![Main Login](helmholtz-login.png){: width="50%" }
    ![AAI Choice](choose-helmholtz.png){: width="50%" }
 
