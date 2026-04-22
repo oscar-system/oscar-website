@@ -33,7 +33,7 @@ Use the following steps:
    below, with a row saying "Try out the latest OSCAR in the cloud" and a
    "Start" button to the right of it. Click on that "Start" button to start
    OSCAR online. This may take some time, up to 10 minutes. You will be
-   automatically redirected to a jupyter interface when it is ready
+   automatically redirected to a Jupyter interface when it is ready
    ![](hit-start.png){: width="50%" }
 
 5. Select the option in the notebook section which says "Oscar".
