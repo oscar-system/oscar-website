@@ -16,7 +16,8 @@ Use the following steps:
 
 1. Go to
    <https://hub.nfdi-jupyter.de/workshops/oscar-latest>,
-   and log in. Select "Helmholtz AAI" if no other choice applies to you.
+   and log in using the "Sign In" button. On the page that appears
+   next, select "Helmholtz AAI" if no other choice applies to you.
    ![Main Login](helmholtz-login.png){: width="50%" }
    ![AAI Choice](choose-helmholtz.png){: width="50%" }
 
