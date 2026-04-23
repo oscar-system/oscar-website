@@ -761,6 +761,7 @@
   website: https://www.yueren.de/
   status: active
   repos:
+  - Nemocas/AbstractAlgebra.jl
   - oscar-system/Oscar.jl
   - thofma/Hecke.jl
 - name: Morgan Rodgers
@@ -801,6 +802,7 @@
   comment: Associated with Anne Fruhbig Kruger as of 2024
   repos:
   - oscar-system/Oscar.jl
+  - oscar-system/Singular.jl
 - name: Sami-Halaseh
   email: samihalaseh14@pm.me
   github: Sami-Halaseh
@@ -911,7 +913,7 @@
   affiliation: University of Kaiserslautern-Landau
   github: ulthiel
   website: https://ulthiel.com/math/
-  status: active
+  status: retired
   repos:
   - oscar-system/Oscar.jl
 - name: Jan Philipp Thiele
