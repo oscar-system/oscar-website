@@ -176,8 +176,9 @@
   email: asdemin_2@edu.hse.ru
   github: sumiya11
   website: https://sumiya11.github.io/
-  status: retired
-  repos: []
+  status: active
+  repos:
+  - Nemocas/AbstractAlgebra.jl
 - name: Andy Dienes
   github: adienes
   status: active
@@ -1062,6 +1063,12 @@
   status: active
   repos:
   - thofma/Hecke.jl
+- name: bpiroddi
+  email: 270620104+bpiroddi@users.noreply.github.com
+  github: bpiroddi
+  status: active
+  repos:
+  - oscar-system/Oscar.jl
 - name: matthias314
   email: 56549971+matthias314@users.noreply.github.com
   github: matthias314
