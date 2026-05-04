@@ -1064,7 +1064,6 @@
   repos:
   - thofma/Hecke.jl
 - name: bpiroddi
-  email: 270620104+bpiroddi@users.noreply.github.com
   github: bpiroddi
   status: active
   repos:
