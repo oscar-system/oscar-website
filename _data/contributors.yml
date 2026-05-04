@@ -1062,6 +1062,7 @@
   github: alexey-orlov-math
   status: active
   repos:
+  - Nemocas/Nemo.jl
   - thofma/Hecke.jl
 - name: bpiroddi
   github: bpiroddi
