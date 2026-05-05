@@ -2,36 +2,39 @@
 
 <p>
   Explore <a href="https://jupyter.org/">Jupyter notebooks</a> demonstrating OSCAR’s capabilities.
-  These tutorials are for <strong>OSCAR v{{ site.data.release.version }}</strong>,
-  the latest stable release. To avoid compatibility issues, make sure you're using this version
-  (<a href="{{ site.baseurl }}/upgrade">upgrade instructions</a>).
+  The tutorials are designed for, and tested with, the latest stable release <strong>OSCAR v{{ site.data.release.version }}</strong>.
 </p>
 
-<p>
-  To download and run a tutorial locally:
-</p>
+---
+
+<h3>Before You Start</h3>
+
+To avoid compatibility issues, make sure you're using <strong>OSCAR v{{ site.data.release.version }}</strong> (<a href="{{ site.baseurl }}/upgrade">upgrade instructions</a>).
+
+If you have not yet installed OSCAR, follow our <a href="{{site.baseurl}}/install">installation guide</a>.
+
+<div class="message">
+  <strong>Important:</strong>
+  To run tutorials locally, install IJulia (Julia support for Jupyter) by completing
+  <a href="{{site.baseurl}}/install/#optional-running-tutorials-locally-with-ijulia">
+  the optional IJulia setup step
+  </a>
+  from the installation guide.
+</div>
+
+---
+
+<h3>Running Tutorials Locally</h3>
 
 <ol>
-  <li>Open the tutorial in <a href="https://nbviewer.jupyter.org/"><em>nbviewer</em></a> (or view it directly on <a href="https://github.com/">GitHub</a>).</li>
-  <li>Right-click (or Ctrl-click on macOS) the download icon at the top-right.</li>
-  <li>Select <em>Save As...</em> and save the file to your computer.</li>
-  <li>If OSCAR is not yet installed, follow the <a href="{{site.baseurl}}/install">installation guide</a>.
-    If it's already installed, ensure you're using version <strong>OSCAR v{{ site.data.release.version }}</strong>
-    by checking the <a href="{{site.baseurl}}/upgrade">upgrade instructions</a>.</li>
-  <li>Complete <a href="{{site.baseurl}}/install#step-5-running-tutorials-locally-with-ijulia">Step 5</a>
-    of the installation guide to ensure your system is set up to run the tutorials.</li>
+  <li>Download the notebook of interest from the list below.</li>
+  <li>Launch Jupyter on your machine (see <a href="https://jupyter.org/">Jupyter documentation</a>).</li>
+  <li>Open the downloaded notebook, and execute it using a Julia kernel.</li>
 </ol>
 
-<p>
-  Looking for more resources? Check out the
-  <a href="https://github.com/micjoswig/oscar-notebooks">polymake notebooks</a> and
-  <a href="https://github.com/thofma/HeckeTutorials.jl">Hecke notebooks</a>.
-</p>
+---
 
-<p>
-  Want to improve or add a tutorial? See our
-  <a href="{{site.baseurl}}/contributing#contributing-tutorials">contribution guidelines</a>.
-</p>
+<h3>Available Tutorials</h3>
 
 <!--This section creates the selector grid of tutorial topic.-->
 {% assign components = site.data.tutorials | map: "thumbnail" | uniq | sort %}
@@ -88,7 +91,7 @@
       <div class="item_last_modified">Last modified: {{ post.last_modified }} </div>
       <div class="item_tutorial-category">Topic: {{ post.topic }}</div>
       <div><a href="https://nbviewer.jupyter.org/github/{{ post.repository }}/blob/{{ post.branch }}/{{ post.filename }}.ipynb">nbviewer</a> </div>
-      <a href="https://github.com/{{ post.repository }}/blob/{{ post.branch }}/{{ post.filename }}.ipynb">Github</a>
+      <a href="https://github.com/{{ post.repository }}/blob/{{ post.branch }}/{{ post.filename }}.ipynb">GitHub</a>
 
     </div>
   </div>
@@ -113,7 +116,7 @@
       <div class="item_tutorial-author">Author(s): {{ post.author }}</div>
       <div class="item_last_modified">Last modified: {{ post.last_modified }} </div>
       <div><a href="https://nbviewer.jupyter.org/github/{{ post.repository }}/blob/{{ post.branch }}/{{ post.filename }}.ipynb">nbviewer</a> </div>
-      <a href="https://github.com/{{ post.repository }}/blob/{{ post.branch }}/{{ post.filename }}.ipynb">Github</a>
+      <a href="https://github.com/{{ post.repository }}/blob/{{ post.branch }}/{{ post.filename }}.ipynb">GitHub</a>
 
     </div>
   </div>
@@ -123,3 +126,22 @@
 </details>
 {% endif %}
 <span class="date">Tutorial grid last updated on {{ site.time | date: '%B %d %Y' }}.</span>
+
+---
+
+<h3>More Tutorial Resources</h3>
+
+<p>
+  Looking for more resources? Check out the
+  <a href="https://github.com/micjoswig/oscar-notebooks">polymake notebooks</a> and
+  <a href="https://github.com/thofma/HeckeTutorials.jl">Hecke notebooks</a>.
+</p>
+
+---
+
+<h3>Contributing Tutorials</h3>
+
+<p>
+  Want to improve or add a tutorial? See our
+  <a href="{{site.baseurl}}/contributing#contributing-tutorials">contribution guidelines</a>.
+</p>
