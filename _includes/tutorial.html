@@ -86,13 +86,14 @@ If you have not yet installed OSCAR, follow our <a href="{{site.baseurl}}/instal
              src="{{ site.baseurl }}/public/thumbnails/{{ post.thumbnail }}">
     </div>
     <div class="item_tutorial_right">
-      <div class="item_tutorial-title">{{ post.title }}</div>
+      <div class="item_tutorial-title">
+        <a href="https://github.com/{{ post.repository }}/blob/{{ post.branch }}/{{ post.filename }}.ipynb">
+          {{ post.title }}
+        </a>
+      </div>
       <div class="item_tutorial-author">Author(s): {{ post.author }}</div>
       <div class="item_last_modified">Last modified: {{ post.last_modified }} </div>
       <div class="item_tutorial-category">Topic: {{ post.topic }}</div>
-      <div><a href="https://nbviewer.jupyter.org/github/{{ post.repository }}/blob/{{ post.branch }}/{{ post.filename }}.ipynb">nbviewer</a> </div>
-      <a href="https://github.com/{{ post.repository }}/blob/{{ post.branch }}/{{ post.filename }}.ipynb">GitHub</a>
-
     </div>
   </div>
   {% endfor %}
@@ -112,12 +113,14 @@ If you have not yet installed OSCAR, follow our <a href="{{site.baseurl}}/instal
              src="{{ site.baseurl }}/public/thumbnails/{{ post.thumbnail }}">
     </div>
     <div class="item_tutorial_right">
-      <div class="item_tutorial-title">{{ post.title }}</div>
+      <div class="item_tutorial-title">
+        <a href="https://github.com/{{ post.repository }}/blob/{{ post.branch }}/{{ post.filename }}.ipynb">
+          {{ post.title }}
+        </a>
+      </div>
       <div class="item_tutorial-author">Author(s): {{ post.author }}</div>
       <div class="item_last_modified">Last modified: {{ post.last_modified }} </div>
-      <div><a href="https://nbviewer.jupyter.org/github/{{ post.repository }}/blob/{{ post.branch }}/{{ post.filename }}.ipynb">nbviewer</a> </div>
       <a href="https://github.com/{{ post.repository }}/blob/{{ post.branch }}/{{ post.filename }}.ipynb">GitHub</a>
-
     </div>
   </div>
   {% endfor %}

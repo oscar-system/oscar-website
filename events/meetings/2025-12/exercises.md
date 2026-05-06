@@ -344,7 +344,7 @@ in your OSCAR session.)
 
 Study the structure of this permutation group,
 similar to the study of Rubik's $3 \times 3 \times 3$ cube in
-<https://nbviewer.org/github/oscar-system/OSCARBinder/blob/master/rubik.ipynb>:
+<https://github.com/oscar-system/OSCARBinder/blob/master/rubik.ipynb>:
 
 - What is the order of the group?
 - Construct the action homomorphism for the action on a system of blocks:

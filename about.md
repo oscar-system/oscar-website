@@ -168,7 +168,7 @@ algebraic solving.
 
 🛠️ **[Upgrade Instructions]({{ site.baseurl }}/upgrade/)** – Already using OSCAR? Learn how to upgrade to version {{ site.data.release.version }}.
 
-🎓 **[Tutorials]({{site.baseurl}}/tutorials/)** – Interactive [Jupyter notebooks](https://nbviewer.jupyter.org/) to help you get started.
+🎓 **[Tutorials]({{site.baseurl}}/tutorials/)** – Interactive [Jupyter notebooks](https://jupyter.org/) to help you get started.
 
 📚 **[Documentation]({{site.baseurl}}/documentation/)** – In-depth documentation and examples.
 
