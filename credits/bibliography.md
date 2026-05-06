@@ -42,9 +42,12 @@ title: Bibliography
           <span class="sep">•</span>
         {% endif %}
         {% if p.journal %}{{ p.journal }}{% else %}Preprint{% endif %}
-        {% if p.volume %}, {{ p.volume }}{% endif %}
-        {% if p.month %}, {{ p.month }}{% endif %}
-        {% if p.year %}, {{ p.year }}{% endif %}
+        {% if p.volume %}, Vol. {{ p.volume }}{% endif %}
+        {% if p.month %}
+          ({{ p.month }} {{ p.year }})
+        {% elsif p.year %}
+          ({{ p.year }})
+        {% endif %}
       </div>
 
       <div class="badges">

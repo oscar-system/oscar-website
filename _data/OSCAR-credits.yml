@@ -1,7 +1,7 @@
 - name: "Geometric approach to the modular isomorphism problem: groups of order 64"
   preprint_url: https://arxiv.org/abs/2603.18220
   authors: Leo Margolis, Taro Sakurai
-  month: March
+  month: Mar
   year: 2026
 - name: Computing the Zariski closure of a finitely generated matrix group
   preprint_url: https://arxiv.org/abs/2505.02577
@@ -11,7 +11,7 @@
 - name: Computations in equivariant Gromov-Witten theory of GKM spaces
   preprint_url: https://arxiv.org/abs/2509.07562
   authors: Daniel Holmes, Giosuè Muratore
-  month: September
+  month: Sep
   year: 2025
 - name: Finite groups of symplectic birational transformations of IHS manifolds of OG10 type
   journal_url: https://doi.org/10.1017/fms.2025.10077
@@ -19,14 +19,14 @@
   authors: Lisa Marquand, Stevell Muller
   journal: Forum of Mathematics, Sigma
   volume: 13
-  month: July
+  month: Jul
   year: 2025
 - name: FTheoryTools Advancing Computational Capabilities for F-Theory Research
   journal_url: https://onlinelibrary.wiley.com/doi/10.1002/prop.70065
   preprint_url: https://arxiv.org/abs/2506.13849
   authors: Martin Bies, Miķelis E. Miķelsons, Andrew P. Turner
   journal: Fortschritte der Physik
-  month: January
+  month: Jan
   year: 2026
   doi: 10.1002/prop.70065
 - name: On birational automorphisms of double EPW-cubes
@@ -40,7 +40,7 @@
 - name: K3 surfaces of any Artin-Mazur height over F5 and F7 via Quasi-F-split singularities and gpu acceleration
   preprint_url: https://arxiv.org/pdf/2502.12428
   authors: Ryan Batubara, Jack J. Garzella, Alex Pan
-  month: February
+  month: Feb
   year: 2025
 - name: Classification of symplectic birational involutions of manifolds of OG10 type
   journal_url: https://doi.org/10.1007/s00209-025-03697-8
@@ -48,17 +48,17 @@
   authors: Lisa Marquand, Stevell Muller
   journal: Mathematische Zeitschrift
   volume: 309
-  month: February
+  month: Feb
   year: 2025
 - name: Automorphisms of Nikulin-type orbifolds
   preprint_url: https://arxiv.org/abs/2411.04668
   authors: Simon Brandhorst, Grégoire Menet, Stevell Muller
-  month: November
+  month: Nov
   year: 2024
 - name: Computing the center of a fusion category
   preprint_url: https://arxiv.org/abs/2406.13438
   authors: Fabian Mäurer, Ulrich Thiel
-  month: June
+  month: Jun
   year: 2024
 - name: Invariant Grassmannians and a K3 surface with an action of order 192*2
   journal_url: https://doi.org/10.1016/j.jaca.2024.100014
@@ -66,7 +66,7 @@
   authors: Stevell Muller
   journal: Journal of Computational Algebra
   volume: 10
-  month: June
+  month: Jun
   year: 2024
 - name: An arithmetic count of osculating lines
   journal_url: https://nyjm.albany.edu/j/2024/30-72.html
@@ -74,14 +74,14 @@
   authors: Giosuè Muratore
   journal: New York Journal of Mathematics
   volume: 30
-  month: November
+  month: Nov
   year: 2024
 - name: Algebraic and geometric computations in OSCAR
   journal_url: https://sinews.siam.org/Details-Page/algebraic-and-geometric-computations-in-oscar
   authors: Mara Belotti, Michael Joswig, Chiara Meroni, Victoria Schleis, Johannes Schmitt
   journal: SIAM
   volume: Vol. 56
-  month: September
+  month: Sep
   year: 2023
 - name: Computations of Gromov-Witten invariants of toric varieties
   journal_url: https://doi.org/10.1016/j.jsc.2024.102330
@@ -89,24 +89,24 @@
   authors: Giosuè Muratore
   journal: Journal of Symbolic Computation
   volume: 125
-  month: April
+  month: Apr
   year: 2024
 - name: On $\mathbb{Q}$-factorial terminalizations of symplectic linear quotient singularities
   journal_url: https://doi.org/10.26204/KLUEDO/7351
   authors: Johannes Schmitt
   journal: PhD Thesis
-  month: July
+  month: Jul
   year: 2023
   doi: 10.26204/KLUEDO/7351
 - name: Some thoughts and experiments on Bergman's compact amalgamation problem
   preprint_url: https://arxiv.org/abs/2304.08365
   authors: Michael Joswig, Mario Kummer, Andreas Thom, Claudia He Yun
-  month: April
+  month: Apr
   year: 2023
 - name: Toric Geometry in OSCAR
   preprint_url: https://arxiv.org/abs/2303.08110
   authors: Martin Bies, Lars Kastner
-  month: March
+  month: Mar
   year: 2023
 - name: "Brill-Noether-general limit root bundles: Absence of vector-like exotics in F-theory Standard Models"
   journal_url: https://doi.org/10.1007/JHEP11(2022)004
@@ -125,7 +125,7 @@
 - name: Introduction to Toric Geometry
   preprint_url: https://arxiv.org/abs/2203.01690
   authors: Simon Telen
-  month: March
+  month: Mar
   year: 2022
 - name: Exact semidefinite programming bounds for packing problems
   journal_url: https://epubs.siam.org/doi/10.1137/20M1351692
@@ -133,5 +133,5 @@
   authors: Maria Dostert, David de Laat, Philippe Moustrou
   journal: SIAM
   volume: Vol. 31
-  month: February
+  month: Feb
   year: 2021

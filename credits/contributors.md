@@ -39,7 +39,7 @@ page.
 ---
 
 ## Current Code Contributors
-These {{ site.data.contributors | where: "status", "active" | size }} individuals have contributed source code to the OSCAR project in the past 12 months (as of {{ 'now' | date: "%d %B %Y" }}).
+These {{ site.data.contributors | where: "status", "active" | size }} individuals have contributed source code to the OSCAR project in the past 12 months (as of {{ 'now' | date: site.data.config.date_format }}).
 
 <ul>
 {% for p in site.data.contributors %}
