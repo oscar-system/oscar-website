@@ -39,7 +39,7 @@ page.
 ---
 
 ## Current Code Contributors
-These {{ site.data.contributors | where: "status", "active" | size }} individuals have contributed source code to the OSCAR project in the past 12 months (as of {{ 'now' | date: "%d %B %Y" }}).
+These {{ site.data.contributors | where: "status", "active" | size }} individuals have contributed source code to the OSCAR project in the past 12 months (as of {{ 'now' | date: site.full_date_format }}).
 
 <ul>
 {% for p in site.data.contributors %}
@@ -76,7 +76,7 @@ These {{ site.data.contributors | where: "status", "active" | size }} individual
 
 ## Former Code Contributors
 
-The following {{ site.data.contributors | where: "status", "retired" | size }} individuals contributed to the OSCAR project in the past but have not in the last 12 months (as of {{ 'now' | date: "%d %B %Y" }}).
+The following {{ site.data.contributors | where: "status", "retired" | size }} individuals contributed to the OSCAR project in the past but have not in the last 12 months (as of {{ 'now' | date: site.full_date_format }}).
 
 <ul>
 {% for p in site.data.contributors %}

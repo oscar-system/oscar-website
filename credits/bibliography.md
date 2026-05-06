@@ -23,10 +23,56 @@ title: Bibliography
 </style>
 
 <ul class="pubs">
-  {% for p in site.data.OSCAR-credits %}
 
-    {% assign title_href = journal_link | default: preprint_link %}
+{% assign months = "Dec,Nov,Oct,Sep,Aug,Jul,Jun,May,Apr,Mar,Feb,Jan" | split: "," %}
+{% assign  P = site.data.OSCAR-credits | group_by: "year" %}
+{% for smallp in P %}
+  {% assign monthItems = '' | split: '' %}
+  {% assign nonMonthItems = '' | split: '' %}
+    {% for smallq in smallp.items %}
+    {% if smallq.month%}
+      {% assign monthItems = monthItems | push: smallq %}
+    {% else %}
+      {% assign nonMonthItems = nonMonthItems | push: smallq | sort: "name" %}
+    {% endif %}
+    {% endfor %}
+{% for p in nonMonthItems %}
+  <li>
+      <div class="pub-title">
+        {% if title_href %}
+          <a href="{{ title_href }}">{{ p.name }}</a>
+        {% else %}
+          {{ p.name }}
+        {% endif %}
+      </div>
 
+      <div class="meta">
+        {% if p.authors %}{{ p.authors }}{% endif %}
+        {% if p.authors and p.journal or p.authors and p.year or p.authors and p.month or p.authors and p.volume %}
+          <span class="sep">•</span>
+        {% endif %}
+        {% if p.journal %}{{ p.journal }}{% else %}Preprint{% endif %}
+        {% if p.volume %}, Vol. {{ p.volume }}{% endif %} | 
+        {% if p.month %}
+          {{ p.month | append: ' ' | append: p.year | date: site.month_date_format }}
+        {% elsif p.year %}
+          {{ p.year }}
+        {% endif %}
+      </div>
+
+      <div class="badges">
+        {% if p.journal_url %}
+          <a class="badge badge-journal" href="{{ p.journal_url }}">Journal</a>
+        {% endif %}
+        {% if p.preprint_url %}
+          <a class="badge badge-preprint" href="{{ p.preprint_url }}">Preprint</a>
+        {% endif %}
+      </div>
+    </li>
+{% endfor %}
+{% for month in months %}
+  {% for p in monthItems %}
+  {% if p.month == month %}
     <li>
       <div class="pub-title">
         {% if title_href %}
@@ -42,9 +88,12 @@ title: Bibliography
           <span class="sep">•</span>
         {% endif %}
         {% if p.journal %}{{ p.journal }}{% else %}Preprint{% endif %}
-        {% if p.volume %}, {{ p.volume }}{% endif %}
-        {% if p.month %}, {{ p.month }}{% endif %}
-        {% if p.year %}, {{ p.year }}{% endif %}
+        {% if p.volume %}, Vol. {{ p.volume }}{% endif %} | 
+        {% if p.month %}
+          {{ p.month | append: ' ' | append: p.year | date: site.month_date_format }}
+        {% elsif p.year %}
+          {{ p.year }}
+        {% endif %}
       </div>
 
       <div class="badges">
@@ -56,6 +105,10 @@ title: Bibliography
         {% endif %}
       </div>
     </li>
-
+  {% endif %}
   {% endfor %}
+{% endfor %}
+{% endfor %}
+
+
 </ul>

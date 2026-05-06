@@ -30,7 +30,7 @@ Alternatively, send a message from the email address that should receive the new
   {% for n in newsletters %}
   <li>
     <a href="{{ site.baseurl }}{{ n.url }}">
-      Newsletter #{{ forloop.rindex }} — {{ n.date | date: "%b %-d %Y" }}
+      Newsletter #{{ forloop.rindex }} — {{ n.date | date: site.full_date_format }}
     </a>
   </li>
   {% endfor %}

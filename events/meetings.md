@@ -12,7 +12,7 @@ meeting: true
   {% for event in events %}
     <li>
       <strong>{{ event.title }}</strong><br>
-      <em>{{ event.start-date }} – {{ event.end-date }}</em><br>
+      <em>{{ event.start-date | date: site.full_date_format }} – {{ event.end-date | date: site.full_date_format }}</em><br>
       Location: {{ event.location }}<br>
       {% if event.website %}
         <a href="{{ event.website | replace: "https://www.oscar-system.org", site.baseurl }}" target="_blank">More information</a>
