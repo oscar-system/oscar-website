@@ -42,11 +42,11 @@ title: Bibliography
           <span class="sep">•</span>
         {% endif %}
         {% if p.journal %}{{ p.journal }}{% else %}Preprint{% endif %}
-        {% if p.volume %}, Vol. {{ p.volume }}{% endif %}
+        {% if p.volume %}, Vol. {{ p.volume }}{% endif %} | 
         {% if p.month %}
-          ({{ p.month }} {{ p.year }})
+          {{ p.month | append: ' ' | append: p.year | date: site.month_date_format }}
         {% elsif p.year %}
-          ({{ p.year }})
+          {{ p.year }}
         {% endif %}
       </div>
 
