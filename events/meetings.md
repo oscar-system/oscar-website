@@ -6,7 +6,7 @@ meeting: true
 
 ---
 
-{% assign events = site.data.events | where: "satellite", "No" | group-by: "start-date" | sort: "end-date" | reverse %}
+{% assign events = site.data.events | where: "other", "No" | group-by: "start-date" | sort: "end-date" | reverse %}
 
 <ul>
   {% for event in events %}
