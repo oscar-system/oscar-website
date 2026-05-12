@@ -8,8 +8,8 @@
   submenu:
     - title: "OSCAR"
       url: "/events/meetings/"
-    - title: "Satellite"
-      url: "/events/satellite-events/"
+    - title: "Related"
+      url: "/events/other-events/"
 
 # SPACER
 - spacer: true

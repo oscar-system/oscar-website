@@ -25,3 +25,4 @@ RedirectMatch permanent ^/credits/$ https://www.oscar-system.org/credits/softwar
 RedirectMatch permanent ^/credits$ https://www.oscar-system.org/credits/software-credits/
 RedirectMatch permanent ^/contributors/$ https://www.oscar-system.org/credits/contributors/
 RedirectMatch permanent ^/contributors$ https://www.oscar-system.org/credits/contributors/
+RedirectMatch permanent ^/events/satellite-events/?$ https://www.oscar-system.org/events/other-events/
