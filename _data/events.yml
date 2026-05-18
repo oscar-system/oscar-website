@@ -32,13 +32,6 @@
   website: "https://www.dmv-jahrestagung.de/"
   other: "Yes"
 
-- title: "2026 SIAM Annual Meeting"
-  start-date: "2026-07-06"
-  end-date: "2026-07-10"
-  location: "Huntington Convention Center of Cleveland, Cleveland, Ohio, USA"
-  website: "https://www.siam.org/conferences-events/siam-conferences/an26/"
-  other: "Yes"
-
 - title: "Foundations of Computational Mathematics 2026"
   start-date: "2026-07-08"
   end-date: "2026-07-18"
@@ -100,6 +93,13 @@
   end-date: "2026-07-10"
   location: "Durham University, Durham, UK"
   website: "https://maths.dur.ac.uk/mega2026/"
+  other: "Yes"
+
+- title: "2026 SIAM Annual Meeting"
+  start-date: "2026-07-06"
+  end-date: "2026-07-10"
+  location: "Huntington Convention Center of Cleveland, Cleveland, Ohio, USA"
+  website: "https://www.siam.org/conferences-events/siam-conferences/an26/"
   other: "Yes"
 
 - title: "JuliaCon 2026"
