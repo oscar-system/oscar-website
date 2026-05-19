@@ -25,7 +25,10 @@ Major releases (1.x.0) should also be announced to the SFB mailing lists (like <
 > Highlights of this release:
 > - (Add 2-3 bullet points summarizing major changes or improvements)
 > 
-> The new version is available from GitHub and via the usual installation methods. Full release notes can be found at https://github.com/oscar-system/Oscar.jl/releases/tag/v{{ env.VERSION }}
+> The new version is available from GitHub and via the usual installation methods
+> (cf. https://www.oscar-system.org/install/ and https://www.oscar-system.org/upgrade/).
+> 
+> The release notes can be found at https://github.com/oscar-system/Oscar.jl/releases/tag/v{{ env.VERSION }}
 >
 > Best regards,
 > The OSCAR Team
