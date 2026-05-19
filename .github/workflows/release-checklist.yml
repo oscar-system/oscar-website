@@ -79,7 +79,7 @@ jobs:
           version="$(yq -r '.version' _data/release.yml)"
           echo "version=$version" >> "$GITHUB_OUTPUT"
           published="$(yq -r '.date' _data/release.yml)"
-          published="$(date -d "$published" '+%-d %b %Y')"
+          published="$(date -d "$published" '+%d %b %Y')"
           echo "published=$published" >> "$GITHUB_OUTPUT"
 
       - name: Debug changed/version and diff
