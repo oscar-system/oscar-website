@@ -471,7 +471,9 @@
   - oscar-system/Oscar.jl
   - oscar-system/Singular.jl
   - thofma/Hecke.jl
-- name: Kazak-11
+- name: Artem Kazakov
+  affiliation: Saarland University
+  email: arka00005@stud.uni-saarland.de
   github: Kazak-11
   status: active
   repos:
