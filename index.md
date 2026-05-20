@@ -11,6 +11,8 @@ Welcome to **OSCAR**, an innovative **Open Source Computer Algebra Research** sy
 
 Discover more about our project and vision on our [About]({{site.baseurl}}/about) page.
 
+Questions about OSCAR or stuck on an example? Join our [Slack channel]({{site.baseurl}}/contact-and-support/#slack) — beginners and first-time users are very welcome.
+
 <div style="background: #f4f4f4;
   border: 2px solid #aaa;
   padding: 1em 1.2em;
