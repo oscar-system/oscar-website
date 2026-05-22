@@ -11,7 +11,7 @@ Welcome to **OSCAR**, an innovative **Open Source Computer Algebra Research** sy
 
 Discover more about our project and vision on our [About]({{site.baseurl}}/about) page.
 
-Questions about OSCAR, stuck on an example, or missing features (e.g., from GAP, Polyamke, or Singular)? Join our [Slack channel]({{site.baseurl}}/contact-and-support/#slack) — beginners and first-time users are very welcome.
+Questions about OSCAR, stuck on an example, or missing features (e.g., from GAP, Polymake, or Singular)? Join our [Slack channel]({{site.baseurl}}/contact-and-support/#slack) — beginners and first-time users are very welcome.
 
 <div style="background: #f4f4f4;
   border: 2px solid #aaa;
