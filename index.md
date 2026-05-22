@@ -30,7 +30,7 @@ Questions about OSCAR or stuck on an example? Join our [Slack channel]({{site.ba
   <p>
   In memory of Hans Schönemann, the conference
   <a href="https://www.singular.uni-kl.de/singalg2026/">Advances in Computer Algebra</a>
-  will be held at RPTU Kaiserslautern-Landau on 10 Jun 2026 in honour of his contributions
+  will be held at the RPTU Kaiserslautern-Landau on 10 Jun 2026 in honour of his contributions
   to computer algebra.
   </p>
 </div>
