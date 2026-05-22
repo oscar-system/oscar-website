@@ -272,6 +272,14 @@
   status: retired
   comment: Was PostDoc in Kaiserslautern around 2021
   repos: []
+- name: Matthias Franz
+  affiliation: University of Western Ontario, Canada
+  email: mfranz@uwo.ca
+  github: matthias314
+  website: https://www.math.uwo.ca/faculty/franz/
+  status: active
+  repos:
+  - oscar-system/Singular.jl
 - name: Anne Frühbis-Krüger
   affiliation: Universität Oldenburg
   email: anne.fruehbis-krueger@uol.de
@@ -675,6 +683,12 @@
   - gabrielong2312@gmail.com
   repos:
   - oscar-system/Oscar.jl
+- name: Alexey Orlov
+  github: alexey-orlov-math
+  status: active
+  repos:
+  - Nemocas/Nemo.jl
+  - thofma/Hecke.jl
 - name: Raphaël Paegelow
   affiliation: University of Lille
   email: raphael.paegelow@univ-lille.fr
@@ -713,6 +727,14 @@
   github: markuspf
   status: retired
   repos: []
+- name: Benedetta Piroddi
+  affiliation: Saarland University
+  email: Piroddi@math.uni-sb.de
+  github: bpiroddi
+  website: https://www.math.uni-sb.de/ag/brandhorst/index.php?id=79:benedetta-piroddi
+  status: active
+  repos:
+  - oscar-system/Oscar.jl
 - name: Delphine Pol
   affiliation: University of Kaiserslautern-Landau
   github: delphinepol
@@ -1061,25 +1083,3 @@
   - Nemocas/AbstractAlgebra.jl
   - oscar-system/Oscar.jl
   - thofma/Hecke.jl
-- name: Alexey Orlov
-  github: alexey-orlov-math
-  status: active
-  repos:
-  - Nemocas/Nemo.jl
-  - thofma/Hecke.jl
-- name: Benedetta Piroddi
-  affiliation: Saarland University
-  email: Piroddi@math.uni-sb.de
-  github: bpiroddi
-  website: https://www.math.uni-sb.de/ag/brandhorst/index.php?id=79:benedetta-piroddi
-  status: active
-  repos:
-  - oscar-system/Oscar.jl
-- name: Matthias Franz
-  affiliation:  University of Western Ontario, Canada
-  email: mfranz@uwo.ca
-  github: matthias314
-  website: https://www.math.uwo.ca/faculty/franz/
-  status: active
-  repos:
-  - oscar-system/Singular.jl
