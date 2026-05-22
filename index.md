@@ -20,10 +20,19 @@ Questions about OSCAR or stuck on an example? Join our [Slack channel]({{site.ba
   font-size: 0.95em;
   line-height: 1.5;">
   <strong>In memoriam:</strong>
+  <p>
   Hans Schönemann passed away on {{ "2025-12-28" | date: site.full_date_format }}.
   A founding member of the OSCAR team and a central contributor to
   Singular, Hans was a respected expert in computer algebra
   and a valued colleague and friend. He will be deeply missed.
+  </p>
+
+  <p>
+  In memory of Hans Schönemann, the conference
+  <a href="https://www.singular.uni-kl.de/singalg2026/">Advances in Computer Algebra</a>
+  will be held at RPTU Kaiserslautern-Landau on 10 Jun 2026 in honour of his contributions
+  to computer algebra.
+  </p>
 </div>
 
 ---
