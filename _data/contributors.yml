@@ -900,6 +900,7 @@
   repos: []
 - name: Wiken Steiner
   affiliation: University of Siegen
+  email: wilken.steiner@uni-siegen.de
   github: wfsteiner
   status: active
   repos:
@@ -1060,20 +1061,25 @@
   - Nemocas/AbstractAlgebra.jl
   - oscar-system/Oscar.jl
   - thofma/Hecke.jl
-- name: alexey-orlov-math
+- name: Alexey Orlov
   github: alexey-orlov-math
   status: active
   repos:
   - Nemocas/Nemo.jl
   - thofma/Hecke.jl
-- name: bpiroddi
+- name: Benedetta Piroddi
+  affiliation: Saarland University
+  email: Piroddi@math.uni-sb.de
   github: bpiroddi
+  website: https://www.math.uni-sb.de/ag/brandhorst/index.php?id=79:benedetta-piroddi
   status: active
   repos:
   - oscar-system/Oscar.jl
-- name: matthias314
-  email: 56549971+matthias314@users.noreply.github.com
+- name: Matthias Franz
+  affiliation:  University of Western Ontario, Canada
+  email: mfranz@uwo.ca
   github: matthias314
+  website: https://www.math.uwo.ca/faculty/franz/
   status: active
   repos:
   - oscar-system/Singular.jl
