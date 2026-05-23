@@ -803,6 +803,14 @@
   status: active
   repos:
   - oscar-system/Oscar.jl
+- name: Karl Royal
+  affiliation: University of Göttingen
+  email: karl.wessel@phys.uni-goettingen.de
+  github: karlwessel
+  status: active
+  repos:
+  - Nemocas/AbstractAlgebra.jl
+  - Nemocas/Nemo.jl
 - name: Felix Röhrich
   affiliation: RWTH Aachen University
   email: roehrich@art.rwth-aachen.de
@@ -1053,14 +1061,6 @@
   status: active
   repos:
   - oscar-system/Oscar.jl
-- name: Karl Royal
-  affiliation: University of Göttingen
-  email: karl.wessel@phys.uni-goettingen.de
-  github: karlwessel
-  status: active
-  repos:
-  - Nemocas/AbstractAlgebra.jl
-  - Nemocas/Nemo.jl
 - name: Torben Wiedemann
   affiliation: University of Kaiserslautern-Landau
   email: torben.wiedemann@rptu.de
