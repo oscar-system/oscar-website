@@ -445,8 +445,10 @@
   repos:
   - oscar-system/Oscar.jl
 - name: Thomas Kahle
-  email: thomas.kahle@jpberlin.de
+  affiliation: Otto-von-Guericke University, Magdeburg
+  email: thomas.kahle@ovgu.de
   github: tom111
+  website: https://thomas-kahle.de/
   status: active
   repos:
   - oscar-system/Oscar.jl
@@ -488,8 +490,10 @@
   - oscar-system/Oscar.jl
   - thofma/Hecke.jl
 - name: Kevin Kuehn
+  affiliation: TU Berlin
   email: kuehn@math.tu-berlin.de
   github: KevinKuehn
+  website: https://page.math.tu-berlin.de/~kuehn/
   status: active
   repos:
   - Nemocas/AbstractAlgebra.jl
@@ -665,8 +669,10 @@
   - oscar-system/Oscar.jl
   - thofma/Hecke.jl
 - name: Stef Nomden
+  affiliation: Leiden University
   email: s.nomden@math.leidenuniv.nl
   github: stefnomden
+  website: https://www.universiteitleiden.nl/en/staffmembers/stef-nomden
   status: active
   aka_email:
   - 133787190+stefnomden@users.noreply.github.com
@@ -815,7 +821,8 @@
   repos:
   - Nemocas/AbstractAlgebra.jl
 - name: Kamal Saleh
-  email: kamal.saleh@web.de
+  affiliation: University of Siegen
+  email: saleh@mathematik.uni-siegen.de
   github: kamalsaleh
   status: active
   repos:
@@ -860,8 +867,10 @@
   - oscar-system/Oscar.jl
   - thofma/Hecke.jl
 - name: Tobias Schnieders
+  affiliation: Saarland University
+  email: schnieders@math.uni-sb.de
   github: Tobias271828
-  website: https://tobimath.de/en
+  website: https://tobimath.de
   status: active
   comment: PhD student of Simon Brandhorst
   repos:
@@ -966,6 +975,7 @@
   comment: Homotopy continuation people
   repos: []
 - name: Varun Trehan
+  affiliation: University of Kaiserslautern-Landau
   email: varuntrehan7@gmail.com
   github: varuntrehan7
   status: active
@@ -1043,8 +1053,9 @@
   status: active
   repos:
   - oscar-system/Oscar.jl
-- name: Karl Wessel
-  email: wessel.karl@googlemail.com
+- name: Karl Royal
+  affiliation: University of Göttingen
+  email: karl.wessel@phys.uni-goettingen.de
   github: karlwessel
   status: active
   repos:
