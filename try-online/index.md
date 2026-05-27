@@ -5,52 +5,66 @@ permalink: /try-online/
 
 # Try OSCAR Online
 
-OSCAR can be tried online without installation, on the NFDI Jupyter hub.
+---
 
-The NFDI Jupyter hub allows 130 credits worth of usage per user per day. Trying out OSCAR requires
-40 credits per hour. So, OSCAR can be tried out online free of cost for slightly more than 3 hours
-in a day.
+You can try OSCAR online without installing anything,
+using the NFDI JupyterHub service.
 
+The NFDI JupyterHub provides free daily computing resources for
+interactive sessions such as OSCAR. The available quota is subject
+to change, but is typically sufficient for exploring OSCAR and
+running tutorials for a few hours.
 
-Use the following steps:
+Occasionally, the login process may stall or become unresponsive.
+In that case, we recommend restarting the process by revisiting
+<https://hub.nfdi-jupyter.de/workshops/oscar-latest>.
 
-1. Go to
-   <https://hub.nfdi-jupyter.de/workshops/oscar-latest>,
-   and log in using the "Sign In" button. On the page that appears
-   next, select "Helmholtz AAI" if no other choice applies to you.
-   ![Main Login](helmholtz-login.png){: width="50%" }
-   ![AAI Choice](choose-helmholtz.png){: width="50%" }
+---
 
-2. Select your academic institution, or Google/Github/ORCID to identify yourself. Follow the
-   authentication workflow of your chosen service (different for each service). It should be safe to
-   allow permissions asked for along this workflow.
+Follow the following steps to try out OSCAR online.
 
-   If this is the first time you are logging in to Helmholtz AAI, there may be additional sign up
-   screens. If at any point you get stuck, try starting over by visiting (not using the back button)
-   <https://hub.nfdi-jupyter.de/workshops/oscar-latest>.
-   ![](pick-github.png){: width="50%" }
+1. Visit <https://hub.nfdi-jupyter.de/workshops/oscar-latest> and click the "Sign In" button.
 
-4. You should now see a list similar to the one depicted in the screenshow
-   below, with a row saying "Try out the latest OSCAR in the cloud" and a
-   "Start" button to the right of it. Click on that "Start" button to start
-   OSCAR online. This may take some time, up to 10 minutes. You will be
-   automatically redirected to a Jupyter interface when it is ready
-   ![](hit-start.png){: width="50%" }
+   ![Main Login](CroppedPics/helmholtz-login.png){: style="display: block; margin-left: auto; margin-right: auto;" width="80%" }
 
-5. Select the option in the notebook section which says "Oscar".
-   ![Oscar selection in notebook section](oscar-notebook.png){: width="50%" }
+2. On the next page, select "Gast Zugang / Guest Access" if no other option applies to you.
 
-   If you accidentally started the OSCAR entry in the "console" section (instead of the "notebook"
-   section), or any other of the listed entries, don't worry: you can just close the jupyter tab to
-   get back to the launcher page.
+   ![Select Guest Access](CroppedPics/choose-helmholtz.png){: style="display: block; margin-left: auto; margin-right: auto;" width="80%" }
 
-6. Try to execute a simple statement to check that the Julia kernel has started and is connected to
-   the notebook, `println(4)`, for example. (This may take multiple minutes as the server finishes
-   setting up things in the background.)
+3. Select your academic institution, Google, GitHub, or ORCID to sign in,
+   and follow the authentication workflow. On first login, additional
+   registration steps may appear.
 
-7. You can now use OSCAR as per normal instructions. Maybe try out the [Linear Algebra
-   Tutorial](https://nbviewer.org/github/oscar-system/OSCARBinder/blob/master/LinearAlgebraInOSCAR.ipynb).
-   Note that running `using Oscar` is a required step, but will not print the OSCAR banner. Run
-   `Oscar.versioninfo()` to verify the version of OSCAR being used.
+   ![Select Your Institute](CroppedPics/pick-github.png){: style="display: block; margin-left: auto; margin-right: auto;" width="60%" }
 
-![OSCAR in Jupyter](jupyter-oscar.png){: width="50%" }
+4. You should now see a list containing an entry called
+   "Try out the latest OSCAR in the cloud" with a "Start" button to its right.
+   Click the "Start" button to launch OSCAR online.
+
+   ![Start The Server](CroppedPics/hit-start.png){: style="display: block; margin-left: auto; margin-right: auto;" width="100%" }
+
+   Startup may take several minutes, after which you will be redirected to a Jupyter interface.
+
+5. In the **Notebook** section, click the entry labeled "Oscar" to launch a Jupyter notebook.
+
+   ![Oscar Selection In Notebook Section](CroppedPics/oscar-notebook.png){: style="display: block; margin-left: auto; margin-right: auto;" width="35%" }
+
+   Other launch options are available as well. If you accidentally launch a
+   different entry, simply close the browser tab and return to the launcher page.
+
+7. You can now use OSCAR inside the Jupyter notebook.
+
+   First, run a simple statement such as `println(4)` to verify that the
+   Julia kernel is connected to the notebook. This step may take several
+   minutes while the server completes its setup.
+
+   Next, run `using Oscar` to load OSCAR and
+   `Oscar.versioninfo()` to display information about the loaded OSCAR version.
+
+   ![OSCAR In Jupyter](CroppedPics/jupyter-oscar.png){: style="display: block; margin-left: auto; margin-right: auto;" width="70%" }
+
+8. You are now ready to run computations with OSCAR.
+
+   ![OSCAR In Jupyter Continuation](CroppedPics/jupyter-oscar-2.png){: style="display: block; margin-left: auto; margin-right: auto;" width="70%" }
+
+   Fancy one of our [tutorials]({{site.baseurl }}/tutorials/)?
