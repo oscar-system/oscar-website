@@ -3,7 +3,6 @@ layout: page
 permalink: /try-online/
 ---
 
-# Try OSCAR Online
 
 ---
 
