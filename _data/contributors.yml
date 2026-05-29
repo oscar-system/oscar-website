@@ -449,7 +449,7 @@
   email: thomas.kahle@ovgu.de
   github: tom111
   website: https://thomas-kahle.de/
-  status: active
+  status: retired
   repos:
   - oscar-system/Oscar.jl
 - name: Marek Kaluba
@@ -802,6 +802,7 @@
   website: https://math.rptu.de/ags/agag/personen/mitglieder
   status: active
   repos:
+  - oscar-system/GAP.jl
   - oscar-system/Oscar.jl
 - name: Karl Royal
   affiliation: University of Göttingen
