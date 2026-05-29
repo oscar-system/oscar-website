@@ -14,6 +14,8 @@
 # SPACER
 - spacer: true
 
+- title: "Try Online"
+  url: "/try-online/"
 - title: "Installation"
   url: "/install/"
 - title: "Upgrade"
