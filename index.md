@@ -13,28 +13,6 @@ Discover more about our project and vision on our [About]({{site.baseurl}}/about
 
 Questions about OSCAR, stuck on an example, or missing features (e.g., from GAP, Polymake, or Singular)? Join our [Slack channel]({{site.baseurl}}/contact-and-support/#slack) — beginners and first-time users are very welcome.
 
-<div style="background: #f4f4f4;
-  border: 2px solid #aaa;
-  padding: 1em 1.2em;
-  margin: 1.5em 0;
-  font-size: 0.95em;
-  line-height: 1.5;">
-  <strong>In memoriam:</strong>
-  <p>
-  Hans Schönemann passed away on {{ "2025-12-28" | date: site.full_date_format }}.
-  A founding member of the OSCAR team and a central contributor to
-  Singular, Hans was a respected expert in computer algebra
-  and a valued colleague and friend. He will be deeply missed.
-  </p>
-
-  <p>
-  In memory of Hans Schönemann, the conference
-  <a href="https://www.singular.uni-kl.de/singalg2026/">Advances in Computer Algebra</a>
-  will be held at the RPTU Kaiserslautern-Landau on 10 Jun 2026 in honour of his contributions
-  to computer algebra.
-  </p>
-</div>
-
 ---
 
 ## 📅 Upcoming Events
