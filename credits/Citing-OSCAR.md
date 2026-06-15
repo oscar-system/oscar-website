@@ -27,6 +27,7 @@ If you are using **BibTeX**, you can use the following BibTeX entries:
   title        = {O{SCAR} -- {O}pen {S}ource {C}omputer {A}lgebra {R}esearch system, {V}ersion {{ site.data.release.version }}},
   year         = { {{- site.data.release.year }}},
   url          = {https://www.oscar-system.org},
+  doi          = {10.5281/zenodo.12077975}
 }
 
 @book{OSCAR-book,
