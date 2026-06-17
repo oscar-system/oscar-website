@@ -299,10 +299,10 @@
   repos:
   - oscar-system/Oscar.jl
 - name: Jack J. Garzella
+  affiliation: University of California San Diego
   email: jjgarzella@gmail.com
   github: jjgarzella
   website: https://jjgarzella.github.io/
-  affiliation: University of California San Diego
   status: active
   repos:
   - Nemocas/Nemo.jl
