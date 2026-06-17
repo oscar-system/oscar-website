@@ -304,9 +304,11 @@
   - garrote
   repos:
   - oscar-system/Oscar.jl
-- name: Jack J Garzella
+- name: Jack J. Garzella
   email: jjgarzella@gmail.com
   github: jjgarzella
+  website: https://jjgarzella.github.io/
+  affiliation: University of California San Diego
   status: active
   repos:
   - Nemocas/Nemo.jl
