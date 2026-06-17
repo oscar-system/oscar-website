@@ -298,6 +298,14 @@
   - garrote
   repos:
   - oscar-system/Oscar.jl
+- name: Jack J. Garzella
+  email: jjgarzella@gmail.com
+  github: jjgarzella
+  website: https://jjgarzella.github.io/
+  affiliation: University of California San Diego
+  status: active
+  repos:
+  - Nemocas/Nemo.jl
 - name: Alheydis Geiger
   affiliation: Max Planck Institute for Mathematics in the Sciences, Leipzig
   email: Alheydis.Geiger@mis.mpg.de
@@ -398,6 +406,7 @@
   - oscar-system/GAP.jl
   - oscar-system/Singular.jl
   - algebraic-solving/AlgebraicSolving.jl
+  - oscar-system/Polymake.jl
 - name: Ben Hollering
   affiliation: TU Munich
   email: benhollering@gmail.com
@@ -693,6 +702,7 @@
   github: alexey-orlov-math
   status: active
   repos:
+  - Nemocas/AbstractAlgebra.jl
   - Nemocas/Nemo.jl
   - thofma/Hecke.jl
 - name: Raphaël Paegelow
@@ -842,6 +852,7 @@
   status: active
   comment: Associated with Anne Fruhbig Kruger as of 2024
   repos:
+  - Nemocas/Nemo.jl
   - oscar-system/Oscar.jl
   - oscar-system/Singular.jl
 - name: Sami-Halaseh
