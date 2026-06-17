@@ -29,9 +29,7 @@ API_KEY = (os.getenv("API_KEY") or os.getenv("GITHUB_TOKEN") or "").strip()
 # Git config
 GIT_LOG_SINCE = "--since=1 year ago"
 GIT_LOG_FORMAT_1 = "--format=%aN <%aE>%n%(trailers:unfold,key=Co-authored-by)"
-GIT_LOG_FORMAT_2 = (
-    "--format=%H %(trailers:only,unfold,separator=|,key=Co-authored-by) %s"
-)
+GIT_LOG_FORMAT_2 = "--format=%H %(trailers:only,unfold,separator=|,key=Co-authored-by) %s"
 
 # Repositories to scan (tuple to emphasize immutability)
 REPO_LIST = (
@@ -347,12 +345,15 @@ for p in current_contributors:
 
 # Write new content to CONTRIBUTORS_FILE
 people_sorted = sorted(
-    current_contributors, key=lambda d: (d.get("name", "").split()[-1].lower())
+    current_contributors,
+    key=lambda d: (d.get("name", "").split()[-1].lower())
 )
+
 ordered_people = [
     dict(sorted(p.items(), key=lambda kv: SORT_WEIGHT.get(kv[0], 999)))
     for p in people_sorted
 ]
+
 with open(CONTRIBUTORS_FILE, "w", encoding="utf-8") as f:
     f.write(YAML_HEADER)
     yaml.dump(ordered_people, f, sort_keys=False, allow_unicode=True)
@@ -363,8 +364,9 @@ if len(suspected_bots) > 0:
     repos = sorted({repo for repo, _ in suspected_bots})
     summarystring += (
         f"- Skipped {len(bots)} bot accounts across {len(repos)} repos:\n"
-        + "".join(f"  - {b}\n" for b in bots)
+        "".join(f"  - {b}\n" for b in bots)
     )
+
 revived_names = [
     p.get("name")
     for p in current_contributors
@@ -372,17 +374,26 @@ revived_names = [
     and id(p) in prev_status
     and prev_status[id(p)] == "retired"
 ]
+
 newly_retired_names = [
     p.get("name")
     for p in current_contributors
     if p.get("status") == "retired" and prev_status.get(id(p)) == "active"
 ]
+
 summary = (
-    "This PR updates the contributors list based on the latest changes.\n"
-    f"New contributors : {len(new_names)} | {new_names}\n"
-    f"Revived contributors : {len(revived_names)} | {revived_names}\n"
-    f"Newly retired contributors : {len(newly_retired_names)} | {newly_retired_names}\n\n"
-    "Summary Notes:\n\n"
-) + summarystring
+    f"""This PR updates the contributors list based on the latest changes.
+New contributors : {len(new_names)} | {new_names}
+Revived contributors : {len(revived_names)} | {revived_names}
+Newly retired contributors : {len(newly_retired_names)} | {newly_retired_names}
+
+
+Summary Notes:
+
+
+{summarystring}
+"""
+)
+
 with open(SUMMARY_FILE, "w", encoding="utf-8") as summaryfile:
     summaryfile.write(summary)
