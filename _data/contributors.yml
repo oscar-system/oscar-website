@@ -163,12 +163,6 @@
   website: https://page.math.tu-berlin.de/~comaneci/
   status: retired
   repos: []
-- name: GitHub Copilot
-  email: copilot@github.com
-  status: active
-  comment: Co-author of commit 533211a8695a75eb44fc475dfa26349124ef3641
-  repos:
-  - Nemocas/Nemo.jl
 - name: Wolfram Decker
   affiliation: University of Kaiserslautern-Landau
   email: wolfram.decker@rptu.de
