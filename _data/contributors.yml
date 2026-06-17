@@ -163,6 +163,12 @@
   website: https://page.math.tu-berlin.de/~comaneci/
   status: retired
   repos: []
+- name: GitHub Copilot
+  email: copilot@github.com
+  status: active
+  comment: Co-author of commit 533211a8695a75eb44fc475dfa26349124ef3641
+  repos:
+  - Nemocas/Nemo.jl
 - name: Wolfram Decker
   affiliation: University of Kaiserslautern-Landau
   email: wolfram.decker@rptu.de
@@ -298,6 +304,12 @@
   - garrote
   repos:
   - oscar-system/Oscar.jl
+- name: Jack J Garzella
+  email: jjgarzella@gmail.com
+  github: jjgarzella
+  status: active
+  repos:
+  - Nemocas/Nemo.jl
 - name: Alheydis Geiger
   affiliation: Max Planck Institute for Mathematics in the Sciences, Leipzig
   email: Alheydis.Geiger@mis.mpg.de
@@ -398,6 +410,7 @@
   - oscar-system/GAP.jl
   - oscar-system/Singular.jl
   - algebraic-solving/AlgebraicSolving.jl
+  - oscar-system/Polymake.jl
 - name: Ben Hollering
   affiliation: TU Munich
   email: benhollering@gmail.com
@@ -693,6 +706,7 @@
   github: alexey-orlov-math
   status: active
   repos:
+  - Nemocas/AbstractAlgebra.jl
   - Nemocas/Nemo.jl
   - thofma/Hecke.jl
 - name: Raphaël Paegelow
@@ -842,6 +856,7 @@
   status: active
   comment: Associated with Anne Fruhbig Kruger as of 2024
   repos:
+  - Nemocas/Nemo.jl
   - oscar-system/Oscar.jl
   - oscar-system/Singular.jl
 - name: Sami-Halaseh
