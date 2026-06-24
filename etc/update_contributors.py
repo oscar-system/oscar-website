@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+# pylint: disable=missing-module-docstring,missing-function-docstring
+
 # Standard library
 import os
 from email.utils import parseaddr
@@ -281,19 +283,19 @@ for p in current_contributors:
 ##########################################
 
 os.makedirs(REPOS_DIR, exist_ok=True)
-for repo in REPO_LIST:
-    print(f"Processing {repo}...")
-    repo_dir = full_repo_dir(repo)
-    if not os.path.isdir(repo_dir):
+for repository in REPO_LIST:
+    print(f"Processing {repository}...")
+    local_repo_dir = full_repo_dir(repository)
+    if not os.path.isdir(local_repo_dir):
         subprocess.run(
-            ["git", "clone", f"https://github.com/{repo}", repo_dir], check=True
+            ["git", "clone", f"https://github.com/{repository}", local_repo_dir], check=True
         )
     else:
-        subprocess.run(["git", "-C", repo_dir, "pull", "--ff-only"], check=True)
+        subprocess.run(["git", "-C", local_repo_dir, "pull", "--ff-only"], check=True)
     res_stdout = git_out(
-        repo_dir, "log", "--use-mailmap", GIT_LOG_SINCE, GIT_LOG_FORMAT_1
+        local_repo_dir, "log", "--use-mailmap", GIT_LOG_SINCE, GIT_LOG_FORMAT_1
     )
-    process_log_into_aggregate(res_stdout, repo)
+    process_log_into_aggregate(res_stdout, repository)
 
 
 ##########################################
@@ -303,22 +305,24 @@ for repo in REPO_LIST:
 prev_status = {id(p): p.get("status") for p in current_contributors}
 seen_current = set()
 new_names = []
-for key, rec in aggregate.items():
-    name, email, repos = rec["name"], rec["email"], rec["repos"]
-    gh = rec.get("known_github") or find_github_username(email, repos)
-    user = lookup_user(gh, email, name)
-    if user:  # Existing contributor
-        have = set(user["repos"])
-        user["repos"].extend(r for r in repos if r not in have)
-        if gh and not user.get("github"):
-            user["github"] = gh
-            name_owner[norm(gh)] = user
-        seen_current.add(id(user))
+for aggregate_key, aggregate_record in aggregate.items():
+    contributor_name = aggregate_record["name"]
+    contributor_email = aggregate_record["email"]
+    contributor_repos = aggregate_record["repos"]
+    gh = aggregate_record.get("known_github") or find_github_username(contributor_email, contributor_repos)
+    matched_user = lookup_user(gh, contributor_email, contributor_name)
+    if matched_user:  # Existing contributor
+        have = set(matched_user["repos"])
+        matched_user["repos"].extend(r for r in contributor_repos if r not in have)
+        if gh and not matched_user.get("github"):
+            matched_user["github"] = gh
+            name_owner[norm(gh)] = matched_user
+        seen_current.add(id(matched_user))
     else:  # Brand-new person: add immediately, mark seen, collect name for summary
         newp = {
-            "name": name,
-            "email": email,
-            "repos": sorted(set(repos)),
+            "name": contributor_name,
+            "email": contributor_email,
+            "repos": sorted(set(contributor_repos)),
             "status": "active",
         }
         if gh:
@@ -326,11 +330,11 @@ for key, rec in aggregate.items():
             name_owner[norm(gh)] = newp
         else:
             newp["comment"] = (
-                f"Co-author of commit {find_coauthor_commit(name, email, repos)}"
+                f"Co-author of commit {find_coauthor_commit(contributor_name, contributor_email, contributor_repos)}"
             )
         current_contributors.append(newp)
         seen_current.add(id(newp))
-        new_names.append(name)
+        new_names.append(contributor_name)
 
 for p in current_contributors:
     if p.get("status") == "pi":
@@ -361,9 +365,9 @@ with open(CONTRIBUTORS_FILE, "w", encoding="utf-8") as f:
 # Write summary
 if len(suspected_bots) > 0:
     bots = sorted({line for _, line in suspected_bots})
-    repos = sorted({repo for repo, _ in suspected_bots})
+    bot_repos = sorted({repo for repo, _ in suspected_bots})
     summarystring += (
-        f"- Skipped {len(bots)} bot accounts across {len(repos)} repos:\n"
+        f"- Skipped {len(bots)} bot accounts across {len(bot_repos)} repos:\n"
         "".join(f"  - {b}\n" for b in bots)
     )
 
