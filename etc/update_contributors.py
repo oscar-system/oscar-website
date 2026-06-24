@@ -81,11 +81,9 @@ YAML_HEADER = (
 # 2. Globals (runtime state; mutated)
 ##########################################
 
-current_contributors = []   # loaded from YAML
 email_owner = {}            # dict: lowercased email to person dict
 name_owner = {}             # dict: normalized name to person dict
 aggregate = {}              # list of dicts for all contributors at the time of running this script
-SUMMARY_STRING = ""          # intermediate output for information and debugging
 
 
 ##########################################
@@ -186,10 +184,7 @@ def find_coauthor_commit(name: str, email: str, repos: list[str]) -> str:
 suspected_bots = set([])
 
 
-def process_log_into_aggregate(res: str, repo: str) -> None:
-    # pylint: disable=global-statement
-    global SUMMARY_STRING  # , aggregate, suspected_bots # linter complains about aggregate and
-                                                        # suspected_bots
+def process_log_into_aggregate(res: str, repo: str, summary_string: str) -> None:
     for raw in res.splitlines():
         line = raw.strip()
         if not line:
@@ -203,14 +198,14 @@ def process_log_into_aggregate(res: str, repo: str) -> None:
             suspected_bots.add((repo, line))
             continue
         if "<" not in line or ">" not in line:
-            SUMMARY_STRING += f"- Skipping non-address line in {repo}: {line!r}\n"
+            summary_string += f"- Skipping non-address line in {repo}: {line!r}\n"
             continue
 
         name, email = parseaddr(line)
         name = " ".join(unicodedata.normalize("NFKC", name).split())
         email = unicodedata.normalize("NFKC", email).strip()
         if not email or not name:
-            SUMMARY_STRING += (
+            summary_string += (
                 f"- Missing {'email' if not email else 'name'} for {name or email} in {repo}; "
                 "skipping\n"
             )
@@ -229,7 +224,6 @@ def process_log_into_aggregate(res: str, repo: str) -> None:
             key = ("email", norm((owner and owner.get("email")) or email))
 
         rec = aggregate.setdefault(
-            # what exactly is happening here ?
             key,
             {
                 "name": name,
@@ -251,161 +245,166 @@ def process_log_into_aggregate(res: str, repo: str) -> None:
 ##########################################
 # 3. Read information from people_list.yml
 ##########################################
+def main():
+    summary_string = ""
+    try:
+        with open(CONTRIBUTORS_FILE, "r", encoding="utf-8") as ymlfile:
+            current_contributors = yaml.safe_load(ymlfile) or []
+    except FileNotFoundError:
+        print(f"Error: Could not find {CONTRIBUTORS_FILE}")
+        sys.exit(1)
+    except yaml.YAMLError as e:
+        print(f"Error parsing YAML file {CONTRIBUTORS_FILE}: {e}")
+        sys.exit(1)
+
+    for person in current_contributors:
+        person.setdefault("repos", [])
 
 
-try:
-    with open(CONTRIBUTORS_FILE, "r", encoding="utf-8") as ymlfile:
-        current_contributors = yaml.safe_load(ymlfile) or []
-except FileNotFoundError:
-    print(f"Error: Could not find {CONTRIBUTORS_FILE}")
-    sys.exit(1)
-except yaml.YAMLError as e:
-    print(f"Error parsing YAML file {CONTRIBUTORS_FILE}: {e}")
-    sys.exit(1)
+    ##########################################
+    # 4. Build fast alias lookup
+    ##########################################
 
-for person in current_contributors:
-    person.setdefault("repos", [])
+    for p in current_contributors:
+        if p.get("email"):
+            email_owner[norm(p.get("email"))] = p
+        for ae in p.get("aka_email") or ():
+            email_owner[norm(ae)] = p
+        if p.get("name"):
+            name_owner[norm(p.get("name"))] = p
+        for an in p.get("aka") or ():
+            name_owner[norm(an)] = p
+        if p.get("github"):
+            name_owner[norm(p.get("github"))] = p
 
+    ##########################################
+    # 5. Find (co)authors of all repos
+    ##########################################
 
-##########################################
-# 4. Build fast alias lookup
-##########################################
-
-for p in current_contributors:
-    if p.get("email"):
-        email_owner[norm(p.get("email"))] = p
-    for ae in p.get("aka_email") or ():
-        email_owner[norm(ae)] = p
-    if p.get("name"):
-        name_owner[norm(p.get("name"))] = p
-    for an in p.get("aka") or ():
-        name_owner[norm(an)] = p
-    if p.get("github"):
-        name_owner[norm(p.get("github"))] = p
-
-##########################################
-# 5. Find (co)authors of all repos
-##########################################
-
-os.makedirs(REPOS_DIR, exist_ok=True)
-for repository in REPO_LIST:
-    print(f"Processing {repository}...")
-    local_repo_dir = full_repo_dir(repository)
-    if not os.path.isdir(local_repo_dir):
-        subprocess.run(
-            ["git", "clone", f"https://github.com/{repository}", local_repo_dir], check=True
-        )
-    else:
-        subprocess.run(["git", "-C", local_repo_dir, "pull", "--ff-only"], check=True)
-    res_stdout = git_out(
-        local_repo_dir, "log", "--use-mailmap", GIT_LOG_SINCE, GIT_LOG_FORMAT_1
-    )
-    process_log_into_aggregate(res_stdout, repository)
-
-
-##########################################
-# 7. Post-aggregation enrichment & updates
-##########################################
-
-prev_status = {id(p): p.get("status") for p in current_contributors}
-seen_current = set()
-new_names = []
-for aggregate_key, aggregate_record in aggregate.items():
-    contributor_name = aggregate_record["name"]
-    contributor_email = aggregate_record["email"]
-    contributor_repos = aggregate_record["repos"]
-    gh = aggregate_record.get("known_github") or find_github_username(
-        contributor_email, contributor_repos
-    )
-    matched_user = lookup_user(gh, contributor_email, contributor_name)
-    if matched_user:  # Existing contributor
-        have = set(matched_user["repos"])
-        matched_user["repos"].extend(r for r in contributor_repos if r not in have)
-        if gh and not matched_user.get("github"):
-            matched_user["github"] = gh
-            name_owner[norm(gh)] = matched_user
-        seen_current.add(id(matched_user))
-    else:  # Brand-new person: add immediately, mark seen, collect name for summary
-        newp = {
-            "name": contributor_name,
-            "email": contributor_email,
-            "repos": sorted(set(contributor_repos)),
-            "status": "active",
-        }
-        if gh:
-            newp["github"] = gh
-            name_owner[norm(gh)] = newp
-        else:
-            newp["comment"] = (
-                f"Co-author of commit "
-                f"{find_coauthor_commit(contributor_name, contributor_email, contributor_repos)}"
+    os.makedirs(REPOS_DIR, exist_ok=True)
+    for repository in REPO_LIST:
+        print(f"Processing {repository}...")
+        local_repo_dir = full_repo_dir(repository)
+        if not os.path.isdir(local_repo_dir):
+            subprocess.run(
+                ["git", "clone", f"https://github.com/{repository}", local_repo_dir], check=True
             )
-        current_contributors.append(newp)
-        seen_current.add(id(newp))
-        new_names.append(contributor_name)
-
-for p in current_contributors:
-    if p.get("status") == "pi":
-        continue
-    p["status"] = "active" if id(p) in seen_current else "retired"
-    p["repos"] = sorted(set(p["repos"]))
+        else:
+            subprocess.run(["git", "-C", local_repo_dir, "pull", "--ff-only"], check=True)
+        res_stdout = git_out(
+            local_repo_dir, "log", "--use-mailmap", GIT_LOG_SINCE, GIT_LOG_FORMAT_1
+        )
+        process_log_into_aggregate(res_stdout, repository, summary_string)
 
 
-##########################################
-# 8. Dump output
-##########################################
+    ##########################################
+    # 7. Post-aggregation enrichment & updates
+    ##########################################
 
-# Write new content to CONTRIBUTORS_FILE
-people_sorted = sorted(
-    current_contributors,
-    key=lambda d: (d.get("name", "").split()[-1].lower())
-)
+    prev_status = {id(p): p.get("status") for p in current_contributors}
+    seen_current = set()
+    new_names = []
+    for _, aggregate_record in aggregate.items():
+        contributor_name = aggregate_record["name"]
+        contributor_email = aggregate_record["email"]
+        contributor_repos = aggregate_record["repos"]
+        gh = aggregate_record.get("known_github") or find_github_username(
+            contributor_email, contributor_repos
+        )
+        matched_user = lookup_user(gh, contributor_email, contributor_name)
+        if matched_user:  # Existing contributor
+            have = set(matched_user["repos"])
+            matched_user["repos"].extend(r for r in contributor_repos if r not in have)
+            if gh and not matched_user.get("github"):
+                matched_user["github"] = gh
+                name_owner[norm(gh)] = matched_user
+            seen_current.add(id(matched_user))
+        else:  # Brand-new person: add immediately, mark seen, collect name for summary
+            newp = {
+                "name": contributor_name,
+                "email": contributor_email,
+                "repos": sorted(set(contributor_repos)),
+                "status": "active",
+            }
+            if gh:
+                newp["github"] = gh
+                name_owner[norm(gh)] = newp
+            else:
+                newp["comment"] = "Co-author of commit " + \
+                    find_coauthor_commit(
+                        contributor_name,
+                        contributor_email,
+                        contributor_repos
+                    )
+            current_contributors.append(newp)
+            seen_current.add(id(newp))
+            new_names.append(contributor_name)
 
-ordered_people = [
-    dict(sorted(p.items(), key=lambda kv: SORT_WEIGHT.get(kv[0], 999)))
-    for p in people_sorted
-]
+    for p in current_contributors:
+        if p.get("status") == "pi":
+            continue
+        p["status"] = "active" if id(p) in seen_current else "retired"
+        p["repos"] = sorted(set(p["repos"]))
 
-with open(CONTRIBUTORS_FILE, "w", encoding="utf-8") as f:
-    f.write(YAML_HEADER)
-    yaml.dump(ordered_people, f, sort_keys=False, allow_unicode=True)
 
-# Write summary
-if len(suspected_bots) > 0:
-    bots = sorted({line for _, line in suspected_bots})
-    bot_repos = sorted({repo for repo, _ in suspected_bots})
-    SUMMARY_STRING += (
-        f"- Skipped {len(bots)} bot accounts across {len(bot_repos)} repos:\n"
-        "".join(f"  - {b}\n" for b in bots)
+    ##########################################
+    # 8. Dump output
+    ##########################################
+
+    # Write new content to CONTRIBUTORS_FILE
+    people_sorted = sorted(
+        current_contributors,
+        key=lambda d: (d.get("name", "").split()[-1].lower())
     )
 
-revived_names = [
-    p.get("name")
-    for p in current_contributors
-    if id(p) in seen_current
-    and id(p) in prev_status
-    and prev_status[id(p)] == "retired"
-]
+    ordered_people = [
+        dict(sorted(p.items(), key=lambda kv: SORT_WEIGHT.get(kv[0], 999)))
+        for p in people_sorted
+    ]
 
-newly_retired_names = [
-    p.get("name")
-    for p in current_contributors
-    if p.get("status") == "retired" and prev_status.get(id(p)) == "active"
-]
+    with open(CONTRIBUTORS_FILE, "w", encoding="utf-8") as f:
+        f.write(YAML_HEADER)
+        yaml.dump(ordered_people, f, sort_keys=False, allow_unicode=True)
 
-summary = (
-    f"""This PR updates the contributors list based on the latest changes.
-New contributors : {len(new_names)} | {new_names}
-Revived contributors : {len(revived_names)} | {revived_names}
-Newly retired contributors : {len(newly_retired_names)} | {newly_retired_names}
+    # Write summary
+    if len(suspected_bots) > 0:
+        bots = sorted({line for _, line in suspected_bots})
+        bot_repos = sorted({repo for repo, _ in suspected_bots})
+        summary_string += (
+            f"- Skipped {len(bots)} bot accounts across {len(bot_repos)} repos:\n"
+            "".join(f"  - {b}\n" for b in bots)
+        )
+
+    revived_names = [
+        p.get("name")
+        for p in current_contributors
+        if id(p) in seen_current
+        and id(p) in prev_status
+        and prev_status[id(p)] == "retired"
+    ]
+
+    newly_retired_names = [
+        p.get("name")
+        for p in current_contributors
+        if p.get("status") == "retired" and prev_status.get(id(p)) == "active"
+    ]
+
+    summary = (
+        f"""This PR updates the contributors list based on the latest changes.
+    New contributors : {len(new_names)} | {new_names}
+    Revived contributors : {len(revived_names)} | {revived_names}
+    Newly retired contributors : {len(newly_retired_names)} | {newly_retired_names}
 
 
-Summary Notes:
+    Summary Notes:
 
 
-{SUMMARY_STRING}
-"""
-)
+    {summary_string}
+    """
+    )
 
-with open(SUMMARY_FILE, "w", encoding="utf-8") as summaryfile:
-    summaryfile.write(summary)
+    with open(SUMMARY_FILE, "w", encoding="utf-8") as summaryfile:
+        summaryfile.write(summary)
+
+if __name__ == "__main__" :
+    main()
