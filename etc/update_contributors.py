@@ -309,7 +309,9 @@ for aggregate_key, aggregate_record in aggregate.items():
     contributor_name = aggregate_record["name"]
     contributor_email = aggregate_record["email"]
     contributor_repos = aggregate_record["repos"]
-    gh = aggregate_record.get("known_github") or find_github_username(contributor_email, contributor_repos)
+    gh = aggregate_record.get("known_github") or find_github_username(
+        contributor_email, contributor_repos
+    )
     matched_user = lookup_user(gh, contributor_email, contributor_name)
     if matched_user:  # Existing contributor
         have = set(matched_user["repos"])
@@ -330,7 +332,8 @@ for aggregate_key, aggregate_record in aggregate.items():
             name_owner[norm(gh)] = newp
         else:
             newp["comment"] = (
-                f"Co-author of commit {find_coauthor_commit(contributor_name, contributor_email, contributor_repos)}"
+                f"Co-author of commit "
+                f"{find_coauthor_commit(contributor_name, contributor_email, contributor_repos)}"
             )
         current_contributors.append(newp)
         seen_current.add(id(newp))
