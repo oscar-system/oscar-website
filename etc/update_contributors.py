@@ -152,9 +152,13 @@ def find_github_username(email: str, repos: list[str]) -> str:
         if not commit_hash:
             continue
         url = f"https://api.github.com/repos/{r}/commits/{commit_hash}"
-        resp = requests.get(url, headers={"Authorization": f"Bearer {API_KEY}"})
+        resp = requests.get(
+            url,
+            headers={"Authorization": f"Bearer {API_KEY}"},
+            timeout=30,
+        )
         if resp.status_code != 200:
-            # todo log a warning here
+            print(f"Warning: GitHub API request failed for {url}: {resp.status_code}")
             continue
         author = resp.json().get("author")
         if author and author.get("login"):
