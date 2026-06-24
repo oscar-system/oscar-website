@@ -85,7 +85,7 @@ current_contributors = []   # loaded from YAML
 email_owner = {}            # dict: lowercased email to person dict
 name_owner = {}             # dict: normalized name to person dict
 aggregate = {}              # list of dicts for all contributors at the time of running this script
-summarystring = ""          # intermediate output for information and debugging
+SUMMARY_STRING = ""          # intermediate output for information and debugging
 
 
 ##########################################
@@ -187,7 +187,8 @@ suspected_bots = set([])
 
 
 def process_log_into_aggregate(res: str, repo: str) -> None:
-    global summarystring  # , aggregate, suspected_bots # linter complains about aggregate and
+    # pylint: disable=global-statement
+    global SUMMARY_STRING  # , aggregate, suspected_bots # linter complains about aggregate and
                                                         # suspected_bots
     for raw in res.splitlines():
         line = raw.strip()
@@ -202,14 +203,14 @@ def process_log_into_aggregate(res: str, repo: str) -> None:
             suspected_bots.add((repo, line))
             continue
         if "<" not in line or ">" not in line:
-            summarystring += f"- Skipping non-address line in {repo}: {line!r}\n"
+            SUMMARY_STRING += f"- Skipping non-address line in {repo}: {line!r}\n"
             continue
 
         name, email = parseaddr(line)
         name = " ".join(unicodedata.normalize("NFKC", name).split())
         email = unicodedata.normalize("NFKC", email).strip()
         if not email or not name:
-            summarystring += (
+            SUMMARY_STRING += (
                 f"- Missing {'email' if not email else 'name'} for {name or email} in {repo}; "
                 "skipping\n"
             )
@@ -373,7 +374,7 @@ with open(CONTRIBUTORS_FILE, "w", encoding="utf-8") as f:
 if len(suspected_bots) > 0:
     bots = sorted({line for _, line in suspected_bots})
     bot_repos = sorted({repo for repo, _ in suspected_bots})
-    summarystring += (
+    SUMMARY_STRING += (
         f"- Skipped {len(bots)} bot accounts across {len(bot_repos)} repos:\n"
         "".join(f"  - {b}\n" for b in bots)
     )
@@ -402,7 +403,7 @@ Newly retired contributors : {len(newly_retired_names)} | {newly_retired_names}
 Summary Notes:
 
 
-{summarystring}
+{SUMMARY_STRING}
 """
 )
 
