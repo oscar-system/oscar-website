@@ -77,7 +77,7 @@ ${julia_for_oscar} \
     --project=@v#.#-oscar \
     --startup-file=no \
     -e 'using Pkg;
-        rm("'${central_depot}'/environments/v$(VERSION.major).$(VERSION.minor)/Project.toml", force=true)
+        rm("'${central_depot}'/environments/v$(VERSION.major).$(VERSION.minor)/Manifest.toml", force=true)
         Pkg.update()
         Pkg.add("Oscar")
         Pkg.add("Hecke")
@@ -137,4 +137,3 @@ exec ${julia_for_oscar} "$@"
   <strong>WARNING:</strong>
   Users of such a system-wide installation may run into Julia errors if they have already installed some dependencies of OSCAR in their <code>~/.julia/packages</code>, or if they <C>add</C> them later on.
 </div>
-
