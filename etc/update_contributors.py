@@ -46,8 +46,19 @@ REPO_LIST = (
 )
 
 # Known bot identities that we want to exclude, even if they don't have [bot] in name.
-KNOWN_BOT_EMAILS = {"codex@openai.com", "noreply@anthropic.com", "copilot@github.com"}
-KNOWN_BOT_NAMES = {"codex", "claude", "copilot", "GitHub Copilot"}
+KNOWN_BOT_EMAILS = {
+    "codex@openai.com",
+    "noreply@anthropic.com",
+    "copilot@github.com",
+    "noreply@chatgpt.com"
+}
+KNOWN_BOT_NAMES = {
+    "codex",
+    "claude",
+    "copilot",
+    "GitHub Copilot",
+    "ChatGPT (OpenAI GPT-5.5)"
+}
 
 # Regexes
 HASH_RE = re.compile(r"\b[0-9a-f]{40}\b", re.I)
@@ -175,6 +186,12 @@ def find_coauthor_commit(name: str, email: str, repos: list[str]) -> str:
             m = HASH_RE.search(line)
             if m:
                 return m.group(0)
+    print("Warning! No commit hash found for :")
+    print("================================")
+    print(repos)
+    print(name)
+    print(email)
+    print("================================")
     return "(no hash found)"
 
 
@@ -370,10 +387,8 @@ def main():
     if len(suspected_bots) > 0:
         bots = sorted({line for _, line in suspected_bots})
         bot_repos = sorted({repo for repo, _ in suspected_bots})
-        summary_string += (
-            f"- Skipped {len(bots)} bot accounts across {len(bot_repos)} repos:\n"
-            "".join(f"  - {b}\n" for b in bots)
-        )
+        summary_string += f"- Skipped {len(bots)} bot accounts across {len(bot_repos)} repos:\n"
+        summary_string += "".join(f"  - {b}\n" for b in bots)
 
     revived_names = [
         p.get("name")
@@ -391,16 +406,16 @@ def main():
 
     summary = (
         f"""This PR updates the contributors list based on the latest changes.
-    New contributors : {len(new_names)} | {new_names}
-    Revived contributors : {len(revived_names)} | {revived_names}
-    Newly retired contributors : {len(newly_retired_names)} | {newly_retired_names}
+New contributors : {len(new_names)} | {new_names}
+Revived contributors : {len(revived_names)} | {revived_names}
+Newly retired contributors : {len(newly_retired_names)} | {newly_retired_names}
 
 
-    Summary Notes:
+Summary Notes:
 
 
-    {summary_string}
-    """
+{summary_string}
+"""
     )
 
     with open(SUMMARY_FILE, "w", encoding="utf-8") as summaryfile:
