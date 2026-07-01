@@ -1,3 +1,10 @@
+- name: Corrigendum to ``Nonsymplectic automorphisms of prime order on O’Grady’s sixfolds''
+  journal_url: https://doi.org/10.4171/RMI/1640
+  authors: Annalisa Grossi, Stevell Muller
+  journal: Revista Matemática Iberoamericana
+  volume: 42
+  month: May
+  year: 2026
 - name: "Geometric approach to the modular isomorphism problem: groups of order 64"
   preprint_url: https://arxiv.org/abs/2603.18220
   authors: Leo Margolis, Taro Sakurai
@@ -51,10 +58,13 @@
   month: Feb
   year: 2025
 - name: Automorphisms of Nikulin-type orbifolds
+  journal_url: https://doi.org/10.4171/RMI/1626
   preprint_url: https://arxiv.org/abs/2411.04668
   authors: Simon Brandhorst, Grégoire Menet, Stevell Muller
-  month: Nov
-  year: 2024
+  journal: Revista Matemática Iberoamericana
+  volume: 42
+  month: May
+  year: 2026
 - name: Computing the center of a fusion category
   preprint_url: https://arxiv.org/abs/2406.13438
   authors: Fabian Mäurer, Ulrich Thiel
