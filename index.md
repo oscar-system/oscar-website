@@ -56,6 +56,14 @@ _Released on {{ site.data.release.date | date: site.full_date_format }}_ -- [Vie
 
 ---
 
+## 🎬 Videos
+
+The OSCAR Video Channel features interviews with contributors and demonstrations of OSCAR's capabilities.
+
+📺 **Visit the [OSCAR Video Channel](https://tube.mathe.social/c/oscar_main/videos).**
+
+---
+
 ## 📙 The OSCAR Book
 
 The [OSCAR Book](https://book.oscar-system.org/) - A detailed guide to version 1.0, featuring code snippets and in-depth explanations.

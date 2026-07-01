@@ -172,6 +172,8 @@ algebraic solving.
 
 📚 **[Documentation]({{site.baseurl}}/documentation/)** – In-depth documentation and examples.
 
+🎬 **[OSCAR Video Channel](https://tube.mathe.social/c/oscar_main/videos)** – interviews with contributors and demonstrations of OSCAR's capabilities.
+
 📙 **[OSCAR Book](http://book.oscar-system.org)** – A detailed guide to OSCAR 1.0, featuring code snippets and in-depth explanations.
 
 📝 **[Release Notes of OSCAR {{ site.data.release.version }}](https://github.com/oscar-system/Oscar.jl/releases/tag/v{{ site.data.release.version }})** – released on {{ site.data.release.date | date_to_string }}
