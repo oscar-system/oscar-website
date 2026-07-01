@@ -75,6 +75,7 @@
   website: https://martinbies.github.io
   status: active
   repos:
+  - Nemocas/Nemo.jl
   - oscar-system/Oscar.jl
 - name: Tobias Boege
   affiliation: KTH Stockholm
@@ -629,7 +630,7 @@
   email: rafael.mohr@inria.fr
   github: RafaelDavidMohr
   website: https://mathexp.eu/mohr/
-  status: retired
+  status: active
   repos:
   - algebraic-solving/AlgebraicSolving.jl
 - name: Oleksandr Motsak
@@ -812,6 +813,7 @@
   website: https://math.rptu.de/ags/agag/personen/mitglieder
   status: active
   repos:
+  - Nemocas/AbstractAlgebra.jl
   - oscar-system/GAP.jl
   - oscar-system/Oscar.jl
 - name: Karl Royal
@@ -827,7 +829,7 @@
   email: roehrich@art.rwth-aachen.de
   github: felix-roehrich
   website: https://www.art.rwth-aachen.de/cms/~xlgua/
-  status: active
+  status: retired
   repos:
   - Nemocas/AbstractAlgebra.jl
   - Nemocas/Nemo.jl
@@ -964,6 +966,14 @@
   status: retired
   comment: Completed her PhD with Claus Fieker in about 2020
   repos: []
+- name: Théo Ternier
+  email: theo.ternier@inria.fr
+  website: https://thter11.github.io/#/en/
+  status: active
+  aka_email:
+  - theoternier@PCdeTho.localdomain
+  repos:
+  - algebraic-solving/AlgebraicSolving.jl
 - name: Ulrich Thiel
   affiliation: University of Kaiserslautern-Landau
   github: ulthiel
