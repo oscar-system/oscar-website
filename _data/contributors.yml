@@ -641,8 +641,8 @@
 - name: Stevell Muller
   affiliation: Leibniz Universität Hannover
   email: muller@math.uni-hannover.de
-  github: StevellM
-  website: https://www.math.uni-sb.de/ag/brandhorst/index.php?option=com_content&view=article&id=26:muller-en-1&catid=18&lang=en&Itemid=114
+github: StevellM
+website: https://sites.google.com/view/stevellmuller
   status: active
   repos:
   - oscar-system/Oscar.jl
