@@ -186,7 +186,7 @@ def find_coauthor_commit(name: str, email: str, repos: list[str]) -> str:
             m = HASH_RE.search(line)
             if m:
                 return m.group(0)
-    print("Warning! No commit has found for :")
+    print("Warning! No commit hash found for :")
     print("================================")
     print(repos)
     print(name)
