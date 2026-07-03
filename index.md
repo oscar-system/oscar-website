@@ -60,7 +60,7 @@ _Released on {{ site.data.release.date | date: site.full_date_format }}_ -- [Vie
 
 The OSCAR Video Channel features interviews with contributors and demonstrations of OSCAR's capabilities.
 
-📺 **Visit the [OSCAR Video Channel](https://tube.mathe.social/c/oscar_main/videos).**
+📺 **Visit the [OSCAR Video Channel](https://tube.mathe.social/a/oscar/videos).**
 
 ---
 
