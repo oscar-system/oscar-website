@@ -945,10 +945,10 @@
   status: retired
   repos: []
 - name: Ben Spitz
-  email: diracdeltafunk@users.noreply.github.com
-  website: https://benspitz.com/
   affiliation: IU Bloomington
+  email: bespitz@iu.edu
   github: diracdeltafunk
+  website: https://benspitz.com/
   status: active
   comment: Co-author of commit 544a94582f7591cd4fd6363c12ee30cc2f29c68d
   repos:
