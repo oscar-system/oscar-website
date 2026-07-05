@@ -946,12 +946,9 @@
   repos: []
 - name: Ben Spitz
   email: diracdeltafunk@users.noreply.github.com
+  website: https://benspitz.com/
+  affiliation: IU Bloomington
   github: diracdeltafunk
-  status: active
-  repos:
-  - Nemocas/AbstractAlgebra.jl
-- name: Ben Spitz
-  email: 1844060+diracdeltafunk@users.noreply.github.com
   status: active
   comment: Co-author of commit 544a94582f7591cd4fd6363c12ee30cc2f29c68d
   repos:
