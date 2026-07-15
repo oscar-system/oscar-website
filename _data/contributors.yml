@@ -158,10 +158,10 @@
   repos:
   - oscar-system/Oscar.jl
 - name: Oliver Clarke
+  affiliation: Durham university
   email: oliver.clarke.crgs@gmail.com
   github: ollieclarke8787
   website: https://sites.google.com/view/oclarke-homepage
-  affiliation: Durham university
   status: active
   repos:
   - Nemocas/AbstractAlgebra.jl
@@ -230,9 +230,9 @@
   - oscar-system/Oscar.jl
   - oscar-system/Singular.jl
 - name: John Eismeier
-  website: https://jeis4wpi.github.io/
   email: john.eismeier@yahoo.com
   github: jeis4wpi
+  website: https://jeis4wpi.github.io/
   status: active
   repos:
   - oscar-system/Oscar.jl
