@@ -157,6 +157,14 @@
   comment: Co-author of commit 6b2cef5a53b095f3998ba3444cf192ce4fadf797
   repos:
   - oscar-system/Oscar.jl
+- name: Oliver Clarke
+  email: oliver.clarke.crgs@gmail.com
+  github: ollieclarke8787
+  website: https://sites.google.com/view/oclarke-homepage
+  affiliation: Durham university
+  status: active
+  repos:
+  - Nemocas/AbstractAlgebra.jl
 - name: Andrei Comaneci
   affiliation: TU Berlin
   email: comenaci@math.tu-berlin.de
@@ -221,6 +229,13 @@
   - algebraic-solving/AlgebraicSolving.jl
   - oscar-system/Oscar.jl
   - oscar-system/Singular.jl
+- name: John Eismeier
+  website: https://jeis4wpi.github.io/
+  email: john.eismeier@yahoo.com
+  github: jeis4wpi
+  status: active
+  repos:
+  - oscar-system/Oscar.jl
 - name: Raul Epure
   affiliation: University of Kaiserslautern-Landau
   github: raulepure
@@ -383,8 +398,9 @@
 - name: Oskar Henriksson
   email: oskar.david.henriksson@gmail.com
   github: oskarhenriksson
-  status: retired
-  repos: []
+  status: active
+  repos:
+  - oscar-system/Oscar.jl
 - name: Anna Hofer
   affiliation: Otto-von-Guericke University
   email: anna.hofer@ovgu.de
@@ -725,7 +741,7 @@
   email: paemurru@math.uni-sb.de
   github: paemurru
   website: https://www.math.uni-sb.de/ag/brandhorst/index.php?option=com_content&view=article&id=49:paemurru-en&catid=18&lang=en&Itemid=114
-  status: active
+  status: retired
   repos:
   - Nemocas/Nemo.jl
   - oscar-system/Oscar.jl
