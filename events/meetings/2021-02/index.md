@@ -27,4 +27,4 @@ All the information can be found at <https://icerm.brown.edu/programs/sp-s21/w2/
 
 ## Other meetings
 
-Please visit [the meetings page]({{ site.baseurl }}/meetings) for an overview of the OSCAR meetings.
+Please visit [the meetings page]({{ site.baseurl }}/events/meetings/) for an overview of the OSCAR meetings.

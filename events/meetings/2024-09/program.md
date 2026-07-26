@@ -12,7 +12,7 @@ weight: 2
 The program is just a scaffold; more concrete plans may be added later or during the workshop.
 If you have suggestions or wishes, please contact the organisers.
 
-**Please bring a laptop and [follow the preparation instructions](../prepare)**
+**Please bring a laptop and [install OSCAR in advance]({{ site.baseurl }}/install/).**
 
 ### Monday
 
