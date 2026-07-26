@@ -17,13 +17,6 @@ REPOPATH = os.path.dirname(os.path.dirname(OWNPATH))
 DATAPATH = os.path.join(REPOPATH, "_data")
 RELEASEFILEPATH = os.path.join(DATAPATH, "release.yml")
 
-# Delete the release file should it exist
-try:
-    os.remove(RELEASEFILEPATH)
-    print(f"Deleted existing release file: {RELEASEFILEPATH}")
-except FileNotFoundError:
-    print(f"{RELEASEFILEPATH} was not found! This may indicate a weird bug of some sort. The script will still continue, but you should double check that everything works as expected.")
-
 # Get/set API key or raise error
 API_KEY = (os.getenv("API_KEY") or os.getenv("GITHUB_TOKEN") or "").strip()
 if not API_KEY:
@@ -84,5 +77,7 @@ julia-min: "{julia_min}"
 
 print(f"RELEASEFILEPATH is {RELEASEFILEPATH}")
 
-with open(RELEASEFILEPATH, "w", encoding="utf-8") as releasefile:
+temporary_path = f"{RELEASEFILEPATH}.tmp"
+with open(temporary_path, "w", encoding="utf-8") as releasefile:
     releasefile.write(RELEASESTRING)
+os.replace(temporary_path, RELEASEFILEPATH)
