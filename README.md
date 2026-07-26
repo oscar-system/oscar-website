@@ -14,7 +14,7 @@ Fork this repository on GitHub, and provide a Pull Request to it.
 
 ## How to test the website locally
 
-For larger changes, it is useful to build a local version of the GAP
+For larger changes, it is useful to build a local version of the OSCAR
 website first. This requires use of [Jekyll](https://jekyllrb.com). We
 recommend using Ruby's `bundler`. This can be installed on Debian or
 Ubuntu via `apt-get install bundler`. Then as a one-time setup, run
