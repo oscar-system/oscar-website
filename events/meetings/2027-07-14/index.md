@@ -2,7 +2,7 @@
 layout: meeting
 title: OSCAR Summer School 07/2027
 meeting: true
-meeting_nr: 202707b
+meeting_nr: 20270714
 is_meeting_index: true
 weight: 1
 ---

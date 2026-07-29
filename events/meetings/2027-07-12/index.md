@@ -2,7 +2,7 @@
 layout: meeting
 title: OSCAR Developer Meeting 07/2027
 meeting: true
-meeting_nr: 202707a
+meeting_nr: 20270712
 is_meeting_index: true
 weight: 1
 ---
