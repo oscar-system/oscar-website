@@ -10,7 +10,7 @@ weight: 1
 # OSCAR Developer Meeting
 
 * When: July 12 - July 13, 2027
-* Where: TU Berlin, Fasanenstrasse 89, 10623 Berlin, rooms TBA
+* Where: TU Berlin, IMoS Building, Fasanenstrasse 89, 10623 Berlin, rooms 3003 and 4003
 * What: A meeting of the developers of the OSCAR computer algebra system
 * Who: Current and future OSCAR developers
 
