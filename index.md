@@ -58,7 +58,7 @@ _Released on {{ site.data.release.date | date: site.full_date_format }}_ -- [Vie
 
 ## 🎬 Videos
 
-The OSCAR Video Channel features interviews with contributors and demonstrations of OSCAR's capabilities.
+The OSCAR Video Channel features interviews with contributors, demonstrations of OSCAR's capabilities, and OSCAR mascot videos. The code snippets underlying these mascot videos are available in a [hands-on tutorial]({{site.baseurl}}/tutorials/MascotVideos/#main-content).
 
 📺 **Visit the [OSCAR Video Channel](https://tube.mathe.social/a/oscar/videos).**
 
