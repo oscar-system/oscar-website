@@ -196,3 +196,12 @@
   topic: Polyhedral Geometry
   title: Parametrize the volume of slices
   test_status: success
+- filename: oscar_mascot_videos
+  author: Martin Bies, Sebastian Engelhardt
+  branch: master
+  last_modified: July 29, 2026
+  repository: Sebas777-gif/oscar-notebooks
+  thumbnail: MascotVideos.png
+  topic: Diverse (mascot videos)
+  title: OSCAR mascot videos – hands-on code
+  test_status: success
