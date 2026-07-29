@@ -75,6 +75,7 @@
   website: https://martinbies.github.io
   status: active
   repos:
+  - Nemocas/AbstractAlgebra.jl
   - Nemocas/Nemo.jl
   - oscar-system/Oscar.jl
 - name: Tobias Boege
@@ -514,6 +515,12 @@
   status: active
   repos:
   - oscar-system/Oscar.jl
+  - thofma/Hecke.jl
+- name: Gaurish Korpal
+  email: 8099449+gkorpal@users.noreply.github.com
+  github: gkorpal
+  status: active
+  repos:
   - thofma/Hecke.jl
 - name: Kevin Kuehn
   affiliation: TU Berlin
