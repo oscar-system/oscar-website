@@ -517,11 +517,11 @@
   - oscar-system/Oscar.jl
   - thofma/Hecke.jl
 - name: Gaurish Korpal
-  email: gkorpal@zohomail.in
-  website: https://gkorpal.github.io/
-  github: gkorpal
-  status: active
   affiliation: University of Auckland, New Zealand
+  email: gkorpal@zohomail.in
+  github: gkorpal
+  website: https://gkorpal.github.io/
+  status: active
   repos:
   - thofma/Hecke.jl
 - name: Kevin Kuehn
