@@ -16,9 +16,9 @@ weight: 1
 
 ## Information
 
-A three day crash course into the OSCAR computer algebra system at TU Berlin, a week before the [SIAM AG 2027](https://www.siam.org/conferences-events/siam-conferences/ag27/) in Osnabrueck, focusing on topics around applied algebraic geometry.  Both beginners and experienced programmers are welcome!
+A three day crash course into the OSCAR computer algebra system at TU Berlin, a week before the [SIAM AG 2027](https://www.siam.org/conferences-events/siam-conferences/ag27/) in Osnabrueck, focusing on topics around applied algebraic geometry. Both beginners and experienced programmers are welcome!
 
-For beginners, the first two days will cover the basics of programming in Julia and OSCAR.  For experienced programmers, the first two days will cover advanced topics such as the internals of OSCAR.  The final day will feature parallel tracks dedicated to specialized topics, such as:
+For beginners, the first two days will cover the basics of programming in Julia and OSCAR. For experienced programmers, the first two days will cover advanced topics such as the internals of OSCAR. The final day will feature parallel tracks dedicated to specialized topics, such as:
 
 * algebraic statistics
 * polynomial system solving
