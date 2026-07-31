@@ -20,7 +20,7 @@ A three day crash course into the OSCAR computer algebra system at TU Berlin, a 
 
 For beginners, the first two days will cover the basics of programming in Julia and OSCAR.  For experienced programmers, the first two days will cover advanced topics such as the internals of OSCAR.  The final day will feature parallel tracks dedicated to specialized topics, such as:
 
-* algebraic statisics
+* algebraic statistics
 * polynomial system solving
 * tropical geometry
 * etc
