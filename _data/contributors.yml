@@ -236,6 +236,7 @@
   website: https://jeis4wpi.github.io/
   status: active
   repos:
+  - Nemocas/AbstractAlgebra.jl
   - oscar-system/Oscar.jl
 - name: Raul Epure
   affiliation: University of Kaiserslautern-Landau
