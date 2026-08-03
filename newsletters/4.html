@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OSCAR Newsletter – August 2026</title>
+</head>
+<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #222; background-color: #f5f7fa; margin: 0; padding: 0;">
+
+  <div style="max-width: 700px; margin: 40px auto; background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.08);">
+
+    <a href="https://www.oscar-system.org/newsletter/" style="text-decoration:none; color:inherit;">
+    <div style="background-color: #004aad; padding: 20px 0; text-align: center;">
+      <img src="https://www.oscar-system.org/public/OSCAR-Logo-dark.svg" alt="OSCAR Logo" style="max-width: 180px; height: auto;" />
+      <h1 style="color: #ffffff; margin: 15px 0 0; font-size: 26px;">OSCAR Newsletter – August 2026</h1>
+    </div>
+    </a>
+
+    <div style="padding: 30px;">
+      <p>Hello, OSCAR Community!</p>
+
+      <p>Welcome to the August edition of the OSCAR newsletter! We are excited to share the latest updates, features, and achievements from our community.</p>
+
+      <h2>Version 1.8.0 Released!</h2>
+      <p>New features as compared to version 1.7.2 include:</p>
+      <ul>
+        <li><strong>Algebraic Geometry:</strong> Introduced <code>DrawingCurves</code>, a new experimental project for drawing
+          real plane curves. Added algorithm option for <code>ideal_membership</code> of
+          <code>FreeAssociativeAlgebraIdeal</code>. Fixed a rare Groebner basis error in <code>quantum_symmetric_group</code>.
+        </li>
+        <li><strong>Number Theory:</strong> Added new invariant function based on graph hash for integer lattices. Extended the
+          use of databases of <code>ZZLat</code> in <code>QuadFormAndIsom</code>. Fixed a bug for odd lattices in automorphism
+          group and isometry computations of quadratic lattices and tuned the heuristics.</li>
+        <li><strong>Combinatorics:</strong> Added <code>tutte_group</code>, <code>is_tutte_realizable</code>,
+          <code>bergman_fan</code> for matroids and <code>on_graph</code> for acting on a graph with a
+          <code>PermGroupElem</code>. Fixed a bug and achieved a speedup in <code>tutte_group</code>. Added equality and hash for
+          <code>Graph</code> and <code>GraphMap</code>, isomorphism functionality for edge-labeled graphs, and methods checking
+          for transversals in matroids.</li>
+        <li><strong>Polyhedral Geometry:</strong> Added <code>contains</code> and <code>contains_in_interior</code> for polyhedra
+          and cones, as well as <code>common_refinement</code> also for polyhedral fans. Migrated slack ideals from polymake to
+          OSCAR. Added <code>n_rays_modulo_lineality</code> and <code>n_minimal_faces</code>.</li>
+        <li><strong>Commutative Algebra:</strong> Now allowing general subquotient modules as input to
+          <code>vector_space_dimension</code>. Added linear solving for matrices over multivariate polynomial and Laurent rings.
+          Introduced cohomology rings of complexes with a DG-algebra structure. Achieved a speedup of
+          <code>vector_space_basis</code> for <code>SubquoModule</code>. Refactored existing code for ungraded modules over a
+          <code>MPolyLocRing</code> localized at a point and extended its functionality to modules with true sub-part. Improved
+          performance for <code>vector_space_dim</code> and <code>vector_space_basis</code> by using <code>M.quo</code> and its
+          cached <code>groebner_basis</code>. Added support for sparse matrices for transformations in Groebner basis
+          computations, and a modular algorithm for determinants of matrices over univariate polynomial rings over the integers.
+        </li>
+        <li><strong>Groups:</strong> Added <code>maximal_supersolvable_quotient</code>, <code>character_table_rational</code>,
+          and <code>regular_action_homomorphism</code> for finite groups. Now allowing
+          <code>matrix_group(::Ring, ::Vector)</code>. Optimized <code>stabilizer(G, v, permuted)</code>.</li>
+        <li><strong>Miscellaneous:</strong> Added <code>kostant_kumar_character</code> and <code>dual</code> for roots and
+          coroots in Lie theory. Added <code>is_feasible(::TropicalPolyhedron)</code> and
+          <code>visualize(::TropicalPolyhedron)</code> in tropical geometry. Updated AbstractAlgebra to v0.50, GAP.jl to v0.17
+          and Nemo to v0.56. Changes related to serializing data in the MRDI file format.</li>
+        <li>For more details on the newest release, visit the 
+          <a href="https://github.com/oscar-system/Oscar.jl/releases/tag/v1.8.0">GitHub Release</a> or
+          our <a href="https://www.oscar-system.org">website</a>.</li>
+      </ul>
+      
+      <h2>Papers Using OSCAR:</h2>
+      <ul>
+        <li>Ryan Batubara, Jack J Garzella, Yongyuan Huang, and Maximus Mellberg describe in their new preprint
+          <a href="https://arxiv.org/abs/2602.24155">Newton strata realization for hypersurfaces via explicit p-adic
+          cohomology</a> some of the algorithms used in the
+          <a href="https://github.com/UCSD-computational-number-theory/DeRham.jl">DeRham.jl</a> package and its dependencies.
+          This package currently implements point-counting algorithms for projective hypersurfaces in Julia. Its design allows
+          usage within the OSCAR ecosystem, especially Nemo.jl. It also supports GPU hardware for counting points via CUDA.jl.
+          Furthermore, the paper describes some new examples of varieties that the authors found using these algorithms.
+      </ul>
+
+      <h2>Upcoming Events:</h2>
+      <ul>
+        <li><strong><a href="https://juliacon.org/2026/">JuliaCon 2026</a></strong> - Mainz, Germany · Aug 10-15, 2026
+          <ul style="margin-top: 5px;">
+            <li>Featuring the minisymposium: <em>Symbolic and Numerical Methods in (Nonlinear) Algebra</em>.</li>
+          </ul>
+        </li>
+        <li>
+          <strong><a href="https://albatross-2026.sciencesconf.org/">
+            albatross-2026: ALgeBrAic meThods foR pOlynomial System Solving 2026</a></strong> - Paris, France · Sep 01-04, 2026
+        </li>
+        <li>
+          <strong><a href="https://www.dmv-jahrestagung.de/">
+            DMV Annual Meeting 2026</a></strong> - Konstanz, Germany · Sep 07-10, 2026
+        </li>
+        <li>
+          <strong><a href="https://sites.google.com/view/sfb195-2026">
+            TRR 195 - Annual Meeting</a></strong> - Aachen, Germany · Sep 21-24, 2026
+        </li>
+      </ul>
+      
+      <h2>Developer Spotlight:</h2>
+      <p><strong>Janika Peters</strong> (Total contributions to OSCAR last 12 months: 13 commits; 2,500 added lines of code)</p>
+      <p>Janika Peters is a master's student at RWTH Aachen University and a student assistant for OSCAR. She works on monomial
+        bases of Demazure modules of Lie algebras, and in her bachelor's thesis she implemented basic functionality for linear
+        algebraic groups. Follow her on GitHub under the username <a href="https://github.com/janikapeters">janikapeters</a>.</p>
+
+      <h2>OSCAR in the movies!</h2>
+      <p>Should OSCAR be awarded an Oscar? You can decide, since we started rolling out the first few OSCAR movies! You can check
+        them out on <a href="https://tube.mathe.social/c/oscar_main/videos">tube.mathe</a>. Meet some of the OSCAR developers in
+        <a href="https://tube.mathe.social/w/rzxDtYrazfPL6jrpKvLjZZ">personal interviews</a>, and let our mascot sloth OSCAR
+        teach you about <a href="https://tube.mathe.social/w/tGevrRaSgJadGJtCUkJ8LX">Galois theory</a> and
+        <a href="https://tube.mathe.social/w/nfRPyed3BGt8EX1jEysjhx">Ehrhart polynomials</a>.</p>
+      <p>These videos and other content will also be slowly rolled out on our newly created
+        <a href="https://www.youtube.com/@oscar.algebra.system">YouTube</a> and
+        <a href="https://www.instagram.com/oscar.algebra.system/">Instagram</a> channels.</p>
+
+      <h2>Try OSCAR online!</h2>
+      <p>If you're curious about trying OSCAR, but don't want to install anything yet, you can now
+        <a href="https://www.oscar-system.org/try-online/">try OSCAR online</a>. It works completely within your browser, using
+        Jupyter notebooks hosted by the NFDI JupyterHub service.</p>
+
+      <h2>OSCAR-Shop:</h2>
+      <p>Visit the <a href="https://oscar-system.myspreadshop.de/" style="color:#004aad; font-weight:bold; text-decoration:none;">OSCAR-Shop</a> for exclusive merchandise and show your support for the project in style.</p>
+
+      <hr style="border: 0; border-top: 1px solid #eee; margin: 30px 0;" />
+      
+      <h2>Get Involved:</h2>
+      <p> Do you want to contribute to the project? Find more information at our <a href="https://www.oscar-system.org/contributing/">Contributor Guide</a> to learn how to help-from code and documentation to outreach and community support.</p>
+      <p>To unsubscribe from this newsletter, click <a href="https://lists.uni-kl.de/oscar/sigrequest/news">here</a>.</p>
+      <p>Best regards,<br>The OSCAR Team</p>
+    </div>
+  </div>
+</body>
+</html>
