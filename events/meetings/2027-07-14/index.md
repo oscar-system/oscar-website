@@ -25,9 +25,8 @@ For beginners, the first two days will cover the basics of programming in Julia 
 * tropical geometry
 * etc
 
-We expect funding to be available to support early career researchers.
+We expect funding to be available to support early career researchers.  More info to come.  If you are interested and want to be kept in the loop, please contact the organizers.
 
-More info to come.  If you are interested and want to be kept in the loop, please contact the organizers.
 
 ## Contact
 
