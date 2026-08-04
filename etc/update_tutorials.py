@@ -63,7 +63,7 @@ status_by_name = {}
 for job in jobs:
     if job.name == "Prepare Tests":
         continue
-    name = job.name.split()[-1].rstrip(":")
+    name = job.name.split()[-1][0:-1]
     status = job.conclusion
     if status is None:
         continue
