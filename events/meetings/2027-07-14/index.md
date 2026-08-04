@@ -27,6 +27,7 @@ For beginners, the first two days will cover the basics of programming in Julia 
 
 We expect funding to be available to support early career researchers.  More info to come.  If you are interested and want to be kept in the loop, please contact the organizers.
 
+For the preeeding OSCAR Developer Meeting, [click here](https://www.oscar-system.org/events/meetings/2027-07-12/).
 
 ## Contact
 
