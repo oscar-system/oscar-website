@@ -18,6 +18,8 @@ weight: 1
 
 More info to come.  If you are interested and want to be kept in the loop, please contact the organizers.
 
+For the subsequent OSCAR Summer School, [click here](https://www.oscar-system.org/events/meetings/2027-07-14/).
+
 ## Contact
 
 [Michael Joswig](https://page.math.tu-berlin.de/~joswig/),

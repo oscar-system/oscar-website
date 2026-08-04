@@ -10,7 +10,7 @@ weight: 1
 # OSCAR Summer School
 
 * When: July 14 - July 16, 2027
-* Where: TU Berlin, Fasanenstrasse 89, 10623 Berlin, rooms TBA
+* Where: TU Berlin, Fasanenstrasse 89, 10623 Berlin, rooms 3003 and 4003
 * What: A summer school on the OSCAR computer algebra system
 * Who: Current and future OSCAR users
 
@@ -25,9 +25,9 @@ For beginners, the first two days will cover the basics of programming in Julia 
 * tropical geometry
 * etc
 
-We expect funding to be available to support early career researchers.
+We expect funding to be available to support early career researchers.  More info to come.  If you are interested and want to be kept in the loop, please contact the organizers.
 
-More info to come.  If you are interested and want to be kept in the loop, please contact the organizers.
+For the preeeding OSCAR Developer Meeting, [click here](https://www.oscar-system.org/events/meetings/2027-07-12/).
 
 ## Contact
 
