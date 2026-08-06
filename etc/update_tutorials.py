@@ -2,6 +2,7 @@
 
 import os
 import sys
+from datetime import datetime
 import yaml
 from github import Github, Auth
 API_KEY = (os.getenv("API_KEY") or os.getenv("GITHUB_TOKEN") or "").strip()
