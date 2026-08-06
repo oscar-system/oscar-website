@@ -29,7 +29,7 @@ fi
 python3 -m pip install --upgrade -r etc/requirements.txt
 
 # update tutorial information
-./etc/update_tutorials.py || :
+./etc/update_tutorials.py
 
 # run jekyll
 bundle exec jekyll build --config _config.yml,_config_production.yml -d ~/data/http
