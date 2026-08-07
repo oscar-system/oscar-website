@@ -44,8 +44,9 @@ If you have not yet installed OSCAR, follow our <a href="{{site.baseurl}}/instal
   {% assign topic_tutorial = site.data.tutorials | where: "thumbnail", component | first %}
   {% assign component_url = "/tutorials/" | append: component_name | append: "/" %}
   <div class="tutorial">
-    <a style="display: block; text-align: center;{% if page.url == component_url %} font-weight: bold;{% endif %}"
+    <a
       {% if page.url == component_url %}
+          class="active"
           href="{{ site.baseurl }}/tutorials/"
       {% else %}
           href="{{ site.baseurl }}{{component_url}}#main-content"

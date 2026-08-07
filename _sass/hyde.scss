@@ -468,6 +468,15 @@ li.active > a {
     border: inherit;
 }
 
+.tutorial > a {
+  display: block;
+  text-align: center;
+}
+
+.tutorial > a.active {
+  font-weight: bold;
+}
+
 /* Clear floats after image containers */
 .tutorial_row::after {
   content: "";
