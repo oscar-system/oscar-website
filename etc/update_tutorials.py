@@ -69,7 +69,6 @@ for job in jobs:
     status = job.conclusion
     if status is None:
         continue
-    status = "success" if status == "success" else "failure"
     status_by_name[name] = status
 
 
