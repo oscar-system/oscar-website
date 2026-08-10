@@ -1,5 +1,5 @@
 <input type="checkbox" id="menu-toggle" class="menu-checkbox">
-<label for="menu-toggle" class="menu-icon">
+<label for="menu-toggle" class="menu-icon" aria-label="Toggle navigation">
   <!-- hamburger icon -->
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(0, 0, 0, 0.5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -36,7 +36,7 @@
             <ul class="submenu">
               {% for subitem in item.submenu %}
                 <li class="{% if page.url contains subitem.url %}active{% endif %}">
-                  <a href="{% if subitem.url contains 'http' %}{{ subitem.url }}{% else %}{{ site.baseurl }}{{ subitem.url }}{% endif %}" {% if subitem.url contains 'http' %}target="_blank"{% endif %}>
+                  <a href="{% if subitem.url contains 'http' %}{{ subitem.url }}{% else %}{{ site.baseurl }}{{ subitem.url }}{% endif %}" {% if subitem.url contains 'http' %}target="_blank" rel="noopener noreferrer"{% endif %}>
                     {{ subitem.title }}
                   </a>
                 </li>

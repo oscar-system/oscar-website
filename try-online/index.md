@@ -52,7 +52,7 @@ Follow the following steps to try out OSCAR online.
    Other launch options are available as well. If you accidentally launch a
    different entry, simply close the browser tab and return to the launcher page.
 
-7. You can now use OSCAR inside the Jupyter notebook.
+6. You can now use OSCAR inside the Jupyter notebook.
 
    First, run a simple statement such as `println(4)` to verify that the
    Julia kernel is connected to the notebook. This step may take several
@@ -63,7 +63,7 @@ Follow the following steps to try out OSCAR online.
 
    ![OSCAR In Jupyter](CroppedPics/jupyter-oscar.png){: style="display: block; margin-left: auto; margin-right: auto;" width="70%" }
 
-8. You are now ready to run computations with OSCAR.
+7. You are now ready to run computations with OSCAR.
 
    ![OSCAR In Jupyter Continuation](CroppedPics/jupyter-oscar-2.png){: style="display: block; margin-left: auto; margin-right: auto;" width="70%" }
 

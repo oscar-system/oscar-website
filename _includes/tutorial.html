@@ -44,16 +44,17 @@ If you have not yet installed OSCAR, follow our <a href="{{site.baseurl}}/instal
   {% assign topic_tutorial = site.data.tutorials | where: "thumbnail", component | first %}
   {% assign component_url = "/tutorials/" | append: component_name | append: "/" %}
   <div class="tutorial">
-    <a style="display: block; text-align: center;"
+    <a
       {% if page.url == component_url %}
+          class="active"
           href="{{ site.baseurl }}/tutorials/"
-          style="font-weight: bold;"
       {% else %}
           href="{{ site.baseurl }}{{component_url}}#main-content"
       {% endif %}
       >
       <img class="item_tutorial-image-link"
-           src="{{ site.baseurl }}/public/thumbnails/{{ component }}">
+           src="{{ site.baseurl }}/public/thumbnails/{{ component }}"
+           alt="">
       <div> {{ topic_tutorial.topic }} </div>
     </a>
   </div>
@@ -83,7 +84,8 @@ If you have not yet installed OSCAR, follow our <a href="{{site.baseurl}}/instal
   <div class="item_tutorial_card {{post.test_status}}">
     <div class="item_tutorial_left">
         <img class="item_tutorial-image"
-             src="{{ site.baseurl }}/public/thumbnails/{{ post.thumbnail }}">
+             src="{{ site.baseurl }}/public/thumbnails/{{ post.thumbnail }}"
+             alt="">
     </div>
     <div class="item_tutorial_right">
       <div class="item_tutorial-title">
@@ -110,7 +112,8 @@ If you have not yet installed OSCAR, follow our <a href="{{site.baseurl}}/instal
   <div class="item_tutorial_card {{post.test_status}}">
     <div class="item_tutorial_left">
         <img class="item_tutorial-image"
-             src="{{ site.baseurl }}/public/thumbnails/{{ post.thumbnail }}">
+             src="{{ site.baseurl }}/public/thumbnails/{{ post.thumbnail }}"
+             alt="">
     </div>
     <div class="item_tutorial_right">
       <div class="item_tutorial-title">
