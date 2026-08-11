@@ -9,6 +9,9 @@ weight: 1
 
 # OSCAR Summer School
 
+![Berlin](Berlin.jpg){:class="img-responsive"}
+*Photo by [ArildV](https://commons.wikimedia.org/wiki/User:ArildV), [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)*
+
 * When: July 14 - July 16, 2027
 * Where: TU Berlin, Fasanenstrasse 89, 10623 Berlin, rooms 3003 and 4003
 * What: A summer school on the OSCAR computer algebra system
