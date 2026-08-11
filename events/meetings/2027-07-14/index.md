@@ -32,6 +32,8 @@ We expect funding to be available to support early career researchers.  More inf
 
 For the preeeding OSCAR Developer Meeting, [click here](https://www.oscar-system.org/events/meetings/2027-07-12/).
 
+The OSCAR Summer School is held as a satellite event of [SIAM AG 27](https://www.math-conf.uni-osnabrueck.de/ag27/).
+
 ## Contact
 
 [Michael Joswig](https://page.math.tu-berlin.de/~joswig/),
