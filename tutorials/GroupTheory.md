@@ -1,6 +1,6 @@
 ---
-layout: tutorial
-title: GroupTheory
+layout: page
+title: Tutorials
 component: GroupTheory.png
 ---
 

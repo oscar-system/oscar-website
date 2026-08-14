@@ -2,21 +2,22 @@
 layout: default
 ---
 
-{% assign meeting_pages = site.pages | where: "meeting_nr", page.meeting_nr | sort: "name" %}
+{% assign meeting_pages = site.pages | where: "meeting_nr", page.meeting_nr | sort: "weight" %}
 {% assign parent = meeting_pages | where: "is_meeting_index", "true" | first %}
 
 <div class="meeting-nav">
-<a href="{{ parent.url | relative_url }}">{{ parent.title }}</a>
+  <a href="{{parent.url | relative_url}}" style="{% if parent.url == page.url%} font-weight: bold; {%endif%} font-size: xx-large; margin-bottom: 10px;" >{{ parent.title }}</a>
+  <br>
 {% for p in meeting_pages %}
     {% if p.is_meeting_index != true %}
-        <a href="{{ p.url | relative_url }}">{{ p.title }}</a>
+      <a href="{{ p.url | relative_url }}" {% if p.url == page.url%} style="font-weight: bold;" {%endif%}>{{ p.title }}</a>
     {% endif %}
 {% endfor %}
 </div>
 
 <div class="page">
 {% if page.is_meeting_index != true %}
-  <h1 class="page-title">{{ page.title }}</h1>
+  <h1>{{ page.title }}</h1>
 {% endif %}
   {{ content }}
 </div>

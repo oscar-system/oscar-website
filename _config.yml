@@ -17,7 +17,7 @@ plugins:
 
 # for SEO plugin
 tagline:          'OSCAR Computer Algebra System'
-logo:             /public/OSCAR_logo.png
+logo:             /public/OSCAR-Logo.svg
 
 exclude:
   - _config_production.yml
@@ -25,3 +25,7 @@ exclude:
   - LICENSE.hyde.md
   - README.hyde.md
   - README.md
+
+number_of_displayed_events_on_index_page: 4
+full_date_format: "%d %b %Y"
+month_date_format: "%b %Y"

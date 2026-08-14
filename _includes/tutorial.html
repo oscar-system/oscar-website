@@ -1,133 +1,152 @@
-For each topic, you can decide to open a static version of the jupyter notebook, powered by <a href="https://nbviewer.jupyter.org/">nbviewer</a>.
-Alternatively, you can inspect the jupyter notebook directly on <a href="https://github.com/">github</a>.
+---
 
-<div class="oscar_detail" style="margin-bottom: 0em;">
-  <details>
-    <summary>
-      How to interact with a "live" version
-    </summary>
-    Live interaction requires to download the notebook. Please select
-    the notebook of your choice, and follow the instructions below.
-    <ul>
-      <li>Go to <em>nbviewer</em>.</li>
-      <li>Find the download icon (top-right corner) and right-click on it (ctrl-click on macOS)
-        to open the context menu. Choose <em>Save Link As...</em> to download the notebook
-        (say <code>Tutorial.ipynb</code>) to a directory of your choice.
-      </li>
-      <li>Make sure that you have the <code>Oscar</code> package installed
-        (cf. the <a href="{{ site.baseurl }}/install">Installation Page</a>).
-      </li>
-      <li>Install <code>IJulia</code> by running <code>using Pkg; Pkg.add("IJulia")</code> in the Julia REPL
-        (<a href="https://github.com/JuliaLang/IJulia.jl?tab=readme-ov-file#quick-start">IJulia quick-start</a>).
-        This will automatically install <a href="https://jupyter.org/">jupyter</a>.
-        Launch <code>jupyter</code> by running <code>using IJulia; notebook()</code>.
-      </li>
-      <li> You should have landed on a page in your web browser, with <em>jupyter</em> written in the upper
-        left corner. Below is a file explorer. Open the notebook file you downloaded (e.g. <code>Tutorial.ipynb</code>).
-        You might see a pop-up with the message "Kernel not found", in which case you select a julia kernel from the
-        drop-down menu.
-      </li>
-    </ul>
-  </details>
+<p>
+  Explore <a href="https://jupyter.org/">Jupyter notebooks</a> demonstrating OSCAR’s capabilities.
+  The tutorials are designed for, and tested with, the latest stable release <strong>OSCAR v{{ site.data.release.version }}</strong>.
+</p>
+
+---
+
+<h3>Before You Start</h3>
+
+To avoid compatibility issues, make sure you're using <strong>OSCAR v{{ site.data.release.version }}</strong> (<a href="{{ site.baseurl }}/upgrade">upgrade instructions</a>).
+
+If you have not yet installed OSCAR, follow our <a href="{{site.baseurl}}/install">installation guide</a>.
+
+<div class="message">
+  <strong>Important:</strong>
+  To run tutorials locally, install IJulia (Julia support for Jupyter) by completing
+  <a href="{{site.baseurl}}/install/#optional-running-tutorials-locally-with-ijulia">
+  the optional IJulia setup step
+  </a>
+  from the installation guide.
 </div>
 
-<br/>
-Click on one of the links below to filter notebooks (and re-click to disable filtering).
+---
 
-<div class="example_box">
-  {%- for component in site.data.examples_components -%}
-  {%- assign component_url = "/tutorials/" | append: component.name | replace: " ", "" | append: "/" %}
-  <div class="example">
-    <a style="display: block; text-align: center;"
-       {% if page.url == component_url %}
-           href="{{ site.baseurl }}/tutorials/"
-           style="font-weight: bold;"
-       {% else %}
-           href="{{ site.baseurl }}{{component_url}}"
-       {% endif %}
-       >
-      <img class="item_example-image-link"
-           src="{{ site.baseurl }}/public/thumbnails/{{ component.logo }}">
-      <div style="word-break: break-word;">
-        {{ component.name }}
-      </div>
+<h3>Running Tutorials Locally</h3>
+
+<ol>
+  <li>Download the notebook of interest from the list below.</li>
+  <li>Launch Jupyter on your machine (see <a href="https://jupyter.org/">Jupyter documentation</a>).</li>
+  <li>Open the downloaded notebook, and execute it using a Julia kernel.</li>
+</ol>
+
+---
+
+<h3>Available Tutorials</h3>
+
+<!--This section creates the selector grid of tutorial topic.-->
+{% assign components = site.data.tutorials | map: "thumbnail" | uniq | sort %}
+<div class="tutorial_box">
+{% for component in components %}
+  {% assign component_name = component | replace: ".png", "" %}
+  {% assign topic_tutorial = site.data.tutorials | where: "thumbnail", component | first %}
+  {% assign component_url = "/tutorials/" | append: component_name | append: "/" %}
+  <div class="tutorial">
+    <a
+      {% if page.url == component_url %}
+          class="active"
+          href="{{ site.baseurl }}/tutorials/"
+      {% else %}
+          href="{{ site.baseurl }}{{component_url}}#main-content"
+      {% endif %}
+      >
+      <img class="item_tutorial-image-link"
+           src="{{ site.baseurl }}/public/thumbnails/{{ component }}"
+           alt="">
+      <div> {{ topic_tutorial.topic }} </div>
     </a>
   </div>
-  {%- endfor -%}
+{% endfor %}
 </div>
 
-<!--
-<br/>
-Clicking on the launch binder button will open an interactive version of
-the example, powered by <a href="https://mybinder.org">mybinder</a>.
--->
+<!-- here we make a list of tutorials and filter it to the topic if we are in a topic page-->
+{% if page.main %}
+  {% assign sometutorials = site.data.tutorials | group_by: "topic" | sort: "title" %}
+   {% for item in sometutorials %}
+    {% assign sorted = item['items'] | sort: 'title' %}
+    {% if forloop.first %}
+      {% assign sometutorials = sorted %}
+    {% else %}
+      {% assign sometutorials = sometutorials | concat: sorted %}
+    {% endif %}
+  {% endfor %}
+{% else %}
+  {% assign sometutorials = site.data.tutorials | where: "thumbnail", page.component | sort: 'title' %}
+{% endif %}
 
+<!-- This section now populates the list of tutorials -->
+<div class="gallery_tutorial_cards" id="main-content">
+  {% assign tutorials = sometutorials | where: "test_status", "success" %}
+  {% for post in tutorials %}
 
-<div class="gallery_example_cards">
-  {%- if page.main -%}
-  {%-     assign someexamples = site.data.examples_with_updated_last_modified -%}
-  {%- else -%}
-  {%-     assign someexamples = site.data.examples_with_updated_last_modified | where:"thumbnail",page.component -%}
-  {%- endif -%}
-  {%- for post in someexamples  -%}
-
-  <div class="item_example_card {{site.data.examples_status[post.filename]}}">
-    <div class="item_example_left">
-        <img class="item_example-image"
-             src="{{ site.baseurl }}/public/thumbnails/{{ post.thumbnail }}">
+  <div class="item_tutorial_card {{post.test_status}}">
+    <div class="item_tutorial_left">
+        <img class="item_tutorial-image"
+             src="{{ site.baseurl }}/public/thumbnails/{{ post.thumbnail }}"
+             alt="">
     </div>
-    <div class="item_example_right">
-      <div class="item_example-title">
+    <div class="item_tutorial_right">
+      <div class="item_tutorial-title">
+        <a href="https://github.com/{{ post.repository }}/blob/{{ post.branch }}/{{ post.filename }}.ipynb">
           {{ post.title }}
+        </a>
       </div>
-      <div class="item_example-author">Author(s): {{ post.author }}</div>
-      <div class="item_last_modified">Last modified: {{ post.date }} </div>
-      <div><a href="https://nbviewer.jupyter.org/github/{{ post.repository }}/blob/{{ post.branch }}/{{ post.filename }}.ipynb">nbviewer</a> </div>
-      <a href="https://github.com/{{ post.repository }}/blob/master/{{ post.filename }}.ipynb">Github</a>
-
+      <div class="item_tutorial-author">Author(s): {{ post.author }}</div>
+      <div class="item_last_modified">Last modified: {{ post.last_modified | date: site.full_date_format }} </div>
+      <div class="item_tutorial-category">Topic: {{ post.topic }}</div>
     </div>
   </div>
   {% endfor %}
 </div>
 
-<details style="padding-top: 2em; padding-bottom: 2em;">
+<!-- Here are the out of date tutorials, which are only visible if the list of out of date tutorials is not empty -->
+{% assign borked = sometutorials | where: "test_status", "failure" %}
+{% if borked.size > 0 %}
+<details style="padding-bottom: 2em;">
   <summary>Out of Date Tutorials</summary>
 <div class="borked">
-<div class="gallery_example_cards">
-  {%- if page.main -%}
-  {%-     assign someexamples = site.data.examples_with_updated_last_modified -%}
-  {%- else -%}
-  {%-     assign someexamples = site.data.examples_with_updated_last_modified | where:"thumbnail",page.component -%}
-  {%- endif -%}
-  {%- for post in someexamples  -%}
-  <div class="item_example_card {{site.data.examples_status[post.filename]}}">
-    <div class="item_example_left">
-        <img class="item_example-image"
-             src="{{ site.baseurl }}/public/thumbnails/{{ post.thumbnail }}">
+<div class="gallery_tutorial_cards">
+  {% for post in borked %}
+  <div class="item_tutorial_card {{post.test_status}}">
+    <div class="item_tutorial_left">
+        <img class="item_tutorial-image"
+             src="{{ site.baseurl }}/public/thumbnails/{{ post.thumbnail }}"
+             alt="">
     </div>
-    <div class="item_example_right">
-      <div class="item_example-title">
+    <div class="item_tutorial_right">
+      <div class="item_tutorial-title">
+        <a href="https://github.com/{{ post.repository }}/blob/{{ post.branch }}/{{ post.filename }}.ipynb">
           {{ post.title }}
+        </a>
       </div>
-      <div class="item_example-author">Author(s): {{ post.author }}</div>
-      <div class="item_last_modified">Last modified: {{ post.date }} </div>
-      <div><a href="https://nbviewer.jupyter.org/github/{{ post.repository }}/blob/{{ post.branch }}/{{ post.filename }}.ipynb">nbviewer</a> </div>
-      <a href="https://github.com/{{ post.repository }}/blob/master/{{ post.filename }}.ipynb">Github</a>
-
+      <div class="item_tutorial-author">Author(s): {{ post.author }}</div>
+      <div class="item_last_modified">Last modified: {{ post.last_modified | date: site.full_date_format }} </div>
     </div>
   </div>
   {% endfor %}
 </div>
 </div>
 </details>
-<span class="date">Last updated on {{ site.time | date: '%d-%m-%Y' }}</span>
+{% endif %}
+<span class="date">Tutorial grid last updated on {{ site.time | date: site.full_date_format }}.</span>
 
+---
 
-## How to contribute Tutorials
+<h3>More Tutorial Resources</h3>
 
-1. Create a jupyter notebook with the desired content.
-2. Place this notebook in a github repository of your choice.
-3. Send the link to this jupyter notebook to [Martin Bies](https://martinbies.github.io/).
+<p>
+  Looking for more resources? Check out the
+  <a href="https://github.com/micjoswig/oscar-notebooks">polymake notebooks</a> and
+  <a href="https://github.com/thofma/HeckeTutorials.jl">Hecke notebooks</a>.
+</p>
 
-Note that **tutorial authors are expected to maintain their tutorial(s)**, so that their
-tutorial notebooks function with the latest stable OSCAR release.
+---
+
+<h3>Contributing Tutorials</h3>
+
+<p>
+  Want to improve or add a tutorial? See our
+  <a href="{{site.baseurl}}/contributing#contributing-tutorials">contribution guidelines</a>.
+</p>

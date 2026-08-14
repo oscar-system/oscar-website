@@ -1,0 +1,117 @@
+name: Update Contributors
+
+on:
+  pull_request:
+    paths:
+      - "_data/contributors.yml"
+      - ".github/workflows/test-contributor-script.yml"
+      - "etc/update_contributors.py"
+  push:
+    branches: [gh-pages]
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 1 * *'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  run-contributors-update-script:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v7
+      
+    - name: Set up Python
+      uses: actions/setup-python@v7
+      with:
+        python-version: "3.x"
+
+    - name: Install Python deps
+      run: |
+        python -m pip install --upgrade pip
+        python -m pip install -r etc/requirements.txt
+
+    - name: Ensure _data/contributors.yml exists and is non-empty
+      run: |
+        test -s _data/contributors.yml
+
+    - name: Record current number of contributors (listed in contributors.yml)
+      run: |
+        yq -e 'type == "!!seq"' _data/contributors.yml >/dev/null
+        echo "PEOPLE_COUNT_BEFORE=$(yq -r 'length' _data/contributors.yml)" >> "$GITHUB_ENV"
+
+    - name: Run update-contributors script
+      env:
+        API_KEY: ${{ secrets.GITHUB_TOKEN }}
+        PYTHONUNBUFFERED: "1"
+      run: |
+        python3 etc/update_contributors.py
+
+    - name: Ensure summary.txt exists and is non-empty
+      run: |
+        test -s summary.txt
+
+    - name: Show summary.txt
+      run: |
+        echo "::group::summary.txt"
+        cat summary.txt
+        echo "::endgroup::"
+
+    - name: Ensure _data/contributors.yml exists and is non-empty
+      run: |
+        test -s _data/contributors.yml
+
+    - name: Show _data/contributors.yml
+      if: always()
+      run: |
+        echo "::group::_data/contributors.yml"
+        cat _data/contributors.yml
+        echo "::endgroup::"
+
+    - name: Validate overall structure of _data/contributors.yml (print offenders)
+      run: |
+        yq -e 'type == "!!seq" and length > 0' _data/contributors.yml >/dev/null
+        yq -r '
+          to_entries
+          | map(
+              select(
+                (.value | type != "!!map")
+                or (.value.name?   | type != "!!str" or length == 0)
+                or (.value.status? | type != "!!str" or length == 0)
+              )
+            )
+        ' _data/contributors.yml | tee /tmp/offenders.json
+        test "$(cat /tmp/offenders.json)" = "[]"
+
+    - name: Validate GitHub handles of contributors (in _data/contributors.yml) are unique
+      run: |
+        yq -e '
+          (map(.github? // "") | map(select(length > 0)) | length)
+          ==
+          (map(.github? // "") | map(select(length > 0)) | unique | length)
+        ' _data/contributors.yml
+
+    - name: Ensure that the number of contributors (in _data/contributors.yml) did not shrink
+      run: |
+        PEOPLE_COUNT_AFTER=$(yq -r 'length' _data/contributors.yml)
+        test "$PEOPLE_COUNT_AFTER" -ge "${{ env.PEOPLE_COUNT_BEFORE }}"
+
+    - name: Compute date
+      if: github.event_name != 'pull_request' && success()
+      run: echo "TODAY=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
+
+    - name: Create Pull Request
+      if: github.event_name != 'pull_request' && success()
+      uses: peter-evans/create-pull-request@v8
+      with:
+        commit-message: "Update contributors on ${{ env.TODAY }}"
+        branch: update-contributors
+        delete-branch: true
+        title: "Update contributors"
+        body-path: summary.txt
+        base: gh-pages
+        author: "update_contributors[bot] <update_contributors[bot]@users.noreply.github.com>"
+        committer: "update_contributors[bot] <update_contributors[bot]@users.noreply.github.com>"

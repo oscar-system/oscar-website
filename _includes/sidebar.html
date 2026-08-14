@@ -1,61 +1,62 @@
+<input type="checkbox" id="menu-toggle" class="menu-checkbox">
+<label for="menu-toggle" class="menu-icon" aria-label="Toggle navigation">
+  <!-- hamburger icon -->
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(0, 0, 0, 0.5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="3" y1="12" x2="21" y2="12"></line>
+    <line x1="3" y1="6" x2="21" y2="6"></line>
+    <line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg>
+</label>
 <div class="sidebar">
   <div class="container">
     <div class="sidebar-about">
-        <a href="{{ site.baseurl }}/">
-          <img class="sidebar-image" src="{{ site.baseurl }}/public/OSCAR_logo.png" alt="OSCAR Symolic Tools"/>
-        </a>
-      <p class="lead">The OSCAR project</p>
-      <hr>
+      <a href="{{ site.baseurl }}/">
+        <img class="sidebar-image" src="{{ site.baseurl }}/public/OSCAR-Logo.svg" alt="OSCAR Symbolic Tools" />
+      </a>
     </div>
 
     <nav class="sidebar-nav">
+      <div class="sidebar-nav-item {% if page.url == '/' %}active{% endif %}">
+        <a href="{{site.baseurl}}/" class="sidebar-nav-link">
+          Home
+        </a>
+    </div>
+      {% for item in site.data.sidebar %}
+        {% if item.spacer %}
+          <div style="margin-top: 0.7em;"></div>
+        {% elsif item.submenu %}
+        <div class="sidebar-nav-item {% if page.url contains item.url %}active{% endif %}">
+          <details {% if page.url contains item.url %}open{% endif %}>
+            <summary class="nav">
+              <a href="{{ site.baseurl}}{{ item.url }}" class="sidebar-nav-link">
+                {{ item.title }}
+              </a>
+            </summary>
 
-      <a class="sidebar-nav-item{% if page.url == '/' %} active{% endif %}" href="{{ site.baseurl }}/">Home</a>
-
-      <a class="sidebar-nav-item{% if page.url == '/about/' %} active{% endif %}" href="{{ site.baseurl }}/about/">About</a>
-
-      <a class="sidebar-nav-item{% if page.url == '/news/' %} active{% endif %}" href="{{ site.baseurl }}/news/">News</a>
-
-      <a class="sidebar-nav-item{% if page.url == '/install/' %} active{% endif %}" href="{{ site.baseurl }}/install/">Installation</a>
-      
-      <a class="sidebar-nav-item{% if page.url contains '/tutorials/' %} active{% endif %}" href="{{ site.baseurl }}/tutorials/">Tutorials</a>
-
-      <a class="sidebar-nav-item{% if page.url == '/documentation/' %} active{% endif %}" href="{{ site.baseurl }}/documentation/">Documentation</a>
-
-      <a class="sidebar-nav-item{% if page.url == '/community/' %} active{% endif %}" href="{{ site.baseurl }}/community/">Community</a>
-
-      <a class="sidebar-nav-item{% if page.url == '/talks/' %} active{% endif %}" href="{{ site.baseurl }}/talks/">Talks</a>
-
-      <a class="sidebar-nav-item{% if page.meeting %} active{% endif %}" href="{{ site.baseurl }}/meetings/">Meetings</a>
-
-      <a class="sidebar-nav-item{% if page.url == '/credits/' %} active{% endif %}" href="{{ site.baseurl }}/credits">Credits</a>
-
-      <a class="sidebar-nav-item{% if page.url == '/contributors/' %} active{% endif %}" href="{{ site.baseurl }}/contributors">Contributors</a>
-
-      <a class="sidebar-nav-item" href="https://book.oscar-system.org/">The OSCAR book</a>
-      
-      <a class="sidebar-nav-item" href="https://github.com/oscar-system/Oscar.jl/">Oscar.jl on Github</a>
-
-      <!-- {% comment %}
-        The code below dynamically generates a sidebar nav of pages with
-        `layout: page` in the front-matter. See readme for usage.
-      {% endcomment %}
-
-      {% assign pages_list = site.pages | sort:"name" %}
-      {% for node in pages_list %}
-        {% if node.title != null %}
-          {% if node.notinsidebar == null %}
-            {% if node.layout == "page" or node.layout == "tutorials" %}
-              <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ site.baseurl }}/{{ node.url }}">{{ node.title }}</a>
-              <p/>
-            {% endif %}
+            <ul class="submenu">
+              {% for subitem in item.submenu %}
+                <li class="{% if page.url contains subitem.url %}active{% endif %}">
+                  <a href="{% if subitem.url contains 'http' %}{{ subitem.url }}{% else %}{{ site.baseurl }}{{ subitem.url }}{% endif %}" {% if subitem.url contains 'http' %}target="_blank" rel="noopener noreferrer"{% endif %}>
+                    {{ subitem.title }}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </details>
+        </div>
+          {% else %}
+          <div class="sidebar-nav-item {% if page.url contains item.url %}active{% endif %}">
+          <a href="{{ site.baseurl}}{{ item.url }}" class="sidebar-nav-link">
+            {{ item.title }}
+          </a>
+        </div>
           {% endif %}
-        {% endif %}
-      {% endfor %} -->
-      <div class="mobile-hidden">
-        <hr>
-        {%include footer.html %}
-      </div>
+      {% endfor %}
     </nav>
+
+    <div class="mobile-hidden">
+      <hr>
+      {% include footer.html %}
+    </div>
   </div>
 </div>

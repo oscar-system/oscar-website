@@ -1,0 +1,12 @@
+[Unit]
+Description=Daily rebuilding of the website
+
+[Timer]
+# every day at 3 AM localtime
+OnCalendar=*-*-* 3:00:00
+
+# randomize the job to start between 3AM and 4 AM to avoid load spikes
+RandomizedDelaySec=1h
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,51 @@
+# SPACER
+- spacer: true
+
+- title: "About"
+  url: "/about/"
+- title: "Events"
+  url: "/events/"
+  submenu:
+    - title: "OSCAR"
+      url: "/events/meetings/"
+    - title: "Related"
+      url: "/events/other-events/"
+
+# SPACER
+- spacer: true
+
+- title: "Try Online"
+  url: "/try-online/"
+- title: "Installation"
+  url: "/install/"
+- title: "Upgrade"
+  url: "/upgrade/"
+- title: "Tutorials"
+  url: "/tutorials/"
+- title: "Documentation"
+  url: "/documentation/"
+
+# SPACER
+- spacer: true
+
+- title: "Contact & Support"
+  url: "/contact-and-support/"
+- title: "Newsletter"
+  url: "/newsletter/"
+- title: "Contributing"
+  url: "/contributing/"
+
+# SPACER
+- spacer: true
+
+- title: "Credits"
+  url: "/credits/"
+  submenu:
+    - title: "Software"
+      url: "/credits/software-credits/"  
+    - title: "People"
+      url: "/credits/contributors/"
+    - title: "Bibliography"
+      url: "/credits/bibliography/"
+    - title: "Citing OSCAR"
+      url: "/credits/Citing-OSCAR/"

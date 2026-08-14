@@ -1,0 +1,136 @@
+name: Sync OSCAR Release Information
+
+on:
+  schedule:
+    - cron: "30 6 * * *"
+  workflow_dispatch: {}
+  pull_request: {}
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+jobs:
+  release-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.x"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r etc/requirements.txt
+
+      - name: Delete and then re-create release file
+        env:
+          API_KEY: ${{ secrets.GITHUB_TOKEN }}
+          TARGET_REPO: oscar-system/Oscar.jl
+        run: |
+          python3 etc/fetch_oscar_release_information.py
+
+      - name: Ensure _data/release.yml exists and is non-empty
+        run: |
+          test -s _data/release.yml
+
+      - name: Validate _data/release.yml structure
+        run:
+          yq -e '
+            has("version")    and (.version    | type == "!!str" and length > 0) and
+            has("year")       and (.year       | type == "!!str" and length > 0) and
+            has("month")      and (.month      | type == "!!str" and length > 0) and
+            has("day")        and (.day        | type == "!!str" and length > 0) and
+            has("date")       and (.date       | type == "!!str" and length > 0) and
+            has("julia-min")  and (."julia-min"| type == "!!str" and length > 0)
+          ' _data/release.yml
+
+      - name: Determine whether _data/release.yml changed
+        id: release
+        run: |
+          set -xuo pipefail
+          set +e
+
+          git diff --quiet HEAD -- _data/release.yml
+          ec=$?
+
+          if [ $ec -eq 0 ]; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          elif [ $ec -eq 1 ]; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "git diff failed with exit code $ec"
+            git status --porcelain=v1 || true
+            exit $ec
+          fi
+
+          version="$(yq -r '.version' _data/release.yml)"
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+          published="$(yq -r '.date' _data/release.yml)"
+          published="$(date -d "$published" '+%d %b %Y')"
+          echo "published=$published" >> "$GITHUB_OUTPUT"
+
+      - name: Debug changed/version and diff
+        if: always()
+        run: |
+          echo "event_name:             ${{ github.event_name }}"
+          echo "ref:                    ${{ github.ref }}"
+          echo "sha:                    ${{ github.sha }}"
+          echo "new release?:           ${{ steps.release.outputs.changed }}"
+          echo "latest OSCAR version:   ${{ steps.release.outputs.version }}"
+          echo "latest OSCAR published: ${{ steps.release.outputs.published }}"
+
+          echo ""
+          echo "== git status =="
+          git status --porcelain=v1
+
+          echo ""
+          echo "== git diff for _data/release.yml (if any) =="
+          git --no-pager diff -- _data/release.yml || true
+
+          echo ""
+          echo "== content of created _data/release.yml =="
+          yq -P _data/release.yml || true
+
+      - name: Create issue with release checklist
+        if: github.event_name != 'pull_request' && success() && steps.release.outputs.changed == 'true'
+        uses: JasonEtco/create-an-issue@v2
+        # marketplace action : https://github.com/marketplace/actions/create-an-issue
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VERSION: ${{ steps.release.outputs.version }}
+          PUBLISHED: ${{ steps.release.outputs.published }}
+        with:
+          filename: .github/release-checklist-template.md
+          assignees: HereAround, aaruni96
+          update_existing: true
+          search_existing: open
+
+      - name: Create pull request which updates _data/release.yml
+        if: github.event_name != 'pull_request' && success()
+        uses: peter-evans/create-pull-request@v8
+        with:
+          commit-message: "Update latest OSCAR release to v${{ steps.release.outputs.version }}"
+          title: "Update latest OSCAR release to v${{ steps.release.outputs.version }}"
+          body: |
+            This PR updates `_data/release.yml` to the latest OSCAR release `v${{ steps.release.outputs.version }}`.
+
+            _Opened automatically by a scheduled workflow._
+          branch: "bot/update-latest-release-v${{ steps.release.outputs.version }}"
+          base: gh-pages
+          delete-branch: true
+          labels: "release-process"
+          author: "update_release[bot] <update_release[bot]@users.noreply.github.com>"
+          committer: "update_release[bot] <update_release[bot]@users.noreply.github.com>"

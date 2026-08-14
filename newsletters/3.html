@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OSCAR Newsletter – May 2026</title>
+</head>
+<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #222; background-color: #f5f7fa; margin: 0; padding: 0;">
+
+  <div style="max-width: 700px; margin: 40px auto; background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.08);">
+
+    <a href="https://www.oscar-system.org/newsletter/" style="text-decoration:none; color:inherit;">
+    <div style="background-color: #004aad; padding: 20px 0; text-align: center;">
+      <img src="https://www.oscar-system.org/public/OSCAR-Logo-dark.svg" alt="OSCAR Logo" style="max-width: 180px; height: auto;" />
+      <h1 style="color: #ffffff; margin: 15px 0 0; font-size: 26px;">OSCAR Newsletter – May 2026</h1>
+    </div>
+    </a>
+
+    <div style="padding: 30px;">
+      <p>Hello, OSCAR Community!</p>
+
+      <p>Welcome to the May edition of the OSCAR newsletter! We are excited to share the latest updates, features, and achievements from our community.</p>
+
+      <h2>Version 1.7.2 Released!</h2>
+      <p>New features as compared to version 1.6.0 include:</p>
+      <ul>
+        <li><strong>Algebraic Geometry:</strong> Added automatic generation of ample classes for elliptic surfaces, alongside minor improvements for finitely presented modules and cache representatives of inverses in quotient rings.</li>
+        <li><strong>Number Theory:</strong> Introduction of a new type for torsion quadratic modules. Added new functions for
+          <code>ZZLatWithIsom</code> and unit groups of finite rings, and improved the handling of non-nice polynomials in
+          <code>galois_group</code>.</li>
+        <li><strong>Combinatorics:</strong> Provided access to phylogenetic tree data available from OscarDB and extended
+          <code>betti_numbers</code> for <code>SimplicialComplex</code> to allow computing Betti numbers over a field. Added the
+          functions <code>(has_)disjoint_automorphisms</code>, <code>petersen_graph</code> and <code>clebsch_graph</code>.</li>
+        <li><strong>Polyhedral Geometry:</strong> Fixed and improved polymake visualization with jupyter, as well as
+          <code>f_vector</code> for cones with lineality and for fans with positive lineality dimension. Improved
+          <code>normal_cone</code> to support multiple vertices as input and provided an option for calculating outer or inner
+          normal cones. Field coercion and pre-set coefficient fields for polyhedra are now possible.</li>
+        <li><strong>Commutative Algebra:</strong> Added <code>puiseux_expansion</code> and improved <code>is_principal</code> for
+          ideals in multivariate rings. Allowed general subquotient modules as input to <code>vector_space_dimension</code> and
+          related functions. Fixed <code>issubset</code> for complements of prime and kpoint ideals, as well as fitting ideals
+          for free modules, resolved an <code>mres</code> issue due to presentation, and corrected the computation of lengths of
+          free resolutions of free modules.</li>
+        <li>For more details on the newest release, visit the 
+          <a href="https://github.com/oscar-system/Oscar.jl/releases/tag/v1.7.2">GitHub Release</a> or
+          our <a href="https://www.oscar-system.org">website</a>.</li>
+      </ul>
+      
+      <h2>Papers Using OSCAR:</h2>
+      <ul>
+        <li>Fabian Mäurer, Ulrich Thiel, and Gert Vercleyen in their new preprint compute
+          <a href="https://arxiv.org/abs/2601.20012">CF-Symbols and R-symbols for the Drinfeld center of the Haagerup
+          subfactor</a>, using the package <a href="https://github.com/FabianMaeurer/TensorCategories.jl">
+          TensorCategories.jl</a>, which is based on OSCAR.</li>
+        <li>Antony Della Vecchia, Michael Joswig, and Fabian Lenzen present in their new paper
+          <a href="https://doi.org/10.1016/j.jsc.2026.102582">An empirically fast Las Vegas algorithm for algebraic shifting</a>
+          of hypergraphs and simplicial complexes, for which the code has been available in OSCAR since version 1.7.0.</li>
+        <li>Gabriel Riffo and Leonard Schmitz introduce <a href="https://arxiv.org/abs/2604.19227">SignatureTensors.jl: A Package
+          for Signature Tensors in Julia</a> in their new preprint, which is compatible with OSCAR and enables both exact and
+          numerical computations with signatures. They also cite several related works in OSCAR, particularly in the context of
+          iterated integral signatures.</li>
+        <li>Veronika Körber investigates <a href="https://arxiv.org/abs/2604.21653">Triangulations and Maximal Cross-Ratio
+          Degrees</a> in her new preprint, studying the cross-ratio problem given by triangulations in the tropical world. The
+          tropical recursive algorithm by Goldner is used for computing the maximal possible degree of sets of cross-ratios using
+          9 markings. These computations use OSCAR.</li>
+      </ul>
+
+      <h2>Upcoming Events:</h2>
+      <ul>
+        <li><strong><a href="https://juliacon.org/2026/">JuliaCon 2026</a></strong> - Mainz, Germany · Aug 10-15, 2026
+          <ul style="margin-top: 5px;">
+            <li>Featuring the minisymposium: <em>Symbolic and Numerical Methods in (Nonlinear) Algebra</em>.</li>
+          </ul>
+        </li>
+        <li>
+          <strong><a href="https://sites.google.com/view/sfb195-2026">
+            TRR 195 - Annual Meeting</a></strong> - Aachen, Germany · Sept 21-24
+        </li>
+      </ul>
+      
+      <h2>Developer Spotlight:</h2>
+      <p><strong>Martin Bies</strong> (Total contributions to OSCAR last 12 months: 83 commits; 23,009 added lines of code)</p>
+      <p>Martin Bies is a postdoctoral researcher at RPTU Kaiserslautern-Landau. His research in string theory focuses on
+        distinguishing physically viable solutions from the vast landscape of possibilities, using geometric and computational
+        methods. He is a core contributor to the OSCAR computer algebra system, where his work centers on toric geometry and the
+        <code>FTheoryTools</code> module—dedicated to F-theory, a branch of string theory—bridging ideas from physics,
+        mathematics, and computer science. Learn more on <a href="https://martinbies.github.io/">his personal website</a> and
+        follow him on GitHub under the username <a href="https://github.com/HereAround">herearound</a>.</p>
+
+      <h2>OSCAR-Shop:</h2>
+      <p>Visit the <a href="https://oscar-system.myspreadshop.de/" style="color:#004aad; font-weight:bold; text-decoration:none;">OSCAR-Shop</a> for exclusive merchandise and show your support for the project in style.</p>
+
+      <hr style="border: 0; border-top: 1px solid #eee; margin: 30px 0;" />
+      
+      <h2>Get Involved:</h2>
+      <p> Do you want to contribute to the project? Find more information at our <a href="https://www.oscar-system.org/contributing/">Contributor Guide</a> to learn how to help-from code and documentation to outreach and community support.</p>
+      <p>To unsubscribe from this newsletter, click <a href="https://lists.uni-kl.de/oscar/sigrequest/news">here</a>.</p>
+      <p>Best regards,<br>The OSCAR Team</p>
+    </div>
+  </div>
+</body>
+</html>

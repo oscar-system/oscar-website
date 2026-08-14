@@ -5,7 +5,6 @@ Based on https://codepen.io/jdsteinbach/pen/GYmQjo
 .clickdesc details {
   margin: 0.5rem auto;
   padding: 0 1rem;
-  width: 40em;
   max-width: calc(100% - 2rem);
   position: relative;
   border: 1px solid #78909C;
@@ -94,44 +93,21 @@ Based on https://codepen.io/jdsteinbach/pen/GYmQjo
     margin-bottom: 0em;
 }
 
-/* auto-generated from https://forkmeon.github.io/ */
-.github-ribbon {
-  position: absolute;
-  right: 0px;
-  top: 0px;
-  width: 150px;
-  height: 150px;
-  overflow: hidden;
-  z-index: 99999;
-}
-.github-ribbon a {
-  display: inline-block;
-  width: 200px;
-  overflow: hidden;
-  padding: 6px 0px;
-  text-align: center;
-  transform: rotate(45deg);
-  text-decoration: none;
-  color: rgb(255, 255, 255);
-  position: inherit;
-  top: 45px;
-  right: -40px;
-  border-width: 1px 0px;
-  border-style: dotted;
-  border-color: rgba(255, 255, 255, 0.7);
-  font: 700 13px "Helvetica Neue", Helvetica, Arial, sans-serif;
-  box-shadow: rgba(0, 0, 0, 0.5) 0px 2px 3px 0px;
-  background-color: rgb(170, 0, 0);
-  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
-}
-
 .meeting-nav {
-  padding-bottom: 1rem;
+  margin-top: -20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 60px;
+  margin-left: -60px;
+  background: #a9ddf7;
 }
 
 .meeting-nav a {
+  display: inline-block;
   margin-left: 4px;
   margin-right: 4px;
+  font-size: x-large;
+  padding: 5px;
 }
 
 .participants-organizer { color: green; }
@@ -151,7 +127,7 @@ details.spoiler summary::after {
   margin-bottom:1em;
 }
 
-details[open] summary::after {
+details.spoiler [open] summary::after {
   display: none;
 }
 
@@ -161,29 +137,54 @@ details[open] summary::after {
   font-size:2em;
 }
 
-.failure{
-  display: none;
-}
-
-
-div.borked > div.gallery_example_cards > div.item_example_card.failure{
-  display: block;
-}
-
-div.borked > div.gallery_example_cards > div.item_example_card{
-  display: none;
-}
-
 .borked{
   background: #e4e4e7;
 }
 
-div.borked > div.gallery_example_cards > div.item_example_card {
+div.borked > div.gallery_tutorial_cards > div.item_tutorial_card {
   color: white;
   margin: 15px;
   background: #979797;
 }
 
-div.borked > div.gallery_example_cards > div.item_example_card > div.item_example_right > div> a, div.borked > div.gallery_example_cards > div.item_example_card > div.item_example_right > a{
+div.borked > div.gallery_tutorial_cards > div.item_tutorial_card > div.item_tutorial_right > div> a, div.borked > div.gallery_tutorial_cards > div.item_tutorial_card > div.item_tutorial_right > a{
   color: skyblue;
+}
+
+
+.caption {
+  text-align: center;
+  font-size: 90%;
+  margin-top: 1em;
+  font-style: italic;
+}
+
+
+// OSCAR logo on front page in "smartphone mode"
+.topcontent-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1em;
+  margin-bottom: 0em;
+  height: 5em;
+}
+
+.frontpage-headline {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .topcontent-image {
+    display: none;
+  }
+
+  .frontpage-headline {
+    display: block;
+  }
+
+  .content {
+    padding-top:    2rem;
+    padding-bottom: 2rem;
+  }
 }

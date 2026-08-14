@@ -4,17 +4,15 @@ title: Documentation
 docs:
     - name: AbstractAlgebra.jl
       url: https://nemocas.github.io/AbstractAlgebra.jl/stable/
-      description: Pure Julia package implementing generic algorithms for basic arithmetic
-                   and algebraic structures. It also defines standard interfaces for
-                   generics, that can be implemented by other packages.
+      description: Implements generic algorithms for arithmetic and algebraic structures in pure Julia. Defines standard interfaces for generics used by other packages.
 
     - name: AlgebraicSolving.jl
       url: https://algebraic-solving.github.io/
-      description: A Julia package for algebraically solving multivariate polynomial systems.
+      description: Solves multivariate polynomial systems algebraically in Julia.
 
     - name: GAP.jl
       url: https://oscar-system.github.io/GAP.jl/stable/
-      description: The interface to GAP from Julia.
+      description: Interface to GAP from Julia.
 
     - name: Hecke.jl
       url: https://thofma.github.io/Hecke.jl/stable/
@@ -22,39 +20,54 @@ docs:
 
     - name: Nemo.jl
       url: http://nemocas.github.io/Nemo.jl/stable/
-      description: The interface to the Flint, Arb and Antic C libraries from Julia.
+      description: Interface to Flint, Arb, and Antic C libraries from Julia.
 
     - name: Oscar.jl
       url: https://docs.oscar-system.org/stable/
-      description: The main OSCAR package.
+      description: Main OSCAR package.
 
     - name: Polymake.jl
       url: https://oscar-system.github.io/Polymake.jl/stable/
-      description: The interface to Polymake from Julia.
+      description: Interface to Polymake from Julia.
 
     - name: Singular.jl
       url: https://oscar-system.github.io/Singular.jl/stable/
-      description: The interface to Singular from Julia.
+      description: Interface to Singular from Julia.
+---
 
 ---
 
-<div class="message message-big">
-<a href="https://docs.oscar-system.org/stable/">Click here for the latest OSCAR manual.</a>
+### OSCAR Manual (Stable Release)
+
+<div class="message-big">
+<a href="https://docs.oscar-system.org/stable/">Read the OSCAR v{{ site.data.release.version }} manual.</a>
 </div>
-Expert users may also wish to use the [manual for the latest development version](https://docs.oscar-system.org/dev/).
 
-### Additional documentation
 
-Note that an aim of OSCAR is to combine and extend the capabilities of
-Antic (<a href="https://github.com/thofma/Hecke.jl/">Hecke</a>,
-<a href="https://github.com/Nemocas/Nemo.jl">Nemo</a>),
-<a href="https://www.gap-system.org/">GAP</a>,
-<a href="https://polymake.org/doku.php">Polymake</a>, and
-<a href="https://www.singular.uni-kl.de/">Singular</a>.
+---
 
-Below are links to documentation for Julia software projects
-encompassed by OSCAR.
-Other projects are in development now, and will be announced soon.
+### OSCAR Manual (Development Version)
+
+For expert users, the [manual for the latest development version](https://docs.oscar-system.org/dev/) is also available.
+
+---
+
+### The OSCAR Book
+
+Looking for more? The [OSCAR Book](https://book.oscar-system.org/) offers deeper insights into *OSCAR* beyond the standard documentation.
+
+---
+
+### Documentation for Related Packages
+
+OSCAR integrates and extends several powerful software projects, including:
+
+- [**Antic**](https://github.com/thofma/Hecke.jl/) (via Hecke, Nemo)
+- [**GAP**](https://www.gap-system.org/)
+- [**Polymake**](https://polymake.org/doku.php)
+- [**Singular**](https://www.singular.uni-kl.de/)
+
+Below are links to documentation for Julia software projects that are part of OSCAR.
 
 {% assign entries = page.docs | sort_natural:"name" %}
 <ul>

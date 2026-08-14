@@ -1,0 +1,6 @@
+version: "1.8.1"
+year: "2026"
+month: "8"
+day: "10"
+date: "2026-08-10"
+julia-min: "1.10"

@@ -1,0 +1,141 @@
+# Development Workflows - Notes
+
+## REPL - read eval print loop
+- Interactive programming environment
+- Type `]` to enter package mode, `backspace` to exit
+- Tab completion
+- `?` for help mode
+- `;` for shell mode
+
+
+## Environments
+- Each project has its own environment (plus the global one)
+    - Isolated set of packages
+    - Different projects can use different versions of the same package
+- `Project.toml` and `Manifest.toml` files
+    - Project.toml: what you want (direct dependencies, compatibility bounds)
+    - Manifest.toml: what you have (all transitive dependencies, exact versions)
+        - -> reproducibility
+    - If you switch julia versions a lot, use versioned manifests like `Manifest-v1.11.toml` to avoid recompiling everything.
+- In an environment, only add the packages you directly use
+- Development tools should be in the global environment
+
+
+In the following two modes:
+1. Using a list of packages
+2. Working on a package (this can be OSCAR or your toy package that depends on OSCAR)
+
+Goals:
+- get your own code running
+- edit code and see changes immediately (without restarting julia)
+
+
+## Using packages
+- have a folder for the environment
+- start julia with `julia --project=/path/to/folder` or `julia --project` for current folder
+- `] add PackageName` adds a package
+- `] add PackageName@version` for a specific version
+- `] add PackageName#rev` for a git revision (branch, tag, commit)
+- `] add https://github.com/user/repo#rev` for a package not registered in the registry (e.g. your own fork of OSCAR)
+- `] up` updates all packages in the environment
+- `] resolve` tries to resolve the environment again (useful if you manually edited Project.toml), i.e. re-creates Manifest.toml
+- `] rm PackageName` removes a package
+- `] instantiate` downloads and installs all packages in the Manifest.toml (for reproducing an environment)
+- `] status` shows the packages in the environment, with `-m` also the transitive dependencies
+
+- `using PackageName` to load a package
+- `include("file.jl")` to load your own code
+- `Revise.includet("file.jl")` (instead of the previous one) to load your own code with hotloading
+    - until julia 1.11: only reloads methods, no structs or constants
+    - from julia 1.12: also reloads structs and constants (experimental)
+
+Up/downsides:
+- good for small scripts
+- only works if you don't need to change the code of the packages you use
+- no tests, no CI, no docs
+- order of file inclusion may matter, and needs to be memorized by you
+
+
+## Developing packages
+- Fork and clone the package repo (e.g. OSCAR), `gh repo fork oscar-system/Oscar.jl`
+- (or create a new empty folder with the following structure)
+- Folder structure of a package:
+    - `Project.toml` and `Manifest.toml`
+    - `src/` folder with the code (main file named like the package, e.g. `Oscar.jl`, that includes all other files)
+    - `test/` folder with tests (usually a file `runtests.jl` that includes other test files)
+    - optional: `docs/` folder with documentation
+- "package folder" = "environment folder"
+- move into the package folder, start julia with `julia --project`
+- the pkg mode commands we learned previously work here as well, but they now affect just the dependencies of this package
+    - you usually only need `] resolve` and `] up` after pulling changes from git that touch the `Project.toml`
+- `using PackageName` to load the local version of the package
+- if you **first** do `using Revise` and **then** `using PackageName`, you get hot reloading of your package code
+    - until julia 1.11: only reloads methods, no structs or constants
+    - from julia 1.12: also reloads structs and constants (experimental)
+
+Remarks to importing and exporting:
+- to make a function from a package available outside (e.g. in the REPL) without full qualification (i.e. `PackageName.functionname`), you need to export it in the package code: `export functionname` in the package code
+- `using PackageName` makes all exported names available
+- to add new dispatches to an existing function from a dependency, you need to `import DependencyPackageName: functionname` first, then you can add new methods with `function functionname(args...) ... end`
+
+
+## Break for exercises 1 and 2
+
+
+## Tests
+- tests are important...
+    - to verify that your code works as intended
+    - to verify that future changes do not break existing functionality
+- more details: <https://docs.julialang.org/en/v1/stdlib/Test/>
+- usually in the `test/` folder of a package, and then separated into multiple files/folders similar to the `src/` folder
+- Running tests:
+    - in the REPL, `] test` runs (all) the tests of the current package
+    - in OSCAR we have `Oscar.test_module("foldername"; new=false)` and `Oscar.test_experimental_module("experimentalfoldername"; new=false)` to run just the tests of one folder inside `test/`, with `new=true` it will test in a new temporary session
+- Testing framework: `Test` (part of the standard library)
+- `@test expr` where `expr` evaluates to a boolean checks if `expr` is true
+- `@test_throws ExceptionType expr` checks if evaluating `expr` throws an exception of type `ExceptionType`
+- `@testset "name" begin ... end` groups multiple tests together
+- In OSCAR, all tests are run on GitHub Actions for each pull request (continuous integration, CI)
+
+## Documentation
+- Documentation is important...
+    - to make your code usable by others (and yourself in the future)
+    - to explain design decisions
+- more details: <https://documenter.juliadocs.org/stable/>
+- Documentation consists of two parts:
+    1. docstrings in the code
+    2. markdown pages with more extensive documentation, that include the docstrings
+- Docstrings:
+    - attached to methods, types, modules, constants, ...
+    - written in markdown
+    - placed immediately before the item they document
+    - the first line is indented by exactly 4 spaces, and usuall contains the method signature
+    - accessed with `?` in the REPL, e.g. `?functionname`
+    - can be multi-line, and can use markdown formatting
+    - can contain code examples, see *doctests* below
+- Documentation pages:
+    - in the `docs/src/` folder of a package
+    - written in markdown
+    - can include docstrings with `@docs`
+- build documentation locally:
+    - in general with `julia --project=docs/ -e 'using Pkg; Pkg.develop(PackageSpec(path=pwd())); Pkg.instantiate(); include("docs/make.jl")'` in the package folder
+    - for OSCAR with `Oscar.build_doc()` in the REPL
+
+## Docstrings
+- examples in docstrings that are also executed as part of the tests
+- output is checked one to one, so it must match exactly (including types, formatting, ...)
+    - no randomness, no system-dependent output (e.g. memory addresses)!
+    - but there are ways to deal with this, see <https://documenter.juliadocs.org/stable/man/doctests/#Filtering-Doctests>
+- implemented as a markdown code block starting with `jldoctest` and then a REPL-like example
+    ```jldoctest
+    julia> f(x) = x^2;
+
+    julia> f(3)
+    9
+    ```
+- CI will run all doctests for you automatically and report errors (on every pull request in OSCAR)
+- locally, you can run all doctests with `using Documenter; Documenter.doctest(Oscar)` in the REPL
+- to automatically repair all doctests use `using Documenter; Documenter.doctest(Oscar; fix=true)` in the REPL
+    - this will change your files!
+    - check the changes, and only commit them if they are correct
+    - to only repair few specific docstrings (in OSCAR), use `Oscar.doctest_fix("path/to/file.jl")` instead
