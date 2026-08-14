@@ -77,6 +77,13 @@ julia-min: "{julia_min}"
 
 print(f"RELEASEFILEPATH is {RELEASEFILEPATH}")
 
+if not os.path.exists(RELEASEFILEPATH):
+    print(
+        f"{RELEASEFILEPATH} was not found! This may indicate a weird bug of some sort. "
+        "The script will still continue, but you should double check that everything "
+        "works as expected."
+    )
+
 temporary_path = f"{RELEASEFILEPATH}.tmp"
 with open(temporary_path, "w", encoding="utf-8") as releasefile:
     releasefile.write(RELEASESTRING)
