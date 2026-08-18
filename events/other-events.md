@@ -21,6 +21,9 @@ For a full list of SFB-TRR 195 meetings and activities, see their [event calenda
       <strong>{{ event.title }}</strong><br>
       <em>{{ event.start-date | date: site.full_date_format }} – {{ event.end-date | date: site.full_date_format }}</em><br>
       Location: {{ event.location }}<br>
+      {% if event.supplementary %}
+        <a href="{{ event.supplementary }}" target="_blank" rel="noopener noreferrer">Supplementary Material</a><br>
+      {% endif %}
       {% if event.website %}
         {% comment %}Related events use external websites, which open in an isolated new tab.{% endcomment %}
         <a href="{{ event.website }}" target="_blank" rel="noopener noreferrer">More information</a>
