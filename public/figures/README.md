@@ -41,6 +41,9 @@ because Hecke/Nemo/AbstractAlgebra are Julia *and* cornerstone at once.
 
 ## Credits
 
+`OSCAR-overview.tex` is by Martin Bies, who contributed it in
+[#483](https://github.com/oscar-system/oscar-website/pull/483).
+
 `OSCAR-organigram.tex` was written by Claude Opus 5 (Anthropic), directed
 and reviewed by OSCAR developers; the commits carry `Co-Authored-By`
 trailers for the individual steps.
