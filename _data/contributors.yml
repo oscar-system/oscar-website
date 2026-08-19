@@ -238,6 +238,7 @@
   repos:
   - Nemocas/AbstractAlgebra.jl
   - oscar-system/Oscar.jl
+  - thofma/Hecke.jl
 - name: Raul Epure
   affiliation: University of Kaiserslautern-Landau
   github: raulepure
@@ -1132,6 +1133,12 @@
   status: retired
   repos:
   - oscar-system/Oscar.jl
+- name: Gabriel Wu
+  email: 13583761+lucifer1004@users.noreply.github.com
+  github: lucifer1004
+  status: active
+  repos:
+  - thofma/Hecke.jl
 - name: Yichao Yu
   affiliation: Duke University
   email: yyc1992@gmail.com
