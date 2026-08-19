@@ -117,6 +117,8 @@
 \shade[shading=gradshading, rounded corners] (0.5*\w, 0.51*\h) ellipse (\a pt and \b pt);
 
 % 16. Draw point cloud to symbolize all other selling points that we cannot talk about.
+% Fixed seed, else `rand` reseeds from the clock and every build moves the dots.
+\pgfmathsetseed{2020}
 \pgfmathsetmacro{\cx}{0.5*\dimexpr\w}
 \pgfmathsetmacro{\cy}{0.51*\dimexpr\h}
 \pgfmathsetmacro{\a}{0.35*\dimexpr\w}
