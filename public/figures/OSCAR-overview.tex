@@ -1,5 +1,12 @@
 \documentclass{standalone}
 
+% Byte-reproducible output, as in OSCAR-organigram.tex; skipped under pdflatex,
+% which has no \pdfvariable.
+\ifdefined\pdfvariable
+  \pdfvariable suppressoptionalinfo=127
+  \pdfvariable trailerid{[<d1d3f7b0a3d34a3f9c1e5b8a7f2c6e40> <d1d3f7b0a3d34a3f9c1e5b8a7f2c6e40>]}
+\fi
+
 % For pictures
 \usepackage{pgfmath}
 \usepackage{tikz}

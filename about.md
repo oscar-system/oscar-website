@@ -28,7 +28,9 @@ developers, and students to construct, manipulate, and compute with
 sophisticated algebraic and geometric structures in a modular, extensible, and
 expressive environment.
 
-<img src="{{ site.baseurl }}/public/figures/OSCAR-overview.png" alt="OSCAR Overview" width="70%" style="margin-left:13%;" align="center">
+<a href="{{ site.baseurl }}/public/figures/OSCAR-overview.svg" title="Show full size">
+<img src="{{ site.baseurl }}/public/figures/OSCAR-overview.svg" alt="OSCAR Overview" width="70%" style="margin-left:13%;" align="center">
+</a>
 
 <!-- Source and build instructions: public/figures/ -->
 

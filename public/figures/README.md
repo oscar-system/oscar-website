@@ -2,10 +2,10 @@
 
 Two TikZ drawings and everything needed to rebuild them:
 
-| source                  | output                | used by                       |
-|-------------------------|-----------------------|-------------------------------|
-| `OSCAR-overview.tex`    | `OSCAR-overview.png`  | `about.md`                    |
-| `OSCAR-organigram.tex`  | `.pdf` and `.svg`     | talks; more technical         |
+| source                  | output            | used by                   |
+|-------------------------|-------------------|---------------------------|
+| `OSCAR-overview.tex`    | `.pdf` and `.svg` | `about.md`                |
+| `OSCAR-organigram.tex`  | `.pdf` and `.svg` | talks; more technical     |
 
 The two are deliberately different in kind: the overview is the friendly
 picture, the organigram is the detailed one. Both stay.

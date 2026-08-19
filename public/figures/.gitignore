@@ -1,5 +1,4 @@
 *.aux
 *.log
 *.synctex.gz
-# only the web-sized PNG of the overview is committed, its PDF is a by-product
-OSCAR-overview.pdf
+*.png
