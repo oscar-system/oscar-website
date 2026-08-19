@@ -1,11 +1,18 @@
 \documentclass{standalone}
 
-% Byte-reproducible output, as in OSCAR-organigram.tex; skipped under pdflatex,
-% which has no \pdfvariable.
-\ifdefined\pdfvariable
-  \pdfvariable suppressoptionalinfo=127
-  \pdfvariable trailerid{[<d1d3f7b0a3d34a3f9c1e5b8a7f2c6e40> <d1d3f7b0a3d34a3f9c1e5b8a7f2c6e40>]}
-\fi
+% Byte-reproducible output, as in OSCAR-organigram.tex.
+\pdfvariable suppressoptionalinfo=127
+\pdfvariable trailerid{[<d1d3f7b0a3d34a3f9c1e5b8a7f2c6e40> <d1d3f7b0a3d34a3f9c1e5b8a7f2c6e40>]}
+
+% Fira, as in OSCAR-organigram.tex.  Needs lualatex; pdflatex will not do.
+\usepackage{fontspec}
+% Scale: Fira has a bigger x-height than the Latin Modern this replaced, so
+% without it the callout text wraps onto an extra line and outgrows its box.
+\setsansfont{FiraSans}[Extension=.otf, UprightFont=*-Medium, BoldFont=*-Bold,
+                       Scale=0.9]
+\setmonofont{FiraMono}[Extension=.otf, UprightFont=*-Regular, BoldFont=*-Bold]
+\renewcommand{\familydefault}{\sfdefault}
+\hyphenpenalty=10000    % no "Galois Co-homology" inside the boxes
 
 % For pictures
 \usepackage{pgfmath}
