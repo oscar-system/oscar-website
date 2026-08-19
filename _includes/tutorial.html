@@ -78,7 +78,7 @@ If you have not yet installed OSCAR, follow our <a href="{{site.baseurl}}/instal
 
 <!-- This section now populates the list of tutorials -->
 <div class="gallery_tutorial_cards" id="main-content">
-  {% assign tutorials = sometutorials | where: "test_status", "success" %}
+  {% assign tutorials = sometutorials | where_exp: "tutorial", "tutorial.test_status != 'failure'" %}
   {% for post in tutorials %}
 
   <div class="item_tutorial_card {{post.test_status}}">

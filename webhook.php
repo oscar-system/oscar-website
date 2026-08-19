@@ -39,24 +39,25 @@ set_exception_handler(function($e) {
     echo "Error on line {$e->getLine()}: " . htmlSpecialChars($e->getMessage());
     die();
 });
+if ($hookSecret === false || trim($hookSecret) === '') {
+    throw new \Exception('GITHUB_WEBHOOK_SECRET is not configured.');
+}
 
 $rawPost = NULL;
 
-if ($hookSecret !== NULL) {
-    if (!isset($_SERVER['HTTP_X_HUB_SIGNATURE'])) {
-        throw new \Exception("HTTP header 'X-Hub-Signature' is missing.");
-    } elseif (!extension_loaded('hash')) {
-        throw new \Exception("Missing 'hash' extension to check the secret code validity.");
-    }
-    list($algo, $hash) = explode('=', $_SERVER['HTTP_X_HUB_SIGNATURE'], 2) + array('', '');
-    if (!in_array($algo, hash_algos(), TRUE)) {
-        throw new \Exception("Hash algorithm '$algo' is not supported.");
-    }
-    $rawPost = file_get_contents('php://input');
-    if (!hash_equals($hash, hash_hmac($algo, $rawPost, $hookSecret))) {
-        throw new \Exception('Hook secret does not match.');
-    }
-};
+if (!isset($_SERVER['HTTP_X_HUB_SIGNATURE'])) {
+    throw new \Exception("HTTP header 'X-Hub-Signature' is missing.");
+} elseif (!extension_loaded('hash')) {
+    throw new \Exception("Missing 'hash' extension to check the secret code validity.");
+}
+list($algo, $hash) = explode('=', $_SERVER['HTTP_X_HUB_SIGNATURE'], 2) + array('', '');
+if (!in_array($algo, hash_algos(), TRUE)) {
+    throw new \Exception("Hash algorithm '$algo' is not supported.");
+}
+$rawPost = file_get_contents('php://input');
+if (!hash_equals($hash, hash_hmac($algo, $rawPost, $hookSecret))) {
+    throw new \Exception('Hook secret does not match.');
+}
 
 if (!isset($_SERVER['CONTENT_TYPE'])) {
     throw new \Exception("Missing HTTP 'Content-Type' header.");
@@ -64,7 +65,8 @@ if (!isset($_SERVER['CONTENT_TYPE'])) {
     throw new \Exception("Missing HTTP 'X-Github-Event' header.");
 }
 
-switch ($_SERVER['CONTENT_TYPE']) {
+$contentType = trim(explode(';', $_SERVER['CONTENT_TYPE'], 2)[0]);
+switch ($contentType) {
     case 'application/json':
         $json = $rawPost ?: file_get_contents('php://input');
         break;

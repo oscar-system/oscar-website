@@ -3,6 +3,7 @@
 import os
 import sys
 from datetime import datetime
+
 import yaml
 from github import Github, Auth
 API_KEY = (os.getenv("API_KEY") or os.getenv("GITHUB_TOKEN") or "").strip()
@@ -39,7 +40,7 @@ for tutorial in tutorials:
         repo = g.get_repo(reponame)
         commits = repo.get_commits(path=filepath, sha=branch)
         commit = commits[0]
-        dt = commit.stats.last_modified_datetime
+        dt = commit.commit.committer.date
     except Exception as e:
         print(e)
         print("Using fallback default date for the tutorial.")
