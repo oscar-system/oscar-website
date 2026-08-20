@@ -34,10 +34,11 @@
 \definecolor{framecol}  {HTML}{1A1A1A}   % the OSCAR frame
 
 % ------------------------------------------------------------- dimensions
-\def\ncols{5}            % number of wrapper/cornerstone columns
 \def\ntopics{5}          % number of mathematical areas
-\def\colw{52.9}          % column width
+\def\colw{52.9}          % width of the outer two columns
+\def\colwmid{46}         % ... and of the three between them
 \def\colgap{1.8}
+\def\gutter{20.6}        % free strip right of the columns, for the f4ncgb arrow
 \def\topicw{45}          % width of an area box
 \def\topicgap{8}
 \def\basegap{4.5}        % gap between the boxes of the bottom row
@@ -60,10 +61,9 @@
 \def\rad{3.5}            % corner radius, boxes
 \def\radbig{5}           % corner radius, the two containers
 
-\pgfmathsetmacro{\stackw}{\ncols*\colw+(\ncols-1)*\colgap}
+\pgfmathsetmacro{\stackw}{2*\colw+3*\colwmid+4*\colgap+\gutter}
 \pgfmathsetmacro{\hStack}{\yWrap-\yCorner+\hCorner}    % wrapper row + cornerstone row
 \pgfmathsetmacro{\topicmargin}{(\stackw-\ntopics*\topicw-(\ntopics-1)*\topicgap)/2}
-\newcommand{\colx}[1]{(#1-1)*(\colw+\colgap)}          % left edge of column #1
 \newcommand{\topicx}[1]{\topicmargin+(#1-1)*(\topicw+\topicgap)}
 
 % ----------------------------------------------------------------- styles
@@ -72,9 +72,9 @@
                     inner sep=0pt, text=white},
   topic/.style   = {box, fill=topicblue, minimum width=\topicw mm,
                     minimum height=\hTopic mm, font=\fontsize{16}{19}\selectfont},
-  wrap/.style    = {box, fill=wrapgreen, text=black, minimum width=\colw mm,
+  wrap/.style    = {box, fill=wrapgreen, text=black, minimum width=\colwmid mm,
                     minimum height=\hWrap mm, font=\fontsize{20}{20}\selectfont},
-  core/.style    = {box, fill=coregreen, minimum width=\colw mm,
+  core/.style    = {box, fill=coregreen, minimum width=\colwmid mm,
                     minimum height=\hCorner mm},
   coretitle/.style = {anchor=north, yshift=-3mm, inner sep=0pt, text=white,
                     font=\fontsize{20}{20}\selectfont},
@@ -84,7 +84,7 @@
   listbox/.style = {box, fill=subgreen, anchor=north, align=left,
                     text width=32mm, inner xsep=4mm, inner ysep=2mm},
   base/.style    = {box, fill=basegrey, text=black,
-                    minimum width=38mm, minimum height=\hBase mm,
+                    minimum width=40mm, minimum height=\hBase mm,
                     font=\fontsize{20}{20}\selectfont},
   ours/.style    = {base, fill=baseamber},
   frame/.style   = {rounded corners=\radbig mm, line width=0.7mm, draw=framecol},
@@ -96,11 +96,14 @@
                     line width=0.6mm, line cap=round, line join=round},
   dep/.style     = {arrowcol, line width=0.8mm, line cap=butt,
                     -{Triangle[length=2.8mm,width=2.8mm]}},
+  % the wrappers and their systems call each other, hence two heads
+  depboth/.style = {dep, {Triangle[length=2.8mm,width=2.8mm]}-{Triangle[length=2.8mm,width=2.8mm]}},
 }
 
 % \dropto{<from>}{<to>}          straight down
 % \routeto{<from>}{<depth>}{<to>}  down by <depth>, sideways, then down
 \newcommand{\dropto}[2]{\draw[dep] (#1) -- (#1 |- #2);}
+\newcommand{\dropboth}[2]{\draw[depboth] (#1) -- (#1 |- #2);}
 \newcommand{\routeto}[3]{\draw[dep] (#1) -- ++(0,{-(#2)}) -| (#3);}
 
 % \complist{<heading>}{<items, separated by \\>} -- contents of a listbox
@@ -127,17 +130,18 @@
 
 % ============================================== Julia wrapper packages
 % Column 1 is pure Julia all the way down, hence one tall box.
-\node[wrap, minimum height=\hStack mm,
-      top color=wrapgreen, bottom color=coregreen] (aa) at ({\colx{1}},\yWrap) {};
-\node[wrap] (gapjl)  at ({\colx{2}},\yWrap) {GAP.jl};
-\node[wrap] (pmjl)   at ({\colx{3}},\yWrap) {Polymake.jl};
-\node[wrap] (singjl) at ({\colx{4}},\yWrap) {Singular.jl};
-\node[wrap, font=\fontsize{15}{15}\selectfont] (asjl) at ({\colx{5}},\yWrap) {AlgebraicSolving.jl};
+\node[wrap, minimum width=\colw mm, minimum height=\hStack mm,
+      top color=wrapgreen, bottom color=coregreen] (aa) at (0,\yWrap) {};
+\node[wrap] (gapjl)  at ($(aa.north east)+(\colgap,0)$)    {GAP.jl};
+\node[wrap] (pmjl)   at ($(gapjl.north east)+(\colgap,0)$) {Polymake.jl};
+\node[wrap] (singjl) at ($(pmjl.north east)+(\colgap,0)$)  {Singular.jl};
+\node[wrap, minimum width=\colw mm, font=\fontsize{15}{15}\selectfont]
+             (asjl)  at ($(singjl.north east)+(\colgap,0)$) {AlgebraicSolving.jl};
 
 % ================================================= cornerstone systems
-\node[core] (gap)  at ({\colx{2}},\yCorner) {};  \node[coretitle] at (gap.north)  {GAP};
-\node[core] (pm)   at ({\colx{3}},\yCorner) {};  \node[coretitle] at (pm.north)   {polymake};
-\node[core] (sing) at ({\colx{4}},\yCorner) {};  \node[coretitle] at (sing.north) {Singular};
+\node[core] (gap)  at (gapjl.north west  |- 0,\yCorner) {};  \node[coretitle] at (gap.north)  {GAP};
+\node[core] (pm)   at (pmjl.north west   |- 0,\yCorner) {};  \node[coretitle] at (pm.north)   {polymake};
+\node[core] (sing) at (singjl.north west |- 0,\yCorner) {};  \node[coretitle] at (sing.north) {Singular};
 
 \node[sub] (hecke)    at (aa.north |- 0,\yCorner)              {Hecke.jl};
 \node[sub] (nemo)     at ($(hecke.south)-(0,\subgap)$)         {Nemo.jl};
@@ -156,11 +160,10 @@
 \node[ours] (flint) at ($(gmp.north east)+(\basegap,0)$)   {FLINT};
 \node[base] (cdd)   at ($(flint.north east)+(\basegap,0)$) {cdd};
 \node[base] (bliss) at ($(cdd.north east)+(\basegap,0)$)   {bliss};
-\node[base, minimum width=45.5mm]
-            (gpi)   at ($(bliss.north east)+(\basegap,0)$) {GPI-Space};
-\node[ours] (msolve) at ($(gpi.north east)+(\basegap,0)$) {msolve};
+\node[ours] (msolve)  at ($(bliss.north east)+(\basegap,0)$)  {msolve};
+\node[base] (f4ncgb)  at ($(msolve.north east)+(\basegap,0)$) {f4ncgb};
 \node[anchor=west, inner sep=0pt, font=\fontsize{20}{20}\selectfont]
-      at ($(msolve.east)+(3,0)$)
+      at ($(f4ncgb.east)+(3,0)$)
       {\textperiodcentered\,\textperiodcentered\,\textperiodcentered};
 
 % ========================================================= layer dividers
@@ -181,8 +184,8 @@
 
 % ================================================== areas -> wrappers
 \dropto {[xshift=-16.8mm]nt.south}{aa.north}
-\routeto{[xshift=-10.8mm]nt.south}{9.4}{[xshift=-19.4mm]gapjl.north}
-\routeto{[xshift=-4.8mm]nt.south}{7.1}{[xshift=-19.9mm]pmjl.north}
+\routeto{[xshift=-10.8mm]nt.south}{9.4}{[xshift=-14.7mm]gapjl.north}
+\routeto{[xshift=-4.8mm]nt.south}{7.1}{[xshift=-15.5mm]pmjl.north}
 
 \routeto{[xshift=-9.1mm]grp.south}{1.4}{[xshift=14.2mm]aa.north}
 \dropto {[xshift=-0.9mm]grp.south}{gapjl.north}
@@ -190,25 +193,25 @@
 \dropto {[xshift=1.3mm]trop.south}{pmjl.north}
 
 \routeto{[xshift=-19mm]ag.south}{3.9}{[xshift=19.1mm]aa.north}
-\routeto{[xshift=-6.4mm]ag.south}{6}{[xshift=20.2mm]pmjl.north}
-\dropto {[xshift=7.8mm]ag.south}{singjl.north}
+\routeto{[xshift=-6.4mm]ag.south}{6}{[xshift=17.5mm]pmjl.north}
+\dropto {[xshift=2mm]ag.south}{singjl.north}
 \routeto{[xshift=14.5mm]ag.south}{4.7}{[xshift=4.5mm]asjl.north}
 
 \routeto{[xshift=-2mm]nc.south}{7.8}{[xshift=13.8mm]singjl.north}
+\dropto {[xshift=14.2mm]nc.south}{f4ncgb.north}
 
 % ============================================ wrappers -> cornerstones
-\dropto{gapjl.south}{gap.north}
-\dropto{pmjl.south}{pm.north}
-\dropto{singjl.south}{sing.north}
-\dropto{asjl.south}{msolve.north}
+\dropboth{gapjl.south}{gap.north}
+\dropboth{pmjl.south}{pm.north}
+\dropboth{singjl.south}{sing.north}
+\dropto{[xshift=-17.5mm]asjl.south}{msolve.north}
 
 % ======================================= cornerstones -> foundations
-\dropto {[xshift=20.55mm]aa.south}{flint.north}
-\routeto{[xshift=-22.85mm]pm.south}{8}{[xshift=7.9mm]flint.north}
-\routeto{[xshift=-16.85mm]pm.south}{12}{[xshift=7.4mm]cdd.north}
-\dropto {[xshift=1.15mm]pm.south}{bliss.north}
-\routeto{[xshift=-23.55mm]sing.south}{16}{[xshift=13.9mm]flint.north}
-\dropto {[xshift=-5.55mm]sing.south}{gpi.north}
+\dropto {[xshift=21.55mm]aa.south}{flint.north}
+\routeto{[xshift=-19.5mm]pm.south}{8}{[xshift=4.9mm]flint.north}
+\dropto {[xshift=-10.5mm]pm.south}{cdd.north}
+\dropto {[xshift=14.5mm]pm.south}{bliss.north}
+\routeto{[xshift=-19.3mm]sing.south}{14}{[xshift=10.9mm]flint.north}
 
 \end{tikzpicture}
 \end{document}

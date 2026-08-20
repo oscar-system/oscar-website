@@ -23,10 +23,11 @@ in `git diff` when the drawing really changed.
 ## Editing the organigram
 
 Colours and all layout dimensions sit in two blocks at the top of the
-`.tex`; the body is one node per box. Columns are placed by index via
-`\colx{n}` / `\topicx{n}`, so a new column means bumping `\ncols` and
-adding a node — the area row re-centres itself and the frame grows with
-it.
+`.tex`; the body is one node per box. The five columns are chained left
+to right, so a new one is a single node and their widths may differ —
+the middle three are narrower than `\colw` to leave `\gutter`, the strip
+on the right that the f4ncgb arrow runs down. The area row is placed by
+index via `\topicx{n}` and re-centres itself over the whole width.
 
 Arrows use two helpers:
 
