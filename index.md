@@ -94,6 +94,12 @@ Learn more about these and other ways to contribute on our [Contributing page]({
 
 If you use OSCAR in your work, please cite us! Details can be found on the [Citing OSCAR]({{site.baseurl}}/credits/Citing-OSCAR/) page.
 
+---
+
+## 🧮 OSCAR Shop
+
+The [OSCAR Shop](https://oscar-system.myspreadshop.de/) offers OSCAR shirts and other branded merchandise.
+
 ----
 
 ## 🏛 Funding
