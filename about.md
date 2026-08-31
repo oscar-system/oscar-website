@@ -182,7 +182,7 @@ algebraic solving.
 
 🤖 **[Contributing Guide]({{site.baseurl}}/contributing/)** – Learn how to contribute code, documentation, or ideas.
 
-🧮 **[OSCAR Merchandise](https://oscar-system.myspreadshop.de/)** – OSCAR-branded items to support and represent the project.
+🧮 **[OSCAR Shop](https://oscar-system.myspreadshop.de/)** – OSCAR shirts and other branded merchandise.
 
 🤝 **[Contact & Support]({{site.baseurl}}/contact-and-support/)** – Find ways to connect, ask questions, or get help.
 
