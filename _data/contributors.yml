@@ -520,15 +520,9 @@
   - oscar-system/Oscar.jl
   - thofma/Hecke.jl
 - name: Cassandra Koenen
-  email: 73822292+CassandraKoenen@users.noreply.github.com
+  email: contact@cassandra-koenen.de
   github: CassandraKoenen
   status: active
-  repos:
-  - oscar-system/Oscar.jl
-- name: Cassandra Koenen
-  email: contact@cassandra-koenen.de
-  status: active
-  comment: Co-author of commit 65dba4b52da178154e66181d41f7000caa2e336c
   repos:
   - oscar-system/Oscar.jl
 - name: Gaurish Korpal
