@@ -149,6 +149,7 @@
   status: active
   repos:
   - oscar-system/Oscar.jl
+  - oscar-system/Singular.jl
 - name: Jinghao Chen
   affiliation: University of Science and Technology of China
   email: chenjinghao@mail.ustc.edu.cn
@@ -518,6 +519,12 @@
   repos:
   - oscar-system/Oscar.jl
   - thofma/Hecke.jl
+- name: Cassandra Koenen
+  email: contact@cassandra-koenen.de
+  github: CassandraKoenen
+  status: active
+  repos:
+  - oscar-system/Oscar.jl
 - name: Gaurish Korpal
   affiliation: University of Auckland, New Zealand
   email: gkorpal@zohomail.in
@@ -606,7 +613,7 @@
   email: luber@math.tu-berlin.de
   github: danteluber
   website: https://sites.google.com/view/dantelubermath/home
-  status: retired
+  status: active
   repos:
   - oscar-system/Oscar.jl
 - name: Eoin Mackall
@@ -752,7 +759,7 @@
   email: paemurru@math.uni-sb.de
   github: paemurru
   website: https://www.math.uni-sb.de/ag/brandhorst/index.php?option=com_content&view=article&id=49:paemurru-en&catid=18&lang=en&Itemid=114
-  status: retired
+  status: active
   repos:
   - Nemocas/Nemo.jl
   - oscar-system/Oscar.jl
