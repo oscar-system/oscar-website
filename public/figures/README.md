@@ -12,7 +12,10 @@ picture, the organigram is the detailed one. Both stay.
 
     make            # everything committed here
     make clean      # LaTeX by-products
-    make OSCAR-organigram.png   # 300 dpi raster of any figure
+    make OSCAR-organigram.svg   # build the organigram SVG and its PDF prerequisite
+    make OSCAR-overview.svg         # build the overview SVG and its PDF prerequisite
+    make OSCAR-organigram.png   # optional 300 dpi raster
+    make OSCAR-overview.png         # optional 300 dpi raster
 
 Needs LuaLaTeX with TikZ and Fira Sans (TeX Live's `fira`), plus poppler
 (`pdftocairo`, `pdftoppm`).
