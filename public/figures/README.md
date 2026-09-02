@@ -20,8 +20,9 @@ picture, the organigram is the detailed one. Both stay.
 Needs LuaLaTeX with TikZ and Fira Sans (TeX Live's `fira`), plus poppler
 (`pdftocairo`, `pdftoppm`).
 
-Both figures build byte for byte reproducibly, so a rebuild only shows up
-in `git diff` when the drawing really changed.
+The figure builds are designed to be reproducible within a consistent build
+environment, so a rebuild should only show up in `git diff` when the drawing
+changed. Generated files may vary between build environments.
 
 ## Editing the organigram
 
