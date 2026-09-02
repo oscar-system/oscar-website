@@ -1,14 +1,30 @@
 \documentclass{standalone}
 
+% Byte-reproducible output, as in OSCAR-organigram.tex.
+\pdfvariable suppressoptionalinfo=127
+\pdfvariable trailerid{[<d1d3f7b0a3d34a3f9c1e5b8a7f2c6e40> <d1d3f7b0a3d34a3f9c1e5b8a7f2c6e40>]}
+
+% Fira, as in OSCAR-organigram.tex.  Needs lualatex; pdflatex will not do.
+\usepackage{fontspec}
+% Scale: Fira has a bigger x-height than the Latin Modern this replaced, so
+% without it the callout text wraps onto an extra line and outgrows its box.
+\setsansfont{FiraSans}[Extension=.otf, UprightFont=*-Medium, BoldFont=*-Bold,
+                       Scale=0.9]
+\setmonofont{FiraMono}[Extension=.otf, UprightFont=*-Regular, BoldFont=*-Bold]
+\renewcommand{\familydefault}{\sfdefault}
+\hyphenpenalty=10000    % no "Galois Co-homology" inside the boxes
+
 % For pictures
 \usepackage{pgfmath}
 \usepackage{tikz}
 \usetikzlibrary{shapes, positioning, arrows.meta, patterns, math, decorations.pathreplacing, decorations.pathmorphing}
-\definecolor{c3}{RGB}{255, 191, 0} % Amber
-\definecolor{c2}{RGB}{86, 193, 255} % Deep Sky Blue
-\definecolor{c1}{RGB}{2, 117, 186} % International Klein Blue
-\definecolor{c4}{RGB}{130, 233, 70} % Green-Yellow
-\definecolor{c5}{RGB}{47, 109, 29} % Army Green
+% Same palette as OSCAR-organigram.tex, taken from the OSCAR logo and website.
+\definecolor{c1}{HTML}{0A5F86} % the five disciplines
+\definecolor{c2}{HTML}{AFD5E8} % backdrop
+\definecolor{c3}{HTML}{FAB916} % application callouts
+\definecolor{c4}{HTML}{B7DE96} % unused
+\definecolor{c5}{HTML}{38663C} % the systems below
+\definecolor{c6}{HTML}{B4622D} % arrows
 
 
 \begin{document}
@@ -73,50 +89,52 @@
 % \node[text width=\boxwidth, align=center, color = white] at (4*\dd + 3.5*\secondboxwidth, 0.04*\h) {Singular};
 
 % 9. Draw flow chart arrows leading off from Number Theory
-\draw[very thick, orange, -{Latex[scale=0.7]}] (\dd + 0.5*\boxwidth, 0.27*\h) -- (\dd + 0.5*\boxwidth, 0.2*\h);
+\draw[very thick, c6, -{Latex[scale=0.7]}] (\dd + 0.5*\boxwidth, 0.27*\h) -- (\dd + 0.5*\boxwidth, 0.2*\h);
 
-\draw[very thick, orange] (1*\dd + 0.5*\boxwidth + 0.15*\boxwidth, 0.27*\h) -- (1*\dd + 0.5*\boxwidth + 0.15*\boxwidth, 0.24*\h);
-\draw[very thick, orange] (1*\dd + 0.5*\boxwidth + 0.15*\boxwidth, 0.24*\h) -- (2*\dd + 1.5*\secondboxwidth - 0.25*\boxwidth, 0.24*\h);
-\draw[very thick, orange, -{Latex[scale=0.7]}] (2*\dd + 1.5*\secondboxwidth - 0.25*\boxwidth, 0.24*\h) -- (2*\dd + 1.5*\secondboxwidth - 0.25*\boxwidth, 0.2*\h);
+\draw[very thick, c6] (1*\dd + 0.5*\boxwidth + 0.15*\boxwidth, 0.27*\h) -- (1*\dd + 0.5*\boxwidth + 0.15*\boxwidth, 0.24*\h);
+\draw[very thick, c6] (1*\dd + 0.5*\boxwidth + 0.15*\boxwidth, 0.24*\h) -- (2*\dd + 1.5*\secondboxwidth - 0.25*\boxwidth, 0.24*\h);
+\draw[very thick, c6, -{Latex[scale=0.7]}] (2*\dd + 1.5*\secondboxwidth - 0.25*\boxwidth, 0.24*\h) -- (2*\dd + 1.5*\secondboxwidth - 0.25*\boxwidth, 0.2*\h);
 
-\draw[very thick, orange] (1*\dd + 0.5*\boxwidth + 0.3*\boxwidth, 0.27*\h) -- (1*\dd + 0.5*\boxwidth + 0.30*\boxwidth, 0.23*\h);
-\draw[very thick, orange] (1*\dd + 0.5*\boxwidth + 0.3*\boxwidth, 0.23*\h) -- (3*\dd + 2.5*\secondboxwidth - 0.25*\boxwidth, 0.23*\h);
-\draw[very thick, orange, -{Latex[scale=0.7]}] (3*\dd + 2.5*\secondboxwidth - 0.25*\boxwidth, 0.23*\h) -- (3*\dd + 2.5*\secondboxwidth - 0.25*\boxwidth, 0.2*\h);
+\draw[very thick, c6] (1*\dd + 0.5*\boxwidth + 0.3*\boxwidth, 0.27*\h) -- (1*\dd + 0.5*\boxwidth + 0.30*\boxwidth, 0.23*\h);
+\draw[very thick, c6] (1*\dd + 0.5*\boxwidth + 0.3*\boxwidth, 0.23*\h) -- (3*\dd + 2.5*\secondboxwidth - 0.25*\boxwidth, 0.23*\h);
+\draw[very thick, c6, -{Latex[scale=0.7]}] (3*\dd + 2.5*\secondboxwidth - 0.25*\boxwidth, 0.23*\h) -- (3*\dd + 2.5*\secondboxwidth - 0.25*\boxwidth, 0.2*\h);
 
 % 10. Draw flow chart arrows leading off from Group Theory
-\draw[very thick, orange, -{Latex[scale=0.7]}] (2*\dd + 1.8*\boxwidth, 0.27*\h) -- (2*\dd + 1.8*\boxwidth, 0.2*\h);
+\draw[very thick, c6, -{Latex[scale=0.7]}] (2*\dd + 1.8*\boxwidth, 0.27*\h) -- (2*\dd + 1.8*\boxwidth, 0.2*\h);
 
-\draw[very thick, orange] (2*\dd + 1.5*\boxwidth, 0.27*\h) -- (2*\dd + 1.5*\boxwidth, 0.26*\h);
-\draw[very thick, orange] (2*\dd + 1.5*\boxwidth, 0.26*\h) -- (\dd + 0.5*\secondboxwidth + 0.2*\secondboxwidth, 0.26*\h);
-\draw[very thick, orange, -{Latex[scale=0.7]}] (\dd + 0.5*\secondboxwidth + 0.2*\secondboxwidth, 0.26*\h) -- (\dd + 0.5*\secondboxwidth + 0.2*\secondboxwidth, 0.2*\h);
+\draw[very thick, c6] (2*\dd + 1.5*\boxwidth, 0.27*\h) -- (2*\dd + 1.5*\boxwidth, 0.26*\h);
+\draw[very thick, c6] (2*\dd + 1.5*\boxwidth, 0.26*\h) -- (\dd + 0.5*\secondboxwidth + 0.2*\secondboxwidth, 0.26*\h);
+\draw[very thick, c6, -{Latex[scale=0.7]}] (\dd + 0.5*\secondboxwidth + 0.2*\secondboxwidth, 0.26*\h) -- (\dd + 0.5*\secondboxwidth + 0.2*\secondboxwidth, 0.2*\h);
 
 % 11. Draw flow chart arrows leading off from Tropical Geometry
-\draw[very thick, orange, -{Latex[scale=0.7]}] (3*\dd + 2.7*\boxwidth, 0.27*\h) -- (3*\dd + 2.7*\boxwidth, 0.2*\h);
+\draw[very thick, c6, -{Latex[scale=0.7]}] (3*\dd + 2.7*\boxwidth, 0.27*\h) -- (3*\dd + 2.7*\boxwidth, 0.2*\h);
 
 % 12. Draw flow chart arrows leading off from Tropical Geometry
-\draw[very thick, orange, -{Latex[scale=0.7]}] (4*\dd + 3.5*\boxwidth, 0.27*\h) -- (4*\dd + 3.5*\boxwidth, 0.2*\h);
+\draw[very thick, c6, -{Latex[scale=0.7]}] (4*\dd + 3.5*\boxwidth, 0.27*\h) -- (4*\dd + 3.5*\boxwidth, 0.2*\h);
 
-\draw[very thick, orange, -{Latex[scale=0.7]}] (4*\dd + 3.9*\boxwidth, 0.27*\h) -- (4*\dd + 3.9*\boxwidth, 0.2*\h);
+\draw[very thick, c6, -{Latex[scale=0.7]}] (4*\dd + 3.9*\boxwidth, 0.27*\h) -- (4*\dd + 3.9*\boxwidth, 0.2*\h);
 
-\draw[very thick, orange] (4*\dd + 3.2*\boxwidth, 0.27*\h) -- (4*\dd + 3.2*\boxwidth, 0.25*\h);
-\draw[very thick, orange] (4*\dd + 3.2*\boxwidth, 0.25*\h) -- (\dd + 0.9*\secondboxwidth, 0.25*\h);
-\draw[very thick, orange, -{Latex[scale=0.7]}] (\dd + 0.9*\secondboxwidth, 0.25*\h) -- (\dd + 0.9*\secondboxwidth, 0.2*\h);
+\draw[very thick, c6] (4*\dd + 3.2*\boxwidth, 0.27*\h) -- (4*\dd + 3.2*\boxwidth, 0.25*\h);
+\draw[very thick, c6] (4*\dd + 3.2*\boxwidth, 0.25*\h) -- (\dd + 0.9*\secondboxwidth, 0.25*\h);
+\draw[very thick, c6, -{Latex[scale=0.7]}] (\dd + 0.9*\secondboxwidth, 0.25*\h) -- (\dd + 0.9*\secondboxwidth, 0.2*\h);
 
 % 13. Draw flow chart arrows leading off from Non-Commutative Algebra and Free Probability Theory
-\draw[very thick, orange, -{Latex[scale=0.7]}] (5*\dd + 4.5*\boxwidth, 0.27*\h) -- (5*\dd + 4.5*\boxwidth, 0.2*\h);
+\draw[very thick, c6, -{Latex[scale=0.7]}] (5*\dd + 4.5*\boxwidth, 0.27*\h) -- (5*\dd + 4.5*\boxwidth, 0.2*\h);
 
 %% 14. Draw flow chart arrows leading off from .jl packages to Cornerstones
-%\draw[very thick, orange, -{Latex[scale=2.5]}] (2*\dd + 1.5*\secondboxwidth, 0.12*\h) -- (2*\dd + 1.5*\secondboxwidth, 0.08*\h);
-%\draw[very thick, orange, -{Latex[scale=2.5]}] (3*\dd + 2.5*\secondboxwidth, 0.12*\h) -- (3*\dd + 2.5*\secondboxwidth, 0.08*\h);
-%\draw[very thick, orange, -{Latex[scale=2.5]}] (4*\dd + 3.5*\secondboxwidth, 0.12*\h) -- (4*\dd + 3.5*\secondboxwidth, 0.08*\h);
+%\draw[very thick, c6, -{Latex[scale=2.5]}] (2*\dd + 1.5*\secondboxwidth, 0.12*\h) -- (2*\dd + 1.5*\secondboxwidth, 0.08*\h);
+%\draw[very thick, c6, -{Latex[scale=2.5]}] (3*\dd + 2.5*\secondboxwidth, 0.12*\h) -- (3*\dd + 2.5*\secondboxwidth, 0.08*\h);
+%\draw[very thick, c6, -{Latex[scale=2.5]}] (4*\dd + 3.5*\secondboxwidth, 0.12*\h) -- (4*\dd + 3.5*\secondboxwidth, 0.08*\h);
 
 % 15. Shade transition in the center
-\pgfdeclareradialshading{gradshading}{\pgfpoint{0cm}{0cm}} {rgb(0cm)=(1,0.65,0); rgb(1cm)=(0.34,0.76,1)}
+\pgfdeclareradialshading{gradshading}{\pgfpoint{0cm}{0cm}} {rgb(0cm)=(0.706,0.384,0.176); rgb(1cm)=(0.686,0.835,0.910)}  % c6 -> c2
 \pgfmathsetmacro{\a}{0.75*\boxwidth}
 \pgfmathsetmacro{\b}{0.08*\h}
 \shade[shading=gradshading, rounded corners] (0.5*\w, 0.51*\h) ellipse (\a pt and \b pt);
 
 % 16. Draw point cloud to symbolize all other selling points that we cannot talk about.
+% Fixed seed, else `rand` reseeds from the clock and every build moves the dots.
+\pgfmathsetseed{2020}
 \pgfmathsetmacro{\cx}{0.5*\dimexpr\w}
 \pgfmathsetmacro{\cy}{0.51*\dimexpr\h}
 \pgfmathsetmacro{\a}{0.35*\dimexpr\w}

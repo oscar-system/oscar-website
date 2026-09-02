@@ -1,0 +1,217 @@
+% !TEX TS-program = lualatex
+% OSCAR organigram.  Redraw of the original, a 2020 Keynote drawing that
+% was later edited in Affinity Designer.  Build with `make`, or:
+%
+%     lualatex OSCAR-organigram.tex
+%
+% Coordinates are in millimetres, y pointing up.  Everything you are
+% likely to change lives in the two configuration blocks below.
+\documentclass[border=3mm]{standalone}
+
+% Byte-reproducible output: no timestamps, and a fixed trailer ID in place of
+% the random one, so the committed PDF changes only when the drawing does.
+\pdfvariable suppressoptionalinfo=127
+\pdfvariable trailerid{[<5be15cfc1fdee8c6e98f233ff4586422> <5be15cfc1fdee8c6e98f233ff4586422>]}
+
+\usepackage{fontspec}
+% Medium as the upright weight, as in the original (which used Helvetica Neue).
+\setsansfont{FiraSans}[Extension=.otf, UprightFont=*-Medium, BoldFont=*-Bold]
+\renewcommand{\familydefault}{\sfdefault}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,decorations.pathreplacing}
+
+% ---------------------------------------------------------------- colours
+% Blue from the website (#069), amber and slate from the OSCAR logo.
+\definecolor{topicblue} {HTML}{0A5F86}   % the five mathematical areas
+\definecolor{juliablue} {HTML}{AFD5E8}   % Oscar.jl backdrop
+\definecolor{wrapgreen} {HTML}{B7DE96}   % Julia wrapper packages
+\definecolor{coregreen} {HTML}{38663C}   % cornerstone systems
+\definecolor{subgreen}  {HTML}{55984F}   % components inside a cornerstone
+\definecolor{basegrey}  {HTML}{D9D9DC}   % third-party libraries
+\definecolor{baseamber} {HTML}{FAB916}   % third-party libraries co-developed by us
+\definecolor{arrowcol}  {HTML}{B4622D}   % dependency arrows
+\definecolor{framecol}  {HTML}{1A1A1A}   % the OSCAR frame
+
+% ------------------------------------------------------------- dimensions
+\def\ntopics{5}          % number of mathematical areas
+\def\colw{52.9}          % width of the outer two columns
+\def\colwmid{46}         % ... and of the three between them
+\def\colgap{1.8}
+\def\gutter{20.6}        % free strip right of the columns, for the f4ncgb arrow
+\def\topicw{45}          % width of an area box
+\def\topicgap{8}
+\def\basegap{4.5}        % gap between the boxes of the bottom row
+
+\def\yOscarTop{158}      % Oscar.jl backdrop
+\def\yOscarBot{88.5}
+\def\yTopic{144.5}       % top edge of the area row
+\def\hTopic{42.5}
+\def\yWrap{86.5}         % top edge of the wrapper row
+\def\hWrap{12.7}
+\def\yCorner{66.5}       % top edge of the cornerstone row
+\def\hCorner{42.5}
+\def\yBase{4}            % top edge of the foundations row
+\def\hBase{14}
+\def\yFrameTop{173.5}    % OSCAR frame
+\def\yFrameBot{20}
+\def\yDashJulia{70.5}    % Julia / cornerstone divider
+\def\subgap{2.9}         % between components inside a cornerstone
+\def\titleh{12}          % space a cornerstone title takes at the top
+\def\rad{3.5}            % corner radius, boxes
+\def\radbig{5}           % corner radius, the two containers
+
+\pgfmathsetmacro{\stackw}{2*\colw+3*\colwmid+4*\colgap+\gutter}
+\pgfmathsetmacro{\hStack}{\yWrap-\yCorner+\hCorner}    % wrapper row + cornerstone row
+\pgfmathsetmacro{\topicmargin}{(\stackw-\ntopics*\topicw-(\ntopics-1)*\topicgap)/2}
+\newcommand{\topicx}[1]{\topicmargin+(#1-1)*(\topicw+\topicgap)}
+
+% ----------------------------------------------------------------- styles
+\tikzset{
+  box/.style     = {anchor=north west, rounded corners=\rad mm, align=center,
+                    inner sep=0pt, text=white},
+  topic/.style   = {box, fill=topicblue, minimum width=\topicw mm,
+                    minimum height=\hTopic mm, font=\fontsize{16}{19}\selectfont},
+  wrap/.style    = {box, fill=wrapgreen, text=black, minimum width=\colwmid mm,
+                    minimum height=\hWrap mm, font=\fontsize{20}{20}\selectfont},
+  core/.style    = {box, fill=coregreen, minimum width=\colwmid mm,
+                    minimum height=\hCorner mm},
+  coretitle/.style = {anchor=north, yshift=-3mm, inner sep=0pt, text=white,
+                    font=\fontsize{20}{20}\selectfont},
+  sub/.style     = {box, fill=subgreen, anchor=north,
+                    minimum width=40mm, minimum height=9.8mm,
+                    font=\fontsize{14}{14}\selectfont},
+  listbox/.style = {box, fill=subgreen, anchor=north, align=left,
+                    text width=32mm, inner xsep=4mm, inner ysep=2mm},
+  base/.style    = {box, fill=basegrey, text=black,
+                    minimum width=40mm, minimum height=\hBase mm,
+                    font=\fontsize{20}{20}\selectfont},
+  ours/.style    = {base, fill=baseamber},
+  frame/.style   = {rounded corners=\radbig mm, line width=0.7mm, draw=framecol},
+  backdrop/.style= {rounded corners=\radbig mm},
+  grouplabel/.style = {anchor=north west, inner sep=0pt, font=\fontsize{20}{20}\selectfont},
+  sidelabel/.style  = {anchor=east, inner sep=0pt, font=\fontsize{24}{24}\bfseries},
+  divider/.style = {dashed, dash pattern=on 2.1mm off 2.1mm},
+  brace/.style   = {decorate, decoration={brace, amplitude=5mm},
+                    line width=0.6mm, line cap=round, line join=round},
+  dep/.style     = {arrowcol, line width=0.8mm, line cap=butt,
+                    -{Triangle[length=2.8mm,width=2.8mm]}},
+  % the wrappers and their systems call each other, hence two heads
+  depboth/.style = {dep, {Triangle[length=2.8mm,width=2.8mm]}-{Triangle[length=2.8mm,width=2.8mm]}},
+}
+
+% \dropto{<from>}{<to>}          straight down
+% \routeto{<from>}{<depth>}{<to>}  down by <depth>, sideways, then down
+\newcommand{\dropto}[2]{\draw[dep] (#1) -- (#1 |- #2);}
+\newcommand{\dropboth}[2]{\draw[depboth] (#1) -- (#1 |- #2);}
+\newcommand{\routeto}[3]{\draw[dep] (#1) -- ++(0,{-(#2)}) -| (#3);}
+
+% \complist{<heading>}{<items, separated by \\>} -- contents of a listbox
+\newcommand{\complist}[2]{\fontsize{12}{14}\selectfont\bfseries #1\par
+  \fontsize{10.5}{12.5}\selectfont\mdseries #2}
+\newcommand{\li}{\textbullet~}
+
+\begin{document}
+\begin{tikzpicture}[x=1mm, y=1mm]
+
+% ============================================================ the OSCAR box
+\draw[frame] (-3.5,\yFrameTop) rectangle (\stackw+3.5,\yFrameBot);
+\node[grouplabel] at (3,\yFrameTop-4) {OSCAR};
+
+\fill[backdrop, juliablue] (0,\yOscarTop) rectangle (\stackw,\yOscarBot);
+\node[grouplabel] at (3,\yOscarTop-4) {Oscar.jl};
+
+% ================================================== mathematical areas
+\node[topic] (nt)   at ({\topicx{1}},\yTopic) {number theory};
+\node[topic] (grp)  at ({\topicx{2}},\yTopic) {group and\\representation\\theory};
+\node[topic] (trop) at ({\topicx{3}},\yTopic) {tropical and\\polyhedral\\geometry};
+\node[topic] (ag)   at ({\topicx{4}},\yTopic) {algebraic\\geometry and\\commutative\\algebra};
+\node[topic] (nc)   at ({\topicx{5}},\yTopic) {non-\\commutative\\algebra and\\free probability\\theory};
+
+% ============================================== Julia wrapper packages
+% Column 1 is pure Julia all the way down, hence one tall box.
+\node[wrap, minimum width=\colw mm, minimum height=\hStack mm,
+      top color=wrapgreen, bottom color=coregreen] (aa) at (0,\yWrap) {};
+\node[wrap] (gapjl)  at ($(aa.north east)+(\colgap,0)$)    {GAP.jl};
+\node[wrap] (pmjl)   at ($(gapjl.north east)+(\colgap,0)$) {Polymake.jl};
+\node[wrap] (singjl) at ($(pmjl.north east)+(\colgap,0)$)  {Singular.jl};
+\node[wrap, minimum width=\colw mm, font=\fontsize{15}{15}\selectfont]
+             (asjl)  at ($(singjl.north east)+(\colgap,0)$) {AlgebraicSolving.jl};
+
+% ================================================= cornerstone systems
+\node[core] (gap)  at (gapjl.north west  |- 0,\yCorner) {};  \node[coretitle] at (gap.north)  {GAP};
+\node[core] (pm)   at (pmjl.north west   |- 0,\yCorner) {};  \node[coretitle] at (pm.north)   {polymake};
+\node[core] (sing) at (singjl.north west |- 0,\yCorner) {};  \node[coretitle] at (sing.north) {Singular};
+
+\node[sub] (hecke)    at (aa.north |- 0,\yCorner)              {Hecke.jl};
+\node[sub] (nemo)     at ($(hecke.south)-(0,\subgap)$)         {Nemo.jl};
+\node[sub, font=\fontsize{12}{12}\selectfont]
+           (abstract) at ($(nemo.south)-(0,\subgap)$)          {AbstractAlgebra.jl};
+\node[listbox] (gappkg) at ($(gap.north)-(0,\titleh)$)
+      {\complist{packages}{\li atlasrep\\\li ctbllib\\\li transgrp\\\li\textellipsis}};
+\node[listbox] (pmapp)  at ($(pm.north)-(0,\titleh)$)
+      {\complist{applications}{\li fan\\\li polytope\\\li tropical\\\li\textellipsis}};
+
+\node[sub] (plural)   at ($(sing.north)-(0,\titleh)$)          {PLURAL};
+\node[sub] (letter)   at ($(plural.south)-(0,\subgap+1.7)$)    {Letterplace};
+
+% ============================================== third-party foundations
+\node[base] (gmp)   at (-1.4,\yBase) {GMP};
+\node[ours] (flint) at ($(gmp.north east)+(\basegap,0)$)   {FLINT};
+\node[base] (cdd)   at ($(flint.north east)+(\basegap,0)$) {cdd};
+\node[base] (bliss) at ($(cdd.north east)+(\basegap,0)$)   {bliss};
+\node[ours] (msolve)  at ($(bliss.north east)+(\basegap,0)$)  {msolve};
+\node[base] (f4ncgb)  at ($(msolve.north east)+(\basegap,0)$) {f4ncgb};
+\node[anchor=west, inner sep=0pt, font=\fontsize{20}{20}\selectfont]
+      at ($(f4ncgb.east)+(3,0)$)
+      {\textperiodcentered\,\textperiodcentered\,\textperiodcentered};
+
+% ========================================================= layer dividers
+% The frame is the OSCAR / outside-world boundary, so no dashed line there.
+\draw[divider] (-32,\yDashJulia) -- (\stackw+3,\yDashJulia);
+
+\draw[brace] (-19,\yWrap-\hWrap) -- (-19,\yOscarTop);
+\node[sidelabel] at (-26,{(\yWrap-\hWrap+\yOscarTop)/2}) {Julia};
+\draw[brace] (-19,\yCorner-\hCorner) -- (-19,\yCorner);
+\node[sidelabel] at (-26,{\yCorner-\hCorner/2})          {Cornerstones};
+\draw[brace] (-19,\yBase-\hBase) -- (-19,\yBase);
+\node[sidelabel] at (-26,{\yBase-\hBase/2})              {Foundations};
+
+\node[anchor=east, inner sep=0pt, font=\fontsize{13}{13}\selectfont]
+      (legend) at (\stackw+3.5,{\yBase-\hBase-6}) {co-developed within OSCAR};
+\fill[baseamber, rounded corners=1mm]
+      ([xshift=-3mm,yshift=-2.2mm]legend.west) rectangle ++(-7,4.4);
+
+% ================================================== areas -> wrappers
+\dropto {[xshift=-16.8mm]nt.south}{aa.north}
+\routeto{[xshift=-10.8mm]nt.south}{9.4}{[xshift=-14.7mm]gapjl.north}
+\routeto{[xshift=-4.8mm]nt.south}{7.1}{[xshift=-15.5mm]pmjl.north}
+
+\routeto{[xshift=-9.1mm]grp.south}{1.4}{[xshift=14.2mm]aa.north}
+\dropto {[xshift=-0.9mm]grp.south}{gapjl.north}
+
+\dropto {[xshift=1.3mm]trop.south}{pmjl.north}
+
+\routeto{[xshift=-19mm]ag.south}{3.9}{[xshift=19.1mm]aa.north}
+\routeto{[xshift=-6.4mm]ag.south}{6}{[xshift=17.5mm]pmjl.north}
+\dropto {[xshift=2mm]ag.south}{singjl.north}
+\routeto{[xshift=14.5mm]ag.south}{4.7}{[xshift=4.5mm]asjl.north}
+
+\routeto{[xshift=-2mm]nc.south}{7.8}{[xshift=13.8mm]singjl.north}
+\dropto {[xshift=14.2mm]nc.south}{f4ncgb.north}
+
+% ============================================ wrappers -> cornerstones
+\dropboth{gapjl.south}{gap.north}
+\dropboth{pmjl.south}{pm.north}
+\dropboth{singjl.south}{sing.north}
+\dropto{[xshift=-17.5mm]asjl.south}{msolve.north}
+
+% ======================================= cornerstones -> foundations
+\dropto {[xshift=21.55mm]aa.south}{flint.north}
+\routeto{[xshift=-19.5mm]pm.south}{8}{[xshift=4.9mm]flint.north}
+\dropto {[xshift=-10.5mm]pm.south}{cdd.north}
+\dropto {[xshift=14.5mm]pm.south}{bliss.north}
+\routeto{[xshift=-19.3mm]sing.south}{14}{[xshift=10.9mm]flint.north}
+
+\end{tikzpicture}
+\end{document}
