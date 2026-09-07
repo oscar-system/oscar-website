@@ -221,12 +221,6 @@
   status: retired
   comment: Worked for Janko on modules
   repos: []
-- name: John E
-  email: jeis4wpi@outlook.com
-  status: active
-  comment: Co-author of commit ec09aa9c8f183c756105132463681e195ed0e4b0
-  repos:
-  - Nemocas/Nemo.jl
 - name: Christian Eder
   affiliation: University of Kaiserslautern-Landau
   email: ederc@rptu.de
@@ -242,8 +236,14 @@
   github: jeis4wpi
   website: https://jeis4wpi.github.io/
   status: active
+  comment: Co-author of commit ec09aa9c8f183c756105132463681e195ed0e4b0
+  aka:
+  - John E
+  aka_email:
+  - jeis4wpi@outlook.com
   repos:
   - Nemocas/AbstractAlgebra.jl
+  - Nemocas/Nemo.jl
   - oscar-system/Oscar.jl
   - thofma/Hecke.jl
 - name: Raul Epure
