@@ -236,8 +236,14 @@
   github: jeis4wpi
   website: https://jeis4wpi.github.io/
   status: active
+  comment: Co-author of commit ec09aa9c8f183c756105132463681e195ed0e4b0
+  aka:
+  - John E
+  aka_email:
+  - jeis4wpi@outlook.com
   repos:
   - Nemocas/AbstractAlgebra.jl
+  - Nemocas/Nemo.jl
   - oscar-system/Oscar.jl
   - thofma/Hecke.jl
 - name: Raul Epure
@@ -1065,10 +1071,10 @@
   - oscar-system/Oscar.jl
 - name: Andrew P. Turner
   affiliation: Virginia Tech
-  email: apturner@vt.edu
+  email: apturner.physics@gmail.com
   github: apturner
   website: https://apturner.net/
-  status: active
+  status: retired
   repos:
   - oscar-system/Oscar.jl
 - name: Grégory Vanuxem
