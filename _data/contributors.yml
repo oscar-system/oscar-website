@@ -221,6 +221,12 @@
   status: retired
   comment: Worked for Janko on modules
   repos: []
+- name: John E
+  email: jeis4wpi@outlook.com
+  status: active
+  comment: Co-author of commit ec09aa9c8f183c756105132463681e195ed0e4b0
+  repos:
+  - Nemocas/Nemo.jl
 - name: Christian Eder
   affiliation: University of Kaiserslautern-Landau
   email: ederc@rptu.de
@@ -1068,7 +1074,7 @@
   email: apturner@vt.edu
   github: apturner
   website: https://apturner.net/
-  status: active
+  status: retired
   repos:
   - oscar-system/Oscar.jl
 - name: Grégory Vanuxem
