@@ -109,8 +109,11 @@
   year: 2023
   doi: 10.26204/KLUEDO/7351
 - name: Some thoughts and experiments on Bergman's compact amalgamation problem
+  journal_url: https://doi.org/10.1007/s13366-023-00709-8
   preprint_url: https://arxiv.org/abs/2304.08365
   authors: Michael Joswig, Mario Kummer, Andreas Thom, Claudia He Yun
+  journal: Beiträge zur Algebra und Geometrie / Contributions to Algebra and Geometry
+  volume: 65
   month: Apr
   year: 2023
 - name: Toric Geometry in OSCAR
