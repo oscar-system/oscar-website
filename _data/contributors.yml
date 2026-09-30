@@ -248,7 +248,8 @@
   - oscar-system/Oscar.jl
   - thofma/Hecke.jl
 - name: Sebastian Engelhardt
-  email: 66025443+Sebas777-gif@users.noreply.github.com
+  email: seen00001@stud.uni-saarland.de
+  affiliation: Saarland university
   github: Sebas777-gif
   status: active
   repos:
@@ -420,6 +421,7 @@
   - oscar-system/Oscar.jl
 - name: Andreas Hochenegger
   email: andreas.hochenegger@polimi.it
+  affiliation: Politecnico di Milano, Italy
   status: active
   comment: Co-author of commit 1b81959c9a20c15daa6e490e587176a52d259b83
   repos:
@@ -1165,7 +1167,7 @@
   status: active
   repos:
   - thofma/Hecke.jl
-- name: Sai Asish Y
+- name: Sai Asish Yamani
   email: say.apm35@gmail.com
   github: SAY-5
   status: active
