@@ -35,7 +35,7 @@ To report a bug or issue, submit it to our [GitHub issue tracker](https://github
 
 You can also use our [GitHub discussion forum](https://github.com/oscar-system/Oscar.jl/discussions) for public discussions. A free [GitHub account](https://github.com) is required to participate.
 
-However, for questions that should be easy for the OSCAR community to find and answer, we encourage the use of [OSCAR Discourse](https://oscar.discourse.group/).
+We strongly encourage using [OSCAR Discourse](https://oscar.discourse.group/) for questions whose answers are of general interest to the OSCAR community, so others can find them later.
 
 ---
 
