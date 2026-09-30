@@ -167,6 +167,7 @@
   status: active
   repos:
   - Nemocas/AbstractAlgebra.jl
+  - oscar-system/Oscar.jl
 - name: Andrei Comaneci
   affiliation: TU Berlin
   email: comenaci@math.tu-berlin.de
@@ -246,6 +247,12 @@
   - Nemocas/Nemo.jl
   - oscar-system/Oscar.jl
   - thofma/Hecke.jl
+- name: Sebastian Engelhardt
+  email: 66025443+Sebas777-gif@users.noreply.github.com
+  github: Sebas777-gif
+  status: active
+  repos:
+  - oscar-system/Oscar.jl
 - name: Raul Epure
   affiliation: University of Kaiserslautern-Landau
   github: raulepure
@@ -409,6 +416,12 @@
   email: oskar.david.henriksson@gmail.com
   github: oskarhenriksson
   status: active
+  repos:
+  - oscar-system/Oscar.jl
+- name: Andreas Hochenegger
+  email: andreas.hochenegger@polimi.it
+  status: active
+  comment: Co-author of commit 1b81959c9a20c15daa6e490e587176a52d259b83
   repos:
   - oscar-system/Oscar.jl
 - name: Anna Hofer
@@ -705,7 +718,7 @@
   affiliation: University of Kaiserslautern-Landau
   github: Till-Eisen
   website: https://math.rptu.de/ags/agag/personen/mitglieder
-  status: active
+  status: retired
   repos:
   - Nemocas/Nemo.jl
 - name: Niranjan Nagumalli
@@ -1152,6 +1165,12 @@
   status: active
   repos:
   - thofma/Hecke.jl
+- name: Sai Asish Y
+  email: say.apm35@gmail.com
+  github: SAY-5
+  status: active
+  repos:
+  - Nemocas/Nemo.jl
 - name: Yichao Yu
   affiliation: Duke University
   email: yyc1992@gmail.com
