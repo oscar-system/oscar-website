@@ -13,7 +13,7 @@ You might find a quick answer to your question in our [Frequently Asked Question
 
 ### OSCAR Discourse
 
-Join the [OSCAR Discourse](https://oscar.discourse.group/) to ask questions, share ideas, and help other users. Discourse discussions stay available and searchable, so you may an answer to your question from searching past discussions. If you cannot find an answer, post your question — the following discussion may help the next person with the same problem. Sign up and join the conversation!
+Join the [OSCAR Discourse](https://oscar.discourse.group/) to ask questions, share ideas, and help other users. Discourse discussions stay available and searchable, so you may find an answer to your question from searching past discussions. If you cannot find an answer, post your question — the following discussion may help the next person with the same problem. Sign up and join the conversation!
 
 ---
 
