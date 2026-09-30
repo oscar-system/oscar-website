@@ -11,9 +11,15 @@ You might find a quick answer to your question in our [Frequently Asked Question
 
 ---
 
+### OSCAR Discourse
+
+Join the [OSCAR Discourse](https://oscar.discourse.group/) to ask questions, share ideas, and help other users. Discourse discussions stay available and searchable, so you may an answer to your question from searching past discussions. If you cannot find an answer, post your question — the following discussion may help the next person with the same problem. Sign up and join the conversation!
+
+---
+
 ### Slack
 
-[Slack](https://slack.com) is a non-public chat platform where we discuss OSCAR, answer questions, and provide support. Whether you need help with installation, usage, or development, feel free to ask here.
+[Slack](https://slack.com) is a non-public chat platform for informal, real-time discussions about OSCAR. For questions and answers that you and others can find later, please use the [OSCAR Discourse](https://oscar.discourse.group/).
 
 [Join our Slack workspace](https://oscar-system.org/slack). You can access it via a web browser or through native apps for phones, tablets, and computers.  
 
@@ -27,7 +33,9 @@ To report a bug or issue, submit it to our [GitHub issue tracker](https://github
 
 ### GitHub Discussion Forum  
 
-For public and permanent discussions, use our [GitHub discussion forum](https://github.com/oscar-system/Oscar.jl/discussions). This is a great place for general questions and in-depth discussions. A free [GitHub account](https://github.com) is required to participate.  
+You can also use our [GitHub discussion forum](https://github.com/oscar-system/Oscar.jl/discussions) for public discussions. A free [GitHub account](https://github.com) is required to participate.
+
+However, for questions that should be easy for the OSCAR community to find and answer, we encourage the use of [OSCAR Discourse](https://oscar.discourse.group/).
 
 ---
 
