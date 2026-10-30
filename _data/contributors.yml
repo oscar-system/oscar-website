@@ -3,6 +3,12 @@
 # Retired people only have repo information if repo information about them was known when they were
 # active (or manually added) by a maintainer.
 
+- name: GLM 5.3
+  email: noreply@zhipuai.cn
+  status: active
+  comment: Co-author of commit dbe0c2408e637616bd722bfe72943eabdbb0d7af
+  repos:
+  - oscar-system/Oscar.jl
 - name: John Abbott
   affiliation: University of Kaiserslautern-Landau
   email: john.abbott@rptu.de
@@ -150,6 +156,15 @@
   repos:
   - oscar-system/Oscar.jl
   - oscar-system/Singular.jl
+- name: Kristoffer Carlsson
+  email: kcarlsson89@gmail.com
+  github: KristofferC
+  status: active
+  repos:
+  - Nemocas/AbstractAlgebra.jl
+  - Nemocas/Nemo.jl
+  - oscar-system/Singular.jl
+  - thofma/Hecke.jl
 - name: Jinghao Chen
   affiliation: University of Science and Technology of China
   email: chenjinghao@mail.ustc.edu.cn
@@ -201,7 +216,7 @@
   affiliation: University of Kaiserslautern-Landau
   email: dieterle@mathematik.uni-kl.de
   github: BD-00
-  status: retired
+  status: active
   comment: Master student of Claus Fieker as of 2024
   aka_email:
   - 94169337+BD-00@users.noreply.github.com
@@ -274,7 +289,7 @@
   email: kafe@kafe.dev
   github: ooinaruhugh
   website: https://kafe.dev/
-  status: active
+  status: retired
   repos:
   - oscar-system/Oscar.jl
 - name: Claus Fieker
@@ -455,7 +470,7 @@
   email: benhollering@gmail.com
   github: bkholler
   website: https://sites.google.com/view/benhollering
-  status: active
+  status: retired
   repos:
   - oscar-system/Oscar.jl
 - name: Max Horn
@@ -472,6 +487,7 @@
   - oscar-system/GAP.jl
   - oscar-system/Polymake.jl
   - oscar-system/Singular.jl
+  - algebraic-solving/AlgebraicSolving.jl
 - name: Fredrik Johansson
   affiliation: Institut de Mathématiques de Bordeaux
   email: fredrik.johansson@gmail.com
@@ -554,6 +570,9 @@
   website: https://gkorpal.github.io/
   status: active
   repos:
+  - Nemocas/AbstractAlgebra.jl
+  - Nemocas/Nemo.jl
+  - oscar-system/Oscar.jl
   - thofma/Hecke.jl
 - name: Kevin Kuehn
   affiliation: TU Berlin
@@ -831,6 +850,12 @@
   repos:
   - Nemocas/Nemo.jl
   - algebraic-solving/AlgebraicSolving.jl
+- name: Kaleb R
+  email: kaleb@ruscitti.ca
+  github: kalebruscitti
+  status: active
+  repos:
+  - oscar-system/Oscar.jl
 - name: Lakshmi Ramesh
   affiliation: University of Kaiserslautern-Landau
   email: ramesh@mathematik.uni-kl.de
@@ -876,8 +901,10 @@
   status: active
   repos:
   - Nemocas/AbstractAlgebra.jl
+  - Nemocas/Nemo.jl
   - oscar-system/GAP.jl
   - oscar-system/Oscar.jl
+  - thofma/Hecke.jl
 - name: Karl Royal
   affiliation: University of Göttingen
   email: karl.wessel@phys.uni-goettingen.de
@@ -1153,6 +1180,7 @@
   website: https://page.math.tu-berlin.de/~weis/
   status: active
   repos:
+  - Nemocas/AbstractAlgebra.jl
   - oscar-system/Oscar.jl
 - name: Torben Wiedemann
   affiliation: University of Kaiserslautern-Landau
