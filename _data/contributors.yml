@@ -248,9 +248,10 @@
   - oscar-system/Oscar.jl
   - thofma/Hecke.jl
 - name: Sebastian Engelhardt
-  affiliation: Saarland University
-  email: seen00001@stud.uni-saarland.de
+  affiliation: Graz University of Technology
+  email: sebastian.engelhardt@tugraz.at
   github: Sebas777-gif
+  website: https://www.geometrie.tugraz.at/engelhardt/
   status: active
   repos:
   - oscar-system/Oscar.jl
