@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OSCAR Newsletter – November 2026</title>
+</head>
+<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #222; background-color: #f5f7fa; margin: 0; padding: 0;">
+
+  <div style="max-width: 700px; margin: 40px auto; background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.08);">
+
+    <a href="https://www.oscar-system.org/newsletter/" style="text-decoration:none; color:inherit;">
+    <div style="background-color: #004aad; padding: 20px 0; text-align: center;">
+      <img src="https://www.oscar-system.org/public/OSCAR-Logo-dark.svg" alt="OSCAR Logo"
+      style="max-width: 180px; height: auto;" />
+      <h1 style="color: #ffffff; margin: 15px 0 0; font-size: 26px;">OSCAR Newsletter – November 2026</h1>
+    </div>
+    </a>
+
+    <div style="padding: 30px;">
+      <p>Hello, OSCAR Community!</p>
+
+      <p>Welcome to the November edition of the OSCAR newsletter! We are excited to share the latest updates, features, and
+        achievements from our community.</p>
+
+      <h2>Version 1.8.2 Released!</h2>
+      <p>New features as compared to version 1.8.0 include:</p>
+      <ul>
+        <li><strong>Toric Geometry:</strong> Fixed degree of rank-one toric line bundles.</li>
+        <li><strong>Combinatorics:</strong> Fixed <code>is_isomorphic</code> for matroids.</li>
+        <li><strong>Lie Theory:</strong> Fixed <code>dual(::RootSpaceElem)</code> for a zero input.</li>
+        <li><strong>Commutative Algebra:</strong> Sped up arithmetic in simplicial cohomology rings (only affects experimental
+          parts of OSCAR).</li>
+        <li><strong>Miscellaneous:</strong> Overhauled linear algebra documentation.
+        <li>For more details on the newest release, visit the 
+          <a href="https://github.com/oscar-system/Oscar.jl/releases/tag/v1.8.2">GitHub Release</a> or
+          our <a href="https://www.oscar-system.org">website</a>.</li>
+      </ul>
+      
+      <h2>Papers and Projects Using OSCAR:</h2>
+      <ul>
+        <li>Annalisa Grossi and Stevell Muller, in their <a href="https://arxiv.org/abs/2607.22645"> Corrigendum to
+          "Nonsymplectic automorphisms of prime order on O'Grady's sixfolds"</a>, correct the lattice theoretic classification
+          <a href="https://arxiv.org/abs/2004.12694">in a previous paper of Grossi's</a>, by including some missing cases and
+          explaining how to recover them. They used OSCAR to compute and correct their original tables listing, among others,
+          invariant and coinvariant sublattices of effective nonsymplectic groups <i>G</i> ⊂ O(<b>L</b>) on manifolds of O'Grady's
+          6-dimensional deformation type.
+        </li>
+        <li>
+          Jie Fu, in his preprint <a href="https://arxiv.org/abs/2610.19161">Remarks on Lattice Actions Corresponding to
+            Automorphism Groups of Smooth Cubic Fourfolds</a>, completes the calculation of group actions on the primitive
+            integral cohomology lattice for all of the 156 families in the previously known classification. He distinguishes
+            similar families, determines the remaining action-maximal cases, and uses restriction to complete the list. The
+            generic algebraic lattices for each family are also determined. The calculations mainly depend on OSCAR.
+        </li>
+        <li>Simon Brandhorst and Tommy Hofmann, in their preprint <a href="https://arxiv.org/abs/2610.16753">Automorphisms
+          and canonical forms of integer lattices</a>, improve the Piesken–Souvignier algorithm for computing automorphism groups
+          and isometries of positive definite integer quadratic lattices by exploiting characteristic sublattices and refining
+          vector enumeration. For lattices with roots, they also use the Weyl group to accelerate the computation of canonical
+          forms. In experiments with concrete implementations in OSCAR, they demonstrate substantial speedups and show that
+          canonical forms can be computed at a cost comparable to that of computing automorphism groups.
+        </li>
+        <!--TODO pending contribution from Michael Joswig-->
+      </ul>
+
+      <h2>Upcoming Events:</h2>
+      <ul>
+        <li><strong><a href="https://www.computeralgebra.de/women-in-algebra-and-symbolic-computation-iv/">Women in Algebra and
+          Symbolic Computation IV</a></strong> - Bad Dürkheim, Germany · Dec 07-09, 2026
+        </li>
+        <li>
+          <strong><a href="https://www.math.rwth-aachen.de/40YearsGAP/index.html">40 Years of GAP</a></strong>
+          - Aachen, Germany · Dec 10-11, 2026
+        </li>
+        <li>
+          <strong><a href="https://lucant.org/">LuCaNT 2027</a></strong> - Luminy, France · Jun 21-25, 2027
+        </li>
+        <li>
+          <strong><a href="https://www.oscar-system.org/events/meetings/2027-07-12/">
+            OSCAR Developer Meeting</a></strong> - Berlin, Germany · Jul 12-13, 2027
+        </li>
+        <li>
+          <strong><a href="https://www.oscar-system.org/events/meetings/2027-07-14/">
+            OSCAR Summer School</a></strong> - Berlin, Germany · Jul 14-16, 2027
+        </li>
+      </ul>
+      
+      <!--TODO preliminary; replace with Matthias Zach's own introduction once available-->
+      <h2>Developer Spotlight:</h2>
+      <p><strong>Matthias Zach</strong> (Total contributions to OSCAR last 12 months: 13 commits; 2,500 added lines of code)</p>
+      <p>Matthias Zach is a postdoctoral researcher at RPTU Kaiserslautern-Landau. His research interests are complex analytic
+        singularities, singularities of mappings and algorithmic commutative algebra. His contributions to OSCAR center around
+        algebraic schemes. Learn more on <a href="https://hechtiderlachs.github.io/">his personal website</a> and follow him on
+        GitHub under the username <a href="https://github.com/HechtiDerLachs">HechtiDerLachs</a>.</p>
+
+      <h2>New OSCAR Discussion Place</h2>
+      <p>Besides our already existing <a href="https://oscar-system.org/slack">Slack workspace</a>, there is now a
+        <a href="https://oscar.discourse.group/">discourse forum for OSCAR</a>. Ask questions, share ideas and help other users.
+        Discourse discussions stay available and searchable, so you may find an answer to your question from searching past
+        discussions. If you cannot find an answer, post your question — the following discussion may help the next person with
+        the same problem. Sign up and join the conversation!
+      </p>
+
+      <h2>Top 5 Secret OSCAR Tricks</h2>
+      <p>Here is a Top 5 of perhaps not so well-known OSCAR hacks that might save you a lot of time. Thanks to everyone for
+        contributing their favorite tricks!
+      </p>
+      <ol>
+        <li>
+          To multiply two matrices that both contain many zero entries, it can be beneficial to convert them to
+          <code>sparse_matrix</code> and then multiply them using <code>mul_sparse</code>. The final result can be converted back
+          to a (dense) matrix by calling <code>matrix(...)</code>. For instance,
+          <code>M1 = sparse_matrix(M1); M2 = sparse_matrix(M2); matrix(sparse_mul(M1, M2))</code>.
+        </li>
+        <li>
+          <code>Oscar.flatten</code> lets you turn a nested ring like ℚ[<i>x</i>, <i>y</i>][<i>s</i>, <i>t</i>] into the
+          isomorphic flat ring ℚ[<i>x</i>, <i>y</i>, <i>s</i>, <i>t</i>]. For example, given
+          <code>Qxy, (x, y) = QQ[:x, :y]; R, (s, t) = Qxy[:s, :t];</code>, you can call <code>phi = Oscar.flatten(R)</code> to
+          obtain the canonical isomorphism ℚ[<i>x</i>, <i>y</i>][<i>s</i>, <i>t</i>] → ℚ[<i>x</i>, <i>y</i>, <i>s</i>, <i>t</i>].
+          This enables natural modeling of parameters vs. variables and then switching to the flat representation required e.g.
+          by Gröbner bases and elimination.
+        </li>
+        <li>
+          Enter <code>$</code> within an OSCAR shell to activate a polymake session. You can even exchange variables between
+          polymake and OSCAR!
+        </li>
+        <li>
+          In the very same vein, you can type <code>GAP.prompt()</code> to enter a GAP session within OSCAR.
+        </li>
+        <li>
+          Use the attribute system (<code>set_attribute!</code> / <code>get_attribute</code> / <code>@attr</code>) to cache
+          expensive computations on objects. After having computed something costly (for instance a Gröbner basis, a Hilbert
+          polynomical, or a singular locus), store it on the object itself:
+          <code>set_attribute!(I, :my_groebner, groebner_basis(I))</code>, and then later
+          <code>get_attribute(I, :my_groebner)</code>. Many OSCAR functions already do this internally, and the
+          <code>@attr</code> macro turns a function into an automatically memoized attribute.
+        </li>
+      </ol>
+
+      <h2>OSCAR in the Movies Continues ...</h2>
+      <p>Check out some new OSCAR movie content on <a href="https://tube.mathe.social/c/oscar_main/videos">tube.mathe</a>. This
+        time, our mascot sloth OSCAR teaches you about
+        <a href="https://tube.mathe.social/w/bNbNUcuuiAhiTvkssaEvTU">Gröbner bases</a>.
+      </p>
+      <p>You can also find these videos on our <a href="https://www.youtube.com/@oscar.algebra.system">YouTube</a> and
+        <a href="https://www.instagram.com/oscar.algebra.system/">Instagram</a> channels. Subscribe to help increase our reach!
+      </p>
+
+      <h2>OSCAR-Shop:</h2>
+      <p>Visit the <a href="https://oscar-system.myspreadshop.de/" style="color:#004aad; font-weight:bold; text-decoration:none;">OSCAR-Shop</a> for exclusive merchandise and show your support for the project in style.</p>
+
+      <hr style="border: 0; border-top: 1px solid #eee; margin: 30px 0;" />
+      
+      <h2>Get Involved:</h2>
+      <p> Do you want to contribute to the project? Find more information at our <a href="https://www.oscar-system.org/contributing/">Contributor Guide</a> to learn how to help-from code and documentation to outreach and community support.</p>
+      <p>To unsubscribe from this newsletter, click <a href="https://lists.uni-kl.de/oscar/sigrequest/news">here</a>.</p>
+      <p>Best regards,<br>The OSCAR Team</p>
+    </div>
+  </div>
+</body>
+</html>
