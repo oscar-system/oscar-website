@@ -120,7 +120,7 @@
           To multiply two matrices that both contain many zero entries, it can be beneficial to convert them to
           <code>sparse_matrix</code> and then multiply them using <code>mul_sparse</code>. The final result can be converted back
           to a (dense) matrix by calling <code>matrix(...)</code>. For instance,
-          <code>M1 = sparse_matrix(M1); M2 = sparse_matrix(M2); matrix(sparse_mul(M1, M2))</code>.
+          <code>M1 = sparse_matrix(M1); M2 = sparse_matrix(M2); matrix(mul_sparse(M1, M2))</code>.
         </li>
         <li>
           <code>Oscar.flatten</code> lets you turn a nested ring like ℚ[<i>x</i>, <i>y</i>][<i>s</i>, <i>t</i>] into the
