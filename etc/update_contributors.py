@@ -50,7 +50,9 @@ KNOWN_BOT_EMAILS = {
     "codex@openai.com",
     "noreply@anthropic.com",
     "copilot@github.com",
-    "noreply@chatgpt.com"
+    "noreply@chatgpt.com",
+    # GLM 5.3 is Z.ai's model; this address is used for its Co-authored-by credit.
+    "noreply@zhipuai.cn",
 }
 KNOWN_BOT_NAMES = {
     "codex",

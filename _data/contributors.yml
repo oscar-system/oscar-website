@@ -3,12 +3,6 @@
 # Retired people only have repo information if repo information about them was known when they were
 # active (or manually added) by a maintainer.
 
-- name: GLM 5.3
-  email: noreply@zhipuai.cn
-  status: active
-  comment: Co-author of commit dbe0c2408e637616bd722bfe72943eabdbb0d7af
-  repos:
-  - oscar-system/Oscar.jl
 - name: John Abbott
   affiliation: University of Kaiserslautern-Landau
   email: john.abbott@rptu.de
@@ -157,8 +151,10 @@
   - oscar-system/Oscar.jl
   - oscar-system/Singular.jl
 - name: Kristoffer Carlsson
+  affiliation: JuliaHub
   email: kcarlsson89@gmail.com
   github: KristofferC
+  website: https://kristofferc.github.io/
   status: active
   repos:
   - Nemocas/AbstractAlgebra.jl
@@ -850,9 +846,11 @@
   repos:
   - Nemocas/Nemo.jl
   - algebraic-solving/AlgebraicSolving.jl
-- name: Kaleb R
+- name: Kaleb D. Ruscitti
+  affiliation: University of Waterloo
   email: kaleb@ruscitti.ca
   github: kalebruscitti
+  website: https://kaleb.ruscitti.ca
   status: active
   repos:
   - oscar-system/Oscar.jl
