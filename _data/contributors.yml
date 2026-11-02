@@ -846,14 +846,6 @@
   repos:
   - Nemocas/Nemo.jl
   - algebraic-solving/AlgebraicSolving.jl
-- name: Kaleb D. Ruscitti
-  affiliation: University of Waterloo
-  email: kaleb@ruscitti.ca
-  github: kalebruscitti
-  website: https://kaleb.ruscitti.ca
-  status: active
-  repos:
-  - oscar-system/Oscar.jl
 - name: Lakshmi Ramesh
   affiliation: University of Kaiserslautern-Landau
   email: ramesh@mathematik.uni-kl.de
@@ -911,6 +903,14 @@
   repos:
   - Nemocas/AbstractAlgebra.jl
   - Nemocas/Nemo.jl
+- name: Kaleb D. Ruscitti
+  affiliation: University of Waterloo
+  email: kaleb@ruscitti.ca
+  github: kalebruscitti
+  website: https://kaleb.ruscitti.ca
+  status: active
+  repos:
+  - oscar-system/Oscar.jl
 - name: Felix Röhrich
   affiliation: RWTH Aachen University
   email: roehrich@art.rwth-aachen.de
