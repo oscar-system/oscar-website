@@ -146,7 +146,7 @@
         <li>
           Use the attribute system (<code>set_attribute!</code> / <code>get_attribute</code> / <code>@attr</code>) to cache
           expensive computations on objects. After having computed something costly (for instance a Gröbner basis, a Hilbert
-          polynomical, or a singular locus), store it on the object itself:
+          polynomial, or a singular locus), store it on the object itself:
           <code>set_attribute!(I, :my_groebner, groebner_basis(I))</code>, and then later
           <code>get_attribute(I, :my_groebner)</code>. Many OSCAR functions already do this internally, and the
           <code>@attr</code> macro turns a function into an automatically memoized attribute.
