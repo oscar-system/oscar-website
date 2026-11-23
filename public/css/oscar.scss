@@ -3,10 +3,10 @@
 # only Main files contain this front matter, not partials.
 ---
 
-@import "poole";
-@import "syntax";
-@import "hyde";
-@import "forms";
-@import "fonts";
-@import "site";
-@import "copy-icon";
+@use "poole";
+@use "syntax";
+@use "hyde";
+@use "forms";
+@use "fonts";
+@use "site";
+@use "copy-icon";
