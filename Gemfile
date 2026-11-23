@@ -34,6 +34,5 @@ gem "logger", "1.4.2"
 # dependency of jekyll, yet without them ruby throws errors (at least on some system)
 gem "base64"
 gem "csv"
-gem "erb"
 gem "ostruct"
 gem "bigdecimal"
