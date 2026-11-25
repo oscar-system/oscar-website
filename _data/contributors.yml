@@ -187,10 +187,10 @@
   status: retired
   repos: []
 - name: Edgar Costa
+  affiliation: MIT
   email: edgarc@mit.edu
   github: edgarcosta
   status: active
-  affiliation: MIT
   repos:
   - oscar-system/Oscar.jl
 - name: Wolfram Decker
