@@ -10,9 +10,9 @@ git reset --hard origin/gh-pages
 # add webhook secret
 cat ~/data/webhook.secret >> .htaccess
 
-# install gems
+# install gems; Gemfile.lock is untracked, so resolve afresh like CI
 bundle config set --local path 'vendor/bundle'
-bundle install
+bundle update --all
 
 # use the venv defined in .venv
 if [ ! -d ".venv" ]; then
