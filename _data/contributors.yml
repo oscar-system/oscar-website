@@ -186,6 +186,12 @@
   website: https://page.math.tu-berlin.de/~comaneci/
   status: retired
   repos: []
+- name: Edgar Costa
+  email: edgarc@mit.edu
+  github: edgarcosta
+  status: active
+  repos:
+  - oscar-system/Oscar.jl
 - name: Wolfram Decker
   affiliation: University of Kaiserslautern-Landau
   email: wolfram.decker@rptu.de
@@ -531,6 +537,7 @@
   website: https://lkastner.github.io/
   status: active
   repos:
+  - Nemocas/AbstractAlgebra.jl
   - oscar-system/Oscar.jl
 - name: Aaruni Kaushik
   affiliation: University of Kaiserslautern-Landau
@@ -625,6 +632,7 @@
   status: active
   repos:
   - Nemocas/AbstractAlgebra.jl
+  - thofma/Hecke.jl
 - name: Zhi Ming Long
   email: 132650117+long-zm123@users.noreply.github.com
   github: long-zm123
@@ -688,7 +696,7 @@
   email: mikelis.emils.mikelsons@gmail.com
   github: emikelsons
   website: https://github.com/emikelsons
-  status: active
+  status: retired
   repos:
   - Nemocas/AbstractAlgebra.jl
   - Nemocas/Nemo.jl
@@ -1171,6 +1179,7 @@
   - Nemocas/AbstractAlgebra.jl
   - Nemocas/Nemo.jl
   - algebraic-solving/AlgebraicSolving.jl
+  - oscar-system/Oscar.jl
 - name: Lena Weis
   affiliation: TU Berlin
   email: weis@math.tu-berlin.de
